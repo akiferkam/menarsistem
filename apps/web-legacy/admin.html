@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MENAR MAYS — Yönetim Paneli</title>
+<style>
+:root{
+  --ink:#12213a; --muted:#5b6b82; --line:#dbe3ee;
+  --navy:#123e6b; --navy-deep:#0d2e4f; --amber:#b45309;
+  --bg:#eef2f7; --card:#ffffff; --soft:#f2f6fb;
+  --ok-bg:#eafaf0; --ok-ink:#166534; --err-bg:#fdecec; --err-ink:#9f1d1d;
+  --radius:14px; --radius-sm:9px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:linear-gradient(120deg,var(--navy-deep),var(--navy) 70%);color:#fff;padding:16px 22px;box-shadow:0 2px 14px rgba(13,46,79,.25)}
+header h1{margin:0;font-size:18px;font-weight:800}
+header p{margin:4px 0 0;font-size:12px;opacity:.85}
+main{max-width:760px;margin:20px auto;padding:0 16px 40px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 6px 24px rgba(18,33,58,.06);padding:18px}
+.card h2{margin:0 0 4px;font-size:15px;font-weight:800;color:var(--navy-deep)}
+.card .hint{margin:0 0 14px;font-size:12px;color:var(--muted);line-height:1.5}
+label{display:block;font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin:10px 0 4px}
+label:first-of-type{margin-top:0}
+input,select{width:100%;border:1.5px solid var(--line);border-radius:var(--radius-sm);padding:9px 10px;font-size:13px;background:#fbfcfe;transition:.15s}
+input:focus,select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(18,62,107,.12);background:#fff}
+button{margin-top:14px;width:100%;padding:11px;border:0;border-radius:var(--radius-sm);background:var(--navy);color:#fff;font-weight:700;font-size:13px;cursor:pointer}
+button:hover{background:var(--navy-deep)}
+button.secondary{background:var(--soft);color:var(--navy-deep);margin-top:6px}
+.msg{margin-top:10px;padding:9px 12px;border-radius:10px;font-size:12.5px;line-height:1.5;font-weight:700;display:none}
+.msg.ok{display:block;background:var(--ok-bg);color:var(--ok-ink)}
+.msg.err{display:block;background:var(--err-bg);color:var(--err-ink)}
+.token-box{margin-top:10px;padding:12px;background:#fff8ec;border:1px solid #f2d8ab;border-radius:10px}
+.token-box .label{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--amber);letter-spacing:.03em}
+.token-box code{display:block;margin:6px 0;font:12.5px Consolas,monospace;word-break:break-all;white-space:pre-wrap;background:#fff;border:1px solid #f2d8ab;border-radius:6px;padding:8px}
+.token-box .warn{font-size:11px;color:#7a4a06}
+.list-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.list-item:last-child{border-bottom:0}
+.list-item .ad{font-weight:700;font-size:13px}
+.list-item .meta{font-size:11px;color:var(--muted)}
+.ogretmen-list{margin:6px 0 0 14px;font-size:11.5px;color:var(--muted)}
+.empty{font-size:12px;color:var(--muted);padding:6px 0}
+#adminTokenWrap{position:sticky;top:0;z-index:10;background:var(--bg);padding-bottom:4px}
+</style>
+</head>
+<body>
+<header>
+<h1>MENAR MAYS — Yönetim Paneli</h1>
+<p>Yayınevi ve öğretmen erişim kodu yönetimi. Bu sayfa yalnızca yöneticiler içindir.</p>
+</header>
+<main>
+
+<div id="adminTokenWrap" class="card">
+<h2>Yönetici Erişimi</h2>
+<p class="hint">Sunucudaki <code>API_ADMIN_TOKEN</code> değerini girin. Bu sayfa yalnızca sizin tarayıcınızda saklanır.</p>
+<label>Yönetici Token</label>
+<input id="adminToken" type="password" placeholder="API_ADMIN_TOKEN">
+</div>
+
+<div class="card">
+<h2>Yeni Yayınevi Ekle</h2>
+<p class="hint">Her yayınevi kendi OpenAI ve Anthropic API anahtarını getirir (kendi anahtarınız, kendi faturanız).</p>
+<label>Yayınevi Adı</label>
+<input id="yeAd" placeholder="Örn: Menar Yayıncılık">
+<label>OpenAI API Anahtarı</label>
+<input id="yeOpenai" type="password" placeholder="sk-...">
+<label>Anthropic API Anahtarı</label>
+<input id="yeAnthropic" type="password" placeholder="sk-ant-...">
+<button id="btnYeniYayinevi" type="button">Yayınevi Oluştur</button>
+<div id="yeMsg" class="msg"></div>
+</div>
+
+<div class="card">
+<h2>Yeni Öğretmen Ekle</h2>
+<p class="hint">Kullanıcı adı ve şifreyi siz belirlersiniz — öğretmen giriş ekranında yayınevini seçip bu bilgilerle giriş yapar.</p>
+<label>Yayınevi</label>
+<select id="ogYayinevi"></select>
+<label>Öğretmen Adı</label>
+<input id="ogAd" placeholder="Örn: Ayşe Yılmaz">
+<label>Kullanıcı Adı</label>
+<input id="ogKullaniciAdi" placeholder="Örn: ayse.yilmaz" autocomplete="off">
+<label>Şifre</label>
+<input id="ogSifre" type="password" placeholder="Öğretmene ileteceğiniz şifre" autocomplete="new-password">
+<button id="btnYeniOgretmen" type="button">Öğretmen Oluştur</button>
+<div id="ogMsg" class="msg"></div>
+<div id="ogToken" class="token-box" style="display:none">
+<div class="label">Giriş Bilgileri — öğretmene iletin</div>
+<code id="ogTokenValue"></code>
+<button class="secondary" id="btnKopyalaToken" type="button">Bilgileri Kopyala</button>
+<div class="warn">Şifre yalnızca girdiğiniz hâliyle burada durur, DB'de tekrar okunamaz — kaybederseniz öğretmeni silip yeniden oluşturmanız gerekir.</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Mevcut Yayınevleri</h2>
+<div id="yayineviListe"><div class="empty">Yükleniyor...</div></div>
+<button class="secondary" id="btnYenile" type="button">Listeyi Yenile</button>
+</div>
+
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+function adminToken(){ return $("adminToken").value.trim(); }
+$("adminToken").value=localStorage.getItem("mays_admin_token")||"";
+$("adminToken").addEventListener("change",()=>localStorage.setItem("mays_admin_token",adminToken()));
+
+function setMsg(el,text,tur){
+  el.textContent=text; el.className="msg "+(tur||"");
+}
+
+async function apiFetch(path,opts){
+  const token=adminToken();
+  if(!token) throw new Error("Önce yönetici token girin.");
+  const res=await fetch(path,{
+    ...opts,
+    headers:{ "Content-Type":"application/json", "Authorization":"Bearer "+token, ...(opts&&opts.headers) },
+  });
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok) throw new Error(data.error||("HTTP "+res.status));
+  return data;
+}
+
+async function loadYayinevi(){
+  const sel=$("ogYayinevi");
+  const listEl=$("yayineviListe");
+  let list;
+  try{
+    list=await apiFetch("/yayinevi");
+  }catch(e){
+    listEl.innerHTML='<div class="empty">Liste alınamadı: '+esc(e.message)+'</div>';
+    return;
+  }
+  sel.innerHTML="";
+  if(!list.length){
+    sel.innerHTML='<option value="">Önce bir yayınevi oluşturun</option>';
+    listEl.innerHTML='<div class="empty">Henüz yayınevi yok.</div>';
+    return;
+  }
+  list.forEach(y=>{
+    const o=document.createElement("option"); o.value=y.id; o.textContent=y.ad; sel.appendChild(o);
+  });
+  listEl.innerHTML="";
+  for(const y of list){
+    const row=document.createElement("div"); row.className="list-item";
+    row.innerHTML='<div><div class="ad">'+esc(y.ad)+'</div><div class="ogretmen-list" id="ogl-'+y.id+'">öğretmenler yükleniyor...</div></div>';
+    listEl.appendChild(row);
+    apiFetch("/yayinevi/"+y.id+"/ogretmen").then(ogs=>{
+      const el=document.getElementById("ogl-"+y.id);
+      el.textContent=ogs.length ? ogs.map(o=>o.ad).join(", ") : "henüz öğretmen yok";
+    }).catch(()=>{});
+  }
+}
+
+$("btnYenile").addEventListener("click",loadYayinevi);
+
+$("btnYeniYayinevi").addEventListener("click",async()=>{
+  const ad=$("yeAd").value.trim(), openaiApiKey=$("yeOpenai").value.trim(), anthropicApiKey=$("yeAnthropic").value.trim();
+  if(!ad||!openaiApiKey||!anthropicApiKey){ setMsg($("yeMsg"),"Tüm alanları doldurun.","err"); return; }
+  try{
+    await apiFetch("/yayinevi",{method:"POST",body:JSON.stringify({ad,openaiApiKey,anthropicApiKey})});
+    setMsg($("yeMsg"),"Yayınevi oluşturuldu: "+ad,"ok");
+    $("yeAd").value=""; $("yeOpenai").value=""; $("yeAnthropic").value="";
+    loadYayinevi();
+  }catch(e){ setMsg($("yeMsg"),"Hata: "+e.message,"err"); }
+});
+
+$("btnYeniOgretmen").addEventListener("click",async()=>{
+  const yayineviId=$("ogYayinevi").value, ad=$("ogAd").value.trim();
+  const kullaniciAdi=$("ogKullaniciAdi").value.trim(), sifre=$("ogSifre").value;
+  if(!yayineviId||!ad||!kullaniciAdi||!sifre){ setMsg($("ogMsg"),"Tüm alanları doldurun.","err"); return; }
+  try{
+    await apiFetch("/ogretmen",{method:"POST",body:JSON.stringify({yayineviId,ad,kullaniciAdi,sifre})});
+    setMsg($("ogMsg"),"Öğretmen oluşturuldu: "+ad,"ok");
+    $("ogTokenValue").textContent="Kullanıcı adı: "+kullaniciAdi+"\nŞifre: "+sifre;
+    $("ogToken").style.display="block";
+    $("ogAd").value=""; $("ogKullaniciAdi").value=""; $("ogSifre").value="";
+    loadYayinevi();
+  }catch(e){ setMsg($("ogMsg"),"Hata: "+e.message,"err"); }
+});
+
+$("btnKopyalaToken").addEventListener("click",async()=>{
+  try{ await navigator.clipboard.writeText($("ogTokenValue").textContent); }catch(e){}
+});
+
+if(adminToken()) loadYayinevi();
+$("adminToken").addEventListener("change",loadYayinevi);
+</script>
+</body>
+</html>

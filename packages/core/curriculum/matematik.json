@@ -1,0 +1,875 @@
+{
+  "subject": "Matematik",
+  "source": {
+    "workflow_file": "sources/menar_mays_matematik_v22_6_workflow.json",
+    "extracted_node": "02 - TYMM Kazanım Kilidi + Girdi Doğrulama",
+    "extracted_at": "2026-08-06"
+  },
+  "outcome_count": 39,
+  "outcomes": [
+    {
+      "code": "MAT.9.1.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sayılar",
+      "theme_order": 1,
+      "content_frame": "Gerçek Sayıların Üslü ve Köklü Gösterimleri ile Yapılan İş lemler, Gerçek Sayı Aralıkları ile Yapılan İş lemler, Sayı Kümeleri ve İş lem Özellikleri, İki Kare Farkı ve Tamkare Özdeşlikleri Gerçek sayılar ve gerçek sayı aralıkları, sayı doğrusu ile temsil edilebilir. Bir gerçek sayıya karşılık gelen nicelik, farklışekillerde (ondalık, üslü, köklü gibi) gösterilebilir.",
+      "outcome": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere dair muhakeme yapabilme",
+      "micro": [
+        "Üslü gösterim kuralları",
+        "Köklü gösterim kuralları",
+        "Üslü-köklü dönüşümler",
+        "Bilimsel gösterim",
+        "Önerme ve doğrulama",
+        "Problem durumlarında kullanışlılık",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.9.1.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sayılar",
+      "theme_order": 1,
+      "content_frame": "Gerçek Sayıların Üslü ve Köklü Gösterimleri ile Yapılan İş lemler, Gerçek Sayı Aralıkları ile Yapılan İş lemler, Sayı Kümeleri ve İş lem Özellikleri, İki Kare Farkı ve Tamkare Özdeşlikleri Gerçek sayılar ve gerçek sayı aralıkları, sayı doğrusu ile temsil edilebilir. Bir gerçek sayıya karşılık gelen nicelik, farklışekillerde (ondalık, üslü, köklü gibi) gösterilebilir.",
+      "outcome": "Gerçek sayı aralıklarının gösteriminde ve aralıklarla ilgili iş lemlerde küme sembol ve işlemlerinden yararlanabilme",
+      "micro": [
+        "Gerçek sayı aralıkları",
+        "Açık-kapalı-yarı açık aralık",
+        "Sayı doğrusunda aralık gösterimi",
+        "Küme sembolleri",
+        "Birleşim-kesişim-fark-tümleme",
+        "Aralıklarla işlemler",
+        "Mutlak değer ve aralık ilişkisi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.9.1.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sayılar",
+      "theme_order": 1,
+      "content_frame": "Gerçek Sayıların Üslü ve Köklü Gösterimleri ile Yapılan İş lemler, Gerçek Sayı Aralıkları ile Yapılan İş lemler, Sayı Kümeleri ve İş lem Özellikleri, İki Kare Farkı ve Tamkare Özdeşlikleri Gerçek sayılar ve gerçek sayı aralıkları, sayı doğrusu ile temsil edilebilir. Bir gerçek sayıya karşılık gelen nicelik, farklışekillerde (ondalık, üslü, köklü gibi) gösterilebilir.",
+      "outcome": "Farklı sayı kümelerinin özellikleri hakkında muhakeme yapabilme",
+      "micro": [
+        "Doğal-tam-rasyonel-gerçek sayılar",
+        "Sayı kümeleri arasındaki kapsama",
+        "Sıralama ve arada olma",
+        "İşlem özellikleri",
+        "Önerme oluşturma",
+        "İspat ve karşı örnek",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.9.1.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sayılar",
+      "theme_order": 1,
+      "content_frame": "Gerçek Sayıların Üslü ve Köklü Gösterimleri ile Yapılan İş lemler, Gerçek Sayı Aralıkları ile Yapılan İş lemler, Sayı Kümeleri ve İş lem Özellikleri, İki Kare Farkı ve Tamkare Özdeşlikleri Gerçek sayılar ve gerçek sayı aralıkları, sayı doğrusu ile temsil edilebilir. Bir gerçek sayıya karşılık gelen nicelik, farklışekillerde (ondalık, üslü, köklü gibi) gösterilebilir.",
+      "outcome": "Gerçek sayıların işlem özelliklerini cebirsel olarak ifade etmede analojik akıl yürütebilme",
+      "micro": [
+        "Toplamada işlem özellikleri",
+        "Çarpmada işlem özellikleri",
+        "Dağılma özelliği",
+        "Cebirsel genelleme",
+        "İki kare farkı",
+        "Tam kare özdeşlikleri",
+        "Analojik akıl yürütme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.9.2.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Nicelikler ve Değişimler",
+      "theme_order": 2,
+      "content_frame": "Gerçek Sayılarda Tanımlı Doğrusal Fonksiyonlar ve Mutlak Değer Fonksiyonlarının Nitel Özellikleri, Doğrusal Fonksiyonlarla İfade Edilen Denklem ve Eşitsizlikler Fonksiyonlar, niceliklerin birbirine bağlı değişimlerini temsil eder. Doğrusal değişim, doğrusal fonksiyonlarla temsil edilir. Doğrusal fonksiyonlar, doğrusal referans fonksiyondan türetilebilir.",
+      "outcome": "Gerçek sayılarda f(x) = xşeklinde tanımlı doğrusal referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen g(x) = a ∙ f(x ± r) ± k, (a, r, k ∈ ℝ, a ≠ 0) doğrusal fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+      "micro": [
+        "Doğrusal referans fonksiyon",
+        "Tanım ve görüntü kümesi",
+        "Artanlık-azalanlık",
+        "Sıfırlar ve işaret",
+        "Maksimum-minimum",
+        "Bire birlik ve örtenlik",
+        "Grafik-cebirsel temsil dönüşümü",
+        "Öteleme ve ölçekleme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.9.2.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Nicelikler ve Değişimler",
+      "theme_order": 2,
+      "content_frame": "Gerçek Sayılarda Tanımlı Doğrusal Fonksiyonlar ve Mutlak Değer Fonksiyonlarının Nitel Özellikleri, Doğrusal Fonksiyonlarla İfade Edilen Denklem ve Eşitsizlikler Fonksiyonlar, niceliklerin birbirine bağlı değişimlerini temsil eder. Doğrusal değişim, doğrusal fonksiyonlarla temsil edilir. Doğrusal fonksiyonlar, doğrusal referans fonksiyondan türetilebilir.",
+      "outcome": "Gerçek sayılarda f(x) = ± |ax ± b| ± c (a, b, c ∈ ℝ, a ≠ 0) şeklinde tanımlı mutlak değer fonksiyonlarının nitel özelliklerini incelemek için doğrusal fonksiyonlara bağlı analojik akıl yürütebilme",
+      "micro": [
+        "Mutlak değer referans fonksiyonu",
+        "Doğrusal-mutlak değer analojisi",
+        "Grafik dönüşümleri",
+        "Parçalı fonksiyon gösterimi",
+        "Tanım ve görüntü kümesi",
+        "Sıfırlar ve işaret",
+        "Maksimum-minimum",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.9.2.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Nicelikler ve Değişimler",
+      "theme_order": 2,
+      "content_frame": "Gerçek Sayılarda Tanımlı Doğrusal Fonksiyonlar ve Mutlak Değer Fonksiyonlarının Nitel Özellikleri, Doğrusal Fonksiyonlarla İfade Edilen Denklem ve Eşitsizlikler Fonksiyonlar, niceliklerin birbirine bağlı değişimlerini temsil eder. Doğrusal değişim, doğrusal fonksiyonlarla temsil edilir. Doğrusal fonksiyonlar, doğrusal referans fonksiyondan türetilebilir.",
+      "outcome": "Doğrusal fonksiyonlarla ifade edilebilen denklem ve eş itsizlikler içeren problem çözebilme",
+      "micro": [
+        "Doğrusal denklem problemleri",
+        "Doğrusal eşitsizlik problemleri",
+        "Sözel-cebirsel-grafik dönüşüm",
+        "Matematiksel model kurma",
+        "Çözüm stratejisi seçme",
+        "Çözümü doğrulama",
+        "Çözüm stratejilerini karşılaştırma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.9.3.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Algoritma ve Bilişim",
+      "theme_order": 3,
+      "content_frame": "Algoritma Temelli Problemler, Mantık Bağlaçları ve Niceleyiciler Çizge ve diyagramlar, etkin problem çözme araçlarıdır. Şifrelemede veşifre çözmede algoritmalar kullanılır. Mantık bağlaçları ve niceleyiciler, algoritmaların temel ögelerindendir. Matematiksel doğrulama ve ispat süreçleri, algoritmik bir yaklaşımla gerçekleştirilebilir.",
+      "outcome": "Algoritma temelli yaklaşımlarla problem çözebilme",
+      "micro": [
+        "Problem bileşenlerini belirleme",
+        "Liste ve tablo temsili",
+        "Çizge ve diyagram",
+        "Akış şeması",
+        "Algoritmik doğal dil",
+        "Sözde kod",
+        "Şifreleme algoritmaları",
+        "Strateji oluşturma ve kontrol",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.9.3.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Algoritma ve Bilişim",
+      "theme_order": 3,
+      "content_frame": "Algoritma Temelli Problemler, Mantık Bağlaçları ve Niceleyiciler Çizge ve diyagramlar, etkin problem çözme araçlarıdır. Şifrelemede veşifre çözmede algoritmalar kullanılır. Mantık bağlaçları ve niceleyiciler, algoritmaların temel ögelerindendir. Matematiksel doğrulama ve ispat süreçleri, algoritmik bir yaklaşımla gerçekleştirilebilir.",
+      "outcome": "Algoritmik yapılar içerisindeki mantık bağlaçlarını ve niceleyicileri çözümleyebilme",
+      "micro": [
+        "Mantık bağlaçları",
+        "Ve-veya-ya da",
+        "İse ve ancak ve ancak",
+        "Niceleyiciler",
+        "Algoritmik yapılarda mantık",
+        "Önerme çözümleme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.9.3.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Algoritma ve Bilişim",
+      "theme_order": 3,
+      "content_frame": "Algoritma Temelli Problemler, Mantık Bağlaçları ve Niceleyiciler Çizge ve diyagramlar, etkin problem çözme araçlarıdır. Şifrelemede veşifre çözmede algoritmalar kullanılır. Mantık bağlaçları ve niceleyiciler, algoritmaların temel ögelerindendir. Matematiksel doğrulama ve ispat süreçleri, algoritmik bir yaklaşımla gerçekleştirilebilir.",
+      "outcome": "Mantık bağlaçları ve niceleyicilerin algoritmalarda kullanımına yönelik edindiği deneyimi farklı matematiksel görev ve problemlere yansıtabilme",
+      "micro": [
+        "Mantıksal dili matematiksel görevlere aktarma",
+        "Doğrulama süreçleri",
+        "İspat süreçleri",
+        "Niceleyicilerin kullanımı",
+        "Matematiksel dilde kesinlik",
+        "Yansıtma ve değerlendirme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.9.6.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "6. Tema: İstatistiksel Araştırma Süreci",
+      "theme_order": 6,
+      "content_frame": "Tek Nicel Deği şken İçeren İstatistiksel Problemi Oluşturma, Verileri Toplama ve Analize Hazır Hâle Getirme, Bulgulara Ulaşma ve Bulguları Yorumlama, İstatistiksel Görsel, Özet, Sonuç, Yorum, Çıkarım veya Tahminleri Değerlendirme Nicel veri dağılımları, verilerdeki değişebilirliğin nasıl olduğuna ilişkin bilgi verir. Nicel verilerin dağılımlarını tanımlamada kullanılacak sayısal özetler, ilgili dağılımın merkezinin nereye eğilim gösterdiğini ve nasıl yayıldığını belirlemede kullanılır. Örneklemin dağılımı, evrenin dağılımına ilişkin fikir verir.",
+      "outcome": "Tek nicel değişkenli veri dağılımları ile çalışabilme ve tek nicel değişken içeren veriye dayalı karar verebilme",
+      "micro": [
+        "İstatistiksel araştırma sorusu",
+        "Evren ve örneklem",
+        "Veri toplama planı",
+        "Veriyi analize hazırlama",
+        "Nokta grafiği",
+        "Histogram",
+        "Kutu grafiği",
+        "Aritmetik ortalama-ortanca-mod",
+        "Açıklık-çeyrekler açıklığı-standart sapma",
+        "Verileri yorumlama ve karar verme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.9.6.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "6. Tema: İstatistiksel Araştırma Süreci",
+      "theme_order": 6,
+      "content_frame": "Tek Nicel Deği şken İçeren İstatistiksel Problemi Oluşturma, Verileri Toplama ve Analize Hazır Hâle Getirme, Bulgulara Ulaşma ve Bulguları Yorumlama, İstatistiksel Görsel, Özet, Sonuç, Yorum, Çıkarım veya Tahminleri Değerlendirme Nicel veri dağılımları, verilerdeki değişebilirliğin nasıl olduğuna ilişkin bilgi verir. Nicel verilerin dağılımlarını tanımlamada kullanılacak sayısal özetler, ilgili dağılımın merkezinin nereye eğilim gösterdiğini ve nasıl yayıldığını belirlemede kullanılır. Örneklemin dağılımı, evrenin dağılımına ilişkin fikir verir.",
+      "outcome": "Başkaları tarafından oluşturulan tek nicel değişkenli veri dağılımlarına ilişkin istatistiksel sonuç veya yorumları tartışabilme",
+      "micro": [
+        "İstatistiksel sonuçları temellendirme",
+        "Grafik ve özetleri değerlendirme",
+        "Hata ve yanlılık tespiti",
+        "Yanıltıcı görselleştirme",
+        "Örneklem-evren çıkarımı",
+        "İddia kabul veya çürütme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.9.7.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "7. Tema: Veriden Olasılığa",
+      "theme_order": 7,
+      "content_frame": "Olayların Olasılığını Deneysel ve Teorik Olarak İnceleme, Olayların Deneysel ve Teorik Olasılığını  İlişkilendirme Deneye ait tekrar sayısı arttıkça elde edilen göreli sıklıkların değişebilirliği azalır. Deneye ait tekrar sayısı arttıkça deneysel olasılık değeri, teorik olasılık değerine yaklaşır.",
+      "outcome": "Olayların olasılığını gözleme dayalı tahmin edebilme",
+      "micro": [
+        "Deney ve örnek uzay",
+        "Göreli sıklık",
+        "Deneysel olasılık",
+        "Deneme sayısının etkisi",
+        "Gözleme dayalı tahmin",
+        "Veri toplama ve görselleştirme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.9.7.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "7. Tema: Veriden Olasılığa",
+      "theme_order": 7,
+      "content_frame": "Olayların Olasılığını Deneysel ve Teorik Olarak İnceleme, Olayların Deneysel ve Teorik Olasılığını  İlişkilendirme Deneye ait tekrar sayısı arttıkça elde edilen göreli sıklıkların değişebilirliği azalır. Deneye ait tekrar sayısı arttıkça deneysel olasılık değeri, teorik olasılık değerine yaklaşır.",
+      "outcome": "Olayların olasılığına ilişkin tümevarımsal akıl yürütebilme",
+      "micro": [
+        "Teorik olasılık",
+        "Sistematik liste",
+        "Tablo ile örnek uzay",
+        "Ağaç şeması",
+        "Birden çok olay",
+        "Deneysel-teorik olasılık ilişkisi",
+        "Tümevarımsal genelleme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.1.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sayılar",
+      "theme_order": 8,
+      "content_frame": "Bir Doğal Sayının Asal Çarpanları, Bölenleri, En Büyük Ortak Bölen, En Küçük Ortak Kat ve Bölünebilme 1'den büyük her doğal sayı, asal sayıların çarpımışeklinde tek türlü yazılır. Bölünebilme kuralları, bölünen çözümlenerek elde edilir.",
+      "outcome": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme",
+      "micro": [
+        "Asal sayılar",
+        "Asal çarpanlara ayırma",
+        "Pozitif bölenler",
+        "Bölen sayısı",
+        "Asal çarpan-bölen ilişkisi",
+        "Önerme ve örnekle sınama",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.1.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sayılar",
+      "theme_order": 8,
+      "content_frame": "Bir Doğal Sayının Asal Çarpanları, Bölenleri, En Büyük Ortak Bölen, En Küçük Ortak Kat ve Bölünebilme 1'den büyük her doğal sayı, asal sayıların çarpımışeklinde tek türlü yazılır. Bölünebilme kuralları, bölünen çözümlenerek elde edilir.",
+      "outcome": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme",
+      "micro": [
+        "Ortak bölenler",
+        "EBOB",
+        "Ortak katlar",
+        "EKOK",
+        "EBOB-EKOK ilişkisi",
+        "Gerçek yaşam problemleri",
+        "Matematiksel doğrulama",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.1.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sayılar",
+      "theme_order": 8,
+      "content_frame": "Bir Doğal Sayının Asal Çarpanları, Bölenleri, En Büyük Ortak Bölen, En Küçük Ortak Kat ve Bölünebilme 1'den büyük her doğal sayı, asal sayıların çarpımışeklinde tek türlü yazılır. Bölünebilme kuralları, bölünen çözümlenerek elde edilir.",
+      "outcome": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme",
+      "micro": [
+        "Bölme algoritması",
+        "2-3-4-5 ile kalan",
+        "6-8-9-10 ile kalan",
+        "Bölünebilme özellikleri",
+        "EKOK ile kalan ilişkisi",
+        "Örüntü ve genelleme",
+        "Doğrulama",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.2.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Nicelikler ve Değişimler",
+      "theme_order": 9,
+      "content_frame": "Gerçek Sayılarda Tanımlı Karesel Fonksiyon, Karekök Fonksiyonu ve Rasyonel Fonksiyonlar, Bu Fonksiyonların Nitel Özellikleri, Tersleri ve Bu Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler Fonksiyonlar, niceliklerin birbirine bağlı değişimlerini temsil eder. Gerçek yaşam durumları, fonksiyonlarla modellenebilir. Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ile eşitsizliklerin incelemesinin ve yorumlanmasının temel araçlarından biridir.",
+      "outcome": "Gerçek sayılarda fonksiyon olmaşartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme",
+      "micro": [
+        "Fonksiyon olma şartları",
+        "Tanım ve görüntü kümesi",
+        "İşaret ve sıfırlar",
+        "Artanlık-azalanlık",
+        "Maksimum-minimum",
+        "Bire birlik ve örtenlik",
+        "Teklik-çiftlik",
+        "Grafik-cebirsel temsil değerlendirme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.2.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Nicelikler ve Değişimler",
+      "theme_order": 9,
+      "content_frame": "Gerçek Sayılarda Tanımlı Karesel Fonksiyon, Karekök Fonksiyonu ve Rasyonel Fonksiyonlar, Bu Fonksiyonların Nitel Özellikleri, Tersleri ve Bu Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler Fonksiyonlar, niceliklerin birbirine bağlı değişimlerini temsil eder. Gerçek yaşam durumları, fonksiyonlarla modellenebilir. Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ile eşitsizliklerin incelemesinin ve yorumlanmasının temel araçlarından biridir.",
+      "outcome": "Gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ± r) ± k (a, r, k ∈ ℝ, a ≠ 0)) karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+      "micro": [
+        "Karesel referans fonksiyon",
+        "Parabol grafiği",
+        "Tepe noktası ve simetri ekseni",
+        "Grafik dönüşümleri",
+        "Tanım-görüntü kümesi",
+        "İşaret ve sıfırlar",
+        "Artanlık-azalanlık",
+        "Doğrulama ve ispat",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.2.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Nicelikler ve Değişimler",
+      "theme_order": 9,
+      "content_frame": "Gerçek Sayılarda Tanımlı Karesel Fonksiyon, Karekök Fonksiyonu ve Rasyonel Fonksiyonlar, Bu Fonksiyonların Nitel Özellikleri, Tersleri ve Bu Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler Fonksiyonlar, niceliklerin birbirine bağlı değişimlerini temsil eder. Gerçek yaşam durumları, fonksiyonlarla modellenebilir. Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ile eşitsizliklerin incelemesinin ve yorumlanmasının temel araçlarından biridir.",
+      "outcome": "Gerçek sayılardaşeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ± r) ± k (a, r, k ∈ ℝ, a ≠ 0)) karekök fonksiyonlarının nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+      "micro": [
+        "Karekök referans fonksiyon",
+        "Tanım ve görüntü kümesi",
+        "Grafik dönüşümleri",
+        "İşaret ve sıfırlar",
+        "Artanlık-azalanlık",
+        "Bire birlik ve terslenebilirlik",
+        "Grafik-cebirsel ilişki",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.2.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Nicelikler ve Değişimler",
+      "theme_order": 9,
+      "content_frame": "Gerçek Sayılarda Tanımlı Karesel Fonksiyon, Karekök Fonksiyonu ve Rasyonel Fonksiyonlar, Bu Fonksiyonların Nitel Özellikleri, Tersleri ve Bu Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler Fonksiyonlar, niceliklerin birbirine bağlı değişimlerini temsil eder. Gerçek yaşam durumları, fonksiyonlarla modellenebilir. Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ile eşitsizliklerin incelemesinin ve yorumlanmasının temel araçlarından biridir.",
+      "outcome": "Gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ± r) ± k (a, r, k ∈ ℝ, a ≠ 0)) rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+      "micro": [
+        "Rasyonel referans fonksiyon",
+        "Tanım ve görüntü kümesi",
+        "Asimptotlar",
+        "Grafik dönüşümleri",
+        "İşaret ve sıfırlar",
+        "Artanlık-azalanlık",
+        "Grafik-cebirsel ilişki",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.2.5",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Nicelikler ve Değişimler",
+      "theme_order": 9,
+      "content_frame": "Gerçek Sayılarda Tanımlı Karesel Fonksiyon, Karekök Fonksiyonu ve Rasyonel Fonksiyonlar, Bu Fonksiyonların Nitel Özellikleri, Tersleri ve Bu Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler Fonksiyonlar, niceliklerin birbirine bağlı değişimlerini temsil eder. Gerçek yaşam durumları, fonksiyonlarla modellenebilir. Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ile eşitsizliklerin incelemesinin ve yorumlanmasının temel araçlarından biridir.",
+      "outcome": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme",
+      "micro": [
+        "Ters fonksiyon kavramı",
+        "Bire birlik koşulu",
+        "Doğrusal fonksiyonun tersi",
+        "Karesel fonksiyonda kısıtlama",
+        "Karekök fonksiyonun tersi",
+        "Rasyonel fonksiyonun tersi",
+        "Grafiklerin y=x doğrusuna göre simetrisi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.2.6",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Nicelikler ve Değişimler",
+      "theme_order": 9,
+      "content_frame": "Gerçek Sayılarda Tanımlı Karesel Fonksiyon, Karekök Fonksiyonu ve Rasyonel Fonksiyonlar, Bu Fonksiyonların Nitel Özellikleri, Tersleri ve Bu Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler Fonksiyonlar, niceliklerin birbirine bağlı değişimlerini temsil eder. Gerçek yaşam durumları, fonksiyonlarla modellenebilir. Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ile eşitsizliklerin incelemesinin ve yorumlanmasının temel araçlarından biridir.",
+      "outcome": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eş itsizlikler içeren problemleri çözebilme",
+      "micro": [
+        "Fonksiyonlarla denklem problemleri",
+        "Fonksiyonlarla eşitsizlik problemleri",
+        "Karesel denklem ve eşitsizlik",
+        "Karekök denklem ve eşitsizlik",
+        "Rasyonel denklem ve eşitsizlik",
+        "Temsil dönüşümü",
+        "Model kurma",
+        "Çözüm doğrulama ve strateji karşılaştırma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.3.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Sayma, Algoritma ve Bilişim",
+      "theme_order": 10,
+      "content_frame": "Sayma Stratejileri, Cebirsel ve Fonksiyonel İş lemlerin Algoritmik Yapısı Sonlu sayıda nesnenin belirli bir durumdaki sayısı ile ilgili problemler, sayma stratejileri kullanılarak çözülebilir. Cebirsel ve fonksiyonel işlemler, algoritmik bir dille temsil edilebilir.",
+      "outcome": "Sayma stratejileri kullanarak problem çözebilme",
+      "micro": [
+        "Toplama yoluyla sayma",
+        "Çarpma yoluyla sayma",
+        "Sıralama sayısı",
+        "Seçme sayısı",
+        "Faktöriyel",
+        "Görsel ve tablo temsili",
+        "Strateji oluşturma",
+        "Strateji karşılaştırma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.3.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Sayma, Algoritma ve Bilişim",
+      "theme_order": 10,
+      "content_frame": "Sayma Stratejileri, Cebirsel ve Fonksiyonel İş lemlerin Algoritmik Yapısı Sonlu sayıda nesnenin belirli bir durumdaki sayısı ile ilgili problemler, sayma stratejileri kullanılarak çözülebilir. Cebirsel ve fonksiyonel işlemler, algoritmik bir dille temsil edilebilir.",
+      "outcome": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme",
+      "micro": [
+        "Cebirsel işlemlerin algoritması",
+        "Fonksiyonel işlemlerin algoritması",
+        "Doğal dil",
+        "Akış şeması",
+        "Sözde kod",
+        "Algoritmik yapılandırma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.6.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "6. Tema: İstatistiksel Araştırma Süreci",
+      "theme_order": 13,
+      "content_frame": "İki Kategorik Deği şkenin İlişkililiğini İçeren İstatistiksel Problemi Oluşturma, Verileri Toplama ve Analize Hazır Hâle Getirme, Bulgulara Ulaşma ve Bulguları Yorumlama, İstatistiksel Görsel, Özet, Sonuç, Yorum, Çıkarım veya Tahminleri Değerlendirme Aynı gözlem birimlerinden elde edilen/toplanan verilerden hareketle oluşturulan iki kategorik değişkenli dağılımlar, verilerin birlikte değişebilirliğindeki eğilimine ilişkin bilgi verir. İki kategorik değişkenin ilişkili olması, bu iki değişken arasında bir neden- sonuç ilişkisi olduğu anlamına gelmez.",
+      "outcome": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme",
+      "micro": [
+        "İki kategorik değişken",
+        "Araştırma sorusu",
+        "Veri toplama planı",
+        "İki yönlü tablo",
+        "Toplam göreli sıklık",
+        "Koşullu göreli sıklık",
+        "Kümeli sütun grafiği",
+        "İlişkililik yorumu",
+        "Neden-sonuç ayrımı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.6.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "6. Tema: İstatistiksel Araştırma Süreci",
+      "theme_order": 13,
+      "content_frame": "İki Kategorik Deği şkenin İlişkililiğini İçeren İstatistiksel Problemi Oluşturma, Verileri Toplama ve Analize Hazır Hâle Getirme, Bulgulara Ulaşma ve Bulguları Yorumlama, İstatistiksel Görsel, Özet, Sonuç, Yorum, Çıkarım veya Tahminleri Değerlendirme Aynı gözlem birimlerinden elde edilen/toplanan verilerden hareketle oluşturulan iki kategorik değişkenli dağılımlar, verilerin birlikte değişebilirliğindeki eğilimine ilişkin bilgi verir. İki kategorik değişkenin ilişkili olması, bu iki değişken arasında bir neden- sonuç ilişkisi olduğu anlamına gelmez.",
+      "outcome": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme",
+      "micro": [
+        "İstatistiksel temellendirme",
+        "İlişkililik yorumunu değerlendirme",
+        "Hata ve yanlılık tespiti",
+        "Koşullu oranların yanlış yorumlanması",
+        "Neden-sonuç yanılgısı",
+        "İddia kabul veya çürütme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.7.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "7. Tema: Veriden Olasılığa",
+      "theme_order": 14,
+      "content_frame": "Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar, Bayes Teoremi Bir olay, başka olaylara bağlı olarak gerçekleşebilir. Bir olayın olasılık değeri, bağımlı olduğu olaylara göre değişebilir.",
+      "outcome": "Koşullu olasılık ile çıkarım yapabilme",
+      "micro": [
+        "Koşullu olasılık",
+        "Bağımlı olaylar",
+        "Bağımsız olaylar",
+        "Ağaç şeması",
+        "Tablo ve alan modeli",
+        "Çarpım kuralı",
+        "Koşula göre örnek uzay",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.10.7.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "7. Tema: Veriden Olasılığa",
+      "theme_order": 14,
+      "content_frame": "Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar, Bayes Teoremi Bir olay, başka olaylara bağlı olarak gerçekleşebilir. Bir olayın olasılık değeri, bağımlı olduğu olaylara göre değişebilir.",
+      "outcome": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme",
+      "micro": [
+        "Bayes teoremi",
+        "Önsel olasılık",
+        "Koşullu bilgi",
+        "Sonsal olasılık",
+        "İki yönlü tablo ile Bayes",
+        "Ağaç şeması ile Bayes",
+        "Veriye dayalı tahmin",
+        "Gerçek yaşam uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.11.1.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Nicelikler ve Değişimler",
+      "theme_order": 15,
+      "content_frame": "Trigonometrik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri ve Bu Fonksiyonlarla İfade Edilebilen Denklemler Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Üstel ve Logaritmik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri, Bu Fonksiyonlardan Elde Edilen Denklem ve Eşitsizlikler Fonksiyonlar nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Fonksiyonlarla Dört İş lem ve Fonksiyonların Bileşkesi Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir.",
+      "outcome": "f(x)=sinx (x ∈ ℝ ), f(x)=cosx (x ∈ ℝ ), f(x)=tanx (x ∈ ℝ, x ≠π /2+k π, k ∈ ℤ ) ve f(x)=cotx (x ∈ ℝ, x ≠ k π, k ∈ ℤ ) şeklinde tanımlı trigonometrik referans fonksiyonların nitel özellikleri ile bu fonksiyonlardan türetilen [g(x) = k∙ f(mx±r)±s (k, m, r, s ∈ ℝ, k ≠ 0, m ≠ 0)] trigonometrik fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+      "micro": [
+        "Birim çember ve yönlü açı",
+        "Radyan-derece dönüşümü",
+        "Sinüs fonksiyonu",
+        "Kosinüs fonksiyonu",
+        "Tanjant ve kotanjant fonksiyonları",
+        "Periyot ve grafik dönüşümleri",
+        "Tanım-görüntü kümesi",
+        "Nitel özellikler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.11.1.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Nicelikler ve Değişimler",
+      "theme_order": 15,
+      "content_frame": "Trigonometrik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri ve Bu Fonksiyonlarla İfade Edilebilen Denklemler Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Üstel ve Logaritmik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri, Bu Fonksiyonlardan Elde Edilen Denklem ve Eşitsizlikler Fonksiyonlar nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Fonksiyonlarla Dört İş lem ve Fonksiyonların Bileşkesi Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir.",
+      "outcome": "Trigonometrik fonksiyonlarla ifade edilebilen denklemleri içeren problemleri çözebilme",
+      "micro": [
+        "Trigonometrik denklemler",
+        "Grafiksel çözüm",
+        "Cebirsel çözüm",
+        "Periyodik çözümler",
+        "Gerçek yaşam modellemesi",
+        "Temsil dönüşümü",
+        "Çözümü farklı yöntemle doğrulama",
+        "Strateji karşılaştırma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.11.1.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Nicelikler ve Değişimler",
+      "theme_order": 15,
+      "content_frame": "Trigonometrik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri ve Bu Fonksiyonlarla İfade Edilebilen Denklemler Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Üstel ve Logaritmik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri, Bu Fonksiyonlardan Elde Edilen Denklem ve Eşitsizlikler Fonksiyonlar nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Fonksiyonlarla Dört İş lem ve Fonksiyonların Bileşkesi Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir.",
+      "outcome": "Gerçek sayılarda f(x) = a ˣ (a>0, a ≠ 1) şeklinde tanımlı üstel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen [g(x)=k ∙ f(mx ± r)±s (k, m, r, s ∈ ℝ, k ≠ 0, m ≠ 0)] üstel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+      "micro": [
+        "Üstel referans fonksiyon",
+        "Üstel fonksiyon grafikleri",
+        "Grafik dönüşümleri",
+        "Artma-azalma",
+        "Tanım ve görüntü kümesi",
+        "Nitel özellikler",
+        "Gerçek yaşam modellemesi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.11.1.4",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Nicelikler ve Değişimler",
+      "theme_order": 15,
+      "content_frame": "Trigonometrik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri ve Bu Fonksiyonlarla İfade Edilebilen Denklemler Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Üstel ve Logaritmik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri, Bu Fonksiyonlardan Elde Edilen Denklem ve Eşitsizlikler Fonksiyonlar nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Fonksiyonlarla Dört İş lem ve Fonksiyonların Bileşkesi Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir.",
+      "outcome": "Üstel fonksiyonların ters fonksiyonlarını inceleyerek logaritmik fonksiyona dair çıkarım yapabilme",
+      "micro": [
+        "Ters fonksiyon ilişkisi",
+        "Üstel-logaritmik dönüşüm",
+        "Logaritma tanımı",
+        "Grafiklerin simetrisi",
+        "Gerçek yaşamda logaritma",
+        "Çıkarım ve genelleme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.11.1.5",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Nicelikler ve Değişimler",
+      "theme_order": 15,
+      "content_frame": "Trigonometrik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri ve Bu Fonksiyonlarla İfade Edilebilen Denklemler Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Üstel ve Logaritmik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri, Bu Fonksiyonlardan Elde Edilen Denklem ve Eşitsizlikler Fonksiyonlar nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Fonksiyonlarla Dört İş lem ve Fonksiyonların Bileşkesi Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir.",
+      "outcome": "f(x)=log ₐ x (a>0, a ≠ 1, x>0 ) şeklinde tanımlı logaritmik referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen [g(x)=k ∙ f(mx±r) ±s (k, m, r, s ∈ ℝ, k ≠ 0, m ≠ 0)] logaritmik fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+      "micro": [
+        "Logaritmik referans fonksiyon",
+        "Logaritma işlem özellikleri",
+        "Grafik dönüşümleri",
+        "Tanım ve görüntü kümesi",
+        "Artma-azalma",
+        "Nitel özellikler",
+        "Doğrulama ve ispat",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.11.1.6",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Nicelikler ve Değişimler",
+      "theme_order": 15,
+      "content_frame": "Trigonometrik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri ve Bu Fonksiyonlarla İfade Edilebilen Denklemler Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Üstel ve Logaritmik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri, Bu Fonksiyonlardan Elde Edilen Denklem ve Eşitsizlikler Fonksiyonlar nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Fonksiyonlarla Dört İş lem ve Fonksiyonların Bileşkesi Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir.",
+      "outcome": "Gerçek yaşam durumlarında üstel ve logaritmik fonksiyonlarla ifade edilen denklem ve eşitsizlikleri içeren problemler çözebilme",
+      "micro": [
+        "Üstel denklem ve eşitsizlik",
+        "Logaritmik denklem ve eşitsizlik",
+        "Gerçek yaşam modellemesi",
+        "Sözel-cebirsel-grafik dönüşüm",
+        "Strateji oluşturma",
+        "Çözümü doğrulama",
+        "Strateji karşılaştırma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.11.1.7",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Nicelikler ve Değişimler",
+      "theme_order": 15,
+      "content_frame": "Trigonometrik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri ve Bu Fonksiyonlarla İfade Edilebilen Denklemler Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Üstel ve Logaritmik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri, Bu Fonksiyonlardan Elde Edilen Denklem ve Eşitsizlikler Fonksiyonlar nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Fonksiyonlarla Dört İş lem ve Fonksiyonların Bileşkesi Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir.",
+      "outcome": "Fonksiyonların bileşkelerine ilişkin muhakeme yapabilme",
+      "micro": [
+        "Bileşke fonksiyon tanımı",
+        "Bileşkenin tanım kümesi",
+        "Cebirsel bileşke",
+        "Grafiksel bileşke",
+        "Bileşkenin nitel özellikleri",
+        "Fonksiyonu bileşenlerine ayırma",
+        "Gerçek yaşamda bileşke",
+        "Doğrulama ve ispat",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.11.1.8",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Nicelikler ve Değişimler",
+      "theme_order": 15,
+      "content_frame": "Trigonometrik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri ve Bu Fonksiyonlarla İfade Edilebilen Denklemler Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Üstel ve Logaritmik Referans Fonksiyonlar, Bu Fonksiyonlardan Türetilen Fonksiyonların Nitel Özellikleri, Bu Fonksiyonlardan Elde Edilen Denklem ve Eşitsizlikler Fonksiyonlar nitel özelliklerine göre sınıflandırılabilir. Referans fonksiyonlar, bir fonksiyon grubunun üretecidir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir. | Fonksiyonlarla Dört İş lem ve Fonksiyonların Bileşkesi Fonksiyonlar, nitel özelliklerine göre sınıflandırılabilir. Fonksiyon grafikleri, cebirsel denklem ve eşitsizlikleri inceleme ve yorumlamanın temel araçlarından biridir.",
+      "outcome": "Fonksiyonlarda dört işlem özelliklerini yorumlayabilme",
+      "micro": [
+        "Fonksiyonlarda toplama",
+        "Fonksiyonlarda çıkarma",
+        "Fonksiyonlarda çarpma",
+        "Fonksiyonlarda bölme",
+        "İşlemlerin tanım kümeleri",
+        "Cebirsel ve grafik temsil",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.11.3.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: İstatistiksel Araştırma Süreci",
+      "theme_order": 17,
+      "content_frame": "İki Nicel Deği şkenin İlişkililiğini İçeren İstatistiksel Problemi Oluşturma, Verileri Toplama ve Analize Hazır Hâle Getirme, Bulgulara Ulaşma ve Bulguları Yorumlama, İstatistiksel Görsel, Özet, Sonuç, Yorum, Çıkarım veya Tahminleri Değerlendirme Aynı gözlem birimlerinden elde edilen/toplanan verilerden hareketle oluşturulan iki nicel değişkenli dağılımlar, verilerin birlikte değişebilirliğindeki eğilimine ilişkin bilgi verir. İki nicel değişken arasındaki ilişkililik, bu iki değişken arasındaki ilişkili olma durumunu ifade eder. İki nicel değişken arasındaki doğrusal ilişkinin yönü ve gücü, sayısal bir değer olan korelasyon katsayısı olarak ifade edilir. İki nicel değişkenin ilişkili olması, bu iki değişken arasında bir neden-sonuç ilişkisi olduğu anlamına gelmez.",
+      "outcome": "İki nicel değişkenli veri ile çalışabilme ve iki nicel değişken arasındaki ilişkililiğe dayalı karar verebilme",
+      "micro": [
+        "İki nicel değişken",
+        "Araştırma sorusu",
+        "Veri toplama planı",
+        "Tablo",
+        "Serpme diyagramı",
+        "Bölgelere göre sayım oranı",
+        "Korelasyon katsayısı",
+        "İlişkinin yönü ve gücü",
+        "Neden-sonuç ayrımı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "MAT.11.3.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: İstatistiksel Araştırma Süreci",
+      "theme_order": 17,
+      "content_frame": "İki Nicel Deği şkenin İlişkililiğini İçeren İstatistiksel Problemi Oluşturma, Verileri Toplama ve Analize Hazır Hâle Getirme, Bulgulara Ulaşma ve Bulguları Yorumlama, İstatistiksel Görsel, Özet, Sonuç, Yorum, Çıkarım veya Tahminleri Değerlendirme Aynı gözlem birimlerinden elde edilen/toplanan verilerden hareketle oluşturulan iki nicel değişkenli dağılımlar, verilerin birlikte değişebilirliğindeki eğilimine ilişkin bilgi verir. İki nicel değişken arasındaki ilişkililik, bu iki değişken arasındaki ilişkili olma durumunu ifade eder. İki nicel değişken arasındaki doğrusal ilişkinin yönü ve gücü, sayısal bir değer olan korelasyon katsayısı olarak ifade edilir. İki nicel değişkenin ilişkili olması, bu iki değişken arasında bir neden-sonuç ilişkisi olduğu anlamına gelmez.",
+      "outcome": "Başkaları tarafından oluşturulan iki nicel değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme",
+      "micro": [
+        "İstatistiksel temellendirme",
+        "Serpme diyagramını değerlendirme",
+        "Korelasyon yorumunu değerlendirme",
+        "Aykırı değer etkisi",
+        "Hata ve yanlılık tespiti",
+        "Korelasyon-nedensellik yanılgısı",
+        "İddia kabul veya çürütme",
+        "GENEL_KARMA"
+      ]
+    }
+  ]
+}

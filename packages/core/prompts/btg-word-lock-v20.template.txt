@@ -1,0 +1,14 @@
+
+
+${MARKER}
+- Bu kilit yalnız ÜRETİM HATTI=BTG olduğunda aktiftir.
+- Kullanıcının seçtiği bilimsel/teknik ortak metin uzunluğu kesin üretim aralığıdır: ${label||"ARAYÜZDE SEÇİLEN ARALIK"}.
+- Yalnız ORTAK ÖĞRETİCİ BAĞLAM METNİ sayılır; soru kökleri, seçenekler, tablo hücreleri, başlıklar, kaynak künyesi, cevap ve denetim satırları sayıma katılmaz.
+- Ortak metnin gerçek sözcük sayısını finalden önce hesapla.
+- Gerçek sözcük sayısı ${min} değerinden az veya ${max} değerinden fazla ise BTG_METİN_UZUNLUĞU=RED ve FINAL_KİLİDİ=KAPALI olur.
+- Alt sınırı tamamlamak için soru kökünü, seçenekleri, tabloyu veya gereksiz tekrarları uzatma; ortak öğretici metni bilimsel neden-sonuç, süreç, uygulama ve problem çekirdeğiyle yeniden üret.
+- Üst bölümdeki STANDART, BT veya kısa bağlam kuralları BTG seçildiğinde bu uzunluk kilidini geçersiz kılamaz. BTG kuralları önceliklidir.
+- En fazla 3 kontrollü yeniden üretim uygula; aralık sağlanmadan soru, PNG, SVG, DOCX, IDML veya INDD çıktısı verme.
+BTG_SEÇİLEN_METİN_ARALIĞI=[${label||"ARAYÜZDE SEÇİLEN ARALIK"}]
+BTG_GERÇEK_SÖZCÜK_SAYISI=[SAYI]
+BTG_METİN_UZUNLUĞU=[PASS / RED]

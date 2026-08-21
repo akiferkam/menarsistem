@@ -1,0 +1,730 @@
+
+
+MENAR/MAYS V21 ORTAK ZORUNLU ÜRETİM KİLİTLERİ
+/KAZANIM_TAMLIK_KİLİDİ/ /ALT_KONU_MİKRO_TAMLIK_KİLİDİ/
+/İNDD_GERÇEK_PAKET_KİLİDİ/ /ARIAL_8_5_PT_KİLİDİ/ /MATEMATİKSEL_DİZGİ_KİLİDİ/
+/GÖRSEL_3D_ÖNCELİK/ /MEB_2D_UYGUNLUK_KİLİDİ/ /GÖRSEL_İŞLEVSELLİĞİ/
+/ÇÖZÜM_DNA/ /SOLVER_A/ /SOLVER_B/ /TEK_DOĞRU/ /IQ_AUDIT/ /FINAL_KİLİDİ/
+
+1. KAZANIM–ALT KONU TAMLIK KİLİDİ
+- Sınıf → tema/ünite → bölüm → resmî kazanım/kod → konu → mikro alt başlık zinciri boş bırakılamaz.
+- Seçili kazanımın bütün işlevsel alt konuları/mikroları listede bulunmalıdır; yalnız “GENEL_KARMA” ile geçiştirilemez.
+- Kazanım metni, kodu ve mikro alt başlık birbirini doğrulamalıdır. Uyuşmazlıkta üretim RED olur.
+- Veritabanında kazanım veya mikro eksikse soru uydurulmaz; “MÜFREDAT VERİSİ EKSİK — FINAL KAPALI” yazılır.
+- Eski müfredat veya sınıf dışı kazanım kullanılamaz. Kullanıcı tarafından yüklenmiş MEB/TYMM kaynağı varsa onun sıra ve terminolojisi korunur.
+
+2. GERÇEK INDD PAKET KİLİDİ
+- “INDD_PAKET / İNDD_PAKET / SORUYU İNDD PAKET VER” komutu mockup, kolaj veya tek önizleme görseli değildir; gerçek indirilebilir paket dosyaları üretilecektir.
+- Paket en az: 01_Soru.docx, 02_Soru.txt, 03_Bağlam_Sahnesi.png (varsa), 04_Teknik_Cizim.svg (varsa), 05_Veri_Manifesti.txt, 06_Cevap.txt, 07_Denetim.txt, 08_Referans_Tam_Soru.png.
+- Matematik/teknik içeriğe göre ayrıca Tablo.svg, Grafik.svg, Şema.svg ayrı ve düzenlenebilir verilir.
+- DOCX içinde paragraf ve karakter stilleri gerçekten tanımlanır; yalnız düz metin dosyasının uzantısı değiştirilmez.
+- Soru gövdesi ve seçenekler Arial 8,5 pt; başlık 10 pt. Satır aralığı, sekme, manuel satır sonu ve seçenek hizası InDesign 2020’de bozulmayacak şekilde kurulur.
+- Üs, kök, kesir, indis, kimyasal formül ve özel semboller okunaklı Unicode/denklem nesnesiyle verilir; font bulunmazsa bozuk özel glif kullanılmaz.
+
+3. GÖRSEL ÜRETİM KİLİDİ
+- Gerçek yaşam sahnesi, nesne, cihaz, laboratuvar, coğrafi ortam, tarihî ortam veya biyolojik model için öncelik: ders kitabı estetiğinde temiz, gerçekçi 3D görselleştirme.
+- MEB ders kitabı anlatımı için şema, harita, grafik, geometrik çizim, kuvvet diyagramı, devre, hücre kesiti, molekül gösterimi gibi 2D teknik görsel daha uygunsa 2D kullanılır.
+- 3D yalnız süs amacıyla kullanılamaz. Çözüm için teknik doğruluk gerekiyorsa deterministik SVG/2D teknik çizim 3D’nin önüne geçer.
+- Görselde yazı, sayı, birim, eksen, ölçek ve etiketler hatasız ve okunaklıdır. Metindeki veri görselde tekrar edilmez.
+- Görsel soru çözümünde işlevsizse kaldırılır. 2D/3D kararı gerekçesi veri manifestine bir cümleyle yazılır.
+- Öğrenci PNG’si beyaz zeminli, kitap sayfası görünümünde; 85 mm veya 185 mm genişliktedir. Taşmada punto küçültülmez; 85 mm’de yükseklik artırılır veya 185 mm’ye geçilir.
+
+4. IQ GERÇEK MUHAKEME KİLİDİ
+- IQ, metin uzunluğu, işlem sayısı, büyük sayılar, çok veri veya görsel kalabalığıyla yükseltilemez.
+- Hedef IQ üretimden önce çözüm DNA’sında planlanır; üretimden sonra bağımsız biçimde yeniden hesaplanır.
+- Gerçek seviye hedefle uyuşmazsa etiket korunmaz: soru gerçek seviyeye indirilir veya çözüm DNA’sı korunarak yeniden tasarlanır.
+- Her soru için mekanik olmayan kararlar açıkça sayılır. Aynı kuralın tekrarı tek muhakeme kabul edilir.
+- IQ_AUDIT PASS olmadan final, PNG veya INDD paket verilmez.
+
+5. SIFIR GÜVEN PREFLIGHT
+- Kazanım, mikro, veri manifesti, bağlam, görsel, çözüm, tüm seçenekler ve cevap iki bağımsız solver ile kontrol edilir.
+- Birden fazla doğru, eksik doğru, savunulabilir ikinci seçenek, veri-görsel çelişkisi, okunmayan dizgi veya hedef IQ uyumsuzluğu RED’dir.
+- PASS ifadeleri yalnız gerçek denetim tamamlandıktan sonra yazılır. Ön inceleme görseline “FINAL/PASS” damgası konmaz.
+
+
+MATEMATİK İÇİN TEK IQ KALİBRASYON KAYNAĞI:
+MAYS — MATEMATİK IQ50–IQ350
+BİRLEŞTİRİLMİŞ ZORLUK KALİBRASYON MASTER METNİ
+
+/TEK ÖLÇÜM MANTIĞI/
+/GERÇEK MUHAKEME/
+/İŞLEM UZUNLUĞUYLA IQ ŞİŞİRME YASAĞI/
+/KAZANIM KİLİDİ/
+/ÇÖZÜM DNA KİLİDİ/
+/TEK DOĞRU/
+/IQ AUDIT/
+/FINAL KİLİDİ/
+
+AMAÇ
+
+Bu metin, MAYS matematik soru üretiminde IQ50–IQ350 düzeylerini tek ve tutarlı bir sistemle belirlemek için hazırlanmıştır.
+
+IQ düzeyi; soru metninin uzunluğuna, işlem sayısına, büyük sayılara, kalabalık tabloya, fazla değişkene veya zor görünen sembollere göre belirlenmez.
+
+Ana ölçüt, öğrencinin çözüm sırasında vermek zorunda olduğu gerçek ve bağımsız matematiksel kararlardır.
+
+Bir işlem ancak aşağıdaki işlevlerden en az birini taşıyorsa muhakeme adımı kabul edilir:
+
+– yeni bir ilişki kurma,
+– uygun temsil seçme,
+– strateji veya yöntem seçme,
+– gerekli veriyi ayırma,
+– koşul eleme,
+– model kurma,
+– model değiştirme,
+– sonucu yorumlama,
+– geçerlilik alanını denetleme,
+– sınır durum inceleme,
+– bağımsız doğrulama,
+– genelleme yapma.
+
+Aynı kuralın art arda uygulanması, uzun cebirsel sadeleştirme, tekrar eden hesaplama, tablodaki her satırı ayrı ayrı hesaplama veya yalnızca sayıların büyütülmesi bağımsız muhakeme adımı değildir.
+
+
+1. EVRENSEL MATEMATİK IQ İLKELERİ
+
+1.1. TEK FİKİR KURALI
+
+Tek denklem, tek matematiksel fikir ve tek çözüm yöntemi içeren soru, işlem uzunluğu ne olursa olsun IQ50 düzeyindedir.
+
+Aynı özelliğin tekrar tekrar uygulanması IQ düzeyini yükseltmez.
+
+1.2. IQ100 BAŞLANGIÇ KURALI
+
+IQ100 düzeyi, öğrencinin en az bir gerçek yorum, ilişki veya yöntem seçimi yapmasıyla başlar.
+
+Yalnızca formülde yerine koyma, işlem sırasını uygulama veya ezberlenen kalıbı sürdürme IQ100 için yeterli değildir.
+
+1.3. İŞLEM SAYISI KURALI
+
+İşlem adımı sayısı yardımcı göstergedir; tek başına belirleyici değildir.
+
+Beş mekanik işlem, bir muhakeme adımı sayılabilir.
+
+İki kısa fakat bağımsız stratejik karar, uzun bir mekanik çözümden daha yüksek IQ oluşturabilir.
+
+1.4. KAVRAM SAYISI KURALI
+
+Soruda geçen kavram sayısı değil, çözümde zorunlu kullanılan kavram sayısı dikkate alınır.
+
+Bir kavram kaldırıldığında çözüm yöntemi değişmiyorsa bu kavram IQ hesabına katılamaz.
+
+1.5. VERİ YÜKÜ KURALI
+
+Soruda bulunan her veri gerçek işleve sahip olmalıdır.
+
+Gereksiz veri yalnızca öğrencinin gerekli veriyi ayırmasını ölçüyorsa kullanılabilir.
+
+Kalabalık veri, uzun tablo veya çok sayıda değişken yapay zorluk oluşturmak amacıyla kullanılamaz.
+
+1.6. BAĞLAM KURALI
+
+Bağlam, matematiksel modelin kurulmasını veya yorumlanmasını etkilemelidir.
+
+Bağlam kaldırıldığında soru aynı işlemle çözülebiliyorsa bağlam IQ artışı sağlamaz.
+
+1.7. GÖRSEL KURALI
+
+Görsel yalnızca çözüm için gerekli olduğunda kullanılır.
+
+Grafik, tablo veya şekil üzerindeki bilgi metinde tekrar edilmez.
+
+Bir görselin varlığı tek başına IQ düzeyini yükseltmez.
+
+1.8. ÇOKLU TEMA KURALI
+
+IQ300–350 düzeyinde en az iki farklı tema veya konu çözüm DNA’sında zorunlu olarak birleşmelidir.
+
+İkinci tema dekoratif olamaz.
+
+İkinci tema çıkarıldığında çözüm yöntemi, strateji kararı veya sonuç değişmiyorsa gerçek tema birleşimi oluşmamıştır.
+
+1.9. PSİKOMETRİK DEĞERLER KURALI
+
+Madde güçlüğü p ve ayırt edicilik rpb değerleri, gerçek öğrenci uygulaması olmadan doğrulanmış sonuç olarak yazılamaz.
+
+Bu değerler üretim aşamasında yalnızca hedef aralık olarak kullanılır.
+
+
+2. MATEMATİK IQ BANTLARI
+
+2.1. IQ50–100
+TEMEL UYGULAMA VE İLK İLİŞKİ
+
+Bilişsel düzey:
+Hatırlama → Uygulama
+
+Temel yapı:
+Tek matematiksel fikir ve tek ana çözüm yöntemi.
+
+Muhakeme yapısı:
+– Doğrudan kural veya özellik uygulaması,
+– kısa işlem zinciri,
+– en fazla bir basit ilişkiyi fark etme,
+– yöntem seçimi gerektirmeyen çözüm.
+
+Kavram yapısı:
+– Tek mikro başlık,
+– bir veya iki temel özellik aynı ana fikir içinde kullanılabilir,
+– ikinci özellik yeni bir strateji doğurmuyorsa soru bu bantta kalır.
+
+İşlem yapısı:
+– Genellikle 1–2 anlamlı işlem,
+– daha uzun mekanik hesaplama IQ düzeyini yükseltmez.
+
+Bağlam:
+– Yok veya minimal,
+– kısa günlük örnek kullanılabilir,
+– bağlam model kurmayı gerektirmez.
+
+Görsel:
+– Zorunlu değildir,
+– kullanılırsa doğrudan veri okuma düzeyindedir.
+
+Çeldirici:
+– işlem sırası hatası,
+– işaret hatası,
+– temel kural karıştırma,
+– doğrudan hesaplama hatası.
+
+PASS koşulu:
+Öğrenci, bilinen tek yöntemi doğru uygular.
+
+RED / üst banda geçme koşulu:
+Öğrenci gerçek bir yorum, ilişki veya yöntem kararı vermek zorundaysa soru IQ100 ve üzerindedir.
+
+
+2.2. IQ100–150
+GERÇEK YORUM VE İLİŞKİ KURMA
+
+Bilişsel düzey:
+Uygulama
+
+Temel yapı:
+En az bir gerçek yorum, ilişki veya yöntem kararı.
+
+Muhakeme yapısı:
+– veriler arasındaki ilişkiyi fark etme,
+– uygun kuralı verilenler arasından seçme,
+– basit temsil dönüşümü,
+– tek bir koşulu dikkate alma,
+– doğrudan görünmeyen ara değeri belirleme.
+
+Kavram yapısı:
+– aynı konu veya mikro başlık içinde iki ilişkili özellik,
+– kavramlar çözümde birlikte çalışmalıdır.
+
+İşlem yapısı:
+– Genellikle 2–3 anlamlı aşama,
+– en az bir aşama mekanik değil karar niteliğindedir.
+
+Bağlam:
+– kısa ve işlevsel günlük hayat bağlamı,
+– gereksiz veri bulunmaz.
+
+Görsel:
+– basit tablo veya tek grafik olabilir,
+– görselden bir ilişki çıkarılır.
+
+Çeldirici:
+– yanlış kural seçimi,
+– temsil dönüşümü hatası,
+– yakın formül veya özellik karıştırma,
+– verilerden birini göz ardı etme.
+
+PASS koşulu:
+En az bir gerçek matematiksel yorum veya seçim vardır.
+
+RED koşulu:
+Soru yalnızca formülde yerine koyma ve mekanik hesaplamadan oluşuyorsa IQ50’ye düşürülür.
+
+
+2.3. IQ150–200
+ÇOKLU İLİŞKİ VE TEMSİL GEÇİŞİ
+
+Bilişsel düzey:
+Uygulama → Analiz
+
+Temel yapı:
+Aynı konu içinde birden fazla ilişkiyi birleştirme.
+
+Muhakeme yapısı:
+– iki veya daha fazla ilişkiyi ardışık kullanma,
+– tablo, grafik, cebirsel ifade veya sözel anlatım arasında geçiş,
+– bir ara sonucun sonraki adıma girdi olması,
+– verilen koşullardan birini eleme veya sınırlama.
+
+Kavram yapısı:
+– aynı konunun farklı alt başlıklarından iki veya üç işlevsel özellik,
+– kavramların her biri çözüm için zorunludur.
+
+İşlem yapısı:
+– Genellikle 3–4 anlamlı aşama,
+– en az iki bağımsız muhakeme kararı.
+
+Bağlam:
+– gerçekçi ve kısa senaryo,
+– bir veri yalnızca gerekli veriyi ayırma becerisini ölçmek amacıyla gereksiz olabilir.
+
+Görsel:
+– basit grafik veya tablo okuma,
+– görsel ile metin birbirini tekrar etmez.
+
+Çeldirici:
+– kısmen doğru fakat eksik ilişki,
+– temsil geçişi hatası,
+– işlem önceliği veya işaret hatasının yanında kavramsal hata,
+– ara sonucu yanlış yorumlama.
+
+PASS koşulu:
+Çözüm, en az iki bağımsız ilişki veya temsil kararı gerektirir.
+
+RED koşulu:
+Tüm aşamalar aynı kuralın mekanik tekrarıysa IQ150–200 kabul edilmez.
+
+
+2.4. IQ200–250
+STRATEJİ SEÇİMİ VE KOŞUL ELEME
+
+Bilişsel düzey:
+Analiz
+
+Temel yapı:
+Öğrencinin çözüm yolunu bağımsız seçmesi ve koşulları değerlendirmesi.
+
+Muhakeme yapısı:
+– en az iki olası çözüm yolundan uygun olanı seçme,
+– gerekli ve gereksiz veriyi ayırma,
+– koşul veya durum eleme,
+– çoklu temsil kullanma,
+– cebirsel model kurma,
+– ara sonucu bağlam içinde yorumlama.
+
+Kavram yapısı:
+– iki veya üç kavram,
+– aynı tema içinden veya kazanımla doğal bağı bulunan farklı konulardan gelebilir,
+– ikinci konu çözüm DNA’sında zorunlu olmalıdır.
+
+İşlem yapısı:
+– çok aşamalı çözüm,
+– işlem sayısından çok en az üç bağımsız muhakeme kararı aranır.
+
+Bağlam:
+– işlevsel bağlam,
+– bir veya iki çeldirici veri kullanılabilir,
+– öğrenci verinin rolünü değerlendirmelidir.
+
+Görsel:
+– grafik, tablo veya fonksiyon temsili üzerinden veri çıkarma,
+– görsel çözüm için zorunlu olabilir.
+
+Çeldirici:
+– yanlış strateji seçimi,
+– koşulu eksik kullanma,
+– geçerli görünen fakat bağlama uymayan sonuç,
+– kavram yanılgısı ile işlem hatasının birleşimi.
+
+PASS koşulu:
+Öğrenci en az bir strateji seçimi ve bir koşul eleme kararı verir.
+
+RED koşulu:
+Çözüm yolu açıkça verilmişse veya öğrenci yalnızca uzun işlem yapıyorsa IQ200–250 kabul edilmez.
+
+
+2.5. IQ250–300
+RUTİN DIŞI MODELLEME VE BAĞIMSIZ DOĞRULAMA
+
+Bilişsel düzey:
+Analiz → Sentez
+
+Temel yapı:
+Standart kalıbın doğrudan uygulanamadığı, öğrencinin modeli oluşturduğu veya dönüştürdüğü soru.
+
+Muhakeme yapısı:
+– rutin dışı çözüm planı kurma,
+– uygun değişkenleri tanımlama,
+– çoklu temsil arasında dönüşüm,
+– birden fazla ara sonucu ilişkilendirme,
+– modelin sonucunu bağımsız bir yöntemle doğrulama,
+– alternatif çözüm yolunun neden uygun olmadığını belirleme.
+
+Kavram yapısı:
+– aynı tema içinde birden fazla alt başlık,
+– en az üç işlevsel matematiksel yapı,
+– her yapı çözüm yöntemini etkiler.
+
+İşlem yapısı:
+– Genellikle 4 veya daha fazla anlamlı aşama,
+– en az dört bağımsız muhakeme kararı,
+– mekanik tekrarlar sayıma katılmaz.
+
+Bağlam:
+– yoğun olabilir ancak gereksiz ayrıntı içermez,
+– bağlam matematiksel modelin kurulmasını zorunlu kılar.
+
+Görsel:
+– grafik ve tablo birlikte kullanılabilir,
+– her temsil farklı bilgi taşır,
+– en az bir temsil dönüşümü gerekir.
+
+Çeldirici:
+– her seçenek farklı bir stratejik veya kavramsal hatayı temsil eder,
+– doğru başlayan fakat yanlış modelle devam eden çözüm,
+– ara sonucu nihai sonuç sanma,
+– model koşulunu göz ardı etme.
+
+PASS koşulu:
+Rutin dışı modelleme ve bağımsız doğrulama birlikte bulunur.
+
+RED koşulu:
+Soru standart bir test kalıbıyla veya tek bilinen algoritmayla çözülebiliyorsa IQ250–300 değildir.
+
+
+2.6. IQ300–350
+ÇOKLU TEMA, ELEŞTİREL DEĞERLENDİRME VE SINIR DURUM
+
+Bilişsel düzey:
+Değerlendirme
+
+PISA/TIMSS bilişsel beceri:
+Eleştirel yargılama, matematiksel modelleme ve temalar arası transfer.
+
+Temel yapı:
+En az iki farklı tema veya konu çözüm DNA’sında zorunlu biçimde birleşir.
+
+Muhakeme yapısı:
+– çoklu tema arasında köprü kurma,
+– en az iki gerçek strateji kararı,
+– model oluşturma veya model seçme,
+– modelin geçerliliğini sorgulama,
+– sınır veya uç durum inceleme,
+– alternatif çözüm yollarını karşılaştırma,
+– sonucu bağımsız olarak doğrulama,
+– özel durumdan genel duruma veya genel durumdan özel duruma geçme.
+
+Kavram yapısı:
+– en az üç işlevsel matematiksel kavram veya yapı,
+– en az iki farklı tema veya konu,
+– kavramlardan biri kaldırıldığında çözüm DNA’sı değişmelidir.
+
+İşlem yapısı:
+– Genellikle 5 veya daha fazla anlamlı aşama,
+– 7+ veri veya koşul bulunabilir,
+– bütün veriler çözümde gerçek işleve sahip olmalıdır,
+– mekanik işlem tekrarları muhakeme adımı sayılmaz.
+
+Bağlam:
+– senaryolu veya zincir yapıda olabilir,
+– önceki aşamanın sonucu sonraki aşamanın girdisi olabilir,
+– bağlam model seçimini ve sonuç yorumunu etkiler.
+
+Görsel:
+– karmaşık grafik, tablo veya çoklu veri seti kullanılabilir,
+– her görsel ayrı ve zorunlu bilgi taşımalıdır,
+– görsel kalabalık oluşturmak için kullanılamaz.
+
+Zorunlu üst düzey yapılardan en az biri:
+– sınır durum analizi,
+– modelin geçersiz olduğu koşulu belirleme,
+– parametre değişiminin sonucu nasıl etkilediğini değerlendirme,
+– alternatif stratejileri karşılaştırma,
+– genelleme yapma,
+– bağımsız ikinci doğrulama.
+
+Çeldirici:
+– sınır koşulunu göz ardı etme,
+– özel durumu genel durum sanma,
+– gerekli ve yeterli koşulu karıştırma,
+– doğru başlayan fakat geçersiz hâle gelen çözümü sürdürme,
+– matematiksel olarak mümkün sonucu bağlamda mümkün sanma,
+– doğru cevaba yakın fakat kavramsal olarak yanlış sonuç.
+
+PASS koşulları:
+1. En az iki tema çözüm için zorunludur.
+2. En az üç kavram gerçek işlev taşır.
+3. En az iki bağımsız strateji kararı vardır.
+4. Son aşama değerlendirme düzeyindedir.
+5. Sınır durum, geçerlilik alanı, genelleme veya bağımsız doğrulamadan en az biri vardır.
+6. Çeldiriciler kavramsal yanlışlara dayanır.
+7. Doğru cevap tüm geçerli çözüm yolları altında tektir.
+
+RED koşulları:
+– yalnızca uzun işlem varsa,
+– aynı kural tekrar ediliyorsa,
+– tek denklem ve tek yöntem varsa,
+– ikinci tema dekoratifse,
+– zorluk büyük sayılardan kaynaklanıyorsa,
+– veri veya görsel kalabalığı yapay biçimde artırılmışsa,
+– gerçek strateji seçimi yoksa,
+– sınır durum ana çözümden bağımsız eklenmişse,
+– standart bir şablon doğrudan uygulanabiliyorsa.
+
+
+3. BANTLAR ARASI AYIRICI SINIRLAR
+
+IQ50’den IQ100’e geçiş:
+İlk gerçek yorum, ilişki veya yöntem kararı.
+
+IQ100’den IQ150’ye geçiş:
+Birden fazla bağımsız ilişki veya temsil geçişi.
+
+IQ150’den IQ200’e geçiş:
+Strateji seçimi ve koşul eleme.
+
+IQ200’den IQ250’ye geçiş:
+Rutin dışı model kurma ve bağımsız doğrulama.
+
+IQ250’den IQ300’e geçiş:
+En az iki temanın çözüm DNA’sında birleşmesi ve modelin geçerliliğinin değerlendirilmesi.
+
+IQ300–350 bandının üst sınırı:
+Sınır durum, genelleme, alternatif strateji karşılaştırması ve eleştirel model değerlendirmesinin birlikte yoğunlaşması.
+
+
+4. HEDEF PSİKOMETRİK GÖSTERGELER
+
+Bu değerler yalnızca ön hedef olarak kullanılır:
+
+IQ50–100
+Tahmini süre: 30–60 saniye
+Hedef p: 0,70 ve üzeri
+Hedef rpb: 0,20–0,35
+
+IQ100–150
+Tahmini süre: 45–90 saniye
+Hedef p: 0,55–0,75
+Hedef rpb: 0,30–0,45
+
+IQ150–200
+Tahmini süre: 75–120 saniye
+Hedef p: 0,40–0,60
+Hedef rpb: 0,40–0,55
+
+IQ200–250
+Tahmini süre: 105–150 saniye
+Hedef p: 0,25–0,45
+Hedef rpb: 0,50–0,60
+
+IQ250–300
+Tahmini süre: 135–195 saniye
+Hedef p: 0,15–0,30
+Hedef rpb: 0,55–0,65
+
+IQ300–350
+Tahmini süre: 180–240+ saniye
+Hedef p: 0,15’in altı
+Hedef rpb: 0,65 ve üzeri
+
+NOT:
+Süre, p ve rpb değerleri soru üretiminden sonra kesinleşmiş kabul edilemez. Gerçek değerler ancak öğrenci uygulaması ve madde analiziyle belirlenir.
+
+
+5. IQ AUDIT PUANLAMA FORMÜLÜYLE UYUM
+
+Kurumsal puanlama:
+
+TOPLAM IQ PUANI =
+(A × 40) + (B × 15) + (C × 20) + (D × 25) + (E × 15) + (F × 30)
+
+A:
+Bağımsız muhakeme adımı.
+
+B:
+Farklı temsil sayısı eksi 1.
+
+C:
+Zorunlu veri veya koşul eleme kararı.
+
+D:
+Strateji veya yöntem seçimi.
+
+E:
+Bağımsız doğrulama.
+
+F:
+Sınır durum, genelleme veya strateji değişimi.
+
+PUANLAMA KURALI:
+
+– Mekanik işlem A olarak sayılmaz.
+– Aynı temsilin tekrar kullanılması B puanını artırmaz.
+– Gereksiz veri, öğrenci tarafından anlamlı biçimde elenmiyorsa C puanı oluşturmaz.
+– Çözüm yolu soru tarafından açıkça dayatılmışsa D puanı verilmez.
+– Aynı işlemi tekrar yapmak E doğrulaması değildir.
+– Ana çözüme etkisi olmayan sonradan eklenmiş sınır kontrolü F puanı oluşturmaz.
+
+
+6. OTOMATİK SINIFLANDIRMA KARAR AĞACI
+
+1. Soru tek denklem, tek fikir ve tek yöntem mi?
+Evet → IQ50.
+
+2. En az bir gerçek yorum veya ilişki kararı var mı?
+Hayır → IQ50.
+Evet → En az IQ100.
+
+3. Birden fazla bağımsız ilişki veya temsil geçişi var mı?
+Evet → En az IQ150.
+
+4. Öğrenci strateji seçiyor ve koşul eliyor mu?
+Evet → En az IQ200.
+
+5. Soru rutin dışı model kurma ve bağımsız doğrulama gerektiriyor mu?
+Evet → En az IQ250.
+
+6. En az iki tema çözüm DNA’sında zorunlu mu?
+Hayır → IQ300 verilemez.
+Evet → IQ300 adayı.
+
+7. Model geçerliliği, sınır durum, genelleme veya alternatif strateji değerlendirmesi var mı?
+Hayır → En fazla IQ250–300.
+Evet → IQ300–350.
+
+
+7. ÇELDİRİCİ KALİBRASYONU
+
+IQ50–100:
+Basit işlem veya kural hatası.
+
+IQ100–150:
+Yanlış ilişki veya uygun olmayan kural seçimi.
+
+IQ150–200:
+Kısmen doğru ilişki, eksik koşul veya yanlış temsil dönüşümü.
+
+IQ200–250:
+Yanlış strateji, veri rolünü yanlış değerlendirme veya bağlama uymayan sonuç.
+
+IQ250–300:
+Sistematik modelleme hatası, yanlış ara sonuç kullanımı veya geçerlilik koşulunu atlama.
+
+IQ300–350:
+Sınır durum mantık çelişkisi, özel-genel karışıklığı, gerekli-yeterli koşul yanılgısı veya ilk bakışta makul görünen fakat geçersiz alternatif çözüm.
+
+
+8. TEK DOĞRU VE FINAL KİLİDİ
+
+Her seçenek bağımsız çözülür.
+
+Aşağıdaki durumlardan biri varsa soru RED olur:
+
+– birden fazla doğru seçenek,
+– doğru seçeneğin bulunmaması,
+– iki seçeneğin farklı geçerli yorumlarla savunulabilmesi,
+– eksik koşul,
+– bağlam ve matematiksel model çelişkisi,
+– çeldiricinin alternatif geçerli çözüm oluşturması,
+– hedef IQ’nun gerçek muhakeme yapısıyla doğrulanamaması.
+
+Final soru ancak aşağıdaki kontroller PASS olduğunda yayımlanır:
+
+/KAZANIM_KİLİDİ/ PASS
+/ÇÖZÜM_DNA/ PASS
+/SOLVER/ PASS
+/TEK_DOĞRU/ PASS
+/IQ_AUDIT/ PASS
+/GÖRSEL_İŞLEVSELLİĞİ/ PASS veya GÖRSEL GEREKSİZ
+/VERİ_MANİFESTİ/ PASS
+/YAYINKURULU/ PASS
+/FINAL_KİLİDİ/ PASS
+
+
+9. HTML ENTEGRASYON TALİMATI
+
+Bu metin, Matematik HTML’lerinde tek IQ kalibrasyon kaynağı olarak kullanılmalıdır.
+
+Eski ve çelişen aşağıdaki hükümler kaldırılmalıdır:
+
+– “İşlem adımı arttıkça IQ otomatik yükselir.”
+– “IQ50–100’de mutlaka iki kural bulunmalıdır.”
+– “Çok veri her zaman daha yüksek IQ oluşturur.”
+– “Uzun bağlam yüksek IQ göstergesidir.”
+– “Grafik ve tablo birlikteyse soru otomatik IQ250 üzeridir.”
+– “Üç kavram kullanılan her soru yüksek IQ’dur.”
+– “İkinci konu adı geçiyorsa çoklu tema oluşmuştur.”
+
+Sistem, hedef IQ’yu üretim öncesinde planlamalı; üretim sonrasında aynı ölçütlerle yeniden hesaplamalıdır.
+
+Hedeflenen bant ile gerçek IQ audit sonucu uyuşmazsa hedef etiket korunmamalı; soru gerçek düzeyine indirilmeli veya çözüm DNA’sı bozulmadan yeniden tasarlanmalıdır.
+
+
+10. HTML İÇİN KISA MAKİNE KURALI
+
+IQ50:
+Tek fikir + tek yöntem.
+
+IQ100:
+En az bir gerçek yorum veya ilişki kararı.
+
+IQ150:
+En az iki bağımsız ilişki veya temsil geçişi.
+
+IQ200:
+Strateji seçimi + koşul eleme.
+
+IQ250:
+Rutin dışı modelleme + bağımsız doğrulama.
+
+IQ300:
+En az iki zorunlu tema + en az iki stratejik karar.
+
+IQ350:
+IQ300 yapısına ek olarak model geçerliliği + sınır durum/genelleme + alternatif strateji değerlendirmesi.
+
+
+11. MAYS JSON ENTEGRASYON ŞEMASI
+
+{
+  "ders": "Matematik",
+  "iq_olcum_ilkesi": "gercek_muhakeme_karari",
+  "mekanik_islem_iq_artirmaz": true,
+  "tek_fikir_tek_yontem": "IQ50",
+  "bantlar": {
+    "IQ50-100": {
+      "bloom": "Hatirlama-Uygulama",
+      "min_bagimsiz_muhakeme": 0,
+      "max_bagimsiz_muhakeme": 1,
+      "strateji_secimi": false,
+      "coklu_tema": false
+    },
+    "IQ100-150": {
+      "bloom": "Uygulama",
+      "min_bagimsiz_muhakeme": 1,
+      "gercek_yorum_veya_iliski": true,
+      "coklu_tema": false
+    },
+    "IQ150-200": {
+      "bloom": "Uygulama-Analiz",
+      "min_bagimsiz_muhakeme": 2,
+      "temsil_gecisi": true,
+      "coklu_tema": false
+    },
+    "IQ200-250": {
+      "bloom": "Analiz",
+      "strateji_secimi": true,
+      "kosul_eleme": true,
+      "coklu_tema": false
+    },
+    "IQ250-300": {
+      "bloom": "Analiz-Sentez",
+      "rutin_disi_modelleme": true,
+      "bagimsiz_dogrulama": true,
+      "coklu_tema_zorunlu": false
+    },
+    "IQ300-350": {
+      "bloom": "Degerlendirme",
+      "min_kavram_sayisi": 3,
+      "min_tema_sayisi": 2,
+      "coklu_tema_zorunlu": true,
+      "min_strateji_karari": 2,
+      "model_gecerlilik_denemi": true,
+      "sinir_durum_veya_genelleme": true,
+      "mekanik_adimlar_sayilmaz": true
+    }
+  },
+  "psikometrik_degerler": {
+    "durum": "hedef_deger",
+    "gercek_veri_olmadan_kesinlestirme": false
+  },
+  "final_kurali": "IQ_AUDIT_PASS_OLMADAN_FINAL_YOK"
+}

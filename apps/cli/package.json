@@ -1,0 +1,22 @@
+{
+  "name": "@menar/cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "mays": "./bin/mays.ts"
+  },
+  "scripts": {
+    "start": "tsx bin/mays.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@menar/core": "workspace:*",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3"
+  }
+}

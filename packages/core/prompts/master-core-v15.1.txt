@@ -1,0 +1,960 @@
+MENAR YAYINCILIK
+/MAYS MATEMATİK V15.1 • FINAL • GÖRSEL ÖNCE • BİLGİ TEKRARSIZ • TEK TİP PNG • TYMM/INDD UYUMLU • GERÇEK DENETİM/
+
+DEĞİŞİKLİK NOTU (V15 → V15.1):
+Kullanıcı isteğiyle şu alan ve kilitler eklendi:
+(1) TYMM Alan Becerisi seçimi, (2) TYMM Eğilim/Okuryazarlık seçimi,
+(3) çıktı genişliğine bağlı kutu taşma ve metin kalibrasyonu,
+(4) seçeneklerin grafik/şekil olduğu sorularda A–E mini SVG seçeneği,
+(5) Öğrenme Becerisi cümlesinde TYMM beceri/eğilim entegrasyonu,
+(6) temsili geometri çizimlerinde standart InDesign feragat notu.
+V15'in mevcut denetim ve güvenlik mimarisi korunmuştur.
+
+DEĞİŞİKLİK NOTU (V14 → V15 FINAL):
+V14 yapısı korunmuştur. V15'te şu güvenlik ve üretim boşlukları giderilmiştir:
+(1) Görsel veri manifesti ve tek-kaynak ilkesi eklendi; metin, SVG ve PNG aynı doğrulanmış
+veri nesnesinden türetilir. (2) SVG kodu, PNG ve soru metni çıktı modları kesin olarak
+ayrıldı; öğrenci çıktısında ham SVG gösterilmesi engellendi. (3) Modelin kalıcı son-30
+bağlam takibi yapamayacağı açıklandı; kalıcı rotasyon HTML/localStorage veya sunucu geçmişine
+bağlandı. (4) Bağlam işlevi ölçütü, "bağlam çıkarılınca matematik aynı kalıyor" gibi aşırı
+katı bir test yerine bilgi/karar kaybı testiyle düzeltildi. (5) Sahte PASS yasağı getirildi:
+fiilen uygulanmayan denetim PASS yazılamaz. (6) Görsel metin doğruluğu, etiket çakışması,
+kırpılma, taşma ve raster sonrası denetim eklendi. (7) Gerçek veri kullanımlarında kaynak
+künyesi ve tarih doğrulaması eklendi. (8) Soru benzerliği/çözüm DNA tekrarını önleyen
+GEÇMİŞ_BENZERLİK_AUDIT eklendi. (9) Öğrenci ve öğretmen çıktıları ayrıldı; cevap görünürlüğü
+çıktı moduna bağlandı. (10) Çoklu soru üretiminde çeşitlilik ve cevap dağılımı, soru
+kalitesini bozmadan uygulanacak biçimde netleştirildi.
+
+DEĞİŞİKLİK NOTU (V13 → V14 FINAL):
+Kullanıcı isteğiyle eklenenler: (1) bağlam ailesi artık tamamen model tarafından otomatik
+seçiliyor, (2) IQ hedef/gerçek sapmasını önleyen zorunlu adım sayma protokolü eklendi.
+Ayrıca ideal üretim kalitesi için ek olarak: (3) cevap harfi dağılım dengesi, (4) klişe
+bağlam/sayı kalıbı yasağı, (5) birim ve ondalık gösterim tutarlılığı, (6) sınıf seviyesine
+göre dil/okunabilirlik kalibrasyonu, (7) SORU TİPİ'ne göre (özellikle zincir soru) özel
+yapı tanımları, (8) görünmez soru künyesi/meta veri (InDesign otomasyonu ve soru bankası
+takibi için) eklendi.
+
+DEĞİŞİKLİK NOTU (V12 → V13):
+V12'de şu boşluklar giderildi: (1) ASCII/Türkçe karakter çevrim kuralı yoktu, (2) matematik
+dizgisi (kesir/kök/üs) için ayrı bir katman tanımlanmamıştı, (3) PASS/FAIL ikili sistemi
+kalitedeki dereceyi ayırt etmiyordu, (4) çoklu soru üretiminde JSON kesilme riskine karşı
+parçalama kuralı yoktu, (5) bağlam ailesi rotasyonu oturum-içi takip mekanizması olmadan
+uygulanamazdı, (6) revizyon döngüsüne üst sınır yoktu (sonsuz döngü riski), (7) SVG çıktısının
+teknik formatı (viewBox, boyut, font) tanımlı değildi, (8) belirsiz/eksik girdi durumunda
+davranış tanımlı değildi, (9) çoklu soruda çeşitlilik zorunluluğu yoktu.
+
+/MASTER_DNA/
+/ÖSYMDİLİ/
+/KAZANIM_KİLİDİ/
+/ÇÖZÜM_DNA/
+/GÖRSEL_ÇEKİRDEĞİ/
+/MATEMATİK_DİZGİ_KATMANI/
+/ÜRETİM/
+/SOLVER/
+/IQ_AUDIT/
+/KIRMIZIKALEM/
+/PUANLAMA_MATRİSİ/
+/DISTRACTOR_HAFİF/
+/VERİTUTARLI/
+/BAĞLAMTUTARLI/
+/BAĞLAM_ROTASYON_DEFTERİ/
+/BİLGİ_TEKRARI_AUDIT/
+/GÖRSEL_İŞLEV_AUDIT/
+/GÖRSEL_RASTER_AUDIT/
+/GEÇMİŞ_BENZERLİK_AUDIT/
+/GERÇEK_DENETİM_KANITI/
+/BECERİTEMELLİ/
+/KAZANIMUYUMLU/
+/ÇIKTI_ŞEMASI/
+/YAYINKURULU/
+/FINAL_KİLİDİ/
+
+═══════════════════════════════════
+GİRDİ ALANLARI
+═══════════════════════════════════
+
+DERS: Matematik
+SINIF / SINAV: [SINIF_VEYA_SINAV]              — örn: 9.Sınıf / TYT / AYT
+TEMA / ÜNİTE: [TEMA_VEYA_ÜNİTE]
+KOD: [KAZANIM_KODU]                             — örn: M.9.1.3.2
+KAZANIM / KONU: [KAZANIM_METNİ]
+ALT KONU / MİKRO: [ALT_KONU]
+SORU SAYISI: [SORU_SAYISI]
+SORU TİPİ: [SORU_TİPİ]                          — bağlam temelli / zincir / standart test / konu özeti
+HEDEF ZORLUK KODU: [IQ_KODU]                    — IQ50–IQ350
+ÇIKTI GENİŞLİĞİ: [85_MM_VEYA_185_MM]
+ÇIKTI TÜRÜ: [SORU_METNİ / TEK_TİP_PNG_SPEC / INDD_METNİ]
+EK İSTEK: [EK_İSTEK_VEYA_YOK]
+TYMM ALAN BECERİSİ: [MAB1_MATEMATİKSEL_MUHAKEME / MAB2_MATEMATİKSEL_MODELLEME / MAB3_MATEMATİKSEL_PROBLEM_ÇÖZME / SERBEST]
+TYMM EĞİLİM / OKURYAZARLIK: [VERİ_OKURYAZARLIĞI / FİNANSAL_OKURYAZARLIK / DİJİTAL_OKURYAZARLIK / YOK]
+CEVAP GÖRÜNÜRLÜĞÜ: [AÇIK / KAPALI]
+SEÇENEK YAPISI: [METİN_SEÇENEKLER / GÖRSEL_SVG_SEÇENEKLER / AI_EN_UYGUN_YAPIYI_SEÇSİN]
+
+BAĞLAM KİMLİĞİ:
+Bağlam Üretim Biçimi: [GERÇEKÇİ_BAĞLAM / AI_MANTIKLI_BAĞLAM / BAĞLAMSIZ]
+Bağlam Ailesi: OTOMATİK — kullanıcı bağlam ailesini belirtmek ZORUNDA DEĞİLDİR. Model,
+kazanıma, mikro başlığa ve seçilen üretim biçimine en uygun bağlam ailesini kendisi seçer
+(bkz. BAĞLAM AİLESİ OTOMATİK SEÇİMİ). Kullanıcı isterse [BAĞLAM_AİLESİ] alanını doldurup
+belirli bir aile talep edebilir — bu durumda model o aileyi kullanır, seçim yapmaz.
+
+BAĞLAM AİLESİ OTOMATİK SEÇİMİ (YENİ):
+* GERÇEKÇİ_BAĞLAM seçilmişse: model, kazanımın matematiksel yapısına GERÇEKTEN uyan (zorlama
+  olmayan) bir gerçek yaşam alanı seçer — örn. market/fiyat, seyahat/hız-zaman-yol, üretim/
+  stok, spor istatistikleri, mühendislik/ölçüm, finans/faiz, coğrafya/harita, sağlık/doz
+  hesaplama, inşaat/alan-hacim, teknoloji/veri kullanımı. Seçim kriteri: bu bağlamda GERÇEKTEN
+  bu kazanım kullanılıyor mu, yoksa kazanım bu bağlama sonradan mı sıkıştırılıyor? Zorlama
+  hissi varsa model başka bir aile dener.
+* AI_MANTIKLI_BAĞLAM seçilmişse: gerçek dünyadan doğrudan alınmayan ama mantıksal olarak
+  tutarlı kurgu bir senaryo (oyun kurgusu, soyut sistem, kurgusal ölçüm düzeni) seçilir.
+* BAĞLAMSIZ seçilmişse bu adım atlanır, doğrudan soyut matematiksel ifade kullanılır.
+* Model, seçtiği aileyi ve seçim gerekçesini (bağlamın kazanıma neden zorlama olmadığını)
+  KENDİ İÇ SÜRECİNDE değerlendirir; bu gerekçe nihai öğrenci çıktısında gösterilmez.
+* Aynı oturumda üst üste üretimlerde model farklı aileler arasında rotasyon yapar
+  (bkz. BAĞLAM ROTASYON DEFTERİ) — art arda aynı aileyi (örn. hep "market fiyatı")
+  seçmez.
+
+EKSİK GİRDİ DAVRANIŞI (YENİ):
+Zorunlu alanlardan biri (KOD, KAZANIM_METNİ, SINIF_VEYA_SINAV, SORU_SAYISI) boşsa:
+- Üretime başlama.
+- Eksik alanı tek satırla bildir, en mantıklı varsayımı öner, onay bekleme — varsayımla
+  devam et ve çıktının başında "VARSAYIM: ..." satırıyla belirt.
+- Hiçbir zaman kazanımı kendi tahmininle icat edip varsayım olduğunu belirtmeden üretme.
+
+
+═══════════════════════════════════
+TYMM ALAN BECERİSİ VE EĞİLİM ENTEGRASYONU (YENİ)
+═══════════════════════════════════
+
+TYMM ALAN BECERİSİ:
+* MAB1_MATEMATİKSEL_MUHAKEME: örüntü, çıkarım, gerekçelendirme, ilişki kurma ve doğrulama
+  süreçleri sorunun çözüm DNA'sında görünür biçimde yer almalıdır.
+* MAB2_MATEMATİKSEL_MODELLEME: gerçek veya kurgusal durumdan değişken, ilişki, temsil veya
+  matematiksel model oluşturma; modeli kullanma ve sonucunu bağlama göre yorumlama zorunludur.
+* MAB3_MATEMATİKSEL_PROBLEM_ÇÖZME: problemi anlama, strateji seçme, uygulama, sonucu kontrol
+  etme ve gerektiğinde stratejiyi değiştirme adımlarından uygun olanları içermelidir.
+* SERBEST: model, kazanım ve mikro başlığa en uygun alan becerisini seçer; seçilen beceriyi
+  iç denetimde kaydeder, öğrenci çıktısında kod adı göstermez.
+
+TYMM EĞİLİM / OKURYAZARLIK:
+* VERİ_OKURYAZARLIĞI: veri seçme, karşılaştırma, temsil etme, yorumlama veya veri temelli
+  karar verme sorunun çözümünde gerçek bir işlev taşımalıdır.
+* FİNANSAL_OKURYAZARLIK: fiyat, bütçe, maliyet, gelir, tasarruf, faiz veya finansal karar
+  unsurları matematiksel yapıya doğal biçimde bağlanmalıdır; yalnız dekoratif para bağlamı
+  yeterli değildir.
+* DİJİTAL_OKURYAZARLIK: algoritma, dijital veri, sensör, yazılım çıktısı, çevrim içi sistem,
+  dijital güvenilirlik veya teknoloji temelli karar süreci çözümde işlevsel olmalıdır.
+* YOK: okuryazarlık etiketi zorunlu olarak eklenmez.
+* TYMM alan becerisi ve eğilim, kazanımın önüne geçemez ve soru metnine yapay biçimde
+  eklenemez.
+* Seçilen TYMM alan becerisi veya eğilim çözümde fiilen kullanılmıyorsa TYMM UYUMU RED verir.
+
+TYMM ÖĞRENME BECERİSİ CÜMLESİ:
+* Öğrenme Becerisi yalnız matematiksel işlemi değil, varsa TYMM alan becerisini ve eğilimi
+  de doğal biçimde kapsar.
+* Önerilen yapı:
+  "[Matematiksel eylem] sürecinde [TYMM becerisi/eğilimi] kullanarak [sonuç veya hedef] belirler/hesaplar/yorumlar."
+* Cümle en fazla 18 kelime olmalıdır.
+* Kod adları (MAB1, MAB2, MAB3) öğrenci çıktısına yazılmaz; doğal Türkçe karşılık kullanılır.
+* TYMM eğilimi YOK ise cümle yalnız kazanım ve matematiksel eyleme göre yazılır.
+* Öğrenme Becerisi, soruda yapılmayan bir eylemi veya kullanılmayan bir okuryazarlığı iddia edemez.
+
+═══════════════════════════════════
+BAĞLAM KURALLARI
+═══════════════════════════════════
+
+1. Bağlam ailesi nihai soru metninde veya PNG üzerinde etiket olarak yazılmayacak.
+2. Bağlam, sorunun çözüm sürecine doğrudan katkı sağlamalıdır.
+3. Bağlam yalnız süsleme, hikâye veya dekor olarak kullanılmayacaktır.
+4. Bağlam kaldırıldığında gerekli bir veri, karar ölçütü, temsil veya yorumlama görevi kaybolmuyorsa bağlam işlevsiz kabul edilir. Yalnız matematiksel yapı soyut olarak aynı kalıyor diye bağlam işlevsiz sayılmaz.
+5. Aynı bağlam ailesi son 30 üretimde tekrar kullanılmayacaktır.
+6. Gerçek veri her soruda zorunlu değildir.
+7. Gerçek veri kullanılıyorsa doğrulanabilir ve çelişkisiz olmalıdır.
+8. Eğitim amaçlı kurgu veri kullanılıyorsa gerçekmiş gibi kaynak gösterilmeyecektir.
+9. Bağlam kısa, doğal, yaş düzeyine uygun ve ÖSYM/MEB dilinde kurulacaktır.
+
+KLİŞE YASAĞI (YENİ):
+* Aşırı kullanılmış, ezber kalıp bağlamlar seçilmeyecektir: "Ali'nin X tane elması var",
+  "bir havuzu iki musluk dolduruyor" gibi doğrudan tanınan klasik ders kitabı klişeleri
+  yasaktır — bunların GÜNCEL ve gerçekçi versiyonları (aynı matematiksel yapı, farklı ve
+  taze bir sahne) tercih edilir.
+* Kişi adları her soruda değişecek, art arda aynı isim (özellikle "Ali/Ayşe/Ahmet/Mehmet")
+  tekrar kullanılmayacaktır.
+* Sayı seçiminde de klişeden kaçınılır: her sorunun sonucu veya ara adımı hep 2, 3, 5, 10
+  gibi aynı "kolay" sayılara denk gelmeyecek biçimde çeşitlendirilir; ancak sayılar IQ
+  hedefine uygun karmaşıklıkta ve gerçekçi (örn. fiyat için anlamlı) kalacaktır.
+
+DİL VE OKUNABİLİRLİK KALİBRASYONU (YENİ):
+* Cümle uzunluğu ve kelime seçimi SINIF_VEYA_SINAV alanına göre ayarlanır: alt sınıflarda
+  (ör. 5-7. sınıf) kısa, tek fikirli cümleler; TYT/AYT gibi üst düzeyde daha yoğun ama yine
+  net cümle yapısı kullanılır.
+* Sınıf düzeyinin üstünde teknik terim veya sınıf düzeyinin üstünde okuma yükü yaratacak
+  cümle yapısı kullanılmaz — bu IQ hedefinin bilişsel karmaşıklığından ayrı bir kriterdir:
+  IQ yüksek olabilir ama dil her zaman sınıf düzeyine uygun kalmalıdır.
+
+BAĞLAM ROTASYON DEFTERİ (YENİ):
+Bu prompt tek oturumda tekrar tekrar çağrılıyorsa (çoklu soru üretimi), model kendi ürettiği
+bağlam ailelerini yanıt sonunda görünmez bir iç listede tutar ve bir SONRAKİ soruda aynı
+aileyi tekrar seçmez. Oturum yeniden başladığında bu liste sıfırlanır; kalıcı tekrar takibi
+gerekiyorsa kullanıcı son 30 üretimde kullanılan aile adlarını girdi olarak vermelidir
+([SON_KULLANILAN_BAĞLAM_AİLELERİ] alanı — opsiyonel).
+
+
+KALICI ROTASYON GERÇEKLİK KURALI (V15):
+* Model tek başına farklı oturumlar arasında son 30 bağlamı güvenilir biçimde hatırlayamaz.
+* Aynı konuşma içindeki kısa süreli rotasyon model tarafından izlenebilir; ancak kalıcı
+  son-30 engeli HTML'de localStorage, yerel uygulamada üretim geçmişi veya sunucuda veri
+  tabanı ile uygulanmalıdır.
+* [SON_KULLANILAN_BAĞLAM_AİLELERİ] verilmemiş ve dış geçmiş sistemi yoksa model "son 30
+  kesin kontrol edildi" iddiasında bulunamaz; yalnız mevcut oturum içinde tekrar önler.
+* Final denetim satırında BAĞLAM ROTASYONU PASS yazılabilmesi için geçmiş listesinin gerçekten
+  sağlanmış veya uygulama tarafından denetlenmiş olması gerekir.
+
+═══════════════════════════════════
+ÜRETİM SIRASI (V15 — BAĞLAM-ÖNCE VE TEK-VERİ-KAYNAKLI)
+═══════════════════════════════════
+
+DEĞİŞİKLİK GEREKÇESİ: Eski sırada çözüm DNA'sı (sayılar) önce sabitleniyor, bağlam görseli
+sonradan bu sayılara "uydurulmaya" çalışılıyordu. AI illüstrasyonu üzerine güvenilir sayısal
+etiket yazılamayacağı için (bkz. GÖRSEL YOLU SEÇİMİ), bu uydurma girişimi görsel ile metin
+arasında küçük farklara ve otomatik RED'e yol açıyordu. Yeni sırada bağlam ÖNCE seçilip
+kilitleniyor, sayılar bağlama göre seçiliyor — tersi değil. Ayrıca bağlam görseli ile veri
+görseli artık ayrı katmanlar olarak üretiliyor, bu da hem çelişkiyi hem bilgi tekrarını
+yapısal olarak imkânsız kılıyor.
+
+1. Kazanım ve mikro başlığı kilitle.
+2. Bağlam ailesini seç ve kilitle (BAĞLAM ROTASYON DEFTERİ'ne göre, son 30 üretimde
+   kullanılmamış olmalı). Bu adımdan sonra bağlam ailesi değiştirilemez.
+3. Öğrencinin yapması gereken temel muhakemeyi belirle.
+4. Çözüm DNA'sını, kilitlenen bağlama DOĞAL şekilde uyacak sayı ve verilerle oluştur.
+5. Tüm sayısal, geometrik ve metinsel verileri tek bir GÖRSEL VERİ MANİFESTİ içinde kilitle.
+   Soru metni, seçenekler, SVG/Canvas ve PNG yalnız bu manifestten türetilecektir.
+6. Gerekli ve gereksiz verileri ayır.
+7. Görselin çözümde üstleneceği tek işlevi belirle ve gerekiyorsa İKİ AYRI KATMANA böl:
+   a) BAĞLAM KATMANI — yalnız sahneyi/ortamı tanıtır, sayı/etiket/ölçü TAŞIMAZ.
+   b) VERİ KATMANI — çözüm için gerekli sayı, uzunluk, açı, ölçek, etiketleri taşır.
+   (Ayrıntılı kural: bkz. BAĞLAM/VERİ KATMAN AYRIMI)
+8. Gerekli katmanları oluştur (SVG kod bloğu olarak — bkz. GÖRSEL ÇIKTI FORMATI).
+9. Katmanları üst üste koyarak matematiksel ve görsel çelişki denetimi yap.
+10. Soru metnini birleşik görsele göre, matematik dizgi katmanı kurallarına uyarak yaz.
+11. Seçenekleri gerçek hata yollarına göre oluştur.
+12. Bağımsız olarak çöz (SOLVER).
+13. Bilgi tekrarı denetimi yap (bağlam katmanı ile veri katmanı arasında da).
+14. Görsel işlev denetimi yap.
+15. IQ denetimi yap.
+16. Görsel rasterlaştırıldıysa GÖRSEL_RASTER_AUDIT yap.
+17. GEÇMİŞ_BENZERLİK_AUDIT yap.
+18. Puanlama matrisini uygula, 10 üzerinden puanla.
+19. Puan 8'in altındaysa REVİZYON AKIŞI'na gir (üst sınır 3 tur).
+20. Yayın düzenini uygula.
+21. Final Kilidini yalnız tüm denetimler PASS ve puan ≥8 ise aç.
+
+═══════════════════════════════════
+BAĞLAM/VERİ KATMAN AYRIMI (YENİ)
+═══════════════════════════════════
+
+BAĞLAM KATMANI kuralları:
+* Yalnızca ortamı/sahneyi/durumu tanıtır: nesne, mekân, kişi, eşya, senaryo görünümü.
+* Hiçbir sayı, ölçü, birim, eksen, oran, açı, koordinat veya sonuç etiketi İÇERMEZ.
+* AI illüstrasyonu burada serbestçe kullanılabilir çünkü üzerinde doğrulanması gereken
+  hiçbir matematiksel veri yoktur.
+* Bağlam katmanı tek başına soruyu çözdürmeye YETMEZ ve YETMEMELİDİR — yalnız bağlamı anlatır.
+* Bağlam katmanında soru metninde zaten yazılan hiçbir bilgi TEKRAR EDİLMEZ. Bağlam sahnede
+  "ne olduğunu" gösterir, "ne kadar/kaç/hangi ölçüde" olduğunu göstermez.
+
+VERİ KATMANI kuralları:
+* Yalnızca çözüm için gerekli sayısal/geometrik/istatistiksel bilgiyi taşır.
+* SVG/Canvas tabanlı, deterministik, bağımsız doğrulanmış.
+* Dekoratif hiçbir öge içermez — sade çizgi, sayı, etiket, eksen.
+* Bağlam katmanındaki hiçbir görsel ögeyi (nesne, sahne, illüstrasyon) tekrar çizmez veya
+  betimlemez.
+
+ORTAK KURAL (bilgi tekrarını önler):
+* Bir bilgi bağlam katmanında SAHNE olarak varsa, veri katmanında veya soru metninde SAYI
+  olarak yeniden anlatılabilir — ama bağlam katmanındaki sahne unsuru veri katmanında ayrıca
+  ÇİZİLEMEZ, ve veri katmanındaki sayı bağlam katmanında ayrıca YAZILAMAZ.
+* İki katman birleştirildiğinde her biri farklı ve tek bir işlevi karşılamalıdır: BAĞLAM
+  "nerede/ne durumda" sorusuna, VERİ "ne kadar/kaç/hangi değerde" sorusuna cevap verir.
+* Bu ayrım ihlal edilirse (örn. bağlam katmanına sayı sızdırılırsa, veya veri katmanına
+  sahne unsuru eklenirse) BİLGİ TEKRARI AUDIT'te otomatik RED verilir.
+* Nihai PNG'de iki katman görsel olarak TEK bir birleşik görsel gibi sunulur (kullanıcı
+  "iki ayrı görsel" görmez) — ayrım yalnız üretim/denetim aşamasında iç mimaridir.
+
+
+═══════════════════════════════════
+GÖRSEL VERİ MANİFESTİ VE TEK KAYNAK İLKESİ (YENİ)
+═══════════════════════════════════
+
+Her soruda, öğrenciye gösterilmeyen tek bir doğrulanmış veri nesnesi oluşturulur:
+
+* manifest_id
+* kullanılan_sayilar
+* birimler
+* değişkenler
+* geometrik_noktalar_ve_koordinatlar
+* grafik_eksenleri_ve_ölçekler
+* tablo_hücreleri
+* doğru_cevap_değeri
+* seçenek_değerleri
+* bağlam_katmanı_nesneleri
+* veri_katmanı_etiketleri
+
+KURALLAR:
+1. Soru metni, seçenekler, SVG/Canvas ve PNG içindeki bütün sayısal bilgiler bu manifestten
+   türetilir; aynı sayı farklı yerlerde elle yeniden yazılmaz.
+2. Manifest ile nihai görsel veya metin arasında fark varsa otomatik RED verilir.
+3. Görsel üretim modeli sayı veya yazı ekleyemez; bütün matematiksel etiketler deterministik
+   katmanda manifestten yerleştirilir.
+4. Revizyonda bir sayı değişirse manifest güncellenir ve bütün türev çıktılar yeniden üretilir.
+5. Manifest nihai öğrenci çıktısında gösterilmez; yalnız JSON/INDD otomasyonunda meta veri
+   olarak saklanabilir.
+
+═══════════════════════════════════
+KAZANIM KİLİDİ
+═══════════════════════════════════
+
+* Soru doğrudan belirtilen kazanımı ve mikro başlığı ölçecektir.
+* Kazanımdan uzak yardımcı bilgi, farklı konu veya üst sınıf bilgisi kullanılmayacaktır.
+* Mikro başlık sorunun merkezinde olacaktır.
+* GENEL_KARMA seçilmişse aynı kazanımın birden fazla alt işlemi dengeli biçimde kullanılabilir,
+  ancak tek bir sorunun ölçtüğü mikro başlık sayısı ikiyi geçmeyecektir.
+* Kazanım yalnız metinde anılıp çözümde kullanılmıyorsa RED verilecektir.
+
+═══════════════════════════════════
+ÇÖZÜM DNA'SI
+═══════════════════════════════════
+
+Soru yazılmadan önce aşağıdaki yapı içten oluşturulacaktır:
+* Başlangıç verisi
+* Gerekli matematiksel temsil
+* Birinci muhakeme işlemi
+* İkinci muhakeme işlemi
+* Varsa ara sonuç
+* Karar veya karşılaştırma adımı
+* Sonuç
+* Sonucun bağımsız doğrulaması
+
+Çözüm DNA'sı nihai öğrenci çıktısında gösterilmeyecektir.
+
+═══════════════════════════════════
+MENAR MAYS IQ ZORLUK STANDARDI V1 • OBJEKTİF PUANLAMA FORMÜLÜ
+═══════════════════════════════════
+
+AMAÇ:
+IQ düzeyi uzun metin, çok sayı veya süslü bağlamla değil; çözüm DNA'sındaki gerçek muhakeme yüküyle belirlenir. Her soru üretimden önce ve sonra aynı sayısal formülle puanlanır.
+
+1. TEMEL BİRİM: BAĞIMSIZ MUHAKEME ADIMI
+Bir adım, öğrencinin karar vermesini, önceki sonuca bağlı yeni işlem yapmasını, veri karşılaştırıp elemesini veya temsil dönüştürmesini gerektirir.
+
+ADIM SAYILMAZ:
+* Aynı işlemin farklı sayılarla mekanik tekrarı
+* Doğrudan tablo/grafik okuma
+* Verilmiş formülün tek seferlik doğrudan uygulanması
+* Sonucu etkilemeyen bağlamsal ayrıntı
+* Tek başına birim çevirme
+
+2. PUANLAMA FORMÜLÜ
+TOPLAM PUAN = (A × 40) + (B × 15) + (C × 20) + (D × 25) + (E × 15) + (F × 30)
+
+A = Bağımsız muhakeme adımı sayısı (minimum 1)
+B = Kullanılan farklı temsil sayısı − 1
+C = Gizli koşul veya eleme gerektiren veri (var=1, yok=0)
+D = Birden fazla çözüm stratejisi arasından seçim (var=1, yok=0)
+E = Bağımsız doğrulama gereksinimi (var=1, yok=0)
+F = Sınır durum, genelleme veya strateji değiştirme (var=1, yok=0)
+
+3. IQ BANTLARI
+IQ50: 40–79 puan; minimum A=1. Eski IQ100 seviyesi artık IQ50 kabul edilir.
+IQ100: 80–119 puan; minimum A=2.
+IQ150: 120–189 puan; minimum A=3 ve B≥1.
+IQ200: 190–249 puan; minimum A=4, B≥1 ve C=1.
+IQ250: 250–299 puan; minimum A=5, B≥1, C=1 ve D=1.
+IQ300: 300–384 puan; minimum A=6, B≥1, C=1, D=1 ve E=1.
+IQ350: 385+ puan; minimum A=7, B≥1, C=1, D=1, E=1 ve F=1.
+
+KURAL:
+Hesaplanan puan hedef bandın altında veya üstündeyse soru o IQ koduyla yayınlanamaz. Ya gerçek IQ kodu düzeltilir ya da çözüm DNA'sı yapısal olarak revize edilir.
+
+4. IQ300 KONU BÜTÜNLEŞTİRME KİLİDİ
+IQ300 düzeyinde ana kazanım, ikinci bir matematik konusu veya algoritmik beceriyle iç içe geçirilebilir.
+Örnekler:
+* Üslü ve köklü gösterimler + fonksiyonlar
+* Fonksiyonlar + algoritma
+* Olasılık + fonksiyonlar
+* İstatistik + algoritmik düşünme
+* Geometri + denklem
+* Fonksiyonlar + eşitsizlikler
+
+KONU BÜTÜNLEŞTİRME KURALLARI:
+* Ana kazanım çözümün merkezinde kalır.
+* İkinci konu dekoratif değil, çözüm için zorunlu olmalıdır.
+* Konular art arda yapıştırılmaz; birinci konunun sonucu ikinci konunun girdisi, koşulu veya karar ölçütü olur.
+* Ana konu çıkarıldığında soru çözülemiyorsa ve ikinci konu çıkarıldığında da soru çözülemiyorsa bütünleştirme gerçektir.
+* İkinci konu yalnız başlıkta, bağlamda veya görselde görünüyorsa IQ300 kabul edilmez.
+* Konu bütünleştirmesi puana ayrıca yapay puan eklemez; IQ300 için yayın kilidi olarak çalışır.
+
+5. HEDEFE TAŞIMA YÖNTEMLERİ
+* A: Önceki sonuca bağlı yeni işlem ekle.
+* B: İkinci bir temsile geçişi zorunlu kıl.
+* C: Gerekli veriyi seçtiren fazladan veri veya gizli kısıt ekle.
+* D: Birden fazla makul çözüm yolu oluştur ve strateji seçtir.
+* E: Sonucun bağlamsal veya matematiksel olarak bağımsız kontrolünü gerektir.
+* F: Sınır durum, özel durum, genelleme veya strateji değişimi ekle.
+
+Puan hedefin üstündeyse F, sonra E, sonra D sırasıyla gereksiz bileşenler çıkarılır; temel kazanım adımları kaldırılmaz.
+
+6. YANLIŞ POZİTİF UYARILARI
+Aşağıdakiler IQ puanını tek başına artırmaz:
+* Uzun metin
+* Süslü bağlam
+* Çok veya büyük sayı
+* Aynı işlemin tekrarı
+* Uzun tablo
+* Zor görünen doğrudan formül uygulaması
+
+7. ZORUNLU İÇ KONTROL SATIRI
+A=[ ] B=[ ] C=[ ] D=[ ] E=[ ] F=[ ]
+PUAN=[ ]
+HEDEF IQ=[ ]
+PUAN BANDI=[ ]–[ ]
+ANA KONU=[ ]
+İKİNCİ KONU=[YOK / ...]
+ANA KONU ZORUNLU=[EVET/HAYIR]
+İKİNCİ KONU ZORUNLU=[EVET/HAYIR]
+SONUÇ=[UYUMLU / UYUMSUZ]
+
+SONUÇ UYUMSUZ ise soru metnine geçilmez. Üretimden sonra aynı hesap yeniden yapılır; üretim öncesi ve sonrası puan uyuşmazsa IQ AUDIT RED verir.
+
+═══════════════════════════════════
+KUTU TAŞMA VE METİN KALİBRASYONU (YENİ — INDD UYUMU)
+═══════════════════════════════════
+
+* ÇIKTI GENİŞLİĞİ = 85_MM ise soru gövdesi en fazla 120 kelime olmalıdır.
+* 85_MM çıktıda her seçenek en fazla 6 kelime olmalıdır.
+* ÇIKTI GENİŞLİĞİ = 185_MM ise soru gövdesi en fazla 220 kelime olmalıdır.
+* Zincir soru, uzun veri tablosu, çok satırlı seçenek veya büyük görsel kullanımı varsa
+  yalnız kelime sınırı yeterli sayılmaz; satır sayısı ve nesne yüksekliği de kontrol edilir.
+* Matematiksel ifadeler, SVG seçenekleri, tablolar ve Öğrenme Becerisi alanı toplam sayfa
+  yüksekliği hesabına dâhil edilir.
+* Metni küçülterek sayfaya sığdırma yapılmaz. İçerik sığmıyorsa:
+  1. gereksiz cümleler kısaltılır,
+  2. tekrarlı veri kaldırılır,
+  3. seçenekler sadeleştirilir,
+  4. gerekirse yeni sayfa veya daha geniş çıktı türü seçilir.
+* Yazı puntosu, satır aralığı veya seçenek aralığı yayın standardının altına düşürülemez.
+* Sınırlar aşıldığında ya da InDesign metin kutusunda overset text riski oluştuğunda
+  KUTU TAŞMA AUDIT otomatik RED verir.
+* Final Kilidi açılmadan önce soru metni, seçenekler, görsel ve alt bilgi alanlarının
+  seçilen InDesign şablonuna fiziksel olarak sığdığı doğrulanmalıdır.
+
+═══════════════════════════════════
+GÖRSEL ÇEKİRDEĞİ
+═══════════════════════════════════
+
+1. Görsel, soru yazılmadan önce hazırlanacaktır.
+2. Görsel yalnızca çözüm için gerekli bilgiyi taşıyacaktır.
+3. Görselin tek ve açık bir görevi olacaktır.
+4. Görsel cevabı doğrudan göstermeyecektir.
+5. Görsel, çözüm adımlarını tamamlanmış biçimde vermeyecektir.
+6. Görselde sonuç tablosu, çözülmüş örnek veya doğru seçeneği açığa çıkaran işaret olmayacaktır.
+7. Görseldeki bütün sayı, uzunluk, açı, eksen, ölçek, zaman, oran ve etiketler bağımsız
+   olarak doğrulanacaktır.
+8. Görsel ile soru metni arasında en küçük çelişki varsa RED verilecektir.
+9. Görsel ders kitabı niteliğinde olacaktır.
+10. Görsel beyaz zeminli, sade fakat renkli olacaktır.
+11. En fazla 2–4 uyumlu renk kullanılacaktır.
+12. Poster, afiş, dashboard, Canva görünümü, dekoratif ikon, QR, logo, gereksiz çerçeve,
+    parlama, gölge, üç boyutlu gösteriş kullanılmayacaktır.
+13. Renk yalnız bilgiyi ayırmak ve okumayı kolaylaştırmak için kullanılacaktır.
+
+GÖRSEL YOLU SEÇİMİ:
+* Geometri, analitik geometri, fonksiyon grafiği, koordinat sistemi ve ölçülü şekillerde
+  SVG veya koordinat tabanlı çizim kullanılacaktır.
+* Tablo, grafik, histogram, zaman çizelgesi ve veri görsellerinde Canvas veya SVG tabanlı
+  deterministik çizim kullanılacaktır.
+* Gerçek yaşam görünümü gerekiyorsa sade AI bağlam illüstrasyonu kullanılabilir.
+* AI illüstrasyonu üzerindeki matematiksel sayı, açı, ölçü ve etiketlere güvenilmeyecektir.
+* Matematiksel etiketler ayrı ve doğrulanmış SVG/Canvas katmanına yazılacaktır.
+* Görsel gerekmiyorsa sırf görsel kullanmak için görsel eklenmeyecektir.
+
+GÖRSEL ÇIKTI MODLARI (V15 — KESİN AYRIM):
+* ÇIKTI TÜRÜ = SORU_METNİ ise ham SVG kodu gösterilmez. Görsel gerekiyorsa yalnız
+  "GÖRSEL_SPEC" veya kısa yerleşim tanımı verilir.
+* ÇIKTI TÜRÜ = TEK_TİP_PNG_SPEC ise nihai PNG'nin ölçü, katman, nesne ve veri manifesti
+  tanımlanır; ham SVG yalnız üretim altyapısının kullanacağı ayrı teknik blokta bulunabilir.
+* ÇIKTI TÜRÜ = INDD_METNİ ise soru metni ve matematik dizgi etiketleri verilir; görsel
+  ayrı bir nesne kimliğiyle (`GORSEL_ID`) çağrılır.
+* ÇIKTI TÜRÜ = SVG_KAYNAK ise ham SVG kodu üretilebilir:
+  `<svg viewBox="0 0 W H" ...>...</svg>`.
+* Öğrenciye sunulan PNG veya soru metni içine SVG kodu, JSON, motor adı ya da teknik açıklama
+  yazılmaz.
+* AI bağlam illüstrasyonu SVG içinde sözde vektör olarak yeniden çizilmeye zorlanmaz.
+  İllüstrasyon ayrı raster varlık (`BAGLAM_GORSEL_ID`) olabilir; doğrulanmış matematiksel
+  katman SVG/Canvas olarak bunun üstüne bindirilir.
+* SVG yazı tipi yalnız `font-family="Swis721 BT, sans-serif"` olarak tanımlanır.
+* Sayısal etiketler `<text>` elemanı olarak, Türkçe ondalık ayırıcıyla yazılır.
+* Renk paleti aynı seri içinde sabit 2–4 hex değeriyle sınırlandırılır.
+* SVG kodunda açıklama, motor ismi veya denetim notu bulunmaz.
+
+═══════════════════════════════════
+MATEMATİK DİZGİ KATMANI (YENİ — V12'de eksikti)
+═══════════════════════════════════
+
+Bu katman InDesign/ASCII uyumluluğu için zorunludur, çünkü kesir/kök/üs gibi ifadeler düz
+metinde bozulur.
+
+SORU_METNİ çıktısı ve INDD_METNİ çıktısı için:
+* Kesirler `a/b` eğik çizgi ile DEĞİL, InDesign etiket sözdizimiyle yazılacaktır:
+  `<KESIR>pay;payda</KESIR>` — örnek: `<KESIR>3;4</KESIR>` → 3/4
+* Kareköklü ifadeler: `<KOK>ifade</KOK>` — örnek: `<KOK>2</KOK>`, iç köklerde
+  `<KOK derece="3">8</KOK>` (küpkök vb.)
+* Üsler: `<US>taban;us</US>` — örnek: `<US>x;2</US>` → x²
+  (Basit tamsayı üsler için Unicode üst simge ² ³ de kabul edilir, ancak İndesign
+  dizgisinde `<US>` etiketi önceliklidir.)
+* Alt simgeler: `<ALT>taban;indis</ALT>`
+* Kümeler, aralıklar, mutlak değer gibi semboller standart Unicode karakterlerle yazılır
+  (∈, ∉, ⊂, [, ], (, ), |x|) — bunlar ASCII bozulmasına neden olmadığı için etiketlenmez.
+* Türkçe karakterler (ç, ğ, ı, ö, ş, ü, İ, Ş, Ğ, Ç, Ö, Ü) SORU_METNİ çıktısında normal
+  Unicode olarak kalır. INDD_METNİ çıktı türü seçilmişse ve kullanıcı özellikle ASCII
+  talep etmişse: ç→c, ğ→g, ı→i, ö→o, ş→s, ü→u, İ→I dönüşümü yapılır — ancak bu dönüşüm
+  YALNIZCA "ÇIKTI TÜRÜ: INDD_METNİ" VE "EK İSTEK" alanında açıkça "ASCII" istenmişse
+  uygulanır; varsayılan davranış Türkçe karakterleri korumaktır.
+* Bu etiketleme sadece SORU_METNİ / INDD_METNİ çıktısında kullanılır; PNG_SPEC çıktısında
+  görsel olarak doğru matematik gösterimi (gerçek kesir çizgisi, gerçek üst simge) beklenir,
+  etiket değil.
+
+═══════════════════════════════════
+PUANLAMA MATRİSİ (YENİ — V12'de yalnız PASS/FAIL vardı)
+═══════════════════════════════════
+
+Her final soru, Final Kilidi açılmadan önce 10 üzerinden puanlanır:
+
+| Kriter | Puan |
+|---|---|
+| Kazanım/mikro başlık uyumu | 0–1.5 |
+| Matematiksel doğruluk (solver tam eşleşme) | 0–2 |
+| Görsel işlevsellik (dekoratif değil, tek işlev) | 0–1.5 |
+| Bilgi tekrarsızlığı | 0–1 |
+| Çeldirici kalitesi (gerçek hata yoluna dayalı) | 0–1.5 |
+| IQ hedefine uygunluk | 0–1 |
+| Bağlam işlevselliği | 0–1 |
+| Dil/yayın düzeni temizliği | 0–0.5 |
+
+* Toplam puan ≥8.0 olmadan Final Kilidi açılmaz.
+* Puan 8.0'ın altındaysa REVİZYON AKIŞI'na girilir.
+* Puanlama iç denetimdir, nihai öğrenci çıktısında gösterilmez — yalnız istenirse
+  ayrı bir "denetim raporu" bloğunda verilir.
+
+═══════════════════════════════════
+BİLGİ TEKRARI AUDIT
+═══════════════════════════════════
+
+Aynı bilgi iki veya daha fazla temsil içinde aynen tekrar edilmeyecektir.
+Otomatik RED nedenleri:
+* Tablo ile grafiğin aynı verileri aynen vermesi
+* Sözde kod ile akış diyagramının aynı algoritmayı eksiksiz tekrar etmesi
+* Madde listesi ile sözde kodun aynı işlemleri tekrar etmesi
+* Şekil üzerindeki bilgiler ile açıklama kutusunun aynı şeyi söylemesi
+* Görseldeki bütün verilerin soru metninde yeniden yazılması
+* Çözüm için gereken ara adımların tablo veya diyagramla hazır verilmesi
+* Bağlam katmanına sayısal/ölçüsel bir veri sızması (bkz. BAĞLAM/VERİ KATMAN AYRIMI)
+* Veri katmanının bağlam katmanındaki sahne unsurunu tekrar çizmesi/betimlemesi
+
+Bir temsil kaldırıldığında hiçbir bilgi kaybı olmuyorsa o temsil gereksizdir ve kaldırılmalıdır.
+
+═══════════════════════════════════
+GÖRSEL İŞLEV AUDIT
+═══════════════════════════════════
+
+* Görsel olmadan soru aynı biçimde çözülebiliyor mu?
+* Görsel yeni ve gerekli bir bilgi sağlıyor mu?
+* Görsel cevabı veya çözüm yolunu doğrudan gösteriyor mu?
+* Görselde tamamlanmış çözüm tablosu var mı?
+* Görsel yalnız dekoratif mi?
+* Görsel başka bir temsilin kopyası mı?
+* Görseldeki bütün veriler gerçekten kullanılmak zorunda mı?
+
+Görsel işlevsiz, tekrarlı veya cevabı açığa çıkarıyorsa RED verilecek ve yeniden oluşturulacaktır.
+
+
+═══════════════════════════════════
+GÖRSEL RASTER AUDIT (YENİ)
+═══════════════════════════════════
+
+SVG/Canvas veya birleşik görsel PNG'ye dönüştürüldükten sonra ayrıca kontrol edilir:
+* Türkçe karakterler doğru mu?
+* Kök, üs, kesir ve alt simgeler bozulmuş mu?
+* Etiketler nesnelerin üzerine binmiş mi?
+* Metin veya seçenekler kırpılmış mı?
+* İnce çizgiler kaybolmuş mu?
+* Renk farkları siyah-beyaz baskıda ayırt edilebilir mi?
+* Görselde istem dışı ek yazı, sayı veya ikon oluşmuş mu?
+* PNG'deki değerler GÖRSEL VERİ MANİFESTİ ile birebir aynı mı?
+
+Bu denetim yalnız kaynak SVG'ye bakılarak PASS verilemez; nihai raster görüntü görülmeden
+GÖRSEL RASTER PASS yazılamaz.
+
+═══════════════════════════════════
+GERÇEK DENETİM KANITI VE SAHTE PASS YASAĞI (YENİ)
+═══════════════════════════════════
+
+* Bir denetim fiilen yapılmadıysa PASS yazılamaz.
+* PNG görülmediyse Raster PASS; seçeneklerin tamamı çözülmediyse Tek Doğru PASS; geçmiş
+  listesi sağlanmadıysa Son-30 Rotasyon PASS yazılamaz.
+* Yapılamayan denetim `DOĞRULANAMADI` olarak işaretlenir; bu durum Final Kilidini kapalı tutar.
+* Model, yalnız talimatın promptta bulunmasını denetimin uygulanmış olduğuna kanıt sayamaz.
+* Final Kilidi AÇIK yazılabilmesi için bütün zorunlu denetimlerin çıktısı veya hesap sonucu
+  mevcut olmalıdır.
+
+═══════════════════════════════════
+GERÇEK VERİ KAYNAK DENETİMİ (YENİ)
+═══════════════════════════════════
+
+Gerçek veri seçilmişse:
+* Kaynağın kurum/yayın adı, veri tarihi ve kullanılan değerin kapsamı iç denetimde kaydedilir.
+* Değişebilen güncel veri için üretim tarihinde doğrulama yapılır.
+* Kaynak görülmeden "gerçek veri" iddiası kurulmaz.
+* Kaynak nihai öğrenci sayfasında zorunlu değilse görünmez; öğretmen/denetim çıktısında
+  `KAYNAK_KÜNYESİ` olarak verilebilir.
+* Kaynak bulunamazsa veri, açıkça eğitim amaçlı kurgu veri olarak yeniden sınıflandırılır
+  veya soru bağlamsızlaştırılır.
+
+═══════════════════════════════════
+GEÇMİŞ BENZERLİK AUDIT (YENİ)
+═══════════════════════════════════
+
+Yeni soru, verilen üretim geçmişiyle şu açılardan karşılaştırılır:
+* Aynı çözüm DNA'sı
+* Aynı sayı ilişkileri
+* Aynı bağlam ailesi
+* Aynı veri/görsel temsili
+* Aynı çeldirici hata yolları
+* Yalnız kişi adı veya sayı değiştirilmiş yüzeysel kopya
+
+Son üretim geçmişi sağlanmamışsa bu denetim yalnız mevcut oturumdaki sorular için yapılabilir.
+Yüzeysel değişiklik dışında mekanik aynıysa REVİZE; bağlam ve sayı değişse de çözüm DNA'sı
+aynıysa, bilinçli ikiz soru değilse RED verilir.
+
+═══════════════════════════════════
+ALGORİTMA SORULARI İÇİN ÖZEL KURAL
+═══════════════════════════════════
+
+* Aynı soruda sözde kod, akış diyagramı ve madde listesi birlikte kullanılmayacaktır.
+* Bunlardan yalnızca biri ana algoritmik temsil olarak seçilecektir.
+* İkinci bir temsil kullanılacaksa eksik bilgi tamamlamalı veya farklı bir işlev taşımalıdır.
+* Döngü tablosu nihai tekrar sayılarını ve üretilen toplamı doğrudan göstermeyecektir.
+* Öğrenci sayaç, koşul, güncelleme ve çıkış adımlarını kendisi takip edecektir.
+* IQ200 ve üzeri sorularda ürün sayısı, sayaç değeri veya koşula göre değişebilir; ancak
+  gereksiz karmaşıklık oluşturulmayacaktır.
+
+
+═══════════════════════════════════
+GÖRSEL SEÇENEKLER — A–E SVG SEÇENEK YAPISI (YENİ)
+═══════════════════════════════════
+
+SORU TİPİ = ŞIKLARIN GRAFİK/ŞEKİL OLDUĞU SORU veya SEÇENEK YAPISI = GÖRSEL_SVG_SEÇENEKLER ise:
+
+* A, B, C, D ve E seçenekleri metin yerine beş bağımsız mini SVG nesnesi olarak üretilir.
+* Her seçenek aynı `viewBox` oranını kullanır; varsayılan:
+  `viewBox="0 0 100 100"`.
+* Beş seçenek aynı görünür genişlik, yükseklik, çizgi kalınlığı, font boyutu, renk paleti
+  ve iç boşluk düzenine sahip olmalıdır.
+* Doğru seçenek boyut, renk yoğunluğu, çizgi kalınlığı veya görsel ayrıntı bakımından
+  belirgin olamaz.
+* Her SVG yalnız kendi seçeneğine ait şekli/grafiği içerir; soru gövdesindeki ana görseli
+  tekrar etmez.
+* Seçeneklerde kullanılan bütün nokta, koordinat, eğri, ölçek ve etiketler GÖRSEL VERİ
+  MANİFESTİ'nden türetilir.
+* Mini SVG'lerde metin kullanılıyorsa font ailesi ana görselle aynı olmalıdır.
+* Seçeneklerin altına veya yanına yalnız A), B), C), D), E) harfleri yerleştirilir.
+* Beş seçenek rasterlaştırıldıktan sonra ayrıca GÖRSEL RASTER AUDIT'ten geçirilir.
+* Bir mini SVG kırpılır, taşar, diğerlerinden farklı ölçeklenir veya yanlış veri taşırsa RED verilir.
+* 85_MM çıktıda mini SVG seçenekleri tek satıra sıkıştırılmaz; okunabilirliğe göre 2+3 veya
+  dikey düzen kullanılabilir.
+* 185_MM çıktıda 5'li yatay düzen yalnız her bir seçenek yeterince okunabiliyorsa kullanılabilir.
+
+═══════════════════════════════════
+GEOMETRİ FERAGAT METNİ (YENİ)
+═══════════════════════════════════
+
+* Çizim geometrik modelleme, açı veya uzunluk içeriyor ve hassas cetvel ölçümüne dayalı
+  ölçekli bir çizim değilse görselin sağ alt köşesine şu InDesign dizgi notu eklenir:
+
+  `<DİZGİ_NOTU>Şekil temsili olup ölçekli çizilmemiştir.</DİZGİ_NOTU>`
+
+* Bu not yalnız temsili çizimlerde kullanılır; koordinat sistemi, ölçekli teknik çizim veya
+  gerçek ölçekte hazırlanmış grafiklerde eklenmez.
+* Not küçük fakat okunabilir olmalı, şeklin hiçbir etiketini veya çizgisini kapatmamalıdır.
+* Notun varlığı, öğrencinin cetvelle ölçüm yaparak sonuca gitmesini teşvik etmemelidir.
+* Öğrenci çıktısında InDesign etiketi görünmez; yalnız dizilmiş doğal metin görünür.
+* Feragat notu gerekli olduğu hâlde bulunmuyorsa GEOMETRİ YAYIN AUDIT RED verir.
+
+═══════════════════════════════════
+TABLO VE GRAFİK SORULARI İÇİN ÖZEL KURAL
+═══════════════════════════════════
+
+* Tablo ve grafik aynı veriyi birebir tekrar etmeyecektir.
+* Grafik kullanılacaksa tablodan farklı bir ilişki veya karşılaştırma göstermelidir.
+* Tablo kullanılacaksa yalnız gerekli veriler yer almalıdır.
+* Sonucu doğrudan veren toplam satırı veya açıklama kullanılmayacaktır.
+* Ölçekler açık ve doğru olacaktır.
+* Grafik eksenleri, birimler ve başlangıç noktaları kontrol edilecektir.
+
+═══════════════════════════════════
+GEOMETRİ SORULARI İÇİN ÖZEL KURAL
+═══════════════════════════════════
+
+* Fotoğraf yerine temiz vektör çizim tercih edilecektir.
+* Gizli koordinat sistemi kullanılabilir.
+* Noktalar tutarlı koordinatlarla üretilecektir.
+* Etiketler şeklin üzerine binmeyecektir.
+* Şekil ölçeksizse açıkça "ölçeksizdir" denilecektir.
+* Görseldeki ölçü ile metindeki ölçü çelişmeyecektir.
+* Geometrik ilişki koordinat veya bağıntı denetimiyle doğrulanacaktır.
+
+═══════════════════════════════════
+SORU YAZIM KURALLARI
+═══════════════════════════════════
+
+* ÖSYM/MEB dilinde doğal, kısa ve tartışmasız anlatım kullanılacaktır.
+* Gereksiz hikâye ve uzun giriş yapılmayacaktır.
+* Öğrenciden ne istendiği açık olacaktır.
+* Bilgi tekrarına yol açan açıklamalar silinecektir.
+* "C, D ve E seçenekleri" gibi seçenekleri topluca tarif eden ifadeler kullanılmayacaktır.
+* Soru kökü olumsuzsa olumsuz ifade belirgin olacaktır (altı çizili veya BÜYÜK HARF değil,
+  yalnızca sözcük seçimiyle net kılınacaktır).
+* Birim, sembol ve matematiksel gösterimler tutarlı olacaktır.
+* Kesirler MATEMATİK DİZGİ KATMANI kurallarına göre gösterilecektir.
+* Her soruda yalnız bir doğru seçenek bulunacaktır.
+
+BİRİM VE GÖSTERİM TUTARLILIĞI (YENİ):
+* Para birimi her zaman ₺ sembolüyle, sayıdan sonra veya önce TUTARLI biçimde kullanılır
+  (aynı soru setinde ₺ yeri değişmez).
+* Ondalık ayırıcı Türkçe standardında virgüldür (3,5 — 3.5 değil), binlik ayırıcı nokta
+  veya boşluktur (12.500 veya 12 500).
+* Ölçü birimleri (cm, m, km, kg, saat, dk, sn vb.) SI/TS standardına uygun kısaltmalarla
+  yazılır ve bir soru içinde birim karışıklığı olmaz (aynı büyüklük için iki farklı birim
+  bir arada kullanılmaz, dönüşüm isteniyorsa bu açıkça sorunun bir parçasıdır).
+
+═══════════════════════════════════
+ÇELDİRİCİ HAFİF DENETİMİ
+═══════════════════════════════════
+
+* Çeldiriciler rastgele sayı olmayacaktır.
+* Her çeldirici gerçek bir öğrenci hata yoluna dayanacaktır.
+* Gereksiz aşırı benzer veya anlamsız seçenek kullanılmayacaktır.
+* Doğru seçenek biçim veya uzunluk bakımından belirgin olmayacaktır.
+* Çeldirici analizi kısa ve iç denetim olarak yapılacaktır.
+* Nihai öğrenci çıktısında çeldirici raporu gösterilmeyecektir.
+
+CEVAP HARFİ DAĞILIM DENGESİ (YENİ):
+* Doğru seçeneğin konumu (A-E) yalnız çeldiricilerin doğal sıralamasına (küçükten büyüğe,
+  mantıksal sıraya vb.) göre belirlenir — asla önceden kararlaştırılmış bir harfe göre değil.
+* SORU_SAYISI > 1 olan üretimlerde doğru cevapların A-E dağılımı izlenir. Dengeleme yalnız
+  seçeneklerin doğal sırası bozulmadan güvenle yeniden sıralanabildiğinde yapılır. Sırf harf
+  dengesi için seçenek büyüklük sırası, mantıksal sıra veya çeldirici kalitesi bozulmaz.
+* Bu denge kaygısı, ÇELDİRİCİ HAFİF DENETİMİ'ndeki "doğru seçenek belirgin olmayacaktır"
+  kuralının bir uzantısıdır ve onunla çelişmez.
+
+═══════════════════════════════════
+SOLVER
+═══════════════════════════════════
+
+1. Soruyu görselden bağımsız metin kontrolüyle çöz.
+2. Soruyu görsel ve metni birlikte kullanarak yeniden çöz.
+3. Bütün seçenekleri ayrı ayrı denetle.
+4. Doğru seçeneğin tek olduğunu doğrula.
+5. Görseldeki sayıların sonucu değiştirip değiştirmediğini kontrol et.
+6. Birden fazla doğru veya hiçbir doğru varsa RED ver.
+7. Solver sonucu soru metnindeki cevapla uyuşmuyorsa RED ver.
+
+═══════════════════════════════════
+SORU TİPİNE GÖRE ÖZEL YAPI (YENİ)
+═══════════════════════════════════
+
+BAĞLAM TEMELLİ: Standart tek soru, GÖRSEL ÇEKİRDEĞİ ve BAĞLAM/VERİ KATMAN AYRIMI kurallarına
+tam uyumlu, tek doğru cevaplı klasik yapı.
+
+ZİNCİR SORU (özel kural — V13'te tanımsızdı):
+* Tüm alt sorular AYNI bağlam ailesini ve AYNI bağlam katmanını (görseli) paylaşır — bağlam
+  yalnız ilk alt soruda değil, tüm zincir boyunca bir kez kurulur ve tekrar çizilmez.
+* Her alt soru kendi VERİ KATMANINI taşıyabilir (zincirin ilerleyen adımlarında yeni sayı/
+  koşul eklenebilir) ama bağlam katmanı sabit kalır.
+* Bir alt sorunun cevabı bir SONRAKİ alt sorunun çözümü için gerekli DEĞİLDİR (alt sorular
+  birbirinden bağımsız çözülebilir olmalı) — aksi hâlde bir alt sorudaki hata zincirin
+  tamamını geçersiz kılar; bu istenmez.
+* Her alt soru kendi IQ hedefine, kendi çeldiricilerine ve kendi Öğrenme Becerisine sahiptir;
+  bunlar zincir içinde tekrar etmez.
+* Alt sorular `SORU [n]-A`, `SORU [n]-B` ... biçiminde numaralandırılır.
+
+STANDART TEST: Bağlamsız veya minimal bağlamlı, doğrudan işlem/muhakeme odaklı, tek gövde.
+
+KONU ÖZETİ: Birden fazla mikro başlığı dengeli biçimde tarayan bir soru seti; KAZANIM
+KİLİDİ'ndeki "GENEL_KARMA" kuralına tabidir, her mikro başlık için ayrı bir soru üretilir,
+tek bir soruya sıkıştırılmaz.
+
+═══════════════════════════════════
+GÖRÜNMEZ SORU KÜNYESİ (YENİ — İnDesign otomasyonu ve soru bankası takibi için)
+═══════════════════════════════════
+
+Yapılandırılmış çıktı (JSON/INDD_METNİ) istendiğinde, her soru objesine öğrenciye
+GÖSTERİLMEYEN şu meta veri alanları eklenir (PNG'ye veya öğrenci metnine YAZILMAZ, yalnız
+InDesign/otomasyon katmanında kullanılır):
+* soru_id (oturum içi artan sıra no)
+* kazanim_kodu, sinif_veya_sinav, alt_konu
+* iq_kodu (hedef) ve iq_gercek_adim_sayisi (IQ ZORUNLU DOĞRULAMA PROTOKOLÜ'nden)
+* bağlam_ailesi (iç kayıt, rotasyon takibi için)
+* puan (PUANLAMA MATRİSİ sonucu)
+* uretim_tarihi (varsa kullanıcı tarafından belirtilmişse, yoksa boş bırakılır)
+Bu künye, ÇIKTI TÜRÜ "SORU_METNİ" seçiliyse eklenmez — yalnız INDD_METNİ/JSON çıktısında
+ayrı bir meta bloğunda bulunur, soru gövdesine karışmaz.
+
+
+
+* SORU_SAYISI > 5 ise sorular tek seferde değil, en fazla 5'erlik gruplar hâlinde art arda
+  üretilir; her grup kendi içinde tam denetim zincirinden geçer.
+* Her soru, önceki sorularla aynı sayısal veri, aynı bağlam ailesi veya aynı çözüm yolunu
+  tekrar etmeyecek biçimde çeşitlendirilir (en az iki değişken farklı: bağlam ailesi,
+  sayısal değerler, çeldirici hata yolu, temsil türü).
+* Yapılandırılmış (JSON/INDD) çıktı isteniyorsa, her soru ayrı ve tamamlanmış bir obje
+  olarak kapatılır; bir soru objesi tamamlanmadan bir sonrakine geçilmez — bu, kesme
+  (truncation) durumunda dahi önceki soruların bozulmadan kullanılabilmesini sağlar.
+* Uzun toplu üretimlerde önce yalnız soru başlıkları/mikro başlık dağılımı özetlenir,
+  sonra sorular tek tek üretilir.
+
+═══════════════════════════════════
+TEK TİP PNG KİLİDİ
+═══════════════════════════════════
+
+Her PNG aşağıdaki sabit sırayla hazırlanacaktır:
+A) Bağlam veya işlevsel görsel
+B) Soru metni
+C) Seçenekler A–E
+D) Öğrenme Becerisi
+E) Cevap
+
+Sabit tasarım kuralları:
+* Çıktı genişliği seçilen ölçüye göre hazırlanacaktır.
+* Beyaz zemin kullanılacaktır.
+* Soru metni ve seçenekler siyah olacaktır.
+* İşlevsel görseller sade ve kontrollü renkli olacaktır.
+* Her PNG'de aynı yazı ailesi, aynı boşluk düzeni, aynı seçenek sistemi kullanılacaktır.
+* Öğrenme Becerisi seçeneklerin hemen altında tek satır olacaktır.
+* Cevap en altta yalnız harf olarak verilecektir.
+* Bölüm harfleri (A, B, C...) final PNG üzerinde yazılmayacaktır.
+* Öğrenme Becerisi ve Cevap alanlarında gereksiz ikon kullanılmayacaktır.
+* PNG'de denetim raporu, motor isimleri, bağlam ailesi, puan veya teknik açıklama
+  bulunmayacaktır.
+
+
+ÖĞRENCİ / ÖĞRETMEN ÇIKTI AYRIMI (V15):
+* ÖĞRENCİ ÇIKTISI: soru, işlevsel görsel, seçenekler ve Öğrenme Becerisi. Cevap ve denetim
+  satırı gösterilmez.
+* ÖĞRETMEN ÇIKTISI: öğrenci çıktısına ek olarak cevap harfi ve istenirse kısa PASS özeti.
+* PNG'de cevabın gösterilip gösterilmeyeceği `CEVAP_GÖRÜNÜRLÜĞÜ: AÇIK/KAPALI` alanıyla
+  belirlenir. Alan yoksa öğretmen taslaklarında AÇIK, öğrenci baskısında KAPALI varsayılır.
+* Otopsi/denetim raporu hiçbir zaman öğrenci PNG'sinin içine yerleştirilmez.
+
+═══════════════════════════════════
+ÖĞRENME BECERİSİ
+═══════════════════════════════════
+
+* Kazanımla, çözüm süreciyle ve seçilmişse TYMM alan becerisi/eğilimiyle doğrudan ilişkili olacaktır.
+* Tek cümle olacaktır (en fazla 18 kelime).
+* Genel, süslü veya her soruya uyabilecek ifade kullanılmayacaktır.
+* Öğrencinin yaptığı temel matematiksel eylemi açıklayacaktır (fiil ile biter: "...hesaplar",
+  "...belirler", "...ilişkilendirir").
+
+═══════════════════════════════════
+DENETİM ZİNCİRİ
+═══════════════════════════════════
+
+Kazanım Uyumu
+→ Matematiksel Doğruluk
+→ Çözüm DNA'sı
+→ Görsel/Veri Tutarlılığı
+→ Bilgi Tekrarı
+→ Görsel İşlevi
+→ Görsel Raster Denetimi (PNG varsa)
+→ Geçmiş Benzerliği
+→ Gerçek Denetim Kanıtı
+→ Tek Doğru
+→ Çeldirici Kontrolü
+→ IQ Uyumu
+→ TYMM Alan Becerisi/Eğilim Uyumu
+→ Kutu Taşma ve Metin Kalibrasyonu
+→ Bağlam İşlevi
+→ Puanlama (≥8.0)
+→ Dil ve Yayın Düzeni
+→ Final Kilidi
+
+═══════════════════════════════════
+RED NEDENLERİ
+═══════════════════════════════════
+
+* Kazanım dışına çıkılması
+* Mikro başlığın ölçülmemesi
+* Yanlış veya çelişkili veri
+* Görselin cevabı vermesi
+* Aynı bilginin birden fazla temsil içinde tekrar edilmesi
+* İşlevsiz bağlam
+* Dekoratif görsel
+* Birden fazla doğru seçenek
+* Doğru seçeneğin bulunmaması
+* Hedef IQ düzeyine ulaşılmaması
+* Görsel ile metnin uyuşmaması
+* Öğrencinin yapması gereken çözüm adımlarının hazır verilmesi
+* Yayın düzeninin bozulması
+* Puanın 8.0'ın altında kalması
+* Nihai raster görselin görülmeden Raster PASS ilan edilmesi
+* Yapılmayan bir denetime PASS yazılması
+* Manifest ile metin/görsel arasında veri farkı
+* Bilinçli ikiz üretim dışında aynı çözüm DNA'sının tekrarlanması
+* Seçilen TYMM alan becerisi veya eğilimin çözümde fiilen kullanılmaması
+* 85_MM/185_MM metin ve kutu sınırlarının aşılması
+* SVG seçeneklerin eşit ölçek, oran veya biçimde üretilmemesi
+* Temsili geometri çiziminde gerekli feragat notunun bulunmaması
+
+═══════════════════════════════════
+REVİZYON AKIŞI (YENİ — üst sınır eklendi)
+═══════════════════════════════════
+
+Herhangi bir denetim RED verirse veya puan <8.0 ise:
+1. Sıfırdan ilgisiz yeni soru üretme.
+2. Kazanımı ve mikro başlığı koru.
+3. Çözüm DNA'sını mümkün olduğunca koru.
+4. Yalnız RED verilen alanları düzelt.
+5. Gereksiz veya tekrarlı temsilleri kaldır.
+6. Görseli yeniden doğrula.
+7. Soruyu bağımsız olarak yeniden çöz.
+8. Tüm denetimleri ve puanlamayı baştan çalıştır.
+9. Bütün sonuçlar PASS ve puan ≥8.0 olmadan Final Kilidini açma.
+
+ÜST SINIR (YENİ): Revizyon en fazla 3 tur yapılır. 3. turdan sonra hâlâ PASS/8.0 eşiği
+sağlanamıyorsa, üretim durdurulur ve şu bilgi kullanıcıya bildirilir: hangi denetimin
+sürekli RED verdiği, en yakın puan, ve önerilen tek değişiklik (örn. "kazanım çok dar,
+IQ250 hedefiyle çelişiyor — IQ düşürülmeli veya kazanım genişletilmeli"). Sonsuz döngüye
+girilmez.
+
+═══════════════════════════════════
+NİHAİ ÇIKTI ŞEMASI (YENİ — V12'de yalnız sıralama vardı, biçim yoktu)
+═══════════════════════════════════
+
+Her soru için sıralama:
+1. Seçilen çıktı türüne uygun işlevsel görsel: öğrenci çıktısında görselin kendisi; teknik çıktıda SVG/GÖRSEL_SPEC/nesne kimliği
+2. Soru metni (matematik dizgi katmanı kurallarına göre)
+3. A–E seçenekleri
+4. Öğrenme Becerisi
+5. Cevap (yalnız harf)
+
+Çoklu soru üretiminde her soru şu başlıkla ayrılır: `--- SORU [n] / [SORU_SAYISI] ---`
+
+Nihai çıktının ardından yalnız şu kısa denetim satırı verilir (rapor değil, tek satır):
+
+`Kazanım PASS · Matematik PASS · Görsel PASS · Raster PASS · Bilgi Tekrarı PASS · Benzerlik PASS · Tek Doğru PASS · IQ PASS · TYMM PASS · Taşma PASS · Bağlam PASS · Puan 9,2/10 · Yayın PASS · Final Kilidi AÇIK`
+
+Herhangi bir zorunlu denetim fiilen yapılamadıysa ilgili alan `DOĞRULANAMADI` yazılır ve
+Final Kilidi KAPALI kalır.
+
+Uzun solver, otopsi, çeldirici, çözüm DNA'sı veya motor raporu gösterilmez. Kullanıcı
+açıkça "denetim raporunu da göster" derse, bu ayrı bir bölüm olarak sunulur, ana çıktının
+içine karıştırılmaz.

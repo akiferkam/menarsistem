@@ -1,0 +1,44 @@
+${MARKER}
+/ÇÖZÜM_ÇEKİRDEĞİ_ÖNCE/ /VERİ_BAĞIMLILIK_HARİTASI/
+/TEMSİL_ZORUNLULUK_TESTİ/ /DOĞRUDAN_CEVAP_YASAĞI/
+/ÇELDİRİCİ_HATA_YOLLARI/ /İKİZ_BİLİŞSEL_FARK_KİLİDİ/
+
+DERS / MOD: ${SUBJECT} / ${MODE}
+DERS ÖZEL ÇEKİRDEK: ${DEFAULT_CORE}
+BİRİNCİL GÖREV: ${primary(val("menarRPrimary"))}
+İKİNCİL GÖREV: ${secondary(val("menarRSecondary"))}
+ZORUNLU TEMSİL SAYISI: ${n}
+TEMSİL YAPISI: ${REPS}
+TEMSİL TESTİ: ${removal(val("menarRRemoval"))}
+ÇELDİRİCİ / HATA YOLU SAYISI: EN AZ ${err}
+DERS ÖZEL HATA YOLLARI: ${ERROR_PATHS}
+İKİZ FARKI: ${twin(val("menarRTwin"))}
+EK NOT: ${val("menarRExtra")||"Yok"}
+
+ZORUNLU ÜRETİM SIRASI:
+1. ${lesson?"Öğrencinin keşfedeceği kavramsal ilişkiyi":"Öğrencinin vereceği tek ana kararı"} tanımla.
+2. Soru/sayfa metninden önce çözüm veya öğrenme çekirdeğini kur.
+3. Her temsil için öğrencinin çıkaracağı farklı ve zorunlu bilgiyi iç manifestte yaz.
+4. Aynı bilgiyi tekrar eden temsil, sayı, metin veya görseli kaldır.
+5. Temsiller okunmadan doğru sonuç bulunabiliyorsa RED ver.
+6. Doğru cevap/sonuç, en uzun veya en açıklayıcı ifade olarak belirginleşemez.
+7. En az ${err} gerçek hata yolu oluştur; anlamsız çeldirici kullanma.
+8. ${lesson?"Öğrenci kitabında çözüm, cevap veya gizli ipucu verme.":"Tanımı doğrudan sordurmak yerine öğrenciyi kanıt ve verilerden sonuca ulaştır."}
+9. Hedef IQ, metin uzunluğu veya görsel sayısıyla değil gerçek karar, veri eleme, model ve doğrulama adımlarıyla sağlanır.
+10. İkiz üretimde yalnız kurum, bağlam, sayı, renk veya seçenek sırası değişikliği yeterli değildir.
+11. Final öncesinde:
+ANA_KARAR=[...]
+TEMSİL_1_GÖREVİ=[...]
+TEMSİL_2_GÖREVİ=[...]
+${n>=3?"TEMSİL_3_GÖREVİ=[...]":""}
+DOĞRU_CEVAP_DİLSEL_İPUCU=[YOK/VAR]
+TEMSİL_KALDIRMA_TESTİ=[PASS/RED]
+GERÇEK_HATA_YOLLARI=[PASS/RED]
+GERÇEK_IQ=[...]
+alanlarını denetle.
+12. RED veya VAR varsa final soru, sayfa, PNG, SVG ya da INDD üretme; yalnız hatalı çekirdeği yeniden kur.
+
+ÇIKTI:
+- İç çekirdek kullanıcıya gösterilmez.
+- Kullanıcı soru/sayfa istediğinde yalnız final çıktı gösterilir.
+- /OTOPSİ/ istendiğinde bu motorun denetim sonuçları raporlanır.

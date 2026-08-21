@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "SUBJECT": "Matematik",
+    "MODE": "question",
+    "DEFAULT_CORE": "Strateji seçme, gerekli veriyi eleme ve temsil dönüşümü yapma; Alternatif çözüm veya bağımsız doğrulama",
+    "ERROR_PATHS": "işlem önceliği; temsiller arası yanlış eşleme; koşulu eksik kullanma; örüntüyü aşırı genelleme",
+    "REPS": "tablo/grafik/şekil + cebirsel temsil"
+  },
+  "dicts": {
+    "primary": {
+      "AUTO": "Kazanım ve hedef IQ düzeyine göre gerçek birincil muhakeme görevini seç.",
+      "DATA_SELECT": "Gerekli verileri seç; gereksiz veya yanıltıcı verileri ele.",
+      "MODEL_BUILD": "Kanıtlardan model kur.",
+      "MODEL_VALIDATE": "Modeli bağımsız yeni kanıtla doğrula.",
+      "ERROR_DIAGNOSE": "Hatalı yorum, model veya yöntemi teşhis et.",
+      "REP_TRANSFORM": "En az iki temsil arasında zorunlu dönüşüm yap.",
+      "DECISION": "Ölçütlere göre gerekçeli karar ver.",
+      "PREDICTION": "Kanıtlardan savunulabilir öngörü oluştur.",
+      "DISCOVERY": "Kavramı örnek ve karşı örneklerden keşfet.",
+      "MISCONCEPTION": "Yanlış genellemeyi karşı örnek ve sınır durumla sınama.",
+      "APPLICATION": "Kavramı yeni durumda gerekçeli biçimde uygula."
+    },
+    "secondary": {
+      "AUTO": "Birincil görevden farklı, zorunlu ikinci muhakeme görevi seç.",
+      "NONE": "İkinci görev kullanma.",
+      "VERIFY": "Sonucu bağımsız yöntem veya veriyle doğrula.",
+      "COMPARE": "İki çözüm, model, kaynak veya temsili karşılaştır.",
+      "ERROR": "Gerçek öğrenci hata yolunu teşhis et.",
+      "GENERALIZE": "Sınır durum, karşı örnek veya genelleme yap."
+    },
+    "removal": {
+      "STRICT": "Kullanılan her temsil kaldırıldığında bilgi, yöntem veya karar kaybı oluşmalıdır.",
+      "PAIR": "En az iki temsil birlikte kullanılmadan soru/etkinlik tamamlanamamalıdır.",
+      "OPTIONAL": "Görsel/temsil işlevsizse hiç kullanılmamalıdır."
+    },
+    "twin": {
+      "TASK": "İkiz sorularda aynı kazanım korunur; birincil muhakeme görevi değiştirilir.",
+      "EVIDENCE": "İkiz sorularda kanıt ve veri yapısı değiştirilir.",
+      "REP": "İkiz sorularda zorunlu temsil dönüşümü değiştirilir.",
+      "BUILD_VALIDATE": "İlk soru model kurar, ikinci soru modeli yeni kanıtla doğrular."
+    }
+  }
+}

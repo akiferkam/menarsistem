@@ -1,0 +1,25 @@
+{
+  "ortak": {
+    "mode": "STANDART",
+    "ders": "MATEMATIK",
+    "sinifVeyaSinav": "9. Sınıf",
+    "iq": "IQ150",
+    "genislik": "185_MM",
+    "cikti": "INDD_PAKET",
+    "ciktiModu": "OGRETMEN",
+    "cevapGorunurlugu": "ACIK",
+    "gorselKarari": "GORSEL_YOK",
+    "gorselKalitesi": "STANDART",
+    "gorselBoyutu": "OTOMATIK",
+    "secenekYapisi": "AI_EN_UYGUN_YAPIYI_SECSIN",
+    "soruSayisi": 1,
+    "tymmAlanBecerisi": "SERBEST",
+    "tymmEgilim": "YOK",
+    "metinUzunlugu": ""
+  },
+  "sorular": [
+    { "kod": "MAT.9.1.1", "mikro": "Üslü gösterim kuralları" },
+    { "kod": "MAT.9.1.2", "mikro": "Negatif ve rasyonel üsler" },
+    { "kod": "MAT.9.1.3", "mikro": "Bilimsel gösterim" }
+  ]
+}

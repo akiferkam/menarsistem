@@ -1,0 +1,116 @@
+
+
+/BAĞLAM_500_ZORUNLU_ÇEŞİTLİLİK_KİLİDİ_V20.2/
+
+ANA KURAL:
+- Bağlam kullanılan bütün üretim türlerinde seçim, en az 500 gerçek ve birbirinden ayrışan ana bağlam ailesi içinden yapılır.
+- Her ana bağlam ailesi; farklı olay, süreç, karar, veri üretimi ve çözüm görevi taşıyan alt senaryolara ayrılabilir.
+- Alt senaryo yalnız ad değişikliği değildir; ana faaliyet, problem çekirdeği veya öğrencinin muhakeme görevi değişmelidir.
+- Aynı BAĞLAM_AİLESİ_KODU ile aynı ÇÖZÜM_DNA_KODU eşleşmesi son 200 üretimde tekrar kullanılamaz.
+- “Belediye, hastane, okul, üniversite, laboratuvar, araştırma merkezi, fabrika” gibi genel kurum adları tek başına bağlam ailesi değildir.
+- Yalnız kurum, kişi, araç, ürün, şehir, madde, sayı veya seçenek sırası değiştirmek yeni bağlam sayılmaz.
+- Aynı olay örgüsü, aynı süreç, aynı veri toplama biçimi veya aynı çözüm DNA’sı korunuyorsa bağlam değişmiş kabul edilmez.
+- Bağlam, kazanımın çözümünde zorunlu görev üstlenmelidir; çıkarıldığında soru aynı biçimde çözülüyorsa BAĞLAM_İŞLEVİ=RED olur.
+
+BAĞLAM SEÇİM SIRASI:
+1. Önce kazanım ve mikro başlığa uygun en az 30 aday bağlam ailesi üret.
+2. Son 100 üretimde kullanılmış aileleri aday listesinden çıkar.
+3. Son 20 üretimde kullanılan ana sektörleri çıkar.
+4. Belediye, hastane, okul, laboratuvar ve fabrika gibi aşırı kullanılan genel kurum bağlamlarını ancak gerçek süreç zorunluysa kullan.
+5. Adayları çözüm işlevi, özgünlük, gerçekçilik, sınıf düzeyi ve görsel üretilebilirlik bakımından karşılaştır.
+6. En yüksek puanlı ve son kullanım geçmişiyle çakışmayan aileyi seç.
+7. Seçilen aileyi görünmeyen manifestte BAĞLAM_AİLESİ_KODU ile kaydet.
+
+YASAK TEKRARLAR:
+- Son 100 soruda aynı bağlam ailesi tekrar edemez.
+- Son 20 soruda aynı ana sektör tekrar edemez.
+- Ardışık iki soruda aynı kurum tipi kullanılamaz.
+- Ardışık iki soruda aynı ana faaliyet kullanılamaz.
+- Yalnız “belediye → hastane → okul → laboratuvar” biçimindeki kurum değişimi çeşitlilik değildir.
+- Yalnız araç, ürün veya madde adını değiştirmek çeşitlilik değildir.
+- Aynı metin iskeletinin farklı adlarla yeniden yazılması RED’dir.
+
+BAĞLAM AİLESİ ANA HAVUZLARI:
+tarım, seracılık, tohumculuk, sulama, hayvancılık, arıcılık, su ürünleri, balıkçılık, ormancılık, toprak koruma, gıda işleme, süt ürünleri, fırıncılık, fermantasyon, soğuk zincir, lojistik, liman, denizcilik, demiryolu, havacılık, uzay sistemleri, uydu teknolojileri, otomotiv, elektrikli araçlar, batarya üretimi, mikroelektronik, sensörler, robotik, 3D üretim, tekstil, boya, cam, seramik, kâğıt, matbaa, ambalaj, geri dönüşüm, atık ayrıştırma, su arıtma, hava kalitesi, yenilenebilir enerji, güneş enerjisi, rüzgâr enerjisi, hidroelektrik, jeotermal, enerji depolama, mimarlık, yapı güvenliği, restorasyon, arkeoloji, müzecilik, adli bilimler, spor teknolojileri, sahne teknolojileri, fotoğrafçılık, sinema, müzik teknolojileri, veterinerlik, diş hekimliği, eczacılık, kozmetik, biyoteknoloji, nanoteknoloji, malzeme bilimi, afet yönetimi, meteoroloji, iklim gözlemi, haritacılık, coğrafi bilgi sistemleri, nüfus araştırmaları, kültürel miras, ekonomi, ticaret, tüketici ürünleri, turizm, gastronomi, deniz ekolojisi, kıyı yönetimi ve bunların alt süreçleri.
+- Bu liste sınır değildir; toplam gizli havuz en az 500 ayrışmış ana aile içermelidir.
+
+/BAĞLAM_GÖRSELİ_ÇEŞİTLİLİK_KİLİDİ_V20.2/
+
+GÖRSEL SEÇİMİ:
+- Görsel yalnız çözüm için işlevliyse kullanılır.
+- Aynı görsel ailesi son 15 görselli soruda tekrar edemez.
+- Görsel türü, bağlamın ve kazanımın gerektirdiği temsil biçimine göre seçilir.
+- “Her soruda gerçekçi fotoğraf” veya “her soruda 3D sahne” zorunluluğu yoktur.
+- Görsel yalnız dekoratifse GÖRSEL_GEREKLİLİĞİ=GEREKSİZ verilir.
+
+İŞLEVSEL GÖRSEL AİLELERİ:
+1. Gerçek bağlam fotoğrafı
+2. Kontrollü 3D bağlam sahnesi
+3. Ders kitabı tipi teknik çizim
+4. Ölçülendirilmiş mühendislik çizimi
+5. Kesit görünüş
+6. Patlatılmış parça görünüşü
+7. Süreç akış şeması
+8. Deney düzeneği
+9. Elektrik devre şeması
+10. Optik ışın diyagramı
+11. Serbest cisim / vektör diyagramı
+12. Tanecik modeli
+13. Molekül / kristal modeli
+14. Tepkime süreci diyagramı
+15. Enerji profili
+16. Veri tablosu
+17. Sütun grafiği
+18. Çizgi grafiği
+19. Dağılım grafiği
+20. Histogram
+21. Daire / oran grafiği
+22. Zaman çizelgesi
+23. Kavram haritası
+24. Neden–sonuç ağı
+25. Karar ağacı
+26. Karşılaştırma matrisi
+27. Harita
+28. Tematik harita
+29. Profil / yükselti kesiti
+30. Uydu görüntüsü kesiti
+31. Kroki
+32. Plan görünüşü
+33. Mimari yerleşim
+34. Tarihî belge kesiti
+35. Kaynak karşılaştırma kartı
+36. Dil yapısı şeması
+37. Paragraf yapı haritası
+38. Argüman şeması
+39. Geometrik şekil / SVG
+40. Fonksiyon grafiği
+41. Sayı doğrusu / koordinat düzlemi
+42. Ölçekli diyagram
+43. İnfografik olmayan veri kartı
+44. Sınıflandırma anahtarı
+45. Döngü / sistem modeli
+
+GÖRSEL RED ŞARTLARI:
+- Son 15 görselli soruda aynı görsel ailesi kullanılmışsa RED.
+- Görseldeki veri metinde gereksiz tekrar ediliyorsa RED.
+- Görsel kaldırıldığında soru aynı yöntemle çözülüyorsa ve görsel “gerekli” seçilmişse RED.
+- Fotoğraf yalnız ortam süsü olarak kullanılıyorsa RED.
+- Teknik bilgiyi rastgele üretken görsele yazdırmak yasaktır; sayı, birim ve etiketler deterministik katmandan gelmelidir.
+- Aynı sahnenin yalnız renk, açı veya nesne değişikliği yeni görsel ailesi sayılmaz.
+
+ZORUNLU İÇ KONTROL:
+BAĞLAM_ADAY_SAYISI=[EN AZ 30]
+BAĞLAM_AİLESİ_HAVUZU=[EN AZ 500]
+SON_100_AİLE_TARAMASI=[PASS / RED]
+SON_20_SEKTÖR_TARAMASI=[PASS / RED]
+BAĞLAM_AİLESİ_KODU=[KOD]
+BAĞLAM_İŞLEVİ=[PASS / RED]
+KURUM_ADI_DEĞİŞİMİ_RİSKİ=[YOK / VAR]
+ÇÖZÜM_DNA_BENZERLİĞİ=[PASS / RED]
+SON_200_AİLE_DNA_EŞLEŞMESİ=[PASS / RED]
+GÖRSEL_AİLESİ=[TÜR / GEREKSİZ]
+SON_15_GÖRSEL_AİLESİ_TARAMASI=[PASS / RED / UYGULANMAZ]
+GÖRSEL_İŞLEVİ=[PASS / RED / GEREKSİZ]
+BAĞLAM_ÇEŞİTLİLİĞİ_FINAL=[PASS / RED]
+
+- Bu kontrollerden herhangi biri RED veya VAR ise FINAL_KİLİDİ açılamaz.

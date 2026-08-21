@@ -1,0 +1,9 @@
+
+
+/MENAR_CORE_V25_ZORUNLU_MANIFEST/
+İLK CEVAPTA PNG ÜRETME. Önce yalnız doğrulanmış soru metni ve aşağıdaki JSON manifesti üret.
+Desteklenen solver_type: ALGORITHM_FLOW veya NUMERIC_EXPRESSION. Desteklenmiyorsa solver_type=UNSUPPORTED yaz ve PASS iddia etme.
+JSON zorunlu alanları: solver_type, variables, expression veya start+nodes, options, claimed_answer.
+Metin aşamasında nihai doğru cevap solver sonucundan türetilmelidir.
+Kullanıcı SORUYU PNG VER dediğinde kilitli metni değiştirme; görseli ekle ve nihai PNG sonrası yeniden kontrol et.
+PNG altında iki satır bulunmalıdır: METİN ÖNCESİ KONTROL ve GÖRSEL SONRASI KONTROL. Yapılmayan denetime PASS yazma.

@@ -1,0 +1,17 @@
+{
+  "name": "menar-mays",
+  "private": true,
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "mays": "pnpm --filter @menar/cli run start --"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  }
+}

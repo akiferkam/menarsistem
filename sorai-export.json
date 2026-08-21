@@ -1,0 +1,373 @@
+[
+ {
+  "id": "6e4ed151-ac4b-49dc-b2cf-3c5bb0df5589:0",
+  "ders": "matematik",
+  "kod": "MAT.9.7.1",
+  "sinifVeyaSinav": "9. Sınıf",
+  "kok": "Buna göre yaprak deseninin bir sonraki geçerli baskıda görülme olasılığı için gözleme dayalı en uygun tahmin hangisidir?",
+  "secenekler": [
+   "1/2",
+   "2/5",
+   "3/10",
+   "1/3",
+   "2/3"
+  ],
+  "dogruSecenek": "A",
+  "dogruCevap": "1/2",
+  "cozumAdimlari": [
+   "Şemadaki taralı 2 ve 5 numaralı çıkışların kayıtları geçerli deney sonuçlarından çıkarılır.",
+   "Geçerli etkinleşme sayısı 18 + 12 + 15 + 15 = 60 olur.",
+   "Yaprak deseni 1 ve 3 numaralı çıkışlarda üretildiğinden gözlenen yaprak sayısı 18 + 12 = 30'dur.",
+   "Gözleme dayalı tahmin 30/60 = 1/2 bulunur."
+  ],
+  "iqDegeri": 150
+ },
+ {
+  "id": "de4cb2d3-a8a1-4739-8ca2-f046519cb8a2:0",
+  "ders": "matematik",
+  "kod": "MAT.9.7.1",
+  "sinifVeyaSinav": "9. Sınıf",
+  "kok": "Oturum şemasındaki taralı kayıtlar elendiğinde deneyin örnek uzayını ve kumaş topun seçilme olasılığına ilişkin gözleme dayalı tahmini doğru veren seçenek hangisidir?",
+  "secenekler": [
+   "Ω={tüy topu, kumaş top, karton tünel}; 5/12",
+   "Ω={tüy topu, kumaş top, karton tünel}; 3/12",
+   "Ω={tüy topu, kumaş top, karton tünel}; 3/10",
+   "Ω={tüy topu, kumaş top, karton tünel}; 1/3",
+   "Ω={kumaş top}; 1"
+  ],
+  "dogruSecenek": "C",
+  "dogruCevap": "Ω={tüy topu, kumaş top, karton tünel}; 3/10",
+  "cozumAdimlari": [
+   "Tek seçimde üç oyuncak türünden biri ortaya çıkabileceği için örnek uzay tüy topu, kumaş top ve karton tünelden oluşur.",
+   "Şemada taralı olan 4. ve 9. oturumlar elenince 10 geçerli oturum kalır.",
+   "Geçerli kayıtlar arasında kumaş top 2, 6 ve 12. oturumlarda seçilmiştir; gözlenen sıklık 3'tür.",
+   "Gözleme dayalı olasılık tahmini 3/10 olur. Doğru seçenek C'dir."
+  ],
+  "iqDegeri": 150
+ },
+ {
+  "id": "cfacbeca-a007-4c26-80b4-148eba207f09:0",
+  "ders": "matematik",
+  "kod": "MAT.9.7.1",
+  "sinifVeyaSinav": "9. Sınıf",
+  "kok": "Mavi ve mor çiçeğe konma “soğuk renkli çiçeği seçme” olayı olarak tanımlanıyor. Buna göre ekibin bir sonraki gözleminde bu olayın gerçekleşme olasılığı için gözleme dayalı en uygun tahmin aşağıdakilerden hangisidir?",
+  "secenekler": [
+   "7/30",
+   "30/47",
+   "1/2",
+   "11/20",
+   "30/43"
+  ],
+  "dogruSecenek": "C",
+  "dogruCevap": "1/2",
+  "cozumAdimlari": [
+   "Yeni gözlem bulutlu havada yapılacağından yalnız bulutlu hava sütunları seçilir.",
+   "Olayın gözlenen sıklığı, mavi ve mor sonuçlarının toplamıdır: 14 + 16 = 30.",
+   "Örnek uzay, çiçeğe konmadan çıkma sonucu dâhil tüm bulutlu hava sonuçlarıdır: 14 + 16 + 9 + 8 + 13 = 60.",
+   "Gözleme dayalı olasılık tahmini 30/60 = 1/2 bulunur."
+  ],
+  "iqDegeri": 200
+ },
+ {
+  "id": "e199aa91-9479-460e-9e29-6bca17a134a7:0",
+  "ders": "matematik",
+  "kod": "MAT.9.7.1",
+  "sinifVeyaSinav": "9. Sınıf",
+  "kok": "Buna göre deneyin örnek uzayını ve yeni kayıt aralığında tilki görüntüsü görülmesi için gözleme dayalı olasılık tahminini doğru veren seçenek hangisidir?",
+  "secenekler": [
+   "S={tilki görüntüsü var, tilki görüntüsü yok}; 19/40",
+   "S={tilki görüntüsü var}; 3/8",
+   "S={tilki, yağmur}; 2/5",
+   "S={tilki görüntüsü var, tilki görüntüsü yok}; 1/2",
+   "S={geçerli kayıt, geçersiz kayıt}; 15/19"
+  ],
+  "dogruSecenek": "D",
+  "dogruCevap": "S={tilki görüntüsü var, tilki görüntüsü yok}; 1/2",
+  "cozumAdimlari": [
+   "Her kayıt aralığının olası sonuçları “tilki görüntüsü var” ve “tilki görüntüsü yok” olduğundan örnek uzay bu iki sonuçtan oluşur.",
+   "Grafikte pilot çalışma sonu ile gözlem sonu arasındaki geçerli kayıt sayısı 80−20=60'tır.",
+   "Bu aralıktaki tilki görüntüsü sayısı birikimli değerlerin farkından 38−8=30 bulunur.",
+   "Gözleme dayalı olasılık tahmini 30/60=1/2 olur. Doğru seçenek D'dir."
+  ],
+  "iqDegeri": 150
+ },
+ {
+  "id": "54caf6f5-14e9-4f20-bd52-20bb04768d7a:0",
+  "ders": "matematik",
+  "kod": "MAT.9.7.1",
+  "sinifVeyaSinav": "9. Sınıf",
+  "kok": "Grafikteki gözlemlere göre bu deneyin örnek uzayı ve bir sonraki geçerli atışta üst yüzün 4'ten büyük gelme olasılığı için yapılabilecek tahmin hangi seçenekte birlikte doğru verilmiştir?",
+  "secenekler": [
+   "Ω = {1, 2, 3, 4, 5, 6}; 7/20",
+   "Ω = {1, 2, 3, 4, 5, 6, eğik}; 35/107",
+   "Ω = {1, 2, 3, 4, 5, 6}; 1/5",
+   "Ω = {1, 2, 3, 4, 5, 6}; 3/20",
+   "Ω = {4, 5, 6}; 13/25"
+  ],
+  "dogruSecenek": "A",
+  "dogruCevap": "Ω = {1, 2, 3, 4, 5, 6}; 7/20",
+  "cozumAdimlari": [
+   "“Eğik” bir zar yüzü değil, geçersiz kontrol kaydıdır. Bu nedenle örnek uzay Ω = {1, 2, 3, 4, 5, 6} olur.",
+   "Geçerli gözlem sayısı 14 + 18 + 16 + 17 + 20 + 15 = 100'dür.",
+   "4'ten büyük sonuçlar 5 ve 6 olduğundan uygun gözlem sayısı 20 + 15 = 35'tir.",
+   "Gözleme dayalı olasılık tahmini 35/100 = 7/20 bulunur."
+  ],
+  "iqDegeri": 150
+ },
+ {
+  "id": "fee78f12-4ed7-4e62-be84-c61d6a345db7:0",
+  "ders": "matematik",
+  "kod": "MAT.9.7.1",
+  "sinifVeyaSinav": "9. Sınıf",
+  "kok": "Buna göre ekip, yeni bir sisli hava denemesinde net görüntü elde etme olasılığını kaç olarak tahmin etmelidir?",
+  "secenekler": [
+   "%60",
+   "%65",
+   "%68",
+   "%70",
+   "%72"
+  ],
+  "dogruSecenek": "B",
+  "dogruCevap": "%65",
+  "cozumAdimlari": [
+   "İlk sisli aralıktaki net görüntü sayısı 34 − 16 = 18'dir.",
+   "İkinci sisli aralıktaki net görüntü sayısı 72 − 51 = 21'dir.",
+   "Sisli havadaki toplam başarı sayısı 18 + 21 = 39, toplam deneme sayısı 30 + 30 = 60'tır.",
+   "Gözleme dayalı olasılık tahmini 39/60 = 0,65 = %65'tir."
+  ],
+  "iqDegeri": 150
+ },
+ {
+  "id": "322d1393-44ff-4a78-89a7-db8be91f8c4a:0",
+  "ders": "matematik",
+  "kod": "MAT.9.7.1",
+  "sinifVeyaSinav": "9. Sınıf",
+  "kok": "Okuyucunun temizlendikten sonraki gerçek kitap iadelerinde çalışma olasılığı, aynı koşuldaki gözlemlerin tümü kullanılarak tahmin edilecektir. Buna göre bir sonraki gerçek kitabın ilk denemede okunma olasılığı kaçtır?",
+  "secenekler": [
+   "31/40",
+   "17/20",
+   "19/20",
+   "4/5",
+   "57/80"
+  ],
+  "dogruSecenek": "D",
+  "dogruCevap": "4/5",
+  "cozumAdimlari": [
+   "Temizlik sonrası gerçek kitap kullanılan oturumlar 3. ve 4. oturumlardır; deneme kartlarının kullanıldığı 5. oturum elenir.",
+   "Bu iki oturumdaki başarılı okuma sayısı 31 + 33 = 64, toplam gerçek kitap sayısı 40 + 40 = 80'dir.",
+   "Gözleme dayalı olasılık tahmini 64/80 = 4/5 olur."
+  ],
+  "iqDegeri": 150
+ },
+ {
+  "id": "ab5355da-cac3-491c-b4c0-7122d2c79bbe:0",
+  "ders": "matematik",
+  "kod": "MAT.9.7.1",
+  "sinifVeyaSinav": "9. Sınıf",
+  "kok": "Ekip, aynı koşullardaki sonraki 60 denemeye ilişkin tahmininde geçmiş denemelerin tamamını kullanacaktır. Grafiğe göre köpeğin bu denemelerin kaçında koku kaynağını bulması beklenir?",
+  "secenekler": [
+   "27 deneme",
+   "30 deneme",
+   "33 deneme",
+   "36 deneme",
+   "55 deneme"
+  ],
+  "dogruSecenek": "C",
+  "dogruCevap": "33 deneme",
+  "cozumAdimlari": [
+   "Grafikteki son birikimli gözlemde 100 denemenin 55'i başarılıdır.",
+   "Gözleme dayalı başarı olasılığı 55/100 = 0,55 olarak tahmin edilir.",
+   "Sonraki 60 deneme için tahmin 60 × 0,55 = 33 denemedir."
+  ],
+  "iqDegeri": 150
+ },
+ {
+  "id": "f940d8ec-ada3-4326-953b-834e6c66144e:0",
+  "ders": "matematik",
+  "kod": "MAT.9.7.1",
+  "sinifVeyaSinav": "9. Sınıf",
+  "kok": "Grafikteki son gözleme dayalı olasılık değiştirilmeden kullanılıyor. Deney aynı biçimde 600 kez daha yapıldıktan sonra toplam yaprak sayısı en yakın tam sayıya yuvarlanarak tahmin edilecektir. Buna göre deney, deneyin örnek uzayı ve tahmin edilen toplam yaprak sayısını doğru veren seçenek hangisidir?",
+  "secenekler": [
+   "Bir fiş çekme; {yaprak, damla, güneş, bulut}; 453",
+   "Bir fiş çekme; {yaprak, damla, güneş, bulut}; 272",
+   "Bir kontrol noktası seçme; {20, 50, 100, 200, 400}; 452",
+   "Bir fiş çekme; {yaprak, damla, güneş, bulut}; 181",
+   "Yaprak gelene dek çekme; {yaprak, diğer}; 725"
+  ],
+  "dogruSecenek": "A",
+  "dogruCevap": "Bir fiş çekme; {yaprak, damla, güneş, bulut}; 453",
+  "cozumAdimlari": [
+   "Tek bir deney, torbadan bir fiş çekip üzerindeki simgeyi kaydetmektir; olası sonuçlar dört simgedir.",
+   "Son kontrol noktasındaki gözleme dayalı yaprak olasılığı 0,4525'tir.",
+   "Toplam deney sayısı 400 + 600 = 1000 olur.",
+   "Tahmini toplam yaprak sayısı 1000 × 0,4525 = 452,5 bulunur.",
+   "En yakın tam sayıya yuvarlandığında sonuç 453'tür."
+  ],
+  "iqDegeri": 200
+ },
+ {
+  "id": "d359ecc7-215b-4a40-a7d9-4447b43feb85:0",
+  "ders": "matematik",
+  "kod": "MAT.9.1.3",
+  "sinifVeyaSinav": "9. Sınıf",
+  "kok": "Seçilen ekran değerlerinin toplamı için aşağıdakilerden hangisi doğrudur?",
+  "secenekler": [
+   "Pozitif doğal sayıdır.",
+   "Tam sayı, doğal sayı değildir.",
+   "Rasyonel sayı, tam sayı değildir.",
+   "İrrasyonel sayıdır.",
+   "Sıfırdır."
+  ],
+  "dogruSecenek": "B",
+  "dogruCevap": "Tam sayı, doğal sayı değildir.",
+  "cozumAdimlari": [
+   "Negatif, rasyonel fakat tam sayı olmayan tek değer -2,5 olduğundan ilk seçim budur.",
+   "İlk seçimin karesi 6,25'tir. Tam sayı fakat doğal sayı olmayan adaylardan mutlak değeri 6,25'ten büyük olan -9 seçilir.",
+   "Karekökü irrasyonel, doğal sayı ve 9'dan küçük olan değer 7'dir.",
+   "Kalan pozitif, rasyonel fakat tam sayı olmayan değer 2,5'tir.",
+   "Toplam -2,5 + (-9) + 7 + 2,5 = -2'dir. Sonuç -2'dir; bu sayı tam sayı olup doğal sayı değildir. Doğru seçenek B'dir."
+  ],
+  "iqDegeri": 195
+ },
+ {
+  "id": "badc21ae-3064-42f9-9218-c3bc4c777c30:0",
+  "ders": "matematik",
+  "kod": "MAT.10.1.1",
+  "sinifVeyaSinav": "10. Sınıf",
+  "kok": "Tablodaki seri numaralarını kontrol eden görevli hangi tepsiyi kabul etmelidir?",
+  "secenekler": [
+   "K tepsisi",
+   "L tepsisi",
+   "M tepsisi",
+   "N tepsisi",
+   "P tepsisi"
+  ],
+  "dogruSecenek": "D",
+  "dogruCevap": "N tepsisi",
+  "cozumAdimlari": [
+   "K tepsisindeki 29 ve 43 asaldır; ancak aritmetik ortalamaları (29 + 43)/2 = 36 asal değildir.",
+   "L tepsisindeki 49, 7’ye tam bölündüğü için asal değildir.",
+   "M tepsisindeki 39, 3’e tam bölündüğü için asal değildir.",
+   "N tepsisindeki 41 ve 53 asaldır. Ortalamaları (41 + 53)/2 = 47 olup bu sayı da asaldır.",
+   "P tepsisindeki 55, 5’e ve 11’e tam bölündüğü için asal değildir. Bütün koşulları yalnız N tepsisi sağlar."
+  ],
+  "iqDegeri": 200
+ },
+ {
+  "id": "ccc9e8d7-69fe-42ce-a2a9-7378f3a16207:0",
+  "ders": "matematik",
+  "kod": "MAT.10.1.1",
+  "sinifVeyaSinav": "10. Sınıf",
+  "kok": "Metal etikette görülen mühür numarasının pozitif bölenlerinden kaçı yazılımda “bileşik” grubuna kaydedilir?",
+  "secenekler": [
+   "55",
+   "58",
+   "59",
+   "60",
+   "64"
+  ],
+  "dogruSecenek": "C",
+  "dogruCevap": "59",
+  "cozumAdimlari": [
+   "Etiketteki sayı 7560 = 2³ × 3³ × 5 × 7 biçiminde asal çarpanlarına ayrılır.",
+   "Pozitif bölen sayısı (3 + 1) × (3 + 1) × (1 + 1) × (1 + 1) = 64 olur.",
+   "Asal olan pozitif bölenler 2, 3, 5 ve 7 olduğundan bunların sayısı 4'tür.",
+   "Bileşik bölen sayısı, 1 ve dört asal bölen çıkarılarak 64 − 1 − 4 = 59 bulunur."
+  ],
+  "iqDegeri": 200
+ },
+ {
+  "id": "0b8b0f79-38b6-4f17-839d-3dbb0b4b7062:0",
+  "ders": "matematik",
+  "kod": "MAT.10.1.1",
+  "sinifVeyaSinav": "10. Sınıf",
+  "kok": "Görseldeki tüplerden hangisi mühürleme düzeneğine yerleştirilmelidir?",
+  "secenekler": [
+   "Mavi kapaklı tüp",
+   "Yeşil kapaklı tüp",
+   "Turuncu kapaklı tüp",
+   "Sarı kapaklı tüp",
+   "Mor kapaklı tüp"
+  ],
+  "dogruSecenek": "C",
+  "dogruCevap": "Turuncu kapaklı tüp",
+  "cozumAdimlari": [
+   "17 asal olduğundan yalnız bir farklı asal çarpanı vardır.",
+   "126 = 2·3²·7 olduğundan üç farklı asal çarpanı vardır ve bunların toplamı 12'dir.",
+   "210 = 2·3·5·7 olduğundan dört farklı asal çarpanı vardır ve toplamları 17'dir.",
+   "330 = 2·3·5·11 için asal çarpanlar toplamı 21; 510 = 2·3·5·17 için toplam 27'dir.",
+   "210 kodu turuncu kapaklı tüpte bulunduğundan doğru seçenek C'dir."
+  ],
+  "iqDegeri": 145
+ },
+ {
+  "id": "e937b2a6-fda9-499d-b459-494c494378ad:0",
+  "ders": "matematik",
+  "kod": "MAT.9.1.1",
+  "sinifVeyaSinav": "9. Sınıf",
+  "kok": "Kontrol kabinindeki ekran okumaları servis kartındaki kurala göre işlendiğinde kontrol değeri kaç olur?",
+  "secenekler": [
+   "2",
+   "4",
+   "32",
+   "64",
+   "512"
+  ],
+  "dogruSecenek": "C",
+  "dogruCevap": "32",
+  "cozumAdimlari": [
+   "Sol ekran için ∛(2^12) = 2^(12/3) = 2^4 = 16 bulunur.",
+   "Bu değerin karesi 16² = 256'dır.",
+   "Sağ ekran için √(4^3) = √64 = 8 bulunur.",
+   "Kontrol değeri 256/8 = 32 olur."
+  ],
+  "iqDegeri": 145
+ },
+ {
+  "id": "afbaef90-4193-4817-8efb-4f3335221687:0",
+  "ders": "matematik",
+  "kod": "MAT.10.1.1",
+  "sinifVeyaSinav": "10. Sınıf",
+  "kok": "Tablodaki kayıtlara göre karantina rafına yerleştirilecek tepsi hangisidir?",
+  "secenekler": [
+   "Ardıç",
+   "Defne",
+   "Ihlamur",
+   "Mersin",
+   "Sedir"
+  ],
+  "dogruSecenek": "A",
+  "dogruCevap": "Ardıç",
+  "cozumAdimlari": [
+   "Ardıç tepsisindeki 11 ve 13 asal sayılardır.",
+   "Bu mühür kodlarının çarpımı 11 × 13 = 143 olduğundan parti koduyla eşleşir.",
+   "Diğer tepsilerde ya bileşik bir mühür kodu vardır ya da parti kodu çarpımla uyuşmaz. Bu nedenle doğru cevap Ardıç'tır."
+  ],
+  "iqDegeri": 150
+ },
+ {
+  "id": "67c7d548-9654-409b-b373-308e5237ba76:0",
+  "ders": "matematik",
+  "kod": "MAT.9.1.1",
+  "sinifVeyaSinav": "9. Sınıf",
+  "kok": "Tablodaki kurala göre panellerin kaplama miktarlarının büyükten küçüğe doğru sıralanışı hangisidir?",
+  "secenekler": [
+   "L > K > M > N",
+   "N > M > K > L",
+   "N > K > M > L",
+   "M > N > K > L",
+   "K > M > L > N"
+  ],
+  "dogruSecenek": "C",
+  "dogruCevap": "N > K > M > L",
+  "cozumAdimlari": [
+   "Kare panelin alanı, kenar uzunluğunun karesidir.",
+   "K için (√12)² × 2^3 = 12 × 8 = 96 bulunur.",
+   "L için (√18)² × 2² = 18 × 4 = 72 bulunur.",
+   "M için (∛27)² × 3² = 3² × 9 = 81 bulunur.",
+   "N için (√8)² × 2^4 = 8 × 16 = 128 bulunur.",
+   "Büyükten küçüğe sıralama N > K > M > L olur."
+  ],
+  "iqDegeri": 145
+ }
+]

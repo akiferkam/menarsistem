@@ -1,0 +1,16 @@
+{
+  "mode": "BT",
+  "sinifVeyaSinav": "9. Sınıf",
+  "kod": "MAT.9.1.1",
+  "iq": "IQ150",
+  "genislik": "85_MM",
+  "cikti": "SORU_METNI",
+  "ciktiModu": "OGRENCI",
+  "cevapGorunurlugu": "ACIK",
+  "gorselKarari": "ISLEVSEL_GORSEL_ZORUNLU",
+  "secenekYapisi": "METIN_SECENEKLER",
+  "soruSayisi": 1,
+  "tymmAlanBecerisi": "SERBEST",
+  "tymmEgilim": "YOK",
+  "metinUzunlugu": ""
+}

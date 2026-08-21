@@ -1,0 +1,1719 @@
+{
+  "subject": "Kimya",
+  "source": {
+    "workflow_file": "curriculum/maarif_modeli_9_12_fizik_kimya_biyoloji_tde_tyt_ayt.md",
+    "extracted_node": "markdown parse script (_scratch_reparse.mjs)",
+    "extracted_at": "2026-08-17"
+  },
+  "outcome_count": 59,
+  "outcomes": [
+    {
+      "code": "KIM.9.1.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimya hayattır Atomdan periyodik tabloya",
+      "outcome": "Kimyanın günlük yaşama katkılarını örneklerden hareketle değerlendirir",
+      "micro": [
+        "Kimyanın günlük yaşamla ilişkisi",
+        "Kimya alt disiplinleri",
+        "Kimya laboratuvarında güvenlik",
+        "Tehlike sembolleri",
+        "Atom modelleri",
+        "Bohr atom modeli",
+        "Modern atom teorisi",
+        "Orbital",
+        "Elektron dizilimi",
+        "Aufbau / Pauli / Hund ilkeleri",
+        "Periyodik tablo",
+        "Grup / periyot",
+        "İyon",
+        "Atom yarıçapı",
+        "İyonlaşma enerjisi",
+        "Elektronegatiflik",
+        "Periyodik eğilimler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.1.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimya hayattır Atomdan periyodik tabloya",
+      "outcome": "Kimyasal maddelerin güvenli kullanımına ilişkin problem ve önlemleri değerlendirir",
+      "micro": [
+        "Kimyanın günlük yaşamla ilişkisi",
+        "Kimya alt disiplinleri",
+        "Kimya laboratuvarında güvenlik",
+        "Tehlike sembolleri",
+        "Atom modelleri",
+        "Bohr atom modeli",
+        "Modern atom teorisi",
+        "Orbital",
+        "Elektron dizilimi",
+        "Aufbau / Pauli / Hund ilkeleri",
+        "Periyodik tablo",
+        "Grup / periyot",
+        "İyon",
+        "Atom yarıçapı",
+        "İyonlaşma enerjisi",
+        "Elektronegatiflik",
+        "Periyodik eğilimler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.1.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimya hayattır Atomdan periyodik tabloya",
+      "outcome": "Atom teorilerinin bilimsel bilgiyle birlikte değişimini yorumlar",
+      "micro": [
+        "Kimyanın günlük yaşamla ilişkisi",
+        "Kimya alt disiplinleri",
+        "Kimya laboratuvarında güvenlik",
+        "Tehlike sembolleri",
+        "Atom modelleri",
+        "Bohr atom modeli",
+        "Modern atom teorisi",
+        "Orbital",
+        "Elektron dizilimi",
+        "Aufbau / Pauli / Hund ilkeleri",
+        "Periyodik tablo",
+        "Grup / periyot",
+        "İyon",
+        "Atom yarıçapı",
+        "İyonlaşma enerjisi",
+        "Elektronegatiflik",
+        "Periyodik eğilimler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.1.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimya hayattır Atomdan periyodik tabloya",
+      "outcome": "Atom orbitallerinin bağıl enerjilerini inceler",
+      "micro": [
+        "Kimyanın günlük yaşamla ilişkisi",
+        "Kimya alt disiplinleri",
+        "Kimya laboratuvarında güvenlik",
+        "Tehlike sembolleri",
+        "Atom modelleri",
+        "Bohr atom modeli",
+        "Modern atom teorisi",
+        "Orbital",
+        "Elektron dizilimi",
+        "Aufbau / Pauli / Hund ilkeleri",
+        "Periyodik tablo",
+        "Grup / periyot",
+        "İyon",
+        "Atom yarıçapı",
+        "İyonlaşma enerjisi",
+        "Elektronegatiflik",
+        "Periyodik eğilimler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.1.5",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimya hayattır Atomdan periyodik tabloya",
+      "outcome": "Elektronların orbitallere yerleşimini açıklar",
+      "micro": [
+        "Kimyanın günlük yaşamla ilişkisi",
+        "Kimya alt disiplinleri",
+        "Kimya laboratuvarında güvenlik",
+        "Tehlike sembolleri",
+        "Atom modelleri",
+        "Bohr atom modeli",
+        "Modern atom teorisi",
+        "Orbital",
+        "Elektron dizilimi",
+        "Aufbau / Pauli / Hund ilkeleri",
+        "Periyodik tablo",
+        "Grup / periyot",
+        "İyon",
+        "Atom yarıçapı",
+        "İyonlaşma enerjisi",
+        "Elektronegatiflik",
+        "Periyodik eğilimler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.1.6",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimya hayattır Atomdan periyodik tabloya",
+      "outcome": "Elementlerin periyodik tablodaki yerini elektron dizilimiyle ilişkilendirir",
+      "micro": [
+        "Kimyanın günlük yaşamla ilişkisi",
+        "Kimya alt disiplinleri",
+        "Kimya laboratuvarında güvenlik",
+        "Tehlike sembolleri",
+        "Atom modelleri",
+        "Bohr atom modeli",
+        "Modern atom teorisi",
+        "Orbital",
+        "Elektron dizilimi",
+        "Aufbau / Pauli / Hund ilkeleri",
+        "Periyodik tablo",
+        "Grup / periyot",
+        "İyon",
+        "Atom yarıçapı",
+        "İyonlaşma enerjisi",
+        "Elektronegatiflik",
+        "Periyodik eğilimler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.1.7",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimya hayattır Atomdan periyodik tabloya",
+      "outcome": "İyon oluşumunu açıklar",
+      "micro": [
+        "Kimyanın günlük yaşamla ilişkisi",
+        "Kimya alt disiplinleri",
+        "Kimya laboratuvarında güvenlik",
+        "Tehlike sembolleri",
+        "Atom modelleri",
+        "Bohr atom modeli",
+        "Modern atom teorisi",
+        "Orbital",
+        "Elektron dizilimi",
+        "Aufbau / Pauli / Hund ilkeleri",
+        "Periyodik tablo",
+        "Grup / periyot",
+        "İyon",
+        "Atom yarıçapı",
+        "İyonlaşma enerjisi",
+        "Elektronegatiflik",
+        "Periyodik eğilimler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.1.8",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimya hayattır Atomdan periyodik tabloya",
+      "outcome": "Periyodik özelliklerdeki değişimleri yorumlar",
+      "micro": [
+        "Kimyanın günlük yaşamla ilişkisi",
+        "Kimya alt disiplinleri",
+        "Kimya laboratuvarında güvenlik",
+        "Tehlike sembolleri",
+        "Atom modelleri",
+        "Bohr atom modeli",
+        "Modern atom teorisi",
+        "Orbital",
+        "Elektron dizilimi",
+        "Aufbau / Pauli / Hund ilkeleri",
+        "Periyodik tablo",
+        "Grup / periyot",
+        "İyon",
+        "Atom yarıçapı",
+        "İyonlaşma enerjisi",
+        "Elektronegatiflik",
+        "Periyodik eğilimler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.2.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Çeşitlilik",
+      "outcome": "Metalik bağın oluşumunun incelenmesi",
+      "micro": [
+        "Kimyasal bağlar",
+        "Metalik bağ",
+        "İyonik bağ",
+        "Kovalent bağ",
+        "Lewis yapıları",
+        "Molekül geometrisiyle ilişkili temel fikirler",
+        "Polar / apolar bağ ve molekül",
+        "Moleküller arası etkileşimler",
+        "London kuvvetleri",
+        "Dipol–dipol etkileşimleri",
+        "Hidrojen bağı",
+        "Maddenin fiziksel özellikleri ile etkileşim türü arasındaki ilişki",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.2.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Çeşitlilik",
+      "outcome": "Atomlar ve tanecikler arasındaki bağ/etkileşim türlerini ayırt eder",
+      "micro": [
+        "Kimyasal bağlar",
+        "Metalik bağ",
+        "İyonik bağ",
+        "Kovalent bağ",
+        "Lewis yapıları",
+        "Molekül geometrisiyle ilişkili temel fikirler",
+        "Polar / apolar bağ ve molekül",
+        "Moleküller arası etkileşimler",
+        "London kuvvetleri",
+        "Dipol–dipol etkileşimleri",
+        "Hidrojen bağı",
+        "Maddenin fiziksel özellikleri ile etkileşim türü arasındaki ilişki",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.2.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Çeşitlilik",
+      "outcome": "Bağ türlerini elektron davranışı üzerinden açıklar",
+      "micro": [
+        "Kimyasal bağlar",
+        "Metalik bağ",
+        "İyonik bağ",
+        "Kovalent bağ",
+        "Lewis yapıları",
+        "Molekül geometrisiyle ilişkili temel fikirler",
+        "Polar / apolar bağ ve molekül",
+        "Moleküller arası etkileşimler",
+        "London kuvvetleri",
+        "Dipol–dipol etkileşimleri",
+        "Hidrojen bağı",
+        "Maddenin fiziksel özellikleri ile etkileşim türü arasındaki ilişki",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.2.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Çeşitlilik",
+      "outcome": "Molekül ve bileşiklerin yapısal özelliklerini karşılaştırır",
+      "micro": [
+        "Kimyasal bağlar",
+        "Metalik bağ",
+        "İyonik bağ",
+        "Kovalent bağ",
+        "Lewis yapıları",
+        "Molekül geometrisiyle ilişkili temel fikirler",
+        "Polar / apolar bağ ve molekül",
+        "Moleküller arası etkileşimler",
+        "London kuvvetleri",
+        "Dipol–dipol etkileşimleri",
+        "Hidrojen bağı",
+        "Maddenin fiziksel özellikleri ile etkileşim türü arasındaki ilişki",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.2.5",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Çeşitlilik",
+      "outcome": "Moleküller arası etkileşimlerin gözlenebilir özelliklere etkisini yorumlar",
+      "micro": [
+        "Kimyasal bağlar",
+        "Metalik bağ",
+        "İyonik bağ",
+        "Kovalent bağ",
+        "Lewis yapıları",
+        "Molekül geometrisiyle ilişkili temel fikirler",
+        "Polar / apolar bağ ve molekül",
+        "Moleküller arası etkileşimler",
+        "London kuvvetleri",
+        "Dipol–dipol etkileşimleri",
+        "Hidrojen bağı",
+        "Maddenin fiziksel özellikleri ile etkileşim türü arasındaki ilişki",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.3.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Sürdürülebilirlik",
+      "theme_order": 3,
+      "content_frame": "Sürdürülebilirlik",
+      "outcome": "Evsel atıklardan metal nanoparçacık elde etmeye yönelik deneysel süreç tasarlar/uygular",
+      "micro": [
+        "Yeşil kimya",
+        "Atıkların değerlendirilmesi",
+        "Metal geri kazanımı",
+        "Nanoparçacıklar",
+        "Ekolojik sürdürülebilirlik",
+        "Çevresel etki",
+        "Atık önleme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.9.3.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Sürdürülebilirlik",
+      "theme_order": 3,
+      "content_frame": "Sürdürülebilirlik",
+      "outcome": "Metaller, alaşımlar ve nanoparçacıkların ekolojik etkilerine yönelik çözüm geliştirir",
+      "micro": [
+        "Yeşil kimya",
+        "Atıkların değerlendirilmesi",
+        "Metal geri kazanımı",
+        "Nanoparçacıklar",
+        "Ekolojik sürdürülebilirlik",
+        "Çevresel etki",
+        "Atık önleme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.1.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimyasal tepkimeler Gazlar",
+      "outcome": "Kimyasal değişimin kanıtlarını belirler",
+      "micro": [
+        "Kimyasal değişim belirtileri",
+        "Kimyasal denklem",
+        "Tepkime türleri",
+        "Çökelme",
+        "Asit-baz tepkimesi",
+        "Redoks",
+        "Mol",
+        "Avogadro sayısı",
+        "Mol kütlesi",
+        "Denklem denkleştirme",
+        "Stokiyometri",
+        "Sınırlayıcı bileşen",
+        "Gaz basıncı",
+        "Hacim",
+        "Sıcaklık",
+        "Boyle / Charles / Gay-Lussac ilişkileri",
+        "İdeal gaz denklemi",
+        "Difüzyon",
+        "Efüzyon",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.1.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimyasal tepkimeler Gazlar",
+      "outcome": "Kimyasal tepkimeleri tanecik düzeyinde modeller",
+      "micro": [
+        "Kimyasal değişim belirtileri",
+        "Kimyasal denklem",
+        "Tepkime türleri",
+        "Çökelme",
+        "Asit-baz tepkimesi",
+        "Redoks",
+        "Mol",
+        "Avogadro sayısı",
+        "Mol kütlesi",
+        "Denklem denkleştirme",
+        "Stokiyometri",
+        "Sınırlayıcı bileşen",
+        "Gaz basıncı",
+        "Hacim",
+        "Sıcaklık",
+        "Boyle / Charles / Gay-Lussac ilişkileri",
+        "İdeal gaz denklemi",
+        "Difüzyon",
+        "Efüzyon",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.1.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimyasal tepkimeler Gazlar",
+      "outcome": "Tepkimeleri çökelme, redoks ve asit-baz gibi türlere göre sınıflandırır",
+      "micro": [
+        "Kimyasal değişim belirtileri",
+        "Kimyasal denklem",
+        "Tepkime türleri",
+        "Çökelme",
+        "Asit-baz tepkimesi",
+        "Redoks",
+        "Mol",
+        "Avogadro sayısı",
+        "Mol kütlesi",
+        "Denklem denkleştirme",
+        "Stokiyometri",
+        "Sınırlayıcı bileşen",
+        "Gaz basıncı",
+        "Hacim",
+        "Sıcaklık",
+        "Boyle / Charles / Gay-Lussac ilişkileri",
+        "İdeal gaz denklemi",
+        "Difüzyon",
+        "Efüzyon",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.1.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimyasal tepkimeler Gazlar",
+      "outcome": "Mol kavramına ilişkin işlemsel anlam geliştirir",
+      "micro": [
+        "Kimyasal değişim belirtileri",
+        "Kimyasal denklem",
+        "Tepkime türleri",
+        "Çökelme",
+        "Asit-baz tepkimesi",
+        "Redoks",
+        "Mol",
+        "Avogadro sayısı",
+        "Mol kütlesi",
+        "Denklem denkleştirme",
+        "Stokiyometri",
+        "Sınırlayıcı bileşen",
+        "Gaz basıncı",
+        "Hacim",
+        "Sıcaklık",
+        "Boyle / Charles / Gay-Lussac ilişkileri",
+        "İdeal gaz denklemi",
+        "Difüzyon",
+        "Efüzyon",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.1.5",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimyasal tepkimeler Gazlar",
+      "outcome": "Atom/molekül sayısı, kütle ve mol arasında ilişki kurar",
+      "micro": [
+        "Kimyasal değişim belirtileri",
+        "Kimyasal denklem",
+        "Tepkime türleri",
+        "Çökelme",
+        "Asit-baz tepkimesi",
+        "Redoks",
+        "Mol",
+        "Avogadro sayısı",
+        "Mol kütlesi",
+        "Denklem denkleştirme",
+        "Stokiyometri",
+        "Sınırlayıcı bileşen",
+        "Gaz basıncı",
+        "Hacim",
+        "Sıcaklık",
+        "Boyle / Charles / Gay-Lussac ilişkileri",
+        "İdeal gaz denklemi",
+        "Difüzyon",
+        "Efüzyon",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.1.6",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimyasal tepkimeler Gazlar",
+      "outcome": "Kimyasal denklemleri denkleştirir",
+      "micro": [
+        "Kimyasal değişim belirtileri",
+        "Kimyasal denklem",
+        "Tepkime türleri",
+        "Çökelme",
+        "Asit-baz tepkimesi",
+        "Redoks",
+        "Mol",
+        "Avogadro sayısı",
+        "Mol kütlesi",
+        "Denklem denkleştirme",
+        "Stokiyometri",
+        "Sınırlayıcı bileşen",
+        "Gaz basıncı",
+        "Hacim",
+        "Sıcaklık",
+        "Boyle / Charles / Gay-Lussac ilişkileri",
+        "İdeal gaz denklemi",
+        "Difüzyon",
+        "Efüzyon",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.1.7",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimyasal tepkimeler Gazlar",
+      "outcome": "Stokiyometrik hesaplamalar yapar",
+      "micro": [
+        "Kimyasal değişim belirtileri",
+        "Kimyasal denklem",
+        "Tepkime türleri",
+        "Çökelme",
+        "Asit-baz tepkimesi",
+        "Redoks",
+        "Mol",
+        "Avogadro sayısı",
+        "Mol kütlesi",
+        "Denklem denkleştirme",
+        "Stokiyometri",
+        "Sınırlayıcı bileşen",
+        "Gaz basıncı",
+        "Hacim",
+        "Sıcaklık",
+        "Boyle / Charles / Gay-Lussac ilişkileri",
+        "İdeal gaz denklemi",
+        "Difüzyon",
+        "Efüzyon",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.1.8",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimyasal tepkimeler Gazlar",
+      "outcome": "Gazların temel özelliklerini açıklar",
+      "micro": [
+        "Kimyasal değişim belirtileri",
+        "Kimyasal denklem",
+        "Tepkime türleri",
+        "Çökelme",
+        "Asit-baz tepkimesi",
+        "Redoks",
+        "Mol",
+        "Avogadro sayısı",
+        "Mol kütlesi",
+        "Denklem denkleştirme",
+        "Stokiyometri",
+        "Sınırlayıcı bileşen",
+        "Gaz basıncı",
+        "Hacim",
+        "Sıcaklık",
+        "Boyle / Charles / Gay-Lussac ilişkileri",
+        "İdeal gaz denklemi",
+        "Difüzyon",
+        "Efüzyon",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.1.9",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimyasal tepkimeler Gazlar",
+      "outcome": "Gaz değişkenleri arasındaki ilişkileri yorumlar",
+      "micro": [
+        "Kimyasal değişim belirtileri",
+        "Kimyasal denklem",
+        "Tepkime türleri",
+        "Çökelme",
+        "Asit-baz tepkimesi",
+        "Redoks",
+        "Mol",
+        "Avogadro sayısı",
+        "Mol kütlesi",
+        "Denklem denkleştirme",
+        "Stokiyometri",
+        "Sınırlayıcı bileşen",
+        "Gaz basıncı",
+        "Hacim",
+        "Sıcaklık",
+        "Boyle / Charles / Gay-Lussac ilişkileri",
+        "İdeal gaz denklemi",
+        "Difüzyon",
+        "Efüzyon",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.1.10",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimyasal tepkimeler Gazlar",
+      "outcome": "İdeal gaz denkleminden yararlanır",
+      "micro": [
+        "Kimyasal değişim belirtileri",
+        "Kimyasal denklem",
+        "Tepkime türleri",
+        "Çökelme",
+        "Asit-baz tepkimesi",
+        "Redoks",
+        "Mol",
+        "Avogadro sayısı",
+        "Mol kütlesi",
+        "Denklem denkleştirme",
+        "Stokiyometri",
+        "Sınırlayıcı bileşen",
+        "Gaz basıncı",
+        "Hacim",
+        "Sıcaklık",
+        "Boyle / Charles / Gay-Lussac ilişkileri",
+        "İdeal gaz denklemi",
+        "Difüzyon",
+        "Efüzyon",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.1.11",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Kimyasal tepkimeler Gazlar",
+      "outcome": "Difüzyon/efüzyon davranışını deneysel olarak inceler",
+      "micro": [
+        "Kimyasal değişim belirtileri",
+        "Kimyasal denklem",
+        "Tepkime türleri",
+        "Çökelme",
+        "Asit-baz tepkimesi",
+        "Redoks",
+        "Mol",
+        "Avogadro sayısı",
+        "Mol kütlesi",
+        "Denklem denkleştirme",
+        "Stokiyometri",
+        "Sınırlayıcı bileşen",
+        "Gaz basıncı",
+        "Hacim",
+        "Sıcaklık",
+        "Boyle / Charles / Gay-Lussac ilişkileri",
+        "İdeal gaz denklemi",
+        "Difüzyon",
+        "Efüzyon",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.2.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Çeşitlilik",
+      "outcome": "Çözünme olayını tanecik düzeyinde modeller",
+      "micro": [
+        "Çözücü / çözünen",
+        "Çözünme",
+        "Solvatasyon / hidratasyon",
+        "Çözünürlük",
+        "Doymuş / doymamış / aşırı doymuş çözelti",
+        "Derişim",
+        "Molarite",
+        "ppm",
+        "Sıcaklığın çözünürlüğe etkisi",
+        "Basıncın gaz çözünürlüğüne etkisi",
+        "Kaynama noktası yükselmesi",
+        "Donma noktası alçalması",
+        "Koligatif özelliklere giriş",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.2.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Çeşitlilik",
+      "outcome": "Farklı maddelerin çözünürlük davranışlarını karşılaştırır",
+      "micro": [
+        "Çözücü / çözünen",
+        "Çözünme",
+        "Solvatasyon / hidratasyon",
+        "Çözünürlük",
+        "Doymuş / doymamış / aşırı doymuş çözelti",
+        "Derişim",
+        "Molarite",
+        "ppm",
+        "Sıcaklığın çözünürlüğe etkisi",
+        "Basıncın gaz çözünürlüğüne etkisi",
+        "Kaynama noktası yükselmesi",
+        "Donma noktası alçalması",
+        "Koligatif özelliklere giriş",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.2.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Çeşitlilik",
+      "outcome": "Çözünme süreçlerini etkileşim türlerine göre sınıflandırır",
+      "micro": [
+        "Çözücü / çözünen",
+        "Çözünme",
+        "Solvatasyon / hidratasyon",
+        "Çözünürlük",
+        "Doymuş / doymamış / aşırı doymuş çözelti",
+        "Derişim",
+        "Molarite",
+        "ppm",
+        "Sıcaklığın çözünürlüğe etkisi",
+        "Basıncın gaz çözünürlüğüne etkisi",
+        "Kaynama noktası yükselmesi",
+        "Donma noktası alçalması",
+        "Koligatif özelliklere giriş",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.2.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Çeşitlilik",
+      "outcome": "Çözünürlük kavramını açıklar",
+      "micro": [
+        "Çözücü / çözünen",
+        "Çözünme",
+        "Solvatasyon / hidratasyon",
+        "Çözünürlük",
+        "Doymuş / doymamış / aşırı doymuş çözelti",
+        "Derişim",
+        "Molarite",
+        "ppm",
+        "Sıcaklığın çözünürlüğe etkisi",
+        "Basıncın gaz çözünürlüğüne etkisi",
+        "Kaynama noktası yükselmesi",
+        "Donma noktası alçalması",
+        "Koligatif özelliklere giriş",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.2.5",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Çeşitlilik",
+      "outcome": "Sıcaklık, basınç ve madde türünün çözünürlüğe etkisini inceler",
+      "micro": [
+        "Çözücü / çözünen",
+        "Çözünme",
+        "Solvatasyon / hidratasyon",
+        "Çözünürlük",
+        "Doymuş / doymamış / aşırı doymuş çözelti",
+        "Derişim",
+        "Molarite",
+        "ppm",
+        "Sıcaklığın çözünürlüğe etkisi",
+        "Basıncın gaz çözünürlüğüne etkisi",
+        "Kaynama noktası yükselmesi",
+        "Donma noktası alçalması",
+        "Koligatif özelliklere giriş",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.2.6",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Çeşitlilik",
+      "outcome": "Çözeltileri çeşitli ölçütlere göre sınıflandırır",
+      "micro": [
+        "Çözücü / çözünen",
+        "Çözünme",
+        "Solvatasyon / hidratasyon",
+        "Çözünürlük",
+        "Doymuş / doymamış / aşırı doymuş çözelti",
+        "Derişim",
+        "Molarite",
+        "ppm",
+        "Sıcaklığın çözünürlüğe etkisi",
+        "Basıncın gaz çözünürlüğüne etkisi",
+        "Kaynama noktası yükselmesi",
+        "Donma noktası alçalması",
+        "Koligatif özelliklere giriş",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.2.7",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Çeşitlilik",
+      "outcome": "Molar derişimle ilgili hesaplamalar yapar",
+      "micro": [
+        "Çözücü / çözünen",
+        "Çözünme",
+        "Solvatasyon / hidratasyon",
+        "Çözünürlük",
+        "Doymuş / doymamış / aşırı doymuş çözelti",
+        "Derişim",
+        "Molarite",
+        "ppm",
+        "Sıcaklığın çözünürlüğe etkisi",
+        "Basıncın gaz çözünürlüğüne etkisi",
+        "Kaynama noktası yükselmesi",
+        "Donma noktası alçalması",
+        "Koligatif özelliklere giriş",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.2.8",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Çeşitlilik",
+      "outcome": "Çözünmüş taneciklerin kaynama/donma davranışına etkisini yorumlar",
+      "micro": [
+        "Çözücü / çözünen",
+        "Çözünme",
+        "Solvatasyon / hidratasyon",
+        "Çözünürlük",
+        "Doymuş / doymamış / aşırı doymuş çözelti",
+        "Derişim",
+        "Molarite",
+        "ppm",
+        "Sıcaklığın çözünürlüğe etkisi",
+        "Basıncın gaz çözünürlüğüne etkisi",
+        "Kaynama noktası yükselmesi",
+        "Donma noktası alçalması",
+        "Koligatif özelliklere giriş",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.3.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Sürdürülebilirlik",
+      "theme_order": 3,
+      "content_frame": "Sürdürülebilirlik",
+      "outcome": "Makro ve mikro ölçekli deneyleri çevresel etkileri bakımından karşılaştırır",
+      "micro": [
+        "Yeşil kimya",
+        "Mikro ölçekli deney",
+        "Atom ekonomisi",
+        "Su ayak izi",
+        "Emisyon / karbon ayak izi",
+        "Hava kirliliği",
+        "Ozon",
+        "Asit yağmurları",
+        "Sera etkisi",
+        "Küresel ısınma",
+        "Atmosfer kimyası",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.10.3.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Sürdürülebilirlik",
+      "theme_order": 3,
+      "content_frame": "Sürdürülebilirlik",
+      "outcome": "Atmosferdeki kimyasal süreçlerin ekosistem üzerindeki sorunlarına yönelik çözüm üretir",
+      "micro": [
+        "Yeşil kimya",
+        "Mikro ölçekli deney",
+        "Atom ekonomisi",
+        "Su ayak izi",
+        "Emisyon / karbon ayak izi",
+        "Hava kirliliği",
+        "Ozon",
+        "Asit yağmurları",
+        "Sera etkisi",
+        "Küresel ısınma",
+        "Atmosfer kimyası",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.11.1.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Enerji Tepkime hızı",
+      "outcome": "Fiziksel ve kimyasal süreçlerde enerji değişimini deneysel olarak inceler",
+      "micro": [
+        "Endotermik / ekzotermik",
+        "Entalpi",
+        "Tepkime entalpisi",
+        "Oluşum entalpisi",
+        "Bağ enerjisi",
+        "Hess yaklaşımı",
+        "Aktivasyon enerjisi",
+        "Çarpışma teorisi",
+        "Tepkime hızı",
+        "Derişim",
+        "Sıcaklık",
+        "Yüzey alanı",
+        "Katalizör",
+        "Hız bağıntısı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.11.1.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Enerji Tepkime hızı",
+      "outcome": "Enerji kaynaklarının/yanma süreçlerinin enerji potansiyeline ilişkin hipotez geliştirir",
+      "micro": [
+        "Endotermik / ekzotermik",
+        "Entalpi",
+        "Tepkime entalpisi",
+        "Oluşum entalpisi",
+        "Bağ enerjisi",
+        "Hess yaklaşımı",
+        "Aktivasyon enerjisi",
+        "Çarpışma teorisi",
+        "Tepkime hızı",
+        "Derişim",
+        "Sıcaklık",
+        "Yüzey alanı",
+        "Katalizör",
+        "Hız bağıntısı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.11.1.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Enerji Tepkime hızı",
+      "outcome": "Bağ enerjileri ile tepkime entalpisi arasında ilişki kurar",
+      "micro": [
+        "Endotermik / ekzotermik",
+        "Entalpi",
+        "Tepkime entalpisi",
+        "Oluşum entalpisi",
+        "Bağ enerjisi",
+        "Hess yaklaşımı",
+        "Aktivasyon enerjisi",
+        "Çarpışma teorisi",
+        "Tepkime hızı",
+        "Derişim",
+        "Sıcaklık",
+        "Yüzey alanı",
+        "Katalizör",
+        "Hız bağıntısı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.11.1.4",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Enerji Tepkime hızı",
+      "outcome": "Oluşum entalpilerinden tepkime entalpisi hesaplar/yorumlar",
+      "micro": [
+        "Endotermik / ekzotermik",
+        "Entalpi",
+        "Tepkime entalpisi",
+        "Oluşum entalpisi",
+        "Bağ enerjisi",
+        "Hess yaklaşımı",
+        "Aktivasyon enerjisi",
+        "Çarpışma teorisi",
+        "Tepkime hızı",
+        "Derişim",
+        "Sıcaklık",
+        "Yüzey alanı",
+        "Katalizör",
+        "Hız bağıntısı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.11.1.5",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Enerji Tepkime hızı",
+      "outcome": "Tepkimelerin gerçekleşmesini çarpışma teorisiyle açıklar",
+      "micro": [
+        "Endotermik / ekzotermik",
+        "Entalpi",
+        "Tepkime entalpisi",
+        "Oluşum entalpisi",
+        "Bağ enerjisi",
+        "Hess yaklaşımı",
+        "Aktivasyon enerjisi",
+        "Çarpışma teorisi",
+        "Tepkime hızı",
+        "Derişim",
+        "Sıcaklık",
+        "Yüzey alanı",
+        "Katalizör",
+        "Hız bağıntısı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.11.1.6",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Enerji Tepkime hızı",
+      "outcome": "Tepkime hızının zamanla değişimini yorumlar",
+      "micro": [
+        "Endotermik / ekzotermik",
+        "Entalpi",
+        "Tepkime entalpisi",
+        "Oluşum entalpisi",
+        "Bağ enerjisi",
+        "Hess yaklaşımı",
+        "Aktivasyon enerjisi",
+        "Çarpışma teorisi",
+        "Tepkime hızı",
+        "Derişim",
+        "Sıcaklık",
+        "Yüzey alanı",
+        "Katalizör",
+        "Hız bağıntısı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.11.1.7",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Enerji Tepkime hızı",
+      "outcome": "Tepkime hızını etkileyen faktörleri analiz eder",
+      "micro": [
+        "Endotermik / ekzotermik",
+        "Entalpi",
+        "Tepkime entalpisi",
+        "Oluşum entalpisi",
+        "Bağ enerjisi",
+        "Hess yaklaşımı",
+        "Aktivasyon enerjisi",
+        "Çarpışma teorisi",
+        "Tepkime hızı",
+        "Derişim",
+        "Sıcaklık",
+        "Yüzey alanı",
+        "Katalizör",
+        "Hız bağıntısı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.11.1.8",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Enerji Tepkime hızı",
+      "outcome": "Deneysel verilerden hız bağıntısına ilişkin çıkarım yapar",
+      "micro": [
+        "Endotermik / ekzotermik",
+        "Entalpi",
+        "Tepkime entalpisi",
+        "Oluşum entalpisi",
+        "Bağ enerjisi",
+        "Hess yaklaşımı",
+        "Aktivasyon enerjisi",
+        "Çarpışma teorisi",
+        "Tepkime hızı",
+        "Derişim",
+        "Sıcaklık",
+        "Yüzey alanı",
+        "Katalizör",
+        "Hız bağıntısı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.11.2.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Kimyasal denge Asit ve baz çözeltilerinde denge Çözünürlük dengesi",
+      "outcome": "Tersinir tepkimeleri yorumlar",
+      "micro": [
+        "Tersinir tepkime",
+        "Dinamik denge",
+        "Denge sabiti",
+        "Tepkime bölümü",
+        "Dengeye etki eden faktörler",
+        "Le Châtelier ilkesi",
+        "Asit / baz",
+        "Kuvvetli / zayıf asit-baz",
+        "pH / pOH",
+        "Ka / Kb",
+        "Tampon çözeltiler",
+        "Çözünürlük dengesi",
+        "Çözünürlük çarpımı",
+        "Ksp",
+        "Ortak iyon etkisi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.11.2.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Kimyasal denge Asit ve baz çözeltilerinde denge Çözünürlük dengesi",
+      "outcome": "Kimyasal denge sürecini açıklar",
+      "micro": [
+        "Tersinir tepkime",
+        "Dinamik denge",
+        "Denge sabiti",
+        "Tepkime bölümü",
+        "Dengeye etki eden faktörler",
+        "Le Châtelier ilkesi",
+        "Asit / baz",
+        "Kuvvetli / zayıf asit-baz",
+        "pH / pOH",
+        "Ka / Kb",
+        "Tampon çözeltiler",
+        "Çözünürlük dengesi",
+        "Çözünürlük çarpımı",
+        "Ksp",
+        "Ortak iyon etkisi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.11.3.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Sürdürülebilirlik",
+      "theme_order": 3,
+      "content_frame": "Sürdürülebilirlik",
+      "outcome": "Evsel atıklardan fermantasyon gibi süreçlerle yeşil hidrojen üretimine yönelik hipotez geliştirir",
+      "micro": [
+        "Yeşil hidrojen",
+        "Fermantasyon",
+        "Alternatif enerji",
+        "Nanoteknoloji",
+        "Nano malzemeler",
+        "Mikroplastik",
+        "Nanoplastik",
+        "Çevresel sürdürülebilirlik",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.11.3.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Sürdürülebilirlik",
+      "theme_order": 3,
+      "content_frame": "Sürdürülebilirlik",
+      "outcome": "Nanoteknolojik ürünlerin yarar ve olası zararlarını eleştirel değerlendirir",
+      "micro": [
+        "Yeşil hidrojen",
+        "Fermantasyon",
+        "Alternatif enerji",
+        "Nanoteknoloji",
+        "Nano malzemeler",
+        "Mikroplastik",
+        "Nanoplastik",
+        "Çevresel sürdürülebilirlik",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.11.3.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Sürdürülebilirlik",
+      "theme_order": 3,
+      "content_frame": "Sürdürülebilirlik",
+      "outcome": "Mikro/nanoplastiklerin çevresel ve biyolojik etkilerini değerlendirir",
+      "micro": [
+        "Yeşil hidrojen",
+        "Fermantasyon",
+        "Alternatif enerji",
+        "Nanoteknoloji",
+        "Nano malzemeler",
+        "Mikroplastik",
+        "Nanoplastik",
+        "Çevresel sürdürülebilirlik",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.12.1.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Elektrokimya",
+      "outcome": "Redoks süreçlerini elektron alışverişi üzerinden açıklar",
+      "micro": [
+        "İndirgenme–yükseltgenme",
+        "Yükseltgenme basamağı",
+        "Yarı tepkimeler",
+        "Redoks denkleştirme",
+        "Metallerin aktifliği",
+        "Elektrokimyasal hücreler",
+        "Galvanik pil",
+        "Anot / katot",
+        "Hücre potansiyeli",
+        "Standart elektrot potansiyeli",
+        "Elektroliz",
+        "Faraday yaklaşımı",
+        "Korozyon ve korunma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.12.1.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Elektrokimya",
+      "outcome": "Yarı tepkimeleri kullanarak elektrokimyasal süreçleri analiz eder",
+      "micro": [
+        "İndirgenme–yükseltgenme",
+        "Yükseltgenme basamağı",
+        "Yarı tepkimeler",
+        "Redoks denkleştirme",
+        "Metallerin aktifliği",
+        "Elektrokimyasal hücreler",
+        "Galvanik pil",
+        "Anot / katot",
+        "Hücre potansiyeli",
+        "Standart elektrot potansiyeli",
+        "Elektroliz",
+        "Faraday yaklaşımı",
+        "Korozyon ve korunma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.12.1.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Elektrokimya",
+      "outcome": "Metal aktifliğini karşılaştırır",
+      "micro": [
+        "İndirgenme–yükseltgenme",
+        "Yükseltgenme basamağı",
+        "Yarı tepkimeler",
+        "Redoks denkleştirme",
+        "Metallerin aktifliği",
+        "Elektrokimyasal hücreler",
+        "Galvanik pil",
+        "Anot / katot",
+        "Hücre potansiyeli",
+        "Standart elektrot potansiyeli",
+        "Elektroliz",
+        "Faraday yaklaşımı",
+        "Korozyon ve korunma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.12.1.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Elektrokimya",
+      "outcome": "Galvanik ve elektrolitik hücreleri inceler",
+      "micro": [
+        "İndirgenme–yükseltgenme",
+        "Yükseltgenme basamağı",
+        "Yarı tepkimeler",
+        "Redoks denkleştirme",
+        "Metallerin aktifliği",
+        "Elektrokimyasal hücreler",
+        "Galvanik pil",
+        "Anot / katot",
+        "Hücre potansiyeli",
+        "Standart elektrot potansiyeli",
+        "Elektroliz",
+        "Faraday yaklaşımı",
+        "Korozyon ve korunma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.12.1.5",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Etkileşim",
+      "theme_order": 1,
+      "content_frame": "Elektrokimya",
+      "outcome": "Elektrokimyanın teknoloji ve günlük yaşamdaki uygulamalarını değerlendirir",
+      "micro": [
+        "İndirgenme–yükseltgenme",
+        "Yükseltgenme basamağı",
+        "Yarı tepkimeler",
+        "Redoks denkleştirme",
+        "Metallerin aktifliği",
+        "Elektrokimyasal hücreler",
+        "Galvanik pil",
+        "Anot / katot",
+        "Hücre potansiyeli",
+        "Standart elektrot potansiyeli",
+        "Elektroliz",
+        "Faraday yaklaşımı",
+        "Korozyon ve korunma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.12.2.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Çeşitlilik",
+      "theme_order": 2,
+      "content_frame": "Organik kimya",
+      "outcome": "Sigma ve pi bağlarının incelenmesi",
+      "micro": [
+        "Karbonun bağ yapısı",
+        "Hibritleşme",
+        "Sigma bağı",
+        "Pi bağı",
+        "Molekül geometrisi",
+        "VSEPR yaklaşımı",
+        "Organik bileşiklerin gösterimi",
+        "Yapı formülü",
+        "İzomerlik",
+        "Hidrokarbonlar",
+        "Alkan",
+        "Alken",
+        "Alkin",
+        "Aromatik bileşikler",
+        "Fonksiyonel gruplar",
+        "Alkoller",
+        "Eterler",
+        "Aldehitler",
+        "Ketonlar",
+        "Karboksilik asitler",
+        "Esterler",
+        "Aminler ve diğer temel organik sınıflar",
+        "Organik bileşiklerin adlandırılması ve özellikleri",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.12.3.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Sürdürülebilirlik",
+      "theme_order": 3,
+      "content_frame": "Sürdürülebilirlik",
+      "outcome": "Yeni nesil enerji ve malzeme teknolojileri",
+      "micro": [
+        "Güneş enerjisi",
+        "Boya duyarlı güneş pili",
+        "Enerji verimi",
+        "Sürdürülebilir malzeme",
+        "Yeşil teknoloji",
+        "Yaşam döngüsü / çevresel etki yaklaşımı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.12.3.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Sürdürülebilirlik",
+      "theme_order": 3,
+      "content_frame": "Sürdürülebilirlik",
+      "outcome": "Boya duyarlı güneş pili gibi sürdürülebilir kimya uygulamaları",
+      "micro": [
+        "Güneş enerjisi",
+        "Boya duyarlı güneş pili",
+        "Enerji verimi",
+        "Sürdürülebilir malzeme",
+        "Yeşil teknoloji",
+        "Yaşam döngüsü / çevresel etki yaklaşımı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.12.3.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Sürdürülebilirlik",
+      "theme_order": 3,
+      "content_frame": "Sürdürülebilirlik",
+      "outcome": "Enerji dönüşüm verimi",
+      "micro": [
+        "Güneş enerjisi",
+        "Boya duyarlı güneş pili",
+        "Enerji verimi",
+        "Sürdürülebilir malzeme",
+        "Yeşil teknoloji",
+        "Yaşam döngüsü / çevresel etki yaklaşımı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "KIM.12.3.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Sürdürülebilirlik",
+      "theme_order": 3,
+      "content_frame": "Sürdürülebilirlik",
+      "outcome": "Kimyanın sürdürülebilir teknolojiye katkısı",
+      "micro": [
+        "Güneş enerjisi",
+        "Boya duyarlı güneş pili",
+        "Enerji verimi",
+        "Sürdürülebilir malzeme",
+        "Yeşil teknoloji",
+        "Yaşam döngüsü / çevresel etki yaklaşımı",
+        "GENEL_KARMA"
+      ]
+    }
+  ]
+}

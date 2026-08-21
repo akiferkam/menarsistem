@@ -1,0 +1,2051 @@
+{
+  "subject": "Türk Dili ve Edebiyatı",
+  "source": {
+    "workflow_file": "curriculum/maarif_modeli_9_12_fizik_kimya_biyoloji_tde_tyt_ayt.md",
+    "extracted_node": "markdown parse script (_scratch_reparse.mjs)",
+    "extracted_at": "2026-08-17"
+  },
+  "outcome_count": 76,
+  "outcomes": [
+    {
+      "code": "TDE.9.1.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sözün İnceliği",
+      "theme_order": 1,
+      "content_frame": "Şiir Deneme Söyleşi / mülakat dinleme-izleme Betimleyici paragraf Sözlü anlatım / ikna",
+      "outcome": "Dinlenen/izlenen içerikte ileti ve anlamı çözümler",
+      "micro": [
+        "Edebiyat ve güzel sanatlar",
+        "Edebî dil / günlük dil",
+        "Açık ileti / örtük ileti",
+        "Gerçeklik / kurmaca",
+        "Hayal",
+        "İmge",
+        "Simge",
+        "Çağrışım",
+        "Tema",
+        "Konu",
+        "Şiir dili",
+        "Üslup",
+        "Akıcılık",
+        "Yaratıcılık",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.1.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sözün İnceliği",
+      "theme_order": 1,
+      "content_frame": "Şiir Deneme Söyleşi / mülakat dinleme-izleme Betimleyici paragraf Sözlü anlatım / ikna",
+      "outcome": "Şiir ve deneme metinlerini yapı, anlam, dil ve estetik özellikler bakımından inceler",
+      "micro": [
+        "Edebiyat ve güzel sanatlar",
+        "Edebî dil / günlük dil",
+        "Açık ileti / örtük ileti",
+        "Gerçeklik / kurmaca",
+        "Hayal",
+        "İmge",
+        "Simge",
+        "Çağrışım",
+        "Tema",
+        "Konu",
+        "Şiir dili",
+        "Üslup",
+        "Akıcılık",
+        "Yaratıcılık",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.1.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sözün İnceliği",
+      "theme_order": 1,
+      "content_frame": "Şiir Deneme Söyleşi / mülakat dinleme-izleme Betimleyici paragraf Sözlü anlatım / ikna",
+      "outcome": "Sözlü anlatımda düşünceyi amaca ve dinleyiciye uygun biçimde ifade eder",
+      "micro": [
+        "Edebiyat ve güzel sanatlar",
+        "Edebî dil / günlük dil",
+        "Açık ileti / örtük ileti",
+        "Gerçeklik / kurmaca",
+        "Hayal",
+        "İmge",
+        "Simge",
+        "Çağrışım",
+        "Tema",
+        "Konu",
+        "Şiir dili",
+        "Üslup",
+        "Akıcılık",
+        "Yaratıcılık",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.1.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sözün İnceliği",
+      "theme_order": 1,
+      "content_frame": "Şiir Deneme Söyleşi / mülakat dinleme-izleme Betimleyici paragraf Sözlü anlatım / ikna",
+      "outcome": "Şiirsel ve betimleyici yazma çalışmaları yapar",
+      "micro": [
+        "Edebiyat ve güzel sanatlar",
+        "Edebî dil / günlük dil",
+        "Açık ileti / örtük ileti",
+        "Gerçeklik / kurmaca",
+        "Hayal",
+        "İmge",
+        "Simge",
+        "Çağrışım",
+        "Tema",
+        "Konu",
+        "Şiir dili",
+        "Üslup",
+        "Akıcılık",
+        "Yaratıcılık",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.2.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Anlam Arayışı",
+      "theme_order": 2,
+      "content_frame": "Hikâye Anı Şiir İstiklâl Marşı ara metni/bağlamı Karakter sunumu Şiir yazma",
+      "outcome": "Metnin konusu, ana duygusu/ana düşüncesi ve iletilerini belirler",
+      "micro": [
+        "Konu",
+        "Tema",
+        "Ana düşünce",
+        "Ana duygu",
+        "Açık / örtük ileti",
+        "Yazar tutumu",
+        "Hikâye",
+        "Anı",
+        "Karakter",
+        "Bağlam",
+        "Ses bilgisi",
+        "Türkçenin ses özellikleri",
+        "Yazım ve söyleyiş ilişkisi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.2.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Anlam Arayışı",
+      "theme_order": 2,
+      "content_frame": "Hikâye Anı Şiir İstiklâl Marşı ara metni/bağlamı Karakter sunumu Şiir yazma",
+      "outcome": "Anlatıcının/yazarın tutumunu yorumlar",
+      "micro": [
+        "Konu",
+        "Tema",
+        "Ana düşünce",
+        "Ana duygu",
+        "Açık / örtük ileti",
+        "Yazar tutumu",
+        "Hikâye",
+        "Anı",
+        "Karakter",
+        "Bağlam",
+        "Ses bilgisi",
+        "Türkçenin ses özellikleri",
+        "Yazım ve söyleyiş ilişkisi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.2.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Anlam Arayışı",
+      "theme_order": 2,
+      "content_frame": "Hikâye Anı Şiir İstiklâl Marşı ara metni/bağlamı Karakter sunumu Şiir yazma",
+      "outcome": "Hikâye ve anı türlerinin özelliklerini karşılaştırır",
+      "micro": [
+        "Konu",
+        "Tema",
+        "Ana düşünce",
+        "Ana duygu",
+        "Açık / örtük ileti",
+        "Yazar tutumu",
+        "Hikâye",
+        "Anı",
+        "Karakter",
+        "Bağlam",
+        "Ses bilgisi",
+        "Türkçenin ses özellikleri",
+        "Yazım ve söyleyiş ilişkisi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.2.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Anlam Arayışı",
+      "theme_order": 2,
+      "content_frame": "Hikâye Anı Şiir İstiklâl Marşı ara metni/bağlamı Karakter sunumu Şiir yazma",
+      "outcome": "Sözlü ve yazılı anlatımda metin çözümleme bulgularını kullanır",
+      "micro": [
+        "Konu",
+        "Tema",
+        "Ana düşünce",
+        "Ana duygu",
+        "Açık / örtük ileti",
+        "Yazar tutumu",
+        "Hikâye",
+        "Anı",
+        "Karakter",
+        "Bağlam",
+        "Ses bilgisi",
+        "Türkçenin ses özellikleri",
+        "Yazım ve söyleyiş ilişkisi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.3.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Anlamın Yapı Taşları",
+      "theme_order": 3,
+      "content_frame": "Hikâye Gezi yazısı Şiir ara metni Kültürel belgesel İnfografik yazma Mekân karşılaştırmalı sözlü anlatım",
+      "outcome": "Metnin yapı unsurlarını belirler",
+      "micro": [
+        "Olay örgüsü",
+        "Kişi / karakter",
+        "Zaman",
+        "Mekân",
+        "Anlatıcı",
+        "Bakış açısı",
+        "Betimleme",
+        "Öyküleme",
+        "Gezi yazısı",
+        "Görsel okuryazarlık",
+        "Bilgi düzenleme",
+        "İnfografik",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.3.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Anlamın Yapı Taşları",
+      "theme_order": 3,
+      "content_frame": "Hikâye Gezi yazısı Şiir ara metni Kültürel belgesel İnfografik yazma Mekân karşılaştırmalı sözlü anlatım",
+      "outcome": "Olay örgüsü, kişi, zaman ve mekân arasındaki ilişkiyi inceler",
+      "micro": [
+        "Olay örgüsü",
+        "Kişi / karakter",
+        "Zaman",
+        "Mekân",
+        "Anlatıcı",
+        "Bakış açısı",
+        "Betimleme",
+        "Öyküleme",
+        "Gezi yazısı",
+        "Görsel okuryazarlık",
+        "Bilgi düzenleme",
+        "İnfografik",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.3.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Anlamın Yapı Taşları",
+      "theme_order": 3,
+      "content_frame": "Hikâye Gezi yazısı Şiir ara metni Kültürel belgesel İnfografik yazma Mekân karşılaştırmalı sözlü anlatım",
+      "outcome": "Anlatıcı ve bakış açısını değerlendirir",
+      "micro": [
+        "Olay örgüsü",
+        "Kişi / karakter",
+        "Zaman",
+        "Mekân",
+        "Anlatıcı",
+        "Bakış açısı",
+        "Betimleme",
+        "Öyküleme",
+        "Gezi yazısı",
+        "Görsel okuryazarlık",
+        "Bilgi düzenleme",
+        "İnfografik",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.3.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Anlamın Yapı Taşları",
+      "theme_order": 3,
+      "content_frame": "Hikâye Gezi yazısı Şiir ara metni Kültürel belgesel İnfografik yazma Mekân karşılaştırmalı sözlü anlatım",
+      "outcome": "Bilgiyi görsel/infografik biçimde düzenler",
+      "micro": [
+        "Olay örgüsü",
+        "Kişi / karakter",
+        "Zaman",
+        "Mekân",
+        "Anlatıcı",
+        "Bakış açısı",
+        "Betimleme",
+        "Öyküleme",
+        "Gezi yazısı",
+        "Görsel okuryazarlık",
+        "Bilgi düzenleme",
+        "İnfografik",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.3.5",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Anlamın Yapı Taşları",
+      "theme_order": 3,
+      "content_frame": "Hikâye Gezi yazısı Şiir ara metni Kültürel belgesel İnfografik yazma Mekân karşılaştırmalı sözlü anlatım",
+      "outcome": "Karşılaştırmalı sözlü anlatım yapar",
+      "micro": [
+        "Olay örgüsü",
+        "Kişi / karakter",
+        "Zaman",
+        "Mekân",
+        "Anlatıcı",
+        "Bakış açısı",
+        "Betimleme",
+        "Öyküleme",
+        "Gezi yazısı",
+        "Görsel okuryazarlık",
+        "Bilgi düzenleme",
+        "İnfografik",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.4.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Tema: Dilin Zenginliği",
+      "theme_order": 4,
+      "content_frame": "Roman Tiyatro Eleştiri Otobiyografi Sosyal medya dili ile edebî dil karşılaştırması Otobiyografik yazma",
+      "outcome": "Roman ve tiyatro gibi kurmaca türleri yapı ve anlatım bakımından inceler",
+      "micro": [
+        "Roman",
+        "Tiyatro",
+        "Eleştiri",
+        "Otobiyografi",
+        "Kurmaca",
+        "Anlatım biçimleri",
+        "Dil ve bağlam",
+        "Sosyal medya dili",
+        "Edebî dil",
+        "Söz varlığı",
+        "Üslup",
+        "Metinler arası ilişki",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.4.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Tema: Dilin Zenginliği",
+      "theme_order": 4,
+      "content_frame": "Roman Tiyatro Eleştiri Otobiyografi Sosyal medya dili ile edebî dil karşılaştırması Otobiyografik yazma",
+      "outcome": "Eleştirel okuma yapar",
+      "micro": [
+        "Roman",
+        "Tiyatro",
+        "Eleştiri",
+        "Otobiyografi",
+        "Kurmaca",
+        "Anlatım biçimleri",
+        "Dil ve bağlam",
+        "Sosyal medya dili",
+        "Edebî dil",
+        "Söz varlığı",
+        "Üslup",
+        "Metinler arası ilişki",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.4.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Tema: Dilin Zenginliği",
+      "theme_order": 4,
+      "content_frame": "Roman Tiyatro Eleştiri Otobiyografi Sosyal medya dili ile edebî dil karşılaştırması Otobiyografik yazma",
+      "outcome": "Dilin farklı iletişim ortamlarındaki kullanımını karşılaştırır",
+      "micro": [
+        "Roman",
+        "Tiyatro",
+        "Eleştiri",
+        "Otobiyografi",
+        "Kurmaca",
+        "Anlatım biçimleri",
+        "Dil ve bağlam",
+        "Sosyal medya dili",
+        "Edebî dil",
+        "Söz varlığı",
+        "Üslup",
+        "Metinler arası ilişki",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.9.4.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Tema: Dilin Zenginliği",
+      "theme_order": 4,
+      "content_frame": "Roman Tiyatro Eleştiri Otobiyografi Sosyal medya dili ile edebî dil karşılaştırması Otobiyografik yazma",
+      "outcome": "Kişisel yaşam deneyimini planlı bir metne dönüştürür",
+      "micro": [
+        "Roman",
+        "Tiyatro",
+        "Eleştiri",
+        "Otobiyografi",
+        "Kurmaca",
+        "Anlatım biçimleri",
+        "Dil ve bağlam",
+        "Sosyal medya dili",
+        "Edebî dil",
+        "Söz varlığı",
+        "Üslup",
+        "Metinler arası ilişki",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.1.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sözün Ezgisi",
+      "theme_order": 1,
+      "content_frame": "Koşuk Türkü Koşma Ninni Şiir dinletisi Halk anlatısı / masal bağlamı Görsel şerit / film şeridi",
+      "outcome": "Koşuk",
+      "micro": [
+        "Sözlü kültür",
+        "Halk edebiyatı",
+        "Anonim ürün",
+        "Nazım",
+        "Ezgi",
+        "Ahenk",
+        "Ölçü",
+        "Kafiye / redif",
+        "Gelenek",
+        "Varyant",
+        "Koşuk",
+        "Koşma",
+        "Türkü",
+        "Ninni",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.1.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sözün Ezgisi",
+      "theme_order": 1,
+      "content_frame": "Koşuk Türkü Koşma Ninni Şiir dinletisi Halk anlatısı / masal bağlamı Görsel şerit / film şeridi",
+      "outcome": "Türkü",
+      "micro": [
+        "Sözlü kültür",
+        "Halk edebiyatı",
+        "Anonim ürün",
+        "Nazım",
+        "Ezgi",
+        "Ahenk",
+        "Ölçü",
+        "Kafiye / redif",
+        "Gelenek",
+        "Varyant",
+        "Koşuk",
+        "Koşma",
+        "Türkü",
+        "Ninni",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.1.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sözün Ezgisi",
+      "theme_order": 1,
+      "content_frame": "Koşuk Türkü Koşma Ninni Şiir dinletisi Halk anlatısı / masal bağlamı Görsel şerit / film şeridi",
+      "outcome": "Koşma",
+      "micro": [
+        "Sözlü kültür",
+        "Halk edebiyatı",
+        "Anonim ürün",
+        "Nazım",
+        "Ezgi",
+        "Ahenk",
+        "Ölçü",
+        "Kafiye / redif",
+        "Gelenek",
+        "Varyant",
+        "Koşuk",
+        "Koşma",
+        "Türkü",
+        "Ninni",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.1.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sözün Ezgisi",
+      "theme_order": 1,
+      "content_frame": "Koşuk Türkü Koşma Ninni Şiir dinletisi Halk anlatısı / masal bağlamı Görsel şerit / film şeridi",
+      "outcome": "Ninni",
+      "micro": [
+        "Sözlü kültür",
+        "Halk edebiyatı",
+        "Anonim ürün",
+        "Nazım",
+        "Ezgi",
+        "Ahenk",
+        "Ölçü",
+        "Kafiye / redif",
+        "Gelenek",
+        "Varyant",
+        "Koşuk",
+        "Koşma",
+        "Türkü",
+        "Ninni",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.1.5",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sözün Ezgisi",
+      "theme_order": 1,
+      "content_frame": "Koşuk Türkü Koşma Ninni Şiir dinletisi Halk anlatısı / masal bağlamı Görsel şerit / film şeridi",
+      "outcome": "Şiir dinletisi",
+      "micro": [
+        "Sözlü kültür",
+        "Halk edebiyatı",
+        "Anonim ürün",
+        "Nazım",
+        "Ezgi",
+        "Ahenk",
+        "Ölçü",
+        "Kafiye / redif",
+        "Gelenek",
+        "Varyant",
+        "Koşuk",
+        "Koşma",
+        "Türkü",
+        "Ninni",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.1.6",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sözün Ezgisi",
+      "theme_order": 1,
+      "content_frame": "Koşuk Türkü Koşma Ninni Şiir dinletisi Halk anlatısı / masal bağlamı Görsel şerit / film şeridi",
+      "outcome": "Halk anlatısı / masal bağlamı",
+      "micro": [
+        "Sözlü kültür",
+        "Halk edebiyatı",
+        "Anonim ürün",
+        "Nazım",
+        "Ezgi",
+        "Ahenk",
+        "Ölçü",
+        "Kafiye / redif",
+        "Gelenek",
+        "Varyant",
+        "Koşuk",
+        "Koşma",
+        "Türkü",
+        "Ninni",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.1.7",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Sözün Ezgisi",
+      "theme_order": 1,
+      "content_frame": "Koşuk Türkü Koşma Ninni Şiir dinletisi Halk anlatısı / masal bağlamı Görsel şerit / film şeridi",
+      "outcome": "Görsel şerit / film şeridi",
+      "micro": [
+        "Sözlü kültür",
+        "Halk edebiyatı",
+        "Anonim ürün",
+        "Nazım",
+        "Ezgi",
+        "Ahenk",
+        "Ölçü",
+        "Kafiye / redif",
+        "Gelenek",
+        "Varyant",
+        "Koşuk",
+        "Koşma",
+        "Türkü",
+        "Ninni",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.2.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Kelimelerin Ritmi",
+      "theme_order": 2,
+      "content_frame": "Gazel Saf şiir örnekleri Kaside ara metni Söyleşi dinleme/izleme Edebî şahsiyet podcast/sunum Bilgilendirici metni edebî metne dönüştürme",
+      "outcome": "Şiirde ritim ve ahenk unsurlarını çözümler",
+      "micro": [
+        "Gazel",
+        "Kaside",
+        "Divan şiiri",
+        "Saf şiir",
+        "Aruz",
+        "Ölçü",
+        "Kafiye",
+        "Redif",
+        "Nazım birimi",
+        "Ahenk",
+        "İmge",
+        "Mazmun kavramına giriş",
+        "Şiir geleneği",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.2.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Kelimelerin Ritmi",
+      "theme_order": 2,
+      "content_frame": "Gazel Saf şiir örnekleri Kaside ara metni Söyleşi dinleme/izleme Edebî şahsiyet podcast/sunum Bilgilendirici metni edebî metne dönüştürme",
+      "outcome": "Farklı şiir geleneklerini karşılaştırır",
+      "micro": [
+        "Gazel",
+        "Kaside",
+        "Divan şiiri",
+        "Saf şiir",
+        "Aruz",
+        "Ölçü",
+        "Kafiye",
+        "Redif",
+        "Nazım birimi",
+        "Ahenk",
+        "İmge",
+        "Mazmun kavramına giriş",
+        "Şiir geleneği",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.2.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Kelimelerin Ritmi",
+      "theme_order": 2,
+      "content_frame": "Gazel Saf şiir örnekleri Kaside ara metni Söyleşi dinleme/izleme Edebî şahsiyet podcast/sunum Bilgilendirici metni edebî metne dönüştürme",
+      "outcome": "Edebî şahsiyet/şiir hakkında sözlü içerik üretir",
+      "micro": [
+        "Gazel",
+        "Kaside",
+        "Divan şiiri",
+        "Saf şiir",
+        "Aruz",
+        "Ölçü",
+        "Kafiye",
+        "Redif",
+        "Nazım birimi",
+        "Ahenk",
+        "İmge",
+        "Mazmun kavramına giriş",
+        "Şiir geleneği",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.2.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Kelimelerin Ritmi",
+      "theme_order": 2,
+      "content_frame": "Gazel Saf şiir örnekleri Kaside ara metni Söyleşi dinleme/izleme Edebî şahsiyet podcast/sunum Bilgilendirici metni edebî metne dönüştürme",
+      "outcome": "Metin türleri arasında dönüştürme yapar",
+      "micro": [
+        "Gazel",
+        "Kaside",
+        "Divan şiiri",
+        "Saf şiir",
+        "Aruz",
+        "Ölçü",
+        "Kafiye",
+        "Redif",
+        "Nazım birimi",
+        "Ahenk",
+        "İmge",
+        "Mazmun kavramına giriş",
+        "Şiir geleneği",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.3.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Dünden Bugüne",
+      "theme_order": 3,
+      "content_frame": "Destan Mesnevi Halk hikâyesi Fabl Türk destanları Fabl yazma",
+      "outcome": "Edebî türlerin tarihsel değişim ve dönüşümünü yorumlar",
+      "micro": [
+        "Destan",
+        "Doğal / yapma destan",
+        "Motif",
+        "Sözlü gelenek",
+        "Mesnevi",
+        "Halk hikâyesi",
+        "Fabl",
+        "Didaktik anlatım",
+        "Kültürel aktarım",
+        "Edebî değişim / dönüşüm",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.3.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Dünden Bugüne",
+      "theme_order": 3,
+      "content_frame": "Destan Mesnevi Halk hikâyesi Fabl Türk destanları Fabl yazma",
+      "outcome": "Sözlü ve yazılı kültür ürünlerini karşılaştırır",
+      "micro": [
+        "Destan",
+        "Doğal / yapma destan",
+        "Motif",
+        "Sözlü gelenek",
+        "Mesnevi",
+        "Halk hikâyesi",
+        "Fabl",
+        "Didaktik anlatım",
+        "Kültürel aktarım",
+        "Edebî değişim / dönüşüm",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.3.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Dünden Bugüne",
+      "theme_order": 3,
+      "content_frame": "Destan Mesnevi Halk hikâyesi Fabl Türk destanları Fabl yazma",
+      "outcome": "Motif ve anlatı yapısını inceler",
+      "micro": [
+        "Destan",
+        "Doğal / yapma destan",
+        "Motif",
+        "Sözlü gelenek",
+        "Mesnevi",
+        "Halk hikâyesi",
+        "Fabl",
+        "Didaktik anlatım",
+        "Kültürel aktarım",
+        "Edebî değişim / dönüşüm",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.3.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Tema: Dünden Bugüne",
+      "theme_order": 3,
+      "content_frame": "Destan Mesnevi Halk hikâyesi Fabl Türk destanları Fabl yazma",
+      "outcome": "Öğretici/alegorik anlatım özelliklerini değerlendirir",
+      "micro": [
+        "Destan",
+        "Doğal / yapma destan",
+        "Motif",
+        "Sözlü gelenek",
+        "Mesnevi",
+        "Halk hikâyesi",
+        "Fabl",
+        "Didaktik anlatım",
+        "Kültürel aktarım",
+        "Edebî değişim / dönüşüm",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.4.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Tema: Nesillerin Mirası",
+      "theme_order": 4,
+      "content_frame": "Dede Korkut Hikâyeleri Tanzimat dönemi şiiri Servetifünun romanı Fecriati şiiri Millî Edebiyat hikâyesi Dramatizasyon Tür dönüştürme",
+      "outcome": "Edebî metni oluştuğu dönemin sosyal ve kültürel özellikleriyle ilişkilendirir",
+      "micro": [
+        "Dede Korkut",
+        "Geçiş dönemi anlatıları",
+        "Tanzimat",
+        "Servetifünun",
+        "Fecriati",
+        "Millî Edebiyat",
+        "Dönem",
+        "Zihniyet",
+        "Gelenek",
+        "Değişim",
+        "Kültürel miras",
+        "Edebiyat-toplum ilişkisi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.4.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Tema: Nesillerin Mirası",
+      "theme_order": 4,
+      "content_frame": "Dede Korkut Hikâyeleri Tanzimat dönemi şiiri Servetifünun romanı Fecriati şiiri Millî Edebiyat hikâyesi Dramatizasyon Tür dönüştürme",
+      "outcome": "Türk edebiyatındaki dönemler arası değişimi karşılaştırır",
+      "micro": [
+        "Dede Korkut",
+        "Geçiş dönemi anlatıları",
+        "Tanzimat",
+        "Servetifünun",
+        "Fecriati",
+        "Millî Edebiyat",
+        "Dönem",
+        "Zihniyet",
+        "Gelenek",
+        "Değişim",
+        "Kültürel miras",
+        "Edebiyat-toplum ilişkisi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.4.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Tema: Nesillerin Mirası",
+      "theme_order": 4,
+      "content_frame": "Dede Korkut Hikâyeleri Tanzimat dönemi şiiri Servetifünun romanı Fecriati şiiri Millî Edebiyat hikâyesi Dramatizasyon Tür dönüştürme",
+      "outcome": "Kültürel mirasın metinler aracılığıyla aktarımını değerlendirir",
+      "micro": [
+        "Dede Korkut",
+        "Geçiş dönemi anlatıları",
+        "Tanzimat",
+        "Servetifünun",
+        "Fecriati",
+        "Millî Edebiyat",
+        "Dönem",
+        "Zihniyet",
+        "Gelenek",
+        "Değişim",
+        "Kültürel miras",
+        "Edebiyat-toplum ilişkisi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.10.4.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Tema: Nesillerin Mirası",
+      "theme_order": 4,
+      "content_frame": "Dede Korkut Hikâyeleri Tanzimat dönemi şiiri Servetifünun romanı Fecriati şiiri Millî Edebiyat hikâyesi Dramatizasyon Tür dönüştürme",
+      "outcome": "Metinleri farklı tür ve anlatım ortamlarına dönüştürür",
+      "micro": [
+        "Dede Korkut",
+        "Geçiş dönemi anlatıları",
+        "Tanzimat",
+        "Servetifünun",
+        "Fecriati",
+        "Millî Edebiyat",
+        "Dönem",
+        "Zihniyet",
+        "Gelenek",
+        "Değişim",
+        "Kültürel miras",
+        "Edebiyat-toplum ilişkisi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.1.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Bir Diyeceğim Var!",
+      "theme_order": 1,
+      "content_frame": "Karagöz Mektup Dilekçe ara metni Çok modlu iletişim İletişim engelleri üzerine drama E-posta yazma",
+      "outcome": "Karagöz",
+      "micro": [
+        "İletişim",
+        "Gönderici / alıcı",
+        "İleti",
+        "Bağlam",
+        "Kanal",
+        "Sözlü / yazılı / görsel iletişim",
+        "Karagöz",
+        "Geleneksel Türk tiyatrosu",
+        "Mektup",
+        "Dilekçe",
+        "E-posta",
+        "Resmî / özel anlatım",
+        "Fiilimsi ve dil bilgisi uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.1.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Bir Diyeceğim Var!",
+      "theme_order": 1,
+      "content_frame": "Karagöz Mektup Dilekçe ara metni Çok modlu iletişim İletişim engelleri üzerine drama E-posta yazma",
+      "outcome": "Mektup",
+      "micro": [
+        "İletişim",
+        "Gönderici / alıcı",
+        "İleti",
+        "Bağlam",
+        "Kanal",
+        "Sözlü / yazılı / görsel iletişim",
+        "Karagöz",
+        "Geleneksel Türk tiyatrosu",
+        "Mektup",
+        "Dilekçe",
+        "E-posta",
+        "Resmî / özel anlatım",
+        "Fiilimsi ve dil bilgisi uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.1.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Bir Diyeceğim Var!",
+      "theme_order": 1,
+      "content_frame": "Karagöz Mektup Dilekçe ara metni Çok modlu iletişim İletişim engelleri üzerine drama E-posta yazma",
+      "outcome": "Dilekçe ara metni",
+      "micro": [
+        "İletişim",
+        "Gönderici / alıcı",
+        "İleti",
+        "Bağlam",
+        "Kanal",
+        "Sözlü / yazılı / görsel iletişim",
+        "Karagöz",
+        "Geleneksel Türk tiyatrosu",
+        "Mektup",
+        "Dilekçe",
+        "E-posta",
+        "Resmî / özel anlatım",
+        "Fiilimsi ve dil bilgisi uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.1.4",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Bir Diyeceğim Var!",
+      "theme_order": 1,
+      "content_frame": "Karagöz Mektup Dilekçe ara metni Çok modlu iletişim İletişim engelleri üzerine drama E-posta yazma",
+      "outcome": "Çok modlu iletişim",
+      "micro": [
+        "İletişim",
+        "Gönderici / alıcı",
+        "İleti",
+        "Bağlam",
+        "Kanal",
+        "Sözlü / yazılı / görsel iletişim",
+        "Karagöz",
+        "Geleneksel Türk tiyatrosu",
+        "Mektup",
+        "Dilekçe",
+        "E-posta",
+        "Resmî / özel anlatım",
+        "Fiilimsi ve dil bilgisi uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.1.5",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Bir Diyeceğim Var!",
+      "theme_order": 1,
+      "content_frame": "Karagöz Mektup Dilekçe ara metni Çok modlu iletişim İletişim engelleri üzerine drama E-posta yazma",
+      "outcome": "İletişim engelleri üzerine drama",
+      "micro": [
+        "İletişim",
+        "Gönderici / alıcı",
+        "İleti",
+        "Bağlam",
+        "Kanal",
+        "Sözlü / yazılı / görsel iletişim",
+        "Karagöz",
+        "Geleneksel Türk tiyatrosu",
+        "Mektup",
+        "Dilekçe",
+        "E-posta",
+        "Resmî / özel anlatım",
+        "Fiilimsi ve dil bilgisi uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.1.6",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Bir Diyeceğim Var!",
+      "theme_order": 1,
+      "content_frame": "Karagöz Mektup Dilekçe ara metni Çok modlu iletişim İletişim engelleri üzerine drama E-posta yazma",
+      "outcome": "E-posta yazma",
+      "micro": [
+        "İletişim",
+        "Gönderici / alıcı",
+        "İleti",
+        "Bağlam",
+        "Kanal",
+        "Sözlü / yazılı / görsel iletişim",
+        "Karagöz",
+        "Geleneksel Türk tiyatrosu",
+        "Mektup",
+        "Dilekçe",
+        "E-posta",
+        "Resmî / özel anlatım",
+        "Fiilimsi ve dil bilgisi uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.2.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Kültür Yolculuğu",
+      "theme_order": 2,
+      "content_frame": "Türk dünyası hikâyesi Orhun Yazıtları Anı Dîvânu Lugâti't-Türk Âşık atışması Türk dünyası kültürü sunumu Sanal/çevrim içi müze deneyimi yazısı",
+      "outcome": "Türk dünyası hikâyesi",
+      "micro": [
+        "Türk dünyası",
+        "Orhun Yazıtları",
+        "Dîvânu Lugâti't-Türk",
+        "İlk Türkçe eserler",
+        "Kültür",
+        "Dil-kültür ilişkisi",
+        "Âşıklık geleneği",
+        "Anı",
+        "Tarihî metin",
+        "Sözlü kültür",
+        "Kip / çatı gibi dil bilgisi uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.2.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Kültür Yolculuğu",
+      "theme_order": 2,
+      "content_frame": "Türk dünyası hikâyesi Orhun Yazıtları Anı Dîvânu Lugâti't-Türk Âşık atışması Türk dünyası kültürü sunumu Sanal/çevrim içi müze deneyimi yazısı",
+      "outcome": "Orhun Yazıtları",
+      "micro": [
+        "Türk dünyası",
+        "Orhun Yazıtları",
+        "Dîvânu Lugâti't-Türk",
+        "İlk Türkçe eserler",
+        "Kültür",
+        "Dil-kültür ilişkisi",
+        "Âşıklık geleneği",
+        "Anı",
+        "Tarihî metin",
+        "Sözlü kültür",
+        "Kip / çatı gibi dil bilgisi uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.2.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Kültür Yolculuğu",
+      "theme_order": 2,
+      "content_frame": "Türk dünyası hikâyesi Orhun Yazıtları Anı Dîvânu Lugâti't-Türk Âşık atışması Türk dünyası kültürü sunumu Sanal/çevrim içi müze deneyimi yazısı",
+      "outcome": "Anı",
+      "micro": [
+        "Türk dünyası",
+        "Orhun Yazıtları",
+        "Dîvânu Lugâti't-Türk",
+        "İlk Türkçe eserler",
+        "Kültür",
+        "Dil-kültür ilişkisi",
+        "Âşıklık geleneği",
+        "Anı",
+        "Tarihî metin",
+        "Sözlü kültür",
+        "Kip / çatı gibi dil bilgisi uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.2.4",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Kültür Yolculuğu",
+      "theme_order": 2,
+      "content_frame": "Türk dünyası hikâyesi Orhun Yazıtları Anı Dîvânu Lugâti't-Türk Âşık atışması Türk dünyası kültürü sunumu Sanal/çevrim içi müze deneyimi yazısı",
+      "outcome": "Dîvânu Lugâti't-Türk",
+      "micro": [
+        "Türk dünyası",
+        "Orhun Yazıtları",
+        "Dîvânu Lugâti't-Türk",
+        "İlk Türkçe eserler",
+        "Kültür",
+        "Dil-kültür ilişkisi",
+        "Âşıklık geleneği",
+        "Anı",
+        "Tarihî metin",
+        "Sözlü kültür",
+        "Kip / çatı gibi dil bilgisi uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.2.5",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Kültür Yolculuğu",
+      "theme_order": 2,
+      "content_frame": "Türk dünyası hikâyesi Orhun Yazıtları Anı Dîvânu Lugâti't-Türk Âşık atışması Türk dünyası kültürü sunumu Sanal/çevrim içi müze deneyimi yazısı",
+      "outcome": "Âşık atışması",
+      "micro": [
+        "Türk dünyası",
+        "Orhun Yazıtları",
+        "Dîvânu Lugâti't-Türk",
+        "İlk Türkçe eserler",
+        "Kültür",
+        "Dil-kültür ilişkisi",
+        "Âşıklık geleneği",
+        "Anı",
+        "Tarihî metin",
+        "Sözlü kültür",
+        "Kip / çatı gibi dil bilgisi uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.2.6",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Kültür Yolculuğu",
+      "theme_order": 2,
+      "content_frame": "Türk dünyası hikâyesi Orhun Yazıtları Anı Dîvânu Lugâti't-Türk Âşık atışması Türk dünyası kültürü sunumu Sanal/çevrim içi müze deneyimi yazısı",
+      "outcome": "Türk dünyası kültürü sunumu",
+      "micro": [
+        "Türk dünyası",
+        "Orhun Yazıtları",
+        "Dîvânu Lugâti't-Türk",
+        "İlk Türkçe eserler",
+        "Kültür",
+        "Dil-kültür ilişkisi",
+        "Âşıklık geleneği",
+        "Anı",
+        "Tarihî metin",
+        "Sözlü kültür",
+        "Kip / çatı gibi dil bilgisi uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.2.7",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Kültür Yolculuğu",
+      "theme_order": 2,
+      "content_frame": "Türk dünyası hikâyesi Orhun Yazıtları Anı Dîvânu Lugâti't-Türk Âşık atışması Türk dünyası kültürü sunumu Sanal/çevrim içi müze deneyimi yazısı",
+      "outcome": "Sanal/çevrim içi müze deneyimi yazısı",
+      "micro": [
+        "Türk dünyası",
+        "Orhun Yazıtları",
+        "Dîvânu Lugâti't-Türk",
+        "İlk Türkçe eserler",
+        "Kültür",
+        "Dil-kültür ilişkisi",
+        "Âşıklık geleneği",
+        "Anı",
+        "Tarihî metin",
+        "Sözlü kültür",
+        "Kip / çatı gibi dil bilgisi uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.3.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Yaşamın İzinde",
+      "theme_order": 3,
+      "content_frame": "Yaşam deneyimlerini yansıtan edebî ve öğretici metinler Birey, çevre ve toplumsal yaşam ilişkisi Okuma, dinleme/izleme, konuşma ve yazma becerilerinin bütünleştirilmesi",
+      "outcome": "Yaşam deneyimlerini yansıtan edebî ve öğretici metinler",
+      "micro": [
+        "Ana düşünce / tema",
+        "Metin yapısı",
+        "Birey ve toplum",
+        "Yaşam deneyimi",
+        "Anlatıcı / bakış açısı",
+        "Üslup",
+        "Metin karşılaştırma",
+        "Kanıt kullanma",
+        "Sözlü sunum",
+        "Planlı yazma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.3.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Yaşamın İzinde",
+      "theme_order": 3,
+      "content_frame": "Yaşam deneyimlerini yansıtan edebî ve öğretici metinler Birey, çevre ve toplumsal yaşam ilişkisi Okuma, dinleme/izleme, konuşma ve yazma becerilerinin bütünleştirilmesi",
+      "outcome": "Birey, çevre ve toplumsal yaşam ilişkisi",
+      "micro": [
+        "Ana düşünce / tema",
+        "Metin yapısı",
+        "Birey ve toplum",
+        "Yaşam deneyimi",
+        "Anlatıcı / bakış açısı",
+        "Üslup",
+        "Metin karşılaştırma",
+        "Kanıt kullanma",
+        "Sözlü sunum",
+        "Planlı yazma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.3.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Yaşamın İzinde",
+      "theme_order": 3,
+      "content_frame": "Yaşam deneyimlerini yansıtan edebî ve öğretici metinler Birey, çevre ve toplumsal yaşam ilişkisi Okuma, dinleme/izleme, konuşma ve yazma becerilerinin bütünleştirilmesi",
+      "outcome": "Okuma, dinleme/izleme, konuşma ve yazma becerilerinin bütünleştirilmesi",
+      "micro": [
+        "Ana düşünce / tema",
+        "Metin yapısı",
+        "Birey ve toplum",
+        "Yaşam deneyimi",
+        "Anlatıcı / bakış açısı",
+        "Üslup",
+        "Metin karşılaştırma",
+        "Kanıt kullanma",
+        "Sözlü sunum",
+        "Planlı yazma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.4.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Tema: Hayatın Aynası",
+      "theme_order": 4,
+      "content_frame": "Günlük hayatı ve toplumsal ilişkileri yansıtan edebî metinler Tiyatro ve dramatik anlatım Edebiyatın yaşamı yansıtma ve dönüştürme işlevi",
+      "outcome": "Günlük hayatı ve toplumsal ilişkileri yansıtan edebî metinler",
+      "micro": [
+        "Tiyatro",
+        "Dramatik yapı",
+        "Çatışma",
+        "Kişi",
+        "Diyalog",
+        "Sahne",
+        "Toplum",
+        "Gerçeklik / kurmaca",
+        "Edebiyat-hayat ilişkisi",
+        "Eleştirel yorum",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.4.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Tema: Hayatın Aynası",
+      "theme_order": 4,
+      "content_frame": "Günlük hayatı ve toplumsal ilişkileri yansıtan edebî metinler Tiyatro ve dramatik anlatım Edebiyatın yaşamı yansıtma ve dönüştürme işlevi",
+      "outcome": "Tiyatro ve dramatik anlatım",
+      "micro": [
+        "Tiyatro",
+        "Dramatik yapı",
+        "Çatışma",
+        "Kişi",
+        "Diyalog",
+        "Sahne",
+        "Toplum",
+        "Gerçeklik / kurmaca",
+        "Edebiyat-hayat ilişkisi",
+        "Eleştirel yorum",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.11.4.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Tema: Hayatın Aynası",
+      "theme_order": 4,
+      "content_frame": "Günlük hayatı ve toplumsal ilişkileri yansıtan edebî metinler Tiyatro ve dramatik anlatım Edebiyatın yaşamı yansıtma ve dönüştürme işlevi",
+      "outcome": "Edebiyatın yaşamı yansıtma ve dönüştürme işlevi",
+      "micro": [
+        "Tiyatro",
+        "Dramatik yapı",
+        "Çatışma",
+        "Kişi",
+        "Diyalog",
+        "Sahne",
+        "Toplum",
+        "Gerçeklik / kurmaca",
+        "Edebiyat-hayat ilişkisi",
+        "Eleştirel yorum",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.1.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Benim Yolculuğum",
+      "theme_order": 1,
+      "content_frame": "Günlük Şiir Blog Hikâye Kişisel gelişim söyleşisi Kişisel gelişim sunumu Gelecek planı / forum yazısı",
+      "outcome": "Günlük",
+      "micro": [
+        "Günlük",
+        "Blog",
+        "Otobiyografik anlatım",
+        "Kişisel anlatım",
+        "İçtenlik",
+        "Üslup",
+        "Ton",
+        "Bağdaşıklık",
+        "Tutarlılık",
+        "Öz değerlendirme",
+        "Gelecek planı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.1.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Benim Yolculuğum",
+      "theme_order": 1,
+      "content_frame": "Günlük Şiir Blog Hikâye Kişisel gelişim söyleşisi Kişisel gelişim sunumu Gelecek planı / forum yazısı",
+      "outcome": "Şiir",
+      "micro": [
+        "Günlük",
+        "Blog",
+        "Otobiyografik anlatım",
+        "Kişisel anlatım",
+        "İçtenlik",
+        "Üslup",
+        "Ton",
+        "Bağdaşıklık",
+        "Tutarlılık",
+        "Öz değerlendirme",
+        "Gelecek planı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.1.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Benim Yolculuğum",
+      "theme_order": 1,
+      "content_frame": "Günlük Şiir Blog Hikâye Kişisel gelişim söyleşisi Kişisel gelişim sunumu Gelecek planı / forum yazısı",
+      "outcome": "Blog",
+      "micro": [
+        "Günlük",
+        "Blog",
+        "Otobiyografik anlatım",
+        "Kişisel anlatım",
+        "İçtenlik",
+        "Üslup",
+        "Ton",
+        "Bağdaşıklık",
+        "Tutarlılık",
+        "Öz değerlendirme",
+        "Gelecek planı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.1.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Benim Yolculuğum",
+      "theme_order": 1,
+      "content_frame": "Günlük Şiir Blog Hikâye Kişisel gelişim söyleşisi Kişisel gelişim sunumu Gelecek planı / forum yazısı",
+      "outcome": "Hikâye",
+      "micro": [
+        "Günlük",
+        "Blog",
+        "Otobiyografik anlatım",
+        "Kişisel anlatım",
+        "İçtenlik",
+        "Üslup",
+        "Ton",
+        "Bağdaşıklık",
+        "Tutarlılık",
+        "Öz değerlendirme",
+        "Gelecek planı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.1.5",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Benim Yolculuğum",
+      "theme_order": 1,
+      "content_frame": "Günlük Şiir Blog Hikâye Kişisel gelişim söyleşisi Kişisel gelişim sunumu Gelecek planı / forum yazısı",
+      "outcome": "Kişisel gelişim söyleşisi",
+      "micro": [
+        "Günlük",
+        "Blog",
+        "Otobiyografik anlatım",
+        "Kişisel anlatım",
+        "İçtenlik",
+        "Üslup",
+        "Ton",
+        "Bağdaşıklık",
+        "Tutarlılık",
+        "Öz değerlendirme",
+        "Gelecek planı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.1.6",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Benim Yolculuğum",
+      "theme_order": 1,
+      "content_frame": "Günlük Şiir Blog Hikâye Kişisel gelişim söyleşisi Kişisel gelişim sunumu Gelecek planı / forum yazısı",
+      "outcome": "Kişisel gelişim sunumu",
+      "micro": [
+        "Günlük",
+        "Blog",
+        "Otobiyografik anlatım",
+        "Kişisel anlatım",
+        "İçtenlik",
+        "Üslup",
+        "Ton",
+        "Bağdaşıklık",
+        "Tutarlılık",
+        "Öz değerlendirme",
+        "Gelecek planı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.1.7",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Benim Yolculuğum",
+      "theme_order": 1,
+      "content_frame": "Günlük Şiir Blog Hikâye Kişisel gelişim söyleşisi Kişisel gelişim sunumu Gelecek planı / forum yazısı",
+      "outcome": "Gelecek planı / forum yazısı",
+      "micro": [
+        "Günlük",
+        "Blog",
+        "Otobiyografik anlatım",
+        "Kişisel anlatım",
+        "İçtenlik",
+        "Üslup",
+        "Ton",
+        "Bağdaşıklık",
+        "Tutarlılık",
+        "Öz değerlendirme",
+        "Gelecek planı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.2.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Toplumun Ahengi",
+      "theme_order": 2,
+      "content_frame": "Roman Makale Hak ve özgürlükler konulu haber Haber sunumu Roman eleştirisi",
+      "outcome": "Edebî ve öğretici metinleri toplumsal bağlamlarıyla analiz eder",
+      "micro": [
+        "Roman",
+        "Makale",
+        "Haber",
+        "Eleştiri",
+        "Toplum",
+        "Hak ve özgürlük",
+        "Nesnellik / öznellik",
+        "Kanıt",
+        "Kaynak gösterme",
+        "Özgünlük",
+        "İntihalden kaçınma",
+        "Eleştirel okuma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.2.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Toplumun Ahengi",
+      "theme_order": 2,
+      "content_frame": "Roman Makale Hak ve özgürlükler konulu haber Haber sunumu Roman eleştirisi",
+      "outcome": "Bilgi, görüş ve kanıt arasındaki farkı değerlendirir",
+      "micro": [
+        "Roman",
+        "Makale",
+        "Haber",
+        "Eleştiri",
+        "Toplum",
+        "Hak ve özgürlük",
+        "Nesnellik / öznellik",
+        "Kanıt",
+        "Kaynak gösterme",
+        "Özgünlük",
+        "İntihalden kaçınma",
+        "Eleştirel okuma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.2.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Toplumun Ahengi",
+      "theme_order": 2,
+      "content_frame": "Roman Makale Hak ve özgürlükler konulu haber Haber sunumu Roman eleştirisi",
+      "outcome": "Haber sunumu gibi sözlü anlatım türlerinde nesnellik ve kaynak kullanımını gözetir",
+      "micro": [
+        "Roman",
+        "Makale",
+        "Haber",
+        "Eleştiri",
+        "Toplum",
+        "Hak ve özgürlük",
+        "Nesnellik / öznellik",
+        "Kanıt",
+        "Kaynak gösterme",
+        "Özgünlük",
+        "İntihalden kaçınma",
+        "Eleştirel okuma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.2.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Tema: Toplumun Ahengi",
+      "theme_order": 2,
+      "content_frame": "Roman Makale Hak ve özgürlükler konulu haber Haber sunumu Roman eleştirisi",
+      "outcome": "Okuduğu eser üzerine eleştirel metin yazar",
+      "micro": [
+        "Roman",
+        "Makale",
+        "Haber",
+        "Eleştiri",
+        "Toplum",
+        "Hak ve özgürlük",
+        "Nesnellik / öznellik",
+        "Kanıt",
+        "Kaynak gösterme",
+        "Özgünlük",
+        "İntihalden kaçınma",
+        "Eleştirel okuma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.3.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Hayatın Dengesi",
+      "theme_order": 3,
+      "content_frame": "Yaşam kalitesi Birey-toplum dengesi İnsan ve diğer canlılarla ilişkiler Edebî metinler üzerinden değer, sorumluluk ve yaşamın çok yönlülüğü",
+      "outcome": "Yaşam kalitesi",
+      "micro": [
+        "Yaşam kalitesi",
+        "İnsan ve toplum",
+        "Doğa ve canlılar",
+        "Değerler",
+        "Sorumluluk",
+        "Empati",
+        "Metin analizi",
+        "Karşılaştırma",
+        "Eleştirel değerlendirme",
+        "Sözlü/yazılı ifade",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.3.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Hayatın Dengesi",
+      "theme_order": 3,
+      "content_frame": "Yaşam kalitesi Birey-toplum dengesi İnsan ve diğer canlılarla ilişkiler Edebî metinler üzerinden değer, sorumluluk ve yaşamın çok yönlülüğü",
+      "outcome": "Birey-toplum dengesi",
+      "micro": [
+        "Yaşam kalitesi",
+        "İnsan ve toplum",
+        "Doğa ve canlılar",
+        "Değerler",
+        "Sorumluluk",
+        "Empati",
+        "Metin analizi",
+        "Karşılaştırma",
+        "Eleştirel değerlendirme",
+        "Sözlü/yazılı ifade",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.3.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Hayatın Dengesi",
+      "theme_order": 3,
+      "content_frame": "Yaşam kalitesi Birey-toplum dengesi İnsan ve diğer canlılarla ilişkiler Edebî metinler üzerinden değer, sorumluluk ve yaşamın çok yönlülüğü",
+      "outcome": "İnsan ve diğer canlılarla ilişkiler",
+      "micro": [
+        "Yaşam kalitesi",
+        "İnsan ve toplum",
+        "Doğa ve canlılar",
+        "Değerler",
+        "Sorumluluk",
+        "Empati",
+        "Metin analizi",
+        "Karşılaştırma",
+        "Eleştirel değerlendirme",
+        "Sözlü/yazılı ifade",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.3.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Tema: Hayatın Dengesi",
+      "theme_order": 3,
+      "content_frame": "Yaşam kalitesi Birey-toplum dengesi İnsan ve diğer canlılarla ilişkiler Edebî metinler üzerinden değer, sorumluluk ve yaşamın çok yönlülüğü",
+      "outcome": "Edebî metinler üzerinden değer, sorumluluk ve yaşamın çok yönlülüğü",
+      "micro": [
+        "Yaşam kalitesi",
+        "İnsan ve toplum",
+        "Doğa ve canlılar",
+        "Değerler",
+        "Sorumluluk",
+        "Empati",
+        "Metin analizi",
+        "Karşılaştırma",
+        "Eleştirel değerlendirme",
+        "Sözlü/yazılı ifade",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.4.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Tema: Hayalimdeki Yarın",
+      "theme_order": 4,
+      "content_frame": "Bilimsel makale Hikâye Öz geçmiş Mülakat Meslek profesyonelleriyle görüşme/sunum İdeal meslek / gelecek yazısı",
+      "outcome": "Bilimsel makale",
+      "micro": [
+        "Bilimsel metin",
+        "Bilimsel makale",
+        "Hikâye",
+        "Öz geçmiş / CV",
+        "Mülakat",
+        "Kariyer",
+        "Gelecek tasarımı",
+        "Bilgi doğrulama",
+        "Kaynak kullanımı",
+        "Sunum",
+        "Planlı yazma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.4.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Tema: Hayalimdeki Yarın",
+      "theme_order": 4,
+      "content_frame": "Bilimsel makale Hikâye Öz geçmiş Mülakat Meslek profesyonelleriyle görüşme/sunum İdeal meslek / gelecek yazısı",
+      "outcome": "Hikâye",
+      "micro": [
+        "Bilimsel metin",
+        "Bilimsel makale",
+        "Hikâye",
+        "Öz geçmiş / CV",
+        "Mülakat",
+        "Kariyer",
+        "Gelecek tasarımı",
+        "Bilgi doğrulama",
+        "Kaynak kullanımı",
+        "Sunum",
+        "Planlı yazma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.4.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Tema: Hayalimdeki Yarın",
+      "theme_order": 4,
+      "content_frame": "Bilimsel makale Hikâye Öz geçmiş Mülakat Meslek profesyonelleriyle görüşme/sunum İdeal meslek / gelecek yazısı",
+      "outcome": "Öz geçmiş",
+      "micro": [
+        "Bilimsel metin",
+        "Bilimsel makale",
+        "Hikâye",
+        "Öz geçmiş / CV",
+        "Mülakat",
+        "Kariyer",
+        "Gelecek tasarımı",
+        "Bilgi doğrulama",
+        "Kaynak kullanımı",
+        "Sunum",
+        "Planlı yazma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.4.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Tema: Hayalimdeki Yarın",
+      "theme_order": 4,
+      "content_frame": "Bilimsel makale Hikâye Öz geçmiş Mülakat Meslek profesyonelleriyle görüşme/sunum İdeal meslek / gelecek yazısı",
+      "outcome": "Mülakat",
+      "micro": [
+        "Bilimsel metin",
+        "Bilimsel makale",
+        "Hikâye",
+        "Öz geçmiş / CV",
+        "Mülakat",
+        "Kariyer",
+        "Gelecek tasarımı",
+        "Bilgi doğrulama",
+        "Kaynak kullanımı",
+        "Sunum",
+        "Planlı yazma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.4.5",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Tema: Hayalimdeki Yarın",
+      "theme_order": 4,
+      "content_frame": "Bilimsel makale Hikâye Öz geçmiş Mülakat Meslek profesyonelleriyle görüşme/sunum İdeal meslek / gelecek yazısı",
+      "outcome": "Meslek profesyonelleriyle görüşme/sunum",
+      "micro": [
+        "Bilimsel metin",
+        "Bilimsel makale",
+        "Hikâye",
+        "Öz geçmiş / CV",
+        "Mülakat",
+        "Kariyer",
+        "Gelecek tasarımı",
+        "Bilgi doğrulama",
+        "Kaynak kullanımı",
+        "Sunum",
+        "Planlı yazma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TDE.12.4.6",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Tema: Hayalimdeki Yarın",
+      "theme_order": 4,
+      "content_frame": "Bilimsel makale Hikâye Öz geçmiş Mülakat Meslek profesyonelleriyle görüşme/sunum İdeal meslek / gelecek yazısı",
+      "outcome": "İdeal meslek / gelecek yazısı",
+      "micro": [
+        "Bilimsel metin",
+        "Bilimsel makale",
+        "Hikâye",
+        "Öz geçmiş / CV",
+        "Mülakat",
+        "Kariyer",
+        "Gelecek tasarımı",
+        "Bilgi doğrulama",
+        "Kaynak kullanımı",
+        "Sunum",
+        "Planlı yazma",
+        "GENEL_KARMA"
+      ]
+    }
+  ]
+}

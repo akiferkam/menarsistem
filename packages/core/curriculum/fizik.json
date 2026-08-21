@@ -1,0 +1,2255 @@
+{
+  "subject": "Fizik",
+  "source": {
+    "workflow_file": "curriculum/maarif_modeli_9_12_fizik_kimya_biyoloji_tde_tyt_ayt.md",
+    "extracted_node": "markdown parse script (_scratch_reparse.mjs)",
+    "extracted_at": "2026-08-17"
+  },
+  "outcome_count": 79,
+  "outcomes": [
+    {
+      "code": "FIZ.9.1.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Fizik Bilimi ve Kariyer Keşfi",
+      "theme_order": 1,
+      "content_frame": "Fizik bilimi Fizik biliminin alt dalları Fizik bilimine yön veren bilim insanları Fizikle ilişkili kariyer ve araştırma merkezleri",
+      "outcome": "Fizik biliminin neyi incelediğine ilişkin genelleme yapar",
+      "micro": [
+        "Mekanik",
+        "Elektromanyetizma",
+        "Optik",
+        "Termodinamik",
+        "Atom fiziği",
+        "Nükleer fizik",
+        "Katı hâl fiziği",
+        "Yüksek enerji ve plazma fiziği",
+        "Araştırma merkezi",
+        "Bilimsel çalışma",
+        "Kariyer alanları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.1.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Fizik Bilimi ve Kariyer Keşfi",
+      "theme_order": 1,
+      "content_frame": "Fizik bilimi Fizik biliminin alt dalları Fizik bilimine yön veren bilim insanları Fizikle ilişkili kariyer ve araştırma merkezleri",
+      "outcome": "Fiziğin alt dallarını özelliklerine göre sınıflandırır",
+      "micro": [
+        "Mekanik",
+        "Elektromanyetizma",
+        "Optik",
+        "Termodinamik",
+        "Atom fiziği",
+        "Nükleer fizik",
+        "Katı hâl fiziği",
+        "Yüksek enerji ve plazma fiziği",
+        "Araştırma merkezi",
+        "Bilimsel çalışma",
+        "Kariyer alanları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.1.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Fizik Bilimi ve Kariyer Keşfi",
+      "theme_order": 1,
+      "content_frame": "Fizik bilimi Fizik biliminin alt dalları Fizik bilimine yön veren bilim insanları Fizikle ilişkili kariyer ve araştırma merkezleri",
+      "outcome": "Fiziğe katkı sağlayan bilim insanlarının çalışma deneyimlerinden çıkarım yapar",
+      "micro": [
+        "Mekanik",
+        "Elektromanyetizma",
+        "Optik",
+        "Termodinamik",
+        "Atom fiziği",
+        "Nükleer fizik",
+        "Katı hâl fiziği",
+        "Yüksek enerji ve plazma fiziği",
+        "Araştırma merkezi",
+        "Bilimsel çalışma",
+        "Kariyer alanları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.1.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Fizik Bilimi ve Kariyer Keşfi",
+      "theme_order": 1,
+      "content_frame": "Fizik bilimi Fizik biliminin alt dalları Fizik bilimine yön veren bilim insanları Fizikle ilişkili kariyer ve araştırma merkezleri",
+      "outcome": "Bilim ve teknoloji kurumlarındaki fizik ilişkili kariyer olanaklarını araştırır",
+      "micro": [
+        "Mekanik",
+        "Elektromanyetizma",
+        "Optik",
+        "Termodinamik",
+        "Atom fiziği",
+        "Nükleer fizik",
+        "Katı hâl fiziği",
+        "Yüksek enerji ve plazma fiziği",
+        "Araştırma merkezi",
+        "Bilimsel çalışma",
+        "Kariyer alanları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.2.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Kuvvet ve Hareket",
+      "theme_order": 2,
+      "content_frame": "Temel ve türetilmiş nicelikler Skaler ve vektörel nicelikler Vektörler Doğadaki temel kuvvetler Hareket ve hareket türleri",
+      "outcome": "SI sistemindeki temel ve türetilmiş nicelikleri ayırt eder",
+      "micro": [
+        "Temel büyüklük",
+        "Türetilmiş büyüklük",
+        "SI birimleri",
+        "Skaler",
+        "Vektör",
+        "Vektör bileşenleri",
+        "Bileşke vektör",
+        "Uç uca ekleme",
+        "Paralelkenar yöntemi",
+        "Kütle çekim kuvveti",
+        "Elektromanyetik kuvvet",
+        "Güçlü nükleer kuvvet",
+        "Zayıf nükleer kuvvet",
+        "Referans noktası",
+        "Konum",
+        "Alınan yol",
+        "Yer değiştirme",
+        "Sürat",
+        "Hız",
+        "İvme",
+        "Öteleme",
+        "Dönme",
+        "Titreşim",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.2.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Kuvvet ve Hareket",
+      "theme_order": 2,
+      "content_frame": "Temel ve türetilmiş nicelikler Skaler ve vektörel nicelikler Vektörler Doğadaki temel kuvvetler Hareket ve hareket türleri",
+      "outcome": "Skaler ve vektörel nicelikleri sınıflandırır",
+      "micro": [
+        "Temel büyüklük",
+        "Türetilmiş büyüklük",
+        "SI birimleri",
+        "Skaler",
+        "Vektör",
+        "Vektör bileşenleri",
+        "Bileşke vektör",
+        "Uç uca ekleme",
+        "Paralelkenar yöntemi",
+        "Kütle çekim kuvveti",
+        "Elektromanyetik kuvvet",
+        "Güçlü nükleer kuvvet",
+        "Zayıf nükleer kuvvet",
+        "Referans noktası",
+        "Konum",
+        "Alınan yol",
+        "Yer değiştirme",
+        "Sürat",
+        "Hız",
+        "İvme",
+        "Öteleme",
+        "Dönme",
+        "Titreşim",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.2.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Kuvvet ve Hareket",
+      "theme_order": 2,
+      "content_frame": "Temel ve türetilmiş nicelikler Skaler ve vektörel nicelikler Vektörler Doğadaki temel kuvvetler Hareket ve hareket türleri",
+      "outcome": "Aynı doğrultudaki vektörleri yön ve büyüklük bakımından inceler",
+      "micro": [
+        "Temel büyüklük",
+        "Türetilmiş büyüklük",
+        "SI birimleri",
+        "Skaler",
+        "Vektör",
+        "Vektör bileşenleri",
+        "Bileşke vektör",
+        "Uç uca ekleme",
+        "Paralelkenar yöntemi",
+        "Kütle çekim kuvveti",
+        "Elektromanyetik kuvvet",
+        "Güçlü nükleer kuvvet",
+        "Zayıf nükleer kuvvet",
+        "Referans noktası",
+        "Konum",
+        "Alınan yol",
+        "Yer değiştirme",
+        "Sürat",
+        "Hız",
+        "İvme",
+        "Öteleme",
+        "Dönme",
+        "Titreşim",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.2.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Kuvvet ve Hareket",
+      "theme_order": 2,
+      "content_frame": "Temel ve türetilmiş nicelikler Skaler ve vektörel nicelikler Vektörler Doğadaki temel kuvvetler Hareket ve hareket türleri",
+      "outcome": "Vektörlerin toplanmasına ilişkin yöntemleri uygular ve çıkarım yapar",
+      "micro": [
+        "Temel büyüklük",
+        "Türetilmiş büyüklük",
+        "SI birimleri",
+        "Skaler",
+        "Vektör",
+        "Vektör bileşenleri",
+        "Bileşke vektör",
+        "Uç uca ekleme",
+        "Paralelkenar yöntemi",
+        "Kütle çekim kuvveti",
+        "Elektromanyetik kuvvet",
+        "Güçlü nükleer kuvvet",
+        "Zayıf nükleer kuvvet",
+        "Referans noktası",
+        "Konum",
+        "Alınan yol",
+        "Yer değiştirme",
+        "Sürat",
+        "Hız",
+        "İvme",
+        "Öteleme",
+        "Dönme",
+        "Titreşim",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.2.5",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Kuvvet ve Hareket",
+      "theme_order": 2,
+      "content_frame": "Temel ve türetilmiş nicelikler Skaler ve vektörel nicelikler Vektörler Doğadaki temel kuvvetler Hareket ve hareket türleri",
+      "outcome": "Doğadaki temel kuvvetleri karşılaştırır",
+      "micro": [
+        "Temel büyüklük",
+        "Türetilmiş büyüklük",
+        "SI birimleri",
+        "Skaler",
+        "Vektör",
+        "Vektör bileşenleri",
+        "Bileşke vektör",
+        "Uç uca ekleme",
+        "Paralelkenar yöntemi",
+        "Kütle çekim kuvveti",
+        "Elektromanyetik kuvvet",
+        "Güçlü nükleer kuvvet",
+        "Zayıf nükleer kuvvet",
+        "Referans noktası",
+        "Konum",
+        "Alınan yol",
+        "Yer değiştirme",
+        "Sürat",
+        "Hız",
+        "İvme",
+        "Öteleme",
+        "Dönme",
+        "Titreşim",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.2.6",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Kuvvet ve Hareket",
+      "theme_order": 2,
+      "content_frame": "Temel ve türetilmiş nicelikler Skaler ve vektörel nicelikler Vektörler Doğadaki temel kuvvetler Hareket ve hareket türleri",
+      "outcome": "Hareketin temel kavramlarına ilişkin tanımlar geliştirir",
+      "micro": [
+        "Temel büyüklük",
+        "Türetilmiş büyüklük",
+        "SI birimleri",
+        "Skaler",
+        "Vektör",
+        "Vektör bileşenleri",
+        "Bileşke vektör",
+        "Uç uca ekleme",
+        "Paralelkenar yöntemi",
+        "Kütle çekim kuvveti",
+        "Elektromanyetik kuvvet",
+        "Güçlü nükleer kuvvet",
+        "Zayıf nükleer kuvvet",
+        "Referans noktası",
+        "Konum",
+        "Alınan yol",
+        "Yer değiştirme",
+        "Sürat",
+        "Hız",
+        "İvme",
+        "Öteleme",
+        "Dönme",
+        "Titreşim",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.2.7",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Kuvvet ve Hareket",
+      "theme_order": 2,
+      "content_frame": "Temel ve türetilmiş nicelikler Skaler ve vektörel nicelikler Vektörler Doğadaki temel kuvvetler Hareket ve hareket türleri",
+      "outcome": "Hareket türlerini sınıflandırır",
+      "micro": [
+        "Temel büyüklük",
+        "Türetilmiş büyüklük",
+        "SI birimleri",
+        "Skaler",
+        "Vektör",
+        "Vektör bileşenleri",
+        "Bileşke vektör",
+        "Uç uca ekleme",
+        "Paralelkenar yöntemi",
+        "Kütle çekim kuvveti",
+        "Elektromanyetik kuvvet",
+        "Güçlü nükleer kuvvet",
+        "Zayıf nükleer kuvvet",
+        "Referans noktası",
+        "Konum",
+        "Alınan yol",
+        "Yer değiştirme",
+        "Sürat",
+        "Hız",
+        "İvme",
+        "Öteleme",
+        "Dönme",
+        "Titreşim",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.3.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Akışkanlar",
+      "theme_order": 3,
+      "content_frame": "Basınç Sıvılarda basınç Açık hava basıncı Kaldırma kuvveti Bernoulli ilkesi",
+      "outcome": "Basınç kavramını kuvvet ve yüzey alanıyla ilişkilendirir",
+      "micro": [
+        "Katı basıncı",
+        "Sıvı basıncı",
+        "Basıncın derinlik ve yoğunlukla ilişkisi",
+        "Pascal prensibine dayalı uygulamalar",
+        "Atmosfer basıncı",
+        "Barometre",
+        "Kaldırma kuvveti",
+        "Batan / yüzen / askıda kalan cisim",
+        "Akışkan hızı",
+        "Bernoulli ilkesi",
+        "Günlük yaşam uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.3.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Akışkanlar",
+      "theme_order": 3,
+      "content_frame": "Basınç Sıvılarda basınç Açık hava basıncı Kaldırma kuvveti Bernoulli ilkesi",
+      "outcome": "Durgun sıvılarda basıncı etkileyen değişkenleri ilişkilendirir",
+      "micro": [
+        "Katı basıncı",
+        "Sıvı basıncı",
+        "Basıncın derinlik ve yoğunlukla ilişkisi",
+        "Pascal prensibine dayalı uygulamalar",
+        "Atmosfer basıncı",
+        "Barometre",
+        "Kaldırma kuvveti",
+        "Batan / yüzen / askıda kalan cisim",
+        "Akışkan hızı",
+        "Bernoulli ilkesi",
+        "Günlük yaşam uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.3.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Akışkanlar",
+      "theme_order": 3,
+      "content_frame": "Basınç Sıvılarda basınç Açık hava basıncı Kaldırma kuvveti Bernoulli ilkesi",
+      "outcome": "Sıvı basıncının günlük yaşamdaki kullanım alanlarını analiz eder",
+      "micro": [
+        "Katı basıncı",
+        "Sıvı basıncı",
+        "Basıncın derinlik ve yoğunlukla ilişkisi",
+        "Pascal prensibine dayalı uygulamalar",
+        "Atmosfer basıncı",
+        "Barometre",
+        "Kaldırma kuvveti",
+        "Batan / yüzen / askıda kalan cisim",
+        "Akışkan hızı",
+        "Bernoulli ilkesi",
+        "Günlük yaşam uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.3.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Akışkanlar",
+      "theme_order": 3,
+      "content_frame": "Basınç Sıvılarda basınç Açık hava basıncı Kaldırma kuvveti Bernoulli ilkesi",
+      "outcome": "Açık hava basıncı ile ilgili çıkarım yapar",
+      "micro": [
+        "Katı basıncı",
+        "Sıvı basıncı",
+        "Basıncın derinlik ve yoğunlukla ilişkisi",
+        "Pascal prensibine dayalı uygulamalar",
+        "Atmosfer basıncı",
+        "Barometre",
+        "Kaldırma kuvveti",
+        "Batan / yüzen / askıda kalan cisim",
+        "Akışkan hızı",
+        "Bernoulli ilkesi",
+        "Günlük yaşam uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.3.5",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Akışkanlar",
+      "theme_order": 3,
+      "content_frame": "Basınç Sıvılarda basınç Açık hava basıncı Kaldırma kuvveti Bernoulli ilkesi",
+      "outcome": "Kaldırma kuvvetini etkileyen değişkenleri deneysel olarak inceler",
+      "micro": [
+        "Katı basıncı",
+        "Sıvı basıncı",
+        "Basıncın derinlik ve yoğunlukla ilişkisi",
+        "Pascal prensibine dayalı uygulamalar",
+        "Atmosfer basıncı",
+        "Barometre",
+        "Kaldırma kuvveti",
+        "Batan / yüzen / askıda kalan cisim",
+        "Akışkan hızı",
+        "Bernoulli ilkesi",
+        "Günlük yaşam uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.3.6",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Akışkanlar",
+      "theme_order": 3,
+      "content_frame": "Basınç Sıvılarda basınç Açık hava basıncı Kaldırma kuvveti Bernoulli ilkesi",
+      "outcome": "Kaldırma kuvvetini basınç kuvvetleriyle ilişkilendirir",
+      "micro": [
+        "Katı basıncı",
+        "Sıvı basıncı",
+        "Basıncın derinlik ve yoğunlukla ilişkisi",
+        "Pascal prensibine dayalı uygulamalar",
+        "Atmosfer basıncı",
+        "Barometre",
+        "Kaldırma kuvveti",
+        "Batan / yüzen / askıda kalan cisim",
+        "Akışkan hızı",
+        "Bernoulli ilkesi",
+        "Günlük yaşam uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.3.7",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Akışkanlar",
+      "theme_order": 3,
+      "content_frame": "Basınç Sıvılarda basınç Açık hava basıncı Kaldırma kuvveti Bernoulli ilkesi",
+      "outcome": "Akışkanlarda kesit, hız ve basınç ilişkisini Bernoulli ilkesi üzerinden açıklar",
+      "micro": [
+        "Katı basıncı",
+        "Sıvı basıncı",
+        "Basıncın derinlik ve yoğunlukla ilişkisi",
+        "Pascal prensibine dayalı uygulamalar",
+        "Atmosfer basıncı",
+        "Barometre",
+        "Kaldırma kuvveti",
+        "Batan / yüzen / askıda kalan cisim",
+        "Akışkan hızı",
+        "Bernoulli ilkesi",
+        "Günlük yaşam uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.4.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Ünite: Enerji",
+      "theme_order": 4,
+      "content_frame": "İç enerji, ısı ve sıcaklık Isı, öz ısı, ısı sığası ve sıcaklık farkı Hâl değişimi Isıl denge Isı aktarım yolları Isı iletim hızı",
+      "outcome": "İç enerji, ısı ve sıcaklık arasındaki ilişkiyi açıklar",
+      "micro": [
+        "İç enerji",
+        "Isı",
+        "Sıcaklık",
+        "Termometre",
+        "Öz ısı",
+        "Isı sığası",
+        "Kalorimetri",
+        "Erime / donma",
+        "Buharlaşma / yoğuşma",
+        "Hâl değişim ısısı",
+        "Isıl denge",
+        "İletim",
+        "Taşınım",
+        "Işıma",
+        "Isı yalıtımı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.4.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Ünite: Enerji",
+      "theme_order": 4,
+      "content_frame": "İç enerji, ısı ve sıcaklık Isı, öz ısı, ısı sığası ve sıcaklık farkı Hâl değişimi Isıl denge Isı aktarım yolları Isı iletim hızı",
+      "outcome": "Isı miktarı ile öz ısı, ısı sığası ve sıcaklık farkı arasında matematiksel model kurar",
+      "micro": [
+        "İç enerji",
+        "Isı",
+        "Sıcaklık",
+        "Termometre",
+        "Öz ısı",
+        "Isı sığası",
+        "Kalorimetri",
+        "Erime / donma",
+        "Buharlaşma / yoğuşma",
+        "Hâl değişim ısısı",
+        "Isıl denge",
+        "İletim",
+        "Taşınım",
+        "Işıma",
+        "Isı yalıtımı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.4.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Ünite: Enerji",
+      "theme_order": 4,
+      "content_frame": "İç enerji, ısı ve sıcaklık Isı, öz ısı, ısı sığası ve sıcaklık farkı Hâl değişimi Isıl denge Isı aktarım yolları Isı iletim hızı",
+      "outcome": "Hâl değişiminde alınan/verilen ısıyı etkileyen değişkenleri ilişkilendirir",
+      "micro": [
+        "İç enerji",
+        "Isı",
+        "Sıcaklık",
+        "Termometre",
+        "Öz ısı",
+        "Isı sığası",
+        "Kalorimetri",
+        "Erime / donma",
+        "Buharlaşma / yoğuşma",
+        "Hâl değişim ısısı",
+        "Isıl denge",
+        "İletim",
+        "Taşınım",
+        "Işıma",
+        "Isı yalıtımı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.4.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Ünite: Enerji",
+      "theme_order": 4,
+      "content_frame": "İç enerji, ısı ve sıcaklık Isı, öz ısı, ısı sığası ve sıcaklık farkı Hâl değişimi Isıl denge Isı aktarım yolları Isı iletim hızı",
+      "outcome": "Isıl dengeyi yorumlar",
+      "micro": [
+        "İç enerji",
+        "Isı",
+        "Sıcaklık",
+        "Termometre",
+        "Öz ısı",
+        "Isı sığası",
+        "Kalorimetri",
+        "Erime / donma",
+        "Buharlaşma / yoğuşma",
+        "Hâl değişim ısısı",
+        "Isıl denge",
+        "İletim",
+        "Taşınım",
+        "Işıma",
+        "Isı yalıtımı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.4.5",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Ünite: Enerji",
+      "theme_order": 4,
+      "content_frame": "İç enerji, ısı ve sıcaklık Isı, öz ısı, ısı sığası ve sıcaklık farkı Hâl değişimi Isıl denge Isı aktarım yolları Isı iletim hızı",
+      "outcome": "Isı aktarım yollarını karşılaştırır",
+      "micro": [
+        "İç enerji",
+        "Isı",
+        "Sıcaklık",
+        "Termometre",
+        "Öz ısı",
+        "Isı sığası",
+        "Kalorimetri",
+        "Erime / donma",
+        "Buharlaşma / yoğuşma",
+        "Hâl değişim ısısı",
+        "Isıl denge",
+        "İletim",
+        "Taşınım",
+        "Işıma",
+        "Isı yalıtımı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.9.4.6",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Ünite: Enerji",
+      "theme_order": 4,
+      "content_frame": "İç enerji, ısı ve sıcaklık Isı, öz ısı, ısı sığası ve sıcaklık farkı Hâl değişimi Isıl denge Isı aktarım yolları Isı iletim hızı",
+      "outcome": "Katılarda ısı iletim hızını etkileyen faktörleri inceler",
+      "micro": [
+        "İç enerji",
+        "Isı",
+        "Sıcaklık",
+        "Termometre",
+        "Öz ısı",
+        "Isı sığası",
+        "Kalorimetri",
+        "Erime / donma",
+        "Buharlaşma / yoğuşma",
+        "Hâl değişim ısısı",
+        "Isıl denge",
+        "İletim",
+        "Taşınım",
+        "Işıma",
+        "Isı yalıtımı",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.10.1.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Kuvvet ve Hareket",
+      "outcome": "Yatay doğrultudaki sabit hızlı hareketi analiz eder",
+      "micro": [
+        "Sabit hızlı hareket",
+        "Konum-zaman grafiği",
+        "Hız-zaman grafiği",
+        "İvme",
+        "Sabit ivmeli hareket",
+        "Grafik dönüşümleri",
+        "Hareket denklemleri",
+        "Günlük yaşam hareket problemleri",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.10.1.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Kuvvet ve Hareket",
+      "outcome": "İvme ile hız değişimi arasındaki ilişkiyi açıklar",
+      "micro": [
+        "Sabit hızlı hareket",
+        "Konum-zaman grafiği",
+        "Hız-zaman grafiği",
+        "İvme",
+        "Sabit ivmeli hareket",
+        "Grafik dönüşümleri",
+        "Hareket denklemleri",
+        "Günlük yaşam hareket problemleri",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.10.1.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Kuvvet ve Hareket",
+      "outcome": "Bir boyutta sabit ivmeli harekete ilişkin grafik ve matematiksel modelleri yorumlar",
+      "micro": [
+        "Sabit hızlı hareket",
+        "Konum-zaman grafiği",
+        "Hız-zaman grafiği",
+        "İvme",
+        "Sabit ivmeli hareket",
+        "Grafik dönüşümleri",
+        "Hareket denklemleri",
+        "Günlük yaşam hareket problemleri",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.10.2.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Enerji",
+      "theme_order": 2,
+      "content_frame": "Enerji",
+      "outcome": "Kuvvet–yer değiştirme grafiğinden yapılan işi yorumlar",
+      "micro": [
+        "İş",
+        "Enerji",
+        "Güç",
+        "Kinetik enerji",
+        "Çekim potansiyel enerjisi",
+        "Esneklik potansiyel enerjisi",
+        "Mekanik enerji",
+        "Enerjinin korunumu",
+        "Verim",
+        "Yenilenebilir enerji",
+        "Fosil yakıtlar",
+        "Enerji dönüşümleri",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.10.2.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Enerji",
+      "theme_order": 2,
+      "content_frame": "Enerji",
+      "outcome": "İş, enerji ve güç arasındaki ilişkileri kurar",
+      "micro": [
+        "İş",
+        "Enerji",
+        "Güç",
+        "Kinetik enerji",
+        "Çekim potansiyel enerjisi",
+        "Esneklik potansiyel enerjisi",
+        "Mekanik enerji",
+        "Enerjinin korunumu",
+        "Verim",
+        "Yenilenebilir enerji",
+        "Fosil yakıtlar",
+        "Enerji dönüşümleri",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.10.2.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Enerji",
+      "theme_order": 2,
+      "content_frame": "Enerji",
+      "outcome": "Enerji biçimlerini sınıflandırır",
+      "micro": [
+        "İş",
+        "Enerji",
+        "Güç",
+        "Kinetik enerji",
+        "Çekim potansiyel enerjisi",
+        "Esneklik potansiyel enerjisi",
+        "Mekanik enerji",
+        "Enerjinin korunumu",
+        "Verim",
+        "Yenilenebilir enerji",
+        "Fosil yakıtlar",
+        "Enerji dönüşümleri",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.10.2.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Enerji",
+      "theme_order": 2,
+      "content_frame": "Enerji",
+      "outcome": "Mekanik enerjiyi analiz eder",
+      "micro": [
+        "İş",
+        "Enerji",
+        "Güç",
+        "Kinetik enerji",
+        "Çekim potansiyel enerjisi",
+        "Esneklik potansiyel enerjisi",
+        "Mekanik enerji",
+        "Enerjinin korunumu",
+        "Verim",
+        "Yenilenebilir enerji",
+        "Fosil yakıtlar",
+        "Enerji dönüşümleri",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.10.2.5",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Enerji",
+      "theme_order": 2,
+      "content_frame": "Enerji",
+      "outcome": "Yenilenebilir ve yenilenemeyen enerji kaynaklarını karşılaştırır",
+      "micro": [
+        "İş",
+        "Enerji",
+        "Güç",
+        "Kinetik enerji",
+        "Çekim potansiyel enerjisi",
+        "Esneklik potansiyel enerjisi",
+        "Mekanik enerji",
+        "Enerjinin korunumu",
+        "Verim",
+        "Yenilenebilir enerji",
+        "Fosil yakıtlar",
+        "Enerji dönüşümleri",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.10.3.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Elektrik",
+      "theme_order": 3,
+      "content_frame": "Basit elektrik devrelerinde potansiyel farkı, akım ve direnç arasındaki ilişkiyi kurar. Devre elemanlarının seri/paralel bağlanmasını analiz eder. Elektriksel enerji ve güç ilişkilerini yorumlar. Günlük yaşamda elektrik kullanımıyla ilgili çıkarımlar yapar. Elektrik akımının oluşturabileceği riskleri ve korunma önlemlerini değerlendirir.",
+      "outcome": "FİZ.10.3.1–FİZ.10.3.6",
+      "micro": [
+        "Elektrik akımı",
+        "Potansiyel farkı",
+        "Direnç",
+        "Ohm yasası",
+        "Seri devre",
+        "Paralel devre",
+        "Eşdeğer direnç",
+        "Ampermetre",
+        "Voltmetre",
+        "Elektriksel güç",
+        "Elektrik enerjisi",
+        "Elektrik güvenliği",
+        "Topraklama ve koruma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.10.4.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Ünite: Dalgalar",
+      "theme_order": 4,
+      "content_frame": "Periyodik hareket ile dalga hareketi arasındaki ilişkiyi kurar. Dalganın temel büyüklüklerini tanımlar ve ilişkilendirir. Dalga çeşitlerini ortam ve titreşim doğrultusuna göre sınıflandırır. Dalga davranışlarını günlük yaşam örnekleriyle açıklar. Deprem dalgaları ve depremle ilgili fiziksel modelleri yorumlar.",
+      "outcome": "FİZ.10.4.x",
+      "micro": [
+        "Periyodik hareket",
+        "Genlik",
+        "Periyot",
+        "Frekans",
+        "Dalga boyu",
+        "Dalga hızı",
+        "Enine dalga",
+        "Boyuna dalga",
+        "Mekanik dalga",
+        "Ses",
+        "Su dalgaları",
+        "Yay dalgaları",
+        "Deprem dalgaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.1.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Serbest düşme İki boyutta sabit ivmeli hareket Newton yasaları Sürtünme Limit hız Çembersel hareket",
+      "outcome": "Serbest düşmede ivmenin özelliklerini yorumlar",
+      "micro": [
+        "Serbest düşme",
+        "Düşey atış",
+        "Yatay atış",
+        "Eğik atış",
+        "Newton 1–2–3",
+        "Serbest cisim diyagramı",
+        "Statik sürtünme",
+        "Kinetik sürtünme",
+        "Hava direnci",
+        "Limit hız",
+        "Açısal hız",
+        "Çizgisel hız",
+        "Merkezcil ivme",
+        "Merkezcil kuvvet",
+        "Düzgün çembersel hareket",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.1.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Serbest düşme İki boyutta sabit ivmeli hareket Newton yasaları Sürtünme Limit hız Çembersel hareket",
+      "outcome": "Serbest düşme hareketine ilişkin kanıtları değerlendirir",
+      "micro": [
+        "Serbest düşme",
+        "Düşey atış",
+        "Yatay atış",
+        "Eğik atış",
+        "Newton 1–2–3",
+        "Serbest cisim diyagramı",
+        "Statik sürtünme",
+        "Kinetik sürtünme",
+        "Hava direnci",
+        "Limit hız",
+        "Açısal hız",
+        "Çizgisel hız",
+        "Merkezcil ivme",
+        "Merkezcil kuvvet",
+        "Düzgün çembersel hareket",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.1.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Serbest düşme İki boyutta sabit ivmeli hareket Newton yasaları Sürtünme Limit hız Çembersel hareket",
+      "outcome": "İki boyutta sabit ivmeli hareketi analiz eder",
+      "micro": [
+        "Serbest düşme",
+        "Düşey atış",
+        "Yatay atış",
+        "Eğik atış",
+        "Newton 1–2–3",
+        "Serbest cisim diyagramı",
+        "Statik sürtünme",
+        "Kinetik sürtünme",
+        "Hava direnci",
+        "Limit hız",
+        "Açısal hız",
+        "Çizgisel hız",
+        "Merkezcil ivme",
+        "Merkezcil kuvvet",
+        "Düzgün çembersel hareket",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.1.4",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Serbest düşme İki boyutta sabit ivmeli hareket Newton yasaları Sürtünme Limit hız Çembersel hareket",
+      "outcome": "Newton hareket yasalarına ilişkin çıkarım yapar",
+      "micro": [
+        "Serbest düşme",
+        "Düşey atış",
+        "Yatay atış",
+        "Eğik atış",
+        "Newton 1–2–3",
+        "Serbest cisim diyagramı",
+        "Statik sürtünme",
+        "Kinetik sürtünme",
+        "Hava direnci",
+        "Limit hız",
+        "Açısal hız",
+        "Çizgisel hız",
+        "Merkezcil ivme",
+        "Merkezcil kuvvet",
+        "Düzgün çembersel hareket",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.1.5",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Serbest düşme İki boyutta sabit ivmeli hareket Newton yasaları Sürtünme Limit hız Çembersel hareket",
+      "outcome": "Serbest cisim diyagramları kullanarak Newton yasalarını uygular",
+      "micro": [
+        "Serbest düşme",
+        "Düşey atış",
+        "Yatay atış",
+        "Eğik atış",
+        "Newton 1–2–3",
+        "Serbest cisim diyagramı",
+        "Statik sürtünme",
+        "Kinetik sürtünme",
+        "Hava direnci",
+        "Limit hız",
+        "Açısal hız",
+        "Çizgisel hız",
+        "Merkezcil ivme",
+        "Merkezcil kuvvet",
+        "Düzgün çembersel hareket",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.1.6",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Serbest düşme İki boyutta sabit ivmeli hareket Newton yasaları Sürtünme Limit hız Çembersel hareket",
+      "outcome": "Statik ve kinetik sürtünmeyi karşılaştırır",
+      "micro": [
+        "Serbest düşme",
+        "Düşey atış",
+        "Yatay atış",
+        "Eğik atış",
+        "Newton 1–2–3",
+        "Serbest cisim diyagramı",
+        "Statik sürtünme",
+        "Kinetik sürtünme",
+        "Hava direnci",
+        "Limit hız",
+        "Açısal hız",
+        "Çizgisel hız",
+        "Merkezcil ivme",
+        "Merkezcil kuvvet",
+        "Düzgün çembersel hareket",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.1.7",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Serbest düşme İki boyutta sabit ivmeli hareket Newton yasaları Sürtünme Limit hız Çembersel hareket",
+      "outcome": "Sürtünme kuvvetine ilişkin matematiksel model kurar",
+      "micro": [
+        "Serbest düşme",
+        "Düşey atış",
+        "Yatay atış",
+        "Eğik atış",
+        "Newton 1–2–3",
+        "Serbest cisim diyagramı",
+        "Statik sürtünme",
+        "Kinetik sürtünme",
+        "Hava direnci",
+        "Limit hız",
+        "Açısal hız",
+        "Çizgisel hız",
+        "Merkezcil ivme",
+        "Merkezcil kuvvet",
+        "Düzgün çembersel hareket",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.1.8",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Serbest düşme İki boyutta sabit ivmeli hareket Newton yasaları Sürtünme Limit hız Çembersel hareket",
+      "outcome": "Limit hızı etkileyen değişkenleri ilişkilendirir",
+      "micro": [
+        "Serbest düşme",
+        "Düşey atış",
+        "Yatay atış",
+        "Eğik atış",
+        "Newton 1–2–3",
+        "Serbest cisim diyagramı",
+        "Statik sürtünme",
+        "Kinetik sürtünme",
+        "Hava direnci",
+        "Limit hız",
+        "Açısal hız",
+        "Çizgisel hız",
+        "Merkezcil ivme",
+        "Merkezcil kuvvet",
+        "Düzgün çembersel hareket",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.1.9",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Serbest düşme İki boyutta sabit ivmeli hareket Newton yasaları Sürtünme Limit hız Çembersel hareket",
+      "outcome": "Düzgün çembersel harekette yörünge ve hız vektörünü yorumlar",
+      "micro": [
+        "Serbest düşme",
+        "Düşey atış",
+        "Yatay atış",
+        "Eğik atış",
+        "Newton 1–2–3",
+        "Serbest cisim diyagramı",
+        "Statik sürtünme",
+        "Kinetik sürtünme",
+        "Hava direnci",
+        "Limit hız",
+        "Açısal hız",
+        "Çizgisel hız",
+        "Merkezcil ivme",
+        "Merkezcil kuvvet",
+        "Düzgün çembersel hareket",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.1.10",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Serbest düşme İki boyutta sabit ivmeli hareket Newton yasaları Sürtünme Limit hız Çembersel hareket",
+      "outcome": "Çembersel harekette temel nicelikler arasında matematiksel ilişkiler kurar",
+      "micro": [
+        "Serbest düşme",
+        "Düşey atış",
+        "Yatay atış",
+        "Eğik atış",
+        "Newton 1–2–3",
+        "Serbest cisim diyagramı",
+        "Statik sürtünme",
+        "Kinetik sürtünme",
+        "Hava direnci",
+        "Limit hız",
+        "Açısal hız",
+        "Çizgisel hız",
+        "Merkezcil ivme",
+        "Merkezcil kuvvet",
+        "Düzgün çembersel hareket",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.2.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Ünite: Elektrik ve Manyetizma",
+      "theme_order": 2,
+      "content_frame": "Coulomb yasası üzerinden elektriksel kuvveti matematiksel olarak modeller. Elektrik alan ve elektriksel potansiyel kavramlarını ilişkilendirir. Yüklü parçacıkların elektriksel ortamlardaki davranışlarını analiz eder. Akımın oluşturduğu manyetik alanı inceler. Manyetik kuvveti ve hareketli yük/iletken ilişkisini yorumlar. Elektromanyetik indüksiyonu açıklar. Alternatif akımın temel özelliklerini inceler. Transformatörlerin çalışma prensibi ve kullanım alanlarını değerlendirir.",
+      "outcome": "FİZ.11.2.x",
+      "micro": [
+        "Elektrik yükü",
+        "Coulomb kuvveti",
+        "Elektrik alan",
+        "Elektriksel potansiyel",
+        "Potansiyel enerji",
+        "Eş potansiyel",
+        "Manyetik alan",
+        "Akım taşıyan telin manyetik alanı",
+        "Manyetik kuvvet",
+        "Elektromanyetik indüksiyon",
+        "Faraday–Lenz yaklaşımı",
+        "Alternatif akım",
+        "Transformatör",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.3.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Optik",
+      "theme_order": 3,
+      "content_frame": "Optik",
+      "outcome": "Işık şiddeti, ışık akısı ve aydınlanma kavramlarını ilişkilendirir",
+      "micro": [
+        "Işık şiddeti",
+        "Işık akısı",
+        "Aydınlanma",
+        "Düzlem ayna",
+        "Çukur ayna",
+        "Tümsek ayna",
+        "Yansıma",
+        "Kırılma",
+        "Snell yasası",
+        "Tam yansıma",
+        "Görünür derinlik",
+        "Fiber optik",
+        "Prizma",
+        "İnce kenarlı mercek",
+        "Kalın kenarlı mercek",
+        "Merceklerde görüntü",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.3.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Optik",
+      "theme_order": 3,
+      "content_frame": "Optik",
+      "outcome": "Düzlem aynalarda görüntü oluşumunu modeller",
+      "micro": [
+        "Işık şiddeti",
+        "Işık akısı",
+        "Aydınlanma",
+        "Düzlem ayna",
+        "Çukur ayna",
+        "Tümsek ayna",
+        "Yansıma",
+        "Kırılma",
+        "Snell yasası",
+        "Tam yansıma",
+        "Görünür derinlik",
+        "Fiber optik",
+        "Prizma",
+        "İnce kenarlı mercek",
+        "Kalın kenarlı mercek",
+        "Merceklerde görüntü",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.3.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Optik",
+      "theme_order": 3,
+      "content_frame": "Optik",
+      "outcome": "Küresel aynaları özelliklerine göre karşılaştırır",
+      "micro": [
+        "Işık şiddeti",
+        "Işık akısı",
+        "Aydınlanma",
+        "Düzlem ayna",
+        "Çukur ayna",
+        "Tümsek ayna",
+        "Yansıma",
+        "Kırılma",
+        "Snell yasası",
+        "Tam yansıma",
+        "Görünür derinlik",
+        "Fiber optik",
+        "Prizma",
+        "İnce kenarlı mercek",
+        "Kalın kenarlı mercek",
+        "Merceklerde görüntü",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.3.4",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Optik",
+      "theme_order": 3,
+      "content_frame": "Optik",
+      "outcome": "Küresel aynalarda görüntü oluşumunu deneysel/veriye dayalı inceler",
+      "micro": [
+        "Işık şiddeti",
+        "Işık akısı",
+        "Aydınlanma",
+        "Düzlem ayna",
+        "Çukur ayna",
+        "Tümsek ayna",
+        "Yansıma",
+        "Kırılma",
+        "Snell yasası",
+        "Tam yansıma",
+        "Görünür derinlik",
+        "Fiber optik",
+        "Prizma",
+        "İnce kenarlı mercek",
+        "Kalın kenarlı mercek",
+        "Merceklerde görüntü",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.3.5",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Optik",
+      "theme_order": 3,
+      "content_frame": "Optik",
+      "outcome": "Işığın kırılmasını deneysel olarak analiz eder",
+      "micro": [
+        "Işık şiddeti",
+        "Işık akısı",
+        "Aydınlanma",
+        "Düzlem ayna",
+        "Çukur ayna",
+        "Tümsek ayna",
+        "Yansıma",
+        "Kırılma",
+        "Snell yasası",
+        "Tam yansıma",
+        "Görünür derinlik",
+        "Fiber optik",
+        "Prizma",
+        "İnce kenarlı mercek",
+        "Kalın kenarlı mercek",
+        "Merceklerde görüntü",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.3.6",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Optik",
+      "theme_order": 3,
+      "content_frame": "Optik",
+      "outcome": "Görünür derinlik olgusunu açıklar",
+      "micro": [
+        "Işık şiddeti",
+        "Işık akısı",
+        "Aydınlanma",
+        "Düzlem ayna",
+        "Çukur ayna",
+        "Tümsek ayna",
+        "Yansıma",
+        "Kırılma",
+        "Snell yasası",
+        "Tam yansıma",
+        "Görünür derinlik",
+        "Fiber optik",
+        "Prizma",
+        "İnce kenarlı mercek",
+        "Kalın kenarlı mercek",
+        "Merceklerde görüntü",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.3.7",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Optik",
+      "theme_order": 3,
+      "content_frame": "Optik",
+      "outcome": "Fiber optik teknolojisiyle ilgili bilgi toplar ve yorumlar",
+      "micro": [
+        "Işık şiddeti",
+        "Işık akısı",
+        "Aydınlanma",
+        "Düzlem ayna",
+        "Çukur ayna",
+        "Tümsek ayna",
+        "Yansıma",
+        "Kırılma",
+        "Snell yasası",
+        "Tam yansıma",
+        "Görünür derinlik",
+        "Fiber optik",
+        "Prizma",
+        "İnce kenarlı mercek",
+        "Kalın kenarlı mercek",
+        "Merceklerde görüntü",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.3.8",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Optik",
+      "theme_order": 3,
+      "content_frame": "Optik",
+      "outcome": "Prizmalarda ışık davranışına ilişkin çıkarım yapar",
+      "micro": [
+        "Işık şiddeti",
+        "Işık akısı",
+        "Aydınlanma",
+        "Düzlem ayna",
+        "Çukur ayna",
+        "Tümsek ayna",
+        "Yansıma",
+        "Kırılma",
+        "Snell yasası",
+        "Tam yansıma",
+        "Görünür derinlik",
+        "Fiber optik",
+        "Prizma",
+        "İnce kenarlı mercek",
+        "Kalın kenarlı mercek",
+        "Merceklerde görüntü",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.3.9",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Optik",
+      "theme_order": 3,
+      "content_frame": "Optik",
+      "outcome": "Merceklerin özelliklerini inceler",
+      "micro": [
+        "Işık şiddeti",
+        "Işık akısı",
+        "Aydınlanma",
+        "Düzlem ayna",
+        "Çukur ayna",
+        "Tümsek ayna",
+        "Yansıma",
+        "Kırılma",
+        "Snell yasası",
+        "Tam yansıma",
+        "Görünür derinlik",
+        "Fiber optik",
+        "Prizma",
+        "İnce kenarlı mercek",
+        "Kalın kenarlı mercek",
+        "Merceklerde görüntü",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.11.3.10",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Optik",
+      "theme_order": 3,
+      "content_frame": "Optik",
+      "outcome": "Merceklerde görüntü oluşumunu analiz eder",
+      "micro": [
+        "Işık şiddeti",
+        "Işık akısı",
+        "Aydınlanma",
+        "Düzlem ayna",
+        "Çukur ayna",
+        "Tümsek ayna",
+        "Yansıma",
+        "Kırılma",
+        "Snell yasası",
+        "Tam yansıma",
+        "Görünür derinlik",
+        "Fiber optik",
+        "Prizma",
+        "İnce kenarlı mercek",
+        "Kalın kenarlı mercek",
+        "Merceklerde görüntü",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.1.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Tork Denge Kütle merkezi / ağırlık merkezi İtme Momentum Momentumun korunumu Çarpışmalar Eylemsizlik momenti Açısal momentum Açısal momentumun korunumu",
+      "outcome": "FİZ.12.1.1 tork modeli",
+      "micro": [
+        "Tork",
+        "Denge",
+        "Kütle merkezi / ağırlık merkezi",
+        "İtme",
+        "Momentum",
+        "Momentumun korunumu",
+        "Çarpışmalar",
+        "Eylemsizlik momenti",
+        "Açısal momentum",
+        "Açısal momentumun korunumu",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.1.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Tork Denge Kütle merkezi / ağırlık merkezi İtme Momentum Momentumun korunumu Çarpışmalar Eylemsizlik momenti Açısal momentum Açısal momentumun korunumu",
+      "outcome": "Torku kuvvet ve kuvvet koluyla ilişkilendirir",
+      "micro": [
+        "Tork",
+        "Denge",
+        "Kütle merkezi / ağırlık merkezi",
+        "İtme",
+        "Momentum",
+        "Momentumun korunumu",
+        "Çarpışmalar",
+        "Eylemsizlik momenti",
+        "Açısal momentum",
+        "Açısal momentumun korunumu",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.1.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Tork Denge Kütle merkezi / ağırlık merkezi İtme Momentum Momentumun korunumu Çarpışmalar Eylemsizlik momenti Açısal momentum Açısal momentumun korunumu",
+      "outcome": "Denge koşullarını analiz eder",
+      "micro": [
+        "Tork",
+        "Denge",
+        "Kütle merkezi / ağırlık merkezi",
+        "İtme",
+        "Momentum",
+        "Momentumun korunumu",
+        "Çarpışmalar",
+        "Eylemsizlik momenti",
+        "Açısal momentum",
+        "Açısal momentumun korunumu",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.1.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Tork Denge Kütle merkezi / ağırlık merkezi İtme Momentum Momentumun korunumu Çarpışmalar Eylemsizlik momenti Açısal momentum Açısal momentumun korunumu",
+      "outcome": "İtme–momentum ilişkisini kurar",
+      "micro": [
+        "Tork",
+        "Denge",
+        "Kütle merkezi / ağırlık merkezi",
+        "İtme",
+        "Momentum",
+        "Momentumun korunumu",
+        "Çarpışmalar",
+        "Eylemsizlik momenti",
+        "Açısal momentum",
+        "Açısal momentumun korunumu",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.1.5",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Tork Denge Kütle merkezi / ağırlık merkezi İtme Momentum Momentumun korunumu Çarpışmalar Eylemsizlik momenti Açısal momentum Açısal momentumun korunumu",
+      "outcome": "Momentumun korunumunu çarpışma ve etkileşimlerde uygular",
+      "micro": [
+        "Tork",
+        "Denge",
+        "Kütle merkezi / ağırlık merkezi",
+        "İtme",
+        "Momentum",
+        "Momentumun korunumu",
+        "Çarpışmalar",
+        "Eylemsizlik momenti",
+        "Açısal momentum",
+        "Açısal momentumun korunumu",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.1.6",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Tork Denge Kütle merkezi / ağırlık merkezi İtme Momentum Momentumun korunumu Çarpışmalar Eylemsizlik momenti Açısal momentum Açısal momentumun korunumu",
+      "outcome": "Dönme hareketinde eylemsizlik momentini yorumlar",
+      "micro": [
+        "Tork",
+        "Denge",
+        "Kütle merkezi / ağırlık merkezi",
+        "İtme",
+        "Momentum",
+        "Momentumun korunumu",
+        "Çarpışmalar",
+        "Eylemsizlik momenti",
+        "Açısal momentum",
+        "Açısal momentumun korunumu",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.1.7",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Kuvvet ve Hareket",
+      "theme_order": 1,
+      "content_frame": "Tork Denge Kütle merkezi / ağırlık merkezi İtme Momentum Momentumun korunumu Çarpışmalar Eylemsizlik momenti Açısal momentum Açısal momentumun korunumu",
+      "outcome": "Açısal momentum ve korunumu üzerinden sistemleri analiz eder",
+      "micro": [
+        "Tork",
+        "Denge",
+        "Kütle merkezi / ağırlık merkezi",
+        "İtme",
+        "Momentum",
+        "Momentumun korunumu",
+        "Çarpışmalar",
+        "Eylemsizlik momenti",
+        "Açısal momentum",
+        "Açısal momentumun korunumu",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.2.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Ünite: Enerji",
+      "theme_order": 2,
+      "content_frame": "Enerji",
+      "outcome": "FİZ.12.2.1 yay sabitinin deneysel incelenmesi",
+      "micro": [
+        "Yay kuvveti",
+        "Hooke yasası",
+        "Yay sabiti",
+        "Esneklik potansiyel enerjisi",
+        "Enerji dönüşümleri",
+        "Mekanik sistemlerde enerji",
+        "Verim",
+        "Enerji kayıpları ve gerçek sistemler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.2.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Ünite: Enerji",
+      "theme_order": 2,
+      "content_frame": "Enerji",
+      "outcome": "Yay sistemlerini deneysel olarak inceler",
+      "micro": [
+        "Yay kuvveti",
+        "Hooke yasası",
+        "Yay sabiti",
+        "Esneklik potansiyel enerjisi",
+        "Enerji dönüşümleri",
+        "Mekanik sistemlerde enerji",
+        "Verim",
+        "Enerji kayıpları ve gerçek sistemler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.2.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Ünite: Enerji",
+      "theme_order": 2,
+      "content_frame": "Enerji",
+      "outcome": "Kuvvet–uzama ilişkisini matematiksel modele dönüştürür",
+      "micro": [
+        "Yay kuvveti",
+        "Hooke yasası",
+        "Yay sabiti",
+        "Esneklik potansiyel enerjisi",
+        "Enerji dönüşümleri",
+        "Mekanik sistemlerde enerji",
+        "Verim",
+        "Enerji kayıpları ve gerçek sistemler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.2.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Ünite: Enerji",
+      "theme_order": 2,
+      "content_frame": "Enerji",
+      "outcome": "Enerji depolama ve dönüşüm süreçlerini analiz eder",
+      "micro": [
+        "Yay kuvveti",
+        "Hooke yasası",
+        "Yay sabiti",
+        "Esneklik potansiyel enerjisi",
+        "Enerji dönüşümleri",
+        "Mekanik sistemlerde enerji",
+        "Verim",
+        "Enerji kayıpları ve gerçek sistemler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.2.5",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Ünite: Enerji",
+      "theme_order": 2,
+      "content_frame": "Enerji",
+      "outcome": "Mekanik sistemlerin verimini değerlendirir",
+      "micro": [
+        "Yay kuvveti",
+        "Hooke yasası",
+        "Yay sabiti",
+        "Esneklik potansiyel enerjisi",
+        "Enerji dönüşümleri",
+        "Mekanik sistemlerde enerji",
+        "Verim",
+        "Enerji kayıpları ve gerçek sistemler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.3.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Dalgalar",
+      "theme_order": 3,
+      "content_frame": "Dalgalar",
+      "outcome": "Doğrusal su dalgalarında kırınım",
+      "micro": [
+        "Kırınım",
+        "Girişim",
+        "Faz farkı",
+        "Elektromanyetik dalga",
+        "Elektromanyetik spektrum",
+        "Radyo dalgaları",
+        "Mikrodalga",
+        "Kızılötesi",
+        "Görünür ışık",
+        "Morötesi",
+        "X ışını",
+        "Gama",
+        "Dalga tabanlı teknolojiler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.3.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Dalgalar",
+      "theme_order": 3,
+      "content_frame": "Dalgalar",
+      "outcome": "Girişim",
+      "micro": [
+        "Kırınım",
+        "Girişim",
+        "Faz farkı",
+        "Elektromanyetik dalga",
+        "Elektromanyetik spektrum",
+        "Radyo dalgaları",
+        "Mikrodalga",
+        "Kızılötesi",
+        "Görünür ışık",
+        "Morötesi",
+        "X ışını",
+        "Gama",
+        "Dalga tabanlı teknolojiler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.3.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Dalgalar",
+      "theme_order": 3,
+      "content_frame": "Dalgalar",
+      "outcome": "Dalga davranışları",
+      "micro": [
+        "Kırınım",
+        "Girişim",
+        "Faz farkı",
+        "Elektromanyetik dalga",
+        "Elektromanyetik spektrum",
+        "Radyo dalgaları",
+        "Mikrodalga",
+        "Kızılötesi",
+        "Görünür ışık",
+        "Morötesi",
+        "X ışını",
+        "Gama",
+        "Dalga tabanlı teknolojiler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.3.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Dalgalar",
+      "theme_order": 3,
+      "content_frame": "Dalgalar",
+      "outcome": "Elektromanyetik dalgalar",
+      "micro": [
+        "Kırınım",
+        "Girişim",
+        "Faz farkı",
+        "Elektromanyetik dalga",
+        "Elektromanyetik spektrum",
+        "Radyo dalgaları",
+        "Mikrodalga",
+        "Kızılötesi",
+        "Görünür ışık",
+        "Morötesi",
+        "X ışını",
+        "Gama",
+        "Dalga tabanlı teknolojiler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.3.5",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Dalgalar",
+      "theme_order": 3,
+      "content_frame": "Dalgalar",
+      "outcome": "Elektromanyetik spektrum",
+      "micro": [
+        "Kırınım",
+        "Girişim",
+        "Faz farkı",
+        "Elektromanyetik dalga",
+        "Elektromanyetik spektrum",
+        "Radyo dalgaları",
+        "Mikrodalga",
+        "Kızılötesi",
+        "Görünür ışık",
+        "Morötesi",
+        "X ışını",
+        "Gama",
+        "Dalga tabanlı teknolojiler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.3.6",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Dalgalar",
+      "theme_order": 3,
+      "content_frame": "Dalgalar",
+      "outcome": "Dalga teknolojileri ve cihazlar",
+      "micro": [
+        "Kırınım",
+        "Girişim",
+        "Faz farkı",
+        "Elektromanyetik dalga",
+        "Elektromanyetik spektrum",
+        "Radyo dalgaları",
+        "Mikrodalga",
+        "Kızılötesi",
+        "Görünür ışık",
+        "Morötesi",
+        "X ışını",
+        "Gama",
+        "Dalga tabanlı teknolojiler",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.4.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Ünite: Madde ve Doğası",
+      "theme_order": 4,
+      "content_frame": "Madde ve Doğası",
+      "outcome": "Planck sabiti ve modern fiziğe ilişkin modeller",
+      "micro": [
+        "Modern fiziğin doğuşu",
+        "Kuantum fikri",
+        "Planck yaklaşımı",
+        "Foton",
+        "Fotoelektrik etki",
+        "Atom modelleri ve enerji düzeyleri",
+        "Madde–ışık etkileşimi",
+        "Atom çekirdeği",
+        "Radyoaktivite",
+        "Nükleer tepkimeler",
+        "Nükleer enerji",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.4.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Ünite: Madde ve Doğası",
+      "theme_order": 4,
+      "content_frame": "Madde ve Doğası",
+      "outcome": "Klasik fiziğin açıklamakta zorlandığı olayları modern fizik bağlamında değerlendirir",
+      "micro": [
+        "Modern fiziğin doğuşu",
+        "Kuantum fikri",
+        "Planck yaklaşımı",
+        "Foton",
+        "Fotoelektrik etki",
+        "Atom modelleri ve enerji düzeyleri",
+        "Madde–ışık etkileşimi",
+        "Atom çekirdeği",
+        "Radyoaktivite",
+        "Nükleer tepkimeler",
+        "Nükleer enerji",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.4.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Ünite: Madde ve Doğası",
+      "theme_order": 4,
+      "content_frame": "Madde ve Doğası",
+      "outcome": "Enerjinin kuantalanması fikrini yorumlar",
+      "micro": [
+        "Modern fiziğin doğuşu",
+        "Kuantum fikri",
+        "Planck yaklaşımı",
+        "Foton",
+        "Fotoelektrik etki",
+        "Atom modelleri ve enerji düzeyleri",
+        "Madde–ışık etkileşimi",
+        "Atom çekirdeği",
+        "Radyoaktivite",
+        "Nükleer tepkimeler",
+        "Nükleer enerji",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.4.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Ünite: Madde ve Doğası",
+      "theme_order": 4,
+      "content_frame": "Madde ve Doğası",
+      "outcome": "Işık–madde etkileşimlerini açıklar",
+      "micro": [
+        "Modern fiziğin doğuşu",
+        "Kuantum fikri",
+        "Planck yaklaşımı",
+        "Foton",
+        "Fotoelektrik etki",
+        "Atom modelleri ve enerji düzeyleri",
+        "Madde–ışık etkileşimi",
+        "Atom çekirdeği",
+        "Radyoaktivite",
+        "Nükleer tepkimeler",
+        "Nükleer enerji",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.4.5",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Ünite: Madde ve Doğası",
+      "theme_order": 4,
+      "content_frame": "Madde ve Doğası",
+      "outcome": "Atom ve çekirdek fiziği uygulamalarını analiz eder",
+      "micro": [
+        "Modern fiziğin doğuşu",
+        "Kuantum fikri",
+        "Planck yaklaşımı",
+        "Foton",
+        "Fotoelektrik etki",
+        "Atom modelleri ve enerji düzeyleri",
+        "Madde–ışık etkileşimi",
+        "Atom çekirdeği",
+        "Radyoaktivite",
+        "Nükleer tepkimeler",
+        "Nükleer enerji",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FIZ.12.4.6",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf",
+        "AYT"
+      ],
+      "theme": "4. Ünite: Madde ve Doğası",
+      "theme_order": 4,
+      "content_frame": "Madde ve Doğası",
+      "outcome": "Nükleer enerjinin bilimsel, teknolojik ve toplumsal boyutlarını değerlendirir",
+      "micro": [
+        "Modern fiziğin doğuşu",
+        "Kuantum fikri",
+        "Planck yaklaşımı",
+        "Foton",
+        "Fotoelektrik etki",
+        "Atom modelleri ve enerji düzeyleri",
+        "Madde–ışık etkileşimi",
+        "Atom çekirdeği",
+        "Radyoaktivite",
+        "Nükleer tepkimeler",
+        "Nükleer enerji",
+        "GENEL_KARMA"
+      ]
+    }
+  ]
+}

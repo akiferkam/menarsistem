@@ -1,0 +1,378 @@
+{
+  "subject": "Geometri",
+  "source": {
+    "workflow_file": "sources/menar_mays_matematik_v22_6_workflow.json",
+    "extracted_node": "matematik.json'dan çıkarıldı (2026-08-17, geometri temaları ayrı ders yapıldı)",
+    "extracted_at": "2026-08-17"
+  },
+  "outcome_count": 17,
+  "outcomes": [
+    {
+      "code": "GEO.9.1.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Geometrik Şekiller",
+      "theme_order": 1,
+      "content_frame": "Üçgende Açı ve Kenarla İlgili Özellikler, Üçgende Açı Özellikleri Arasındaki İlişkiler, Üçgende Kenar Özellikleri Arasındaki İlişkiler Üçgende en uzun kenarın karşısındaki açının ölçüsü en büyüktür. Öklid geometrisinin aksiyomatik yapısı, geometrideki bağıntıların ve ilişkilerin ispatlanmasının temelini oluşturur. Üçgenin temel özellikleri ve geometrik yapısının anlaşılması sayesinde üçgen oluşturabilme koşulları belirlenir.",
+      "outcome": "Üçgende açı ve kenarla ilgili özellikleri, üçgenin açı ve kenarları arasındaki ilişkileri doğrulayabilme veya ispatlayabilme",
+      "micro": [
+        "Üçgende iç açı toplamı",
+        "Üçgende dış açı özellikleri",
+        "Kenar-açı ilişkisi",
+        "Üçgen eşitsizliği",
+        "Üçgen oluşturma koşulları",
+        "Doğrulama yöntemleri",
+        "Geometrik ispat",
+        "Yeni duruma uyarlama",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.9.2.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Eşlik ve Benzerlik",
+      "theme_order": 2,
+      "content_frame": "Geometrik Şekillerin Yansıma, Öteleme ve Dönme Dönüşümleri Sonrası Görünüşü ve Bu Görünüşün Özellikleri, Üçgenlerde Eşlik ve Benzerlik Koşulları Tüm kenar uzunlukları belli olan sadece bir üçgen vardır. Geometrik dönüşümlerle (öteleme, yansıma, dönme) bu üçgene eşüçgenler üretilebilir. Öteleme, yansıma ve dönme dönüşümleri sonucunda başlangıçtakişekil ile dönüşüm sonrası oluşanşeklin görüntüsü eştir. Benzer üçgenlerde karşılıklı açıların ölçüleri eşittir ve bu açıların karşısındaki kenarlar orantılıdır. Eşüçgenlerde benzerlik oranı 1'dir. Birbirine paralel en az üç doğrunun kendilerini kesen doğrular üzerinde oluşturdukları karşılıklı doğru parçalarının uzunlukları orantılıdır. Bir dik üçgende hipotenüse ait yükseklik çizildiğinde oluşan dik üçgenler birbirine ve başlangıçtaki üçgene benzerdir. Öklid ve Tales teoremleri, bir üçgenden hareketle o üçgene benzer üçgenler oluşturma yoluyla elde edilebilir.",
+      "outcome": "Geometrik dönüşümlerle ilgili çıkarım yapabilme",
+      "micro": [
+        "Yansıma dönüşümü",
+        "Öteleme dönüşümü",
+        "Dönme dönüşümü",
+        "Dönüşüm altında eşlik",
+        "Koordinat düzleminde dönüşüm",
+        "Örüntü ve genelleme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.9.2.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Eşlik ve Benzerlik",
+      "theme_order": 2,
+      "content_frame": "Geometrik Şekillerin Yansıma, Öteleme ve Dönme Dönüşümleri Sonrası Görünüşü ve Bu Görünüşün Özellikleri, Üçgenlerde Eşlik ve Benzerlik Koşulları Tüm kenar uzunlukları belli olan sadece bir üçgen vardır. Geometrik dönüşümlerle (öteleme, yansıma, dönme) bu üçgene eşüçgenler üretilebilir. Öteleme, yansıma ve dönme dönüşümleri sonucunda başlangıçtakişekil ile dönüşüm sonrası oluşanşeklin görüntüsü eştir. Benzer üçgenlerde karşılıklı açıların ölçüleri eşittir ve bu açıların karşısındaki kenarlar orantılıdır. Eşüçgenlerde benzerlik oranı 1'dir. Birbirine paralel en az üç doğrunun kendilerini kesen doğrular üzerinde oluşturdukları karşılıklı doğru parçalarının uzunlukları orantılıdır. Bir dik üçgende hipotenüse ait yükseklik çizildiğinde oluşan dik üçgenler birbirine ve başlangıçtaki üçgene benzerdir. Öklid ve Tales teoremleri, bir üçgenden hareketle o üçgene benzer üçgenler oluşturma yoluyla elde edilebilir.",
+      "outcome": "İki üçgenin eşveya benzer olması için gerekli olan asgari koşullarla ilgili çıkarım yapabilme",
+      "micro": [
+        "Üçgenlerde eşlik koşulları",
+        "Üçgenlerde benzerlik koşulları",
+        "Asgari koşullar",
+        "Karşılıklı açı ve kenarlar",
+        "Benzerlik oranı",
+        "Eşlik-benzerlik karşılaştırması",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.9.2.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Eşlik ve Benzerlik",
+      "theme_order": 2,
+      "content_frame": "Geometrik Şekillerin Yansıma, Öteleme ve Dönme Dönüşümleri Sonrası Görünüşü ve Bu Görünüşün Özellikleri, Üçgenlerde Eşlik ve Benzerlik Koşulları Tüm kenar uzunlukları belli olan sadece bir üçgen vardır. Geometrik dönüşümlerle (öteleme, yansıma, dönme) bu üçgene eşüçgenler üretilebilir. Öteleme, yansıma ve dönme dönüşümleri sonucunda başlangıçtakişekil ile dönüşüm sonrası oluşanşeklin görüntüsü eştir. Benzer üçgenlerde karşılıklı açıların ölçüleri eşittir ve bu açıların karşısındaki kenarlar orantılıdır. Eşüçgenlerde benzerlik oranı 1'dir. Birbirine paralel en az üç doğrunun kendilerini kesen doğrular üzerinde oluşturdukları karşılıklı doğru parçalarının uzunlukları orantılıdır. Bir dik üçgende hipotenüse ait yükseklik çizildiğinde oluşan dik üçgenler birbirine ve başlangıçtaki üçgene benzerdir. Öklid ve Tales teoremleri, bir üçgenden hareketle o üçgene benzer üçgenler oluşturma yoluyla elde edilebilir.",
+      "outcome": "Bir üçgenden hareketle ona benzer üçgenler oluşturma ile ilgili yansıtma yapabilme",
+      "micro": [
+        "Benzer üçgen oluşturma",
+        "Ölçeklendirme",
+        "Paralel doğrularla benzerlik",
+        "Geometrik inşa",
+        "Çıkarımları problem durumuna aktarma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.9.2.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Eşlik ve Benzerlik",
+      "theme_order": 2,
+      "content_frame": "Geometrik Şekillerin Yansıma, Öteleme ve Dönme Dönüşümleri Sonrası Görünüşü ve Bu Görünüşün Özellikleri, Üçgenlerde Eşlik ve Benzerlik Koşulları Tüm kenar uzunlukları belli olan sadece bir üçgen vardır. Geometrik dönüşümlerle (öteleme, yansıma, dönme) bu üçgene eşüçgenler üretilebilir. Öteleme, yansıma ve dönme dönüşümleri sonucunda başlangıçtakişekil ile dönüşüm sonrası oluşanşeklin görüntüsü eştir. Benzer üçgenlerde karşılıklı açıların ölçüleri eşittir ve bu açıların karşısındaki kenarlar orantılıdır. Eşüçgenlerde benzerlik oranı 1'dir. Birbirine paralel en az üç doğrunun kendilerini kesen doğrular üzerinde oluşturdukları karşılıklı doğru parçalarının uzunlukları orantılıdır. Bir dik üçgende hipotenüse ait yükseklik çizildiğinde oluşan dik üçgenler birbirine ve başlangıçtaki üçgene benzerdir. Öklid ve Tales teoremleri, bir üçgenden hareketle o üçgene benzer üçgenler oluşturma yoluyla elde edilebilir.",
+      "outcome": "Tales, Öklid ve Pisagor teoremlerini ispatlayabilme",
+      "micro": [
+        "Tales teoremi",
+        "Öklid teoremleri",
+        "Pisagor teoremi",
+        "Teorem ispatları",
+        "Benzerlik yoluyla ispat",
+        "İspatı yeni duruma uyarlama",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.9.2.5",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Eşlik ve Benzerlik",
+      "theme_order": 2,
+      "content_frame": "Geometrik Şekillerin Yansıma, Öteleme ve Dönme Dönüşümleri Sonrası Görünüşü ve Bu Görünüşün Özellikleri, Üçgenlerde Eşlik ve Benzerlik Koşulları Tüm kenar uzunlukları belli olan sadece bir üçgen vardır. Geometrik dönüşümlerle (öteleme, yansıma, dönme) bu üçgene eşüçgenler üretilebilir. Öteleme, yansıma ve dönme dönüşümleri sonucunda başlangıçtakişekil ile dönüşüm sonrası oluşanşeklin görüntüsü eştir. Benzer üçgenlerde karşılıklı açıların ölçüleri eşittir ve bu açıların karşısındaki kenarlar orantılıdır. Eşüçgenlerde benzerlik oranı 1'dir. Birbirine paralel en az üç doğrunun kendilerini kesen doğrular üzerinde oluşturdukları karşılıklı doğru parçalarının uzunlukları orantılıdır. Bir dik üçgende hipotenüse ait yükseklik çizildiğinde oluşan dik üçgenler birbirine ve başlangıçtaki üçgene benzerdir. Öklid ve Tales teoremleri, bir üçgenden hareketle o üçgene benzer üçgenler oluşturma yoluyla elde edilebilir.",
+      "outcome": "Eşlik ve benzerlikle ilgili çıkarım ve teoremleri içeren problemleri çözebilme",
+      "micro": [
+        "Eşlik problemleri",
+        "Benzerlik problemleri",
+        "Tales uygulamaları",
+        "Öklid uygulamaları",
+        "Pisagor uygulamaları",
+        "Çözüm stratejisi geliştirme",
+        "Çözüm kontrolü",
+        "Strateji genelleme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.10.1.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Geometrik Şekiller",
+      "theme_order": 1,
+      "content_frame": "Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler, Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler, Üçgende Alan, Sinüs ve Kosinüs Teoremleri Trigonometrik oranlar, bir açıya ilişkin sabitlerdir. Benzer üçgenlerin alanları da orantılıdır.",
+      "outcome": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme",
+      "micro": [
+        "Sinüs-kosinüs-tanjant-kotanjant",
+        "Dik üçgende trigonometrik oranlar",
+        "Temel trigonometrik özdeşlikler",
+        "Özel açılar",
+        "Birim çember bağlantısı",
+        "Problem uygulamaları",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.10.1.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Geometrik Şekiller",
+      "theme_order": 1,
+      "content_frame": "Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler, Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler, Üçgende Alan, Sinüs ve Kosinüs Teoremleri Trigonometrik oranlar, bir açıya ilişkin sabitlerdir. Benzer üçgenlerin alanları da orantılıdır.",
+      "outcome": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme",
+      "micro": [
+        "İç ve dış açıortay",
+        "Kenarortay",
+        "Kenar orta dikme",
+        "Yükseklik",
+        "Ağırlık merkezi",
+        "İçteğet ve çevrel çember merkezleri",
+        "Yardımcı eleman ilişkileri",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.10.1.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Geometrik Şekiller",
+      "theme_order": 1,
+      "content_frame": "Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler, Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler, Üçgende Alan, Sinüs ve Kosinüs Teoremleri Trigonometrik oranlar, bir açıya ilişkin sabitlerdir. Benzer üçgenlerin alanları da orantılıdır.",
+      "outcome": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme",
+      "micro": [
+        "Üçgende alan bağıntısı",
+        "Taban-yükseklik değişimi",
+        "Alan oranları",
+        "Benzer üçgenlerde alan",
+        "Gerçek yaşam uygulamaları",
+        "Örüntü ve genelleme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.10.1.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Tema: Geometrik Şekiller",
+      "theme_order": 1,
+      "content_frame": "Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler, Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler, Üçgende Alan, Sinüs ve Kosinüs Teoremleri Trigonometrik oranlar, bir açıya ilişkin sabitlerdir. Benzer üçgenlerin alanları da orantılıdır.",
+      "outcome": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme",
+      "micro": [
+        "Sinüs teoremi",
+        "Kosinüs teoremi",
+        "Teoremlerin doğrulanması",
+        "Teoremlerin ispatı",
+        "Üçgen çözme",
+        "Yeni durumlara uyarlama",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.10.2.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Analitik İnceleme",
+      "theme_order": 2,
+      "content_frame": "Dik Koordinat Sisteminde Nokta ve Doğrunun Analitik İncelenmesi, İki Nokta Arasındaki Uzaklık, Bir Doğru Parçasını Belli Bir Oranda Bölme Dik koordinat sistemi, geometrik özelliklerin cebirsel ve grafiksel bir yaklaşımla incelenmesini sağlar. İki doğrunun dik koordinat sisteminde birbirine göre konumlarını belirlemede bu doğruların eğimlerinden yararlanılır.",
+      "outcome": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme",
+      "micro": [
+        "İki nokta arasındaki uzaklık",
+        "Doğru parçasının orta noktası",
+        "İçten bölme",
+        "Dıştan bölme",
+        "Oran formülü",
+        "Koordinat-geometri ilişkisi",
+        "Gerçek yaşam problemleri",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.10.2.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Tema: Analitik İnceleme",
+      "theme_order": 2,
+      "content_frame": "Dik Koordinat Sisteminde Nokta ve Doğrunun Analitik İncelenmesi, İki Nokta Arasındaki Uzaklık, Bir Doğru Parçasını Belli Bir Oranda Bölme Dik koordinat sistemi, geometrik özelliklerin cebirsel ve grafiksel bir yaklaşımla incelenmesini sağlar. İki doğrunun dik koordinat sisteminde birbirine göre konumlarını belirlemede bu doğruların eğimlerinden yararlanılır.",
+      "outcome": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme",
+      "micro": [
+        "Doğrunun eğimi",
+        "Eğim açısı",
+        "Doğru denklemi",
+        "Paralel doğrular",
+        "Dik doğrular",
+        "Kesişen ve çakışan doğrular",
+        "Koordinat sistemini temsil aracı olarak kullanma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.11.1.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Geometrik Şekiller",
+      "theme_order": 1,
+      "content_frame": "Dörtgenlerin Açı, Kenar, Köşegen, Simetri ve Alan Özellikleri, Bunlar Arasındaki İlişkiler, Özel Dörtgenler, Çokgenlerin Sınıflandırılması ve Çokgenlerin Özellikleri Çokgenlerin özellikleri ve çokgenlere ilişkin bağıntılar, çokgenlerin üçgenlere parçalanarak incelenmesi ile elde edilebilir. Dörtgenler arasındaki ilişkiler, dörtgenlerin temel elemanları ya da köşegen ve simetri gibi özellikleri kullanılarak oluşturulur.",
+      "outcome": "Üçgenlerde açı, benzerlik ve alan özelliklerinden yola çıkarak dörtgenlerin açı, kenar, köşegen, simetri ve alan özelliklerine ilişkin muhakeme yapabilme",
+      "micro": [
+        "Dörtgenlerde açı özellikleri",
+        "Dörtgenlerde kenar özellikleri",
+        "Köşegen özellikleri",
+        "Simetri özellikleri",
+        "Alan özellikleri",
+        "Üçgenlere ayırarak ispat",
+        "Yeni durumlara uyarlama",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.11.1.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Geometrik Şekiller",
+      "theme_order": 1,
+      "content_frame": "Dörtgenlerin Açı, Kenar, Köşegen, Simetri ve Alan Özellikleri, Bunlar Arasındaki İlişkiler, Özel Dörtgenler, Çokgenlerin Sınıflandırılması ve Çokgenlerin Özellikleri Çokgenlerin özellikleri ve çokgenlere ilişkin bağıntılar, çokgenlerin üçgenlere parçalanarak incelenmesi ile elde edilebilir. Dörtgenler arasındaki ilişkiler, dörtgenlerin temel elemanları ya da köşegen ve simetri gibi özellikleri kullanılarak oluşturulur.",
+      "outcome": "Özel dörtgenlerin kenar, açı, köşegen ve simetri özelliklerinden hareketle aralarındaki ilişkileri yapılandırabilme",
+      "micro": [
+        "Paralelkenar ailesi",
+        "Yamuk",
+        "Dikdörtgen",
+        "Eşkenar dörtgen",
+        "Kare",
+        "Deltoid",
+        "Özel dörtgenler hiyerarşisi",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.11.1.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Geometrik Şekiller",
+      "theme_order": 1,
+      "content_frame": "Dörtgenlerin Açı, Kenar, Köşegen, Simetri ve Alan Özellikleri, Bunlar Arasındaki İlişkiler, Özel Dörtgenler, Çokgenlerin Sınıflandırılması ve Çokgenlerin Özellikleri Çokgenlerin özellikleri ve çokgenlere ilişkin bağıntılar, çokgenlerin üçgenlere parçalanarak incelenmesi ile elde edilebilir. Dörtgenler arasındaki ilişkiler, dörtgenlerin temel elemanları ya da köşegen ve simetri gibi özellikleri kullanılarak oluşturulur.",
+      "outcome": "Çokgenleri içbükey veya dışbükey olarak sınıflandırabilme",
+      "micro": [
+        "İçbükey çokgen",
+        "Dışbükey çokgen",
+        "Sınıflandırma ölçütleri",
+        "Çokgenleri ayırt etme",
+        "Etiketleme ve tasnif",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.11.1.4",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Geometrik Şekiller",
+      "theme_order": 1,
+      "content_frame": "Dörtgenlerin Açı, Kenar, Köşegen, Simetri ve Alan Özellikleri, Bunlar Arasındaki İlişkiler, Özel Dörtgenler, Çokgenlerin Sınıflandırılması ve Çokgenlerin Özellikleri Çokgenlerin özellikleri ve çokgenlere ilişkin bağıntılar, çokgenlerin üçgenlere parçalanarak incelenmesi ile elde edilebilir. Dörtgenler arasındaki ilişkiler, dörtgenlerin temel elemanları ya da köşegen ve simetri gibi özellikleri kullanılarak oluşturulur.",
+      "outcome": "Dışbükey çokgenlerin kenar, açı, köşegen, simetri ve alan özelliklerine dair çıkarım yapabilme",
+      "micro": [
+        "Çokgenlerde iç açı",
+        "Çokgenlerde dış açı",
+        "Köşegen sayısı",
+        "Düzgün çokgenler",
+        "Simetri",
+        "Çokgenlerde alan",
+        "Örüntü ve genelleme",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "GEO.11.1.5",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Tema: Geometrik Şekiller",
+      "theme_order": 1,
+      "content_frame": "Dörtgenlerin Açı, Kenar, Köşegen, Simetri ve Alan Özellikleri, Bunlar Arasındaki İlişkiler, Özel Dörtgenler, Çokgenlerin Sınıflandırılması ve Çokgenlerin Özellikleri Çokgenlerin özellikleri ve çokgenlere ilişkin bağıntılar, çokgenlerin üçgenlere parçalanarak incelenmesi ile elde edilebilir. Dörtgenler arasındaki ilişkiler, dörtgenlerin temel elemanları ya da köşegen ve simetri gibi özellikleri kullanılarak oluşturulur.",
+      "outcome": "Çokgenlerin kenar, açı, köşegen, simetri ve alan özelliklerini içeren problemler çözebilme",
+      "micro": [
+        "Dörtgen problemleri",
+        "Çokgen problemleri",
+        "Açı ve köşegen problemleri",
+        "Simetri problemleri",
+        "Alan problemleri",
+        "Strateji geliştirme",
+        "Çözüm kontrolü ve strateji değiştirme",
+        "Genelleme",
+        "GENEL_KARMA"
+      ]
+    }
+  ]
+}
