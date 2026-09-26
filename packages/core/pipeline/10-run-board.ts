@@ -27,7 +27,14 @@ const BOARD_SYSTEM =
   "baglam_katmani.gerekli=false ise (soru bilinçli olarak bağlamsız/standart bir soru — kazanımı/formülü/" +
   "bilgiyi doğrudan sorgular, sahne veya görsel İSTENMEMİŞTİR): gorsel_islevsellik ve baglam_islevselligi " +
   "kriterlerine TAM PUAN ver. Ortada değerlendirilecek bir görsel/bağlam yoktur — bu bir eksiklik DEĞİL, " +
-  "seçilen soru türünün doğası; düşük puan vermek standart soruları haksız yere cezalandırır.";
+  "seçilen soru türünün doğası; düşük puan vermek standart soruları haksız yere cezalandırır.\n\n" +
+  "GİRDİ.mode=BTV1 ise yukarıdaki 'GÖRSEL DEKORATİF' testini UYGULAMA: bu modda görsel BİLİNÇLİ OLARAK " +
+  "yalnız sahneyi somutlaştırmak içindir (bkz. 02-build-prompt.ts modeBlock case BTV1), çözüm için gerekli " +
+  "hiçbir veriyi taşımaması ZATEN İSTENEN tasarımdır — gpt-image-1'in birden fazla nesne/renk sayamama " +
+  "riskini bilinçli olarak ortadan kaldırır. baglam_katmani.gerekli=true olduğu sürece (sahne gerçekten " +
+  "soru bağlamıyla örtüşüyorsa) gorsel_islevsellik ve baglam_islevselligi kriterlerine TAM PUAN ver, " +
+  "red_nedenleri'ne 'GÖRSEL DEKORATİF' YAZMA — bu modda dekoratif olması bir kusur değil, tasarımın ta " +
+  "kendisidir.";
 
 export interface BoardDeps {
   provider: LlmProvider;

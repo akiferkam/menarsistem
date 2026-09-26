@@ -23,11 +23,24 @@ export interface ModelPricing {
 }
 
 export const PRICING: Record<string, ModelPricing> = {
+  // 2026-09-05: OpenAI'ın yeni frontier modeli, resmi API fiyatı ($10/$50)
+  // ile eklendi. gpt-5.6-sol'un ~2 katı — hangi aşamada kullanılacağı
+  // (ör. generator, MAT.9.1.1/IQ75 kalibrasyon açığı için) canlı test ve
+  // maliyet/fayda karşılaştırmasıyla ayrıca kararlaştırılmalı.
+  "gpt-6-astra": { input: 10, output: 50 },
   "gpt-5.6-sol": { input: 5, output: 30 },
   "gpt-5.1": { input: 1.25, output: 10 },
   "gpt-image-1": { input: 5, output: 40, imageInput: 10 },
+  // 2026-09-08 çıkışlı gpt-image-2.5'in "sunburst" (detay öncelikli) varyantı;
+  // gpt-image-2'nin yerine STANDART kalitede (MODEL_IMAGE) kullanılıyor —
+  // token fiyatları gpt-image-2 ile aynı kaldı (OpenAI duyurusu, 2026-09-14
+  // itibariyle doğrulandı): metin girdi $5/1M, görsel girdi $8/1M, görsel
+  // çıktı $30/1M.
+  "gpt-image-2.5-sunburst": { input: 5, output: 30, imageInput: 8 },
   // Anthropic'in 2026-08-31'e kadarki tanıtım fiyatı; sonrasında $3/$15 olacak.
   "claude-sonnet-5": { input: 2, output: 10 },
+  // AŞAMA 2 görsel denetimi (visionCheck) burada — bkz. llm/config.ts yorumu.
+  "claude-opus-5": { input: 5, output: 25 },
 };
 
 export interface StageCost {

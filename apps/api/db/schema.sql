@@ -61,6 +61,23 @@ CREATE TABLE IF NOT EXISTS is_kaydi (
 CREATE INDEX IF NOT EXISTS idx_is_kaydi_status ON is_kaydi(status, created_at);
 CREATE INDEX IF NOT EXISTS idx_is_kaydi_yayinevi ON is_kaydi(yayinevi_id, status);
 
+-- Faz 5: Soru Bankası — birden çok is_kaydi'yi tek bir toplu üretime bağlar.
+-- toplu_uretim_id/toplu_uretim_sira, migrate()'te is_kaydi'ye ALTER TABLE ile
+-- eklenen nullable kolonlardır (bu tablo yeni olduğu için CREATE TABLE IF NOT
+-- EXISTS yeterli, ama var olan is_kaydi satırlarına kolon eklemek migrate()
+-- gerektiriyor — bkz. db/client.ts).
+CREATE TABLE IF NOT EXISTS toplu_uretim (
+  id TEXT PRIMARY KEY,
+  yayinevi_id TEXT NOT NULL REFERENCES yayinevi(id),
+  ogretmen_id TEXT NOT NULL REFERENCES ogretmen(id),
+  baslik TEXT,
+  toplam_satir INTEGER NOT NULL,
+  status TEXT NOT NULL CHECK (status IN ('CALISIYOR', 'TAMAMLANDI')),
+  pdf_path TEXT,
+  created_at TEXT NOT NULL,
+  finished_at TEXT
+);
+
 CREATE TABLE IF NOT EXISTS soru_sonucu (
   id TEXT PRIMARY KEY,
   is_id TEXT NOT NULL UNIQUE REFERENCES is_kaydi(id),

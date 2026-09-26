@@ -52,9 +52,31 @@ function ciftLlmCapraz(soru: GeneratorSoru, no: number, a: SolverCozum, b: Solve
   };
 }
 
-/** node 22'nin sayı çıkarma yardımcısı. */
+/**
+ * node 22'nin sayı çıkarma yardımcısı. `{1,2,3,...,10}` gibi küme gösterimi
+ * ÖNCE ayrıca ele alınır — aksi halde ham regex virgülü Türkçe ondalık
+ * ayırıcı sanıp ardışık eleman çiftlerini ("1,2", "9,10") tek bir sahte
+ * ondalık sayıya birleştiriyordu (canlı modda görüldü: "S={1,2,...,9,10}"
+ * içeren bir olasılık sorusunda "1.2, 3.4, ..., 9.10" gibi hiç var olmayan
+ * sayılar üretilip MANİFEST ÇAPRAZ RED'e yol açtı — manifestin kendisi
+ * 1'den 10'a kadar sayıları AYRI AYRI listelediği için bu sahte birleşik
+ * değerler orada hiç bulunamadı). Küme içindeki her eleman ayrı bir tam/
+ * ondalık sayı olarak çıkarılır, küme DIŞINDAKİ metinde virgül hâlâ ondalık
+ * ayırıcı sayılır (ör. "52,5" doğru şekilde "52.5" kalır).
+ */
 function sayiCek(s: unknown): string[] {
-  return (String(s ?? "").match(/-?\d+(?:[.,]\d+)?/g) ?? []).map((x) => x.replace(",", "."));
+  const sonuc: string[] = [];
+  const kumesiz = String(s ?? "").replace(/\{[^{}]*\}/g, (kume) => {
+    for (const parca of kume.slice(1, -1).split(",")) {
+      const m = parca.trim().match(/^-?\d+(?:\.\d+)?$/);
+      if (m) sonuc.push(m[0]);
+    }
+    return " ";
+  });
+  for (const m of kumesiz.match(/-?\d+(?:[.,]\d+)?/g) ?? []) {
+    sonuc.push(m.replace(",", "."));
+  }
+  return sonuc;
 }
 
 /**

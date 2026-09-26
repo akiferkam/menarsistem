@@ -35,6 +35,8 @@ function migrate(db: Database.Database): void {
   const isKaydiNames = new Set(isKaydiCols.map((c) => c.name));
   if (!isKaydiNames.has("revize_kaynak_is_id")) db.exec("ALTER TABLE is_kaydi ADD COLUMN revize_kaynak_is_id TEXT");
   if (!isKaydiNames.has("revize_notu")) db.exec("ALTER TABLE is_kaydi ADD COLUMN revize_notu TEXT");
+  if (!isKaydiNames.has("toplu_uretim_id")) db.exec("ALTER TABLE is_kaydi ADD COLUMN toplu_uretim_id TEXT");
+  if (!isKaydiNames.has("toplu_uretim_sira")) db.exec("ALTER TABLE is_kaydi ADD COLUMN toplu_uretim_sira INTEGER");
 
   // SQLite CHECK kısıtları ALTER TABLE ile değiştirilemez — var olan bir
   // mays.db'de publisher_api_key.provider hâlâ eski ('openai','anthropic')

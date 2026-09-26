@@ -216,14 +216,38 @@ export function runSolverV25(manifest: SolverManifestGirdi): CheckResult {
   }
 
   const options = manifest.options ?? [];
-  const matches = options.filter((o) => esit(o.deger, result.value)).map((o) => o.harf);
+  let matches = options.filter((o) => esit(o.deger, result.value)).map((o) => o.harf);
+  // ALGORITHM_FLOW'un output düğümü de (tıpkı claimed_answer gibi) bazen
+  // TALİMATA aykırı biçimde hesaplanan METİN yerine doğrudan bir şık harfi
+  // ("B") yazıyor (canlı modda görüldü, aynı FIZ.9.1.1 ailesi — bir turda
+  // claimed_answer'a METİN, bir başka turda value'ya HARF yazıldı; ikisi de
+  // aynı kavramsal karışıklığın farklı yönleri). Birincil (değer bazlı)
+  // eşleşme boşsa VE hesaplanan değer tek başına geçerli bir şık harfiyse,
+  // bunu doğrudan o harfe eşleşme say — options[].deger ile karşılaştırma
+  // hâlâ "asıl kaynak" kalır, bu yalnız modelin iki alanı karıştırdığı
+  // durumda ikinci bir kurtarma yolu.
+  if (matches.length === 0) {
+    const hamDeger = String(result.value).trim().toUpperCase();
+    if (options.some((o) => o.harf === hamDeger)) matches = [hamDeger];
+  }
   const claim = (manifest.claimed_answer ?? "").toUpperCase();
   const reasons: string[] = [];
   if (matches.length !== 1) {
     reasons.push("Doğru sonuç seçeneklerde tam bir kez bulunmuyor: " + matches.join(","));
   }
+  // ALGORITHM_FLOW çıktısı sayısal değil METİN (ör. bir kategorik genelleme
+  // cümlesi) olduğunda, üretici bazen `claimed_answer`a şık harfi ("D")
+  // yerine hesapladığı METNİ ("Madde, enerji ve etkileşimleri...") yazıyor
+  // (canlı modda görüldü, FIZ.9.1.1 — kavramsal/tanımsal bir kazanım).
+  // Bu, TALİMATA aykırı ("claimed_answer'a şıkkı yaz") ama zararsız bir
+  // beyan biçimi — asıl cevap anahtarı ZATEN yalnız `result`ten türetiliyor,
+  // claim yalnız çapraz kontrol. Harf eşleşmiyorsa METİN eşleşmesini de dene
+  // (doğru şıkkın kendi değeriyle) — ikisi de tutmazsa GERÇEK bir uyuşmazlık.
   if (matches.length === 1 && claim && claim !== matches[0]) {
-    reasons.push(`İddia edilen cevap ${claim}, hesaplanan doğru şık ${matches[0]}`);
+    const dogruSikMetni = String(options.find((o) => o.harf === matches[0])?.deger ?? "").toUpperCase();
+    if (claim !== dogruSikMetni) {
+      reasons.push(`İddia edilen cevap ${claim}, hesaplanan doğru şık ${matches[0]}`);
+    }
   }
 
   const iz =

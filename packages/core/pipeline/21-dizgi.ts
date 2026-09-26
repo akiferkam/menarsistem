@@ -140,10 +140,17 @@ export function buildDizgi(
     (q.celdirici_hata_yollari ?? []).forEach((m, k) => ogretmen.push([STIL.onerme, `${harf[k]}: ${P(m)}`]));
   });
 
+  // 90_MM/180_MM: "Helvetica 9 punto" tipo tercihiyle eklenen ikinci genişlik
+  // çifti — 85_MM/185_MM'in Arial 8,5 pt'si DEĞİŞMEDİ, yalnız yeni genişlikler
+  // kendi tipo çiftini taşır (bkz. types.ts genislikSinifi yorumu).
+  const yeniGenislik = input.genislik === "90_MM" || input.genislik === "180_MM";
+  const govdePt = yeniGenislik ? 9 : 8.5;
+  const font = yeniGenislik ? "Helvetica" : "Arial";
+
   return {
     stilGrubu: "SORU_STİLLERİ",
     stiller: STIL,
-    dizgi: { govdePt: 8.5, baslikPt: 10, font: "Arial", genislik: input.genislik, ascii: asciiIste },
+    dizgi: { govdePt, baslikPt: 10, font, genislik: input.genislik, ascii: asciiIste },
     ogrenciRows: ogrenci,
     ogretmenRows: ogretmen,
     ogrenciRaw: raw(ogrenci),

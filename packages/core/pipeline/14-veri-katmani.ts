@@ -1,4 +1,5 @@
-import type { GeneratorOutput } from "./03-generator-schema.js";
+import type { BaglamSahnesiElemani, GeneratorOutput } from "./03-generator-schema.js";
+import { genislikSinifi } from "./types.js";
 import type { JobInput, SvgAsset, VeriKatmaniSonuc } from "./types.js";
 
 /**
@@ -343,7 +344,12 @@ function buildGrafikSvg(seri: NonNullable<GeneratorOutput["gorsel_veri_manifesti
 
 type GeoNokta = { ad?: string | null; x?: number | null; y?: number | null };
 type KenarUc = { nokta1: string; nokta2: string };
-type GeoKenar = { uclar: KenarUc; stil?: "DUZ" | "KESIKLI" | null };
+type GeoKenar = {
+  uclar: KenarUc;
+  stil?: "DUZ" | "KESIKLI" | null;
+  ok?: "YOK" | "NOKTA1" | "NOKTA2" | "IKI_UC" | null;
+  etiket?: string | null;
+};
 type GeoAci = { kose: string; kenar1: string; kenar2: string; deger?: string | null; dik_aci?: boolean | null };
 
 /**
@@ -360,7 +366,30 @@ function birimVektor(from: { x: number; y: number }, to: { x: number; y: number 
   return { x: dx / len, y: dy / len };
 }
 
-function aciYayi(V: { x: number; y: number }, P1: { x: number; y: number }, P2: { x: number; y: number }, r: number) {
+/**
+ * Kenarın ucuna, o uca doğru işaret eden bir ok başı (dolu üçgen) çizer —
+ * SVG <marker> yerine bu dosyanın geri kalanıyla tutarlı biçimde elle
+ * hesaplanmış bir şekil (bkz. dikAciKaresi/esitIsaretleri) kullanılıyor,
+ * çünkü <marker>'ın downstream render zincirinde (InDesign/ICML) güvenilir
+ * desteklendiği doğrulanmadı. `yon` ucu İŞARET EDEN birim vektördür.
+ */
+function okUcuUcgeni(uc: { x: number; y: number }, yon: { x: number; y: number }, boyut = 7): string {
+  const geri = { x: -yon.x, y: -yon.y };
+  const perp = { x: -geri.y, y: geri.x };
+  const taban = { x: uc.x + geri.x * boyut, y: uc.y + geri.y * boyut };
+  const yarim = boyut * 0.45;
+  const k1 = { x: taban.x + perp.x * yarim, y: taban.y + perp.y * yarim };
+  const k2 = { x: taban.x - perp.x * yarim, y: taban.y - perp.y * yarim };
+  return `<polygon points="${uc.x},${uc.y} ${k1.x},${k1.y} ${k2.x},${k2.y}" fill="${INK}"/>`;
+}
+
+function aciYayi(
+  V: { x: number; y: number },
+  P1: { x: number; y: number },
+  P2: { x: number; y: number },
+  r: number,
+  labelOffset = 13
+) {
   const a1 = Math.atan2(P1.y - V.y, P1.x - V.x);
   const a2 = Math.atan2(P2.y - V.y, P2.x - V.x);
   let diff = a2 - a1;
@@ -373,8 +402,8 @@ function aciYayi(V: { x: number; y: number }, P1: { x: number; y: number }, P2: 
   const ex = V.x + r * Math.cos(endA);
   const ey = V.y + r * Math.sin(endA);
   const midA = a1 + diff / 2;
-  const labelX = V.x + (r + 13) * Math.cos(midA);
-  const labelY = V.y + (r + 13) * Math.sin(midA);
+  const labelX = V.x + (r + labelOffset) * Math.cos(midA);
+  const labelY = V.y + (r + labelOffset) * Math.sin(midA);
   const largeArc = Math.abs(diff) > Math.PI ? 1 : 0;
   return { sx, sy, ex, ey, sweep, largeArc, labelX, labelY };
 }
@@ -411,20 +440,247 @@ function dikAciKaresi(V: { x: number; y: number }, P1: { x: number; y: number },
   return `<polyline points="${c1.x},${c1.y} ${c2.x},${c2.y} ${c3.x},${c3.y}" fill="none" style="stroke:${LINE};stroke-width:1"/>`;
 }
 
+type Nokta2D = { x: number; y: number };
+
+/**
+ * GEOMETRİ dersinde gerçek-yaşam bağlamlı sahneler (merdiven-duvar,
+ * direk-gölge, rampa, bina, köprü, çatı, halat, saat, tekerlek, ağaç) için
+ * "sahne derisi" primitifleri — bkz. 03-generator-schema.ts
+ * BaglamSahnesiElemaniSchema yorumu. Her fonksiyon yalnız zaten hesaplanmış
+ * PX/PY piksel koordinatlarını süsler; hiçbiri yeni sayısal veri (açı/uzunluk)
+ * ÜRETMEZ — o veri geometrik_acilar/geometrik_kenarlar'dan gelip şeklin
+ * üzerine ayrıca çizilir. AI görsel modeline hiç gitmediği için açı/sayı
+ * hatası yapısal olarak imkansızdır.
+ */
+function duvarSkin(p1: Nokta2D, p2: Nokta2D): string {
+  const u = birimVektor(p1, p2);
+  const n = { x: -u.y, y: u.x };
+  const len = Math.hypot(p2.x - p1.x, p2.y - p1.y);
+  let s = `<line x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" style="stroke:${INK};stroke-width:3"/>`;
+  for (let d = 5; d < len; d += 10) {
+    const cx = p1.x + u.x * d;
+    const cy = p1.y + u.y * d;
+    s += `<line x1="${cx}" y1="${cy}" x2="${cx + n.x * 6}" y2="${cy + n.y * 6}" style="stroke:${SOFT};stroke-width:1.4"/>`;
+  }
+  return s;
+}
+
+function zeminSkin(p1: Nokta2D, p2: Nokta2D): string {
+  const u = birimVektor(p1, p2);
+  // Tarama çizgileri her zaman zeminin/rampanın ALT tarafına düşmeli — RAMPA
+  // bu fonksiyonu eğik kenarlar için de yeniden kullandığından (kullanıcı
+  // isteği: aynı "zemin dokusu" hem düz zeminde hem rampada), normal vektör
+  // segmentin YÖNÜNE göre değişir; n.y<0 ise (yukarı bakıyorsa) ters çevrilir
+  // ki tarama "aşağı/zemin tarafı" tutarlılığı yatay VE eğik kenarda korunsun.
+  let n = { x: -u.y, y: u.x };
+  if (n.y < 0) n = { x: -n.x, y: -n.y };
+  const len = Math.hypot(p2.x - p1.x, p2.y - p1.y);
+  let s = `<line x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" style="stroke:${INK};stroke-width:2.2"/>`;
+  for (let d = 0; d < len; d += 8) {
+    const cx = p1.x + u.x * d;
+    const cy = p1.y + u.y * d;
+    s += `<line x1="${cx}" y1="${cy}" x2="${cx + n.x * 7}" y2="${cy + n.y * 7}" style="stroke:${SOFT};stroke-width:1.2"/>`;
+  }
+  return s;
+}
+
+function merdivenSkin(p1: Nokta2D, p2: Nokta2D): string {
+  const u = birimVektor(p1, p2);
+  const n = { x: -u.y, y: u.x };
+  const off = 4;
+  const r1a = { x: p1.x + n.x * off, y: p1.y + n.y * off };
+  const r1b = { x: p2.x + n.x * off, y: p2.y + n.y * off };
+  const r2a = { x: p1.x - n.x * off, y: p1.y - n.y * off };
+  const r2b = { x: p2.x - n.x * off, y: p2.y - n.y * off };
+  let s = `<line x1="${r1a.x}" y1="${r1a.y}" x2="${r1b.x}" y2="${r1b.y}" style="stroke:${LINE};stroke-width:1.6"/>`;
+  s += `<line x1="${r2a.x}" y1="${r2a.y}" x2="${r2b.x}" y2="${r2b.y}" style="stroke:${LINE};stroke-width:1.6"/>`;
+  const len = Math.hypot(p2.x - p1.x, p2.y - p1.y);
+  for (let d = 6; d < len; d += 12) {
+    const cx = p1.x + u.x * d;
+    const cy = p1.y + u.y * d;
+    const a = { x: cx + n.x * off, y: cy + n.y * off };
+    const b = { x: cx - n.x * off, y: cy - n.y * off };
+    s += `<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" style="stroke:${LINE};stroke-width:1.1"/>`;
+  }
+  return s;
+}
+
+function golgeSkin(p1: Nokta2D, p2: Nokta2D): string {
+  return `<line x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" style="stroke:${SOFT};stroke-width:5;stroke-dasharray:1,3;stroke-linecap:round"/>`;
+}
+
+function kopruSkin(p1: Nokta2D, p2: Nokta2D): string {
+  let s = `<line x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" style="stroke:${INK};stroke-width:2.4"/>`;
+  s += `<line x1="${p1.x}" y1="${p1.y}" x2="${p1.x}" y2="${p1.y + 14}" style="stroke:${INK};stroke-width:1.6"/>`;
+  s += `<line x1="${p2.x}" y1="${p2.y}" x2="${p2.x}" y2="${p2.y + 14}" style="stroke:${INK};stroke-width:1.6"/>`;
+  return s;
+}
+
+function halatSkin(p1: Nokta2D, p2: Nokta2D): string {
+  const mx = (p1.x + p2.x) / 2;
+  const my = (p1.y + p2.y) / 2 + 10;
+  return `<path d="M ${p1.x} ${p1.y} Q ${mx} ${my} ${p2.x} ${p2.y}" fill="none" style="stroke:${INK};stroke-width:1.6"/>`;
+}
+
+function direkKenarSkin(p1: Nokta2D, p2: Nokta2D): string {
+  const top = p1.y < p2.y ? p1 : p2;
+  const bottom = p1.y < p2.y ? p2 : p1;
+  return (
+    `<line x1="${bottom.x}" y1="${bottom.y}" x2="${top.x}" y2="${top.y}" style="stroke:${INK};stroke-width:2.4"/>` +
+    `<circle cx="${top.x}" cy="${top.y}" r="2.6" fill="${INK}"/>`
+  );
+}
+
+function direkNoktaSkin(p: Nokta2D, yukseklik = 70): string {
+  const topY = p.y - yukseklik;
+  return (
+    `<line x1="${p.x}" y1="${p.y}" x2="${p.x}" y2="${topY}" style="stroke:${INK};stroke-width:2.4"/>` +
+    `<circle cx="${p.x}" cy="${topY}" r="2.6" fill="${INK}"/>`
+  );
+}
+
+function binaNoktaSkin(p: Nokta2D, genislik = 34, yukseklik = 54): string {
+  const x = p.x - genislik / 2;
+  const y = p.y - yukseklik;
+  let s = `<rect x="${x}" y="${y}" width="${genislik}" height="${yukseklik}" fill="#FFFFFF" style="stroke:${INK};stroke-width:1.6"/>`;
+  for (let r = 0; r < 2; r++) {
+    for (let c = 0; c < 2; c++) {
+      s += `<rect x="${x + 6 + c * 14}" y="${y + 8 + r * 20}" width="8" height="8" fill="none" style="stroke:${LINE};stroke-width:1"/>`;
+    }
+  }
+  return s;
+}
+
+function catiNoktaSkin(p: Nokta2D, genislik = 40, yukseklik = 22): string {
+  const lx = p.x - genislik / 2;
+  const rx = p.x + genislik / 2;
+  const apexY = p.y - yukseklik;
+  return `<polyline points="${lx},${p.y} ${p.x},${apexY} ${rx},${p.y}" fill="none" style="stroke:${INK};stroke-width:1.8"/>`;
+}
+
+/**
+ * Kenar-tabanlı çatı derisi — canlı üretimde görüldü (2026-08-25, job
+ * MENAR-GEO1011): model "çatı kolu AC/AB" gibi bir çatı YAMACINI kenar
+ * olarak modelledi (nokta değil) — nokta-tabanlı catiNoktaSkin bunu
+ * eşleştiremiyordu, öğe sessizce atlanıyordu. Kiremit çentikleri her zaman
+ * çatının DIŞ/üst yüzeyine (zeminden uzağa) düşsün diye normal yukarı
+ * (n.y<0) olacak şekilde çevrilir — zeminSkin'in tam tersi yönde.
+ */
+function catiKenarSkin(p1: Nokta2D, p2: Nokta2D): string {
+  const u = birimVektor(p1, p2);
+  let n = { x: -u.y, y: u.x };
+  if (n.y > 0) n = { x: -n.x, y: -n.y };
+  const len = Math.hypot(p2.x - p1.x, p2.y - p1.y);
+  let s = `<line x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" style="stroke:${INK};stroke-width:2.4"/>`;
+  for (let d = 4; d < len; d += 9) {
+    const cx = p1.x + u.x * d;
+    const cy = p1.y + u.y * d;
+    s += `<line x1="${cx}" y1="${cy}" x2="${cx + n.x * 6}" y2="${cy + n.y * 6}" style="stroke:${LINE};stroke-width:1.1"/>`;
+  }
+  return s;
+}
+
+function tekerlekNoktaSkin(p: Nokta2D, r = 16): string {
+  let s = `<circle cx="${p.x}" cy="${p.y}" r="${r}" fill="#FFFFFF" style="stroke:${INK};stroke-width:1.8"/>`;
+  for (const derece of [0, 60, 120]) {
+    const rad = (derece * Math.PI) / 180;
+    const dx = r * Math.cos(rad);
+    const dy = r * Math.sin(rad);
+    s += `<line x1="${p.x - dx}" y1="${p.y - dy}" x2="${p.x + dx}" y2="${p.y + dy}" style="stroke:${LINE};stroke-width:1"/>`;
+  }
+  return s;
+}
+
+function agacNoktaSkin(p: Nokta2D, yukseklik = 40): string {
+  const topY = p.y - yukseklik;
+  return (
+    `<line x1="${p.x}" y1="${p.y}" x2="${p.x}" y2="${topY + 14}" style="stroke:#6B4A2B;stroke-width:2.4"/>` +
+    `<circle cx="${p.x}" cy="${topY}" r="14" fill="${SOFT}" style="stroke:${LINE};stroke-width:1.2"/>`
+  );
+}
+
+/**
+ * İlk taslakta bacaklar (kalça→zemin) gövdeye (baş altı→kalça) göre çok
+ * kısaydı (6px'e karşı 20px) — küçük ölçekte "insan" değil bir "balon-çubuk"
+ * gibi okunuyordu (lokal render testinde görüldü). Tuvalet levhası tarzı bir
+ * piktogram oranı: kalça göbekten aşağı yaklaşık %38'te, kollar omuzdan
+ * hafif aşağı-yana açılı, bacaklar kalçadan zemine kadar TAM uzunlukta.
+ */
+function kisiSiluetiNoktaSkin(p: Nokta2D, yukseklik = 32): string {
+  const headR = 4;
+  const headCY = p.y - yukseklik + headR;
+  const shoulderY = headCY + headR + 2;
+  const hipY = p.y - yukseklik * 0.38;
+  return (
+    `<circle cx="${p.x}" cy="${headCY}" r="${headR}" fill="${INK}"/>` +
+    `<line x1="${p.x}" y1="${shoulderY}" x2="${p.x}" y2="${hipY}" style="stroke:${INK};stroke-width:2"/>` +
+    `<line x1="${p.x}" y1="${shoulderY}" x2="${p.x - 6}" y2="${shoulderY + 8}" style="stroke:${INK};stroke-width:1.8"/>` +
+    `<line x1="${p.x}" y1="${shoulderY}" x2="${p.x + 6}" y2="${shoulderY + 8}" style="stroke:${INK};stroke-width:1.8"/>` +
+    `<line x1="${p.x}" y1="${hipY}" x2="${p.x - 5}" y2="${p.y}" style="stroke:${INK};stroke-width:2"/>` +
+    `<line x1="${p.x}" y1="${hipY}" x2="${p.x + 5}" y2="${p.y}" style="stroke:${INK};stroke-width:2"/>`
+  );
+}
+
+function saatKadraniNoktaSkin(p: Nokta2D, r = 20): string {
+  let s = `<circle cx="${p.x}" cy="${p.y}" r="${r}" fill="#FFFFFF" style="stroke:${INK};stroke-width:1.8"/>`;
+  for (let i = 0; i < 12; i++) {
+    const a = (i * 30 * Math.PI) / 180;
+    const x1 = p.x + (r - 3) * Math.sin(a);
+    const y1 = p.y - (r - 3) * Math.cos(a);
+    const x2 = p.x + r * Math.sin(a);
+    const y2 = p.y - r * Math.cos(a);
+    s += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${LINE};stroke-width:1"/>`;
+  }
+  return s;
+}
+
+const KENAR_SKIN_CIZICI: Partial<Record<BaglamSahnesiElemani["tur"], (p1: Nokta2D, p2: Nokta2D) => string>> = {
+  DUVAR: duvarSkin,
+  ZEMIN: zeminSkin,
+  RAMPA: zeminSkin,
+  MERDIVEN: merdivenSkin,
+  GOLGE: golgeSkin,
+  CATI: catiKenarSkin,
+  KOPRU: kopruSkin,
+  HALAT: halatSkin,
+  DIREK: direkKenarSkin,
+};
+
+const NOKTA_SKIN_CIZICI: Partial<Record<BaglamSahnesiElemani["tur"], (p: Nokta2D) => string>> = {
+  DIREK: direkNoktaSkin,
+  BINA: binaNoktaSkin,
+  CATI: catiNoktaSkin,
+  TEKERLEK: tekerlekNoktaSkin,
+  AGAC: agacNoktaSkin,
+  KISI_SILUETI: kisiSiluetiNoktaSkin,
+  SAAT_KADRANI: saatKadraniNoktaSkin,
+};
+
+function kenarAnahtari(nokta1: string, nokta2: string): string {
+  return [nokta1, nokta2].sort().join("|");
+}
+
 function buildGeometriSvg(
   geo: GeoNokta[],
   olcekliCizim: boolean,
   W: number,
   kenarlar?: GeoKenar[] | null,
   esitGruplar?: KenarUc[][] | null,
-  acilar?: GeoAci[] | null
+  acilar?: GeoAci[] | null,
+  baglamElemanlari?: BaglamSahnesiElemani[] | null
 ): SvgAsset {
-  const H = 240;
   const pad = 30;
   const xs = geo.map((p) => Number(p.x));
   const ys = geo.map((p) => Number(p.y));
+  const yRange = Math.max(...ys) - Math.min(...ys);
+  // Şekil neredeyse TEK BOYUTLU ise (ör. tüm noktalar aynı y'de — yatay bir
+  // kuvvet/vektör diyagramı, bkz. VEKTÖR/KUVVET OKU kuralı) sabit 240px'lik
+  // kanvas kullanmak kanvasın büyük kısmını boş bırakır (canlı testte
+  // görüldü, job MENAR-FIZ924-20260905125513: 240px'lik alanın yalnız alt
+  // ~30px'i doluydu). Bu durumda daha kompakt bir kanvas kullan.
+  const H = yRange === 0 ? 90 : 240;
   const sx = (W - 2 * pad) / (Math.max(...xs) - Math.min(...xs) || 1);
-  const sy = (H - 2 * pad) / (Math.max(...ys) - Math.min(...ys) || 1);
+  const sy = (H - 2 * pad) / (yRange || 1);
   const sc = Math.min(sx, sy);
   const PX = (v: number) => pad + (v - Math.min(...xs)) * sc;
   const PY = (v: number) => H - pad - (v - Math.min(...ys)) * sc;
@@ -444,12 +700,62 @@ function buildGeometriSvg(
   let s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">`;
   s += `<rect x="0" y="0" width="${W}" height="${H}" fill="#FFFFFF"/>`;
 
+  // Kenar-tabanlı sahne derisi: ilgili kenarın düz çizgisinin YERİNE geçer
+  // (aynı segmenti iki kez, biri düz biri "giydirilmiş" çizmemek için).
+  const kenarSkinleri = new Map<string, string>();
+  (baglamElemanlari ?? []).forEach((el) => {
+    if (!el.kenar) return;
+    const cizici = KENAR_SKIN_CIZICI[el.tur];
+    const p1 = byAd.get(el.kenar.nokta1);
+    const p2 = byAd.get(el.kenar.nokta2);
+    if (!cizici || !p1 || !p2) return;
+    kenarSkinleri.set(kenarAnahtari(el.kenar.nokta1, el.kenar.nokta2), cizici(p1, p2));
+  });
+
   kenarListesi.forEach((k) => {
     const p1 = byAd.get(k.uclar.nokta1);
     const p2 = byAd.get(k.uclar.nokta2);
     if (!p1 || !p2) return;
+    const skin = kenarSkinleri.get(kenarAnahtari(k.uclar.nokta1, k.uclar.nokta2));
+    if (skin) {
+      s += skin;
+      return;
+    }
     const dash = k.stil === "KESIKLI" ? ' stroke-dasharray="4,3"' : "";
     s += `<line x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" style="stroke:${LINE};stroke-width:1.6"${dash}/>`;
+    if (k.ok === "NOKTA2" || k.ok === "IKI_UC") s += okUcuUcgeni(p2, birimVektor(p1, p2));
+    if (k.ok === "NOKTA1" || k.ok === "IKI_UC") s += okUcuUcgeni(p1, birimVektor(p2, p1));
+    if (k.etiket) {
+      const orta = { x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2 };
+      const yon = birimVektor(p1, p2);
+      const perp = { x: -yon.y, y: yon.x };
+      const lx = orta.x + perp.x * 11;
+      const ly = orta.y + perp.y * 11;
+      s += `<text x="${lx}" y="${ly}" text-anchor="middle" style="font-family:${FONT};font-size:8px;fill:${INK}">${esc(tr(k.etiket))}</text>`;
+    }
+  });
+
+  // Kenar listesinde YER ALMAYAN sahne derisi öğeleri (ör. ana çokgene
+  // bağlı olmayan ayrı bir GOLGE segmenti) ayrıca çizilir.
+  (baglamElemanlari ?? []).forEach((el) => {
+    if (!el.kenar) return;
+    const anahtar = kenarAnahtari(el.kenar.nokta1, el.kenar.nokta2);
+    const zatenCizildi = kenarListesi.some((k) => kenarAnahtari(k.uclar.nokta1, k.uclar.nokta2) === anahtar);
+    if (zatenCizildi) return;
+    const cizici = KENAR_SKIN_CIZICI[el.tur];
+    const p1 = byAd.get(el.kenar.nokta1);
+    const p2 = byAd.get(el.kenar.nokta2);
+    if (cizici && p1 && p2) s += cizici(p1, p2);
+  });
+
+  // Nokta-tabanlı sahne derisi öğeleri (BINA/CATI/TEKERLEK/AGAC/
+  // KISI_SILUETI/SAAT_KADRANI, veya tek noktadan yükselen DIREK) — noktaların
+  // kendi işaret/etiketinden ÖNCE çizilir ki nokta adı üstte okunur kalsın.
+  (baglamElemanlari ?? []).forEach((el) => {
+    if (!el.nokta || el.kenar) return;
+    const cizici = NOKTA_SKIN_CIZICI[el.tur];
+    const p = byAd.get(el.nokta);
+    if (cizici && p) s += cizici(p);
   });
 
   (esitGruplar ?? []).forEach((grup, gi) => {
@@ -460,6 +766,12 @@ function buildGeometriSvg(
     });
   });
 
+  // Aynı köşede birden fazla açı paylaşılabiliyor (iç içe açılar — canlı
+  // modda görüldü, job MENAR-GEO1011-20260825193126: C köşesinde hem ACB
+  // hem ACD açısı aynı sabit 16px yayda çakışıp iki etiket üst üste bindi,
+  // okunaksız çıktı). Aynı köşedeki her sonraki açı için yayı büyüt ki
+  // iç içe açılar farklı yarıçapta, birbirinden ayrı okunur kalsın.
+  const aciSayaci = new Map<string, number>();
   (acilar ?? []).forEach((ac) => {
     const V = byAd.get(ac.kose);
     const P1 = byAd.get(ac.kenar1);
@@ -469,8 +781,15 @@ function buildGeometriSvg(
       s += dikAciKaresi(V, P1, P2, 8);
       return;
     }
-    const yay = aciYayi(V, P1, P2, 16);
-    s += `<path d="M ${yay.sx} ${yay.sy} A 16 16 0 ${yay.largeArc} ${yay.sweep} ${yay.ex} ${yay.ey}" fill="none" style="stroke:${ACC};stroke-width:1"/>`;
+    const siraNo = aciSayaci.get(ac.kose) ?? 0;
+    aciSayaci.set(ac.kose, siraNo + 1);
+    const r = 16 + siraNo * 10;
+    // Etiket mesafesi yay yarıçapından çok daha agresif artar — nested açı
+    // açıklıkları birbirine yakınsa (bkz. yukarıdaki not) yalnız yayı büyütmek
+    // yetmiyor, uzun metinli etiketler (ör. "tan α = 3/4") hâlâ çakışıyordu.
+    const labelOffset = 13 + siraNo * 30;
+    const yay = aciYayi(V, P1, P2, r, labelOffset);
+    s += `<path d="M ${yay.sx} ${yay.sy} A ${r} ${r} 0 ${yay.largeArc} ${yay.sweep} ${yay.ex} ${yay.ey}" fill="none" style="stroke:${ACC};stroke-width:1"/>`;
     if (ac.deger) {
       s += `<text x="${yay.labelX}" y="${yay.labelY}" text-anchor="middle" style="font-family:${FONT};font-size:8px;fill:${ACC}">${esc(tr(ac.deger))}</text>`;
     }
@@ -540,10 +859,76 @@ function buildNesneSemasiSvg(sema: NesneSemasi, W: number): SvgAsset {
 }
 
 /** node "40 - Bağlam Görseli Gerekli mi" + "41 - VERİ KATMANI: Tablo/Grafik SVG"nin portu. */
+type KonusmaBaloncugu = { konusmaci: string; metin: string; yon?: "SOL" | "SAG" | null };
+
+/**
+ * Bağlam temelli sorularda (özellikle TDE, ileride Tarih/Coğrafya/Din/
+ * Felsefe) iki+ kişi arasındaki konuşmayı göstermek için (kullanıcı isteği,
+ * 2026-09-14/16) — AI illüstrasyonu (bkz. 16-gorsel-prompt.ts) BAŞARISIZ
+ * olursa devreye giren TEK, sabit deterministik yedek: kuyruklu klasik
+ * çizgi roman balonu, ad kuyruğun altında. Diyalog metni koddan çizilir
+ * (SVG kendi kendine metin sarmadığı için `wrapText`/`textWidthPx`
+ * kullanılır) — AI'dan hiç geçmez, TABLO/GRAFİK'teki AYNI güven modeli.
+ * Kullanıcı önceki turda 3 farklı stil istemişti ("hepsini ekleyebiliriz"),
+ * sonra "stilin hepsi aynı olsun" diyerek TEK stile indirgedi — SOHBET_
+ * UYGULAMASI/SADE_ETIKET dalları bu yüzden KALDIRILDI (ölü kod bırakılmadı).
+ */
+function buildKonusmaSvg(baloncuklar: KonusmaBaloncugu[], W: number): SvgAsset {
+  const FONT_SIZE = 11;
+  const LINE_H = 14;
+  const PAD_X = 14;
+  const PAD_Y = 10;
+  const GAP = 14;
+  const TAIL_H = 10;
+  const NAME_H = 14;
+  const MAX_BUBBLE_W = Math.round(W * 0.68);
+
+  const gecici = baloncuklar.map((b, i) => {
+    const sol = b.yon ? b.yon === "SOL" : i % 2 === 0;
+    const lines = wrapText(b.metin, MAX_BUBBLE_W - PAD_X * 2, FONT_SIZE);
+    const naturalW = Math.max(...lines.map((l) => textWidthPx(l, FONT_SIZE)), textWidthPx(b.konusmaci, FONT_SIZE));
+    const boxW = Math.min(MAX_BUBBLE_W, naturalW + PAD_X * 2);
+    const boxH = PAD_Y * 2 + lines.length * LINE_H;
+    return { ad: b.konusmaci, lines, sol, boxW, boxH };
+  });
+
+  const tops: number[] = [];
+  let y = 8;
+  for (const g of gecici) {
+    tops.push(y);
+    y += g.boxH + TAIL_H + NAME_H + GAP;
+  }
+  const H = y - GAP + 8;
+
+  let s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">`;
+  s += `<rect x="0" y="0" width="${W}" height="${H}" fill="#FFFFFF"/>`;
+
+  gecici.forEach((g, i) => {
+    const top = tops[i]!;
+    const x = g.sol ? 4 : W - g.boxW - 4;
+    const renk = g.sol ? LINE : ACC;
+
+    // Kuyruk ÖNCE (arkada), balon gövdesi ÜSTÜNE binerek kuyruk-gövde
+    // ekini gizler; ad, kuyruğun altında ayrı bir satırda.
+    const boxTop = top;
+    const tailBaseY = boxTop + g.boxH - 1;
+    const tailX = g.sol ? x + g.boxW * 0.28 : x + g.boxW * 0.72;
+    s += `<polygon points="${tailX - 6},${tailBaseY} ${tailX + 6},${tailBaseY} ${tailX + (g.sol ? -2 : 2)},${tailBaseY + TAIL_H}" fill="#FFFFFF" style="stroke:${renk};stroke-width:1.6"/>`;
+    s += `<rect x="${x}" y="${boxTop}" width="${g.boxW}" height="${g.boxH}" rx="${Math.min(18, g.boxH / 2.2)}" fill="#FFFFFF" style="stroke:${renk};stroke-width:1.6"/>`;
+    g.lines.forEach((line, li) => {
+      s += `<text x="${x + g.boxW / 2}" y="${boxTop + PAD_Y + LINE_H * li + 10}" text-anchor="middle" style="font-family:${FONT};font-size:${FONT_SIZE}px;fill:${INK}">${esc(line)}</text>`;
+    });
+    s += `<text x="${g.sol ? x : x + g.boxW}" y="${tailBaseY + TAIL_H + 12}" text-anchor="${g.sol ? "start" : "end"}" style="font-family:${FONT};font-size:9.5px;font-weight:bold;fill:${renk};letter-spacing:.03em">${esc(g.ad.toLocaleUpperCase("tr-TR"))}</text>`;
+  });
+
+  s += "</svg>";
+  return { name: "11_Konusma_Baloncuklari.svg", svg: s, tur: "KONUŞMA" };
+}
+
 export function buildVeriKatmani(input: JobInput, aday: GeneratorOutput): VeriKatmaniSonuc {
   const man = aday.gorsel_veri_manifesti;
   const vk = aday.veri_katmani ?? {};
-  const W = input.genislik === "85_MM" ? 241 : 524;
+  const W = genislikSinifi(input.genislik) === "DAR" ? 241 : 524;
   const assets: SvgAsset[] = [];
 
   const tab = man.tablo;
@@ -571,7 +956,8 @@ export function buildVeriKatmani(input: JobInput, aday: GeneratorOutput): VeriKa
         W,
         man.geometrik_kenarlar as GeoKenar[] | null | undefined,
         man.geometrik_esit_kenar_gruplari as KenarUc[][] | null | undefined,
-        man.geometrik_acilar as GeoAci[] | null | undefined
+        man.geometrik_acilar as GeoAci[] | null | undefined,
+        man.baglam_sahnesi_elemanlari as BaglamSahnesiElemani[] | null | undefined
       )
     );
   }
@@ -579,6 +965,14 @@ export function buildVeriKatmani(input: JobInput, aday: GeneratorOutput): VeriKa
   const sema = man.nesne_semasi;
   if (vk.gerekli && vk.tur === "NESNE_SEMASI" && sema && sema.toplam_sayi >= 2) {
     assets.push(buildNesneSemasiSvg(sema, W));
+  }
+
+  const konusma = man.konusma_baloncuklari;
+  if (vk.gerekli && vk.tur === "KONUSMA" && Array.isArray(konusma) && konusma.length >= 2) {
+    // Bu SVG yalnız AI illüstrasyonu (bkz. 16-gorsel-prompt.ts, her zaman
+    // önce denenir) BAŞARISIZ olursa görünen tek, sabit YEDEKtir (bkz.
+    // types.ts, run.ts'in yalnizca_gorsel_yedegi filtrelemesi).
+    assets.push(buildKonusmaSvg(konusma, W));
   }
 
   const gorselGerekli = Boolean(aday.baglam_katmani?.gerekli) && input.gorselKarari !== "GORSEL_YOK";

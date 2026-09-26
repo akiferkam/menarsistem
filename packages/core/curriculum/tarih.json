@@ -1,0 +1,940 @@
+{
+  "subject": "Tarih",
+  "source": {
+    "workflow_file": "curriculum/Tarih_Dersi_Unite_ve_Kazanimlari.docx",
+    "extracted_node": "docx word/document.xml -> paragraf metni (Claude, 2026-09-16)",
+    "extracted_at": "2026-09-16"
+  },
+  "outcome_count": 38,
+  "outcomes": [
+    {
+      "code": "TAR.9.1.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Geçmişin İnşa Sürecinde Tarih",
+      "theme_order": 1,
+      "outcome": "Tarih öğrenmenin bireye ve topluma faydalarını yorumlayabilme",
+      "content_frame": "Tarih Öğrenmenin Faydaları / Tarihin Doğası / Tarihsel Bilginin Üretim Süreci / Tarih Araştırma ve Yazımında Dijitalleşme",
+      "micro": [
+        "arşiv",
+        "dijitalleşme",
+        "geçmiş",
+        "kanıt",
+        "olay",
+        "olgu",
+        "tarih",
+        "tarihçi",
+        "tarihsel bilgi",
+        "tarihsel zaman",
+        "yapay zekâ",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.9.1.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Geçmişin İnşa Sürecinde Tarih",
+      "theme_order": 1,
+      "outcome": "Tarihin doğasını farklı kaynaklar üzerinden inceleyebilme",
+      "content_frame": "Tarih Öğrenmenin Faydaları / Tarihin Doğası / Tarihsel Bilginin Üretim Süreci / Tarih Araştırma ve Yazımında Dijitalleşme",
+      "micro": [
+        "arşiv",
+        "dijitalleşme",
+        "geçmiş",
+        "kanıt",
+        "olay",
+        "olgu",
+        "tarih",
+        "tarihçi",
+        "tarihsel bilgi",
+        "tarihsel zaman",
+        "yapay zekâ",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.9.1.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Geçmişin İnşa Sürecinde Tarih",
+      "theme_order": 1,
+      "outcome": "Tarihsel bilginin üretim sürecini çözümleyebilme",
+      "content_frame": "Tarih Öğrenmenin Faydaları / Tarihin Doğası / Tarihsel Bilginin Üretim Süreci / Tarih Araştırma ve Yazımında Dijitalleşme",
+      "micro": [
+        "arşiv",
+        "dijitalleşme",
+        "geçmiş",
+        "kanıt",
+        "olay",
+        "olgu",
+        "tarih",
+        "tarihçi",
+        "tarihsel bilgi",
+        "tarihsel zaman",
+        "yapay zekâ",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.9.1.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Geçmişin İnşa Sürecinde Tarih",
+      "theme_order": 1,
+      "outcome": "Dijitalleşmenin tarih araştırma ve yazımının dönüşümüne etkisini değerlendirebilme",
+      "content_frame": "Tarih Öğrenmenin Faydaları / Tarihin Doğası / Tarihsel Bilginin Üretim Süreci / Tarih Araştırma ve Yazımında Dijitalleşme",
+      "micro": [
+        "arşiv",
+        "dijitalleşme",
+        "geçmiş",
+        "kanıt",
+        "olay",
+        "olgu",
+        "tarih",
+        "tarihçi",
+        "tarihsel bilgi",
+        "tarihsel zaman",
+        "yapay zekâ",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.9.2.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Eski Çağ Medeniyetleri",
+      "theme_order": 2,
+      "outcome": "Tarım Devrimi'nin Eski Çağ medeniyetlerindeki yerleşmeye ve ekonomik faaliyetlere etkisini değerlendirebilme",
+      "content_frame": "Tarım Devrimi'nin Eski Çağ Medeniyetlerindeki Yerleşmeye ve Ekonomiye Etkisi / Eski Çağ Medeniyetlerinde Yönetim ve Ordu / Eski Çağ Medeniyetlerinde Hukuk / Eski Çağ'da İnançlar ile Bilim ve Sanat Anlayışları / Türklerde Konargöçer Yaşam",
+      "micro": [
+        "artı ürün",
+        "kağan",
+        "konargöçer",
+        "kurultay",
+        "medeniyet",
+        "onlu sistem",
+        "piramit",
+        "saban",
+        "senato",
+        "töre",
+        "yazıt",
+        "ziggurat",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.9.2.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Eski Çağ Medeniyetleri",
+      "theme_order": 2,
+      "outcome": "Eski Çağ'daki farklı medeniyetlerin yönetim ve ordu sistemlerini özetleyebilme",
+      "content_frame": "Tarım Devrimi'nin Eski Çağ Medeniyetlerindeki Yerleşmeye ve Ekonomiye Etkisi / Eski Çağ Medeniyetlerinde Yönetim ve Ordu / Eski Çağ Medeniyetlerinde Hukuk / Eski Çağ'da İnançlar ile Bilim ve Sanat Anlayışları / Türklerde Konargöçer Yaşam",
+      "micro": [
+        "artı ürün",
+        "kağan",
+        "konargöçer",
+        "kurultay",
+        "medeniyet",
+        "onlu sistem",
+        "piramit",
+        "saban",
+        "senato",
+        "töre",
+        "yazıt",
+        "ziggurat",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.9.2.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Eski Çağ Medeniyetleri",
+      "theme_order": 2,
+      "outcome": "Eski Çağ medeniyetlerinde hukukun toplumsal düzeni sağlamadaki rolünü sorgulayabilme",
+      "content_frame": "Tarım Devrimi'nin Eski Çağ Medeniyetlerindeki Yerleşmeye ve Ekonomiye Etkisi / Eski Çağ Medeniyetlerinde Yönetim ve Ordu / Eski Çağ Medeniyetlerinde Hukuk / Eski Çağ'da İnançlar ile Bilim ve Sanat Anlayışları / Türklerde Konargöçer Yaşam",
+      "micro": [
+        "artı ürün",
+        "kağan",
+        "konargöçer",
+        "kurultay",
+        "medeniyet",
+        "onlu sistem",
+        "piramit",
+        "saban",
+        "senato",
+        "töre",
+        "yazıt",
+        "ziggurat",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.9.2.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Eski Çağ Medeniyetleri",
+      "theme_order": 2,
+      "outcome": "Eski Çağ toplumlarındaki inançlar ile bilim ve sanat anlayışları arasındaki ilişkiyi yorumlayabilme",
+      "content_frame": "Tarım Devrimi'nin Eski Çağ Medeniyetlerindeki Yerleşmeye ve Ekonomiye Etkisi / Eski Çağ Medeniyetlerinde Yönetim ve Ordu / Eski Çağ Medeniyetlerinde Hukuk / Eski Çağ'da İnançlar ile Bilim ve Sanat Anlayışları / Türklerde Konargöçer Yaşam",
+      "micro": [
+        "artı ürün",
+        "kağan",
+        "konargöçer",
+        "kurultay",
+        "medeniyet",
+        "onlu sistem",
+        "piramit",
+        "saban",
+        "senato",
+        "töre",
+        "yazıt",
+        "ziggurat",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.9.2.5",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Eski Çağ Medeniyetleri",
+      "theme_order": 2,
+      "outcome": "Türklerde konargöçer yaşama ilişkin bakış açısı geliştirebilme",
+      "content_frame": "Tarım Devrimi'nin Eski Çağ Medeniyetlerindeki Yerleşmeye ve Ekonomiye Etkisi / Eski Çağ Medeniyetlerinde Yönetim ve Ordu / Eski Çağ Medeniyetlerinde Hukuk / Eski Çağ'da İnançlar ile Bilim ve Sanat Anlayışları / Türklerde Konargöçer Yaşam",
+      "micro": [
+        "artı ürün",
+        "kağan",
+        "konargöçer",
+        "kurultay",
+        "medeniyet",
+        "onlu sistem",
+        "piramit",
+        "saban",
+        "senato",
+        "töre",
+        "yazıt",
+        "ziggurat",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.9.3.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Orta Çağ Medeniyetleri",
+      "theme_order": 3,
+      "outcome": "Orta Çağ'da yaşanan kitlesel göçlerin Avrupa ve Asya'da oluşturduğu değişimi neden ve sonuçlarıyla birlikte yorumlayabilme",
+      "content_frame": "Orta Çağ'da Yaşanan Kitlesel Göçler / Orta Çağ'daki Başlıca Devletlerin Yönetim ve Ordu Yapıları / Orta Çağ'daki Ticaret Yolları / Orta Çağ'daki Başlıca Medeniyet Havzalarında Bilim, Kültür ve Sanat",
+      "micro": [
+        "divan",
+        "feodalite",
+        "hicret",
+        "hilafet",
+        "kale",
+        "kervan",
+        "kervansaray",
+        "mevali",
+        "skolastik düşünce",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.9.3.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Orta Çağ Medeniyetleri",
+      "theme_order": 3,
+      "outcome": "Orta Çağ'daki başlıca devletlerin yönetim ve ordu yapılarını karşılaştırabilme",
+      "content_frame": "Orta Çağ'da Yaşanan Kitlesel Göçler / Orta Çağ'daki Başlıca Devletlerin Yönetim ve Ordu Yapıları / Orta Çağ'daki Ticaret Yolları / Orta Çağ'daki Başlıca Medeniyet Havzalarında Bilim, Kültür ve Sanat",
+      "micro": [
+        "divan",
+        "feodalite",
+        "hicret",
+        "hilafet",
+        "kale",
+        "kervan",
+        "kervansaray",
+        "mevali",
+        "skolastik düşünce",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.9.3.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Orta Çağ Medeniyetleri",
+      "theme_order": 3,
+      "outcome": "Orta Çağ'daki ticaret yollarının kendi çevresinde meydana getirdiği etkiyi sorgulayabilme",
+      "content_frame": "Orta Çağ'da Yaşanan Kitlesel Göçler / Orta Çağ'daki Başlıca Devletlerin Yönetim ve Ordu Yapıları / Orta Çağ'daki Ticaret Yolları / Orta Çağ'daki Başlıca Medeniyet Havzalarında Bilim, Kültür ve Sanat",
+      "micro": [
+        "divan",
+        "feodalite",
+        "hicret",
+        "hilafet",
+        "kale",
+        "kervan",
+        "kervansaray",
+        "mevali",
+        "skolastik düşünce",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.9.3.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Orta Çağ Medeniyetleri",
+      "theme_order": 3,
+      "outcome": "Orta Çağ'daki başlıca medeniyet havzalarının bilim, kültür ve sanata etkilerine ilişkin oluşturduğu ürünleri paylaşabilme",
+      "content_frame": "Orta Çağ'da Yaşanan Kitlesel Göçler / Orta Çağ'daki Başlıca Devletlerin Yönetim ve Ordu Yapıları / Orta Çağ'daki Ticaret Yolları / Orta Çağ'daki Başlıca Medeniyet Havzalarında Bilim, Kültür ve Sanat",
+      "micro": [
+        "divan",
+        "feodalite",
+        "hicret",
+        "hilafet",
+        "kale",
+        "kervan",
+        "kervansaray",
+        "mevali",
+        "skolastik düşünce",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.1.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Türkistan'dan Türkiye'ye (1040-1299)",
+      "theme_order": 1,
+      "outcome": "Türkistan'dan Türkiye'ye uzanan süreçte 1040-1299 yılları arasında meydana gelen önemli askerî mücadelelerin Türk tarihinin seyrine etkilerini karşılaştırabilme",
+      "content_frame": "Türkistan'dan Türkiye'ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler / Türkistan'dan Türkiye'ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim / Türkistan'dan Türkiye'ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri / Türk-İslam Medeniyetinin Bilim, Kültür, Eğitim ve Sanat Alanlarında Ortaya Çıkardığı Etkiler",
+      "micro": [
+        "Ahilik",
+        "fetih",
+        "fütüvvet",
+        "gaza",
+        "Haçlı",
+        "medrese",
+        "örf",
+        "sultan",
+        "şifahane",
+        "tekke",
+        "Türkiye",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.1.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Türkistan'dan Türkiye'ye (1040-1299)",
+      "theme_order": 1,
+      "outcome": "Türkistan'dan Türkiye'ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliği yorumlayabilme",
+      "content_frame": "Türkistan'dan Türkiye'ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler / Türkistan'dan Türkiye'ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim / Türkistan'dan Türkiye'ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri / Türk-İslam Medeniyetinin Bilim, Kültür, Eğitim ve Sanat Alanlarında Ortaya Çıkardığı Etkiler",
+      "micro": [
+        "Ahilik",
+        "fetih",
+        "fütüvvet",
+        "gaza",
+        "Haçlı",
+        "medrese",
+        "örf",
+        "sultan",
+        "şifahane",
+        "tekke",
+        "Türkiye",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.1.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Türkistan'dan Türkiye'ye (1040-1299)",
+      "theme_order": 1,
+      "outcome": "Türkistan'dan Türkiye'ye uzanan süreçte Türklerin sosyoekonomik faaliyetleri ile yerleşme ve şehirleşme anlayışları arasındaki ilişkiyi sorgulayabilme",
+      "content_frame": "Türkistan'dan Türkiye'ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler / Türkistan'dan Türkiye'ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim / Türkistan'dan Türkiye'ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri / Türk-İslam Medeniyetinin Bilim, Kültür, Eğitim ve Sanat Alanlarında Ortaya Çıkardığı Etkiler",
+      "micro": [
+        "Ahilik",
+        "fetih",
+        "fütüvvet",
+        "gaza",
+        "Haçlı",
+        "medrese",
+        "örf",
+        "sultan",
+        "şifahane",
+        "tekke",
+        "Türkiye",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.1.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Türkistan'dan Türkiye'ye (1040-1299)",
+      "theme_order": 1,
+      "outcome": "Türkistan'dan Türkiye'ye uzanan süreçte Türk-İslam medeniyetinde bilim, kültür, eğitim ve sanat alanlarında meydana gelen gelişmeleri Anadolu'nun Türkleşme ve İslamlaşma sürecine etkisi açısından değerlendirebilme",
+      "content_frame": "Türkistan'dan Türkiye'ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler / Türkistan'dan Türkiye'ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim / Türkistan'dan Türkiye'ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri / Türk-İslam Medeniyetinin Bilim, Kültür, Eğitim ve Sanat Alanlarında Ortaya Çıkardığı Etkiler",
+      "micro": [
+        "Ahilik",
+        "fetih",
+        "fütüvvet",
+        "gaza",
+        "Haçlı",
+        "medrese",
+        "örf",
+        "sultan",
+        "şifahane",
+        "tekke",
+        "Türkiye",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.2.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Beylikten Devlete Osmanlı (1299-1453)",
+      "theme_order": 2,
+      "outcome": "Osmanlı Devleti'nin kuruluşuna dair farklı görüşleri tartışabilme",
+      "content_frame": "Osmanlı Devleti'nin Kuruluşuna Dair Farklı Görüşler / Osmanlı Devleti'nin Anadolu ve Rumeli'deki Siyasi ve Askerî Mücadeleleri / Osmanlı Devleti'nin Devletleşme Süreci ile Ordu, Hukuk ve Toprak Sistemleri Arasındaki İlişkiler / Osmanlı Devleti'nin Fethettiği Topraklarda Kalıcı Olabilmek İçin İzlediği Politikalar / Osmanlı Devleti'nin İlim ve İrfan Geleneğinin Oluşmasında Mekânların ve Kişilerin Etkisi",
+      "micro": [
+        "devşirme sistemi",
+        "irfan",
+        "iskân",
+        "istimalet",
+        "kapıkulu",
+        "Rumeli Türklüğü",
+        "tımar",
+        "vakıf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.2.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Beylikten Devlete Osmanlı (1299-1453)",
+      "theme_order": 2,
+      "outcome": "1299-1453 yılları arasında Osmanlı Devleti'nin Anadolu ve Rumeli'de gerçekleştirdiği siyasi ve askerî mücadeleleri yorumlayabilme",
+      "content_frame": "Osmanlı Devleti'nin Kuruluşuna Dair Farklı Görüşler / Osmanlı Devleti'nin Anadolu ve Rumeli'deki Siyasi ve Askerî Mücadeleleri / Osmanlı Devleti'nin Devletleşme Süreci ile Ordu, Hukuk ve Toprak Sistemleri Arasındaki İlişkiler / Osmanlı Devleti'nin Fethettiği Topraklarda Kalıcı Olabilmek İçin İzlediği Politikalar / Osmanlı Devleti'nin İlim ve İrfan Geleneğinin Oluşmasında Mekânların ve Kişilerin Etkisi",
+      "micro": [
+        "devşirme sistemi",
+        "irfan",
+        "iskân",
+        "istimalet",
+        "kapıkulu",
+        "Rumeli Türklüğü",
+        "tımar",
+        "vakıf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.2.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Beylikten Devlete Osmanlı (1299-1453)",
+      "theme_order": 2,
+      "outcome": "Osmanlı Devleti'nin ordu, hukuk ve toprak sistemi ile devletleşme süreci arasındaki ilişkiyi çözümleyebilme",
+      "content_frame": "Osmanlı Devleti'nin Kuruluşuna Dair Farklı Görüşler / Osmanlı Devleti'nin Anadolu ve Rumeli'deki Siyasi ve Askerî Mücadeleleri / Osmanlı Devleti'nin Devletleşme Süreci ile Ordu, Hukuk ve Toprak Sistemleri Arasındaki İlişkiler / Osmanlı Devleti'nin Fethettiği Topraklarda Kalıcı Olabilmek İçin İzlediği Politikalar / Osmanlı Devleti'nin İlim ve İrfan Geleneğinin Oluşmasında Mekânların ve Kişilerin Etkisi",
+      "micro": [
+        "devşirme sistemi",
+        "irfan",
+        "iskân",
+        "istimalet",
+        "kapıkulu",
+        "Rumeli Türklüğü",
+        "tımar",
+        "vakıf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.2.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Beylikten Devlete Osmanlı (1299-1453)",
+      "theme_order": 2,
+      "outcome": "Osmanlı Devleti'nin fethettiği topraklarda kalıcı olabilmek için izlediği politikaları sorgulayabilme",
+      "content_frame": "Osmanlı Devleti'nin Kuruluşuna Dair Farklı Görüşler / Osmanlı Devleti'nin Anadolu ve Rumeli'deki Siyasi ve Askerî Mücadeleleri / Osmanlı Devleti'nin Devletleşme Süreci ile Ordu, Hukuk ve Toprak Sistemleri Arasındaki İlişkiler / Osmanlı Devleti'nin Fethettiği Topraklarda Kalıcı Olabilmek İçin İzlediği Politikalar / Osmanlı Devleti'nin İlim ve İrfan Geleneğinin Oluşmasında Mekânların ve Kişilerin Etkisi",
+      "micro": [
+        "devşirme sistemi",
+        "irfan",
+        "iskân",
+        "istimalet",
+        "kapıkulu",
+        "Rumeli Türklüğü",
+        "tımar",
+        "vakıf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.2.5",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Beylikten Devlete Osmanlı (1299-1453)",
+      "theme_order": 2,
+      "outcome": "Osmanlı Devleti'nin ilim ve irfan geleneğinin oluşmasında şehir, kurum ve şahsiyetlerin etkilerine dair fikirler üretebilme",
+      "content_frame": "Osmanlı Devleti'nin Kuruluşuna Dair Farklı Görüşler / Osmanlı Devleti'nin Anadolu ve Rumeli'deki Siyasi ve Askerî Mücadeleleri / Osmanlı Devleti'nin Devletleşme Süreci ile Ordu, Hukuk ve Toprak Sistemleri Arasındaki İlişkiler / Osmanlı Devleti'nin Fethettiği Topraklarda Kalıcı Olabilmek İçin İzlediği Politikalar / Osmanlı Devleti'nin İlim ve İrfan Geleneğinin Oluşmasında Mekânların ve Kişilerin Etkisi",
+      "micro": [
+        "devşirme sistemi",
+        "irfan",
+        "iskân",
+        "istimalet",
+        "kapıkulu",
+        "Rumeli Türklüğü",
+        "tımar",
+        "vakıf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.3.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Cihan Devleti Osmanlı (1453-1683)",
+      "theme_order": 3,
+      "outcome": "1453-1683 yılları arasındaki siyasi ve askerî mücadelelerin Osmanlı Devleti'nin cihan devleti hâline gelmesindeki rolüne ilişkin özgün fikirler üretebilme",
+      "content_frame": "1453-1683 Yılları Arasındaki Siyasi ve Askerî Mücadeleler / Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Meydana Gelen Değişim / Avrupa'nın Sömürgeci Politikalarının Etkileri / Osmanlı Devleti'ndeki Önemli İsyanların Neden ve Sonuçları / 1453-1683 Yılları Arasında Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat Alanında Yaşanan Gelişmeler",
+      "micro": [
+        "Celâli",
+        "cihanşümul",
+        "ıslahat",
+        "isyan",
+        "koloni",
+        "rasathane",
+        "sömürgecilik",
+        "vezir",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.3.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Cihan Devleti Osmanlı (1453-1683)",
+      "theme_order": 3,
+      "outcome": "1453-1683 yılları arasında Osmanlı Devleti'nin yönetim ve ordu yapısında meydana gelen değişim ve sürekliliği yorumlayabilme",
+      "content_frame": "1453-1683 Yılları Arasındaki Siyasi ve Askerî Mücadeleler / Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Meydana Gelen Değişim / Avrupa'nın Sömürgeci Politikalarının Etkileri / Osmanlı Devleti'ndeki Önemli İsyanların Neden ve Sonuçları / 1453-1683 Yılları Arasında Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat Alanında Yaşanan Gelişmeler",
+      "micro": [
+        "Celâli",
+        "cihanşümul",
+        "ıslahat",
+        "isyan",
+        "koloni",
+        "rasathane",
+        "sömürgecilik",
+        "vezir",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.3.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Cihan Devleti Osmanlı (1453-1683)",
+      "theme_order": 3,
+      "outcome": "Avrupalıların sömürgeci politikalarının etkilerini tarihsel bağlamı içerisinde değerlendirebilme",
+      "content_frame": "1453-1683 Yılları Arasındaki Siyasi ve Askerî Mücadeleler / Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Meydana Gelen Değişim / Avrupa'nın Sömürgeci Politikalarının Etkileri / Osmanlı Devleti'ndeki Önemli İsyanların Neden ve Sonuçları / 1453-1683 Yılları Arasında Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat Alanında Yaşanan Gelişmeler",
+      "micro": [
+        "Celâli",
+        "cihanşümul",
+        "ıslahat",
+        "isyan",
+        "koloni",
+        "rasathane",
+        "sömürgecilik",
+        "vezir",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.3.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Cihan Devleti Osmanlı (1453-1683)",
+      "theme_order": 3,
+      "outcome": "1453-1683 yılları arasında Osmanlı Devleti'nde gerçekleşen önemli isyanların neden ve sonuçlarını müzakere edebilme",
+      "content_frame": "1453-1683 Yılları Arasındaki Siyasi ve Askerî Mücadeleler / Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Meydana Gelen Değişim / Avrupa'nın Sömürgeci Politikalarının Etkileri / Osmanlı Devleti'ndeki Önemli İsyanların Neden ve Sonuçları / 1453-1683 Yılları Arasında Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat Alanında Yaşanan Gelişmeler",
+      "micro": [
+        "Celâli",
+        "cihanşümul",
+        "ıslahat",
+        "isyan",
+        "koloni",
+        "rasathane",
+        "sömürgecilik",
+        "vezir",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.10.3.5",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Cihan Devleti Osmanlı (1453-1683)",
+      "theme_order": 3,
+      "outcome": "1453-1683 yılları arasında Osmanlı Devleti'nde bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin oluşturduğu özgün ürünleri paylaşabilme",
+      "content_frame": "1453-1683 Yılları Arasındaki Siyasi ve Askerî Mücadeleler / Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Meydana Gelen Değişim / Avrupa'nın Sömürgeci Politikalarının Etkileri / Osmanlı Devleti'ndeki Önemli İsyanların Neden ve Sonuçları / 1453-1683 Yılları Arasında Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat Alanında Yaşanan Gelişmeler",
+      "micro": [
+        "Celâli",
+        "cihanşümul",
+        "ıslahat",
+        "isyan",
+        "koloni",
+        "rasathane",
+        "sömürgecilik",
+        "vezir",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.11.1.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Değişen Dünyada Osmanlı (1683-1789)",
+      "theme_order": 1,
+      "outcome": "Osmanlı Devleti'nin 1683-1789 yılları arasındaki siyasi ve askerî mücadelelerini sonuçları açısından değerlendirebilme",
+      "content_frame": "Osmanlı Devleti'nin 1683-1789 Yılları Arasındaki Siyasi ve Askerî Mücadeleleri / Lale Devri'nin Devlet ve Toplum Hayatına Etkileri / 1755 Lizbon ve 1766 İstanbul Depremlerinin Etkileri / Sanayi Devrimi'nin Meydana Getirdiği Siyasi, Sosyal ve Ekonomik Değişim",
+      "micro": [
+        "barok",
+        "devrim",
+        "hendesehane",
+        "matbaa",
+        "rokoko",
+        "sanayileşme",
+        "seferet",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.11.1.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Değişen Dünyada Osmanlı (1683-1789)",
+      "theme_order": 1,
+      "outcome": "Lale Devri'nde Osmanlı devlet ve toplum hayatında meydana gelen değişimi tarihsel bağlamı içerisinde yorumlayabilme",
+      "content_frame": "Osmanlı Devleti'nin 1683-1789 Yılları Arasındaki Siyasi ve Askerî Mücadeleleri / Lale Devri'nin Devlet ve Toplum Hayatına Etkileri / 1755 Lizbon ve 1766 İstanbul Depremlerinin Etkileri / Sanayi Devrimi'nin Meydana Getirdiği Siyasi, Sosyal ve Ekonomik Değişim",
+      "micro": [
+        "barok",
+        "devrim",
+        "hendesehane",
+        "matbaa",
+        "rokoko",
+        "sanayileşme",
+        "seferet",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.11.1.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Değişen Dünyada Osmanlı (1683-1789)",
+      "theme_order": 1,
+      "outcome": "1755 Lizbon ve 1766 İstanbul depremlerini ortaya çıkardığı etkiler bakımından karşılaştırabilme",
+      "content_frame": "Osmanlı Devleti'nin 1683-1789 Yılları Arasındaki Siyasi ve Askerî Mücadeleleri / Lale Devri'nin Devlet ve Toplum Hayatına Etkileri / 1755 Lizbon ve 1766 İstanbul Depremlerinin Etkileri / Sanayi Devrimi'nin Meydana Getirdiği Siyasi, Sosyal ve Ekonomik Değişim",
+      "micro": [
+        "barok",
+        "devrim",
+        "hendesehane",
+        "matbaa",
+        "rokoko",
+        "sanayileşme",
+        "seferet",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.11.1.4",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "1. Ünite: Değişen Dünyada Osmanlı (1683-1789)",
+      "theme_order": 1,
+      "outcome": "Sanayi Devrimi'nin meydana getirdiği siyasi, sosyal ve ekonomik değişimi neden ve sonuçlarıyla birlikte yorumlayabilme",
+      "content_frame": "Osmanlı Devleti'nin 1683-1789 Yılları Arasındaki Siyasi ve Askerî Mücadeleleri / Lale Devri'nin Devlet ve Toplum Hayatına Etkileri / 1755 Lizbon ve 1766 İstanbul Depremlerinin Etkileri / Sanayi Devrimi'nin Meydana Getirdiği Siyasi, Sosyal ve Ekonomik Değişim",
+      "micro": [
+        "barok",
+        "devrim",
+        "hendesehane",
+        "matbaa",
+        "rokoko",
+        "sanayileşme",
+        "seferet",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.11.2.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Ünite: Dönüşüm Sürecinde Osmanlı (1789-1908)",
+      "theme_order": 2,
+      "outcome": "Fransız İhtilali'nin devlet ve toplum hayatında meydana getirdiği değişimi neden ve sonuçlarıyla yorumlayabilme",
+      "content_frame": "Fransız İhtilali'nin Devlet ve Toplum Hayatında Meydana Getirdiği Değişim / 1789-1908 Yılları Arasında Osmanlı Devleti'nde Meydana Gelen Siyasi, Askerî ve İdari Gelişmeler / 1789-1908 Yılları Arasında Osmanlı Devleti'nde Bilim, Sanat ve Teknoloji Alanlarında Meydana Gelen Gelişmeler / Osmanlı Devleti'nde Sanayileşme Çabaları",
+      "micro": [
+        "azınlık",
+        "cumhuriyetçilik",
+        "ihtilal",
+        "kapitalizm",
+        "komünizm",
+        "liberalizm",
+        "meşrutiyet",
+        "milliyetçilik",
+        "panslavizm",
+        "sosyalizm",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.11.2.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Ünite: Dönüşüm Sürecinde Osmanlı (1789-1908)",
+      "theme_order": 2,
+      "outcome": "1789-1908 yılları arasında meydana gelen siyasi, askerî ve idari gelişmelerin Osmanlı Devleti'nin yönetim ve toplum yapısına etkilerini sorgulayabilme",
+      "content_frame": "Fransız İhtilali'nin Devlet ve Toplum Hayatında Meydana Getirdiği Değişim / 1789-1908 Yılları Arasında Osmanlı Devleti'nde Meydana Gelen Siyasi, Askerî ve İdari Gelişmeler / 1789-1908 Yılları Arasında Osmanlı Devleti'nde Bilim, Sanat ve Teknoloji Alanlarında Meydana Gelen Gelişmeler / Osmanlı Devleti'nde Sanayileşme Çabaları",
+      "micro": [
+        "azınlık",
+        "cumhuriyetçilik",
+        "ihtilal",
+        "kapitalizm",
+        "komünizm",
+        "liberalizm",
+        "meşrutiyet",
+        "milliyetçilik",
+        "panslavizm",
+        "sosyalizm",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.11.2.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Ünite: Dönüşüm Sürecinde Osmanlı (1789-1908)",
+      "theme_order": 2,
+      "outcome": "1789-1908 yılları arasında Osmanlı Devleti'nde bilim, sanat ve teknoloji alanlarında yapılan uygulamaları yorumlayabilme",
+      "content_frame": "Fransız İhtilali'nin Devlet ve Toplum Hayatında Meydana Getirdiği Değişim / 1789-1908 Yılları Arasında Osmanlı Devleti'nde Meydana Gelen Siyasi, Askerî ve İdari Gelişmeler / 1789-1908 Yılları Arasında Osmanlı Devleti'nde Bilim, Sanat ve Teknoloji Alanlarında Meydana Gelen Gelişmeler / Osmanlı Devleti'nde Sanayileşme Çabaları",
+      "micro": [
+        "azınlık",
+        "cumhuriyetçilik",
+        "ihtilal",
+        "kapitalizm",
+        "komünizm",
+        "liberalizm",
+        "meşrutiyet",
+        "milliyetçilik",
+        "panslavizm",
+        "sosyalizm",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.11.2.4",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "2. Ünite: Dönüşüm Sürecinde Osmanlı (1789-1908)",
+      "theme_order": 2,
+      "outcome": "Osmanlı Devleti'nin sanayileşmede geri kalmasına neden olan etmenleri ortadan kaldırmaya yönelik alternatif fikirler üretebilme",
+      "content_frame": "Fransız İhtilali'nin Devlet ve Toplum Hayatında Meydana Getirdiği Değişim / 1789-1908 Yılları Arasında Osmanlı Devleti'nde Meydana Gelen Siyasi, Askerî ve İdari Gelişmeler / 1789-1908 Yılları Arasında Osmanlı Devleti'nde Bilim, Sanat ve Teknoloji Alanlarında Meydana Gelen Gelişmeler / Osmanlı Devleti'nde Sanayileşme Çabaları",
+      "micro": [
+        "azınlık",
+        "cumhuriyetçilik",
+        "ihtilal",
+        "kapitalizm",
+        "komünizm",
+        "liberalizm",
+        "meşrutiyet",
+        "milliyetçilik",
+        "panslavizm",
+        "sosyalizm",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.11.3.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Savaşlar Sarmalında Osmanlı (1908-1918)",
+      "theme_order": 3,
+      "outcome": "1908-1918 yılları arasında Osmanlı Devleti'nde meydana gelen siyasi ve askerî gelişmelerin sonuçlarını tarihsel bağlamı içerisinde değerlendirebilme",
+      "content_frame": "1908-1918 Yılları Arasında Osmanlı Devleti'nde Meydana Gelen Siyasi ve Askerî Gelişmeler / 1908-1918 Yılları Arasında Gerçekleşen Kitlesel Göç ve Salgınlar / Osmanlı Devleti'nin İnsanlık Tarihine Katkıları",
+      "micro": [
+        "bloklaşma",
+        "darbe",
+        "fırka",
+        "göç",
+        "komita",
+        "muhacir",
+        "mütareke",
+        "müttefik",
+        "salgın",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.11.3.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Savaşlar Sarmalında Osmanlı (1908-1918)",
+      "theme_order": 3,
+      "outcome": "1908-1918 yılları arasında yaşanan kitlesel göç ve salgınların Osmanlı devlet ve toplum hayatına etkilerine ilişkin bakış açısı geliştirebilme",
+      "content_frame": "1908-1918 Yılları Arasında Osmanlı Devleti'nde Meydana Gelen Siyasi ve Askerî Gelişmeler / 1908-1918 Yılları Arasında Gerçekleşen Kitlesel Göç ve Salgınlar / Osmanlı Devleti'nin İnsanlık Tarihine Katkıları",
+      "micro": [
+        "bloklaşma",
+        "darbe",
+        "fırka",
+        "göç",
+        "komita",
+        "muhacir",
+        "mütareke",
+        "müttefik",
+        "salgın",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "TAR.11.3.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "AYT"
+      ],
+      "theme": "3. Ünite: Savaşlar Sarmalında Osmanlı (1908-1918)",
+      "theme_order": 3,
+      "outcome": "Osmanlı Devleti'nin insanlık tarihine katkılarına ilişkin oluşturduğu özgün ürünleri paylaşabilme",
+      "content_frame": "1908-1918 Yılları Arasında Osmanlı Devleti'nde Meydana Gelen Siyasi ve Askerî Gelişmeler / 1908-1918 Yılları Arasında Gerçekleşen Kitlesel Göç ve Salgınlar / Osmanlı Devleti'nin İnsanlık Tarihine Katkıları",
+      "micro": [
+        "bloklaşma",
+        "darbe",
+        "fırka",
+        "göç",
+        "komita",
+        "muhacir",
+        "mütareke",
+        "müttefik",
+        "salgın",
+        "GENEL_KARMA"
+      ]
+    }
+  ]
+}

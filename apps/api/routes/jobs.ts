@@ -3,10 +3,11 @@ import { basename, dirname, join } from "node:path";
 import type { FastifyInstance } from "fastify";
 import { validateJob, type JobInput } from "@menar/core";
 import { requireOgretmen } from "../auth/middleware.js";
+import { maybeAssembleTopluUretim } from "../queue/toplu-pdf.js";
 import type { Repository } from "../db/repository.js";
 
 /** `POST /jobs` gövdesi, CLI'nin `test.json`'ıyla aynı `JobInput` şekli. */
-export function registerJobRoutes(app: FastifyInstance, repo: Repository): void {
+export function registerJobRoutes(app: FastifyInstance, repo: Repository, outputDir: string): void {
   app.post("/jobs", async (req, reply) => {
     const ogretmen = requireOgretmen(req, reply, repo);
     if (!ogretmen) return;
@@ -78,6 +79,15 @@ export function registerJobRoutes(app: FastifyInstance, repo: Repository): void 
 
     repo.sonuc.approve(id, ogretmen.id);
     repo.is.setStatus(id, "APPROVED", { finishedAt: job.finishedAt ?? new Date().toISOString() });
+    // Bu iş bir toplu üretime aitse ve o batch'in PDF'i daha önce (bu soru
+    // NEEDS_REVIEW iken) derlenmişse, onay artık PDF'in dışında kalmasını
+    // önler — worker.ts'in kendi tamamlanma kancasıyla AYNI fonksiyon,
+    // yanıtı geciktirmemek için beklenmeden (fire-and-forget) çağrılır.
+    if (job.topluUretimId) {
+      maybeAssembleTopluUretim(job.topluUretimId, repo, outputDir).catch((err) => {
+        console.error(`Toplu üretim ${job.topluUretimId} PDF yeniden birleştirme hatası:`, err);
+      });
+    }
     reply.send({ jobId: id, status: "APPROVED" });
   });
 
@@ -115,6 +125,11 @@ export function registerJobRoutes(app: FastifyInstance, repo: Repository): void 
       inputJson: kaynak.inputJson,
       revizeKaynakIsId: kaynak.id,
       revizeNotu: body?.not?.trim() || undefined,
+      // Kaynak iş bir toplu üretime aitse düzeltilmiş sonuç da AYNI batch'e
+      // bağlı kalır — worker.ts bu yeni iş bittiğinde batch'in tamamlanma
+      // kontrolünü zaten otomatik tetikler (bkz. processJob'un finally'si).
+      topluUretimId: kaynak.topluUretimId ?? undefined,
+      topluUretimSira: kaynak.topluUretimSira ?? undefined,
     });
     reply.code(202).send({ jobId: job.id, status: job.status });
   });

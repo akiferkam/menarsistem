@@ -10,6 +10,7 @@ import { startQueueWorker } from "../queue/worker.js";
 import { registerYayineviRoutes } from "../routes/yayinevi.js";
 import { registerOgretmenRoutes } from "../routes/ogretmen.js";
 import { registerJobRoutes } from "../routes/jobs.js";
+import { registerTopluUretimRoutes } from "../routes/toplu-uretim.js";
 
 // apps/cli/bin/mays.ts'teki aynı cwd-shift sorunu (bkz. proje hafızası) — repo
 // kökü betiğin kendi konumuna göre sabitlenir, `pnpm --filter`e bağımlı değil.
@@ -42,7 +43,8 @@ const worker = startQueueWorker({
 const app = Fastify({ logger: true });
 registerYayineviRoutes(app, repo, ADMIN_TOKEN, ENCRYPTION_SECRET);
 registerOgretmenRoutes(app, repo, ADMIN_TOKEN);
-registerJobRoutes(app, repo);
+registerJobRoutes(app, repo, outputDir);
+registerTopluUretimRoutes(app, repo);
 
 app.get("/health", async () => ({ ok: true }));
 

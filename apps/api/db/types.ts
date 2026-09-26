@@ -26,6 +26,22 @@ export interface IsKaydi {
   hataMesaji: string | null;
   revizeKaynakIsId: string | null;
   revizeNotu: string | null;
+  topluUretimId: string | null;
+  topluUretimSira: number | null;
+}
+
+export type TopluUretimDurumu = "CALISIYOR" | "TAMAMLANDI";
+
+export interface TopluUretim {
+  id: string;
+  yayineviId: string;
+  ogretmenId: string;
+  baslik: string | null;
+  toplamSatir: number;
+  status: TopluUretimDurumu;
+  pdfPath: string | null;
+  createdAt: string;
+  finishedAt: string | null;
 }
 
 export interface SoruSonucu {

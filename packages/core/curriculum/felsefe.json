@@ -1,0 +1,463 @@
+{
+  "subject": "Felsefe",
+  "source": {
+    "workflow_file": "curriculum/Felsefe_Dersi_Unite_ve_Kazanimlari.docx",
+    "extracted_node": "docx word/document.xml -> paragraf metni (Claude, 2026-09-16)",
+    "extracted_at": "2026-09-16"
+  },
+  "outcome_count": 22,
+  "outcomes": [
+    {
+      "code": "FEL.10.1.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Felsefenin Doğası",
+      "theme_order": 1,
+      "outcome": "Felsefenin anlamını, gelişim sürecini ve işlevini sorgulayabilme",
+      "content_frame": "Felsefenin Anlamı / Felsefi Düşüncenin Özellikleri / Felsefi Düşüncenin Gelişimi / Felsefi Sorunun Temel Özellikleri / Felsefenin Diğer Alanlarla İlişkisi / Felsefenin Bireysel ve Toplumsal İşlevi",
+      "micro": [
+        "bilgelik",
+        "felsefe",
+        "filozof",
+        "refleksiyon",
+        "sorgulama",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.10.2.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Felsefe, Mantık ve Argümantasyon",
+      "theme_order": 2,
+      "outcome": "Düşünme ve dil ilişkisini yapılandırabilme",
+      "content_frame": "Düşünme ve Dil İlişkisi / Mantık ve Argümantasyonun Temel Kavramları / Argümantasyonun Yapısı",
+      "micro": [
+        "akıl yürütme",
+        "argüman",
+        "dil",
+        "düşünme",
+        "mantık",
+        "safsata",
+        "tutarlılık",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.10.2.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Felsefe, Mantık ve Argümantasyon",
+      "theme_order": 2,
+      "outcome": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme.",
+      "content_frame": "Düşünme ve Dil İlişkisi / Mantık ve Argümantasyonun Temel Kavramları / Argümantasyonun Yapısı",
+      "micro": [
+        "akıl yürütme",
+        "argüman",
+        "dil",
+        "düşünme",
+        "mantık",
+        "safsata",
+        "tutarlılık",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.10.3.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Varlık Felsefesi",
+      "theme_order": 3,
+      "outcome": "Varlık felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
+      "content_frame": "Varlık Felsefesinin Konusu ve Temel Kavramları / Varlık Felsefesinin Temel Problemleri (Varlığın Var Olup Olmadığı, Varlığın Ne Olduğu)",
+      "micro": [
+        "fenomen",
+        "idea",
+        "madde",
+        "oluş",
+        "öz",
+        "töz",
+        "varlık",
+        "varoluş",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.10.4.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Ünite: Bilgi Felsefesi",
+      "theme_order": 4,
+      "outcome": "Bilgi felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
+      "content_frame": "Bilgi Felsefesinin Konusu ve Temel Kavramları / Bilgi Felsefesinin Temel Problemleri (Bilginin İmkânı, Kaynağı ve Doğruluk Ölçütleri)",
+      "micro": [
+        "bilgi",
+        "doğruluk",
+        "gerçeklik",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.10.5.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "5. Ünite: Ahlak Felsefesi",
+      "theme_order": 5,
+      "outcome": "Ahlak felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
+      "content_frame": "Ahlak Felsefesinin Konusu ve Temel Kavramları / Ahlak Felsefesinin Temel Problemleri (Evrensel Ahlak Yasasının İmkânı, Özgürlük)",
+      "micro": [
+        "ahlak",
+        "erdem",
+        "etik",
+        "iyi",
+        "kötü",
+        "özgürlük",
+        "sorumluluk",
+        "vicdan",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.10.6.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "6. Ünite: Estetik ve Sanat Felsefesi",
+      "theme_order": 6,
+      "outcome": "Estetik ve sanat felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
+      "content_frame": "Estetik ve Sanat Felsefesinin Konusu ve Temel Kavramları / Estetik ve Sanat Felsefesinin Temel Problemleri (Sanatın Ne Olduğu, Güzellik ve Ortak Estetik Yargıların İmkânı)",
+      "micro": [
+        "estetik",
+        "hoş",
+        "güzellik",
+        "sanat",
+        "sanat eseri",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.10.7.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "7. Ünite: Siyaset Felsefesi",
+      "theme_order": 7,
+      "outcome": "Siyaset felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
+      "content_frame": "Siyaset Felsefesinin Konusu ve Temel Kavramları / Siyaset Felsefesinin Temel Problemleri (Devletin Kökeni, İktidarın Kaynağı ve Meşruiyeti, İdeal Düzen ve Ütopyalar)",
+      "micro": [
+        "adalet",
+        "birey",
+        "devlet",
+        "eşitlik",
+        "iktidar",
+        "özgürlük",
+        "toplum",
+        "ütopya",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.10.8.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "8. Ünite: Din Felsefesi",
+      "theme_order": 8,
+      "outcome": "Din felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
+      "content_frame": "Din Felsefesinin Konusu ve Temel Kavramları / Din Felsefesinin Temel Problemleri (Tanrı'nın Varlığına İlişkin Görüşler, Tanrı'nın Varlığına Yönelik Argüman, Evrenin Sonluluğu ve Sonsuzluğu, Ruhun Ölümsüzlüğü)",
+      "micro": [
+        "din",
+        "ibadet",
+        "iman",
+        "inanç",
+        "kutsal",
+        "mucize",
+        "Tanrı",
+        "vahiy",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.10.9.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf",
+        "TYT"
+      ],
+      "theme": "9. Ünite: Bilim Felsefesi",
+      "theme_order": 9,
+      "outcome": "Bilim felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
+      "content_frame": "Bilim Felsefesinin Konusu ve Temel Kavramları / Bilim Felsefesinin Temel Problemleri (Bilimin Ne Olduğu, Bilimi Oluşturan Unsurlar)",
+      "micro": [
+        "bilim",
+        "bilimsel yöntem",
+        "gözlem",
+        "hipotez",
+        "kuram",
+        "paradigma",
+        "yasa",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.11.1.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Çevre Sorunları ve Felsefe",
+      "theme_order": 1,
+      "outcome": "Çevre ile ilgili felsefi soru ve problemleri anlayabilme",
+      "content_frame": "Çevre ve İnsan İlişkisi / Çevre Etiği (İnsan Merkezci Etik, Canlı Merkezci Etik, Çevre Merkezci Etik)",
+      "micro": [
+        "çevre",
+        "çevre etiği",
+        "değer",
+        "doğa",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.11.1.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "TYT"
+      ],
+      "theme": "1. Ünite: Çevre Sorunları ve Felsefe",
+      "theme_order": 1,
+      "outcome": "Çevre sorunlarıyla ilgili felsefi düşünce ortaya koyabilme",
+      "content_frame": "Çevre ve İnsan İlişkisi / Çevre Etiği (İnsan Merkezci Etik, Canlı Merkezci Etik, Çevre Merkezci Etik)",
+      "micro": [
+        "çevre",
+        "çevre etiği",
+        "değer",
+        "doğa",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.11.2.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Teknoloji ve Hayat",
+      "theme_order": 2,
+      "outcome": "Teknoloji ile ilgili felsefi soru ve problemleri anlayabilme",
+      "content_frame": "Teknoloji ve İnsan Hayatı / Teknoloji Bağlamında Ontolojik Problemler (Ontolojik Anlam Kaybı, Yabancılaşma) / Teknoloji Bağlamında Aksiyolojik Problemler (Güvenlik Sorunları, Değerlerin Tahribatı, Ahlaki Eylemin İmkânı)",
+      "micro": [
+        "ontolojik anlam",
+        "tekhne",
+        "teknoloji karşıtlığı",
+        "teknoloji taraftarlığı",
+        "zaman ve mekân",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.11.2.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "TYT"
+      ],
+      "theme": "2. Ünite: Teknoloji ve Hayat",
+      "theme_order": 2,
+      "outcome": "Teknoloji ve hayat ilişkisiyle ilgili felsefi düşünce ortaya koyabilme",
+      "content_frame": "Teknoloji ve İnsan Hayatı / Teknoloji Bağlamında Ontolojik Problemler (Ontolojik Anlam Kaybı, Yabancılaşma) / Teknoloji Bağlamında Aksiyolojik Problemler (Güvenlik Sorunları, Değerlerin Tahribatı, Ahlaki Eylemin İmkânı)",
+      "micro": [
+        "ontolojik anlam",
+        "tekhne",
+        "teknoloji karşıtlığı",
+        "teknoloji taraftarlığı",
+        "zaman ve mekân",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.11.3.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Akıl ve İnanç",
+      "theme_order": 3,
+      "outcome": "Akıl-inanç ilişkisiyle ilgili felsefi soru ve problemleri anlayabilme",
+      "content_frame": "Akıl-İnanç İlişkisine Yönelik Felsefi Sorular ve Problemler / Akıl-İnanç İlişkisine Yönelik Felsefi Görüş ve Argümanlar",
+      "micro": [
+        "akıl",
+        "gönül",
+        "inanç",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.11.3.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "TYT"
+      ],
+      "theme": "3. Ünite: Akıl ve İnanç",
+      "theme_order": 3,
+      "outcome": "Akıl-inanç ilişkisiyle ilgili felsefi düşünce ortaya koyabilme",
+      "content_frame": "Akıl-İnanç İlişkisine Yönelik Felsefi Sorular ve Problemler / Akıl-İnanç İlişkisine Yönelik Felsefi Görüş ve Argümanlar",
+      "micro": [
+        "akıl",
+        "gönül",
+        "inanç",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.11.4.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Ünite: Edebiyat ve Felsefe",
+      "theme_order": 4,
+      "outcome": "Edebiyat felsefe ilişkisi ile ilgili soru ve problemleri anlayabilme",
+      "content_frame": "Edebiyat Felsefe İlişkisi / Edebiyat Felsefe İlişkisi Problemleri (Edebî Unsurlara Felsefi Bakış, Edebî Unsurlarla Felsefe Yapma)",
+      "micro": [
+        "edebiyat",
+        "felsefi roman",
+        "felsefi şiir",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.11.4.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "TYT"
+      ],
+      "theme": "4. Ünite: Edebiyat ve Felsefe",
+      "theme_order": 4,
+      "outcome": "Edebiyat felsefe ilişkisi ile ilgili felsefi düşünce ortaya koyabilme",
+      "content_frame": "Edebiyat Felsefe İlişkisi / Edebiyat Felsefe İlişkisi Problemleri (Edebî Unsurlara Felsefi Bakış, Edebî Unsurlarla Felsefe Yapma)",
+      "micro": [
+        "edebiyat",
+        "felsefi roman",
+        "felsefi şiir",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.11.5.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "TYT"
+      ],
+      "theme": "5. Ünite: Hayatın Anlamı",
+      "theme_order": 5,
+      "outcome": "Hayatın anlamına ilişkin felsefi soru ve problemleri anlayabilme",
+      "content_frame": "Hayatın Anlamına Yönelik Felsefi Sorular ve Problemler (Mutluluk ve Hayat İlişkisi, Varoluş ve Kendi Olma) / Hayatın Anlamına Yönelik Felsefi Görüş ve Argümanlar",
+      "micro": [
+        "kaygı",
+        "kendi olma",
+        "mutluluk",
+        "ölüm",
+        "saçma",
+        "umutsuzluk",
+        "varoluş",
+        "yabancılaşma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.11.5.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "TYT"
+      ],
+      "theme": "5. Ünite: Hayatın Anlamı",
+      "theme_order": 5,
+      "outcome": "Hayatın anlamına ilişkin felsefi düşünce ortaya koyabilme",
+      "content_frame": "Hayatın Anlamına Yönelik Felsefi Sorular ve Problemler (Mutluluk ve Hayat İlişkisi, Varoluş ve Kendi Olma) / Hayatın Anlamına Yönelik Felsefi Görüş ve Argümanlar",
+      "micro": [
+        "kaygı",
+        "kendi olma",
+        "mutluluk",
+        "ölüm",
+        "saçma",
+        "umutsuzluk",
+        "varoluş",
+        "yabancılaşma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.11.6.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "TYT"
+      ],
+      "theme": "6. Ünite: Hukuk ve Felsefe",
+      "theme_order": 6,
+      "outcome": "Hukukun doğasına yönelik soru ve felsefi problemleri anlayabilme",
+      "content_frame": "Hukuk ve İnsan / Hukukun Doğasına Yönelik Felsefi Problemler (Hukukun Gereği ve Önemi, Hukukun Kaynağı (Doğal Hukuk, Pozitif Hukuk), Ahlak-Hukuk İlişkisi)",
+      "micro": [
+        "ceza",
+        "hakkaniyet",
+        "hukuk",
+        "suç",
+        "yasa",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "FEL.11.6.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf",
+        "TYT"
+      ],
+      "theme": "6. Ünite: Hukuk ve Felsefe",
+      "theme_order": 6,
+      "outcome": "Hukuk sorunları üzerine felsefi düşünce ortaya koyabilme",
+      "content_frame": "Hukuk ve İnsan / Hukukun Doğasına Yönelik Felsefi Problemler (Hukukun Gereği ve Önemi, Hukukun Kaynağı (Doğal Hukuk, Pozitif Hukuk), Ahlak-Hukuk İlişkisi)",
+      "micro": [
+        "ceza",
+        "hakkaniyet",
+        "hukuk",
+        "suç",
+        "yasa",
+        "GENEL_KARMA"
+      ]
+    }
+  ]
+}

@@ -27,10 +27,32 @@ export const GorselDenetimLlmSchema = z.object({
   islev: z.string(),
   nedenler: z.array(z.string()),
   hata_kodlari: z.array(GorselHataKoduSchema).nullish(),
+  /**
+   * RENK/MİKTAR kodlamasıyla ayırt edilen nesne gruplarının (bkz.
+   * `gorsel_veri_manifesti.renk_miktar_sayimlari`) HER biri için modelin
+   * görselde GERÇEKTEN TEK TEK SAYARAK bulduğu adet — kendi status/PASS
+   * yargısından BAĞIMSIZ, ham bir sayım. Canlı testte görüldü: model
+   * kendisine önceden verilen "beklenen 4 ped" bilgisini görmeden önce
+   * saysaydı bile, verilen bu bilgiyi görüp doğrulamak yerine PARAFRAZ
+   * ETME eğiliminde — bu alan onu status'tan ayırarak `denetleGorsel()`in
+   * kod tarafında BAĞIMSIZ, deterministik bir karşılaştırma yapmasını sağlar.
+   */
+  sayilan_nesneler: z.array(z.object({ nesne: z.string(), sayilan_adet: z.number().int().min(0) })).nullish(),
   // 0-100: iki aday üretildiğinde (bkz. 20-baglam-gorseli.ts) ikisi de PASS
   // olursa hangisinin kullanılacağına karar vermek için — kullanıcı
   // mimarisi madde 19/42'nin puanlama/otomatik-seçim fikrinin karşılığı.
   kalite_puani: z.number().min(0).max(100).nullish(),
+  // Üretici overlay_konumlari'nı fotoğraf üretilmeden ÖNCE (bir tahmin
+  // olarak) belirliyor — canlı testte görüldü, gerçek görselde boş bölge
+  // her zaman tam o tahmin edilen yere düşmüyor (ör. tahmin edilen y=%78
+  // iken gerçek etiket görselde daha solda/yukarıda çıktı), bindirilen metin
+  // bölgenin biraz dışına taşabiliyor. Bu alan, denetleyen vision-LLM'in
+  // GÖRDÜĞÜ (tahmin değil, GERÇEK) boş bölge merkezini raporlamasını sağlar
+  // — `bosBirakilmisOlmali` true iken doldurulur, sırası ve uzunluğu
+  // `gorselde_gosterilecek_degerler`/`overlay_konumlari` ile BİREBİR aynı
+  // olmalı. 20-baglam-gorseli.ts bindirmede bunu (varsa) önceden tahmin
+  // edilen overlay_konumlari'na TERCİHEN kullanır.
+  tespit_edilen_konumlar: z.array(z.object({ x_yuzde: z.number().min(0).max(100), y_yuzde: z.number().min(0).max(100) })).nullish(),
 });
 
 export type GorselHataKodu = z.infer<typeof GorselHataKoduSchema>;

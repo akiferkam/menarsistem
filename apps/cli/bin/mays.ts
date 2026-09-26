@@ -51,7 +51,7 @@ async function main(): Promise<void> {
   const input = JSON.parse(readFileSync(configPath, "utf8")) as JobInput;
   const providerMode = process.env.LLM_PROVIDER_MODE === "mock" ? "mock" : "live";
   const ledgerPath = process.env.MAYS_LEDGER_PATH ?? join(REPO_ROOT, ".mays-rotation.json");
-  const providerDeps = buildProviderDeps(providerMode);
+  const providerDeps = buildProviderDeps(providerMode, input.gorselModeli);
   let sonuc: Awaited<ReturnType<typeof runPipeline>>;
   try {
     sonuc = await runPipeline(input, {

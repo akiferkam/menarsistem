@@ -9,7 +9,10 @@ import { MOCK_ADAY_RESPONSE, MOCK_BOARD_RESPONSE, MOCK_GORSEL_DENETIM_RESPONSE, 
  * arayüzünde de yalnız `OpenAiProvider.generateImage` uygular, bu yüzden
  * `gorsel.uretim` her zaman openai'a bağlanır.
  */
-export function buildProviderDeps(mode: "live" | "mock"): Pick<PipelineDeps, "generator" | "solverA" | "solverB" | "board" | "gorsel"> {
+export function buildProviderDeps(
+  mode: "live" | "mock",
+  gorselModeli?: "gpt-image-1" | "gpt-image-2.5-sunburst"
+): Pick<PipelineDeps, "generator" | "solverA" | "solverB" | "board" | "gorsel"> {
   if (mode === "mock") {
     return {
       generator: { provider: new MockProvider([MOCK_ADAY_RESPONSE]), model: "mock-generator" },
@@ -25,6 +28,7 @@ export function buildProviderDeps(mode: "live" | "mock"): Pick<PipelineDeps, "ge
   }
 
   const models = loadStageModels();
+  const gorselModel = gorselModeli ?? models.image;
   return {
     generator: { provider: createProvider("openai"), model: models.generator },
     solverA: { provider: createProvider("anthropic"), model: models.solverA },
@@ -32,8 +36,11 @@ export function buildProviderDeps(mode: "live" | "mock"): Pick<PipelineDeps, "ge
     board: { provider: createProvider("openai"), model: models.board },
     gorsel: {
       prompt: { provider: createProvider("openai"), model: models.contextImagePrompt },
-      uretim: { provider: createProvider("openai"), model: models.image },
-      denetim: { provider: createProvider("openai"), model: models.visionCheck },
+      uretim: { provider: createProvider("openai"), model: gorselModel },
+      // bkz. apps/api/lib/provider-deps.ts aynı satırdaki not — 2026-08-23'te
+      // Anthropic/Claude Opus'a geçirildi (gpt-5.1'in gerçek bir nesne-sayım
+      // hatasını yanlışlıkla PASS vermesi üzerine).
+      denetim: { provider: createProvider("anthropic"), model: models.visionCheck },
     },
   };
 }

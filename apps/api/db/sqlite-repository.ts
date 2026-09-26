@@ -2,7 +2,7 @@ import type Database from "better-sqlite3";
 import { randomUUID } from "node:crypto";
 import type { RotationLedger, StageCost } from "@menar/core";
 import type { Repository } from "./repository.js";
-import type { IsDurumu, IsKaydi, Ogretmen, SoruSonucu, Yayinevi } from "./types.js";
+import type { IsDurumu, IsKaydi, Ogretmen, SoruSonucu, TopluUretim, TopluUretimDurumu, Yayinevi } from "./types.js";
 
 const BOS_LEDGER: RotationLedger = { son100BaglamAilesi: [], son200AileDna: [], son15GorselAilesi: [] };
 
@@ -30,6 +30,19 @@ interface IsKaydiRow {
   hata_mesaji: string | null;
   revize_kaynak_is_id: string | null;
   revize_notu: string | null;
+  toplu_uretim_id: string | null;
+  toplu_uretim_sira: number | null;
+}
+interface TopluUretimRow {
+  id: string;
+  yayinevi_id: string;
+  ogretmen_id: string;
+  baslik: string | null;
+  toplam_satir: number;
+  status: TopluUretimDurumu;
+  pdf_path: string | null;
+  created_at: string;
+  finished_at: string | null;
 }
 interface SoruSonucuRow {
   id: string;
@@ -62,6 +75,19 @@ const toIsKaydi = (r: IsKaydiRow): IsKaydi => ({
   hataMesaji: r.hata_mesaji,
   revizeKaynakIsId: r.revize_kaynak_is_id,
   revizeNotu: r.revize_notu,
+  topluUretimId: r.toplu_uretim_id,
+  topluUretimSira: r.toplu_uretim_sira,
+});
+const toTopluUretim = (r: TopluUretimRow): TopluUretim => ({
+  id: r.id,
+  yayineviId: r.yayinevi_id,
+  ogretmenId: r.ogretmen_id,
+  baslik: r.baslik,
+  toplamSatir: r.toplam_satir,
+  status: r.status,
+  pdfPath: r.pdf_path,
+  createdAt: r.created_at,
+  finishedAt: r.finished_at,
 });
 const toSoruSonucu = (r: SoruSonucuRow): SoruSonucu => ({
   id: r.id,
@@ -158,7 +184,7 @@ export function createSqliteRepository(db: Database.Database): Repository {
     },
 
     is: {
-      create({ yayineviId, ogretmenId, inputJson, revizeKaynakIsId, revizeNotu }) {
+      create({ yayineviId, ogretmenId, inputJson, revizeKaynakIsId, revizeNotu, topluUretimId, topluUretimSira }) {
         const row: IsKaydiRow = {
           id: randomUUID(),
           yayinevi_id: yayineviId,
@@ -171,10 +197,12 @@ export function createSqliteRepository(db: Database.Database): Repository {
           hata_mesaji: null,
           revize_kaynak_is_id: revizeKaynakIsId ?? null,
           revize_notu: revizeNotu ?? null,
+          toplu_uretim_id: topluUretimId ?? null,
+          toplu_uretim_sira: topluUretimSira ?? null,
         };
         db.prepare(
-          `INSERT INTO is_kaydi (id, yayinevi_id, ogretmen_id, status, input_json, created_at, revize_kaynak_is_id, revize_notu)
-           VALUES (@id, @yayinevi_id, @ogretmen_id, @status, @input_json, @created_at, @revize_kaynak_is_id, @revize_notu)`
+          `INSERT INTO is_kaydi (id, yayinevi_id, ogretmen_id, status, input_json, created_at, revize_kaynak_is_id, revize_notu, toplu_uretim_id, toplu_uretim_sira)
+           VALUES (@id, @yayinevi_id, @ogretmen_id, @status, @input_json, @created_at, @revize_kaynak_is_id, @revize_notu, @toplu_uretim_id, @toplu_uretim_sira)`
         ).run(row);
         return toIsKaydi(row);
       },
@@ -279,6 +307,44 @@ export function createSqliteRepository(db: Database.Database): Repository {
           }
         });
         insertAll(stages);
+      },
+    },
+
+    topluUretim: {
+      create({ yayineviId, ogretmenId, baslik, toplamSatir }) {
+        const row: TopluUretimRow = {
+          id: randomUUID(),
+          yayinevi_id: yayineviId,
+          ogretmen_id: ogretmenId,
+          baslik: baslik ?? null,
+          toplam_satir: toplamSatir,
+          status: "CALISIYOR",
+          pdf_path: null,
+          created_at: new Date().toISOString(),
+          finished_at: null,
+        };
+        db.prepare(
+          `INSERT INTO toplu_uretim (id, yayinevi_id, ogretmen_id, baslik, toplam_satir, status, created_at)
+           VALUES (@id, @yayinevi_id, @ogretmen_id, @baslik, @toplam_satir, @status, @created_at)`
+        ).run(row);
+        return toTopluUretim(row);
+      },
+      get(id) {
+        const row = db.prepare("SELECT * FROM toplu_uretim WHERE id = ?").get(id) as TopluUretimRow | undefined;
+        return row && toTopluUretim(row);
+      },
+      setDone(id, pdfPath) {
+        db.prepare("UPDATE toplu_uretim SET status = 'TAMAMLANDI', pdf_path = ?, finished_at = ? WHERE id = ?").run(
+          pdfPath,
+          new Date().toISOString(),
+          id
+        );
+      },
+      listJobsFor(topluUretimId) {
+        const rows = db
+          .prepare("SELECT * FROM is_kaydi WHERE toplu_uretim_id = ? ORDER BY toplu_uretim_sira ASC")
+          .all(topluUretimId) as IsKaydiRow[];
+        return rows.map(toIsKaydi);
       },
     },
   };

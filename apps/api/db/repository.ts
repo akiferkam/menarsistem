@@ -1,5 +1,5 @@
 import type { RotationLedger, StageCost } from "@menar/core";
-import type { ApiProvider, IsDurumu, IsKaydi, Ogretmen, SoruSonucu, Yayinevi } from "./types.js";
+import type { ApiProvider, IsDurumu, IsKaydi, Ogretmen, SoruSonucu, TopluUretim, Yayinevi } from "./types.js";
 
 /**
  * Faz 4'te SQLite -> Postgres geçişinde yalnız `sqlite-repository.ts`
@@ -36,6 +36,8 @@ export interface Repository {
       inputJson: string;
       revizeKaynakIsId?: string;
       revizeNotu?: string;
+      topluUretimId?: string;
+      topluUretimSira?: number;
     }): IsKaydi;
     get(id: string): IsKaydi | undefined;
     listQueued(limit: number): IsKaydi[];
@@ -62,5 +64,17 @@ export interface Repository {
   };
   usage: {
     insertMany(isId: string, stages: StageCost[]): void;
+  };
+  topluUretim: {
+    create(args: {
+      yayineviId: string;
+      ogretmenId: string;
+      baslik?: string;
+      toplamSatir: number;
+    }): TopluUretim;
+    get(id: string): TopluUretim | undefined;
+    setDone(id: string, pdfPath: string): void;
+    /** Sıraya göre (toplu_uretim_sira) — batch'in ilerleme/PDF birleştirme sırası budur. */
+    listJobsFor(topluUretimId: string): IsKaydi[];
   };
 }

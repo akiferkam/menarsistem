@@ -1,4 +1,5 @@
 import { makeSkill, processComponents } from "../curriculum/tymm-skill.js";
+import { genislikSinifi } from "./types.js";
 import { stripLetterPrefix } from "./21-dizgi.js";
 import type { InddDizgi } from "./21-dizgi.js";
 import type { GeneratorOutput } from "./03-generator-schema.js";
@@ -186,8 +187,8 @@ export function buildInddPaket(
     "=".repeat(40),
     "Şablon: soru_kaliplari_ysyf.indd (yayın kalıbı)",
     "Stil grubu: " + dizgi.stilGrubu,
-    `Gövde/seçenek: Arial ${dizgi.dizgi.govdePt} pt · Başlık: ${dizgi.dizgi.baslikPt} pt`,
-    "Çıktı genişliği: " + dizgi.dizgi.genislik + (dizgi.dizgi.genislik === "85_MM" ? " (tek kolon)" : " (tam blok)"),
+    `Gövde/seçenek: ${dizgi.dizgi.font} ${dizgi.dizgi.govdePt} pt · Başlık: ${dizgi.dizgi.baslikPt} pt`,
+    "Çıktı genişliği: " + dizgi.dizgi.genislik + (genislikSinifi(dizgi.dizgi.genislik) === "DAR" ? " (tek kolon)" : " (tam blok)"),
     "ASCII dönüşümü: " + (dizgi.dizgi.ascii ? "UYGULANDI" : "UYGULANMADI — Türkçe karakterler korunur"),
     "",
     "ADIMLAR:",
@@ -223,7 +224,7 @@ export function buildInddPaket(
     {
       name: "14_MENAR_BUILDER_V1.json",
       content: JSON.stringify(
-        { schema: "MENAR_BUILDER_V1", template: input.genislik === "85_MM" ? "QUESTION_85MM" : "QUESTION_185MM", ...manifest },
+        { schema: "MENAR_BUILDER_V1", template: genislikSinifi(input.genislik) === "DAR" ? "QUESTION_85MM" : "QUESTION_185MM", ...manifest },
         null,
         2
       ),

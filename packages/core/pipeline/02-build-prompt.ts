@@ -12,243 +12,146 @@ const DERS_ETIKET: Record<Ders, string> = {
   KIMYA: "Kimya",
   BIYOLOJI: "Biyoloji",
   TDE: "Türk Dili ve Edebiyatı",
+  COGRAFYA: "Coğrafya",
+  TARIH: "Tarih",
+  FELSEFE: "Felsefe",
+  DKAB: "Din Kültürü ve Ahlak Bilgisi",
 };
 
-// Kaynak: kılavuz/iqmatematik/IQ_SORU_Standartlar_Matematik.docx "3. Nihai 13
-// Kademeli IQ Skalası" tablosunun İsimlendirme sütunu — yalnız görüntüleme
-// amaçlı (bant eşiği/geçme mantığı 05-preflight.ts'in BAND_ESIK tablosunda).
 /**
- * IQ ölçütlerinin (bagimsiz_karar_sayisi + 9 audit kriteri, bkz. 03-generator-
- * schema.ts IqBileseniSchema) HER BİR DERSTE NE ANLAMA GELDİĞİNİ tanımlar.
- * Bant eşikleri (kaç karar/hangi kriterler zorunlu) TÜM derslerde ORTAK ve
- * yalnız 05-preflight.ts'in BAND_ESIK tablosunda yaşıyor — burada değişen
- * yalnız kriterlerin METNİ (o dersin doğasına göre "model kurma" veya
- * "tersine düşünme" ne demek). Matematik/Geometri kaynağı kılavuz/iqmatematik/
- * IQ_SORU_Standartlar_Matematik.docx'ten ("MENAR/MAYS TYT-AYT IQ Bilişsel
- * Zorluk Kalibrasyon Standardı v3") neredeyse birebir taşındı — kullanıcı bu
- * dosyayı özellikle Matematik için ekledi. Fizik/Kimya/Biyoloji/TDE
- * versiyonları bu yapının BENİM (Claude) yaptığım ilk uyarlaması — kullanıcı
- * gerçek üretimle test edip standartları güncelleyebileceğini belirtti.
+ * 2026-09-16: 13 kademeli sistem (IQ50..IQ350) 5 kademeye İNDİRGENDİ —
+ * kullanıcı geri bildirimi: "Hedef IQ için çok fazla hata gördüğümüz için"
+ * yalnız ÇOK_KOLAY/KOLAY/ORTA/ZOR/ÇOK_ZOR istendi (bkz. types.ts HedefIQ,
+ * 05-preflight.ts BAND_ESIK). Altyapı (bagimsiz_karar_sayisi + 9 audit
+ * kriteri) DEĞİŞMEDİ — yalnız hedeflenen bant SAYISI azaldı ve metin buna
+ * göre kısaltıldı (eski 13 bantlık epik metin muhtemelen kalibrasyon
+ * hatasının bir parçasıydı — çok fazla ince ayrım, hem seçim hem üretim
+ * belirsizliğine yol açıyordu). Ortak kısım (temel eksen + 9 kriter tanımı)
+ * TÜM derslerde birebir aynı ve ders-agnostik yazıldı (`ORTAK_IQ_TEMEL`) —
+ * yalnız her dersin 5 KADEME paragrafı kendi somut örnekleriyle ayrı yazılır
+ * (`dersIqMetni` yardımcı fonksiyonu ile birleştirilir). COĞRAFYA/TARİH/
+ * FELSEFE/DKAB 2026-09-16'da İLK KEZ eklendi — hiç canlı testsiz, yalnız
+ * MATEMATİK/FİZİK gibi zaten kalibre edilmiş derslerin deseni uyarlanarak.
  */
+const ORTAK_IQ_TEMEL =
+  "IQ KALİBRASYONU — 5 kademe (ÇOK KOLAY / KOLAY / ORTA / ZOR / ÇOK ZOR). IQ düzeyi bir puan formülüyle " +
+  "DEĞİL, sorunun gerçekten talep ettiği bilişsel yükle belirlenir.\n" +
+  "TEMEL EKSEN — iq.bagimsiz_karar_sayisi: öğrencinin hangi adımı/ilişkiyi/yorumu kullanacağına KENDİSİ " +
+  "karar vermesini gerektiren adım sayısı (minimum 1, üst sınır yok — gerçek sayıyı yaz). SAYILMAZ: mekanik " +
+  "işlem/okuma tekrarı, büyük/çirkin sayı kullanımı, gösterim değişikliği, uzun bağlam/metin eklemek, aynı " +
+  "veriyi birden fazla yerde tekrarlamak, yapay veri eklemek, müfredat dışı terim eklemek, yalnız seçenekleri " +
+  "birbirine yaklaştırmak, aynı yapıyı farklı bağlam/sayılarla tekrarlamak. BAĞLAMI OKUYUP TEK BİR İFADE/ " +
+  "CÜMLE/YORUM KURMAK (salt çeviri) TEK BAŞINA karar SAYILMAZ (canlı modda tekrar tekrar görülen bir " +
+  "undershoot kaynağı) — bu yalnız okumadır; gerçek bir karar, birden fazla olası okuma/yol/değer arasından " +
+  "SEÇİM, ELEME veya KARŞILAŞTIRMA içerir.\n" +
+  "DİĞER 9 AUDIT KRİTERİ (her biri true/false, iq şemasındaki alan adıyla):\n" +
+  "  veri_secme_eleme: Hangi bilginin gerekli olduğunu ayırt etmesi veya yanıltıcı/gereksiz bilgiyi elemesi gerekiyor mu?\n" +
+  "  model_kurma: Sözel/görsel/tablosal bilgiyi bir ilişkiye veya modele dönüştürmesi gerekiyor mu?\n" +
+  "  temsil_donusumu: Bir temsil biçiminden diğerine (metin↔tablo↔grafik↔şekil↔denklem) işlevsel geçiş yapıyor mu?\n" +
+  "  ortuk_kosul: Doğrudan söylenmeyen ama çözüm için zorunlu bir koşulu/ipucunu fark etmesi gerekiyor mu?\n" +
+  "  tersine_dusunme: Sonuçtan başlangıca, çıktıdan girdiye doğru akıl yürütme var mı?\n" +
+  "  strateji_secimi: Birden fazla olası yöntem/okumadan uygun olanı seçmesi veya ilkini değiştirmesi gerekiyor mu?\n" +
+  "  sinir_durumu: Uç değer, özel durum, istisna veya sınır koşulu ayrıca denetleniyor mu?\n" +
+  "  dogrulama: Bulunan sonucun başka bir koşul veya ikinci bir temsille kontrolü gerekiyor mu?\n" +
+  "  genelleme_ispat: Özel örnekten genel bir sonuca geçme, gerekçelendirme veya ispat benzeri bir yapı var mı?\n";
+
+const IQ_FINAL_KURALI =
+  "FINAL: sistem karar sayısı + karşılanan kriterlere göre GERÇEK ulaşılan bandı ayrıca hesaplar; bu hedef " +
+  "bandın ALTINDAYSA soru o IQ etiketiyle yayınlanamaz — çözüm DNA'sını yapıca yeniden kurgula, yalnız " +
+  "sayıları/bağlamı büyütüp zorlama.";
+
+function dersIqMetni(besKademe: string): string {
+  return ORTAK_IQ_TEMEL + besKademe + "\n" + IQ_FINAL_KURALI;
+}
+
 const IQ_KURALI: Record<Ders, string> = {
-  MATEMATIK:
-    "IQ KALİBRASYONU (MENAR/MAYS TYT-AYT IQ Bilişsel Zorluk Kalibrasyon Standardı v3 — 13 kademe). IQ düzeyi " +
-    "bir puan formülüyle DEĞİL, sorunun gerçekten talep ettiği bilişsel yükle belirlenir. Sabit çapa noktaları: " +
-    "IQ75=KOLAY, IQ200=ORTA/GENEL AĞIRLIK/OMURGA, IQ250=ZOR/DERECE-SEÇİCİ.\n" +
-    "TEMEL EKSEN — iq.bagimsiz_karar_sayisi: öğrencinin hangi adımı/ilişkiyi kullanacağına KENDİSİ karar " +
-    "vermesini gerektiren adım sayısı (minimum 1, üst sınır yok — gerçek sayıyı yaz). SAYILMAZ: mekanik işlem " +
-    "tekrarı, büyük/çirkin sayı kullanımı, '16' yerine '2⁴' gibi gösterim değişikliği, uzun bağlam/metin " +
-    "eklemek, aynı veriyi tablo+grafikte tekrarlamak, yapay veri eklemek, müfredat dışı terim eklemek, yalnız " +
-    "seçenekleri birbirine yaklaştırmak, aynı algoritmayı farklı bağlam/sayılarla tekrarlamak.\n" +
-    "DİĞER 9 AUDIT KRİTERİ (her biri true/false, iq şemasındaki alan adıyla):\n" +
-    "  veri_secme_eleme: Hangi verinin gerekli olduğunu ayırt etmesi veya yanıltıcı/gereksiz veriyi elemesi gerekiyor mu?\n" +
-    "  model_kurma: Sözel/grafiksel/geometrik/tablosal bilgiyi matematiksel modele dönüştürmesi gerekiyor mu?\n" +
-    "  temsil_donusumu: Metin↔denklem↔tablo↔grafik↔şekil arasında işlevsel geçiş yapıyor mu?\n" +
-    "  ortuk_kosul: Doğrudan söylenmeyen ama çözüm için zorunlu bir koşulu fark etmesi gerekiyor mu?\n" +
-    "  tersine_dusunme: Sonuçtan başlangıç koşuluna, çıktıdan girdiye doğru akıl yürütme var mı?\n" +
-    "  strateji_secimi: Birden fazla olası yöntemden uygun olanı seçmesi veya ilk yöntemi değiştirmesi gerekiyor mu?\n" +
-    "  sinir_durumu: Uç değer, eşitlik durumu, tanım koşulu veya istisna ayrıca denetleniyor mu?\n" +
-    "  dogrulama: Bulunan sonucun başka bir koşul veya ikinci temsille kontrolü gerekiyor mu?\n" +
-    "  genelleme_ispat: Özel örnekten genel sonuca geçme, gerekçelendirme veya ispat benzeri yapı var mı?\n" +
-    "13 KADEME (isim — karakteristik): IQ50 KOLAY/TABAN (doğrudan bilgi/temel işlem, tek kural tanı-uygula, " +
-    "stratejik karar yok denecek kadar az) • IQ75 KOLAY[ÇAPA] (taban + kısa ara işlem/basit eşleme/1 küçük " +
-    "karar) • IQ100 KOLAY-ORTA (birden fazla veriden gerekeni fark etme, temel karşılaştırma, kısa modelleme) " +
-    "• IQ125 ALT-ORTA (iki ilişkiyi ardışık kullanma, 2-3 adım, basit tablo/şekil/grafik okuma) • IQ150 " +
-    "ORTA-ALT (veri seçme + 2-3 muhakeme adımı + temel model kurma/temsil okuma) • IQ175 ORTA (yöntem doğrudan " +
-    "verilmez, öğrenci işlem sırasını/ilişkiyi/temsili kendi belirler) • IQ200 ORTA/OMURGA[ANA ÇAPA] (3-5 " +
-    "muhakeme kararı; veri seçme + model kurma + ilişki sentezi + strateji seçimi BİR ARADA — TYT-AYT " +
-    "üretiminin merkezî ağırlığı) • IQ225 ORTA-ZOR/SEÇİCİYE GEÇİŞ (örtük koşul, gizli kısıt, temsil dönüşümü, " +
-    "tersine düşünme veya ilk stratejiyi kontrol etme) • IQ250 ZOR/DERECE-SEÇİCİ[ÜST ÇAPA] (çoklu koşul, sınır " +
-    "durum/parametre, güçlü modelleme, veri eleme, strateji seçimi VE doğrulama BİR ARADA — çözüm yolu açık " +
-    "verilmez) • IQ275 ÇOK ZOR (birden fazla fikri birlikte yönetme, alternatif çözüm yollarını değerlendirme, " +
-    "alışılmadık model kurma veya tersine çözüm) • IQ300 ÜST SEÇİCİ (en az ~6 bağlı karar, en az 3 işlevsel " +
-    "temsil, strateji seçimi + ara sonuç yorumlama + koşul test etme + bağımsız doğrulama) • IQ325 İLERİ ÜST " +
-    "SEÇİCİ (çoklu model arasında seçim, varsayım sınama, strateji değiştirme, güçlü tersine muhakeme, " +
-    "genelleme başlangıcı — normal TYT-AYT dağılımında istisnai) • IQ350 BİLİŞSEL ZİRVE (en az ~8 bağlı işlem, " +
-    "çoklu model/temsil, strateji karşılaştırma, varsayım testi, tersine akıl yürütme, genelleme/ispat, güçlü " +
-    "transfer, bağımsız doğrulama).\n" +
-    "MÜFREDAT KURALI: IQ300-IQ350 otomatik olarak müfredat üstü/olimpiyat konusu DEMEK DEĞİLDİR — aynı TYT-AYT " +
-    "kazanımı içinde daha derin muhakeme ile üst seviye üretilebilir.\n" +
-    "FINAL: sistem karar sayısı + karşılanan kriterlere göre GERÇEK ulaşılan bandı ayrıca hesaplar; bu hedef " +
-    "bandın ALTINDAYSA soru o IQ koduyla yayınlanamaz — çözüm DNA'sını yapıca yeniden kurgula, yalnız sayıları " +
-    "büyütüp zorlama.",
-  GEOMETRI:
-    "IQ KALİBRASYONU — Matematik'le AYNI standart ve AYNI 9 audit kriteri (bkz. Matematik açıklaması), yalnız " +
-    "geometrik muhakemeye uyarlanmış okuma: model_kurma = sözel/şekilsel bilgiyi geometrik ilişkiye (açı/kenar/ " +
-    "benzerlik/dönüşüm) dönüştürme; temsil_donusumu = şekil↔cebirsel ifade↔koordinat↔ispat arasında geçiş; " +
-    "ortuk_kosul = şekilde açıkça yazılmayan ama zorunlu bir geometrik koşul (dik açı, teğetlik, eş açı vb.); " +
-    "tersine_dusunme = istenen sonuçtan (ör. bir açı/uzunluk) geriye şeklin hangi özelliğinin gerektiğine gitme; " +
-    "sinir_durumu = dejenere/sınır konfigürasyon (üçgen eşitsizliği sınırı, teğetlik anı vb.); genelleme_ispat = " +
-    "özel şekilden genel bir geometrik teoreme/ilişkiye çıkarım. Bant isimleri/eşikleri ve 13 kademe Matematik'le " +
-    "birebir aynıdır.",
-  // Kaynak: kılavuz/iqfizik/IQ_SORU_Standartlar_Fizik.md ("MENAR/MAYS Fizik IQ
-  // Bilişsel Zorluk Kalibrasyon Standardı v1.0" — kullanıcının kendi
-  // araştırmasıyla hazırladığı, Matematik'inkiyle aynı 13-kademeli/karar-
-  // sayısı iskeletini kullanan TAM bir fizik-özel kılavuz). Kılavuzun kendi
-  // PHYSICS_IQ_AUDIT tablosu 20 ayrı ölçüt listeler (sistem sınırı, referans
-  // seçimi, vektör analizi, serbest cisim modeli, grafik muhakemesi, orantısal
-  // akıl yürütme, korunum seçimi, birim-boyut, makullük kontrolü, deney
-  // değişkeni, kanıt, transfer vb.) — bunlar burada şemanın ortak 9 kriterine
-  // (tüm derslerde aynı JSON alanları) katlanarak eşlendi, hiçbiri kaybolmadı.
-  FIZIK:
-    "IQ KALİBRASYONU (MENAR/MAYS Fizik IQ Bilişsel Zorluk Kalibrasyon Standardı v1.0). Zorluğun kaynağı " +
-    "formül bilmek değil, verilen fiziksel durumu doğru MODELLEMEK ve TEMSİL ETMEKTİR. Sabit çapalar: IQ75=KOLAY, " +
-    "IQ200=ORTA/GENEL AĞIRLIK/OMURGA, IQ250=ZOR/DERECE-SEÇİCİ.\n" +
-    "iq.bagimsiz_karar_sayisi: öğrencinin hangi fiziksel ilkeyi/modeli kullanacağına KENDİSİ karar verdiği " +
-    "adım sayısı (minimum 1). KARAR SAYILMAZ: verilen formülde sayı yerine koymak, dört işlem, her seçeneği " +
-    "mekanik denemek, şekildeki etiketi okumak, tek başına birim çevirme, uzun cebir yürütmek.\n" +
-    "9 kriter (fizik kılavuzunun 20 ölçütü buraya katlanmış hâli):\n" +
-    "  veri_secme_eleme: Gereksiz/ikincil veriyi elemesi VEYA deney bağımsız/bağımlı/kontrol değişkenlerini ayırması gerekiyor mu?\n" +
-    "  model_kurma: Sistem sınırını (hangi cisimler dahil), referans çerçevesini VEYA serbest cisim diyagramını kendisi kurması, korunum ilkesinin (enerji/momentum/yük) uygulanıp uygulanamayacağına karar vermesi gerekiyor mu?\n" +
-    "  temsil_donusumu: Metin↔şekil↔grafik↔denklem arasında işlevsel geçiş var mı VEYA vektör büyüklük-yön/bileşen analizi ya da grafik eğimi/alanının fiziksel anlamı çözümün gerçek parçası mı?\n" +
-    "  ortuk_kosul: Sürtünmesiz/ideal gaz/hava direnci yok gibi doğrudan söylenmeyen ama zorunlu bir fiziksel varsayımı fark etmesi gerekiyor mu?\n" +
-    "  tersine_dusunme: Sonuçtan başlangıç koşuluna, çıktıdan girdiye ters yönlü muhakeme var mı?\n" +
-    "  strateji_secimi: Birden fazla çözüm yolundan (ör. enerji korunumu mu Newton yasaları mı) uygun olanı seçmesi veya ilk modelin geçerliliğini test edip değiştirmesi gerekiyor mu?\n" +
-    "  sinir_durumu: Uç değer/denge/limit hız/eşik koşulu ayrıca denetleniyor mu?\n" +
-    "  dogrulama: Sonuç birim/boyut kontrolü, fiziksel makullük (işaret/yön/büyüklük) VEYA ikinci bir fiziksel ilkeyle doğrulanıyor mu?\n" +
-    "  genelleme_ispat: Bilinen ilke yeni ama müfredat-içi bir düzeneğe transfer ediliyor mu (özel durumdan genel ilkeye çıkarım)?\n" +
-    "13 KADEME (isim — karakteristik): IQ50 KOLAY/TABAN (tek nicelik/temel ilişki, stratejik seçim yok) • " +
-    "IQ75 KOLAY[ÇAPA] (taban+1 küçük karar, yöntem hemen görünür) • IQ100 KOLAY-ORTA (1-2 karar, birden çok " +
-    "veriden gerekeni seçme) • IQ125 ALT-ORTA (2-3 adım, iki ilişki ardışık, basit grafik eğimi/vektör bileşkesi) " +
-    "• IQ150 ORTA-ALT (veri seçme+temel model kurma, grafik/devre/serbest cisim/ışın şeması işlevsel) • IQ175 " +
-    "ORTA (yöntem doğrudan verilmez, sistem/referans seçimi gerekebilir) • IQ200 OMURGA[ANA ÇAPA] (3-5 karar, " +
-    "en az iki işlevsel eksen — model kurma/veri seçme/vektör analizi/grafik yorumlama/sistem seçimi/korunum/" +
-    "temsil dönüşümü/doğrulama — bir arada) • IQ225 SEÇİCİYE GEÇİŞ (+örtük koşul/gerçek yön muhakemesi/temsil " +
-    "dönüşümü/tersine düşünme/ilk modeli test etme) • IQ250 ZOR[ÜST ÇAPA] (5-6 karar, çoklu koşul, veri eleme, " +
-    "en az iki temsil/ilke, strateji seçimi, sınır/yön/korunum/makullük kontrolünden en az biri, ikinci koşulla " +
-    "doğrulama, çözüm yolu açık verilmez) • IQ275 ÇOK ZOR (birden fazla model/yol, ilk görünen yöntem optimum " +
-    "olmayabilir, tersine çözüm) • IQ300 ÜST SEÇİCİ (≥6 karar, gerektiğinde 3 temsil — şekil+grafik+denklem gibi " +
-    "— strateji seçimi, varsayım testi, bağımsız doğrulama) • IQ325 İLERİ ÜST SEÇİCİ (çoklu model seçimi, " +
-    "varsayım sınama, strateji değiştirme, modelin geçerlilik sınırını fark etme — istisnai) • IQ350 ZİRVE " +
-    "(≥8 karar, çoklu model/temsil, strateji karşılaştırma, sınır durum analizi, tersine akıl yürütme, " +
-    "genelleme — müfredat dışı üniversite fiziği DEMEK DEĞİL, bilinen ilkelerin sıra dışı birleşimi).\n" +
-    "IQ'YU YÜKSELTMEYEN UNSURLAR: büyük/çirkin sayılar, uzun cebir, çok birim dönüşümü, formülü doğrudan " +
-    "verip yalnız hesap yaptırmak, şekli gereksiz ayrıntıyla kalabalıklaştırmak, uzun hikaye/bağlam, müfredat " +
-    "dışı ileri terim, çok cisim ekleyip hepsini aynı algoritmayla çözmek, seçenekleri yalnız sayısal " +
-    "yaklaştırmak, aynı ilişkiyi üç kez tekrarlatmak, gereksiz trigonometri, çözümde kullanılmayan 'şaşırtıcı' veri.\n" +
-    "FINAL: gerçek çözüm DNA'sı hedef bandın gerekliliklerini taşımıyorsa o IQ etiketi verilmez.",
-  // Kaynak: kılavuz/iqkimya/IQ_SORU_Standartlar_Kimya.md ("MENAR/MAYS Kimya
-  // IQ Bilişsel Zorluk Kalibrasyon Standardı v1.0"). Kimyanın üç temsil
-  // düzeyi (makroskobik gözlem / tanecik-atom-molekül / sembolik-formül-
-  // denklem) kılavuzun merkezinde — bu üçlü geçiş temsil_donusumu'nun
-  // birincil anlamı.
-  KIMYA:
-    "IQ KALİBRASYONU (MENAR/MAYS Kimya IQ Bilişsel Zorluk Kalibrasyon Standardı v1.0). Kimyada gerçek " +
-    "muhakeme üç temsil düzeyi arasında doğru geçiş yaptırır: MAKROSKOBİK (gözlenen renk/çökelti/gaz çıkışı/ " +
-    "sıcaklık), TANECİK (atom/iyon/molekül/elektron/bağ), SEMBOLİK (formül/denklem/mol/grafik). Sabit çapalar: " +
-    "IQ75=KOLAY, IQ200=ORTA/GENEL AĞIRLIK/OMURGA, IQ250=ZOR/DERECE-SEÇİCİ.\n" +
-    "iq.bagimsiz_karar_sayisi: öğrencinin hangi kimyasal ilişkiyi/denklemi ne zaman kuracağına KENDİSİ karar " +
-    "verdiği adım sayısı. KARAR SAYILMAZ: molar kütleyi mekanik toplamak, dengelenmiş denklemde katsayıyı " +
-    "okumak, uzun dört işlem, tabloda açıkça verilen değeri okumak, basit birim dönüşümü, aynı oranı art arda " +
-    "tekrarlamak.\n" +
-    "9 kriter: veri_secme_eleme: Gereksiz/ikincil veriyi elemesi VEYA deney değişkenlerini (bağımsız/bağımlı/" +
-    "kontrol) ayırması gerekiyor mu?; model_kurma: Makroskobik gözlemi tanecik modeline VEYA tanecik modelini " +
-    "denklem/stokiyometrik modele dönüştürmesi gerekiyor mu (mol köprüsü, sınırlayıcı bileşen, gaz/çözelti " +
-    "modeli dahil)?; temsil_donusumu: Makro↔tanecik↔sembolik (molekül yapısı↔denklem↔grafik↔tablo) arasında " +
-    "işlevsel geçiş var mı?; ortuk_kosul: STP, tam tepkime, denge, çökelme gibi doğrudan söylenmeyen ama " +
-    "zorunlu bir koşulu fark etmesi gerekiyor mu?; tersine_dusunme: Son üründen/sonuçtan başlangıç bileşimine, " +
-    "yapıya veya koşula geri gidiliyor mu?; strateji_secimi: Birden fazla hesap/model yolundan (mol kavramı/" +
-    "oran-orantı/denge sabiti/K-Q karşılaştırması) uygun olanı seçmesi gerekiyor mu?; sinir_durumu: " +
-    "Sınırlayıcı bileşen/doygunluk/denge durumu ayrıca denetleniyor mu?; dogrulama: Sonuç atom/kütle/yük/mol " +
-    "korunumu veya ikinci bir temsille kontrol ediliyor mu?; genelleme_ispat: Bilgi yeni fakat müfredat içi " +
-    "bir kimyasal bağlama transfer ediliyor mu?\n" +
-    "13 KADEME: IQ50 KOLAY/TABAN (tek kavram/bilgi, stratejik karar yok) • IQ75 KOLAY[ÇAPA] (taban+1 küçük " +
-    "eşleme, yöntem hemen görünür) • IQ100 KOLAY-ORTA (1-2 karar, birkaç veriden gerekeni seçme, temel " +
-    "sınıflandırma) • IQ125 ALT-ORTA (2-3 adım, iki ilişki ardışık, basit tablo/Lewis/tanecik modeli) • IQ150 " +
-    "ORTA-ALT (veri seçme+temel kimyasal model, makro↔tanecik veya tanecik↔sembolik geçiş) • IQ175 ORTA " +
-    "(yöntem doğrudan verilmez, hangi oran/model kullanılacağını öğrenci belirler) • IQ200 OMURGA[ANA ÇAPA] " +
-    "(3-5 karar, en az iki işlevsel eksen — temsil dönüşümü/veri seçme/stokiyometrik model/yapı-özellik/deney " +
-    "analizi/denge-enerji-hız mantığı/kanıt — bir arada, yalnız formül yerine koyma değil) • IQ225 SEÇİCİYE " +
-    "GEÇİŞ (+örtük koşul/veri eleme/tersine çıkarım/makro→tanecik/ikinci kısıtla eleme/alternatif yapı " +
-    "olasılıklarını test etme) • IQ250 ZOR[ÜST ÇAPA] (5-6 karar, çoklu koşul, en az iki temsil düzeyi — çoğu " +
-    "durumda üçlü tercih — veri eleme, model seçimi, strateji seçimi, ikinci kısıtla doğrulama, çözüm yolu " +
-    "açık verilmez) • IQ275 ÇOK ZOR (birden fazla model, alternatifleri eleme, tersine çözüm, verinin tek " +
-    "başına yetersiz olduğunu fark etme) • IQ300 ÜST SEÇİCİ (≥6 karar, gerektiğinde 3 temsil — makro gözlem+" +
-    "tanecik+denklem gibi — strateji seçimi, varsayım testi, bağımsız doğrulama) • IQ325 İLERİ ÜST SEÇİCİ " +
-    "(çoklu model seçimi, varsayımın geçerlilik sınırını test etme, strateji değiştirme, ileri transfer — " +
-    "istisnai) • IQ350 ZİRVE (≥8 karar, çoklu model/temsil, alternatif hipotezler, sınır durum, genelleme — " +
-    "üniversite kimyası DEMEK DEĞİL, müfredat içi kavramların derin muhakeme mimarisiyle birleşimi).\n" +
-    "IQ'YU YÜKSELTMEYEN UNSURLAR: çok büyük mol sayıları, uzun ondalık hesap, gereksiz molar kütle hesabı, " +
-    "ezberi güç reaksiyonlar, müfredat dışı bileşik adı, karmaşık organik yapı çizimi, uzun paragraf, çok " +
-    "gereksiz deney verisi, seçenekleri yalnız sayısal yaklaştırmak, denklemi uzun denkleştirmek, nadir " +
-    "istisna sormak, aynı veriyi tablo+grafikte tekrarlamak, bağlamı yalnız 'yeni nesil görünümü' için eklemek.\n" +
-    "FINAL: gerçek çözüm DNA'sı hedef bandın gerekliliklerini taşımıyorsa o IQ etiketi verilmez.",
-  // Kaynak: kılavuz/iqbiyoloji/IQ_SORU_Standartlar_Biyoloji.md ("MENAR/MAYS
-  // Biyoloji IQ Bilişsel Zorluk Kalibrasyon Standardı v1.0"). Çoğu soru
-  // sayısal değildir (solver_type=UNSUPPORTED beklenen NORMAL durum) — asıl
-  // eksen molekül→organel→hücre→doku→organ→sistem→organizma→popülasyon→
-  // ekosistem düzeyleri arasında geçiş ve neden-sonuç zinciri kurma.
-  BIYOLOJI:
-    "IQ KALİBRASYONU (MENAR/MAYS Biyoloji IQ Bilişsel Zorluk Kalibrasyon Standardı v1.0). 'Ezber ayrıntısı = " +
-    "zor soru' hatasından kaçın — zorluk molekül→organel→hücre→doku→organ→sistem→organizma→popülasyon→" +
-    "ekosistem düzeyleri arasındaki geçişten ve neden-sonuç zincirinden gelir. Sabit çapalar: IQ75=KOLAY, " +
-    "IQ200=ORTA/GENEL AĞIRLIK/OMURGA, IQ250=ZOR/DERECE-SEÇİCİ.\n" +
-    "iq.bagimsiz_karar_sayisi: öğrencinin kavramlar arasında KENDİSİ kurduğu ilişkilendirme/çıkarım adımı " +
-    "sayısı. KARAR SAYILMAZ: soru kökünü okumak, seçenekleri sırayla kontrol etmek, tek tanımı hatırlamak, " +
-    "şekildeki etiketi okumak, ezberlenmiş bir formülü aynen uygulamak.\n" +
-    "9 kriter: veri_secme_eleme: Verilen bilgilerden hangisinin gerekli olduğunu ayırt etmesi VEYA deneyde " +
-    "bağımsız/bağımlı/kontrol değişkenlerini ayırması gerekiyor mu?; model_kurma: Gözlem/veriyi biyolojik bir " +
-    "mekanizma/süreç şemasına (besin zinciri, geri bildirim döngüsü, genetik model) dönüştürmesi VEYA " +
-    "biyolojik düzeyler arasında (molekül-hücre-organ-sistem-ekosistem) geçiş yapması gerekiyor mu?; " +
-    "temsil_donusumu: Metin↔grafik↔tablo↔şema↔biyolojik model arasında geçiş var mı?; ortuk_kosul: Doğrudan " +
-    "söylenmeyen ama çözüm için zorunlu bir biyolojik koşulu fark etmesi gerekiyor mu?; tersine_dusunme: " +
-    "Sonuçtan mekanizmaya/başlangıç koşuluna gidiliyor mu?; strateji_secimi: Birden fazla açıklama/sınıflandırma " +
-    "yaklaşımından uygun olanı seçmesi veya ilk hipotezi kontrol edip değiştirmesi gerekiyor mu?; sinir_durumu: " +
-    "'Her zaman/yalnızca/tüm/kesinlikle' gibi genellemelerin kapsamı veya istisnai durum test ediliyor mu?; " +
-    "dogrulama: Sonuç ikinci bir biyolojik koşul/kanıtla kontrol ediliyor mu (kanıtın iddiayı destekleyip " +
-    "desteklemediği değerlendirmesi dahil)?; genelleme_ispat: Birden çok örnekten/veri setinden genel bir " +
-    "biyolojik sonuç çıkarılıyor mu?\n" +
-    "13 KADEME: IQ50 KOLAY/TABAN (tek kavram/yapı/görev, stratejik karar yok) • IQ75 KOLAY[ÇAPA] (taban+1 " +
-    "küçük ilişkilendirme, yöntem hemen görünür) • IQ100 KOLAY-ORTA (2-3 bilgiden gerekeni seçme, temel " +
-    "karşılaştırma) • IQ125 ALT-ORTA (2-3 adım, iki ilişki ardışık, basit grafik/tablo/hücre şeması) • IQ150 " +
-    "ORTA-ALT (veri seçme+temel biyolojik model kurma, deney/grafik/süreç şemasından çıkarım) • IQ175 ORTA " +
-    "(yöntem doğrudan verilmez, iki süreç aynı anda izlenebilir) • IQ200 OMURGA[ANA ÇAPA] (3-5 karar, en az " +
-    "iki işlem türü — veri seçme/mekanizma kurma/temsil okuma/neden-sonuç zinciri/sistemler arası ilişki/" +
-    "deney yorumu/modelleme — bir arada, salt 'biliyor musun' ölçmez) • IQ225 SEÇİCİYE GEÇİŞ (+örtük koşul/" +
-    "gizli kısıt/temsil dönüşümü/neden-sonucu tersine izleme/ilk hipotezi kontrol etme/ikinci kanıtla eleme) " +
-    "• IQ250 ZOR[ÜST ÇAPA] (5-6 karar, çoklu koşul, güçlü veri eleme, en az iki biyolojik düzey/süreç " +
-    "arasında ilişki, strateji seçimi, ek koşulla doğrulama, çözüm yolu doğrudan verilmez) • IQ275 ÇOK ZOR " +
-    "(birden fazla model birlikte yönetilir, ilk açıklama yeterli değildir, tersine akıl yürütme) • IQ300 " +
-    "ÜST SEÇİCİ (≥6 karar, gerektiğinde 3 temsil — metin+grafik+şema gibi — strateji seçimi, varsayım testi, " +
-    "bağımsız doğrulama) • IQ325 İLERİ ÜST SEÇİCİ (çoklu model seçimi, varsayımın geçerlilik sınırını test " +
-    "etme, strateji değiştirme, organizasyon düzeyleri arası ileri transfer — istisnai) • IQ350 ZİRVE (≥8 " +
-    "karar, çoklu model/temsil, alternatif hipotezler, sınır durum, genelleme, güçlü uzak transfer — " +
-    "üniversite/olimpiyat biyolojisi DEMEK DEĞİL, zorluk içerik yabancılığından değil muhakeme mimarisinden " +
-    "gelir).\n" +
-    "IQ'YU YÜKSELTMEYEN UNSURLAR: çok uzun paragraf, bilinmeyen tür/Latince takson adı, nadir sağlık bilgisi, " +
-    "çok sayıda organel adı, şemaya gereksiz etiket, seçenekleri aşırı uzatmak, görseli kalabalıklaştırmak, " +
-    "çok sayı/uzun hesap, genetikte gereksiz büyük örneklem, müfredat dışı molekül/enzim/hormon adı, aynı " +
-    "bilgiyi tabloda+metinde tekrarlamak, bağlamı yalnız 'yeni nesil görünümü' için eklemek, 'hangisi " +
-    "değildir' kökünü art arda kullanmak.\n" +
-    "FINAL: gerçek çözüm DNA'sı hedef bandın gerekliliklerini taşımıyorsa o IQ etiketi verilmez.",
-  TDE:
-    "IQ KALİBRASYONU — Matematik'in 13 kademeli standardının metinsel/edebi muhakemeye uyarlanmış hâli (soru " +
-    "genelde sayısal değildir, solver_type=UNSUPPORTED beklenen NORMAL durumdur). iq.bagimsiz_karar_sayisi = " +
-    "öğrencinin metinden kendisi kurduğu çıkarım/yorumlama adımı sayısı. 9 kriter: veri_secme_eleme = metindeki " +
-    "hangi ipucunun/kanıtın soru için gerekli olduğunu ayırt etme; model_kurma = metindeki bilgiyi tema/ana " +
-    "düşünce/yapı çerçevesine oturtma; temsil_donusumu = metin↔örtük anlam↔tür/üslup karşılaştırması arası " +
-    "geçiş; ortuk_kosul = metinde doğrudan söylenmeyen ama anlaşılması gereken örtük ileti/ima; " +
-    "tersine_dusunme = bir sonuçtan (yazarın tutumu/mesajı) metindeki kanıta geri gitme; strateji_secimi = " +
-    "birden fazla olası yorumdan metne en uygun olanı seçme; sinir_durumu = çok anlamlılık/istisna durumu (ör. " +
-    "ironi, çok katmanlı anlam); dogrulama = yorumun metindeki başka bir kanıtla desteklenip desteklenmediğinin " +
-    "kontrolü; genelleme_ispat = özel metinden genel bir edebi/dilsel ilkeye çıkarım. Bant isimleri/eşikleri ve " +
-    "13 kademe Matematik'le birebir aynıdır.",
+  MATEMATIK: dersIqMetni(
+    "5 KADEME (Matematik'te): ÇOK KOLAY (doğrudan bilgi/tek kural tanı-uygula, karar yok denecek kadar az) " +
+      "• KOLAY (bağlamdan/tablodan/grafikten yalnız 1 işlevsel veri seçilir, YÖNTEM HAZIR — öğrenci kendi " +
+      "model KURMAZ) • ORTA (öğrenci gerekli ilişkiyi/modeli KENDİSİ kurar; en az 2 işlevsel veri birlikte " +
+      "kullanılır, veri seçme+model kurma+strateji seçimi bir arada — TYT-AYT üretiminin merkezi ağırlığı) " +
+      "• ZOR (çoklu koşul, sınır durum/parametre, güçlü modelleme, strateji seçimi VE doğrulama bir arada, " +
+      "çözüm yolu açık verilmez) • ÇOK ZOR (birden fazla model/temsil, strateji karşılaştırma, tersine " +
+      "muhakeme, genelleme/ispat, bağımsız doğrulama — TYT-AYT'de istisnai)."
+  ),
+  GEOMETRI: dersIqMetni(
+    "5 KADEME (Geometri'de): ÇOK KOLAY (bir tanım/formülü doğrudan uygulama) • KOLAY (şekilden yalnız 1 " +
+      "işlevsel veri — bir açı/uzunluk — okunur, YÖNTEM HAZIR) • ORTA (öğrenci gerekli geometrik ilişkiyi " +
+      "KENDİSİ kurar — açı/kenar/benzerlik/dönüşüm; en az 2 işlevsel veri ilişkilendirilir) • ZOR (çoklu " +
+      "koşul, sınır/dejenere konfigürasyon, güçlü modelleme, strateji seçimi VE doğrulama bir arada) • ÇOK " +
+      "ZOR (çoklu temsil — şekil↔cebir↔koordinat↔ispat, tersine düşünme, genel bir teoreme çıkarım)."
+  ),
+  FIZIK: dersIqMetni(
+    "5 KADEME (Fizik'te): ÇOK KOLAY (bir formülü doğrudan uygulama) • KOLAY (senaryodan yalnız 1 işlevsel " +
+      "büyüklük seçilir, YÖNTEM HAZIR — öğrenci kendi fiziksel model KURMAZ) • ORTA (öğrenci gerekli fiziksel " +
+      "ilişkiyi/modeli KENDİSİ kurar; en az 2 işlevsel büyüklük/veri birlikte kullanılır, veri seçme+model " +
+      "kurma+strateji seçimi bir arada) • ZOR (çoklu koşul/sınır durum — ör. denge, süreklilik —, güçlü " +
+      "modelleme, strateji seçimi VE doğrulama bir arada) • ÇOK ZOR (birden fazla fiziksel model/temsil, " +
+      "tersine muhakeme — sonuçtan koşula —, genelleme, bağımsız doğrulama)."
+  ),
+  KIMYA: dersIqMetni(
+    "5 KADEME (Kimya'da): ÇOK KOLAY (bir tanım/kuralı doğrudan uygulama) • KOLAY (senaryodan yalnız 1 " +
+      "işlevsel veri — bir derişim/miktar/formül — seçilir, YÖNTEM HAZIR) • ORTA (öğrenci gerekli kimyasal " +
+      "ilişkiyi/modeli KENDİSİ kurar; en az 2 işlevsel veri birlikte kullanılır — ör. mol hesabı + tepkime " +
+      "denklemi) • ZOR (çoklu koşul, sınır durum — ör. sınırlayıcı bileşen, denge kayması —, güçlü modelleme, " +
+      "strateji seçimi VE doğrulama bir arada) • ÇOK ZOR (birden fazla model/temsil, tersine muhakeme, " +
+      "genelleme, bağımsız doğrulama)."
+  ),
+  BIYOLOJI: dersIqMetni(
+    "5 KADEME (Biyoloji'de): ÇOK KOLAY (bir tanım/olguyu doğrudan hatırlama) • KOLAY (senaryodan/şemadan " +
+      "yalnız 1 işlevsel veri seçilir, YÖNTEM HAZIR) • ORTA (öğrenci gerekli biyolojik ilişkiyi/modeli " +
+      "KENDİSİ kurar; en az 2 işlevsel veri/kanıt birlikte kullanılır) • ZOR (çoklu koşul, sınır durum, " +
+      "güçlü modelleme, strateji seçimi VE doğrulama bir arada) • ÇOK ZOR (birden fazla model/temsil, " +
+      "tersine muhakeme, genelleme, bağımsız doğrulama)."
+  ),
+  TDE: dersIqMetni(
+    "5 KADEME (TDE'de): ÇOK KOLAY (metinden doğrudan/açık bir bilgiyi bulma) • KOLAY (metinden/tablodan " +
+      "yalnız 1 işlevsel ipucu seçilir, YORUM YÖNTEMİ HAZIR — öğrenci kendi yorum modeli KURMAZ) • ORTA " +
+      "(öğrenci gerekli yorum ilişkisini KENDİSİ kurar; en az 2 işlevsel ipucu/kanıt birlikte kullanılır) " +
+      "• ZOR (çok anlamlılık, örtük ileti, güçlü ipucu eleme, strateji seçimi VE doğrulama bir arada — " +
+      "yorum yolu açık verilmez) • ÇOK ZOR (birden fazla yorumu/temsili birlikte yönetme, alternatif " +
+      "okumaları değerlendirme, tersine çözüm, bağımsız doğrulama)."
+  ),
+  COGRAFYA: dersIqMetni(
+    "5 KADEME (Coğrafya'da): ÇOK KOLAY (bir tanım/olguyu doğrudan hatırlama) • KOLAY (haritadan/tablodan/ " +
+      "grafikten yalnız 1 işlevsel veri okunur, YÖNTEM HAZIR — öğrenci kendi model KURMAZ) • ORTA (öğrenci " +
+      "gerekli coğrafi ilişkiyi KENDİSİ kurar — ör. konum+iklim+nüfus arasında; en az 2 işlevsel veri/temsil " +
+      "birlikte kullanılır) • ZOR (çoklu koşul, sınır durum — ör. eşik değer, istisnai bölge —, güçlü " +
+      "modelleme, strateji seçimi VE doğrulama bir arada) • ÇOK ZOR (birden fazla temsil — harita+grafik+ " +
+      "tablo, tersine muhakeme, genelleme, bağımsız doğrulama)."
+  ),
+  TARIH: dersIqMetni(
+    "5 KADEME (Tarih'te): ÇOK KOLAY (bir olguyu/tarihi doğrudan hatırlama) • KOLAY (kaynaktan/metinden " +
+      "yalnız 1 işlevsel bilgi seçilir, YORUM YÖNTEMİ HAZIR — öğrenci kendi yorum modeli KURMAZ) • ORTA " +
+      "(öğrenci gerekli neden-sonuç veya karşılaştırma ilişkisini KENDİSİ kurar; en az 2 işlevsel kaynak/ " +
+      "bilgi birlikte kullanılır) • ZOR (çok kaynaklılık, çelişen bilgi, güçlü çıkarım, strateji seçimi VE " +
+      "doğrulama bir arada — yorum yolu açık verilmez) • ÇOK ZOR (birden fazla dönem/kaynağı birlikte " +
+      "değerlendirme, tersine muhakeme — sonuçtan nedene —, genelleme, bağımsız doğrulama)."
+  ),
+  FELSEFE: dersIqMetni(
+    "5 KADEME (Felsefe'de): ÇOK KOLAY (bir kavram/tanımı doğrudan hatırlama) • KOLAY (metinden yalnız 1 " +
+      "işlevsel argüman/öncül seçilir, YÖNTEM HAZIR — öğrenci kendi argüman modeli KURMAZ) • ORTA (öğrenci " +
+      "gerekli mantıksal ilişkiyi/argümanı KENDİSİ kurar; en az 2 öncül/kavram birlikte kullanılır) • ZOR " +
+      "(çoklu görüş/akım karşılaştırması, örtük varsayım, güçlü çıkarım, strateji seçimi VE doğrulama bir " +
+      "arada) • ÇOK ZOR (birden fazla felsefi konum/argümanı birlikte değerlendirme, tersine muhakeme, " +
+      "genelleme, bağımsız doğrulama)."
+  ),
+  DKAB: dersIqMetni(
+    "5 KADEME (Din Kültürü ve Ahlak Bilgisi'nde): ÇOK KOLAY (bir bilgiyi/kavramı doğrudan hatırlama) • " +
+      "KOLAY (ayet/hadis/metinden yalnız 1 işlevsel mesaj/ipucu seçilir, YÖNTEM HAZIR — öğrenci kendi yorum " +
+      "modeli KURMAZ) • ORTA (öğrenci gerekli ilişkiyi/yorumu KENDİSİ kurar; en az 2 işlevsel kaynak/ipucu " +
+      "birlikte kullanılır) • ZOR (çok anlamlılık, örtük mesaj, güçlü çıkarım, strateji seçimi VE doğrulama " +
+      "bir arada — yorum yolu açık verilmez) • ÇOK ZOR (birden fazla kaynağı/bağlamı birlikte değerlendirme, " +
+      "tersine muhakeme, genelleme, bağımsız doğrulama)."
+  ),
 };
 
 const HEDEF_BANT: Record<HedefIQ, string> = {
-  IQ50: "KOLAY / TABAN",
-  IQ75: "KOLAY [ALT ÇAPA]",
-  IQ100: "KOLAY-ORTA",
-  IQ125: "ALT-ORTA",
-  IQ150: "ORTA-ALT",
-  IQ175: "ORTA",
-  IQ200: "ORTA / GENEL AĞIRLIK / OMURGA [ANA ÇAPA]",
-  IQ225: "ORTA-ZOR / SEÇİCİYE GEÇİŞ",
-  IQ250: "ZOR / DERECE-SEÇİCİ [ÜST ÇAPA]",
-  IQ275: "ÇOK ZOR",
-  IQ300: "ÜST SEÇİCİ",
-  IQ325: "İLERİ ÜST SEÇİCİ",
-  IQ350: "BİLİŞSEL ZİRVE / TEORİK TAVAN",
+  COK_KOLAY: "ÇOK KOLAY / TABAN",
+  KOLAY: "KOLAY",
+  ORTA: "ORTA / GENEL AĞIRLIK / OMURGA",
+  ZOR: "ZOR / DERECE-SEÇİCİ",
+  COK_ZOR: "ÇOK ZOR / ÜST SEÇİCİ",
 };
 
 const BOS_LEDGER: RotationLedger = {
@@ -261,26 +164,6 @@ const BOS_LEDGER: RotationLedger = {
 function modeBlock(resolved: ResolvedJob): string {
   const { input } = resolved;
   switch (input.mode) {
-    case "IKIZ_SORU": {
-      const ikiz = input.ikiz;
-      if (!ikiz) return "MOD: " + input.mode;
-      return [
-        "MOD: İKİZ SORU ÜRETİMİ",
-        "İKİZ SORU SAYISI: " + input.soruSayisi,
-        "BAĞLAM DEĞİŞİM DÜZEYİ: " + ikiz.baglamDegisim,
-        "MATEMATİKSEL YAPI: " + ikiz.matematikselYapi,
-        "KAYNAK SORU / DNA:",
-        ikiz.kaynak,
-        "",
-        "İKİZ SORU KİLİDİ:",
-        "- Önce kaynak soruyu bağımsız çöz ve gerçek kazanım, mikro, çözüm DNA'sı, temsil yapısı ve bilişsel adımları çıkar.",
-        "- \"Aynı çözüm DNA'sını koru\" seçildiyse temel matematiksel ilişki, çözüm sırası ve stratejik karar korunur.",
-        "- Yalnız kurum, kişi, şehir, nesne veya sayı değiştirmek özgün ikiz soru sayılmaz.",
-        "- Yeni bağlam ailesi, faaliyet, veri manifesti, sayılar, görsel kimliği, anlatım ve seçenekler kaynak sorudan farklı kurulmalıdır.",
-        "- İkiz soru kaynak sorudan bağımsız çözülebilir olmalıdır.",
-        "- Kaynak ve ikiz soru ayrı ayrı SOLVER, TEK_DOĞRU, IQ_AUDIT ve MATEMATİKSEL_TUTARLILIK denetiminden geçer.",
-      ].join("\n");
-    }
     case "BTG": {
       const btg = input.btg;
       if (!btg) return "MOD: " + input.mode;
@@ -303,6 +186,10 @@ function modeBlock(resolved: ResolvedJob): string {
         "- Ortak metindeki bilimsel bilgi ya da veri en az bir sorunun çözümünde zorunlu görev taşır.",
         "- Her alt soru ortak metinden bağımsız çözülebilir; başka alt sorunun cevabına bağlı olamaz.",
         "- Kaynak doğrulanamazsa AKADEMİK_KAYNAK=RED ver; final üretme veya GERÇEKÇİ_BİLİMSEL_KURGU olarak yeniden sınıflandır.",
+        "- Senaryo gerçek bir laboratuvar/ölçüm cihazı okuması veya teknik ölçü etiketi gerektiriyorsa " +
+          "(gorsel_veri_gosterimi=CIHAZ_EKRANI/TEKNIK_ETIKET) bunu KULLANMAKTAN ÇEKİNME — bu artık AI'ya " +
+          "değil deterministik bindirmeye dayanıyor (bkz. yukarıdaki 'ZORUNLU — overlay_konumlari'), sayı/ " +
+          "karmaşıklık sınırı yok, güvenilir.",
         "",
         "ZORUNLU BTG KAYNAK MANİFESTİ:",
         "KAYNAK_AİLESİ=[...]",
@@ -320,23 +207,53 @@ function modeBlock(resolved: ResolvedJob): string {
       ].join("\n");
     }
     case "BT":
-      return "MOD: KLASİK BAĞLAM TEMELLİ (BT)\nBAĞLAM UZUNLUĞU: " + input.metinUzunlugu + "\nSORU SAYISI: " + input.soruSayisi;
+      return [
+        "MOD: KLASİK BAĞLAM TEMELLİ (BT)",
+        "BAĞLAM UZUNLUĞU: " + input.metinUzunlugu,
+        "SORU SAYISI: " + input.soruSayisi,
+        "- Senaryo gerçek bir cihaz okuması veya boyutlandırılmış teknik ölçü etiketi gerektiriyorsa " +
+          "(gorsel_veri_gosterimi=CIHAZ_EKRANI/TEKNIK_ETIKET) bunu KULLANMAKTAN ÇEKİNME — bu artık AI'ya " +
+          "değil deterministik bindirmeye dayanıyor (bkz. yukarıdaki 'ZORUNLU — overlay_konumlari'), sayı/ " +
+          "karmaşıklık sınırı yok, güvenilir.",
+      ].join("\n");
+    case "BTV1":
+      return [
+        "MOD: BAĞLAM TEMELLİ v1 (BTV1) — BT ile AYNI bağlam kurgusu, GÖRSELİN ROLÜ FARKLI",
+        "BAĞLAM UZUNLUĞU: " + input.metinUzunlugu,
+        "SORU SAYISI: " + input.soruSayisi,
+        "- Bu modda görsel yalnız sahneyi SOMUTLAŞTIRMAK içindir — yukarıdaki MAARİF GÖRSEL İŞLEVSELLİK " +
+          "TESTİ'nin YALNIZ (b) seçeneği (bağlamı somutlaştırma) bu modda geçerlidir; (a) seçeneği (görselden " +
+          "okunması/SAYILMASI gereken bir sayı, düzen veya konum verisi taşıması) BU MODDA HİÇBİR ZAMAN " +
+          "KULLANILMAZ.",
+        "- Görselde ASLA sayılması gereken kesin bir nesne miktarı, okunması gereken bir rakam/etiket/yazı " +
+          "veya renk-grubu sayımı OLMASIN: baglam_katmani.gorsel_veri_gosterimi HER ZAMAN YOK kalır, " +
+          "renk_miktar_sayimlari kullanılmaz, gorselde_gosterilecek_degerler doldurulmaz. Sorunun çözümü " +
+          "için gereken TÜM sayısal/kesin veriler SORU METNİNDE (stimulus) doğrudan cümleyle verilir — " +
+          "görsel yalnız o metnin anlattığı sahneyi göze getirir, öğrencinin görselden herhangi bir şey " +
+          "SAYMASI veya OKUMASI hiçbir zaman gerekmez. (Amaç: gpt-image-1'in birden fazla nesneyi/rengi " +
+          "güvenilir sayamaması riskini bu modda TAMAMEN ortadan kaldırmak.)",
+        "- Buna rağmen görsel yine ZORUNLUDUR (görsel kararı ISLEVSEL_GORSEL_ZORUNLU ise preflight bunu sert " +
+          "kapıyla denetler): baglam_katmani.gerekli=true kalmalı ve sahne soru bağlamıyla GERÇEKTEN " +
+          "örtüşmeli (rastgele/jenerik bir stok-fotoğraf sahnesi değil) — yalnız veri taşıma yükümlülüğünden " +
+          "muaftır.",
+        "- baglam_katmani.islev alanına görselin HANGİ zihinsel modeli/somutlaştırmayı sağladığını yaz (ör. " +
+          "'sahneyi öğrencinin tanıdık bir fiziksel ortamda hayal etmesini sağlar') — bir sayım/okuma işlevi " +
+          "ASLA yazma.",
+        "- KENDİ KENDİNİ AÇIK EDEN DESEN YASAĞI (canlı modda görüldü, KRİTİK — job MENAR-MAT911-20260831111724: " +
+          "üslü sayı sorusunda 'kare mozaik pano' sahnesi seçildi, ama panonun bir kenarındaki taş SAYISI " +
+          "zaten sorunun cevabıydı; görsel modeli kusursuz çizse BİLE öğrenci yalnızca sayarak cevaba " +
+          "ulaşabilirdi — üstelik kusursuz çizemedi, taş sayısını 3 denemede 3 kez de yanlış/tutarsız çizip " +
+          "cevapla çelişti). Sahne seçerken eş birimlerin tekrarlandığı bir ızgara/dizi/istif (mozaik, tuğla " +
+          "duvarı, kutu istifi, hücre ızgarası...) kurma EĞER o tekrar SAYISI zaten sorunun cevabı veya ara " +
+          "adımlarından biriyle (kenar uzunluğu, üs, kök, alan/hacim birimi vb.) birebir örtüşüyorsa — bu " +
+          "veri görsele hiç yazılmasa bile YAPININ KENDİSİ veriyi taşımış olur, BTV1'in 'görsel veri " +
+          "taşımaz' ilkesini bozar. Böyle konularda (üs/kök/alan/hacim gibi sayının kendisinin geometrik " +
+          "tekrar sayısı olduğu konular) sahneyi TEKİL bir nesne/malzeme/doku üzerinden kur (ör. tek bir " +
+          "kalıp, tek bir kap, tek bir yüzeyin dokusu) — sayılabilir, cevabı ele veren bir birim dizisi asla " +
+          "kurma.",
+      ].join("\n");
     case "BTP":
       return "MOD: BAĞLAM TEMELLİ PROBLEM (BTP)\nSENARYO UZUNLUĞU: " + input.metinUzunlugu + "\nPROBLEM SAYISI: " + input.soruSayisi;
-    case "ZINCIR":
-      return (
-        "MOD: ZİNCİR SORU\nALT SORU SAYISI: " +
-        input.soruSayisi +
-        "\n- Alt sorular ortak bağlam katmanını paylaşır, her biri bağımsız çözülebilir.\n- Numaralandırma: SORU [n]-A, SORU [n]-B ..."
-      );
-    case "KONU_OZETI":
-      return (
-        "MOD: KONU ÖZETİ\nÖZET UZUNLUĞU: " +
-        input.metinUzunlugu +
-        "\n- Her mikro başlık için ayrı soru üretilir, tek soruya sıkıştırılmaz."
-      );
-    case "ALISTIRMA":
-      return "MOD: ALIŞTIRMA SETİ\nALIŞTIRMA SAYISI: " + input.soruSayisi + "\nZORLUK DAĞILIMI: Kolaydan zora";
     case "ACIK_UCLU":
       return (
         "MOD: AÇIK UÇLU\nSORU SAYISI: " +
@@ -344,18 +261,19 @@ function modeBlock(resolved: ResolvedJob): string {
         "\n- Örnek cevap, puanlama ölçütleri ve kabul edilebilir cevap sınırları ayrı ayrı doğrulanır."
       );
     case "DENEME":
-      return "MOD: DENEME SORUSU\nSORU SAYISI: " + input.soruSayisi;
-    case "ORTAK_IKI_KONU": {
-      if (!resolved.outcome2) return "MOD: " + input.mode;
       return [
-        "MOD: İKİ KONUDAN ORTAK SORU",
-        "2. SINIF: " + input.sinifVeyaSinav,
-        "2. TEMA: " + resolved.outcome2.theme,
-        "2. KOD: " + input.kod2,
-        "2. KAZANIM: " + resolved.outcome2.outcome,
-        "2. MİKRO: " + resolved.micro2,
+        "MOD: DENEME SORUSU (kapsam genişliği modu — bu bir zorluk değişkeni DEĞİLDİR, zorluk yine hedef IQ tarafından belirlenir)",
+        "SORU SAYISI: " + input.soruSayisi,
+        "- Üretime başlamadan önce seçilen kazanımın TAM kapsam haritasını (o kazanımla doğal olarak " +
+          "ilişkili alt beceri/temsil/ilişki bileşenlerini) kendi içinde çıkar.",
+        "- Soruyu TEK küçük bir özellik/işlem/dönüşümün uzatılmış/süslenmiş biçimine indirgeme — bu " +
+          "DENEME'nin amacını (kapsam genişliği) karşılamaz, yalnız STANDART bir soruyu şişirmiş olur.",
+        "- Çözümde GERÇEKTEN en az iki, mümkünse üç kapsam bileşeni birlikte kullanılsın: gösterim " +
+          "dönüşümü, işlem özelliği, eşdeğerlik, karşılaştırma-sıralama, koşul çıkarımı, temsil okuma, " +
+          "tersine muhakeme veya karar verme — bunlar süs değil, çözümün gerçek, zorunlu adımları olmalı.",
+        "- SORU SAYISI>1 ise kapsamı sorular arasında dağıt; her soru farklı bileşen kombinasyonunu " +
+          "ölçsün, aynı kombinasyonu tekrar etme.",
       ].join("\n");
-    }
     case "STANDART":
       return [
         "MOD: STANDART TEST SORUSU",
@@ -440,6 +358,7 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
     "Çıktı modu: " + input.ciktiModu,
     "Cevap görünürlüğü: " + input.cevapGorunurlugu,
     "Görsel kararı: " + input.gorselKarari,
+    "Görsel veri stratejisi: " + (input.gorselVeriStratejisi ?? "DETERMINISTIK_SVG"),
     "Seçenek yapısı: " + input.secenekYapisi,
     "TYMM alan becerisi: " + input.tymmAlanBecerisi,
     "TYMM eğilim / okuryazarlık: " + input.tymmEgilim,
@@ -460,7 +379,7 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
     "5. Soruyu bağımsız çöz; çözüm adımlarını kısa fakat doğrulanabilir yaz. Cevap anahtarı çözümle birebir uyuşmalı.",
     "6. " + IQ_KURALI[input.ders ?? "MATEMATIK"],
     "7. IQ300 ve IQ350 için ikinci konu/kazanım bütünleştirmesi zorunludur; yapay veya süs amaçlı olmamalıdır.",
-    "8. 85_MM çıktıda soru kökü en fazla 120 kelime, seçenek başına en fazla 6 kelime; 185_MM çıktıda kök en fazla 220 kelime.",
+    "8. Dar çıktıda (85_MM/90_MM) soru kökü en fazla 120 kelime, seçenek başına en fazla 6 kelime; geniş çıktıda (185_MM/180_MM) kök en fazla 220 kelime.",
     "9. Türkçe ondalık ayırıcı virgüldür. Birimler tutarlı olmalı. Ali/Ayşe/Ahmet/Mehmet ve havuz-musluk gibi klişeleri kullanma.",
     "10. Bağlam çıkarıldığında karar veya bilgi kaybı oluşmalı; dekoratif bağlam kurma.",
     "11. VERİ GÖSTERİM HİYERARŞİSİ (ÖNCELİK SIRASI — TÜM DERSLER İÇİN GEÇERLİ, yalnız Geometri'ye özel " +
@@ -506,37 +425,93 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "veya boyutlandırılmış bir teknik çizimi (gorsel_veri_gosterimi=TEKNIK_ETIKET) gösterir — bu durumda " +
       "uygunsa bu türlerden birini seç ve gorselde_gosterilecek_degerler'e TAM OLARAK görünmesi gereken " +
       "değerleri yaz (gorsel_veri_manifesti'nden birebir, uydurma değer ekleme). Cevabı doğrudan ele veren " +
-      "bir değer asla gösterilmez. " +
-      "SINIR (ÇOK ÖNEMLİ): görsel üretim modeli yalnız KISA, YALIN rakam/ifadeler çizebilir (ör. '2⁸', " +
-      "'4,82 × 10⁻³ m', '37 cm') — kök işareti (√, ∛), küme/blackboard-bold sembolleri (ℕ, ℤ, ℚ, ℝ), kesir " +
-      "çizgisi, üst üste bindirilmiş çok satırlı ifade veya karmaşık cebirsel gösterim İÇEREN değerleri ASLA " +
-      "gorselde_gosterilecek_degerler'e koyma — bunlar görsel modelinde güvenilir çizilmez, üretim 3 " +
-      "denemede de RED alıp görsel TAMAMEN kaybolur (zorunlu görsel istenen bir işte bu ciddi bir hatadır). " +
-      "Böyle karmaşık ifadeler her zaman gorsel_veri_gosterimi=YOK ile birlikte ayrı, deterministik " +
-      "veri_katmani (tablo/SVG) üzerinden gösterilir — bu katman AI görsel modelinden geçmez, kod tarafında " +
-      "birebir doğru çizilir. " +
-      // Kullanıcı talebi (2026-08-18): "eğer görsel içinde verileri üretemezse
-      // görselde değer verilecek şeylere sayılar/harfler verip, soru metni
-      // içinde değerleri verebiliriz." Altıncı/ondördüncü turdan beri biriken
-      // kanıt (fosil odası 6 değer, su arıtma 4 kartuş, akort modülleri 6,
-      // zar deneyi 9 değer — HEPSİ 3/3 RED) artık net: görsel üretim modeli
-      // BİRDEN FAZLA ayrı okunaklı GERÇEK DEĞERİ güvenilir çizemiyor. AMA
-      // kullanıcının kendi arşivinden bir KARŞIT kanıt da var (job `69c23e99`,
-      // 2026-08-15, gpt-image-1): iki ayrı cihaz ekranında KISA/YALIN iki
-      // değer ('2¹⁸','8⁸') temiz ve okunaklı çizilmiş, PASS almış. Sınır bu
-      // yüzden 1 değil 2'ye ayarlandı — kanıtlanmış güvenli üst sınır.
-      "SAYI SINIRI (ÇOK ÖNEMLİ, karmaşıklık sınırı kadar kritik): CIHAZ_EKRANI/TEKNIK_ETIKET " +
-      "modunda gorselde_gosterilecek_degerler'de EN FAZLA 2 GERÇEK DEĞER olabilir — yalnız KISA/YALIN " +
-      "cihaz okuması/ölçü etiketi (ör. bir kumpasın gösterdiği '4,82 cm', bir ekrandaki '2⁸'). Sahnede 2'DEN " +
-      "FAZLA nesne/okuma için AYRI AYRI gerçek değer göstermek GEREKİYORSA (ör. 3 farklı kutunun 3 farklı ağırlığı), " +
-      "bunu görsele YAZDIRMAYA ÇALIŞMA — bunun yerine: baglam_katmani.gorsel_veri_gosterimi=YOK bırak " +
-      "(fotoğraf yalnız atmosfer, hiçbir sayı/etiket taşımaz), veri_katmani.tur=NESNE_SEMASI seçip her " +
-      "nesneye basit bir indeks numarası ata (bu SVG kod tarafında deterministik çizilir, hiç görsel-model " +
-      "riski taşımaz), ve GERÇEK DEĞERLERİ doğrudan SORU METNİNDE (stimulus paragraflarında), o indekslerle " +
-      "eşleyen açık bir cümleyle ver (ör. '1 numaralı kutu 70 g, 2 numaralı kutu 105 g...' gibi) — ayrı bir " +
-      "tablo/görsel yedeği KURMA, veri doğrudan ve TEK KEZ metinde yer alsın. Bu, hem 100% güvenilir " +
-      "(metin üretimi hiç başarısız olmaz) hem de görselin gereksiz yere karmaşıklaşıp konudan sapmasını " +
-      "(canlı modda tekrar tekrar görüldü) önler.\n" +
+      "bir değer asla gösterilmez.\n" +
+      // ESKİ SINIR (KALDIRILDI): "görsel modeli yalnız kısa/yalın rakam
+      // çizebilir, en fazla 2 değer" kısıtı AI'nın KENDİSİNİN metin çizme
+      // güvenilirliğine dayanıyordu. Artık AI'dan gorsel_veri_gosterimi!=YOK
+      // olduğunda değerleri KENDİSİ ÇİZMESİ hiç istenmiyor (bkz. altta
+      // ZORUNLU: overlay_konumlari) — AI yalnız o bölgeyi BOŞ/NÖTR (kapalı
+      // ekran, boş etiket yüzeyi) bırakır, gerçek metin (kök işareti, kesir,
+      // çok satırlı ifade dahil — GERÇEK bir tarayıcı font motoruyla, sınırsız
+      // karmaşıklıkta) üretim SONRASI deterministik bindirilir (bkz.
+      // render/gorsel-overlay.ts, 20-baglam-gorseli.ts). Bu yüzden ne uzunluk/ ` +
+      "sembol kısıtı ne de '2 değer' sayı sınırı artık geçerli — istediğin kadar değeri, istediğin " +
+      "karmaşıklıkta (√, kesir, ℝ gibi semboller dahil) güvenle kullanabilirsin.\n" +
+      "ZORUNLU — overlay_konumlari: gorsel_veri_gosterimi CIHAZ_EKRANI veya TEKNIK_ETIKET olduğunda, " +
+      "gorselde_gosterilecek_degerler'deki HER değere BİREBİR karşılık gelen (aynı sırada, aynı uzunlukta) " +
+      "bir overlay_konumlari girdisi {x_yuzde, y_yuzde} doldurulmalı — bu, o değerin görselde YÜZDE " +
+      "cinsinden (sol-üst köşe 0,0; sağ-alt köşe 100,100) nereye bindirileceğini belirler. Konumu sahnenin " +
+      "kompozisyonuna göre GERÇEKÇİ seç (ör. bir masaüstü cihazın ekranı genelde orta-üst/orta-alt bölgede " +
+      "olur, bir kumpasın dijital göstergesi kendi gövdesinin üstünde durur) — bu koordinat hem AI'ya 'bu " +
+      "bölgeyi boş bırak' talimatının hem de bindirmenin dayanağı, boş/yanlış bırakılırsa preflight sert " +
+      "kapıyla RED verir.\n" +
+      "GÖRSEL KİMLİK KODLAMASI (kullanıcı isteği, ÇOK ÖNEMLİ — NESNE_SEMASI'dan ÖNCE denenmesi gereken bir " +
+      "seçenek, ondan sonraki paragrafla KARIŞTIRMA: bu, 'cihaz farklı sayısal değerler gösteriyor' " +
+      "durumundan farklı bir senaryo — burada tek ihtiyaç, aynı türden birden fazla nesneyi (araba, kutu, " +
+      "dolap, bardak, top...) birbirinden AYIRT ETMEK). Bunları harf/numara ile ADLANDIRMA ('A arabası', " +
+      "'1 numaralı kutu', 'X dolabı') — bu isim fotoğrafa geçtiğinde görsel modeli okunaklı harf/rakam " +
+      "YAZAMADIĞI için başarısız olur (tam olarak NESNE_INDEKSI'nin yasaklanma nedeni, canlı modda kanıtlı: " +
+      "harf/numara denemesi araba/kutu gövdesine anlamsız/bozuk yazı olarak çıkıyor). Bunun yerine, nesne " +
+      "türü gerçekçi biçimde bunu taşıyabiliyorsa (araba/kutu/bardak/top/kalem/dolap kapağı gibi farklı " +
+      "renkte üretilebilen nesneler), nesneleri GERÇEK bir görsel nitelikle adlandır — öncelik sırası: " +
+      "(1) RENK ('sarı araba', 'mavi araba', 'yeşil araba' — en güvenilir, görsel modeller rengi harf/ " +
+      "rakamdan çok daha tutarlı çizer), (2) renk uygun değilse BOYUT ('büyük kutu', 'küçük kutu'), " +
+      "(3) o da uygun değilse belirgin bir FİZİKSEL ÖZELLİK ('çizgili kutu', 'düz kutu'). Bu nitelik HEM " +
+      "soru metninde (kök, seçenekler, stimulus — 'sarı araba', 'A arabası' değil) HEM baglam_katmani." +
+      "nesneler/on_plan/orta_plan/arka_plan içinde TUTARLI şekilde aynı kelimeyle geçmeli — ikisi arasında " +
+      "uyuşmazlık (metinde 'sarı', görselde farklı bir renk) görsel denetiminde RED nedenidir. Bu kodlama " +
+      "gerçekçi biçimde uygulanamıyorsa (nesne türü doğası gereği hep aynı renk/boyutta üretilir, ayırt " +
+      "edici bir görsel fark uydurmak sahneyi gerçek-dışı yapar) ancak O ZAMAN aşağıdaki NESNE_SEMASI'ya " +
+      "düşülür — NESNE_SEMASI bir ilk tercih/kolay yol DEĞİL, gerçek görsel ayırt edicilik mümkün " +
+      "olmadığında başvurulan bir SON ÇAREDİR.\n" +
+      "GÖRSEL MİKTAR KODLAMASI (kullanıcı isteği): sorunun ihtiyacı yalnız bir SAYIM/ADET bilgisiyse (ör. " +
+      "'kutuda kaç şeker var', 'kaç araba var'), bunu görsele bir RAKAM olarak yazdırmaya ÇALIŞMA (bu, " +
+      "yukarıdaki CIHAZ_EKRANI/TEKNIK_ETIKET mekanizmasıyla KARIŞTIRILMAMALI — o cihaz okumaları içindir, " +
+      "bu SAYIM içindir). Bunun yerine sahnede o nesneden TAM OLARAK istenen sayıda GERÇEK, AYRI AYRI " +
+      "SAYILABİLİR kopya bulunsun (ör. baglam_katmani.islev/nesneler'e 'kutunun içinde 3 ayrı şeker, her " +
+      "biri net görünür ve sayılabilir' gibi somutça yaz) — görsel modelin sahneye doğru SAYIDA nesne " +
+      "yerleştirmesi, okunaklı bir rakam/etiket yazmasından çok daha güvenilirdir. Sayı 6-7'yi aşarsa " +
+      "(sahnede tek tek sayılması gerçekçi olmaktan çıkarsa) bu senaryoda da doğrudan SORU METNİNDE sayıyı " +
+      "belirtmek (gerekirse veri_katmani) tercih edilir — büyük sayılar için sahneye o kadar nesne " +
+      "sıkıştırmak ASIRI_KARMASA denetim kriterine takılır.\n" +
+      "DÜZ/İSTİFLENEBİLİR NESNE UYARISI (canlı modda görüldü, KRİTİK — job MENAR-MAT972-20260825193841, " +
+      "6-7 eşiğinin İÇİNDE kalan 6 ve 4 adetlik gruplar bile 3 denemenin 3'ünde de RED aldı): RENK/MİKTAR " +
+      "kodlaması için nesne türü seçerken KART, FİŞ, SAYFA, JETON gibi DÜZ ve istiflenebilir nesnelerden " +
+      "KAÇIN — bunlar top/küp/meyve/blok gibi doğal 3 boyutlu, birbirinden uzamsal olarak ayrık nesnelere " +
+      "göre görsel modelde çok daha sık üst üste biniyor VE yanlış sayılıyor, sayı 6-7 eşiğinin altında " +
+      "olsa bile. Bağlam doğası gereği kart/fiş/sayfa gerektiriyorsa (ör. çekiliş, kart oyunu), o nesneyi " +
+      "RENK/MİKTAR kodlamasının SAYILAN öznesi yapma — bunun yerine gerçek adedi SORU METNİNDE doğrudan " +
+      "belirt (ör. 'torbada 6 yeşil, 4 turuncu kart bulunuyor') ve sahneyi yalnız SAF ATMOSFER olarak " +
+      "(kartların kesin sayısı görselde belirleyici olmadan) canlandır.\n" +
+      "ÇOK GRUPLU RENK/MİKTAR YASAĞI (canlı modda görüldü, KRİTİK — job MENAR-MAT972-20260825200252, DÜZ/ " +
+      "İSTİFLENEBİLİR düzeltmesinden SONRA bile: doğal 3 boyutlu nesne — antrenman konisi — seçilmesine " +
+      "rağmen 3 renk grubu (3 mavi + 2 sarı + 1 yeşil) aynı sahnede 3 denemenin 3'ünde de yanlış sayıldı, " +
+      "çoğunlukla iki grup arasında sayı karışması şeklinde): RENK/MİKTAR kodlaması SADECE TEK bir renk/ " +
+      "kategori grubunun sayıldığı sahnelerde güvenilir — sahnede AYNI ANDA 2 VEYA DAHA FAZLA farklı renk/ " +
+      "kategoriden nesnenin HER BİRİNİN kesin adedinin ayrı ayrı doğru olması gerekiyorsa (ör. '3 mavi + 2 " +
+      "sarı + 1 yeşil koni') bunu ASLA görsele bırakma — görsel modeli birden fazla grubu eş zamanlı doğru " +
+      "sayamıyor, tek grup sayarken güvenilir olsa bile. Çok gruplu durumda: TÜM grupların gerçek adetlerini " +
+      "doğrudan SORU METNİNDE ver (ör. 'sahada 3 mavi, 2 sarı ve 1 yeşil antrenman konisi bulunuyor') ve " +
+      "baglam_katmani'nı yalnız SAF ATMOSFER olarak kur (gorsel_veri_gosterimi=YOK, renk_miktar_sayimlari " +
+      "boş/gereksiz) — nesneler var olabilir ama kesin adetleri görselden OKUNMASI gereken veri OLMASIN.\n" +
+      "ZORUNLU KAYIT (canlı modda görüldü, KRİTİK — bu olmadan görsel denetimi sayıyı KENDİ KENDİNE " +
+      "doğrulamış gibi yapıp, gerçekte yanlış sayıda nesne olsa bile yanlışlıkla PASS verebiliyor): RENK/ " +
+      "MİKTAR kodlamasıyla ayırt ettiğin HER nesne grubu için `gorsel_veri_manifesti.renk_miktar_" +
+      "sayimlari`'na TAM OLARAK beklenen adedi yaz — ör. `[{\"nesne\":\"yeşil kare ped\",\"beklenen_adet\":4}," +
+      "{\"nesne\":\"turuncu yuvarlak numune\",\"beklenen_adet\":2}]`. Bu alan doldurulmazsa görsel denetimi " +
+      "bu nesne grubu için sayı doğrulamasını HİÇ yapamaz.\n" +
+      "TEK KAYNAK KURALI (canlı modda görüldü — RENK/MİKTAR kodlaması bir sayıyı/kimliği görselde " +
+      "TAŞIYORSA, o bilgi SADECE görselden okunabilmeli; soru metni bunu (dolaylı yoldan bile) bağımsız " +
+      "olarak türetilebilir kılmamalı. Örnek İHLAL: metin 'filtrelerin TAMAMI sırayla takıldığında' derken " +
+      "aynı zamanda görselde 'kaç filtre olduğunu göster' istemek — 'tamamı' ifadesi zaten dolaylı bir " +
+      "sayı ipucu taşıdığı için görsel artık gereksiz/dekoratif olur (board bunu GÖRSEL DEKORATİF diye " +
+      "RED eder). Bunun yerine ya metni 'bazı filtreler takıldığında' gibi sayıyı belirsiz bırakacak " +
+      "şekilde yaz (gerçek sayı yalnız görselden okunur) ya da bu bilgiyi zaten metinde açıkça veriyorsan " +
+      "görsele o bilgiyi TEKRAR yükleme, işlev başka bir gerçekten görsel-bağımlı bilgiye dayansın.\n" +
+      "KAÇIŞ SIRASI (kullanıcı isteği, ÇOK ÖNEMLİ): yukarıdaki RENK/MİKTAR kodlaması, NESNE_SEMASI/TABLO " +
+      "gibi deterministik katmanlardan ÖNCE denenmesi gereken varsayılan yoldur — bunlar 'basit ve garantili' " +
+      "olduğu için doğrudan atlanacak bir kolay çıkış DEĞİLDİR. Deterministik katmana YALNIZ RENK/MİKTAR " +
+      "kodlaması yukarıdaki nedenlerle gerçekten uygulanamadığında geçilir.\n" +
       "İstisna — NESNE_INDEKSI ARTIK YASAK, ONUN YERİNE NESNE_SEMASI (canlı modda ÇOK KEZ görüldü, KRİTİK — " +
       "preflight bunu sert kapıyla da engelliyor): bağlamda görselin sayı GÖSTERMESİ değil yalnız hangi " +
       "nesnenin hangi sırada/rafta/indekste olduğunu GÖSTERMESİ yeterliyse, bunu ASLA baglam_katmani." +
@@ -594,9 +569,80 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "SVG'ye kod seviyesinde, şeklin ÜZERİNDE çizilir, hiç görsel-model riski taşımaz. baglam_katmani bu " +
       "durumda gorsel_veri_gosterimi=YOK kalır, islev açı eşleşmesini gerekçe gösteremez (SVG zaten taşıyor), " +
       "veri_katmani.tur asla TABLO olamaz (açı içeren bir 'yedek tablo' fikri baştan yanlış — GEOMETRI SVG " +
-      "zaten deterministik, hiç başarısız olmaz, yedeğe ihtiyacı yok).",
+      "zaten deterministik, hiç başarısız olmaz, yedeğe ihtiyacı yok).\n" +
+      // 2026-09-05: canlı testte görüldü (job MENAR-FIZ924-20260905125513) —
+      // bir kuvvet şeması yalnız düz bir çizgi + nokta harfleriyle (O, K, L)
+      // çizildi, kuvvetlerin YÖNÜ görselde hiç işaretlenmedi ve büyüklükleri
+      // (4 N, 10 N) yalnız paragraf metninde geçti, diyagramın kendisi hiçbir
+      // sayı taşımıyordu — kullanıcı geri bildirimi: "görsel üzerine işaret/
+      // ok/yazı yazması lazım, özellikle fizikte". geometrik_kenarlar'a bu
+      // yüzden ok/etiket alanları eklendi (bkz. 03-generator-schema.ts).
+      "VEKTÖR/KUVVET OKU VE ETİKETİ (özellikle FİZİK — kuvvet/hız/ivme/alan şemaları, ama herhangi bir " +
+      "ders yönlü bir büyüklük çizmek istiyorsa geçerli). GÖRSEL VERİ STRATEJİSİ=DETERMINISTIK_SVG İSE " +
+      "(varsayılan): bir kenar bir VEKTÖRÜ (yönlü büyüklüğü) temsil ediyorsa bunu düz bir çizgi olarak " +
+      "bırakma — geometrik_kenarlar'daki o girdiye `ok` alanını doldur ('NOKTA1'/'NOKTA2'/'IKI_UC', hangi " +
+      "ucun ok başı taşıyacağını belirler) VE `etiket` alanına kısa bir isim+değer yaz (ör. 'F₁ = 4 N', " +
+      "'v = 12 m/s') — bu, SVG'ye kod seviyesinde çizilir (AI çizmez), hiç görsel-model riski taşımaz, " +
+      "istediğin kadar sembol/birim kullanabilirsin. GÖRSEL VERİ STRATEJİSİ=FOTOGRAF_UZERINDE veya " +
+      "FOTOGRAF_UZERINDE_HIBRIT İSE (kullanıcı isteği, 2026-09-14 — 'üstte grafik şeklinde kuvvet gösterimi " +
+      "istemiyorum, seçime bırak'): vektörü AYRI bir GEOMETRI şeması olarak KURMA — bunun yerine " +
+      "baglam_katmani.gorsel_veri_gosterimi=KUVVET_OKU seç, her vektörü baglam_katmani.overlay_cizgileri'ne " +
+      "bir kayıt olarak ekle (x1_yuzde/y1_yuzde/x2_yuzde/y2_yuzde ile fotoğrafta YAKLAŞIK nereye düşeceğini, " +
+      "`ok` alanına 'UC1'/'UC2'/'IKI_UC' yaz. `etiket` alanı İSİM+SAYI İKİSİNİ BİRDEN içermeli — ÖRNEK: " +
+      "gorsel_veri_manifesti.degiskenler'de 'Çekme kuvveti = 30 N; sağa' varsa, o vektörün `etiket` alanına " +
+      "TAM OLARAK 'Çekme kuvveti = 30 N' yaz (yön kısmı hariç, o zaten okun yönüyle gösteriliyor). ÇOK ÖNEMLİ " +
+      "— ÜÇ HATA SIK GÖRÜLÜYOR: (1) `etiket` alanına ASLA '{{gorsel_veri_manifesti.degiskenler[0]}}' gibi bir " +
+      "ŞABLON/DEĞİŞKEN REFERANSI yazma — bu bir kod değil, öğrenciye GÖRÜNECEK düz metindir, gerçek değeri " +
+      "doğrudan, harfi harfine yaz. (2) `etiket`e YALNIZ kuvvetin ADINI yazıp SAYIYI ATLAMA (ör. yalnız " +
+      "'Çekme kuvveti' yazıp '= 30 N' kısmını unutma) — sayı yoksa öğrenci soruyu ÇÖZEMEZ, bu KRİTİK bir " +
+      "hata, 'aynı veriyi manifestte zaten var, tekrar etmeyeyim' diye düşünüp sayıyı atlama; overlay_ " +
+      "cizgileri BAŞLI BAŞINA öğrencinin sayıyı GÖRECEĞİ TEK yerdir, atlarsan hiçbir yerde görünmez. " +
+      "(3) KUVVET_OKU'da aynı değeri baglam_katmani.gorselde_gosterilecek_degerler/overlay_konumlari'na " +
+      "AYRICA EKLEME — bu iki alan yalnız CIHAZ_EKRANI/TEKNIK_ETIKET/OLCUM_CIZGISI için, KUVVET_OKU'da BOŞ " +
+      "kalmalı, her vektörün değeri YALNIZ kendi overlay_cizgileri kaydının `etiket` alanında taşınır, aksi " +
+      "halde aynı değer görselde İKİ KEZ (bir kez metin kutusu, bir kez ok etiketi olarak) belirir. Bu " +
+      "maddeyle ilgili stimulus.notes'a (veya başka bir öğrenci-görünür alana) ÜRETİM SÜRECİYLE İLGİLİ " +
+      "HİÇBİR AÇIKLAMA/NOT EKLEME (ör. 'görsel üretim talimatı', 'henüz üretilmemiş', 'kontrol edilmiştir' " +
+      "gibi) — bunlar öğrenciye ASLA görünmemeli, yalnız JSON alanlarını (overlay_cizgileri vb.) doldur. " +
+      "FOTOGRAF_UZERINDE'de üretim SONRASI koddan bindirilir (AI çizmez), FOTOGRAF_UZERINDE_HIBRIT'te ÖNCE " +
+      "AI'nın kendisi çizmesi denenir, başarısız olursa OTOMATİK olarak aynı deterministik yola döner — " +
+      "ikisinde de senin dolduracağın alanlar AYNIDIR, veri_katmani.gerekli=false KALIR. Her iki stratejide " +
+      "de: kuvvet/hız/ivme büyüklüğünü YALNIZ paragraf metninde bırakıp diyagramı sayısız/yönsüz bir çizgi " +
+      "olarak bırakma — öğrenci diyagrama baktığında yön VE büyüklüğü ORADA görmeli, metne geri dönüp " +
+      "aramak zorunda kalmamalı.\n" +
+      "BAĞLAMSAL GEOMETRİ SAHNESİ (kullanıcı kararı, 2026-08-23, YALNIZ Ders=Geometri için — ÇOK ÖNEMLİ): " +
+      "GEOMETRİ sorusunun bağlamı gerçek yaşamdan geliyor olması ('bir itfaiyeci merdiveni binaya dayıyor', " +
+      "'bir direğin gölgesi', 'bir rampanın eğimi', 'bir binaya bakış açısı', 'bir köprü/çatı/halat/tekerlek/ " +
+      "ağaç/saat bağlamı') TEK BAŞINA baglam_katmani.gerekli=true (fotogerçekçi AI görseli) GEREKTİRMEZ. " +
+      "'Bağlam gerçek hayat' olması ile 'görselin fotogerçekçi olması gerekir' olması AYNI ŞEY DEĞİLDİR: " +
+      "öğrencinin gerçekte çözdüğü şey her zaman bir dik üçgen/açı/uzunluk ilişkisidir, sahne yalnız bu " +
+      "ilişkiyi somutlaştıran bir İSKELETTİR. Sahne aşağıdaki basit öğelerin (duvar, zemin, merdiven, direk, " +
+      "gölge, rampa, bina, köprü, çatı, halat/kablo, tekerlek, ağaç, kişi silueti, saat kadranı) bir veya " +
+      "birkaçıyla TEMSİL EDİLEBİLİYORSA, fotogerçekçi görsel yerine bu YOL tercih edilir: geometrik_noktalar/ " +
+      "geometrik_kenarlar/geometrik_acilar'ı normal şekilde doldur (dik üçgen/açı/uzunluk gerçeği burada " +
+      "kalır, değişmez), sonra gorsel_veri_manifesti.baglam_sahnesi_elemanlari'na HANGİ kenarın/noktanın " +
+      "hangi gerçek-dünya öğesiyle 'giydirileceğini' yaz — ör. merdiven-duvar sorusunda A=zemin-duvar köşesi, " +
+      "B=duvarın tepesi, C=merdivenin zemine değdiği nokta ise: " +
+      "`[{\"tur\":\"DUVAR\",\"kenar\":{\"nokta1\":\"A\",\"nokta2\":\"B\"}},{\"tur\":\"ZEMIN\",\"kenar\":" +
+      "{\"nokta1\":\"A\",\"nokta2\":\"C\"}},{\"tur\":\"MERDIVEN\",\"kenar\":{\"nokta1\":\"B\",\"nokta2\":" +
+      "\"C\"}}]`. Bu durumda baglam_katmani.gerekli=false KALIR — sahne bütünüyle 14-veri-katmani.ts'te SVG " +
+      "olarak, geometrik gerçeğin ÜSTÜNE (açı yayı/eşitlik işareti dahil) tek bir görselde birleşik çizilir; " +
+      "iki ayrı, birbiriyle görsel olarak bağlantısız görsel (bir fotoğraf + ayrıca soyut bir üçgen şeması) " +
+      "ORTAYA ÇIKMAZ, ve açı/uzunluk verisi hiçbir zaman AI görsel modelinden geçmediği için hata riski " +
+      "SIFIRDIR. baglam_katmani (fotogerçekçi AI görseli) GEOMETRİ dersinde YALNIZ sahnenin KENDİSİ (gerçek " +
+      "bir fotoğrafın dokusu/gerçekçiliği) sorunun anlaşılırlığı için VAZGEÇİLMEZSE ve yukarıdaki basit " +
+      "öğe listesiyle temsil edilemeyecek kadar özgülse (ör. belirli bir gerçek nesnenin/aracın kendisi " +
+      "tanınmalı) kullanılır — bu istisna, varsayılan değildir. baglam_sahnesi_elemanlari YENİ bir sayısal " +
+      "veri TAŞIMAZ, yalnız var olan geometrik_noktalar'ı hangi görsel kimlikle çizeceğini eşler; nokta " +
+      "adları geometrik_noktalar'daki 'ad' değerleriyle BİREBİR eşleşmeli, aksi halde o öğe sessizce atlanır.",
     "12. Tüm sayısal verilerin tek kaynağı gorsel_veri_manifesti olmalı. Metin, seçenekler, tablo, grafik ve " +
-      "(varsa) gorselde_gosterilecek_degerler bu manifestle uyuşmalı. grafik_serisi.tur=CIZGI ise noktalar[]." +
+      "(varsa) gorselde_gosterilecek_degerler bu manifestle uyuşmalı. gorsel_veri_manifesti.kullanilan_sayilar " +
+      "dizisi soru kökünde VE her şıkta geçen HER SAYIYI eksiksiz içermeli — NEGATİF sayılar dahil (ör. metinde " +
+      "'-3°C' veya '-3' geçiyorsa kullanilan_sayilar'a '-3' MUTLAKA eklenmeli, yalnız pozitif değerleri listelemek " +
+      "yetmez). Bu liste soru metniyle DETERMİNİSTİK/otomatik olarak çapraz karşılaştırılır (kod tarafında, LLM " +
+      "yorumuna bağlı değil); listede eksik kalan tek bir sayı bile MANİFEST ÇAPRAZ RED'e ve pahalı bir yeniden " +
+      "üretim denemesine yol açar — bu yüzden kullanilan_sayilar'ı 'görselde gösterilecek değerler' gibi dar " +
+      "değil, metinde geçen TÜM sayıların tam listesi olarak doldur. grafik_serisi.tur=CIZGI ise noktalar[]." +
       "etiket alanını BOŞ BIRAK veya x ile AYNI değeri yaz — asla o noktanın y-okumasını veya farklı bir sayıyı " +
       "etiket'e yazma (canlı modda görüldü: x ekseni deney sayısı olması gerekirken etiket'e y-değerleri " +
       "yazılıp x-ekseni yanlış render edildi). etiket yalnız tur=SUTUN'da kategorik bir eksen adı (ör. ay " +
@@ -608,6 +654,27 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "NESNE_SEMASI} (gerçek bir çizim/grafik/şema) ZORUNLUDUR. veri_katmani.tur=TABLO TEK BAŞINA bu kararı " +
       "KARŞILAMAZ — tablo salt sayısal veri listesidir, bir resim/diyagram değildir; baglam_katmani.gerekli=" +
       "false yapıp yalnız TABLO kurmak 'görsel zorunlu' seçimini boşa çıkarır.",
+    "13a. GÖRSEL VERİ STRATEJİSİ=FOTOGRAF_UZERINDE VEYA FOTOGRAF_UZERINDE_HIBRIT İSE (kullanıcı isteği, " +
+      "2026-09-14 — 'sorunun üstünde ayrı " +
+      "bir grafik görmek istemiyorum, çizgi/rakam/yazı görselin İÇİNDE olsun'): görsel gerekiyorsa (görsel " +
+      "kararı ISLEVSEL_GORSEL_ZORUNLU veya AI_OTOMATIK'in kendi kararıyla evet) sayısal veriyi veri_katmani " +
+      "(TABLO/CIZGI/SUTUN/FONKSIYON — bunlar bağlam fotoğrafından AYRI bir SVG bloğu olarak sayfada görünür) " +
+      "yerine baglam_katmani ÜZERİNDE göster: baglam_katmani.gerekli=true, gorsel_veri_gosterimi=CIHAZ_EKRANI " +
+      "(bir ölçüm cihazının ekranı) / TEKNIK_ETIKET (yapıştırılmış bir ölçü etiketi) / OLCUM_CIZGISI (bir " +
+      "cetvel/mezür üzerinde ölçülen bir uzunluk/miktar) / KUVVET_OKU (bir vektör/kuvvet oku+büyüklüğü, " +
+      "bkz. VEKTÖR/KUVVET OKU maddesi) — hangisi sahneye en doğal oturuyorsa. " +
+      "gorselde_gosterilecek_degerler'e gösterilecek TÜM değerleri, overlay_konumlari'na (veya OLCUM_CIZGISI " +
+      "için ayrıca overlay_cizgileri'ne) bu değerlerin fotoğrafta YAKLAŞIK nereye düşeceğini (yüzde, sol-üst " +
+      "0,0) doldur — gerçek metin/çizgi üretim SONRASI koddan bindirilir, sen yalnız KONUM tahmin edersin. Bu " +
+      "modda veri_katmani.gerekli=false KALIR (TABLO/CIZGI/SUTUN/FONKSIYON kurma) — GERÇEK GEOMETRİK ŞEKİL " +
+      "ÇİZİMİ (üçgen/açı gibi asıl konusu geometri olan bir soru, vektör/kuvvet DEĞİL) bu kısıttan MUAF, " +
+      "gerekiyorsa yine tur=GEOMETRI kurulabilir — ama salt bir VEKTÖR/KUVVET OKU gösterimi ASLA GEOMETRI'ye " +
+      "kurulmaz, yukarıdaki KUVVET_OKU yoluna gider. Görsel gerekmiyorsa (GORSEL_YOK " +
+      "veya AI_OTOMATIK'in kendi kararı) bu madde hiç uygulanmaz, madde 13'teki normal kural geçerlidir. " +
+      "FOTOGRAF_UZERINDE ile FOTOGRAF_UZERINDE_HIBRIT arasındaki fark senin (üreticinin) ürettiğin JSON'da " +
+      "DEĞİL, görsel üretim/denetim aşamasında (kod tarafında) yönetilir — HIBRIT'te AI önce gerçek değeri " +
+      "kendisi çizmeyi dener, başarısız olursa otomatik olarak aynı overlay_konumlari/overlay_cizgileri ile " +
+      "deterministik bindirmeye döner; senin dolduracağın alanlar ikisinde de AYNIDIR.",
     "14. Görsel gerekiyorsa bağlam görseli ile veri görselini ayır. Veri katmanı SVG/tablo/grafik için açık veri tanımı taşımalı. " +
       "veri_katmani.tur=GEOMETRI SEÇME (gorsel_veri_manifesti.geometrik_noktalar boşsa hiçbir şey çizilmez, " +
       "veri tamamen kaybolur) — gerçek x/y koordinat noktalarıyla çizilen bir şekil değilse. Kart/etiket " +
@@ -632,12 +699,51 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "tablonun kendisinden veya soru kökünden ANLAŞILMAYAN bir bilgi için kullan (ör. birim, yuvarlama kuralı, " +
       "istisna). 'Hücrelerde X verilmiştir' gibi tablonun zaten gösterdiği veya soru kökünde zaten söylenmiş " +
       "bir şeyi yeniden yazan dipnot EKLEME — gereksiz, öğrenciye hiçbir yeni bilgi katmıyor (canlı modda görüldü).",
+    "14b. KONUŞMA BALONCUKLARI (kullanıcı isteği, 2026-09-14/16 — özellikle TDE'de, ileride Tarih/Coğrafya/ " +
+      "Din/Felsefe'de de kullanılacak; HER SORUDA ZORUNLU DEĞİL, yalnız senaryoya GERÇEKTEN uyuyorsa kullan): " +
+      "bağlamda iki+ kişi arasında GERÇEK bir diyalog/tartışma/karşılıklı görüş geçiyorsa (ör. 'Ayşe ve Mehmet " +
+      "bir şiiri tartışıyor', 'iki öğrenci bir problemde farklı yöntem savunuyor') bu konuşmayı DÜZ PARAGRAF " +
+      "içine gömme — veri_katmani.tur=KONUSMA seç, her replik için gorsel_veri_manifesti.konusma_baloncuklari'na " +
+      "`{konusmaci, metin}` ekle (en az 2 replik; `yon` alanı boş bırakılabilir). Bu yalnız GERÇEKTEN birden " +
+      "fazla konuşmacı arasında geçen bir alışverişte kullanılır — tek kişinin anlatımı, bir metin alıntısı " +
+      "veya BTG kaynağı bu maddeye girmez (o durumlarda normal stimulus paragrafı kullan). ÜRETİM HER ZAMAN " +
+      "AYNI ŞEKİLDE ÇALIŞIR (seçtiğin bir 'stil' yok, tek davranış var — kullanıcı isteği: 'stilin hepsi aynı " +
+      "olsun, üretim standart olarak AI olsun'): AI ÖNCE kendisi tüm illüstrasyonu (karakterler+balonlar+metin, " +
+      "ham canlı testte kanıtlandı — doğru Türkçe karakterlerle okunaklı bir panel çizebiliyor) çizmeyi dener; " +
+      "başarısız olursa sistem OTOMATİK olarak deterministik bir SVG yedeğine düşer. Bunun çalışabilmesi için " +
+      "İKİ alan da ZORUNLU: baglam_katmani.gerekli=true YAP (false kalırsa illüstrasyon hiç denenmez) VE " +
+      "veri_katmani.yalnizca_gorsel_yedegi=true YAZ (false kalırsa illüstrasyon başarılı olsa BİLE SVG yedeği " +
+      "de sayfada kalır, aynı diyalog İKİ KEZ görünür). baglam_katmani.sahne alanına konuşmacıların bulunduğu " +
+      "ortamı kısaca betimle (görsel prompt yazıcısı repliklerin kendisini zaten gorsel_veri_manifesti'nden " +
+      "okuyor, sen yalnız SAHNE/ortamı anlat).",
     "15. Fiilen doğrulamadığın kaynak veya denetime PASS yazma. BTG değilse kaynak doğrulamasını UYGULANMAZ olarak kısa tut.",
     "16. Öğrenme Becerisi tek, ölçülebilir ve en fazla 18 kelimelik bir cümle olmalı.",
     "17. Son kullanılan bağlam ailelerinden kaçın: " + (ledger.son100BaglamAilesi.join(" | ") || "kayıt yok"),
     "18. Son aile::DNA eşleşmelerinden kaçın: " + (ledger.son200AileDna.slice(-40).join(" | ") || "kayıt yok"),
     "19. Son görsel ailelerinden kaçın: " + (ledger.son15GorselAilesi.join(" | ") || "kayıt yok"),
     "20. Aynı bilgiyi farklı alanlarda gereksiz biçimde tekrar etme; JSON alanlarını kısa ve işlevsel doldur.",
+    "21. YAPAY/UYDURMA TEKNİK ÇATI YASAĞI: matematiği/bilimi gizlemek veya 'ilginç' göstermek amacıyla " +
+      "gerçek karşılığı olmayan bir sensör türü, yazılım/algoritma adı, ölçüm cihazı, laboratuvar tekniği, " +
+      "puanlama/katsayı sistemi, indeks veya formül İCAT ETME — bunlar öğrenciye 'bu gerçek bir şey, " +
+      "bilgim yetersiz' hissi vererek konudan kopma veya yanlış varsayım riski yaratır. KURGUSAL kaynak " +
+      "modunda (bkz. KAYNAK: KURGUSAL) hikâye/sahne kurgusal olabilir (kurgusal bir şirket, kurgusal bir " +
+      "yarışma vb.) — ama sahnenin İÇİNDEKİ ölçüm/hesap MEKANİZMASI (bir formülün nasıl çalıştığı, bir " +
+      "cihazın neyi ölçtüğü) gerçek matematiksel/bilimsel bir ilkeye dayanmalı, sahte-bilimsel görünen " +
+      "icat edilmiş bir mekanizma OLMAMALI. BİLİMSEL KAYNAKLI modda gerçek/doğrulanabilir kaynak dışında " +
+      "hiçbir veri, kaynak adı, DOI veya bağlantı uydurulamaz (bkz. madde 15 ve BTG kaynak manifesti).",
+    "22. BİLİŞSEL YÜK ÖZ-DENETİMİ (tüm derslerde madde 6'daki IQ kalibrasyonuna ek zorunlu kontrol, " +
+      "Geometri/TDE dahil): finalden önce kendine sor — 'Öğrencinin burada kendisinin vermesi gereken " +
+      "gerçek bilişsel karar nedir?' Cevap 'hiçbiri; öğrenci yalnız verilen kuralı/formülü sırayla " +
+      "uygular' ise bu soru ZOR/ÇOK ZOR etiketiyle YAYINLANAMAZ — hedef IQ ZOR/ÇOK ZOR ise çözüm DNA'sını " +
+      "yapıca (yeni bir karar/temsil gerektirecek şekilde) yeniden kurgula, yalnız sayıları büyütme veya " +
+      "işlem adımı ekleme. Uzun işlem, büyük/çirkin sayı, sembol yoğunluğu veya uzun metin TEK BAŞINA " +
+      "bilişsel yük KANITI DEĞİLDİR — hedefe uymuyorsa etiketi değiştirme, soruyu yeniden kurgula.",
+    "23. ÇÖZÜM YOLU KARŞILAŞTIRMASI (yayın kalitesi): finali yazmadan önce kendi içinde en az iki, " +
+      "mümkünse üç GERÇEKTEN farklı soru/çözüm yaklaşımı düşün (farklı bağlam, farklı veri yapısı veya " +
+      "farklı çözüm stratejisi) — kapsam uygunluğu, matematiksel/bilimsel doğruluk, özgünlük (son bağlam/" +
+      "DNA kayıtlarıyla çakışma yok), hedef zorluğa tam uyum, işlevsellik ve çeldirici gücüne göre en " +
+      "iyisini seç. Bu iç karşılaştırmayı veya elenen adayları ASLA çıktı JSON'una yazma; final yalnız " +
+      "seçilen sonucu içerir.",
     "",
     // `dogrulama_manifesti` node 10P'nin orijinal şemasında yok (bkz. 03-generator-schema.ts'in
     // dosya başı yorumu) — 1-20 kaynaktaki node 04'ün gerçekte gönderdiği liste, bu blok değil.
@@ -664,6 +770,11 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "zaten bir harf olursa hiçbir options[].deger ile eşleşmez ve 'Eşleşen şık(lar): yok' RED'i " +
       "üretir (canlı modda görülen gerçek bir hata — claimed_answer alanına şıkkı yazman zaten yeterli, " +
       "output value'ya tekrar yazma).",
+    "- claimed_answer HER ZAMAN yalnız şık harfidir ('A'-'E'), value'nun KENDİSİ (sayı ya da metin fark " +
+      "etmez) DEĞİL — bu özellikle ALGORITHM_FLOW'un çıktısı METİN/kategori olduğunda (ör. bir genelleme " +
+      "cümlesi) unutuluyor (canlı modda görüldü: claimed_answer'a hesaplanan cümlenin TAMAMI yazılınca " +
+      "solver bunu bir şık harfiyle karşılaştıramayıp yanlışlıkla RED üretiyordu). Sayısal olsun metinsel " +
+      "olsun, claimed_answer daima tek bir harf.",
     "",
     // Aynı boşluk kategorisi: soru/seçenek metninin nasıl yazılacağı da orijinal
     // node 04 çıktısında yok, çünkü kaynak sistemde LaTeX hiç kullanılmıyordu.
@@ -678,6 +789,16 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
     "- Eksi/negatif işareti için HER ZAMAN düz tire (-) kullan (ör. x^(n-1), f(x-3)) — matematiksel eksi " +
       "sembolü (−) veya farklı genişlikte tire KULLANMA; aksi hâlde aynı testteki sorular farklı " +
       "karakterlerle görsel olarak tutarsız görünür.",
+    "- Küme/liste gösteriminde HER virgülden SONRA boşluk bırak: 'S={1, 2, 3, 4, 5, 6, 7, 8, 9, 10}', " +
+      "ASLA 'S={1,2,3,4,5,6,7,8,9,10}' gibi boşluksuz yazma — hem standart matematik yazım kuralı hem " +
+      "de canlı modda görülen gerçek bir hatayı önler: boşluksuz ardışık elemanlar ('...,9,10') otomatik " +
+      "denetim tarafından yanlışlıkla TEK bir ondalık sayı ('9.10') sanılıp sahte MANİFEST ÇAPRAZ RED " +
+      "üretebiliyordu. 5'ten fazla ardışık elemanlı kümelerde '{1, 2, 3, ..., 10}' gibi üç-nokta " +
+      "kısaltması kullan — tüm elemanları tek tek yazmak zorunlu değil.",
+    "- Aynı seçenekte hem küme/liste virgülü hem Türkçe ondalık virgülü ('52,5' gibi) birlikte " +
+      "geçiyorsa, ondalık sayıyı yanına bir birim/etiket ekleyerek (ör. '≈52,5' veya '52,5 adet') ayırt " +
+      "edilebilir kıl — salt bir küme listesinin hemen ardına virgülle eklenmiş çıplak bir ondalık sayı, " +
+      "listenin son elemanıyla karışacak şekilde okunmamalı.",
     "- secenekler[] dizisindeki metinlerin BAŞINA kendi harf önekini (A)/B)/C)... ) yazma — sistem " +
       "bu öneki otomatik ekler, tekrar yazarsan çift önek oluşur.",
     "",
@@ -704,6 +825,16 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "görüldü). Bu tür bir ayrım zaten veri_katmani'nin (grafik/tablo) işidir; islev yalnız SAHNENİN " +
       "FİZİKSEL/BAĞLAMSAL somutlaştırma rolünü tanımlamalı (ör. 'bu ölçümlerin gerçek bir saha " +
       "koşulunda toplandığını gösterir'), asla bir ekran/gösterge/panel unsuruna dayanmamalı.",
+    // Canlı testte görüldü (job MENAR-MAT1011-20260905110057): "turuncu ahşap
+    // küre" sayım için gerekli bir tanımlayıcıydı ama metin ayrıca "mahalle
+    // kitabevi", "istenen renkteki" gibi süsleyici ayrıntılarla doldurulmuştu —
+    // hiçbiri silindiğinde hangi verinin nereden okunacağı değişmiyordu.
+    "- GÖRSELİN SAYIM İÇİN GEREKTİRDİĞİ nesne tanımlayıcısı (renk/malzeme, ör. 'turuncu ahşap küre') " +
+      "yalnızca görsel-manifest tutarlılığı İÇİNDİR — metinde/bağlamda bunu ayrıca 'istenen renkteki' " +
+      "gibi tekrarlarla veya dükkân/mekân türü (ör. 'mahalle kitabevi') gibi süsleyici ayrıntılarla " +
+      "büyütme. Bir sıfat/mekân detayını sildiğinde hangi verinin nereden okunacağı DEĞİŞMİYORSA o " +
+      "detay fuzuli/dekoratiftir. Nesnenin kimliğini kuran sıfat/malzeme adı metinde bir kez geçsin, " +
+      "sonrasında nesneye kısaca (ör. 'küreler') atıfta bulun.",
     "- Bağlam kaynağı: gerçekçi kanıta dayalı veri (NASA/FAO/Dünya Bankası tarzı küresel veri, " +
       "TÜİK/MGM/AFAD tarzı resmî istatistik, e-ticaret/navigasyon verisi) veya herkesin erişebileceği " +
       "ortak günlük yaşam bağlamı (okul, park, doğa, alışveriş) kullan. Golf, borsa/VİOP gibi dar bir " +
@@ -728,19 +859,52 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "(sahneyi tamamlayan, daha küçük/bulanık görünebilecek 1-3 nesne) olarak ayır. Bu, görsel modeline " +
       "rastgele/simetrik bir yerleşim yerine gerçek bir fotoğraf kompozisyonu iskeleti verir. Her katmanda " +
       "en fazla birkaç nesne say — 'bir sürü X' yazma, görsel modeli anlamsız tekrarla doldurur.",
+    // Canlı testte görüldü (job MENAR-MAT1011-20260905110057): dolu bir
+    // kitaplık arka planı "hafif derinlik" katsa da ön plandaki sayılacak
+    // kürelerden dikkat çeken görsel gürültü olarak değerlendirildi.
+    "- ARKA_PLAN SEÇİMİ — SAYIM GEREKTİREN SAHNELERDE (renk_miktar_sayimlari doluyken): arka_plan'a " +
+      "kalabalık/çok-nesneli, iç detayı zengin bir öğe (ör. dolu bir kitaplık, raflarla dolu bir vitrin) " +
+      "KOYMA — bu, sayılacak ön plan nesnesinden dikkat çeken görsel gürültü oluşturur. Bu tür " +
+      "sahnelerde arka_plan TEK bir sade/nötr yüzey veya birkaç belirsiz-şekilli öğeyle sınırlı kalmalı " +
+      "— bağlamı desteklesin ama kendi başına dikkat çekmesin.",
     "- Çeldiriciler rastgele değil, konuyu eksik öğrenen/yanlış yapılandıran öğrencinin düşeceği gerçek " +
-      "kavram yanılgısından türetilir. 'Hepsi', 'Hiçbiri', 'A ve B' gibi seçenekler YASAK. Doğru seçenek " +
-      "diğerlerinden uzunluk/detay bakımından öne çıkmasın; tüm seçenekler biçim ve uzunlukça benzer olsun.",
+      "kavram yanılgısından türetilir. Yalnızca seçenek sayısını tamamlamak için bariz/çekiciliği olmayan " +
+      "bir yanlış şık YAZMA — her çeldiricinin gerçek bir yanılgıyı temsil etmesi gerekir. KAÇIŞ ŞIKLARI " +
+      "('Hepsi', 'Hiçbiri', 'Yukarıdakilerin hepsi/hiçbiri', 'Seçim yapılamaz', 'Belirlenemez', 'Yetersiz " +
+      "bilgi', 'Karar verilemez' ve benzerleri) HER ZAMAN YASAK — bunlar öğrenciye gerçek bir muhakeme " +
+      "yapmadan kaçış yolu sunar. AYNI ŞEKİLDE, seçenek listesindeki İKİ AYRI HARFİ birleştiren 'A ve B', " +
+      "'A veya B' gibi bileşik şıklar da YASAK (kılavuz/soru_koku_hatalari.md §2.5.2, madde 5) — öğrenci " +
+      "harflerden yalnız birinin doğruluğundan emin olunca diğerlerini analiz etmeden eleyebilir/seçebilir. " +
+      "Bunun İSTİSNASI, harfleri DEĞİL numaralı önermeleri (I/II/III gibi) değerlendiren 'Yalnız I', 'I ve " +
+      "II', 'I, II ve III' formatıdır — bu, birden fazla ayrı önermenin doğruluğunu tek tek sınamayı " +
+      "gerektiren, MEB/ÖSYM'de meşru ve farklı bir ölçme mekaniğidir (bkz. yukarıdaki IQ_KURALI 'GERÇEK 1 " +
+      "küçük karar' desen (a)); kazanım/soru yapısı gerçekten gerektiriyorsa kullanılabilir, ama yine de " +
+      "tek bir savunulabilir doğru üretmeli ve biçimiyle ipucu vermemelidir. Doğru seçenek diğerlerinden " +
+      "uzunluk/detay bakımından öne çıkmasın; tüm seçenekler biçim ve uzunlukça benzer olsun.",
     "- Çeldiricinin gerekçesi 'bilgi yanlışlığı' değil 'muhakeme hatası' olmalı: öğrenci seçeneği veriyi " +
       "yanlış yorumlayarak/eksik akıl yürüterek eleyebilmeli, bilgi eksikliğinden değil (bilişsel görüşme " +
       "bulgusu, kılavuz §3.5.2c). Soru, bağlamdaki TEK bir cümle veya veri bulunarak çözülebilir olmamalı " +
       "— en az iki veri/adımın birleştirilmesini gerektirsin.",
     "- Soru kökünde: çift olumsuzluk YASAK ('...olmadığı söylenemez' gibi); öznel ifade YASAK ('sizce' " +
-      "gibi); konuyu tekrar anlatma — bilgi bağlama, yönlendirme köke. Aynı bağlamdaki birden fazla soru " +
-      "birbirinden BAĞIMSIZ çözülebilmeli; 'bir önceki soruda bulduğunuz sonuca göre' türü zincirleme " +
-      "ipucu YASAK.",
+      "gibi) — bunun yerine metne/veriye dayalı, nesnel bir referans kur (ör. 'sizce ana fikir nedir?' " +
+      "değil, 'yazarın bu metinde vurguladığı temel düşünce aşağıdakilerden hangisidir?'); konuyu tekrar " +
+      "anlatma — bilgi bağlama, yönlendirme köke. Aynı bağlamdaki birden fazla soru birbirinden BAĞIMSIZ " +
+      "çözülebilmeli; 'bir önceki soruda bulduğunuz sonuca göre' türü zincirleme ipucu YASAK.",
+    // kılavuz/soru_koku_hatalari.md §2.5.2, madde 7 — özellikle TDE ve BTG
+    // (ortak bilimsel metin) modlarında geçerli, ama metne dayalı her soruda uygulanır.
+    "- Metne/ortak metne dayalı sorularda (TDE, BTG) seçenekler metindeki bir cümleyi/kelime grubunu " +
+      "BİREBİR kopyalamamalı — anlamca özdeş ama farklı kelimelerle ifade edilmiş olmalı; aksi halde " +
+      "öğrenci metni anlamadan görsel eşleştirmeyle doğru seçeneği bulabilir.",
     "- Görsel, metinde zaten yazılanı birebir resmetmemeli (ör. '3 elma var' yazıp yanına 3 elma çizmek " +
       "işlevsizdir); metinde YER ALMAYAN, çözüm için okunması gereken yeni bir veriyi taşımalı.",
+    // Canlı testte görüldü (job MENAR-MAT1011-20260905110057): metin "masadaki
+    // turuncu ahşap küreler" diyerek nesneden bahsetti ama adedin YALNIZ
+    // görselden okunacağını hiçbir yerde açıkça işaretlemedi.
+    "- Bir veri metinde HİÇ verilmeyip yalnız görselden okunacaksa (bkz. baglam_katmani.islev), bu " +
+      "durumu bağlam metninde veya soru kökünde 'Görseldeki [nesne]...' biçiminde AÇIK bir ifadeyle " +
+      "işaretle (ör. 'Görseldeki masada bulunan küreler...') — veriyi 'masadaki X'ler' gibi dolaylı " +
+      "anlatıp görsele bakma gerekliliğini üstü kapalı bırakma; öğrenci metni okur okumaz görsele " +
+      "bakması gerektiğini netçe anlamalı.",
     "- Bağlam ve soru; kültür, cinsiyet, coğrafi bölge, din veya ideoloji açısından tarafsız ve kapsayıcı " +
       "olmalı.",
     "- stimulus (bağlam metni/notlar) veya soru kökünde sorunun kendi tasarımına dair ÜST-YORUM YAZMA " +
@@ -799,6 +963,16 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "dolgu cümle YASAK. Zorluk dilden değil matematikten/muhakemeden gelmeli. ('Bir sistemin " +
       "operasyonel çevrim kapasitesinin optimizasyonu...' değil, 'Makine bir saatte 240 parça üretir' " +
       "gibi doğrudan, ölçülebilir anlatım.)",
+    // Canlı testte görüldü (job MENAR-MAT1011-20260905110057): asal sayı
+    // koşulu "yalnızca tek grup oluşturularak veya her gruba tek küre
+    // konularak kurulabilmesi" gibi matematiksel olarak doğru ama uzun/dolaylı
+    // bir betimlemeyle anlatıldı.
+    "- Bağlamdaki bir matematiksel KOŞUL/ÖZELLİĞİ (asal olma, tam bölünebilme, eşlik/teklik vb.) çok " +
+      "maddeli, dolaylı bir betimlemeyle (ör. 'yalnızca X yapılarak veya Y yapılarak kurulabilmesi') " +
+      "gizlemeye çalışma — bu kısalık/açıklık ilkesini ihlal eder ve öğrenciyi gereksiz yere yorar. " +
+      "Koşulu STANDART matematiksel terimiyle doğrudan ifade et (ör. '...toplam küre sayısının asal " +
+      "olması isteniyor'); bağlamın asıl zorluğu zaten HANGİ sayının bu koşulu sağladığını bulmaktır, " +
+      "koşulun kendisini çözmek değil.",
     "- Bilgiyi kullanma: 'formül verilmiş, değerleri yerine yaz' türü soru tek başına yetersizdir. " +
       "Öğrenci şu zinciri kurmalı: veriyi oku → gerekeni seç → ilişkiyi fark et → modeli kur → işlemi " +
       "yap → sonucu yorumla. Özellikle TYT düzeyinde asıl güçlük çoğu zaman işlem değil, HANGİ işlemin " +

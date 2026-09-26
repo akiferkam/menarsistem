@@ -5,7 +5,17 @@ import { CurriculumSchema, type Curriculum } from "./schema.js";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 
-export type CurriculumSubject = "matematik" | "geometri" | "fizik" | "kimya" | "biyoloji" | "tde";
+export type CurriculumSubject =
+  | "matematik"
+  | "geometri"
+  | "fizik"
+  | "kimya"
+  | "biyoloji"
+  | "tde"
+  | "cografya"
+  | "tarih"
+  | "felsefe"
+  | "dkab";
 
 // Eskiden tek bir modül-seviyesi `cached` değişkeni vardı — bu, ikinci bir
 // ders (geometri) eklendiğinde YANLIŞ müfredatı döndürecekti (ilk çağrının

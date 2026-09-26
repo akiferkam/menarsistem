@@ -24,7 +24,7 @@ export const OutcomeSchema = z.object({
   // kazanım KODU vermiyor, yalnız düz cümlelik "öğrenme çıktısı özeti" bulunduruyor
   // — bu durumlarda kod parse script'i tarafından SUBJ.sınıf.ünite.sıra
   // olarak sentezlendi (resmî bir MEB kodu DEĞİL, dahili tutarlı bir kimlik).
-  code: z.string().regex(/^(MAT|GEO|FIZ|KIM|BIY|TDE)\.\d{1,2}\.\d+\.\d+$/),
+  code: z.string().regex(/^(MAT|GEO|FIZ|KIM|BIY|TDE|COĞ|TAR|FEL|DKAB)\.\d{1,2}\.\d+\.\d+$/),
   grade: z.enum(["9", "10", "11", "12"]),
   exam_tracks: z
     .array(z.enum(["9. Sınıf", "10. Sınıf", "11. Sınıf", "12. Sınıf", "TYT", "AYT"]))
@@ -46,7 +46,18 @@ export const OutcomeSchema = z.object({
 export type Outcome = z.infer<typeof OutcomeSchema>;
 
 export const CurriculumSchema = z.object({
-  subject: z.enum(["Matematik", "Geometri", "Fizik", "Kimya", "Biyoloji", "Türk Dili ve Edebiyatı"]),
+  subject: z.enum([
+    "Matematik",
+    "Geometri",
+    "Fizik",
+    "Kimya",
+    "Biyoloji",
+    "Türk Dili ve Edebiyatı",
+    "Coğrafya",
+    "Tarih",
+    "Felsefe",
+    "Din Kültürü ve Ahlak Bilgisi",
+  ]),
   source: z.object({
     workflow_file: z.string(),
     extracted_node: z.string(),

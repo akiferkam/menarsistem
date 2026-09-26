@@ -11,6 +11,7 @@ import {
   type KanitTablosu,
 } from "@menar/core";
 import { buildTenantProviderDeps } from "../lib/provider-deps.js";
+import { maybeAssembleTopluUretim } from "./toplu-pdf.js";
 import type { Repository } from "../db/repository.js";
 import type { IsKaydi } from "../db/types.js";
 
@@ -70,7 +71,7 @@ export function startQueueWorker(cfg: WorkerConfig): { stop: () => void } {
   async function processJob(job: IsKaydi): Promise<void> {
     try {
       const input = JSON.parse(job.inputJson) as JobInput;
-      const deps = buildTenantProviderDeps(job.yayineviId, cfg.repo, cfg.encryptionSecret);
+      const deps = buildTenantProviderDeps(job.yayineviId, cfg.repo, cfg.encryptionSecret, input.gorselModeli);
       const ledger = cfg.repo.yayinevi.getLedger(job.yayineviId);
 
       let sonuc;
@@ -103,9 +104,15 @@ export function startQueueWorker(cfg: WorkerConfig): { stop: () => void } {
       // fal.ai'nin gerçek görsel sayısını/maliyetini sessizce kaybediyordu
       // (canlı bir görsel-hata teşhisi sırasında fark edildi). `baglamGorseli.
       // gorselSaglayici` hangi nesnenin gerçekten çağrıldığını taşır.
+      // Ders bazlı YUKSEK override kullanıldıysa (bkz. 20-baglam-gorseli.ts
+      // `gorselYuksekKaliteDersAnahtari`), maliyet o override'ın gerçek
+      // model/provider'ından okunmalı — genel `uretimYuksekKalite`den değil.
+      const dersAnahtari = sonuc.durum === "TAMAMLANDI" ? sonuc.baglamGorseli.gorselYuksekKaliteDersAnahtari : undefined;
       const gorselUretimDeps =
-        sonuc.durum === "TAMAMLANDI" && sonuc.baglamGorseli.gorselSaglayici === "YUKSEK" && deps.gorsel.uretimYuksekKalite
-          ? deps.gorsel.uretimYuksekKalite
+        sonuc.durum === "TAMAMLANDI" && sonuc.baglamGorseli.gorselSaglayici === "YUKSEK"
+          ? (dersAnahtari ? deps.gorsel.uretimYuksekKaliteDersOverride?.[dersAnahtari] : undefined) ??
+            deps.gorsel.uretimYuksekKalite ??
+            deps.gorsel.uretim
           : deps.gorsel.uretim;
       const stages = summarizeCost([
         { stage: "generator", provider: deps.generator.provider, model: deps.generator.model },
@@ -172,6 +179,17 @@ export function startQueueWorker(cfg: WorkerConfig): { stop: () => void } {
         hataMesaji: err instanceof Error ? err.message : String(err),
         finishedAt: new Date().toISOString(),
       });
+    } finally {
+      // Job'un durumu ne olursa olsun (DONE/NEEDS_REVIEW/FAILED — hepsi
+      // "artık QUEUED/RUNNING değil" anlamına gelir) bir toplu üretime aitse
+      // kardeşlerinin de bitip bitmediği kontrol edilir. `job.topluUretimId`
+      // parametre olarak gelen ilk (eski) `job` nesnesinden okunuyor — bu alan
+      // işlem sırasında değişmez, yeniden DB'den okumaya gerek yok.
+      if (job.topluUretimId) {
+        maybeAssembleTopluUretim(job.topluUretimId, cfg.repo, cfg.outputDir).catch((err) => {
+          console.error(`Toplu üretim ${job.topluUretimId} PDF birleştirme hatası:`, err);
+        });
+      }
     }
   }
 

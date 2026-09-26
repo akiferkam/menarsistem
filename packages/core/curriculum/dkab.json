@@ -1,0 +1,1499 @@
+{
+  "subject": "Din Kültürü ve Ahlak Bilgisi",
+  "source": {
+    "workflow_file": "curriculum/Din_Kültürü_ve_Ahlak_Bilgisi_Dersi_Unite_ve_Kazanimlari.docx",
+    "extracted_node": "docx word/document.xml -> paragraf metni (Claude, 2026-09-16)",
+    "extracted_at": "2026-09-16"
+  },
+  "outcome_count": 73,
+  "outcomes": [
+    {
+      "code": "DKAB.9.1.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "1. Ünite: Allah-insan İlişkisi",
+      "theme_order": 1,
+      "outcome": "İnsanın yaratılışını ve özelliklerini ayetlerden hareketle müşahede edebilme",
+      "content_frame": "İnsan ve İnsanın Yaratılışı / Doğruyu Arayan Bir Varlık Olarak İnsan / İbadet ve Dua ile Allah (cc) ile İletişim Kuran Bir Varlık Olarak İnsan / Kur'an'dan Mesajlar",
+      "micro": [
+        "dua",
+        "fıtrat",
+        "hamt",
+        "marifet",
+        "mükellef",
+        "tövbe",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.1.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "1. Ünite: Allah-insan İlişkisi",
+      "theme_order": 1,
+      "outcome": "İnsanın doğruyu arayan bir varlık olarak bilgiye ulaşma yolları hakkında eleştirel düşünebilme",
+      "content_frame": "İnsan ve İnsanın Yaratılışı / Doğruyu Arayan Bir Varlık Olarak İnsan / İbadet ve Dua ile Allah (cc) ile İletişim Kuran Bir Varlık Olarak İnsan / Kur'an'dan Mesajlar",
+      "micro": [
+        "dua",
+        "fıtrat",
+        "hamt",
+        "marifet",
+        "mükellef",
+        "tövbe",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.1.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "1. Ünite: Allah-insan İlişkisi",
+      "theme_order": 1,
+      "outcome": "Allah (cc) ile iletişimin ibadet ve dua ile sağlandığını yansıtabilme",
+      "content_frame": "İnsan ve İnsanın Yaratılışı / Doğruyu Arayan Bir Varlık Olarak İnsan / İbadet ve Dua ile Allah (cc) ile İletişim Kuran Bir Varlık Olarak İnsan / Kur'an'dan Mesajlar",
+      "micro": [
+        "dua",
+        "fıtrat",
+        "hamt",
+        "marifet",
+        "mükellef",
+        "tövbe",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.1.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "1. Ünite: Allah-insan İlişkisi",
+      "theme_order": 1,
+      "outcome": "Rum suresinin 17-27. ayetlerinin mesajlarını anlamada temel kaynakları kullanabilme",
+      "content_frame": "İnsan ve İnsanın Yaratılışı / Doğruyu Arayan Bir Varlık Olarak İnsan / İbadet ve Dua ile Allah (cc) ile İletişim Kuran Bir Varlık Olarak İnsan / Kur'an'dan Mesajlar",
+      "micro": [
+        "dua",
+        "fıtrat",
+        "hamt",
+        "marifet",
+        "mükellef",
+        "tövbe",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.2.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "2. Ünite: İslam'da İnanç Esasları",
+      "theme_order": 2,
+      "outcome": "İmanın mahiyetini müşahede edebilme",
+      "content_frame": "İman ve İmanın Mahiyeti / İslam'da İman Esasları / İmanın Bireye ve Topluma Kazandırdıkları / Kur'an'dan Mesajlar",
+      "micro": [
+        "gayb",
+        "iman",
+        "kutsal kitap",
+        "melek",
+        "tevhit",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.2.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "2. Ünite: İslam'da İnanç Esasları",
+      "theme_order": 2,
+      "outcome": "İslam'ın iman esaslarını ayet ve hadislerden hareketle özetleyebilme",
+      "content_frame": "İman ve İmanın Mahiyeti / İslam'da İman Esasları / İmanın Bireye ve Topluma Kazandırdıkları / Kur'an'dan Mesajlar",
+      "micro": [
+        "gayb",
+        "iman",
+        "kutsal kitap",
+        "melek",
+        "tevhit",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.2.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "2. Ünite: İslam'da İnanç Esasları",
+      "theme_order": 2,
+      "outcome": "İmanın bireye ve topluma kazandırdıklarını idrak edebilme",
+      "content_frame": "İman ve İmanın Mahiyeti / İslam'da İman Esasları / İmanın Bireye ve Topluma Kazandırdıkları / Kur'an'dan Mesajlar",
+      "micro": [
+        "gayb",
+        "iman",
+        "kutsal kitap",
+        "melek",
+        "tevhit",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.2.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "2. Ünite: İslam'da İnanç Esasları",
+      "theme_order": 2,
+      "outcome": "Bakara suresinin 177. ayetindeki mesajları anlamak için Kur'an-ı Kerim meallerine başvurabilme",
+      "content_frame": "İman ve İmanın Mahiyeti / İslam'da İman Esasları / İmanın Bireye ve Topluma Kazandırdıkları / Kur'an'dan Mesajlar",
+      "micro": [
+        "gayb",
+        "iman",
+        "kutsal kitap",
+        "melek",
+        "tevhit",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.3.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "3. Ünite: İslam'da İbadetler",
+      "theme_order": 3,
+      "outcome": "İslam'da ibadet ve ibadetin temel ilkeleri hakkında bilgi toplayabilme",
+      "content_frame": "İslam'da İbadetin Kapsamı / İslam'da Temel İbadetler / İnsan ve İbadet / Kur'an'dan Mesajlar",
+      "micro": [
+        "ibadet",
+        "ihlas",
+        "ihsan",
+        "itidal",
+        "tefekkür",
+        "tesettür",
+        "tevazu",
+        "yardımlaşma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.3.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "3. Ünite: İslam'da İbadetler",
+      "theme_order": 3,
+      "outcome": "İslam'da temel ibadetleri sınıflandırabilme",
+      "content_frame": "İslam'da İbadetin Kapsamı / İslam'da Temel İbadetler / İnsan ve İbadet / Kur'an'dan Mesajlar",
+      "micro": [
+        "ibadet",
+        "ihlas",
+        "ihsan",
+        "itidal",
+        "tefekkür",
+        "tesettür",
+        "tevazu",
+        "yardımlaşma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.3.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "3. Ünite: İslam'da İbadetler",
+      "theme_order": 3,
+      "outcome": "İnsan ve ibadet ilişkisini yorumlayabilme",
+      "content_frame": "İslam'da İbadetin Kapsamı / İslam'da Temel İbadetler / İnsan ve İbadet / Kur'an'dan Mesajlar",
+      "micro": [
+        "ibadet",
+        "ihlas",
+        "ihsan",
+        "itidal",
+        "tefekkür",
+        "tesettür",
+        "tevazu",
+        "yardımlaşma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.3.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "3. Ünite: İslam'da İbadetler",
+      "theme_order": 3,
+      "outcome": "Bakara suresinin 21. Zariyat suresinin 56 ve Hicr suresinin 99. ayetlerinin mesajlarını anlamak için Kur'an-ı Kerim meallerine başvurabilme",
+      "content_frame": "İslam'da İbadetin Kapsamı / İslam'da Temel İbadetler / İnsan ve İbadet / Kur'an'dan Mesajlar",
+      "micro": [
+        "ibadet",
+        "ihlas",
+        "ihsan",
+        "itidal",
+        "tefekkür",
+        "tesettür",
+        "tevazu",
+        "yardımlaşma",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.4.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "4. Ünite: İslam'da Ahlak İlkeleri",
+      "theme_order": 4,
+      "outcome": "İslam'da ahlakın mahiyetini müşahede edebilme",
+      "content_frame": "İslam'da Ahlakın Mahiyeti / Ahlakın Temel Unsurları / Ahlaki Tutum ve Davranışlar / Kur'an'dan Mesajlar",
+      "micro": [
+        "adalet",
+        "ahilik",
+        "ahlak",
+        "şecaat",
+        "hikmet",
+        "iffet",
+        "vicdan",
+        "terbiye",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.4.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "4. Ünite: İslam'da Ahlak İlkeleri",
+      "theme_order": 4,
+      "outcome": "Ahlakın temel unsurlarını sentezleyebilme",
+      "content_frame": "İslam'da Ahlakın Mahiyeti / Ahlakın Temel Unsurları / Ahlaki Tutum ve Davranışlar / Kur'an'dan Mesajlar",
+      "micro": [
+        "adalet",
+        "ahilik",
+        "ahlak",
+        "şecaat",
+        "hikmet",
+        "iffet",
+        "vicdan",
+        "terbiye",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.4.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "4. Ünite: İslam'da Ahlak İlkeleri",
+      "theme_order": 4,
+      "outcome": "Ahlaki tutum ve davranışları idrak edebilme",
+      "content_frame": "İslam'da Ahlakın Mahiyeti / Ahlakın Temel Unsurları / Ahlaki Tutum ve Davranışlar / Kur'an'dan Mesajlar",
+      "micro": [
+        "adalet",
+        "ahilik",
+        "ahlak",
+        "şecaat",
+        "hikmet",
+        "iffet",
+        "vicdan",
+        "terbiye",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.4.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "4. Ünite: İslam'da Ahlak İlkeleri",
+      "theme_order": 4,
+      "outcome": "İsra suresinin 23-29. ayetlerinin mesajlarını anlamak için Kur'an-ı Kerim meallerine başvurabilme",
+      "content_frame": "İslam'da Ahlakın Mahiyeti / Ahlakın Temel Unsurları / Ahlaki Tutum ve Davranışlar / Kur'an'dan Mesajlar",
+      "micro": [
+        "adalet",
+        "ahilik",
+        "ahlak",
+        "şecaat",
+        "hikmet",
+        "iffet",
+        "vicdan",
+        "terbiye",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.5.1",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "5. Ünite: Kur'an'a Göre Hz. Muhammed",
+      "theme_order": 5,
+      "outcome": "Hz. Muhammed'in (sav) beşerî ve peygamberlik yönünü özetleyebilme",
+      "content_frame": "Hz. Muhammed'in Beşerî ve Peygamberlik Yönü / Hz. Muhammed'in Örnekliği / Kültürümüzde Hz. Muhammed ve Ehlibeyt Sevgisi / Kur'an'dan Mesajlar",
+      "micro": [
+        "Ehlibeyt",
+        "hadis",
+        "hatemülenbiya",
+        "nübüvvet",
+        "peygamber",
+        "sünnet",
+        "tebliğ",
+        "tebyin",
+        "temsil",
+        "teşri",
+        "üsveihasene",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.5.2",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "5. Ünite: Kur'an'a Göre Hz. Muhammed",
+      "theme_order": 5,
+      "outcome": "Hz. Muhammed'in (sav) örnekliğini esas alarak kendi bakış açısını yapılandırabilme",
+      "content_frame": "Hz. Muhammed'in Beşerî ve Peygamberlik Yönü / Hz. Muhammed'in Örnekliği / Kültürümüzde Hz. Muhammed ve Ehlibeyt Sevgisi / Kur'an'dan Mesajlar",
+      "micro": [
+        "Ehlibeyt",
+        "hadis",
+        "hatemülenbiya",
+        "nübüvvet",
+        "peygamber",
+        "sünnet",
+        "tebliğ",
+        "tebyin",
+        "temsil",
+        "teşri",
+        "üsveihasene",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.5.3",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "5. Ünite: Kur'an'a Göre Hz. Muhammed",
+      "theme_order": 5,
+      "outcome": "Kültürümüzde Hz. Muhammed (sav) ve Ehlibeyt sevgisini yorumlayabilme",
+      "content_frame": "Hz. Muhammed'in Beşerî ve Peygamberlik Yönü / Hz. Muhammed'in Örnekliği / Kültürümüzde Hz. Muhammed ve Ehlibeyt Sevgisi / Kur'an'dan Mesajlar",
+      "micro": [
+        "Ehlibeyt",
+        "hadis",
+        "hatemülenbiya",
+        "nübüvvet",
+        "peygamber",
+        "sünnet",
+        "tebliğ",
+        "tebyin",
+        "temsil",
+        "teşri",
+        "üsveihasene",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.9.5.4",
+      "grade": "9",
+      "exam_tracks": [
+        "9. Sınıf"
+      ],
+      "theme": "5. Ünite: Kur'an'a Göre Hz. Muhammed",
+      "theme_order": 5,
+      "outcome": "Ahzab suresinin 45-46 ve Nahl suresinin 43-44. ayetlerinin mesajlarını anlamak için Kur'an-ı Kerim meallerine başvurabilme",
+      "content_frame": "Hz. Muhammed'in Beşerî ve Peygamberlik Yönü / Hz. Muhammed'in Örnekliği / Kültürümüzde Hz. Muhammed ve Ehlibeyt Sevgisi / Kur'an'dan Mesajlar",
+      "micro": [
+        "Ehlibeyt",
+        "hadis",
+        "hatemülenbiya",
+        "nübüvvet",
+        "peygamber",
+        "sünnet",
+        "tebliğ",
+        "tebyin",
+        "temsil",
+        "teşri",
+        "üsveihasene",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.1.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "1. Ünite: İslam'da Varlık ve Bilgi",
+      "theme_order": 1,
+      "outcome": "İslam'da bilginin yerini ve kaynaklarını çözümleyebilme",
+      "content_frame": "İslam'da Bilgi ve Bilginin Kaynakları / Allah-Âlem İlişkisi / Kur'an'dan Mesajlar",
+      "micro": [
+        "akıl",
+        "bilgi",
+        "gayb",
+        "mütevatir",
+        "sadık haber",
+        "şehadet",
+        "varlık",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.1.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "1. Ünite: İslam'da Varlık ve Bilgi",
+      "theme_order": 1,
+      "outcome": "Allah-âlem ilişkisini müşahede edebilme",
+      "content_frame": "İslam'da Bilgi ve Bilginin Kaynakları / Allah-Âlem İlişkisi / Kur'an'dan Mesajlar",
+      "micro": [
+        "akıl",
+        "bilgi",
+        "gayb",
+        "mütevatir",
+        "sadık haber",
+        "şehadet",
+        "varlık",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.1.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "1. Ünite: İslam'da Varlık ve Bilgi",
+      "theme_order": 1,
+      "outcome": "İsra suresinin 36 ve Mülk suresinin 23. ayetlerinin mesajlarını anlamak için Kur'an-ı Kerim meallerine başvurabilme",
+      "content_frame": "İslam'da Bilgi ve Bilginin Kaynakları / Allah-Âlem İlişkisi / Kur'an'dan Mesajlar",
+      "micro": [
+        "akıl",
+        "bilgi",
+        "gayb",
+        "mütevatir",
+        "sadık haber",
+        "şehadet",
+        "varlık",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.2.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "2. Ünite: Allah'ı Tanımak",
+      "theme_order": 2,
+      "outcome": "Allah'ın (cc) varlığının delillerini müşahede edebilme",
+      "content_frame": "Allah'ın Varlığının Delilleri / Allah'ı İsim ve Sıfatlarıyla Tanımak / Kur'an'dan Mesajlar",
+      "micro": [
+        "delil",
+        "evren",
+        "gaye",
+        "marifetullah",
+        "nizam",
+        "teleoloji",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.2.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "2. Ünite: Allah'ı Tanımak",
+      "theme_order": 2,
+      "outcome": "Allah'ı (cc) gereği gibi tanıyabilmek için O'nun isim ve sıfatlarını bağlamına uygun kullanabilme",
+      "content_frame": "Allah'ın Varlığının Delilleri / Allah'ı İsim ve Sıfatlarıyla Tanımak / Kur'an'dan Mesajlar",
+      "micro": [
+        "delil",
+        "evren",
+        "gaye",
+        "marifetullah",
+        "nizam",
+        "teleoloji",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.2.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "2. Ünite: Allah'ı Tanımak",
+      "theme_order": 2,
+      "outcome": "Haşr suresinin 22-24. ayetlerindeki mesajları anlamak için Kur'an-ı Kerim meallerine başvurabilme",
+      "content_frame": "Allah'ın Varlığının Delilleri / Allah'ı İsim ve Sıfatlarıyla Tanımak / Kur'an'dan Mesajlar",
+      "micro": [
+        "delil",
+        "evren",
+        "gaye",
+        "marifetullah",
+        "nizam",
+        "teleoloji",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.3.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "3. Ünite: İslam'ın Evrensel Mesajları",
+      "theme_order": 3,
+      "outcome": "İslam'ın evrensel mesajlarından biri olan tevhit ilkesi hakkında bilgi toplayabilme",
+      "content_frame": "İslam'ın Tevhit İlkesi / İslam'da Adalet ve Eşitlik / İslam ve Barış / Kur'an'dan Mesajlar",
+      "micro": [
+        "cihat",
+        "emanet",
+        "emniyet",
+        "güven",
+        "hak",
+        "hukuk",
+        "liyakat",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.3.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "3. Ünite: İslam'ın Evrensel Mesajları",
+      "theme_order": 3,
+      "outcome": "İslam'da adalet ve eşitlik kavramlarını bağlamına uygun kullanabilme",
+      "content_frame": "İslam'ın Tevhit İlkesi / İslam'da Adalet ve Eşitlik / İslam ve Barış / Kur'an'dan Mesajlar",
+      "micro": [
+        "cihat",
+        "emanet",
+        "emniyet",
+        "güven",
+        "hak",
+        "hukuk",
+        "liyakat",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.3.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "3. Ünite: İslam'ın Evrensel Mesajları",
+      "theme_order": 3,
+      "outcome": "İslam ve barış ilişkisini yorumlayabilme",
+      "content_frame": "İslam'ın Tevhit İlkesi / İslam'da Adalet ve Eşitlik / İslam ve Barış / Kur'an'dan Mesajlar",
+      "micro": [
+        "cihat",
+        "emanet",
+        "emniyet",
+        "güven",
+        "hak",
+        "hukuk",
+        "liyakat",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.3.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "3. Ünite: İslam'ın Evrensel Mesajları",
+      "theme_order": 3,
+      "outcome": "Nahl suresinin 90, Nisa suresinin 58 ve Bakara suresinin 208. ayetlerinin mesajlarını anlamak için Kur'an-ı Kerim meallerine başvurabilme",
+      "content_frame": "İslam'ın Tevhit İlkesi / İslam'da Adalet ve Eşitlik / İslam ve Barış / Kur'an'dan Mesajlar",
+      "micro": [
+        "cihat",
+        "emanet",
+        "emniyet",
+        "güven",
+        "hak",
+        "hukuk",
+        "liyakat",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.4.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "4. Ünite: Din, Çevre ve Teknoloji",
+      "theme_order": 4,
+      "outcome": "İnsan, çevre ve ahlak arasındaki ilişkiyi yorumlayabilme",
+      "content_frame": "İnsan, Çevre ve Ahlak / Teknoloji ve Ahlak / Çevre ve Teknoloji / Kur'an'dan Mesajlar",
+      "micro": [
+        "çevre",
+        "teknoloji",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.4.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "4. Ünite: Din, Çevre ve Teknoloji",
+      "theme_order": 4,
+      "outcome": "Teknoloji ve ahlak ilişkisini çözümleyebilme",
+      "content_frame": "İnsan, Çevre ve Ahlak / Teknoloji ve Ahlak / Çevre ve Teknoloji / Kur'an'dan Mesajlar",
+      "micro": [
+        "çevre",
+        "teknoloji",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.4.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "4. Ünite: Din, Çevre ve Teknoloji",
+      "theme_order": 4,
+      "outcome": "Çevre ve teknoloji ilişkisini özetleyebilme",
+      "content_frame": "İnsan, Çevre ve Ahlak / Teknoloji ve Ahlak / Çevre ve Teknoloji / Kur'an'dan Mesajlar",
+      "micro": [
+        "çevre",
+        "teknoloji",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.4.4",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "4. Ünite: Din, Çevre ve Teknoloji",
+      "theme_order": 4,
+      "outcome": "Rum suresinin 41. ayetinin mesajlarını anlamak için Kur'an-ı Kerim meallerine başvurabilme",
+      "content_frame": "İnsan, Çevre ve Ahlak / Teknoloji ve Ahlak / Çevre ve Teknoloji / Kur'an'dan Mesajlar",
+      "micro": [
+        "çevre",
+        "teknoloji",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.5.1",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "5. Ünite: İslam Düşüncesinde İtikadi-siyasi ve Fıkhi Yorumlar",
+      "theme_order": 5,
+      "outcome": "Dinî yorum farklılıklarının ortaya çıkış sebeplerini sentezleyebilme",
+      "content_frame": "Dinî Yorum Farklılıklarının Sebepleri / İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar / Kur'an'dan Mesajlar",
+      "micro": [
+        "Ehlisünnet",
+        "fıkıh",
+        "itikat",
+        "mezhep",
+        "tevil",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.5.2",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "5. Ünite: İslam Düşüncesinde İtikadi-siyasi ve Fıkhi Yorumlar",
+      "theme_order": 5,
+      "outcome": "İslam düşüncesindeki itikadi-siyasi ve fıkhi yorumları irdeleyebilme",
+      "content_frame": "Dinî Yorum Farklılıklarının Sebepleri / İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar / Kur'an'dan Mesajlar",
+      "micro": [
+        "Ehlisünnet",
+        "fıkıh",
+        "itikat",
+        "mezhep",
+        "tevil",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.10.5.3",
+      "grade": "10",
+      "exam_tracks": [
+        "10. Sınıf"
+      ],
+      "theme": "5. Ünite: İslam Düşüncesinde İtikadi-siyasi ve Fıkhi Yorumlar",
+      "theme_order": 5,
+      "outcome": "Hucurat suresinin 13. ayetinin mesajlarını anlamak için Kur'an-ı Kerim meallerine başvurabilme",
+      "content_frame": "Dinî Yorum Farklılıklarının Sebepleri / İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar / Kur'an'dan Mesajlar",
+      "micro": [
+        "Ehlisünnet",
+        "fıkıh",
+        "itikat",
+        "mezhep",
+        "tevil",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.1.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "1. Ünite: Kader, İrade ve Sorumluluk",
+      "theme_order": 1,
+      "outcome": "Kader ve kaderle ilgili kavramları yapılandırabilme",
+      "content_frame": "İnsan ve Kader / Akıl, İrade ve Sorumluluk Sahibi Bir Varlık Olarak İnsan / Kur'an'dan Mesajlar",
+      "micro": [
+        "insan",
+        "irade",
+        "kader",
+        "kaza",
+        "özgürlük",
+        "sorumluluk",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.1.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "1. Ünite: Kader, İrade ve Sorumluluk",
+      "theme_order": 1,
+      "outcome": "İnsan, akıl, irade ve sorumluluk kavramları arasındaki ilişki hakkında eleştirel düşünebilme",
+      "content_frame": "İnsan ve Kader / Akıl, İrade ve Sorumluluk Sahibi Bir Varlık Olarak İnsan / Kur'an'dan Mesajlar",
+      "micro": [
+        "insan",
+        "irade",
+        "kader",
+        "kaza",
+        "özgürlük",
+        "sorumluluk",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.1.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "1. Ünite: Kader, İrade ve Sorumluluk",
+      "theme_order": 1,
+      "outcome": "Bakara suresinin 286. ayetinin mesajlarını anlamak için Kur'an-ı Kerim meallerine başvurabilme",
+      "content_frame": "İnsan ve Kader / Akıl, İrade ve Sorumluluk Sahibi Bir Varlık Olarak İnsan / Kur'an'dan Mesajlar",
+      "micro": [
+        "insan",
+        "irade",
+        "kader",
+        "kaza",
+        "özgürlük",
+        "sorumluluk",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.2.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "2. Ünite: Din, Felsefe, Bilim ve Sanat",
+      "theme_order": 2,
+      "outcome": "Din tanımlarını ve farklı disiplinlerin dine yaklaşımları arasında mukayese yapabilme",
+      "content_frame": "Din / Din, Felsefe ve Bilim / Din ve Sanat / Kur'an'dan Mesajlar",
+      "micro": [
+        "âlim",
+        "Beytülhikme",
+        "darülhadis",
+        "darülkurra",
+        "filozof",
+        "ilim",
+        "medrese",
+        "rasathane",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.2.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "2. Ünite: Din, Felsefe, Bilim ve Sanat",
+      "theme_order": 2,
+      "outcome": "Dinin felsefe ve bilimle ilişkisini sorgulayabilme",
+      "content_frame": "Din / Din, Felsefe ve Bilim / Din ve Sanat / Kur'an'dan Mesajlar",
+      "micro": [
+        "âlim",
+        "Beytülhikme",
+        "darülhadis",
+        "darülkurra",
+        "filozof",
+        "ilim",
+        "medrese",
+        "rasathane",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.2.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "2. Ünite: Din, Felsefe, Bilim ve Sanat",
+      "theme_order": 2,
+      "outcome": "Din ve sanat arasındaki ilişkiyi çözümleyebilme",
+      "content_frame": "Din / Din, Felsefe ve Bilim / Din ve Sanat / Kur'an'dan Mesajlar",
+      "micro": [
+        "âlim",
+        "Beytülhikme",
+        "darülhadis",
+        "darülkurra",
+        "filozof",
+        "ilim",
+        "medrese",
+        "rasathane",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.2.4",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "2. Ünite: Din, Felsefe, Bilim ve Sanat",
+      "theme_order": 2,
+      "outcome": "Al-i İmran suresinin 190-191. ayetlerindeki mesajları anlamak için Kur'an-ı Kerim meallerine başvurabilme",
+      "content_frame": "Din / Din, Felsefe ve Bilim / Din ve Sanat / Kur'an'dan Mesajlar",
+      "micro": [
+        "âlim",
+        "Beytülhikme",
+        "darülhadis",
+        "darülkurra",
+        "filozof",
+        "ilim",
+        "medrese",
+        "rasathane",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.3.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "3. Ünite: İslam Medeniyeti ve Gönül Coğrafyamız",
+      "theme_order": 3,
+      "outcome": "Medeniyetin oluşumuna etki eden unsurları çözümleyebilme",
+      "content_frame": "Medeniyetin Oluşumu / İslam Medeniyetinin İzleri / İslam Medeniyetinin Bugünü ve Geleceği / Kur'an'dan Mesajlar",
+      "micro": [
+        "medeniyet",
+        "mimari",
+        "musiki",
+        "vakıf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.3.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "3. Ünite: İslam Medeniyeti ve Gönül Coğrafyamız",
+      "theme_order": 3,
+      "outcome": "İslam medeniyetinin izlerini özetleyebilme",
+      "content_frame": "Medeniyetin Oluşumu / İslam Medeniyetinin İzleri / İslam Medeniyetinin Bugünü ve Geleceği / Kur'an'dan Mesajlar",
+      "micro": [
+        "medeniyet",
+        "mimari",
+        "musiki",
+        "vakıf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.3.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "3. Ünite: İslam Medeniyeti ve Gönül Coğrafyamız",
+      "theme_order": 3,
+      "outcome": "İslam medeniyetinin bugünü ve geleceği hakkında akıl yürütebilme",
+      "content_frame": "Medeniyetin Oluşumu / İslam Medeniyetinin İzleri / İslam Medeniyetinin Bugünü ve Geleceği / Kur'an'dan Mesajlar",
+      "micro": [
+        "medeniyet",
+        "mimari",
+        "musiki",
+        "vakıf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.3.4",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "3. Ünite: İslam Medeniyeti ve Gönül Coğrafyamız",
+      "theme_order": 3,
+      "outcome": "Rum suresinin 9. ayetinin mesajlarını yorumlayabilme",
+      "content_frame": "Medeniyetin Oluşumu / İslam Medeniyetinin İzleri / İslam Medeniyetinin Bugünü ve Geleceği / Kur'an'dan Mesajlar",
+      "micro": [
+        "medeniyet",
+        "mimari",
+        "musiki",
+        "vakıf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.4.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "4. Ünite: İnançla İlgili Meseleler",
+      "theme_order": 4,
+      "outcome": "İnançla ilgili felsefi yaklaşımları sorgulayabilme",
+      "content_frame": "İnançla İlgili Felsefi Yaklaşımlar / Kötülük Problemi / Yeni Dinî Hareketler ve Din İstismarı / Kur'an'dan Mesajlar",
+      "micro": [
+        "din istismarı",
+        "İslamofobi",
+        "iyilik",
+        "kötülük",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.4.2",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "4. Ünite: İnançla İlgili Meseleler",
+      "theme_order": 4,
+      "outcome": "Kötülük problemi hakkında eleştirel düşünebilme",
+      "content_frame": "İnançla İlgili Felsefi Yaklaşımlar / Kötülük Problemi / Yeni Dinî Hareketler ve Din İstismarı / Kur'an'dan Mesajlar",
+      "micro": [
+        "din istismarı",
+        "İslamofobi",
+        "iyilik",
+        "kötülük",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.4.3",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "4. Ünite: İnançla İlgili Meseleler",
+      "theme_order": 4,
+      "outcome": "Din istismarının ve yeni dinî hareketlerin ortaya çıkış sebeplerini-sonuçlarını sorgulayabilme",
+      "content_frame": "İnançla İlgili Felsefi Yaklaşımlar / Kötülük Problemi / Yeni Dinî Hareketler ve Din İstismarı / Kur'an'dan Mesajlar",
+      "micro": [
+        "din istismarı",
+        "İslamofobi",
+        "iyilik",
+        "kötülük",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.4.4",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "4. Ünite: İnançla İlgili Meseleler",
+      "theme_order": 4,
+      "outcome": "Hadid suresinin 1-5. ayetlerinin mesajlarını tahlil edebilme",
+      "content_frame": "İnançla İlgili Felsefi Yaklaşımlar / Kötülük Problemi / Yeni Dinî Hareketler ve Din İstismarı / Kur'an'dan Mesajlar",
+      "micro": [
+        "din istismarı",
+        "İslamofobi",
+        "iyilik",
+        "kötülük",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.11.5.1",
+      "grade": "11",
+      "exam_tracks": [
+        "11. Sınıf"
+      ],
+      "theme": "5. Ünite: Yahudilik ve Hristiyanlık",
+      "theme_order": 5,
+      "outcome": "Yahudilik ve Hristiyanlık dinlerinin tarihini ve temel özelliklerini özetleyebilme",
+      "content_frame": "Yahudilik / Hristiyanlık",
+      "micro": [
+        "Ahd-i Atik",
+        "Ahd-i Cedit",
+        "Elohim",
+        "haç",
+        "havra",
+        "İncil",
+        "katedral",
+        "kilise",
+        "Kitab-ı Mukaddes",
+        "Musevi",
+        "ritüel",
+        "sakrament",
+        "sinagog",
+        "şapel",
+        "Tanah",
+        "teslis",
+        "vaftiz",
+        "Yehova",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.1.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "1. Ünite: Kur'an-ı Kerim",
+      "theme_order": 1,
+      "outcome": "Kur'an-ı Kerim'in tarihi süreci hakkında bilgi toplayabilme",
+      "content_frame": "Kur'an-ı Kerim'in Tarihi / Kur'an-ı Kerim'in Ana Konuları ve Temel Özellikleri / Kur'an-ı Kerim'in Anlaşılmasında Temel İlkeler / Kur'an-ı Kerim ve Kültürümüz / Kur'an'dan Mesajlar",
+      "micro": [
+        "Mushaf",
+        "nüzul",
+        "vahiy",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.1.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "1. Ünite: Kur'an-ı Kerim",
+      "theme_order": 1,
+      "outcome": "Kur'an-ı Kerim'in ana konularını ve temel özelliklerini sentezleyebilme",
+      "content_frame": "Kur'an-ı Kerim'in Tarihi / Kur'an-ı Kerim'in Ana Konuları ve Temel Özellikleri / Kur'an-ı Kerim'in Anlaşılmasında Temel İlkeler / Kur'an-ı Kerim ve Kültürümüz / Kur'an'dan Mesajlar",
+      "micro": [
+        "Mushaf",
+        "nüzul",
+        "vahiy",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.1.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "1. Ünite: Kur'an-ı Kerim",
+      "theme_order": 1,
+      "outcome": "Kur'an-ı Kerim'in anlaşılmasında temel ilkeleri özetleyebilme",
+      "content_frame": "Kur'an-ı Kerim'in Tarihi / Kur'an-ı Kerim'in Ana Konuları ve Temel Özellikleri / Kur'an-ı Kerim'in Anlaşılmasında Temel İlkeler / Kur'an-ı Kerim ve Kültürümüz / Kur'an'dan Mesajlar",
+      "micro": [
+        "Mushaf",
+        "nüzul",
+        "vahiy",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.1.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "1. Ünite: Kur'an-ı Kerim",
+      "theme_order": 1,
+      "outcome": "Kur'an-ı Kerim'in kültürümüz üzerindeki etkisini yorumlayabilme",
+      "content_frame": "Kur'an-ı Kerim'in Tarihi / Kur'an-ı Kerim'in Ana Konuları ve Temel Özellikleri / Kur'an-ı Kerim'in Anlaşılmasında Temel İlkeler / Kur'an-ı Kerim ve Kültürümüz / Kur'an'dan Mesajlar",
+      "micro": [
+        "Mushaf",
+        "nüzul",
+        "vahiy",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.1.5",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "1. Ünite: Kur'an-ı Kerim",
+      "theme_order": 1,
+      "outcome": "İsra suresinin 9. ayetinin mesajlarını anlamak için Kur'an-ı Kerim meallerine başvurabilme",
+      "content_frame": "Kur'an-ı Kerim'in Tarihi / Kur'an-ı Kerim'in Ana Konuları ve Temel Özellikleri / Kur'an-ı Kerim'in Anlaşılmasında Temel İlkeler / Kur'an-ı Kerim ve Kültürümüz / Kur'an'dan Mesajlar",
+      "micro": [
+        "Mushaf",
+        "nüzul",
+        "vahiy",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.2.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "2. Ünite: Din ve Aile",
+      "theme_order": 2,
+      "outcome": "İslam'ın aile kurumuna verdiği önemi yorumlayabilme",
+      "content_frame": "İslam'da Aile / Aile İçi İletişim / Aile ve Ahlaki Değerler / Kur'an'dan Mesajlar",
+      "micro": [
+        "aile",
+        "fedakârlık",
+        "mahremiyet",
+        "merhamet",
+        "sadakat",
+        "vefa",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.2.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "2. Ünite: Din ve Aile",
+      "theme_order": 2,
+      "outcome": "Aile içi iletişim ve etkileşim sürecini çözümleyebilme",
+      "content_frame": "İslam'da Aile / Aile İçi İletişim / Aile ve Ahlaki Değerler / Kur'an'dan Mesajlar",
+      "micro": [
+        "aile",
+        "fedakârlık",
+        "mahremiyet",
+        "merhamet",
+        "sadakat",
+        "vefa",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.2.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "2. Ünite: Din ve Aile",
+      "theme_order": 2,
+      "outcome": "Aile hayatında dikkat edilmesi gereken ahlaki değerleri özetleyebilme",
+      "content_frame": "İslam'da Aile / Aile İçi İletişim / Aile ve Ahlaki Değerler / Kur'an'dan Mesajlar",
+      "micro": [
+        "aile",
+        "fedakârlık",
+        "mahremiyet",
+        "merhamet",
+        "sadakat",
+        "vefa",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.2.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "2. Ünite: Din ve Aile",
+      "theme_order": 2,
+      "outcome": "Ahkaf suresinin 15. ayetindeki mesajları anlamak için Kur'an-ı Kerim meallerine başvurabilme",
+      "content_frame": "İslam'da Aile / Aile İçi İletişim / Aile ve Ahlaki Değerler / Kur'an'dan Mesajlar",
+      "micro": [
+        "aile",
+        "fedakârlık",
+        "mahremiyet",
+        "merhamet",
+        "sadakat",
+        "vefa",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.3.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "3. Ünite: Güncel Dinî Meseleler",
+      "theme_order": 3,
+      "outcome": "Güncel dinî meselelerin çözümünde temel ilke ve yöntemleri özetleyebilme",
+      "content_frame": "Dinî Meselelerin Çözümünde Temel İlke ve Yöntemler / Gıda Maddeleriyle İlgili Meseleler / Bağımlılıkla İlgili Meseleler / Günlük Hayatla İlgili Meseleler / Kur'an'dan Mesajlar",
+      "micro": [
+        "bidat",
+        "haram",
+        "helal",
+        "hurafe",
+        "icma",
+        "içtihat",
+        "kul hakkı",
+        "mekruh",
+        "zaruratıdiniye",
+        "zaruratıhamse",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.3.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "3. Ünite: Güncel Dinî Meseleler",
+      "theme_order": 3,
+      "outcome": "Gıda maddeleriyle ilgili meseleleri yorumlayabilme",
+      "content_frame": "Dinî Meselelerin Çözümünde Temel İlke ve Yöntemler / Gıda Maddeleriyle İlgili Meseleler / Bağımlılıkla İlgili Meseleler / Günlük Hayatla İlgili Meseleler / Kur'an'dan Mesajlar",
+      "micro": [
+        "bidat",
+        "haram",
+        "helal",
+        "hurafe",
+        "icma",
+        "içtihat",
+        "kul hakkı",
+        "mekruh",
+        "zaruratıdiniye",
+        "zaruratıhamse",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.3.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "3. Ünite: Güncel Dinî Meseleler",
+      "theme_order": 3,
+      "outcome": "Bağımlılıkla ilgili meseleleri sorgulayabilme",
+      "content_frame": "Dinî Meselelerin Çözümünde Temel İlke ve Yöntemler / Gıda Maddeleriyle İlgili Meseleler / Bağımlılıkla İlgili Meseleler / Günlük Hayatla İlgili Meseleler / Kur'an'dan Mesajlar",
+      "micro": [
+        "bidat",
+        "haram",
+        "helal",
+        "hurafe",
+        "icma",
+        "içtihat",
+        "kul hakkı",
+        "mekruh",
+        "zaruratıdiniye",
+        "zaruratıhamse",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.3.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "3. Ünite: Güncel Dinî Meseleler",
+      "theme_order": 3,
+      "outcome": "Günlük hayatla ilgili meseleleri sorgulayabilme",
+      "content_frame": "Dinî Meselelerin Çözümünde Temel İlke ve Yöntemler / Gıda Maddeleriyle İlgili Meseleler / Bağımlılıkla İlgili Meseleler / Günlük Hayatla İlgili Meseleler / Kur'an'dan Mesajlar",
+      "micro": [
+        "bidat",
+        "haram",
+        "helal",
+        "hurafe",
+        "icma",
+        "içtihat",
+        "kul hakkı",
+        "mekruh",
+        "zaruratıdiniye",
+        "zaruratıhamse",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.3.5",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "3. Ünite: Güncel Dinî Meseleler",
+      "theme_order": 3,
+      "outcome": "Enam suresinin 151-152. ayetlerinin mesajlarını yorumlayabilme",
+      "content_frame": "Dinî Meselelerin Çözümünde Temel İlke ve Yöntemler / Gıda Maddeleriyle İlgili Meseleler / Bağımlılıkla İlgili Meseleler / Günlük Hayatla İlgili Meseleler / Kur'an'dan Mesajlar",
+      "micro": [
+        "bidat",
+        "haram",
+        "helal",
+        "hurafe",
+        "icma",
+        "içtihat",
+        "kul hakkı",
+        "mekruh",
+        "zaruratıdiniye",
+        "zaruratıhamse",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.4.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "4. Ünite: İslam Düşüncesinde Tasavvufi Yorumlar",
+      "theme_order": 4,
+      "outcome": "Tasavvufi düşüncenin oluşum sürecini çözümleyebilme",
+      "content_frame": "Tasavvufi Düşüncenin Oluşumu / Tasavvufi Düşüncenin Ahlaki Boyutu / Kültürümüzde Etkin Olan Tasavvufi Yorumlar / Alevilik Bektaşilikte Temel Kavramlar ve Cem Erkânı / Kur'an'dan Mesajlar",
+      "micro": [
+        "edep",
+        "erkân",
+        "insanıkâmil",
+        "semah",
+        "tasavvuf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.4.2",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "4. Ünite: İslam Düşüncesinde Tasavvufi Yorumlar",
+      "theme_order": 4,
+      "outcome": "Tasavvufi düşüncenin ahlaki boyutunu özetleyebilme",
+      "content_frame": "Tasavvufi Düşüncenin Oluşumu / Tasavvufi Düşüncenin Ahlaki Boyutu / Kültürümüzde Etkin Olan Tasavvufi Yorumlar / Alevilik Bektaşilikte Temel Kavramlar ve Cem Erkânı / Kur'an'dan Mesajlar",
+      "micro": [
+        "edep",
+        "erkân",
+        "insanıkâmil",
+        "semah",
+        "tasavvuf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.4.3",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "4. Ünite: İslam Düşüncesinde Tasavvufi Yorumlar",
+      "theme_order": 4,
+      "outcome": "Kültürümüzde etkin olan tasavvufi yorumları irdeleyebilme",
+      "content_frame": "Tasavvufi Düşüncenin Oluşumu / Tasavvufi Düşüncenin Ahlaki Boyutu / Kültürümüzde Etkin Olan Tasavvufi Yorumlar / Alevilik Bektaşilikte Temel Kavramlar ve Cem Erkânı / Kur'an'dan Mesajlar",
+      "micro": [
+        "edep",
+        "erkân",
+        "insanıkâmil",
+        "semah",
+        "tasavvuf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.4.4",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "4. Ünite: İslam Düşüncesinde Tasavvufi Yorumlar",
+      "theme_order": 4,
+      "outcome": "Alevilik Bektaşilikteki temel kavramlar ve cem erkânını sentezleyebilme",
+      "content_frame": "Tasavvufi Düşüncenin Oluşumu / Tasavvufi Düşüncenin Ahlaki Boyutu / Kültürümüzde Etkin Olan Tasavvufi Yorumlar / Alevilik Bektaşilikte Temel Kavramlar ve Cem Erkânı / Kur'an'dan Mesajlar",
+      "micro": [
+        "edep",
+        "erkân",
+        "insanıkâmil",
+        "semah",
+        "tasavvuf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.4.5",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "4. Ünite: İslam Düşüncesinde Tasavvufi Yorumlar",
+      "theme_order": 4,
+      "outcome": "Hucurat suresinin 10. ayetinin mesajlarını tahlil edebilme",
+      "content_frame": "Tasavvufi Düşüncenin Oluşumu / Tasavvufi Düşüncenin Ahlaki Boyutu / Kültürümüzde Etkin Olan Tasavvufi Yorumlar / Alevilik Bektaşilikte Temel Kavramlar ve Cem Erkânı / Kur'an'dan Mesajlar",
+      "micro": [
+        "edep",
+        "erkân",
+        "insanıkâmil",
+        "semah",
+        "tasavvuf",
+        "GENEL_KARMA"
+      ]
+    },
+    {
+      "code": "DKAB.12.5.1",
+      "grade": "12",
+      "exam_tracks": [
+        "12. Sınıf"
+      ],
+      "theme": "5. Ünite: Hint ve Çin Dinleri",
+      "theme_order": 5,
+      "outcome": "Hinduizm, Budizm, Sihizm, Konfüçyanizm, Taoizm dinlerinin tarihini ve temel özelliklerini özetleyebilme",
+      "content_frame": "Hinduizm / Budizm / Sihizm / Konfüçyanizm / Taoizm",
+      "micro": [
+        "guru",
+        "karma",
+        "kast",
+        "nirvana",
+        "pagoda",
+        "reenkarnasyon",
+        "tenasüh",
+        "tien",
+        "yin-yang",
+        "yoga",
+        "GENEL_KARMA"
+      ]
+    }
+  ]
+}

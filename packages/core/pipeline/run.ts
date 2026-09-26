@@ -55,6 +55,7 @@ export * from "./22-indd-paket.js";
 export * from "./23-zip.js";
 export * from "../render/page-preview.js";
 export * from "../render/html-to-png.js";
+export * from "../render/toplu-pdf.js";
 export * from "../llm/index.js";
 export * from "../curriculum/schema.js";
 export { loadCurriculum, type CurriculumSubject } from "../curriculum/load.js";
@@ -146,10 +147,14 @@ async function tamamla(
   // edilmemeli"). Yalnız görsel gerçekten NESNE_INDEKSI'ye düştüyse (öğrenci
   // sıra numaralarının karşılığını görmek için tabloya muhtaç) bu tablo
   // nihai sayfaya dahil edilir.
-  const yedekTabloGereksiz =
+  // KONUŞMA (veri_katmani.tur=KONUSMA, 2026-09-14/16) de AYNI deseni kullanıyor —
+  // deterministik "KONUŞMA" SVG'si yalnız AI illüstrasyonu BAŞARISIZ olursa
+  // (indeksModunaGecildi burada anlamsız/false kalır) görünmesi gereken bir
+  // yedek; AI başarılı olduysa aynı diyalog İKİ KEZ görünmesin diye filtrelenir.
+  const yedekGereksiz =
     aday.veri_katmani?.yalnizca_gorsel_yedegi === true && baglamGorseli.kullanildi && !baglamGorseli.indeksModunaGecildi;
-  const veriKatmani = yedekTabloGereksiz
-    ? { ...veriKatmaniHam, assets: veriKatmaniHam.assets.filter((a) => a.tur !== "TABLO") }
+  const veriKatmani = yedekGereksiz
+    ? { ...veriKatmaniHam, assets: veriKatmaniHam.assets.filter((a) => a.tur !== "TABLO" && a.tur !== "KONUŞMA") }
     : veriKatmaniHam;
 
   // Güvenlik ağı: görsel üretimi paketleme aşamasında (burada) çalışır —
@@ -235,7 +240,7 @@ async function tamamla(
     veriKatmani.assets,
     baglamGorseli
   );
-  const onizlemeHtml = renderPagePreviewHtml(dizgi, veriKatmani.assets, baglamGorseli);
+  const onizlemeHtml = renderPagePreviewHtml(dizgi, veriKatmani.assets, baglamGorseli, resolved.input.sayfaSablonu);
   const onizlemePng = await renderPagePreviewPng(onizlemeHtml);
   const paket: typeof paketCekirdek = {
     ...paketCekirdek,

@@ -1,4 +1,4 @@
-import { createProvider, loadStageModels, type PipelineDeps } from "@menar/core";
+import { createProvider, loadStageModels, type Ders, type GorselUretimDeps, type PipelineDeps } from "@menar/core";
 import { decryptApiKey } from "../auth/crypto.js";
 import type { Repository } from "../db/repository.js";
 
@@ -12,7 +12,8 @@ import type { Repository } from "../db/repository.js";
 export function buildTenantProviderDeps(
   yayineviId: string,
   repo: Repository,
-  encryptionSecret: string
+  encryptionSecret: string,
+  gorselModeli?: "gpt-image-1" | "gpt-image-2.5-sunburst"
 ): Pick<PipelineDeps, "generator" | "solverA" | "solverB" | "board" | "gorsel"> {
   const encOpenai = repo.yayinevi.getApiKey(yayineviId, "openai");
   const encAnthropic = repo.yayinevi.getApiKey(yayineviId, "anthropic");
@@ -41,6 +42,27 @@ export function buildTenantProviderDeps(
   const falKey = encFal ? decryptApiKey(encFal, encryptionSecret) : null;
 
   const models = loadStageModels();
+  const gorselModel = gorselModeli ?? models.image;
+
+  // Ders bazlı YUKSEK-kalite override — her ders için "en iyi" fal.ai
+  // model id'sini ayrı denemek isteyen kullanıcı isteği. Aynı fal.ai
+  // anahtarı/provider örneği tüm derslerde paylaşılır (FalProvider herhangi
+  // bir fal.ai model id'sini çağırabilir — yalnız model id'si değişir, bkz.
+  // `fal.ts`), yalnız hangi model id'sinin çağrılacağı derse göre değişir.
+  const falProvider = falKey ? createProvider("fal", falKey) : null;
+  const dersler: Ders[] = ["MATEMATIK", "GEOMETRI", "FIZIK", "KIMYA", "BIYOLOJI", "TDE"];
+  const uretimYuksekKaliteDersOverride: Partial<Record<Ders, GorselUretimDeps>> = {};
+  if (falProvider) {
+    for (const ders of dersler) {
+      const model = models.imageHighQualityByDers[ders];
+      if (!model) continue;
+      uretimYuksekKaliteDersOverride[ders] = {
+        provider: falProvider,
+        model,
+        editModel: models.imageHighQualityEditByDers[ders] ?? models.imageHighQualityEdit,
+      };
+    }
+  }
 
   return {
     generator: { provider: createProvider("openai", openaiKey), model: models.generator },
@@ -54,11 +76,16 @@ export function buildTenantProviderDeps(
       // adaylar) her zaman gpt-image-1 — Flux'un metin/rakam üretimindeki
       // güvenilmezliği yüzünden CIHAZ_EKRANI/TEKNIK_ETIKET için hâlâ zorunlu.
       prompt: { provider: createProvider("openai", openaiKey), model: models.contextImagePrompt },
-      uretim: { provider: createProvider("openai", openaiKey), model: models.image },
-      uretimYuksekKalite: falKey
-        ? { provider: createProvider("fal", falKey), model: models.imageHighQuality, editModel: models.imageHighQualityEdit }
+      uretim: { provider: createProvider("openai", openaiKey), model: gorselModel },
+      uretimYuksekKalite: falProvider
+        ? { provider: falProvider, model: models.imageHighQuality, editModel: models.imageHighQualityEdit }
         : undefined,
-      denetim: { provider: createProvider("openai", openaiKey), model: models.visionCheck },
+      uretimYuksekKaliteDersOverride,
+      // "denetim" (AŞAMA 2 vision-QA) 2026-08-23'te Anthropic/Claude Opus'a
+      // geçirildi (bkz. llm/config.ts visionCheck yorumu) — gpt-5.1 canlı
+      // testte gerçek bir nesne-sayım hatasını (2 yeşil+2 kırmızı+1 siyahı
+      // "her renkten birer tane" diye) yanlışlıkla PASS vermişti.
+      denetim: { provider: createProvider("anthropic", anthropicKey), model: models.visionCheck },
     },
   };
 }

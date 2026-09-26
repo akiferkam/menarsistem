@@ -1,24 +1,18 @@
 import type { GeneratorOutput } from "./03-generator-schema.js";
+import { genislikSinifi } from "./types.js";
 import type { HedefIQ, IqKriterleri, PreflightResult, ResolvedJob, RotationLedger, SoruIqHesaplanan } from "./types.js";
 
 /**
- * 2026-08-17'de eski "puan aralığı" (A×40+B×15+...) formülü tamamen kaldırıldı
- * — kaynak: kılavuz/iqmatematik/IQ_SORU_Standartlar_Matematik.docx'in 13
- * kademeli standardı bir toplamalı puan formülü VERMİYOR, bunun yerine her
- * bandı nitel biçimde (bağımsız karar sayısı + hangi audit ölçütlerinin
- * zorunlu olduğu) tarif ediyor. BAND_ESIK bu nitel tarifin benim (Claude)
- * yaptığım sayısal yorumu — kaynağın kendi "en az yaklaşık N karar" ifadeleri
- * (ör. IQ300: "en az yaklaşık 6 bağlı karar", IQ350: "en az yaklaşık 8") ve
- * "X + Y + Z" (hepsi zorunlu) / "X veya Y" (en az biri) kalıplarına göre
- * türetildi. Kullanıcı gerçek üretim sonuçlarına göre bu eşikleri
- * değiştirebileceğini belirtti — bu tablo KESİN değil, ilk kalibrasyon.
- * Tüm derslerde ORTAK (bkz. proje hafızası) — yalnız bu ölçütlerin PROMPT'TA
- * nasıl açıklandığı (02-build-prompt.ts IQ_KURALI) derse göre değişir.
+ * 2026-09-16: 13 bantlık eşik tablosu 5 banda İNDİRGENDİ (bkz. types.ts
+ * HedefIQ yorumu — kullanıcı: "IQ için çok fazla hata gördük"). Eski 13
+ * bandın ÇAPA noktaları (IQ50, IQ75, IQ200, IQ250, IQ300) yeni bantlara
+ * birebir taşındı, ara bantlar (IQ100/125/150/175, IQ225, IQ275/325/350)
+ * en yakın çapaya toplandı — altyapı (bagimsiz_karar_sayisi + 9 audit
+ * kriteri) DEĞİŞMEDİ, yalnız hedeflenen bant sayısı azaldı. Tüm derslerde
+ * ORTAK — yalnız bu ölçütlerin PROMPT'TA nasıl açıklandığı (02-build-
+ * prompt.ts IQ_KURALI) derse göre değişir.
  */
-const BAND_SIRASI: HedefIQ[] = [
-  "IQ50", "IQ75", "IQ100", "IQ125", "IQ150", "IQ175", "IQ200",
-  "IQ225", "IQ250", "IQ275", "IQ300", "IQ325", "IQ350",
-];
+const BAND_SIRASI: HedefIQ[] = ["COK_KOLAY", "KOLAY", "ORTA", "ZOR", "COK_ZOR"];
 
 interface BandEsigi {
   karar: number;
@@ -27,19 +21,11 @@ interface BandEsigi {
 }
 
 const BAND_ESIK: Record<HedefIQ, BandEsigi> = {
-  IQ50: { karar: 1 },
-  IQ75: { karar: 2 },
-  IQ100: { karar: 2, hepsi: ["veriSecmeEleme"] },
-  IQ125: { karar: 3, hepsi: ["temsilDonusumu"] },
-  IQ150: { karar: 3, hepsi: ["veriSecmeEleme"], enAz1: ["modelKurma", "temsilDonusumu"] },
-  IQ175: { karar: 3, hepsi: ["stratejiSecimi"] },
-  IQ200: { karar: 3, hepsi: ["veriSecmeEleme", "modelKurma", "stratejiSecimi"] },
-  IQ225: { karar: 4, enAz1: ["ortukKosul", "tersineDusunme", "dogrulama"] },
-  IQ250: { karar: 5, hepsi: ["sinirDurumu", "stratejiSecimi", "dogrulama"] },
-  IQ275: { karar: 6, hepsi: ["stratejiSecimi"], enAz1: ["tersineDusunme", "modelKurma"] },
-  IQ300: { karar: 6, hepsi: ["stratejiSecimi", "dogrulama"], enAz1: ["temsilDonusumu"] },
-  IQ325: { karar: 7, hepsi: ["stratejiSecimi", "tersineDusunme"], enAz1: ["genellemeIspat"] },
-  IQ350: { karar: 8, hepsi: ["stratejiSecimi", "tersineDusunme", "genellemeIspat", "dogrulama"] },
+  COK_KOLAY: { karar: 1 },
+  KOLAY: { karar: 2 },
+  ORTA: { karar: 3, hepsi: ["veriSecmeEleme"], enAz1: ["modelKurma", "stratejiSecimi"] },
+  ZOR: { karar: 5, hepsi: ["sinirDurumu", "stratejiSecimi", "dogrulama"] },
+  COK_ZOR: { karar: 7, hepsi: ["stratejiSecimi", "tersineDusunme", "dogrulama"], enAz1: ["genellemeIspat", "temsilDonusumu"] },
 };
 
 function bandKarsilaniyorMu(esik: BandEsigi, karar: number, kriterler: IqKriterleri): boolean {
@@ -49,13 +35,13 @@ function bandKarsilaniyorMu(esik: BandEsigi, karar: number, kriterler: IqKriterl
   return true;
 }
 
-/** En yüksek bandı (IQ350'den aşağı doğru tarayarak) bu karar/kriter bileşimine gerçekten uyanı bulur. */
+/** En yüksek bandı (ÇOK_ZOR'dan aşağı doğru tarayarak) bu karar/kriter bileşimine gerçekten uyanı bulur. */
 function ulasilanSeviyeyiBul(karar: number, kriterler: IqKriterleri): HedefIQ {
   for (let i = BAND_SIRASI.length - 1; i >= 0; i--) {
     const band = BAND_SIRASI[i]!;
     if (bandKarsilaniyorMu(BAND_ESIK[band], karar, kriterler)) return band;
   }
-  return "IQ50";
+  return "COK_KOLAY";
 }
 
 function bandIndex(b: HedefIQ): number {
@@ -76,7 +62,27 @@ const HEPSI_HICBIRI = /\b(hepsi|hiçbiri)\b/i;
 // eşlenmez (SEÇİLEN.test("seçilen") sessizce false döner) — bunun yerine
 // örnek metin toLocaleLowerCase("tr-TR") ile küçültülüp bu düz-küçük harfli
 // kalıba karşı test edilir (bkz. kullanım yeri).
-const SELF_AUDIT_LEAK = /\bbtg[_ ](seçilen|gerçek|metin)|final[_ ]kilidi|:\s*(pass|red)\b/;
+// 2026-09-14 (KUVVET_OKU'nun ikinci canlı testi): yukarıdaki dar kalıp yeni
+// bir sızıntı türünü YAKALAMADI — üretici stimulus.notes'a "Görsel üretim
+// talimatı: ... eklenmelidir. Ayrı şema oluşturulmamalıdır." ve "Metin ve
+// cevap aritmetik olarak kontrol edilmiştir. Görsel henüz üretilmemiş ve
+// denetlenmemiştir." gibi kendi üretim SÜRECİNİ anlatan iki paragraf yazdı
+// — bunlar "PASS/RED" veya "btg" kelimelerini içermediği için eski kalıptan
+// kaçtı. Genel örüntü: modelin kendi görevini/durumunu üçüncü şahıs gibi
+// raporladığı cümleler ("... talimatı", "henüz üretilmemiş", "denetlenmemiş",
+// "kontrol edilmiştir") — bunlar ekleniyor.
+const SELF_AUDIT_LEAK =
+  /\bbtg[_ ](seçilen|gerçek|metin)|final[_ ]kilidi|:\s*(pass|red)\b|üretim talimatı|henüz üretilmemiş|denetlenmemiştir|kontrol edilmiştir/;
+
+// Canlı modda görüldü (2026-09-14, KUVVET_OKU'nun ilk canlı testi): üretici
+// overlay_cizgileri[].etiket alanına gerçek değeri ("İtme = 30 N") yazmak
+// yerine "{{gorsel_veri_manifesti.degiskenler[0]}}" gibi bir ŞABLON
+// REFERANSI yazdı — bu, öğrenciye görünen görselde literal metin olarak
+// çıkıyor ("harfiyen düz metin yaz" talimatına rağmen model bazen JSON'un
+// kendi şablon-doldurma sistemi olduğunu VARSAYIYOR). Prompt düzeltmesi tek
+// başına yeterli değil (soft kural) — bu, ucuz/deterministik bir kapıyla da
+// yakalanmalı, aksi halde pahalı bir görsel üretimi tamamen boşa gider.
+const SABLON_REFERANSI = /\{\{[^}]*\}\}/;
 
 function kelimeSayisi(s: string | undefined): number {
   return String(s ?? "")
@@ -152,8 +158,9 @@ export function runPreflight(
     }
 
     const govde = kelimeSayisi(soru.kok);
-    if (input.genislik === "85_MM" && govde > 120) uyari.push(`SORU ${no}: 85 mm için gövde uzun (${govde} kelime)`);
-    if (input.genislik !== "85_MM" && govde > 220) uyari.push(`SORU ${no}: 185 mm için gövde uzun (${govde} kelime)`);
+    const dar = genislikSinifi(input.genislik) === "DAR";
+    if (dar && govde > 120) uyari.push(`SORU ${no}: ${input.genislik} için gövde uzun (${govde} kelime)`);
+    if (!dar && govde > 220) uyari.push(`SORU ${no}: ${input.genislik} için gövde uzun (${govde} kelime)`);
 
     const metin = [soru.kok, ...secenekler].join(" ");
     if (ONDALIK_NOKTA.test(metin)) uyari.push(`SORU ${no}: Türkçe ondalık ayırıcı kontrolü gerekli`);
@@ -187,7 +194,7 @@ export function runPreflight(
   // (baglam_katmani) veya gerçek bir diyagram (GEOMETRI/CIZGI/SUTUN/
   // FONKSIYON/NESNE_SEMASI) sayılır. Bu yalnız ISLEVSEL_GORSEL_ZORUNLU'da
   // zorunlu — AI_OTOMATIK'te modelin "görsele hiç gerek yok" kararı meşrudur.
-  const GERCEK_GORSEL_TURLERI = new Set(["GEOMETRI", "CIZGI", "SUTUN", "FONKSIYON", "NESNE_SEMASI"]);
+  const GERCEK_GORSEL_TURLERI = new Set(["GEOMETRI", "CIZGI", "SUTUN", "FONKSIYON", "NESNE_SEMASI", "KONUSMA"]);
   const bk = output.baglam_katmani;
   if (input.gorselKarari === "ISLEVSEL_GORSEL_ZORUNLU") {
     const vk = output.veri_katmani;
@@ -214,10 +221,16 @@ export function runPreflight(
   // denetiminin (19-gorsel-denetim.ts) yakalayamadığı bir tutarsızlık çünkü
   // orada da karşılaştırılacak bir değer listesi yok; kritik RED ile en baştan,
   // üretici düzeltme fırsatı bulacak şekilde yakalanması gerekiyor.
+  // KUVVET_OKU (2026-09-14) BU KONTROLDEN MUAF: onun değerleri
+  // gorselde_gosterilecek_degerler'de DEĞİL, her overlay_cizgileri kaydının
+  // kendi `etiket` alanında taşınır (bkz. altta "KUVVET_OKU VERİ TEKRARI"
+  // kontrolü — bu ikisi birbirinin AYNASI, KUVVET_OKU için tam tersi kural
+  // geçerli: gorselde_gosterilecek_degerler BOŞ olmalı).
   if (
     gorselGerekli &&
     bk?.gorsel_veri_gosterimi &&
     bk.gorsel_veri_gosterimi !== "YOK" &&
+    bk.gorsel_veri_gosterimi !== "KUVVET_OKU" &&
     !(bk.gorselde_gosterilecek_degerler ?? []).length
   ) {
     kritik.push(
@@ -225,32 +238,138 @@ export function runPreflight(
     );
   }
 
-  // Görsel modeli BİRDEN FAZLA ayrı okunaklı GERÇEK DEĞERİ güvenilir
-  // çizemiyor — canlı modda tekrar tekrar (fosil odası 6 değer, su arıtma
-  // 4 kartuş, akort modülleri 6, zar deneyi 9 değer — HEPSİ 3/3 RED)
-  // doğrulandı (bkz. proje hafızası `menar-mays-gorsel-mimari`). Kullanıcı
-  // talebi (2026-08-18): birden fazla değer gerekiyorsa görsele hiç
-  // yazdırmaya çalışma — NESNE_SEMASI (deterministik indeks diyagramı) +
-  // SORU METNİNDE doğrudan değer cümlesi kullan (bkz. 02-build-prompt.ts).
-  // Sınır 2'ye ayarlı — kullanıcının kendi arşivindeki job `69c23e99`
-  // (2026-08-15, gpt-image-1) iki ayrı ekranda İKİ kısa değeri ('2¹⁸','8⁸')
-  // temiz çizip PASS almıştı, bu kanıtlanmış güvenli üst sınır; NESNE_INDEKSI
-  // zaten aşağıda ayrıca ve tamamen yasak.
+  // CIHAZ_EKRANI/TEKNIK_ETIKET artık AI'ya çizdirilmiyor — gerçek değerler
+  // üretim SONRASI deterministik bindiriliyor (bkz. render/gorsel-overlay.ts,
+  // 20-baglam-gorseli.ts). Bunun çalışabilmesi için üreticinin HER değere bir
+  // konum (overlay_konumlari, yüzde cinsinden) atamış olması ZORUNLU — aksi
+  // halde bindirilecek metin nereye çizileceğini bilemez.
   const gosterilecekSayisi = (bk?.gorselde_gosterilecek_degerler ?? []).length;
   const gosterimTuru = bk?.gorsel_veri_gosterimi;
-  const GOSTERILECEK_MUTLAK_LIMIT = 2;
+  const overlayKonumSayisi = (bk?.overlay_konumlari ?? []).length;
   if (
     gorselGerekli &&
-    (gosterimTuru === "CIHAZ_EKRANI" || gosterimTuru === "TEKNIK_ETIKET") &&
-    gosterilecekSayisi > GOSTERILECEK_MUTLAK_LIMIT
+    (gosterimTuru === "CIHAZ_EKRANI" ||
+      gosterimTuru === "TEKNIK_ETIKET" ||
+      gosterimTuru === "OLCUM_CIZGISI" ||
+      gosterimTuru === "KUVVET_OKU") &&
+    gosterilecekSayisi > 0 &&
+    overlayKonumSayisi !== gosterilecekSayisi
   ) {
     kritik.push(
-      `GÖRSEL AŞIRI YÜKLÜ: gorselde_gosterilecek_degerler'de ${gosterilecekSayisi} değer var (en fazla ` +
-        `${GOSTERILECEK_MUTLAK_LIMIT} olmalı) — görsel modeli birden fazla ayrı okunaklı gerçek değeri hiç ` +
-        `güvenilir çizemez, 3 denemede de RED alıp görsel tamamen kaybolur. Birden fazla değer gerekiyorsa ` +
-        `gorsel_veri_gosterimi=YOK yap, veri_katmani.tur=NESNE_SEMASI seç, gerçek değerleri SORU METNİNDE ` +
-        `(stimulus paragraflarında) doğrudan bir cümleyle ver — ayrı bir tablo/görsel yedeği kurma.`
+      `OVERLAY KONUMU EKSİK/UYUŞMUYOR: gorselde_gosterilecek_degerler'de ${gosterilecekSayisi} değer var ama ` +
+        `overlay_konumlari'nde ${overlayKonumSayisi} konum var — her değere BİREBİR karşılık gelen bir konum ` +
+        `(x_yuzde, y_yuzde) atanmalı, aksi halde bindirilecek metin görselde nereye çizileceği belirsiz kalır.`
     );
+  }
+
+  // OLCUM_CIZGISI/KUVVET_OKU'nda çizgi(ler) overlay_cizgileri ile ayrıca
+  // tanımlanır — bu, overlay_konumlari'ndan (metin) BAĞIMSIZ bir gerekliliktir:
+  // bir sahne yalnız çizgi taşıyıp hiç metin kutusu gerektirmeyebilir (bkz.
+  // 16-gorsel-prompt.ts), ama bu türler seçiliyken en az BİR çizgi
+  // tanımlanmamışsa (üretici yalnız türü seçip koordinat vermeyi unuttuysa)
+  // sahnede bindirilecek hiçbir şey kalmaz, görsel işlevsiz olur.
+  if (
+    gorselGerekli &&
+    (gosterimTuru === "OLCUM_CIZGISI" || gosterimTuru === "KUVVET_OKU") &&
+    !(bk?.overlay_cizgileri ?? []).length
+  ) {
+    kritik.push(
+      `${gosterimTuru} ÇİZGİ EKSİK: baglam_katmani.gorsel_veri_gosterimi=${gosterimTuru} seçilmiş ama ` +
+        "overlay_cizgileri boş — en az bir ölçüm/kılavuz/vektör çizgisi (x1_yuzde/y1_yuzde/x2_yuzde/y2_yuzde) " +
+        "tanımlanmalı, aksi halde görselde bindirilecek hiçbir çizgi kalmaz."
+    );
+  }
+
+  // Şablon referansı sızıntısı (bkz. SABLON_REFERANSI yorumu) — hem çizgi
+  // etiketlerinde hem metin değerlerinde, hem KUVVET_OKU'nun aynı değeri
+  // İKİ yerde (overlay_cizgileri VE gorselde_gosterilecek_degerler) tekrar
+  // etme hatası aynı anda taranır.
+  const gosterilecekDegerler = bk?.gorselde_gosterilecek_degerler ?? [];
+  const cizgiEtiketleri = (bk?.overlay_cizgileri ?? []).map((c) => c.etiket ?? "").filter(Boolean);
+  const sablonSizanlar = [...gosterilecekDegerler, ...cizgiEtiketleri].filter((v) => SABLON_REFERANSI.test(v));
+  if (gorselGerekli && sablonSizanlar.length) {
+    kritik.push(
+      `ŞABLON REFERANSI SIZINTISI: bazı görsel etiket/değerleri gerçek metin yerine bir ŞABLON REFERANSI ` +
+        `içeriyor (${sablonSizanlar.join(", ")}) — gorselde_gosterilecek_degerler ve overlay_cizgileri[].etiket ` +
+        "alanlarına HER ZAMAN gerçek değerin KENDİSİNİ (düz metin) yaz, '{{...}}' gibi bir değişken/şablon " +
+        "referansı ASLA kullanma; bu, öğrenciye görünen NİHAİ metindir."
+    );
+  }
+  if (gorselGerekli && gosterimTuru === "KUVVET_OKU" && gosterilecekDegerler.length) {
+    kritik.push(
+      "KUVVET_OKU VERİ TEKRARI: gorsel_veri_gosterimi=KUVVET_OKU iken gorselde_gosterilecek_degerler DOLU " +
+        "— bu alan KUVVET_OKU'da BOŞ kalmalı, her vektörün değeri YALNIZ kendi overlay_cizgileri kaydının " +
+        "`etiket` alanında taşınmalı, aksi halde aynı değer görselde iki kez (bir metin kutusu, bir de ok " +
+        "etiketi olarak) belirir."
+    );
+  }
+
+  // Canlı modda görüldü (2026-09-14, KUVVET_OKU'nun ikinci canlı testi):
+  // üretici etiket'e yalnız kuvvetin ADINI yazıp ("Çekme kuvveti") SAYIYI
+  // ATLADI ("= 30 N" hiç yoktu) — muhtemelen "aynı veriyi iki yerde tekrar
+  // etme" ilkesini yanlış uygulayıp manifestte zaten var diye sayıyı
+  // gereksiz sanmış. Sonuç: diyagram büyüklüksüz, soru fiilen çözülemez hâle
+  // geliyordu (bu, denetimin GÖREMEYECEĞİ bir hata çünkü metin kalitesi
+  // olarak "doğru" görünüyor, yalnız İÇERİK eksik). Ucuz/deterministik kapı:
+  // her etikette en az bir rakam olmalı.
+  if (gorselGerekli && gosterimTuru === "KUVVET_OKU") {
+    const rakamsizEtiketler = (bk?.overlay_cizgileri ?? [])
+      .map((c) => c.etiket ?? "")
+      .filter((e) => e && !/\d/.test(e));
+    if (rakamsizEtiketler.length) {
+      kritik.push(
+        `KUVVET_OKU BÜYÜKLÜK EKSİK: overlay_cizgileri'nde şu etiket(ler)de hiç rakam yok: ` +
+          `${rakamsizEtiketler.join(", ")} — yalnız kuvvetin ADI yazılmış, büyüklüğü (ör. '= 30 N') atlanmış. ` +
+          "Her etiket İSİM+SAYI ikisini birden içermeli, aksi halde öğrenci büyüklüğü hiçbir yerde göremez."
+      );
+    }
+  }
+
+  // KONUŞMA (2026-09-14, kullanıcı isteği — özellikle TDE): veri_katmani.
+  // tur=KONUSMA seçiliyken en az 2 replik (konusma_baloncuklari) olmalı —
+  // aksi halde 14-veri-katmani.ts'in dispatch koşulu (>=2) hiç tetiklenmez,
+  // sahne veri_katmani.gerekli=true dediği hâlde HİÇBİR asset üretilmez
+  // (GEOMETRI'nin >=3 nokta koşuluyla AYNI sınıf risk).
+  if (output.veri_katmani?.tur === "KONUSMA" && (output.gorsel_veri_manifesti.konusma_baloncuklari ?? []).length < 2) {
+    kritik.push(
+      "KONUŞMA REPLİK EKSİK: veri_katmani.tur=KONUSMA seçilmiş ama gorsel_veri_manifesti.konusma_baloncuklari'nde " +
+        "2'den az replik var — en az 2 konuşmacı/replik olmalı, aksi halde hiçbir görsel üretilmez (sahne " +
+        "gereksiz yere görselsiz kalır)."
+    );
+  }
+  // Aynı şablon-referansı riski (SABLON_REFERANSI) konuşma metinlerinde de
+  // geçerli — üretici burada da '{{...}}' gibi bir kod referansı yazabilir.
+  const konusmaMetinleri = (output.gorsel_veri_manifesti.konusma_baloncuklari ?? []).map((k) => k.metin ?? "");
+  const konusmaSablonSizanlar = konusmaMetinleri.filter((v) => SABLON_REFERANSI.test(v));
+  if (konusmaSablonSizanlar.length) {
+    kritik.push(
+      `ŞABLON REFERANSI SIZINTISI (konuşma): konusma_baloncuklari'ndeki bazı replikler bir ŞABLON REFERANSI ` +
+        `içeriyor (${konusmaSablonSizanlar.join(", ")}) — her repliğin metnini düz metin olarak, harfi harfine yaz.`
+    );
+  }
+
+  // KONUŞMA (2026-09-14/16): üretim her zaman önce AI'yı dener (kullanıcı
+  // isteği — hiçbir JobInput seçimine bağlı değil), bu yüzden iki alan da
+  // ZORUNLU, salt prompt uyumuna güvenilmiyor (kurulan desen — bkz. ŞABLON
+  // REFERANSI/KUVVET_OKU kapıları). baglam_katmani.gerekli=false kalırsa
+  // illüstrasyon HİÇ denenmez (sahne görselsiz kalır); yalnizca_gorsel_
+  // yedegi=false kalırsa illüstrasyon başarılı olsa BİLE SVG yedeği de
+  // sayfada kalır, aynı diyalog İKİ KEZ görünür.
+  if (output.veri_katmani?.tur === "KONUSMA") {
+    if (!output.baglam_katmani?.gerekli) {
+      kritik.push(
+        "KONUŞMA BAĞLAM EKSİK: veri_katmani.tur=KONUSMA seçilmiş ama baglam_katmani.gerekli=true " +
+          "değil — bu olmadan AI illüstrasyonu hiç denenmez, sahne görselsiz kalır. baglam_katmani.gerekli=true " +
+          "yap (sahne alanına konuşmacıların ortamını kısaca betimle)."
+      );
+    }
+    if (output.veri_katmani?.yalnizca_gorsel_yedegi !== true) {
+      kritik.push(
+        "KONUŞMA YEDEK İŞARETİ EKSİK: veri_katmani.tur=KONUSMA iken veri_katmani." +
+          "yalnizca_gorsel_yedegi=true OLMALI — aksi halde AI illüstrasyonu başarılı olsa bile deterministik " +
+          "SVG de sayfada kalır, aynı diyalog iki kez görünür."
+      );
+    }
   }
 
   // Üretici NESNE_INDEKSI'yi (AI fotoğrafına indeks numarası yazdırma)

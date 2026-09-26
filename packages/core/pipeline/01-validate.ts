@@ -9,6 +9,10 @@ const DERS_TO_CURRICULUM_SUBJECT: Record<Ders, CurriculumSubject> = {
   KIMYA: "kimya",
   BIYOLOJI: "biyoloji",
   TDE: "tde",
+  COGRAFYA: "cografya",
+  TARIH: "tarih",
+  FELSEFE: "felsefe",
+  DKAB: "dkab",
 };
 
 /**
@@ -44,21 +48,6 @@ export function validateJob(input: JobInput): ValidationResult {
     return { valid: false, errors };
   }
 
-  let outcome2 = undefined;
-  let micro2 = input.mikro2;
-  if (input.mode === "ORTAK_IKI_KONU") {
-    if (!input.kod2?.trim() || input.kod2 === "YOK") {
-      errors.push("ORTAK_IKI_KONU modunda 2. kazanım seçilmelidir.");
-      return { valid: false, errors };
-    }
-    outcome2 = curriculum.outcomes.find((o) => o.code === input.kod2);
-    if (!outcome2) {
-      errors.push(`2. kazanım kodu bulunamadı: ${input.kod2}`);
-      return { valid: false, errors };
-    }
-    micro2 = micro2?.trim() || "GENEL_KARMA";
-  }
-
   const soruSayisi = Math.min(Math.max(1, Math.trunc(input.soruSayisi)), 5); // MASTER_CORE: 5'erli gruplar
 
   return {
@@ -67,8 +56,6 @@ export function validateJob(input: JobInput): ValidationResult {
       input: { ...input, soruSayisi },
       outcome,
       micro,
-      outcome2,
-      micro2,
     },
   };
 }

@@ -1,42 +1,44 @@
 import type { Outcome } from "../curriculum/schema.js";
 
 export type UretimModu =
-  | "KONU_OZETI"
-  | "ALISTIRMA"
   | "ACIK_UCLU"
   | "DENEME"
-  | "ORTAK_IKI_KONU"
   | "BT"
+  // BT ile aynı bağlam kurgusu, tek fark: görsel yalnız sahneyi somutlaştırır
+  // (MAARİF görsel işlevsellik testinin (b) seçeneği), asla sayılması/okunması
+  // gereken kesin veri taşımaz — bkz. 02-build-prompt.ts modeBlock() case "BTV1".
+  | "BTV1"
   | "BTP"
   | "BTG"
-  | "ZINCIR"
-  | "IKIZ_SORU"
   | "STANDART";
 
 /**
- * 2026-08-17'de 7 kademeden (IQ50/100/150/200/250/300/350) 13 kademeye
- * genişletildi — kaynak: kılavuz/iqmatematik/IQ_SORU_Standartlar_Matematik.docx
- * ("MENAR/MAYS — TYT-AYT IQ Bilişsel Zorluk Kalibrasyon Standardı", v3).
- * Sabit çapa noktaları: IQ75=KOLAY, IQ200=ORTA/GENEL AĞIRLIK, IQ250=ZOR/
- * DERECE-SEÇİCİ. Bant/kriter yapısı TÜM derslerde ortak (bkz. 03-generator-
- * schema.ts IqBileseniSchema, 05-preflight.ts IQ_ESIK) — yalnız bu kademelerin
- * PROMPT'TAKİ açıklama metni derse göre değişir (02-build-prompt.ts IQ_KURALI).
+ * 2026-09-16'da 13 kademeden (IQ50..IQ350) 5 kademeye İNDİRGENDİ — kullanıcı
+ * geri bildirimi: "Hedef IQ için çok fazla hata gördüğümüz için" yalnız
+ * "Çok Kolay, Kolay, Orta, Zor, Çok Zor" seçenekleri istendi. 13 kademenin
+ * ince ayrımları (IQ100 vs IQ125, IQ300 vs IQ325 gibi) hem öğretmen arayüzünde
+ * seçim hatasına hem üretici LLM'in hedefi tutturmasında (bu oturumdan önceki
+ * IQ75/IQ100 undershoot vakaları, bkz. proje hafızası) belirsizliğe yol
+ * açıyordu — daha az ve birbirinden AÇIKÇA ayrışan bant, her ikisini de
+ * azaltması beklenen bir sadeleştirme. Altyapı (bagimsiz_karar_sayisi + 9
+ * audit kriteri, bkz. 03-generator-schema.ts IqBileseniSchema, 05-preflight.ts
+ * BAND_ESIK) DEĞİŞMEDİ — yalnız hedeflenen bant SAYISI azaldı, eski 13
+ * bandın uç noktaları (IQ50→ÇOK_KOLAY, IQ75→KOLAY, IQ200→ORTA, IQ250→ZOR,
+ * IQ300+→ÇOK_ZOR) yeni bantlara ÇAPA olarak taşındı.
  */
-export type HedefIQ =
-  | "IQ50"
-  | "IQ75"
-  | "IQ100"
-  | "IQ125"
-  | "IQ150"
-  | "IQ175"
-  | "IQ200"
-  | "IQ225"
-  | "IQ250"
-  | "IQ275"
-  | "IQ300"
-  | "IQ325"
-  | "IQ350";
-export type CiktiGenisligi = "85_MM" | "185_MM";
+export type HedefIQ = "COK_KOLAY" | "KOLAY" | "ORTA" | "ZOR" | "COK_ZOR";
+/**
+ * 90_MM/180_MM: "Helvetica 9 punto" tipo tercihiyle eklenen ikinci genişlik
+ * çifti — 85_MM/185_MM'in DAR/GENİŞ ayrımını korur (aynı kelime limitleri,
+ * aynı görsel oranı), yalnız yazı tipi/punto farklıdır (bkz. 21-dizgi.ts,
+ * render/page-preview.ts). Eski değerler davranışça DEĞİŞMEDİ.
+ */
+export type CiktiGenisligi = "85_MM" | "185_MM" | "90_MM" | "180_MM";
+
+/** DAR (85_MM/90_MM) vs GENİŞ (185_MM/180_MM) — kelime limiti/görsel oranı gibi genişliğe bağlı kararların TEK kaynağı. */
+export function genislikSinifi(g: CiktiGenisligi): "DAR" | "GENIS" {
+  return g === "85_MM" || g === "90_MM" ? "DAR" : "GENIS";
+}
 export type CiktiMotoru =
   | "SORU_METNI"
   | "TEK_TIP_PNG_SPEC"
@@ -59,6 +61,17 @@ export type GorselKarari = "AI_OTOMATIK" | "GORSEL_YOK" | "ISLEVSEL_GORSEL_ZORUN
  */
 export type GorselKalitesi = "STANDART" | "YUKSEK";
 /**
+ * STANDART kalitede hangi OpenAI görsel modelinin çağrılacağını seçer —
+ * gpt-image-2.5-sunburst (2026-09-08 çıkışlı, gpt-image-2'nin yerini aldı;
+ * "sunburst" varyantı daha detaylı/keskin, "flare" varyantı hız önceliklidir
+ * ama seçilmedi) hem daha ucuz hem daha güvenilir metin/rakam çizimi
+ * sunuyor, ama kullanıcı isteğiyle varsayılan DEĞİL, açıkça seçilebilen bir
+ * seçenek olarak eklendi (bkz. apps/cli/lib/providers.ts,
+ * apps/api/lib/provider-deps.ts). Verilmezse `.env`'deki MODEL_IMAGE
+ * (gpt-image-1) kullanılır.
+ */
+export type GorselModeli = "gpt-image-1" | "gpt-image-2.5-sunburst";
+/**
  * OTOMATIK (varsayılan): boyut kararını görsel prompt ajanı verir (önce 3D
  * dener, gerçek fotoğrafla temsil edilemeyen şematik/teknik içerikte 2D'ye
  * geçer). 2D/3D: kullanıcı elle zorlar — 2D genelde sınav/ders kitabı
@@ -67,6 +80,50 @@ export type GorselKalitesi = "STANDART" | "YUKSEK";
  * maliyet dial'ı model/aday sayısı, bkz. proje hafızası `menar-mays-gorsel-mimari`).
  */
 export type GorselBoyutu = "OTOMATIK" | "2D" | "3D";
+/**
+ * DETERMINISTIK_SVG (varsayılan): eskisi gibi — sayısal veri gerekiyorsa
+ * üretici `veri_katmani` (TABLO/CIZGI/SUTUN/FONKSIYON, kod tarafında SVG
+ * olarak çizilir) kurar, bu SVG bağlam fotoğrafından AYRI bir blok olarak
+ * sayfada görünür. FOTOGRAF_UZERINDE (kullanıcı isteği, 2026-09-14 —
+ * "sorunun üstünde grafik görmek istemiyorum, çizgi/rakam/yazının GÖRSELİN
+ * İÇİNDE olmasını istiyorum"): üretici bunun yerine `baglam_katmani.
+ * gorsel_veri_gosterimi` (CIHAZ_EKRANI/TEKNIK_ETIKET/OLCUM_CIZGISI) + overlay
+ * alanlarını kullanır — gerçek değerler ve ölçüm çizgileri AI fotoğrafın
+ * KENDİSİNE, üretim SONRASI deterministik olarak bindirilir (bkz.
+ * `render/gorsel-overlay.ts`, `20-baglam-gorseli.ts`) — hiçbir ayrı SVG
+ * grafik/tablo bloğu sayfada görünmez. Bu, AI'nın kendisinin çizgi/rakam
+ * çizmesinden (kanıtlanmış şekilde piksel-kesin değil, bkz. proje hafızası)
+ * FARKLIDIR — yalnız fotoğrafın ZEMİNİ AI'dan gelir, üzerindeki gerçek
+ * veri/çizgi hep koddan gelir, aynı SVG katmanı kadar güvenilirdir.
+ * FOTOGRAF_UZERINDE_HIBRIT (kullanıcı isteği, 2026-09-14 — "AI bırakalım
+ * AI'ın yazmasını isteyelim bir de bakalım nasıl olacak"): FOTOGRAF_UZERINDE
+ * ile AYNI üretici çıktısını kullanır, ama İLK denemede AI'nın gerçek
+ * değeri KENDİSİ çizmesine izin verilir (canlı testte tek bir kısa değerde
+ * — bir termometre ekranı — başarılı olduğu görüldü); yalnız görsel denetimi
+ * bunu RED ederse (değer yanlış/okunaksız) sistem otomatik olarak yukarıdaki
+ * deterministik bindirme yoluna döner (`20-baglam-gorseli.ts`) — hiçbir
+ * zaman "kör güven" yok, her zaman bir güvenlik ağı var.
+ */
+export type GorselVeriStratejisi = "DETERMINISTIK_SVG" | "FOTOGRAF_UZERINDE" | "FOTOGRAF_UZERINDE_HIBRIT";
+/**
+ * Bağlam temelli sorularda (özellikle TDE, ileride Tarih/Coğrafya/Din/
+ * Felsefe) iki+ kişi arasındaki konuşmayı göstermek için (kullanıcı isteği,
+ * 2026-09-14/16: "konuşmalar baloncuk içinde ... her soruda zorunlu olmasın,
+ * senaryoya uygunsa kullansın, ben her seferinde seçmemeliyim, stilin hepsi
+ * aynı olsun, üretim standart olarak AI olsun, başarısız olursa SVG'ye
+ * dönsün"). Bu yüzden JobInput'ta SEÇİLECEK bir alan YOK — üreticinin
+ * KENDİSİ, bağlamda gerçekten diyalog geçiyorsa (bkz. 02-build-prompt.ts
+ * madde 14b) `veri_katmani.tur=KONUSMA` seçer; davranış HER ZAMAN aynıdır:
+ * önce AI'nın kendisi tüm illüstrasyonu (karakterler+balonlar+metin) çizmeyi
+ * dener (`16-gorsel-prompt.ts` GORSEL_PROMPT_SYSTEM_KONUSMA_CIZIM,
+ * `19-gorsel-denetim.ts` konusmaCizimModu — canlı testte KANITLANDI:
+ * gpt-image-2.5-sunburst doğru Türkçe karakterlerle (ş/ı/ğ) okunaklı bir
+ * illüstrasyon+balon çizebiliyor), başarısız olursa (3 deneme) OTOMATİK
+ * olarak tek bir sabit deterministik SVG stiline (`buildKonusmaSvg` — kuyruklu
+ * çizgi roman balonu) düşer — `veri_katmani.yalnizca_gorsel_yedegi=true`
+ * zorunlu kılınarak (bkz. 02-build-prompt.ts), `run.ts`'in var olan "yedek
+ * gereksizse filtrele" mekanizması yeniden kullanılıyor.
+ */
 export type SecenekYapisi = "METIN_SECENEKLER" | "GORSEL_SVG_SECENEKLER" | "AI_EN_UYGUN_YAPIYI_SECSIN";
 export type TymmAlanBecerisi = "SERBEST" | "MAB1_MATEMATIKSEL_MUHAKEME" | "MAB2_MATEMATIKSEL_MODELLEME" | "MAB3_MATEMATIKSEL_PROBLEM_COZME";
 export type TymmEgilim = "YOK" | "VERI_OKURYAZARLIGI" | "FINANSAL_OKURYAZARLIK" | "DIJITAL_OKURYAZARLIK";
@@ -81,12 +138,6 @@ export interface BtgInput {
   kaynakNotu: string;
 }
 
-export interface IkizInput {
-  kaynak: string;
-  baglamDegisim: string;
-  matematikselYapi: string;
-}
-
 /**
  * Verilmezse MATEMATIK — geriye dönük uyumlu, mevcut işleri etkilemez.
  * FIZIK/KIMYA/BIYOLOJI/TDE 2026-08-17'de eklendi (bkz. curriculum/
@@ -94,8 +145,23 @@ export interface IkizInput {
  * verisi + arayüz seçimi kablolandı; generator prompt'unun ÖSYM/IQ/solver
  * kuralları hâlâ sayısal-akıl-yürütme (Matematik/Geometri) odaklı yazıldı,
  * bu 4 yeni ders için soru KALİTESİ henüz ayrıca ayarlanmadı/test edilmedi.
+ * COGRAFYA/TARIH/FELSEFE/DKAB 2026-09-16'da eklendi (kullanıcının curriculum/
+ * klasörüne koyduğu 4 resmî MEB ünite/kazanım belgesi, bkz. packages/core/
+ * curriculum/{cografya,tarih,felsefe,dkab}.json) — AYNI uyarı geçerli: yalnız
+ * müfredat verisi kablolandı, bu derslerin soru KALİTESİ (IQ_KURALI vb.) ilk
+ * kez bu turda, hiç canlı testsiz yazıldı.
  */
-export type Ders = "MATEMATIK" | "GEOMETRI" | "FIZIK" | "KIMYA" | "BIYOLOJI" | "TDE";
+export type Ders =
+  | "MATEMATIK"
+  | "GEOMETRI"
+  | "FIZIK"
+  | "KIMYA"
+  | "BIYOLOJI"
+  | "TDE"
+  | "COGRAFYA"
+  | "TARIH"
+  | "FELSEFE"
+  | "DKAB";
 
 /** Formdan/API'den gelen ham girdi — HTML/n8n formundaki alanların 1:1 karşılığı. */
 export interface JobInput {
@@ -112,19 +178,28 @@ export interface JobInput {
   gorselKarari: GorselKarari;
   /** Verilmezse STANDART (gpt-image-1) — geriye dönük uyumlu, mevcut işleri etkilemez. */
   gorselKalitesi?: GorselKalitesi;
+  /** Verilmezse `.env`'deki MODEL_IMAGE (gpt-image-1) — bkz. GorselModeli yorumu. */
+  gorselModeli?: GorselModeli;
   /** Verilmezse OTOMATIK — geriye dönük uyumlu, mevcut işleri etkilemez. */
   gorselBoyutu?: GorselBoyutu;
+  /** Verilmezse DETERMINISTIK_SVG — geriye dönük uyumlu, mevcut işleri etkilemez. */
+  gorselVeriStratejisi?: GorselVeriStratejisi;
   secenekYapisi: SecenekYapisi;
   soruSayisi: number;
   tymmAlanBecerisi: TymmAlanBecerisi;
   tymmEgilim: TymmEgilim;
   metinUzunlugu: string;
   btg?: BtgInput;
-  ikiz?: IkizInput;
-  kod2?: string;
-  mikro2?: string;
   sonKullanilanBaglamAileleri?: string;
   ekIstek?: string;
+  /**
+   * Yalnız `page-preview.ts`'in önizleme HTML/PNG'sinin görsel temasını
+   * seçer — LLM prompt'una hiç girmez, üretim mantığını etkilemez.
+   * Verilmezse STANDART (geriye dönük uyumlu). OKYANUS, sunumda gösterilecek
+   * bir örnek yayının (marka/logo hariç) genel dershane sayfa düzeni dilinden
+   * (başlık şeridi, bölümlendirme, boşluk) esinlenen alternatif bir tema.
+   */
+  sayfaSablonu?: "STANDART" | "OKYANUS";
 }
 
 /** node 01/02/03'ün ürettiği, kazanım zincirinin çözülmüş hâli. */
@@ -132,8 +207,6 @@ export interface ResolvedJob {
   input: JobInput;
   outcome: Outcome;
   micro: string;
-  outcome2?: Outcome;
-  micro2?: string;
 }
 
 export interface ValidationFailure {
@@ -273,7 +346,7 @@ export interface GorunmezKunye {
 export interface SvgAsset {
   name: string;
   svg: string;
-  tur: "TABLO" | "GRAFİK" | "GEOMETRİ" | "ŞEMA";
+  tur: "TABLO" | "GRAFİK" | "GEOMETRİ" | "ŞEMA" | "KONUŞMA";
 }
 
 /** node 40+41'in portu — `gorselGerekli`, node 40'ın if-koşulunun (node 41'in kendi hesapladığı) karşılığı. */
@@ -290,6 +363,8 @@ export interface GorselDenetimi {
   islev: string | null;
   hataKodlari: string[];
   kalitePuani: number | null;
+  /** bkz. render/gorsel-overlay.ts — denetçinin GERÇEKTE gördüğü boş bölge konumu, önceden tahmin edilenin yerine kullanılır. */
+  tespitEdilenKonumlar?: { x_yuzde: number; y_yuzde: number }[] | null;
 }
 
 /**
@@ -331,6 +406,15 @@ export interface BaglamGorseliSonuc {
    * gizli bir izleme boşluğu (canlı bir görsel-hata teşhisi sırasında fark edildi).
    */
   gorselSaglayici: "STANDART" | "YUKSEK";
+  /**
+   * `gorselSaglayici="YUKSEK"` iken hangi DERS override'ının (bkz.
+   * `StageModels.imageHighQualityByDers`) fiilen kullanıldığı — ders bazlı
+   * override yoksa (genel `uretimYuksekKalite`ye düşüldüyse) `undefined`.
+   * `apps/api/queue/worker.ts`'in maliyet loglaması, hangi gerçek model/
+   * sağlayıcı nesnesinin çağrıldığını bu alandan yeniden kurar (aksi halde
+   * `LlmProvider` örneği burada saklanamaz — sonuç JSON'a serileştirilir).
+   */
+  gorselYuksekKaliteDersAnahtari?: Ders;
   /**
    * `kullanildi=false` olduğunda HER denemenin gerçek RED nedenlerini taşır
    * — eskiden yalnız sabit "3 denemede de RED aldı" metni kalıyordu, hangi

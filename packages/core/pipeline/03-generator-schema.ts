@@ -126,6 +126,24 @@ const KenarUcSchema = z.object({ nokta1: z.string(), nokta2: z.string() });
 const GeometrikKenarSchema = z.object({
   uclar: KenarUcSchema,
   stil: z.enum(["DUZ", "KESIKLI"]).nullish(),
+  /**
+   * VEKTÖR/KUVVET OKU (2026-09-05 eklendi) — özellikle FİZİK'te kuvvet/hız/
+   * ivme diyagramları GEOMETRI renderer'ını (nokta+kenar) kullanıyordu ama
+   * kenarın bir YÖNÜ olduğunu gösterecek hiçbir alan yoktu; canlı testte
+   * (job MENAR-FIZ924-20260905125513) bir kuvvet şeması yalnız düz bir
+   * çizgi+nokta harfleriyle çizildi, ok/yön hiç görsele işlenmedi. "NOKTA1"/
+   * "NOKTA2" ucuna, veya "IKI_UC"a ok başı ekler; "YOK"/boş = düz kenar
+   * (eski davranış, geriye dönük uyumlu).
+   */
+  ok: z.enum(["YOK", "NOKTA1", "NOKTA2", "IKI_UC"]).nullish(),
+  /**
+   * Kenarın yanına yazılacak KISA etiket (ör. "F₁ = 4 N", "v = 12 m/s") —
+   * aynı canlı testte kuvvet büyüklükleri yalnız paragraf metninde geçiyordu,
+   * diyagramın kendisi hiçbir sayı taşımıyordu. Deterministik SVG <text> ile
+   * çizilir (AI çizmez), bu yüzden güvenilir — istenilen uzunlukta/sembolde
+   * kullanılabilir.
+   */
+  etiket: z.string().nullish(),
 });
 
 const GeometrikAciSchema = z.object({
@@ -134,6 +152,42 @@ const GeometrikAciSchema = z.object({
   kenar2: z.string(),
   deger: z.string().nullish(),
   dik_aci: z.boolean().nullish(),
+});
+
+/**
+ * GEOMETRİ dersinde gerçek-yaşam bağlamlı ama geometrik olarak basit
+ * sahneler (merdiven-duvar, direk-gölge, rampa, bina, köprü, çatı, halat,
+ * saat, tekerlek, ağaç...) için — kullanıcı isteği 2026-08-23: bu tür
+ * sahnelerde fotogerçekçi AI görseli yerine, geometrik_noktalar/kenarlar/
+ * acilar'ın ZATEN taşıdığı matematiksel gerçeği bir "gerçek dünya derisiyle"
+ * giydirmek çok daha güvenilir (açı/uzunluk verisi hiç AI'dan geçmez).
+ * kenar/nokta yalnız HANGİ segmentin/noktanın hangi öğeyle temsil edileceğini
+ * eşler — yeni bir sayısal veri taşımaz, bkz. 14-veri-katmani.ts.
+ */
+const BaglamSahnesiElemaniSchema = z.object({
+  tur: z.enum([
+    "DUVAR",
+    "ZEMIN",
+    "MERDIVEN",
+    "DIREK",
+    "GOLGE",
+    "RAMPA",
+    "BINA",
+    "KOPRU",
+    "CATI",
+    "HALAT",
+    "TEKERLEK",
+    "AGAC",
+    "KISI_SILUETI",
+    "SAAT_KADRANI",
+  ]),
+  // Kenar-tabanlı öğeler (DUVAR/ZEMIN/MERDIVEN/GOLGE/RAMPA/KOPRU/HALAT/DIREK)
+  // iki nokta adı arasındaki segmenti "giydirir" — nokta adları
+  // geometrik_noktalar'daki 'ad' değerleriyle birebir eşleşmeli.
+  kenar: KenarUcSchema.nullish(),
+  // Nokta-tabanlı öğeler (BINA/CATI/TEKERLEK/AGAC/KISI_SILUETI/SAAT_KADRANI,
+  // veya tek bir noktadan yükselen DIREK) tek bir nokta adının yanına çizilir.
+  nokta: z.string().nullish(),
 });
 
 const GrafikSerisiSchema = z.object({
@@ -186,13 +240,39 @@ const GorselVeriManifestiSchema = z.object({
   // AB=AC eşliğini işaretler.
   geometrik_esit_kenar_gruplari: z.array(z.array(KenarUcSchema)).nullish(),
   geometrik_acilar: z.array(GeometrikAciSchema).nullish(),
+  // bkz. BaglamSahnesiElemaniSchema yorumu — GEOMETRİ dersinde gerçek-yaşam
+  // bağlamını fotogerçekçi AI görseli yerine deterministik "sahne derisi"yle
+  // temsil eder.
+  baglam_sahnesi_elemanlari: z.array(BaglamSahnesiElemaniSchema).nullish(),
   olcekli_cizim: z.boolean().nullish(),
   grafik_serisi: GrafikSerisiSchema.nullish(),
   tablo: TabloSchema.nullish(),
   nesne_semasi: NesneSemasiSchema.nullish(),
+  // Bağlam temelli sorularda (özellikle TDE, ileride Tarih/Coğrafya/Din/
+  // Felsefe) iki+ kişi arasındaki konuşmayı göstermek için (kullanıcı
+  // isteği, 2026-09-14). `yon` verilmezse renderer sırayla sol/sağ dağıtır.
+  konusma_baloncuklari: z
+    .array(z.object({ konusmaci: z.string(), metin: z.string(), yon: z.enum(["SOL", "SAG"]).nullish() }))
+    .nullish(),
   dogru_cevap_degeri: z.string().nullish(),
   secenek_degerleri: z.array(z.string()).nullish(),
   baglam_katmani_nesneleri: z.array(z.string()).nullish(),
+  // GÖRSEL MİKTAR/KİMLİK KODLAMASI (bkz. 02-build-prompt.ts madde 11) için —
+  // canlı testte görüldü, KRİTİK: görsel denetimi (19-gorsel-denetim.ts)
+  // sayı doğruluğunu kendi vision-LLM yargısına bırakınca bu, manifestin
+  // KENDİSİYLE ("4 ayrı yeşil ped" gibi) ÖNCEDEN beslendiği için modeli
+  // "zaten doğru" demeye yönlendirdi (bir job'da görsel gerçekte 6 ped/3
+  // numune içeriyordu, denetim yine de "4 ped/2 numune, PASS" yazdı — kod
+  // seviyesinde deterministik bir karşılaştırma OLMADIĞI için bu sessizce
+  // yanlış bir cevap anahtarına yol açabilirdi). Bu alan, renk/miktar
+  // kodlamasıyla ayırt edilen HER nesne grubu için beklenen TAM sayıyı
+  // yapılandırılmış olarak tutar — `denetleGorsel()` artık vision-LLM'in
+  // kendi PASS/RED yargısına değil, bu sayıyla LLM'in BAĞIMSIZ SAYDIĞI
+  // (sayilan_nesneler, bkz. 18-gorsel-denetim-schema.ts) değerin KOD
+  // TARAFINDA birebir eşleşip eşleşmediğine bakar.
+  renk_miktar_sayimlari: z
+    .array(z.object({ nesne: z.string(), beklenen_adet: z.number().int().min(1) }))
+    .nullish(),
 });
 
 const BaglamKatmaniSchema = z.object({
@@ -230,18 +310,73 @@ const BaglamKatmaniSchema = z.object({
   // baglam_katmani bu durumda gorsel_veri_gosterimi=YOK kalır. NESNE_INDEKSI
   // yalnız sistemin kendi iç retry-fallback mekanizmasında (20-baglam-
   // gorseli.ts) hâlâ var — üretici JSON'unda bunu baştan seçmemeli.
-  gorsel_veri_gosterimi: z.enum(["YOK", "CIHAZ_EKRANI", "TEKNIK_ETIKET", "NESNE_INDEKSI"]).nullish(),
+  // OLCUM_CIZGISI (2026-09-14, kullanıcı isteği — "FOTOGRAF_UZERINDE" stratejisi):
+  // cetvel/mezür/gösterge skalası gibi bir ÖLÇÜM YÜZEYİ sahnede fiziksel
+  // olarak var (ve kendi sabit ölçek çentikleri/rakamları normal şekilde AI
+  // tarafından çizilebilir — bunlar veriye bağlı değil, cetvelin kendi
+  // basılı skalasıdır) ama ÖLÇÜLEN NOKTAYA işaret eden renkli kılavuz
+  // çizgi(ler) ve o çizginin taşıdığı değer AI'DAN ÇİZDİRİLMEZ — bunlar
+  // `overlay_cizgileri` + `overlay_konumlari`/`gorselde_gosterilecek_degerler`
+  // ile üretim SONRASI deterministik bindirilir (bkz. render/gorsel-overlay.ts).
+  // KUVVET_OKU (2026-09-14, kullanıcı isteği — "üstte grafik şeklinde kuvvet
+  // gösterimi istemiyorum, seçime bırak, AI'ya bırak çizsin"): kuvvet/hız/ivme
+  // gibi VEKTÖREL bir büyüklüğün oku+etiketi artık ayrı bir GEOMETRI SVG
+  // şeması olarak DEĞİL, doğrudan bağlam fotoğrafının ÜZERİNDE gösterilebilir
+  // — DETERMINISTIK_SVG stratejisinde (varsayılan) bu tür hâlâ geçerli DEĞİL,
+  // yalnız FOTOGRAF_UZERINDE/FOTOGRAF_UZERINDE_HIBRIT seçiliyken kullanılır
+  // (bkz. 02-build-prompt.ts). Ok(lar) `overlay_cizgileri`nin `ok` alanıyla,
+  // büyüklük etiketi (ör. 'F=6 N') aynı çizginin `etiket` alanıyla taşınır.
+  gorsel_veri_gosterimi: z
+    .enum(["YOK", "CIHAZ_EKRANI", "TEKNIK_ETIKET", "OLCUM_CIZGISI", "KUVVET_OKU", "NESNE_INDEKSI"])
+    .nullish(),
   // CIHAZ_EKRANI/TEKNIK_ETIKET ise görselde TAM OLARAK görünmesi gereken
   // gerçek değerler; NESNE_INDEKSI ise yalnız basit indeks etiketleri
   // ("1","2","3"... — gerçek değerler DEĞİL). gorsel_veri_manifesti ile
-  // birebir uyuşmalı, fazladan uydurma rakam eklenmez. Görsel denetimi
-  // (19-gorsel-denetim.ts) bunlarla karşılaştırır.
+  // birebir uyuşmalı, fazladan uydurma rakam eklenmez.
   gorselde_gosterilecek_degerler: z.array(z.string()).nullish(),
+  // AI görsel modeli metin/rakam çizmekte KALICI OLARAK güvenilmez (bkz.
+  // proje hafızası menar-mays-gorsel-mimari — gpt-image-1/fal.ai ikisi de
+  // canlı testte rakam/etiket bozuyor). Bu yüzden gorsel_veri_gosterimi!=YOK
+  // olduğunda AI'dan değerleri KENDİSİ ÇİZMESİ artık istenmiyor — bunun
+  // yerine AI yalnız o bölgeyi BOŞ/NÖTR bırakır (ör. kapalı/boş bir ekran,
+  // düz boş bir etiket yüzeyi), gerçek metin `render/gorsel-overlay.ts`
+  // tarafından üretim SONRASI, gerçek bir tarayıcı font motoruyla (hiç AI
+  // riski taşımadan) bindirilir (bkz. 20-baglam-gorseli.ts). Her giriş
+  // `gorselde_gosterilecek_degerler`deki AYNI İNDEKSTEKİ değere karşılık
+  // gelir (dizi uzunlukları birebir eşleşmeli) — üretici bu boş bölgenin
+  // görselin neresinde olacağına (yüzde cinsinden, sol-üst köşe 0,0) kendisi
+  // karar verir, biz yalnız o koordinata yazıyoruz.
+  overlay_konumlari: z
+    .array(z.object({ x_yuzde: z.number().min(0).max(100), y_yuzde: z.number().min(0).max(100) }))
+    .nullish(),
+  // OLCUM_CIZGISI için: bir ölçüm/kılavuz çizgisinin iki ucu (yüzde, sol-üst
+  // köşe 0,0) — ör. bir cetvelin üzerinde ölçülen nesnenin başlangıç/bitiş
+  // noktasını işaretleyen dikey çizgi. overlay_konumlari'nin AYNI mantığı:
+  // AI bu çizgiyi KENDİSİ ÇİZMEZ (piksel-kesin değil, kanıtlanmış — bkz.
+  // proje hafızası), yalnız çizginin GEÇECEĞİ konumu (fotoğraf üretilmeden
+  // önceki tahmini) belirtir; gerçek çizgi render/gorsel-overlay.ts tarafından
+  // üretim SONRASI, gerçek bir SVG çizim motoruyla bindirilir.
+  overlay_cizgileri: z
+    .array(
+      z.object({
+        x1_yuzde: z.number().min(0).max(100),
+        y1_yuzde: z.number().min(0).max(100),
+        x2_yuzde: z.number().min(0).max(100),
+        y2_yuzde: z.number().min(0).max(100),
+        renk: z.string().nullish(),
+        etiket: z.string().nullish(),
+        // KUVVET_OKU için: bu çizginin hangi ucu (varsa) ok başı taşır —
+        // `geometrik_kenarlar.ok` ile AYNI sözleşme (bkz. GeometrikKenarSchema).
+        // OLCUM_CIZGISI'nde genelde YOK/boş kalır (düz kılavuz çizgisi yeterli).
+        ok: z.enum(["YOK", "UC1", "UC2", "IKI_UC"]).nullish(),
+      })
+    )
+    .nullish(),
 });
 
 const VeriKatmaniSchema = z.object({
   gerekli: z.boolean().nullish(),
-  tur: z.enum(["TABLO", "CIZGI", "SUTUN", "GEOMETRI", "FONKSIYON", "NESNE_SEMASI", "YOK"]).nullish(),
+  tur: z.enum(["TABLO", "CIZGI", "SUTUN", "GEOMETRI", "FONKSIYON", "NESNE_SEMASI", "KONUSMA", "YOK"]).nullish(),
   baslik: z.string().nullish(),
   // gorselde_gosterilecek_degerler 2'den fazla değer içerdiğinde (bkz.
   // 02-build-prompt.ts "SAYI SINIRI VE YEDEK TABLO") kurulması ZORUNLU olan
@@ -274,3 +409,4 @@ export const GeneratorOutputSchema = z.object({
 
 export type GeneratorOutput = z.infer<typeof GeneratorOutputSchema>;
 export type GeneratorSoru = z.infer<typeof GeneratorSoruSchema>;
+export type BaglamSahnesiElemani = z.infer<typeof BaglamSahnesiElemaniSchema>;

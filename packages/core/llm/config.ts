@@ -1,3 +1,17 @@
+import type { Ders } from "../pipeline/types.js";
+
+const DERSLER: Ders[] = ["MATEMATIK", "GEOMETRI", "FIZIK", "KIMYA", "BIYOLOJI", "TDE"];
+
+/** `${prefix}_${DERS}` biçimindeki env değişkenlerinden yalnız GERÇEKTEN tanımlı olanları toplar. */
+function derseGoreEnv(env: NodeJS.ProcessEnv, prefix: string): Partial<Record<Ders, string>> {
+  const out: Partial<Record<Ders, string>> = {};
+  for (const ders of DERSLER) {
+    const deger = env[`${prefix}_${ders}`];
+    if (deger) out[ders] = deger;
+  }
+  return out;
+}
+
 /**
  * Section 9: "Model adları .env ve config'ten gelsin, koda gömülmesin."
  * Her aşama kendi modelini burada, tek yerden okur.
@@ -26,6 +40,32 @@ export interface StageModels {
    */
   imageHighQuality: string;
   imageHighQualityEdit: string;
+  /**
+   * Ders bazlı YUKSEK-kalite model override'ı — "en iyi görsel modelini
+   * ders bazında denemek" isteği için. Bir ders burada tanımlı değilse
+   * `imageHighQuality`/`imageHighQualityEdit`e (genel varsayılan) düşülür.
+   * Tüm değerler `FalProvider`'ın aynı fal.ai anahtarıyla çağırdığı
+   * (yalnız model id'si farklı) endpoint'lerdir — fal.ai Flux dışında
+   * Ideogram/Recraft/Imagen/Seedream gibi modelleri de barındırdığından
+   * yeni bir sağlayıcı eklemeden yalnız model id'sini değiştirerek denenebilir.
+   */
+  imageHighQualityByDers: Partial<Record<Ders, string>>;
+  imageHighQualityEditByDers: Partial<Record<Ders, string>>;
+  /**
+   * AŞAMA 2 görsel-manifest denetimi (bkz. 19-gorsel-denetim.ts) — kullanıcı
+   * isteğiyle 2026-08-23'te OpenAI'dan Anthropic/Claude Opus'a geçirildi.
+   * Gerekçe: canlı testte (FIZ.9.1.1, job 16a89a8f) gpt-5.1 tabanlı denetim,
+   * rafta GERÇEKTE 2 yeşil+2 kırmızı+1 siyah dosya varken "her renkten
+   * yalnız birer tane, sayım uyuşuyor" diye yanlışlıkla PASS verdi — bu,
+   * "renk/miktar kodlaması" güvenlik ağının (bkz. proje hafızası
+   * menar-mays-gorsel-mimari) dayandığı deterministik karşılaştırmayı (bkz.
+   * 19-gorsel-denetim.ts sayilan_nesneler) anlamsız kılıyordu, çünkü kontrol
+   * yalnız "modelin RAPORLADIĞI sayı beklenenle tutuyor mu" bakabiliyor —
+   * modelin kendisi yanlış sayarsa yakalayamıyor. Sağlayıcı (openai→anthropic)
+   * `apps/api/lib/provider-deps.ts` ve `apps/cli/lib/providers.ts`'te de
+   * (solverA'nın hep anthropic olması gibi) sabit — yalnız MODEL adı burada,
+   * env'ten değişebilir.
+   */
   visionCheck: string;
 }
 
@@ -41,7 +81,9 @@ export function loadStageModels(env: NodeJS.ProcessEnv = process.env): StageMode
     imageEdit: env.MODEL_IMAGE_EDIT ?? image,
     imageHighQuality: env.MODEL_IMAGE_HQ ?? "fal-ai/flux-pro/v1.1-ultra",
     imageHighQualityEdit: env.MODEL_IMAGE_HQ_EDIT ?? "fal-ai/flux-pro/kontext",
-    visionCheck: env.MODEL_VISION_CHECK ?? "gpt-5.1",
+    imageHighQualityByDers: derseGoreEnv(env, "MODEL_IMAGE_HQ"),
+    imageHighQualityEditByDers: derseGoreEnv(env, "MODEL_IMAGE_HQ_EDIT"),
+    visionCheck: env.MODEL_VISION_CHECK ?? "claude-opus-5",
   };
 }
 

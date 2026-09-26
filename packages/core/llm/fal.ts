@@ -40,13 +40,21 @@ export class FalProvider implements LlmProvider {
 
   async generateImage(opts: ImageGenerateOptions): Promise<ImageGenerateResult> {
     const result = await this.client.subscribe(opts.model, {
-      input: {
-        prompt: opts.prompt,
-        image_size: falImageSize(opts.size),
-        num_images: 1,
-        output_format: "png",
-        ...(opts.seed !== undefined ? { seed: opts.seed } : {}),
-      },
+      input: isNanoBanana(opts.model)
+        ? {
+            prompt: opts.prompt,
+            aspect_ratio: falAspectRatio(opts.size),
+            num_images: 1,
+            output_format: "png",
+            ...(opts.seed !== undefined ? { seed: opts.seed } : {}),
+          }
+        : {
+            prompt: opts.prompt,
+            image_size: falImageSize(opts.size),
+            num_images: 1,
+            output_format: "png",
+            ...(opts.seed !== undefined ? { seed: opts.seed } : {}),
+          },
     });
     return this.toImageResult(result.data);
   }
@@ -55,20 +63,34 @@ export class FalProvider implements LlmProvider {
     const blob = new Blob([Buffer.from(opts.baseImage, "base64")], { type: opts.baseImageMimeType });
     const imageUrl = await this.client.storage.upload(blob);
 
+    // Nano Banana Pro (Gemini 3 Pro Image) diffusion img2img değil,
+    // reasoning-tabanlı çok-modlu bir düzenleme modeli — girdi şeması
+    // temelden farklı: tekil `image_url` yerine `image_urls` DİZİSİ bekliyor,
+    // `image_size`/`strength` alanlarını hiç desteklemiyor (kompozisyon
+    // korunumu "strength" sayısıyla değil, doğrudan talimatla yönetiliyor).
     const result = await this.client.subscribe(opts.model, {
-      input: {
-        image_url: imageUrl,
-        prompt: opts.prompt,
-        // 0.5-0.6 aralığı: kompozisyon/ışığı büyük ölçüde korur, ama RED
-        // nedenini gerçekten değiştirebilecek kadar da düzenleme uygular —
-        // çok düşükse hata düzelmez, çok yüksekse "regenerate everything"e
-        // geri döner (bkz. kullanıcı mimarisi madde 18).
-        strength: 0.55,
-        image_size: falImageSize(opts.size),
-        num_images: 1,
-        output_format: "png",
-        ...(opts.seed !== undefined ? { seed: opts.seed } : {}),
-      },
+      input: isNanoBanana(opts.model)
+        ? {
+            image_urls: [imageUrl],
+            prompt: opts.prompt,
+            aspect_ratio: falAspectRatio(opts.size),
+            num_images: 1,
+            output_format: "png",
+            ...(opts.seed !== undefined ? { seed: opts.seed } : {}),
+          }
+        : {
+            image_url: imageUrl,
+            prompt: opts.prompt,
+            // 0.5-0.6 aralığı: kompozisyon/ışığı büyük ölçüde korur, ama RED
+            // nedenini gerçekten değiştirebilecek kadar da düzenleme uygular —
+            // çok düşükse hata düzelmez, çok yüksekse "regenerate everything"e
+            // geri döner (bkz. kullanıcı mimarisi madde 18).
+            strength: 0.55,
+            image_size: falImageSize(opts.size),
+            num_images: 1,
+            output_format: "png",
+            ...(opts.seed !== undefined ? { seed: opts.seed } : {}),
+          },
     });
     return this.toImageResult(result.data);
   }
@@ -91,4 +113,16 @@ export class FalProvider implements LlmProvider {
 function falImageSize(size: "1024x1024" | "1536x1024" | "1024x1536"): { width: number; height: number } {
   const [width, height] = size.split("x").map(Number);
   return { width: width!, height: height! };
+}
+
+/** `fal-ai/nano-banana-pro` ve `fal-ai/nano-banana-pro/edit` — image_size değil aspect_ratio/resolution kullanan tek aile. */
+function isNanoBanana(model: string): boolean {
+  return model.includes("nano-banana");
+}
+
+/** Nano Banana Pro `image_size` değil `aspect_ratio` enum'u ("1:1"|"3:2"|"2:3"|...) bekliyor. */
+function falAspectRatio(size: "1024x1024" | "1536x1024" | "1024x1536"): "1:1" | "3:2" | "2:3" {
+  if (size === "1536x1024") return "3:2";
+  if (size === "1024x1536") return "2:3";
+  return "1:1";
 }
