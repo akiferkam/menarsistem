@@ -3,6 +3,7 @@ import { basename, dirname, join } from "node:path";
 import type { FastifyInstance } from "fastify";
 import { validateJob, type JobInput } from "@menar/core";
 import { requireOgretmen } from "../auth/middleware.js";
+import { maybeSpawnBtbsSen } from "../queue/btbs.js";
 import { maybeAssembleTopluUretim } from "../queue/toplu-pdf.js";
 import type { Repository } from "../db/repository.js";
 
@@ -19,12 +20,29 @@ export function registerJobRoutes(app: FastifyInstance, repo: Repository, output
       return;
     }
 
+    // BTBS ("Bir Ben Bir Sen"): BEN + otomatik eklenecek SEN'i gruplamak için
+    // tek satırlık bir toplu_uretim batch'i açılır — teacher tek "Soruyu Üret"
+    // tıklasa bile SEN, BEN bittiğinde (bkz. queue/btbs.ts) bu batch'e otomatik
+    // eklenir; ikisi birlikte "Soru Bankası" ilerleme tablosunda/PDF'inde görünür.
+    let topluUretimId: string | undefined;
+    if (input.mode === "BTBS" && !input.btbsRol) {
+      const batch = repo.topluUretim.create({
+        yayineviId: ogretmen.yayineviId,
+        ogretmenId: ogretmen.id,
+        baslik: `Bir Ben Bir Sen — ${input.kod}`,
+        toplamSatir: 2,
+      });
+      topluUretimId = batch.id;
+    }
+
     const job = repo.is.create({
       yayineviId: ogretmen.yayineviId,
       ogretmenId: ogretmen.id,
       inputJson: JSON.stringify(input),
+      topluUretimId,
+      topluUretimSira: topluUretimId ? 0 : undefined,
     });
-    reply.code(202).send({ jobId: job.id, status: job.status });
+    reply.code(202).send({ jobId: job.id, status: job.status, topluUretimId });
   });
 
   app.get("/jobs/:id", async (req, reply) => {
@@ -79,6 +97,10 @@ export function registerJobRoutes(app: FastifyInstance, repo: Repository, output
 
     repo.sonuc.approve(id, ogretmen.id);
     repo.is.setStatus(id, "APPROVED", { finishedAt: job.finishedAt ?? new Date().toISOString() });
+    // BTBS ("Bir Ben Bir Sen"): BEN NEEDS_REVIEW'dan APPROVED'a geçtiğinde de
+    // (worker.ts yalnız düz DONE durumunda tetikler) eşleştirilmiş SEN'i
+    // kuyruğa ekler — fonksiyon idempotent, SEN zaten varsa no-op.
+    maybeSpawnBtbsSen(job, repo);
     // Bu iş bir toplu üretime aitse ve o batch'in PDF'i daha önce (bu soru
     // NEEDS_REVIEW iken) derlenmişse, onay artık PDF'in dışında kalmasını
     // önler — worker.ts'in kendi tamamlanma kancasıyla AYNI fonksiyon,

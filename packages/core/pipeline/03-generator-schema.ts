@@ -190,12 +190,27 @@ const BaglamSahnesiElemaniSchema = z.object({
   nokta: z.string().nullish(),
 });
 
+const GrafikNoktaSchema = z.object({ x: z.number().nullish(), y: z.number().nullish(), etiket: z.string().nullish() });
+
+// Kullanıcı geri bildirimi (2026-09-29, "grafik çizme falan yapamıyorsun"):
+// tek düz `noktalar` dizisi yalnız BİR veri serisini taşıyabiliyordu — "A ve
+// B deposunun haftalık stok değişimini KARŞILAŞTIR" gibi çok yaygın bir
+// bağlam-temelli kalıp (aynı eksende birden fazla trendi karşılaştırma)
+// yapısal olarak İMKANSIZDI. `seriler` (opsiyonel) birden fazla adlandırılmış
+// seriyi taşır — render/14-veri-katmani.ts her seriyi kendi rengiyle çizip
+// bir gösterge (lejant) ekler. Geriye dönük uyumluluk için tekli `noktalar`
+// alanı KALDIRILMADI — `seriler` boşsa eski tek-seri davranışı aynen sürer.
 const GrafikSerisiSchema = z.object({
   tur: z.enum(["CIZGI", "SUTUN"]),
   baslik: z.string().nullish(),
   x_baslik: z.string().nullish(),
   y_baslik: z.string().nullish(),
-  noktalar: z.array(z.object({ x: z.number().nullish(), y: z.number().nullish(), etiket: z.string().nullish() })).nullish(),
+  noktalar: z.array(GrafikNoktaSchema).nullish(),
+  // Birden fazla seri karşılaştırılacaksa BUNU kullan, `noktalar`ı BOŞ
+  // bırak. En fazla 4 seri — daha fazlası okunaksız/renk karmaşası yaratır.
+  // Her serinin `noktalar` dizisi AYNI x eksenini (aynı zaman/kategori
+  // noktalarını) paylaşmalı, aksi halde karşılaştırma anlamsızlaşır.
+  seriler: z.array(z.object({ ad: z.string(), noktalar: z.array(GrafikNoktaSchema) })).min(2).max(4).nullish(),
 });
 
 const TabloSchema = z.object({

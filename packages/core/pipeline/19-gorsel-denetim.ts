@@ -125,7 +125,11 @@ export async function denetleGorsel(
             `merkezi (planlanan konum tahmindi, sen GÖRDÜĞÜNÜ raporla) yüzde cinsinden (sol-üst köşe 0,0; ` +
             `sağ-alt köşe 100,100) \`tespit_edilen_konumlar\` dizisine, ${gosterilecekDegerler.join(" | ")} ` +
             `değerleriyle AYNI SIRADA ekle — bu, gerçek metnin görselde YANLIŞ bir yere değil TAM O ` +
-            `BÖLGENİN üzerine bindirilmesini sağlar.`
+            `BÖLGENİN üzerine bindirilmesini sağlar. Her kayda ayrıca \`aci_derece\` ekle: o ekran/etiket ` +
+            `yüzeyinin kamera açısı yüzünden YATAYDAN kaç derece döndürülmüş/eğik göründüğünü tahmin et ` +
+            `(saat yönü pozitif, ör. sağ kenarı sola göre daha aşağıdaysa pozitif bir açı) — bindirilecek ` +
+            `metin/kart bu açıyla döndürülüp yüzeye TAM OTURACAK; yüzey zaten kameraya dik/düz duruyorsa 0 ` +
+            `yaz, EMİN DEĞİLSEN 0 yaz, ASLA rastgele bir sayı uydurma.`
           : "") +
         (overlayCizgileri.length
           ? ` KUVVET_OKU/OLCUM_CIZGISI: sahnede ayrıca hiçbir EK ok, çizgi, vektör işareti veya ölçüm ` +

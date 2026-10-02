@@ -26,7 +26,17 @@ function ciftLlmCapraz(soru: GeneratorSoru, no: number, a: SolverCozum, b: Solve
   const key = (soru.dogru_secenek || "").trim();
   const red: string[] = [];
 
-  const uyus = a.dogru_secenek === b.dogru_secenek && String(a.sonuc ?? "").trim() === String(b.sonuc ?? "").trim();
+  // Yalnız `dogru_secenek` (harf) karşılaştırılır — `sonuc` iki bağımsız LLM
+  // çağrısının kendi cümleleriyle yazdığı serbest metin gerekçedir, birebir
+  // dize eşitliği ARANMAZ. Eskiden `sonuc` metni de eşitlik şartına dahildi;
+  // bu, Tarih/Coğrafya/Felsefe/DKAB/TDE gibi yorumsal derslerde iki solver
+  // AYNI harfi seçip AYNI şeyi farklı kelimelerle anlattığında bile sahte RED
+  // üretiyordu (canlı modda görüldü, 2026-09-26: TAR.9.1.1/1.2/1.3 — üçünde de
+  // solver A/B AYNI harfi seçmişti, yalnız gerekçe cümleleri farklı yazılmıştı).
+  // Gerçek anlaşmazlık zaten aşağıdaki harf-bazlı TEK_DOĞRU/BELİRSİZ
+  // denetimiyle (satır 37-45) bağımsız olarak yakalanıyor — `sonuc` eşitliği
+  // ek bir koruma sağlamıyordu, yalnız kırılgandı.
+  const uyus = a.dogru_secenek === b.dogru_secenek;
   if (!uyus) {
     red.push(`SORU ${no}: SOLVER A (${a.dogru_secenek}/${a.sonuc}) ile SOLVER B (${b.dogru_secenek}/${b.sonuc}) uyuşmuyor — RED`);
   }

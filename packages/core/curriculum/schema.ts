@@ -42,6 +42,16 @@ export const OutcomeSchema = z.object({
   // Mikro alt başlıklar. GENEL_KARMA is always the terminal entry — a soru
   // whose "Alt Konu / Mikro" field is left blank falls back to it.
   micro: z.array(z.string().min(1)).min(2),
+  // Resmî DÖP'ten (Ders Öğretim Programı) süzülmüş, üretici için somut
+  // bağlam/ölçme rehberi — şimdilik yalnız Tarih/Felsefe'de dolu.
+  dop_notu: z.string().nullish(),
+  // Ünite ve Kazanımlar docx'indeki kazanımın kendi a)/b)/c)... alt
+  // maddeleri — resmî, kazanıma özel süreç bileşenleri (bkz.
+  // curriculum/tymm-skill.ts processComponents() — o, bu resmî liste
+  // YOKKEN kullanılan genel anahtar-kelime tahminidir). Tarih/Coğrafya/
+  // DKAB/Felsefe'de dolu; Matematik ve diğerlerinde kaynak dosyada bu
+  // madde yapısı olmadığı için boş kalır ve heuristik tahmine düşülür.
+  surec_bilesenleri: z.array(z.string().min(1)).nullish(),
 });
 export type Outcome = z.infer<typeof OutcomeSchema>;
 

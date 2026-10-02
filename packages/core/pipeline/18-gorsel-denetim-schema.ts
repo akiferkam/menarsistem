@@ -52,7 +52,18 @@ export const GorselDenetimLlmSchema = z.object({
   // `gorselde_gosterilecek_degerler`/`overlay_konumlari` ile BİREBİR aynı
   // olmalı. 20-baglam-gorseli.ts bindirmede bunu (varsa) önceden tahmin
   // edilen overlay_konumlari'na TERCİHEN kullanır.
-  tespit_edilen_konumlar: z.array(z.object({ x_yuzde: z.number().min(0).max(100), y_yuzde: z.number().min(0).max(100) })).nullish(),
+  // Kullanıcı geri bildirimi (2026-09-28): bindirilen metin/kart HER ZAMAN
+  // ekrana paralel/düz basılıyordu — fotoğraftaki cihaz ekranı perspektifle
+  // (kamera açısıyla) eğik/döndürülmüş durduğunda ("ekran yamuk, yazı düz")
+  // bindirme yapıştırılmış gibi duruyordu. Her konumun kendi `aci_derece`si,
+  // denetçinin GERÇEK görselde gördüğü ekran/etiket yüzeyinin yataydan ne
+  // kadar döndüğünü (derece, saat yönü pozitif) tahmin etmesini sağlar —
+  // `render/gorsel-overlay.ts` bindirdiği kartı bu açıyla döndürerek yüzeye
+  // oturtur. Emin değilse veya yüzey zaten düzse 0 yazmalı, ASLA rastgele
+  // bir açı uydurmamalı.
+  tespit_edilen_konumlar: z
+    .array(z.object({ x_yuzde: z.number().min(0).max(100), y_yuzde: z.number().min(0).max(100), aci_derece: z.number().min(-45).max(45).nullish() }))
+    .nullish(),
 });
 
 export type GorselHataKodu = z.infer<typeof GorselHataKoduSchema>;

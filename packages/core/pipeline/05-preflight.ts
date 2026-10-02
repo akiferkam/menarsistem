@@ -184,6 +184,33 @@ export function runPreflight(
     uyari.push("Görsel manifesti eksik; görsel aşamasından önce tamamlanmalı");
   }
 
+  // CIHAZ_EKRANI/TEKNIK_ETIKET: gerçek değerler `render/gorsel-overlay.ts`
+  // tarafından fotoğrafın ÜZERİNE, `overlay_konumlari`nin işaret ettiği DAR
+  // bir bölgeye (bir cihaz ekranı, bir ölçü etiketi) bindirilir — o render
+  // katmanının satır kaydırma/taşma koruması yoktur (kasıtlı: gerçek cihaz
+  // okumaları zaten kısadır). Canlı modda görüldü (2026-09-26, TAR.9.1.1):
+  // 02-build-prompt.ts'in "istediğin kadar değeri, istediğin karmaşıklıkta
+  // güvenle kullanabilirsin" serbestliği üretici tarafından YANLIŞ yorumlanıp
+  // bir "belge özeti" PARAGRAFI CIHAZ_EKRANI'na yazdırıldı — bindirilen metin
+  // fotoğrafın kenarından taştı, okunaksız/kırık bir görsel üretildi. Bu artık
+  // sert (kritik) bir kapı: bir cihaz ekranı/etiket KISA bir okuma taşır,
+  // paragraf/cümle taşımaz.
+  const CIHAZ_EKRANI_SINIRI = 40;
+  const TEKNIK_ETIKET_SINIRI = 60;
+  const gosterim = output.baglam_katmani?.gorsel_veri_gosterimi;
+  if (gosterim === "CIHAZ_EKRANI" || gosterim === "TEKNIK_ETIKET") {
+    const sinir = gosterim === "CIHAZ_EKRANI" ? CIHAZ_EKRANI_SINIRI : TEKNIK_ETIKET_SINIRI;
+    (output.baglam_katmani?.gorselde_gosterilecek_degerler ?? []).forEach((deger, i) => {
+      if (deger.length > sinir) {
+        kritik.push(
+          `BAĞLAM KATMANI: gorselde_gosterilecek_degerler[${i}] (${gosterim}) çok uzun (${deger.length} karakter, ` +
+            `azami ${sinir}) — "${deger.slice(0, 50)}...". Bu bir cihaz ekranı/etiket okumasıdır, paragraf/cümle DEĞİLDİR; ` +
+            `kısa bir değere indirin ya da bu veriyi soru metnine/veri_katmani'na taşıyın.`
+        );
+      }
+    });
+  }
+
   // Kullanıcı geri bildirimi (2026-08-17): "görsel zorunlu seçiyorum, tablo
   // değil GERÇEK görsel istiyorum." ISLEVSEL_GORSEL_ZORUNLU seçiliyken üretici
   // baglam_katmani.gerekli=false yapıp yalnız veri_katmani.tur=TABLO (sayısal
@@ -259,6 +286,29 @@ export function runPreflight(
       `OVERLAY KONUMU EKSİK/UYUŞMUYOR: gorselde_gosterilecek_degerler'de ${gosterilecekSayisi} değer var ama ` +
         `overlay_konumlari'nde ${overlayKonumSayisi} konum var — her değere BİREBİR karşılık gelen bir konum ` +
         `(x_yuzde, y_yuzde) atanmalı, aksi halde bindirilecek metin görselde nereye çizileceği belirsiz kalır.`
+    );
+  }
+
+  // KULLANICI KARARI (2026-09-27): "SAF ATMOSFER" (bkz. 02-build-prompt.ts,
+  // önceden 2026-08-17'de bilinçli bir varsayılan olarak eklenmişti) artık
+  // YASAK — bağlam fotoğrafı ya soru çözümü için GERÇEKTEN gerekli bir bilgi/
+  // görev taşır (bir cihaz okuması/etiket/ölçüm çizgisi/kuvvet oku İÇİN
+  // gorsel_veri_gosterimi + gorselde_gosterilecek_degerler/overlay_cizgileri
+  // dolu, YA DA güvenilir tek-grup bir sayım görevi için renk_miktar_
+  // sayimlari dolu) ya da baglam_katmani.gerekli=false kalıp hiç üretilmez.
+  // Salt atmosfer/dekor amaçlı bir fotoğraf (gorsel_veri_gosterimi=YOK VE
+  // sayım görevi yok) artık kritik RED — üretici düzeltme turunda ya işlev
+  // yükler ya görseli tamamen kaldırır.
+  const renkMiktarVarMi = (output.gorsel_veri_manifesti?.renk_miktar_sayimlari ?? []).length > 0;
+  const gorselIslevselMi = (gosterimTuru && gosterimTuru !== "YOK") || renkMiktarVarMi;
+  if (bk?.gerekli === true && !gorselIslevselMi) {
+    kritik.push(
+      "BAĞLAM GÖRSELİ İŞLEVSİZ (SAF ATMOSFER YASAK): baglam_katmani.gerekli=true ama görsel hiçbir çözüm " +
+        "verisi/görevi taşımıyor (gorsel_veri_gosterimi=YOK VE renk_miktar_sayimlari boş) — salt dekoratif/" +
+        "atmosferik bir fotoğraf artık üretilemez. Ya görsele gerçek bir işlev yükle (gorsel_veri_gosterimi " +
+        "seç ve gorselde_gosterilecek_degerler/overlay_cizgileri'ni doldur, YA DA güvenilir tek-grup bir " +
+        "sayım görevi için gorsel_veri_manifesti.renk_miktar_sayimlari'nı doldur) YA DA baglam_katmani." +
+        "gerekli=false yap (bu senaryoda hiç fotoğraf üretilmesin)."
     );
   }
 

@@ -48,7 +48,12 @@ export function validateJob(input: JobInput): ValidationResult {
     return { valid: false, errors };
   }
 
-  const soruSayisi = Math.min(Math.max(1, Math.trunc(input.soruSayisi)), 5); // MASTER_CORE: 5'erli gruplar
+  // BTBS (Bir Ben Bir Sen): BEN ve SEN AYRI, BAĞIMSIZ birer job'dur (her biri
+  // kendi görselini üretir) — her ikisi de tekil (1 soruluk) bir job'dur,
+  // "2 soru" ikinci job (SEN) otomatik olarak ayrıca kuyruğa eklenerek
+  // sağlanır (bkz. apps/api/queue/btbs.ts). Bu yüzden burada da 1'e sabitlenir.
+  const soruSayisi =
+    input.mode === "BTBS" ? 1 : Math.min(Math.max(1, Math.trunc(input.soruSayisi)), 5); // MASTER_CORE: 5'erli gruplar
 
   return {
     valid: true,

@@ -11,6 +11,28 @@ const GORSELSIZ_SATIR = "AŞAMA 2 (GÖRSEL-MANİFEST) DENETİMİ: UYGULANMAZ —
 /** İlk denemede kaç bağımsız aday üretilip aralarından en iyisi seçilecek (kullanıcı mimarisi madde 19/42). */
 const ILK_DENEME_ADAY_SAYISI = 2;
 
+/**
+ * Kullanıcı isteği (2026-09-29): `gorselVeriStratejisi=TAM_AI` iken AI kendi
+ * çizdiği değeri 3 denemede de doğru veremezse (bkz. `runBaglamGorseli`),
+ * bu, işi FAILED'e düşürmesi gereken bir hatadır — "görselsiz devam"
+ * güvenlik ağına SESSİZCE düşülmez. `run.ts`/`apps/api/queue/worker.ts`
+ * bu hatayı normal bir üretim hatası gibi yakalayıp is_kaydi.status=FAILED
+ * yazar (özel bir kod değişikliği GEREKMEZ — zaten her türlü beklenmeyen
+ * hatayı böyle işliyorlar).
+ */
+export class TamAiBasarisizError extends Error {
+  constructor(
+    public readonly sonNedenler: string[],
+    public readonly denemeGecmisi: NonNullable<BaglamGorseliSonuc["denemeGecmisi"]>
+  ) {
+    super(
+      `TAM_AI: görsel ${MAKS_GORSEL_DENEME} denemede de doğrulanamadı — ` +
+        (sonNedenler.join("; ") || "neden bildirilmedi")
+    );
+    this.name = "TamAiBasarisizError";
+  }
+}
+
 export interface BaglamGorseliDeps {
   prompt: GorselPromptDeps;
   /** Varsayılan/metin-gerektiren adaylarda kullanılır (gpt-image-1) — her zaman zorunlu. */
@@ -154,6 +176,14 @@ export async function runBaglamGorseli(
   const hibritModuAktif =
     input.gorselVeriStratejisi === "FOTOGRAF_UZERINDE_HIBRIT" && hibritVeriVarMi && hibritUygunTur;
   let hibritSwitchYapildi = false;
+  // TAM_AI (kullanıcı isteği, 2026-09-29): HİBRİT ile AYNI ilk soruyu sorar
+  // ("AI'nın kendi çizdiği değer doğru mu") ve AYNI koşullarda uygundur —
+  // ama HİBRİT'in aksine asla deterministik bindirmeye SWITCH ETMEZ. 3
+  // denemede de RED ise `TamAiBasarisizError` fırlatılır (bkz. altta) — iş
+  // `FAILED` olarak sonlanır, "görselsiz devam" güvenlik ağına DÜŞMEZ. Bu
+  // kullanıcının bilinçli tercihi: kör güven burada özellik, hata değil.
+  const tamAiModuAktif = input.gorselVeriStratejisi === "TAM_AI" && hibritVeriVarMi && hibritUygunTur;
+  const aiKendiCiziyor = hibritModuAktif || tamAiModuAktif;
 
   // Hibrit modun İLK turunda denetim "bölge boş mu" değil "AI'nın yazdığı
   // değer doğru mu" sorusunu sormalı (bkz. 19-gorsel-denetim.ts'in
@@ -164,7 +194,7 @@ export async function runBaglamGorseli(
   // denetimin hangi soruyu soracağını değiştirir. Strateji değiştikten sonra
   // (aşağıda) gerçek `aday`a dönülür — bu da NESNE_INDEKSI'nin kullandığı
   // AYNI `denetimIcinAday` desenidir.
-  let denetimIcinAday = hibritModuAktif
+  let denetimIcinAday = aiKendiCiziyor
     ? { ...aday, baglam_katmani: { ...aday.baglam_katmani, overlay_konumlari: [], overlay_cizgileri: [] } }
     : aday;
 
@@ -195,7 +225,7 @@ export async function runBaglamGorseli(
       // denetimIcinAday — bu turda "boş mu" değil "değer doğru mu" sorusu
       // soruldu) — hiçbir bindirme gerekmez, AI'nın ürettiği görsel olduğu
       // gibi kullanılır.
-      if (hibritModuAktif && !hibritSwitchYapildi) {
+      if ((hibritModuAktif || tamAiModuAktif) && !hibritSwitchYapildi) {
         return {
           kullanildi: true,
           contextImageFilename: CONTEXT_IMAGE_FILENAME,
@@ -263,6 +293,15 @@ export async function runBaglamGorseli(
     }
 
     if (deneme >= MAKS_GORSEL_DENEME) {
+      // TAM_AI'da güvenlik ağı YOK (kullanıcı isteği) — HİBRİT'in "3 turda da
+      // RED ise deterministik bindirmeye düş" mekanizması burada bilinçli
+      // olarak devre dışı; AI kendi çizimini 3 turda da doğru yapamadıysa iş
+      // "görselsiz devam" ile sessizce yayınlanmaz, üretim FAILED olarak
+      // sonlanır (bkz. TamAiBasarisizError — apps/api/queue/worker.ts'in
+      // genel hata yakalayıcısı bunu is_kaydi.status=FAILED'a çevirir).
+      if (tamAiModuAktif) {
+        throw new TamAiBasarisizError(secili.denetim.nedenler, denemeGecmisi);
+      }
       return {
         kullanildi: false,
         contextImageFilename: null,

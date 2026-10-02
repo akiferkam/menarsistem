@@ -25,6 +25,14 @@
         "refleksiyon",
         "sorgulama",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Öğrencilerden 'Felsefe nedir? Filozof kime denir? Felsefe ne işe yarar?' gibi sorularla bir röportaj hazırlaması ve felsefenin bilim/din/sanattan farkını, farklı felsefe geleneklerinin (Hint, Çin, Türk-İslam, Antik Yunan, Fransız, Alman, Anglosakson, Amerikan) tek bir kültüre indirgenemeyeceğini tartışması istenir. Ölçmede bu röportajın kendisi (konu birliği, akış, yayımlama ölçütleriyle) kanıttır.",
+      "surec_bilesenleri": [
+        "Felsefenin anlamını merak eder ve felsefenin ortak tanımının imkânına yönelik şüphe duyar.",
+        "Felsefi düşüncenin genel özellikleri, ortaya çıkışı ve tarihsel gelişimi üzerine derinlemesine düşünür.",
+        "Felsefi soruların temel özelliklerini ifade ederek felsefi soru sorar.",
+        "Felsefenin bilim, din ve sanat alanlarıyla ilişkisine eleştirel yaklaşır.",
+        "Felsefenin bireysel ve toplumsal işlevlerini tartışır."
       ]
     },
     {
@@ -47,6 +55,11 @@
         "safsata",
         "tutarlılık",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Günlük dilde ifade edilmiş örnek cümleler üzerinden düşünme ile dil arasındaki nedensel ilişki incelenir; bu ilişkilerden hareketle cümleler anlamını değiştirmeden mantıksal bir yapıya (öncül/sonuç) dönüştürülür. Ölçmede düşünme-dil ilişkisine dair tutarlı bir bütün oluşturma çalışması kanıttır.",
+      "surec_bilesenleri": [
+        "Düşünme ve dil ilişkisini inceleyerek nedensel ilişkiler ortaya koyar.",
+        "Tespit ettiği ilişkilerden hareketle uyumlu bir bütün oluşturur."
       ]
     },
     {
@@ -69,6 +82,12 @@
         "safsata",
         "tutarlılık",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Özdeşlik, çelişmezlik, üçüncü hâlin imkânsızlığı ve yeter-sebep ilkeleri; tümdengelim/tümevarım/analoji türleri; otoriteye başvurma, adam karalama, cımbızlama, popülerliğe başvurma, nedensellik ve yanlış analoji gibi safsata türleri günlük hayattan/medyadan (tartışma programı, gazete haberi, sosyal medya) örneklerle ayırt ettirilir. Ölçmede bir safsatayı tespit edip toplumsal etkisini değerlendiren ve çözüm önerisi sunan bir yazılı çalışma kanıttır.",
+      "surec_bilesenleri": [
+        "Mantık ve argümantasyonla ilgili kavramları inceler.",
+        "İfadeleri bağlamından koparmadan mantıksal yapılarına göre öncül ve sonuç bileşenlerine ayırarak dönüştürür.",
+        "İfadeleri anlamını değiştirmeden, kendi cümleleriyle nesnel ve doğru biçimde yeniden ifade eder."
       ]
     },
     {
@@ -92,6 +111,13 @@
         "varlık",
         "varoluş",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Varlığın var olup olmadığı ve ne olduğu problemleri; rüya/sanal ortam/simülasyon örnekleriyle gerçeklikten ayrımı, fenomen-idea-madde-oluş-öz-töz-varoluş kavramları ve nihilizm/realizm/idealizm/materyalizm/dualizm/fenomenoloji/varoluşçuluk gibi akımlar üzerinden somutlaştırılır (Platon Phaidon, Aristoteles Metafizik, İbni Sina, Descartes, Sartre'dan alıntılarla). Ölçmede bir metin inceleme formu ve akımları karşılaştıran bilgi yarışması/tartışma performansı kanıttır.",
+      "surec_bilesenleri": [
+        "Varlık felsefesinin konusunu ve temel kavramlarını açıklar.",
+        "Varlık felsefesinin temel problemlerini açıklar.",
+        "Varlık felsefesinin temel problemlerine yönelik düşünce ve argümanları değerlendirir.",
+        "Varlık felsefesiyle ilgili metinlerde yer alan kavram, problem ve argümanları inceler."
       ]
     },
     {
@@ -110,6 +136,13 @@
         "doğruluk",
         "gerçeklik",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Platon'un mağara benzetmesi ile bilgi-sanı-gerçeklik-doğruluk ayrımı; Protagoras/Gorgias/Pyrrhon/Sokrates/Descartes'ın doğru bilginin imkânına dair görüşleri (kuşkuculuk/dogmatizm), bilginin kaynağı tartışmaları (rasyonalizm/empirizm/kritisizm/entüisyonizm) ve doğruluk ölçütleri (uygunluk/tutarlılık/tümel uzlaşım/apaçıklık/yarar) somut örneklerle (dezenformasyon, medya haberleri) işlenir. Ölçmede bir metin inceleme formu ve doğruluk ölçütlerinin hangi disiplinlerde geçerli olduğunu tartışan bir çalışma kanıttır.",
+      "surec_bilesenleri": [
+        "Bilgi felsefesinin konusunu ve temel kavramlarını açıklar.",
+        "Bilgi felsefesinin temel problemlerini açıklar.",
+        "Bilgi felsefesinin temel problemlerine yönelik düşünce ve argümanları değerlendirir.",
+        "Bilgi felsefesiyle ilgili metinlerde yer alan kavram, problem ve argümanları inceler."
       ]
     },
     {
@@ -133,6 +166,13 @@
         "sorumluluk",
         "vicdan",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Evrensel ahlak yasasının imkânı ve özgürlük problemi; farklı kültürlerde ahlaki kabul edilen davranış örnekleri, tasavvuf/Mevlana/Yunus Emre/Hacı Bektaş Veli'nin ahlaki yaklaşımları ve evrensel ahlak yasasını kabul eden (Sokrates, Farabi, Kant, Mill) ile etmeyen (Epiküros, Hobbes, Stirner, Bentham) filozofların görüşleri karşılaştırılır; özgürlük-sorumluluk teması şiir/roman/film kesitleriyle işlenir. Ölçmede bu görüşleri karşılaştıran bir anlam çözümleme tablosu ve bir metin inceleme formu kanıttır.",
+      "surec_bilesenleri": [
+        "Ahlak felsefesinin konusunu ve temel kavramlarını açıklar.",
+        "Ahlak felsefesinin temel problemlerini açıklar.",
+        "Ahlak felsefesinin temel problemlerine yönelik düşünce ve argümanları değerlendirir.",
+        "Ahlak felsefesiyle ilgili metinlerde yer alan kavram, problem ve argümanları inceler."
       ]
     },
     {
@@ -153,6 +193,13 @@
         "sanat",
         "sanat eseri",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Sanatın ne olduğuna dair taklit/yaratım/oyun kuramları; bir objenin kopyasını çizme ile hayalde canlandırıp çizme karşılaştırması, güzelliğin öznel mi nesnel mi olduğu (Platon, Baumgarten, Kant, Croce) ve güzelliğin ahlaki/evrensel bir değerle bağlantısı tartışılır. Ölçmede taklit-yaratım kuramlarını karşılaştıran bir çizim etkinliği ve bir metin inceleme formu kanıttır.",
+      "surec_bilesenleri": [
+        "Estetik ve sanat felsefesinin konusunu ve temel kavramlarını açıklar.",
+        "Estetik ve sanat felsefesinin temel problemlerini açıklar.",
+        "Estetik ve sanat felsefesinin temel problemlerine yönelik düşünce ve argümanları değerlendirir.",
+        "Estetik ve sanat felsefesiyle ilgili metinlerde yer alan kavram, problem ve argümanları inceler."
       ]
     },
     {
@@ -176,6 +223,13 @@
         "toplum",
         "ütopya",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Devletin kökeni, iktidarın kaynağı ve meşruiyeti, ideal düzen ve ütopya problemleri; düzen ihtiyacı/güvenlik sorunları/birlikte yaşama zorunluluğunu yansıtan durum kartları ve yapay zekâ/robotların insanlar üzerinde hâkimiyet kurduğu ütopya senaryoları üzerinden işlenir (Platon, Aristoteles, Farabi, İbn Haldun, Hobbes'tan alıntılarla). Ölçmede devletin ortaya çıkışı/meşruiyetine dair görüş geliştiren bir bilgi görseli değerlendirmesi ve kısa bir ütopya yazısı kanıttır.",
+      "surec_bilesenleri": [
+        "Siyaset felsefesinin konusunu ve temel kavramlarını açıklar.",
+        "Siyaset felsefesinin temel problemlerini açıklar.",
+        "Siyaset felsefesinin temel problemlerine yönelik düşünce ve argümanları değerlendirir.",
+        "Siyaset felsefesiyle ilgili metinlerde yer alan kavram, problem ve argümanları inceler."
       ]
     },
     {
@@ -199,6 +253,13 @@
         "Tanrı",
         "vahiy",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Tanrı'nın varlığına ilişkin görüşler (teizm/deizm/panteizm/ateizm) ile teleolojik/kozmolojik/ontolojik/ahlaki kanıtlar; evrenin sonluluğu-sonsuzluğu ve ruhun ölümsüzlüğü problemleri (Augustinus, Gazali, İbni Rüşd, Hume, Hegel, Plantinga'dan alıntılarla) karşılaştırmalı bir grid/tablo ile işlenir. Ölçmede bu görüş/argümanların güçlü-zayıf yanlarını gerekçeli değerlendiren bir çalışma kâğıdı kanıttır.",
+      "surec_bilesenleri": [
+        "Din felsefesinin konusunu ve temel kavramlarını açıklar.",
+        "Din felsefesinin temel problemlerini açıklar.",
+        "Din felsefesinin temel problemlerine yönelik düşünce ve argümanları değerlendirir.",
+        "Din felsefesiyle ilgili metinlerde yer alan kavram, problem ve argümanları inceler."
       ]
     },
     {
@@ -221,6 +282,13 @@
         "paradigma",
         "yasa",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "İbnülheysem'in karanlık oda deneyi, Takiyüddin'in optik deneyi ve Asch'ın uyma deneyi üzerinden bilimin konusu/amacı/yöntemi somutlaştırılır; bilim olan ile olmayan bilgi alanları sınıflandırılıp bilimsel yöntemin aşamaları bir akış diyagramıyla, Carnap/Popper/Kuhn'un bilim anlayışları karşılaştırmalı olarak işlenir. Ölçmede bilim/bilim-olmayan sınıflandırma gerekçesini ve bilimsel yöntem akış diyagramını içeren bir çalışma kâğıdı kanıttır.",
+      "surec_bilesenleri": [
+        "Bilim felsefesinin konusunu ve temel kavramlarını açıklar.",
+        "Bilim felsefesinin temel problemlerini açıklar.",
+        "Bilim felsefesinin temel problemlerine yönelik düşünce ve argümanları değerlendirir.",
+        "Bilim felsefesiyle ilgili metinlerde yer alan kavram, problem ve argümanları inceler."
       ]
     },
     {
@@ -240,6 +308,11 @@
         "değer",
         "doğa",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Çevre-insan ilişkisi (doğanın kendi başına değeri var mı, insanın doğal kaynakları tüketmesinin ölçüsü ne olmalı, insanın doğa üzerinde egemenlik kurma hakkı var mı) görsel/video/belgesel materyallerle sorgulanır; çevre tahribatı/kirliliği/küresel ısınmanın nedenleri ve gelecekteki etkileri neden-sonuç diyagramıyla işlenir. Ölçmede seçilen bir çevre sorununa dair gerekçelendirilmiş cevap ve neden-sonuç diyagramı kanıttır.",
+      "surec_bilesenleri": [
+        "Çevre ile ilgili felsefi soru ve problemleri açıklar.",
+        "Çevre ile ilgili felsefi soru ve problemleri hayatla ilişkilendirerek değerlendirir."
       ]
     },
     {
@@ -259,6 +332,12 @@
         "değer",
         "doğa",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "İnsan merkezli, canlı merkezli ve çevre merkezli etik yaklaşımlar karşılaştırma tablosuyla işlenir; güncel bir çevre sorunu seçilip bu etik yaklaşımlardan biri açısından değerlendirilir, sürdürülebilir çevrenin imkânı ve afetlerle sonuçlanabilen bir çevre sorunu tartışılır. Ölçmede seçilen etik yaklaşımı savunan gerekçeli bir argüman ve felsefi metin yazma performansı kanıttır.",
+      "surec_bilesenleri": [
+        "Çevre sorunlarıyla ile ilgili felsefi argümanları çözümler.",
+        "Çevre sorunları ile ilgili görüş ve argüman oluşturur.",
+        "Çevre sorunları ile ilgili felsefi bir metin yazar."
       ]
     },
     {
@@ -279,6 +358,11 @@
         "teknoloji taraftarlığı",
         "zaman ve mekân",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Teknolojinin insan hayatını/güvenliğini/değerleri (Bauman'ın 'değerlerin tahribatı') nasıl etkilediği, iletişim/sanayi/finans alanlarındaki teknolojilerin birey-aile-topluma etkisi ve doğal afet/salgın süreçlerinde teknolojinin rolü somut örneklerle işlenir; robotların ahlaki eylem kapasitesi (Cezeri örneği) tartışılır. Ölçmede teknoloji bağımlılığının nedenlerine ve bilinçli tüketici olmaya dair bir röportaj/haber inceleme çalışması kanıttır.",
+      "surec_bilesenleri": [
+        "Teknoloji ile ilgili felsefi soru ve problemleri açıklar.",
+        "Teknoloji ile ilgili felsefi soru ve problemleri hayatla ilişkilendirerek değerlendirir."
       ]
     },
     {
@@ -299,6 +383,12 @@
         "teknoloji taraftarlığı",
         "zaman ve mekân",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Heidegger ve Marcel'in teknoloji bağlamındaki ontolojik anlam kaybı/yabancılaşma görüşleri; Baudrillard'ın simülasyon kuramı üzerinden gerçeklik algısı ve teknolojinin güvenlik sorunlarına yönelik alınabilecek önlemler tartışılır. Ölçmede bu görüşleri çözümleyip teknolojinin geleceğine dair bir argüman oluşturma (senaryo/kavram haritası) performansı kanıttır.",
+      "surec_bilesenleri": [
+        "Teknoloji ve hayat ilişkisiyle ilgili felsefi argümanları çözümler.",
+        "Teknoloji ve hayat ilişkisiyle ilgili görüş ve argüman oluşturur.",
+        "Teknoloji ve hayat ilişkisiyle ilgili felsefi metin yazar."
       ]
     },
     {
@@ -317,6 +407,11 @@
         "gönül",
         "inanç",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Bilme, anlama ve güvenme durumlarının inançla ilişkisi; 'inancın temellendirilmesinde aklın rolü nedir, inanmak için mi anlaşılır' gibi sorularla akıl-inanç-gönül ilişkisi somut örnek durumlar üzerinden işlenir. Ölçmede bu ilişkinin insan hayatındaki önemini sorgulayan kısa bir metin kanıttır.",
+      "surec_bilesenleri": [
+        "Akıl-inanç ilişkisiyle ilgili felsefi soru ve problemleri açıklar.",
+        "Akıl-inanç ilişkisiyle ilgili felsefi soru ve problemleri hayatla ilişkilendirerek değerlendirir."
       ]
     },
     {
@@ -335,6 +430,12 @@
         "gönül",
         "inanç",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Tertullianus, Augustinus, Farabi, Gazali, Yusuf Has Hacib, Hacı Bektaş Veli, Yunus Emre, Mevlana, Aşık Paşa ve Kierkegaard'dan en fazla yüzer kelimelik alıntı metinler üzerinden rasyonellik/irrasyonellik ile akıl-inanç-gönül ilişkisi felsefe tarihinin farklı dönemlerinde karşılaştırılır (Gazali-meşşai tartışması, İbni Rüşd-Kant karşılaştırması). Ölçmede akıl-inanç ilişkisine dair görüş/argüman içeren felsefi bir metin yazma performansı kanıttır.",
+      "surec_bilesenleri": [
+        "Akıl-inanç ilişkisiyle ilgili felsefi argümanları çözümler.",
+        "Akıl-inanç ilişkisiyle ilgili görüş ve argüman oluşturur.",
+        "Akıl-inanç ilişkisiyle ilgili felsefi metin yazar."
       ]
     },
     {
@@ -353,6 +454,11 @@
         "felsefi roman",
         "felsefi şiir",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Edebiyat ile felsefenin dil kullanımı/anlatım özellikleri bir bilgi görseliyle karşılaştırılır; 'Edebî metinler felsefi değer taşımalı mıdır? Filozoflar eserlerinde estetik kaygı taşır mı? Edebî unsurlar felsefi bir esere zenginlik katar mı?' sorularıyla edebiyat-felsefe ilişkisinin sınırları (edebî unsurlara felsefi bakışın imkânı, edebî unsurlarla felsefe yapmanın imkânı) tartışılır. Ölçmede bu problemlerin hayatla ilişkisini tartışan bir kontrol listesi/çalışma kâğıdı kanıttır.",
+      "surec_bilesenleri": [
+        "Edebiyat felsefe ilişkisi ile ilgili felsefi soru ve problemleri açıklar.",
+        "Edebiyat felsefe ilişkisi temelinde oluşan soru ve problemlerin hayatla ilişkisini değerlendirir."
       ]
     },
     {
@@ -371,6 +477,12 @@
         "felsefi roman",
         "felsefi şiir",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Voltaire, Hartmann, Murdoch, Derrida gibi filozofların edebî eserlerin felsefi değerine dair argümanları; destan/atasözü/söylev/fıkra/hikâye/şiir/roman gibi Türk edebiyatı türlerinden en fazla yüzer kelimelik alıntılar (Parmenides, Yunus Emre, Dostoyevski, Kafka, Sartre, Camus) üzerinden yalnızlık, sorumluluk, umut, acı gibi insani durumların edebî dille ele alınmasının güçlü/zayıf yönleri tartışılır. Ölçmede edebî-felsefi metin karşılaştırmasına dayalı bir görüş/argüman oluşturma performansı kanıttır.",
+      "surec_bilesenleri": [
+        "Edebiyat felsefe ilişkisi ile ilgili felsefi argümanları çözümler.",
+        "Edebiyat felsefe ilişkisi ile ilgili felsefi görüş ve argüman oluşturur.",
+        "Edebiyat felsefe ilişkisi ile ilgili felsefi metin yazar."
       ]
     },
     {
@@ -394,6 +506,11 @@
         "varoluş",
         "yabancılaşma",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Video/belgesel/film kesitleri ve kısa hikâyelerle 'Mutlu olmak, iyi bir hayat sürmek için yeterli midir? Hayatın anlamı nedir? Ben kimim?' sorularıyla hayatın anlamı, amacı ve önemi sorgulanır; karakterlerle empati kurularak (Ben olsaydım ne hissederdim?) kişisel yaşanmışlıklarla ilişkilendirilir. Ölçmede yaşanmış bir olay/eser üzerinden hayatın anlamına dair kısa bir metin kanıttır.",
+      "surec_bilesenleri": [
+        "Hayatın anlamına ilişkin felsefi soru ve problemleri açıklar.",
+        "Hayatın anlamına ilişkin felsefi soru ve problemleri hayatıyla ilişkilendirerek değerlendirir."
       ]
     },
     {
@@ -417,6 +534,12 @@
         "varoluş",
         "yabancılaşma",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Kung-Fu-Tzu, Sokrates, Epiktetos, Augustinus, Farabi, İbn Miskeveyh, Yusuf Has Hacib, Schopenhauer'ın erdem/haz/güç/irade/akıl kavramlarıyla mutluluğa ulaşma görüşleri; Kierkegaard, Nietzsche, Heidegger, Camus, Sartre'ın varoluş/umutsuzluk/kaygı/ölüm/yabancılaşma/saçma kavramları üzerinden 'varoluş ve kendi olma' problemi karşılaştırılır. Ölçmede bu filozofların görüşlerini karşılaştıran bir argüman oluşturma ve felsefi metin yazma performansı kanıttır.",
+      "surec_bilesenleri": [
+        "Hayatın anlamına ilişkin felsefi argümanları çözümler.",
+        "Hayatın anlamına ilişkin felsefi görüş ve argüman oluşturur.",
+        "Hayatın anlamına ilişkin felsefi metin yazar."
       ]
     },
     {
@@ -437,6 +560,11 @@
         "suç",
         "yasa",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "'Hukuk olmadan toplum düzeni sağlanabilir mi? Hukuk özgürlüğü sınırlar mı yoksa güvence mi altına alır? Vicdan hukukun üstünde bir ölçüt olabilir mi?' sorularıyla hukukun doğası; doğal hukuk/pozitif hukuk ayrımı ve ahlak-hukuk ilişkisi günlük yaşamdan (okul kuralları, yazılı olmayan kurallar) örneklerle işlenir. Ölçmede bu felsefi soruların doğuşuna kaynaklık eden günlük yaşam örnekleri ve kısa senaryolar kanıttır.",
+      "surec_bilesenleri": [
+        "Hukukun doğasına yönelik felsefi soru ve problemleri açıklar.",
+        "Hukukun doğasına yönelik felsefi soru ve problemleri toplumsal hayat ile ilişkilendirerek değerlendirir."
       ]
     },
     {
@@ -457,6 +585,12 @@
         "suç",
         "yasa",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "İnsan hakları tarihsel gelişimi, hukukun kaynağı (Aristoteles, İbn Haldun, Hobbes, Locke, Rousseau'nun doğal/pozitif hukuk görüşleri) ve suç-ceza orantılılığı/caydırıcılık problemi; Rawls'ın 'cehalet örtüsü' düşünce deneyi ile hakkaniyet ilkesi güncel dava örnekleriyle tartışılır. Ölçmede hukukun kaynağına dair özgün bir argüman oluşturma ve güncel bir hukuk sorununu (bilişim suçları, fikri haklar vb.) felsefi metinle irdeleme performansı kanıttır.",
+      "surec_bilesenleri": [
+        "Hak ve özgürlüklerin hukuksal temellerini çözümler.",
+        "Temel hukuk sorunlarına yönelik görüş ve argüman oluşturur.",
+        "Hukuk sorunlarına ilişkin felsefi bir metin yazar."
       ]
     }
   ]

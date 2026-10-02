@@ -11,6 +11,7 @@ import {
   type KanitTablosu,
 } from "@menar/core";
 import { buildTenantProviderDeps } from "../lib/provider-deps.js";
+import { maybeSpawnBtbsSen } from "./btbs.js";
 import { maybeAssembleTopluUretim } from "./toplu-pdf.js";
 import type { Repository } from "../db/repository.js";
 import type { IsKaydi } from "../db/types.js";
@@ -180,6 +181,15 @@ export function startQueueWorker(cfg: WorkerConfig): { stop: () => void } {
         finishedAt: new Date().toISOString(),
       });
     } finally {
+      // BTBS ("Bir Ben Bir Sen"): BEN DONE olduğunda (NEEDS_REVIEW'da DEĞİL —
+      // o durumda /approve'un kendi çağrısı tetikler) eşleştirilmiş SEN'i
+      // otomatik kuyruğa ekler. Güncel durumu bilmek için DB'den TAZE okunur
+      // (parametre `job` işlem BAŞLANGICINDAKİ eski durumu taşır).
+      const guncelJob = cfg.repo.is.get(job.id);
+      if (guncelJob?.status === "DONE") {
+        maybeSpawnBtbsSen(guncelJob, cfg.repo);
+      }
+
       // Job'un durumu ne olursa olsun (DONE/NEEDS_REVIEW/FAILED — hepsi
       // "artık QUEUED/RUNNING değil" anlamına gelir) bir toplu üretime aitse
       // kardeşlerinin de bitip bitmediği kontrol edilir. `job.topluUretimId`

@@ -10,6 +10,18 @@ export type UretimModu =
   | "BTV1"
   | "BTP"
   | "BTG"
+  // "Bir Ben Bir Sen" (kullanıcı isteği, 2026-09-27 — v2, ilk sürüm geri
+  // alındı): BEN (yöntemi gösteren, öğretmenin sınıfta çözeceği örnek) ve SEN
+  // (aynı kazanımı yoklayan, öğrencinin bağımsız çözeceği eş soru) İKİ AYRI,
+  // BAĞIMSIZ job'tur — her biri kendi görselini/bağlamını üretir, sayfada
+  // ikisi de TAMAMEN NORMAL bir soru gibi görünür (kullanıcı: "ben sen falan
+  // yazıyor saçma, soru yine aynı şekilde olucak"). Ayrım yalnız iş akışı
+  // düzeyinde: SEN, BEN bittikten SONRA otomatik kuyruğa eklenir ve BEN'in
+  // bitmiş metnini bir referans olarak alır (bkz. JobInput.btbsRol/
+  // btbsReferans, apps/api/queue/btbs.ts) — "aynı soruyu sayı değiştirip
+  // tekrarlamak" değil, aynı yaklaşımı gerçekten farklı bir bağlamda
+  // sınayan bağımsız bir soru üretmek içindir.
+  | "BTBS"
   | "STANDART";
 
 /**
@@ -104,7 +116,18 @@ export type GorselBoyutu = "OTOMATIK" | "2D" | "3D";
  * deterministik bindirme yoluna döner (`20-baglam-gorseli.ts`) — hiçbir
  * zaman "kör güven" yok, her zaman bir güvenlik ağı var.
  */
-export type GorselVeriStratejisi = "DETERMINISTIK_SVG" | "FOTOGRAF_UZERINDE" | "FOTOGRAF_UZERINDE_HIBRIT";
+// TAM_AI (kullanıcı isteği, 2026-09-29 — "full AI'a bırakan, AI'a çizdiren
+// bir seçenek ekle, doğru ilerlemezse soru üretimi başarısız olsun"):
+// FOTOGRAF_UZERINDE_HIBRIT ile AYNI şekilde AI'nın kendi çizmesi denenir,
+// AMA HİBRİT'in aksine 3 denemede de RED alırsa deterministik bindirmeye
+// OTOMATİK DÜŞMEZ — iş `FAILED` olarak sonlanır (bkz. 20-baglam-gorseli.ts
+// `TamAiBasarisizError`). Kullanıcı bilinçli olarak bunu istedi: "kör
+// güven" burada TERCİH EDİLEN davranış, güvenlik ağı YOK. Varsayılan
+// DEĞİL — teacher formunda açıkça seçilmesi gerekir (DETERMINISTIK_SVG
+// hâlâ varsayılan; GEOMETRI/GRAFİK/KUVVET_OKU gibi türlerin hepsinin zaten
+// çalışan bir deterministik karşılığı var, bkz. proje hafızası 2026-09-29
+// kapsam kararı).
+export type GorselVeriStratejisi = "DETERMINISTIK_SVG" | "FOTOGRAF_UZERINDE" | "FOTOGRAF_UZERINDE_HIBRIT" | "TAM_AI";
 /**
  * Bağlam temelli sorularda (özellikle TDE, ileride Tarih/Coğrafya/Din/
  * Felsefe) iki+ kişi arasındaki konuşmayı göstermek için (kullanıcı isteği,
@@ -200,6 +223,25 @@ export interface JobInput {
    * (başlık şeridi, bölümlendirme, boşluk) esinlenen alternatif bir tema.
    */
   sayfaSablonu?: "STANDART" | "OKYANUS";
+  /**
+   * Yalnız mode="BTBS" job'larında anlamlıdır — BEN mi (yöntemi gösteren,
+   * normal görünümlü ilk soru) yoksa SEN mi (BEN'e eşleştirilmiş, öğrencinin
+   * bağımsız çözeceği ikinci soru) üretildiğini belirler. BEN ve SEN AYRI,
+   * BAĞIMSIZ job'lardır (bkz. apps/api/queue/btbs.ts) — ikisi de normal
+   * (soruSayisi=1) bir soru gibi render edilir, sayfada "BEN"/"SEN" gibi
+   * hiçbir görünür işaret YOKTUR (kullanıcı isteği, 2026-09-27: "ben sen
+   * falan yazıyor saçma"). Ayrım yalnız iş akışı/gruplama düzeyindedir.
+   * Verilmezse (ör. eski/harici çağrılar) BEN varsayılır.
+   */
+  btbsRol?: "BEN" | "SEN";
+  /** Yalnız btbsRol="SEN" olduğunda dolu — BEN'in bitmiş sonucu, SEN'in promptuna referans olarak eklenir. */
+  btbsReferans?: {
+    kok: string;
+    secenekler: string[];
+    dogruSecenek: string;
+    dogruCevap: string;
+    cozumAdimlari: string[];
+  };
 }
 
 /** node 01/02/03'ün ürettiği, kazanım zincirinin çözülmüş hâli. */
@@ -364,7 +406,7 @@ export interface GorselDenetimi {
   hataKodlari: string[];
   kalitePuani: number | null;
   /** bkz. render/gorsel-overlay.ts — denetçinin GERÇEKTE gördüğü boş bölge konumu, önceden tahmin edilenin yerine kullanılır. */
-  tespitEdilenKonumlar?: { x_yuzde: number; y_yuzde: number }[] | null;
+  tespitEdilenKonumlar?: { x_yuzde: number; y_yuzde: number; aci_derece?: number | null }[] | null;
 }
 
 /**

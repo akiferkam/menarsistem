@@ -31,6 +31,10 @@
         "taş küre (litosfer)",
         "yaşam küre (biyosfer)",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Coğrafya biliminin konusu ve bölümlerini oluşturan bileşenleri belirler.",
+        "Coğrafya biliminin konusu ve bölümlerini oluşturan bileşenler arasındaki ilişkileri belirler."
       ]
     },
     {
@@ -57,6 +61,10 @@
         "taş küre (litosfer)",
         "yaşam küre (biyosfer)",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Mekânda gerçekleşen coğrafi olay, olgu veya konuyu belirler.",
+        "Mekânda gerçekleşen coğrafi olay, olgu veya konu ile coğrafya öğrenmenin önemi arasındaki ilişkiyi belirler."
       ]
     },
     {
@@ -83,6 +91,12 @@
         "taş küre (litosfer)",
         "yaşam küre (biyosfer)",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Coğrafya biliminin gelişimiyle ilgili gerekli bilgilere ulaşmak için hangi araçları kullanacağını belirler.",
+        "Belirlediği araçları kullanarak coğrafya biliminin gelişimiyle ilgili ihtiyaç duyduğu bilgilere ulaşır.",
+        "Coğrafya biliminin gelişimiyle ilgili ulaştığı bilgileri doğrular.",
+        "Coğrafya biliminin gelişimiyle ilgili doğruladığı bilgileri kaydeder."
       ]
     },
     {
@@ -114,6 +128,12 @@
         "uzaktan algılama",
         "yerel saat",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Haritaya ait bileşenlerden yararlanarak haritaları okur.",
+        "Haritaya ait bileşenlerden yararlanarak haritadaki olay, olgu ve mekânlar arası ilişkileri çözümler.",
+        "Haritada yer alan olay, olgu veya mekânların özellik, konum, dağılış ve ilişkileri ile değişim ve/veya harita türüne ilişkin çıkarım yapar.",
+        "Harita yapım aşamalarını kullanarak harita oluşturur."
       ]
     },
     {
@@ -145,6 +165,11 @@
         "uzaktan algılama",
         "yerel saat",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türkiye'nin konum özelliklerini belirler.",
+        "Türkiye'nin konum özelliklerini görselleştirir.",
+        "Türkiye'nin konum özelliklerini özetler."
       ]
     },
     {
@@ -176,6 +201,10 @@
         "uzaktan algılama",
         "yerel saat",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Mekânsal bilgi teknolojilerini oluşturan bileşenleri belirler.",
+        "Mekânsal bilgi teknolojilerini oluşturan bileşenler arasındaki ilişkileri belirler."
       ]
     },
     {
@@ -218,6 +247,11 @@
         "topoğrafik faktörler",
         "yağış",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Hava olaylarıyla ilgili deneyim, gözlem, veri ve/veya coğrafi temsillere dayalı elde ettiği bilgilerin günlük hayata etkilerini ilişkilendirir.",
+        "Hava olaylarıyla ilgili deneyim, gözlem, veri ve/veya coğrafi temsillere dayalı elde ettiği bilgilerin günlük hayata etkilerine ilişkin çıkarım yapar.",
+        "Hava olaylarıyla ilgili deneyim, gözlem, veri ve/veya coğrafi temsillere dayalı elde ettiği bilgilerin günlük hayata etkilerine ilişkin yargıda bulunur."
       ]
     },
     {
@@ -260,6 +294,10 @@
         "topoğrafik faktörler",
         "yağış",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "İklim sisteminin bileşen ve değişkenlerini belirler.",
+        "İklim sistemine ait değişkenler arasındaki ilişkileri belirler."
       ]
     },
     {
@@ -302,6 +340,14 @@
         "topoğrafik faktörler",
         "yağış",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türkiye ve dünyadaki farklı iklim türlerine sahip yerlerin iklim verilerini kullanarak oluşturacağı tablo, grafik, şekil ve/veya diyagramın amacını belirler.",
+        "Türkiye ve dünyadaki farklı iklim türlerine sahip yerlerin iklim verilerini kullanarak oluşturacağı tablo, grafik, şekil ve/veya diyagramın türü için gerekli olan araç gereci belirler.",
+        "Türkiye ve dünyadaki farklı iklim türlerine sahip yerlerin iklim verilerini toplar.",
+        "Türkiye ve dünyadaki farklı iklim türlerine sahip yerlerin iklim verilerini sınıflandırır.",
+        "Türkiye ve dünyadaki farklı iklim türlerine sahip yerlerin iklim verilerini tablo, grafik, şekil ve/veya diyagram şeklinde görselleştirir.",
+        "Türkiye ve dünyadaki farklı iklim türlerine sahip yerlerin iklim verilerini kullanarak görselleştirdiği tablo, grafik, şekil ve/veya diyagramı amacına uygun kullanır."
       ]
     },
     {
@@ -344,6 +390,13 @@
         "topoğrafik faktörler",
         "yağış",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "İklim sistemi ve sürecinde meydana gelen değişiklikleri coğrafi temsiller aracılığıyla karşılaştırır.",
+        "İklim sistemi ve sürecinde meydana gelen değişiklikleri sıralar.",
+        "Küresel iklim değişikliğinin neden ve sonuçlarını yorumlar.",
+        "Küresel iklim değişikliğini sentezler.",
+        "İklim sistemi ve sürecinde meydana gelebilecek değişime yönelik kanıta dayalı öngörüde bulunur."
       ]
     },
     {
@@ -371,6 +424,12 @@
         "ölüm oranı",
         "yaşlı nüfus",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Nüfusun zaman içerisindeki değişimini gösteren tablo ve grafiklerdeki bileşenleri anlamlandırır.",
+        "Nüfusun zaman içerisindeki değişimini gösteren tablo ve grafiklerdeki bileşenler arası ilişkileri çözümler.",
+        "Nüfusun zaman içerisindeki değişimine dair incelediği tablo ve grafiklerden sonuçlar çıkarır.",
+        "Farklı ülke nüfuslarındaki değişimi, incelediği tablo ve grafikleri kullanarak karşılaştırır."
       ]
     },
     {
@@ -398,6 +457,9 @@
         "ölüm oranı",
         "yaşlı nüfus",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Dünya ve Türkiye'de nüfus yoğunluğunun fazla ve az olduğu alanlar ile nüfusun dağılışı ve hareketlerini etkileyen faktörlerin incelenebildiği haritaları ilişkilendirerek çıkarım yapar."
       ]
     },
     {
@@ -425,6 +487,12 @@
         "ölüm oranı",
         "yaşlı nüfus",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türkiye ve farklı ülkelerin nüfus piramitlerini demografik dönüşüm modeline göre anlamlandırır.",
+        "Demografik dönüşüm modelinin aşamalarını doğum ve ölüm oranı ile nüfus yapısı arasındaki ilişkiye göre çözümler.",
+        "Türkiye ve farklı ülkelerin nüfus piramitlerini demografik dönüşüm modelinin aşamaları ile ilişkilendirerek buradan sonuç çıkarır.",
+        "Türkiye ve farklı ülkelerin nüfus piramitleri ile demografik dönüşüm modelinin aşamalarını ilişkilendirerek elde ettiği sonuçları karşılaştırır."
       ]
     },
     {
@@ -452,6 +520,13 @@
         "ölüm oranı",
         "yaşlı nüfus",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türkiye ve farklı ülkelerdeki nüfusla ilgili fırsat ve sorunların nüfus politikalarının belirlenmesindeki etkisine ilişkin sorular sorar.",
+        "Türkiye ve farklı ülkelerdeki nüfusla ilgili fırsat ve sorunların nüfus politikalarının belirlenmesindeki etkisine ilişkin bilgi toplar.",
+        "Türkiye ve farklı ülkelerdeki nüfusla ilgili fırsat ve sorunların nüfus politikalarının belirlenmesindeki etkisine ilişkin topladığı bilgileri düzenler.",
+        "Türkiye ve farklı ülkelerdeki nüfusla ilgili fırsat ve sorunların nüfus politikalarının belirlenmesindeki etkisine ilişkin düzenlediği bilgileri çözümler.",
+        "Türkiye ve farklı ülkelerdeki nüfusla ilgili fırsat ve sorunların nüfus politikalarının belirlenmesindeki etkisine ilişkin çözümlediği bilgilerden çıkardığı sonuçları paylaşır."
       ]
     },
     {
@@ -482,6 +557,13 @@
         "tüketim",
         "üretim",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Doğal ve beşerî faktörlerin ekonomik faaliyetlere etkileriyle ilgili merak ettiği soruları sorar.",
+        "Doğal ve beşerî faktörlerin ekonomik faaliyetlere etkileriyle ilgili bilgi toplar.",
+        "Doğal ve beşerî faktörlerin ekonomik faaliyetlere etkileriyle ilgili topladığı bilgileri düzenler.",
+        "Doğal ve beşerî faktörlerin ekonomik faaliyetlere etkileriyle ilgili düzenlediği bilgileri çözümler.",
+        "Doğal ve beşerî faktörlerin ekonomik faaliyetlere etkileriyle ilgili çözümlediği bilgilerden çıkardığı sonuçları paylaşır."
       ]
     },
     {
@@ -505,6 +587,10 @@
         "tehlike",
         "Yeşil Vatan",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Tehlike, risk ve afet kavramlarının özelliklerini belirler.",
+        "Tehlike, risk ve afet kavramları arasındaki ilişkileri belirler."
       ]
     },
     {
@@ -528,6 +614,12 @@
         "tehlike",
         "Yeşil Vatan",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Oluşum kaynağına göre afetleri belirler.",
+        "Oluşum kaynağına göre afetleri ayrıştırır.",
+        "Oluşum kaynağına göre afetleri tasnif eder.",
+        "Oluşum kaynağına göre afetleri etiketler."
       ]
     },
     {
@@ -551,6 +643,12 @@
         "tehlike",
         "Yeşil Vatan",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Bütüncül afet yönetimi uygulamalarını gösteren tablo, grafik, şekil ve/veya diyagramlardaki bileşenleri anlamlandırır.",
+        "Bütüncül afet yönetimi uygulamalarını gösteren tablo, grafik, şekil ve/veya diyagramlardaki bileşenler ve bu bileşenler arası ilişkileri çözümler.",
+        "Bütüncül afet yönetimi uygulamalarını gösteren tablo, grafik, şekil ve/veya diyagramlardaki bileşenlerle ilgili sonuçlar çıkarır.",
+        "Bütüncül afet yönetimi uygulamalarını gösteren tablo, grafik, şekil ve/veya diyagramlardaki bileşenlerle ilgili ulaştığı sonuçları karşılaştırır."
       ]
     },
     {
@@ -569,6 +667,13 @@
         "işlevsel bölge",
         "şekilsel bölge",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Bölge ve bölge sınırı hakkında varsayımda bulunur.",
+        "Bölge ve bölge sınırındaki örüntüleri listeler.",
+        "Bölgeyi bölge sınırlarını karşılaştırır.",
+        "Bölge ve bölge sınırları hakkında önerme sunar.",
+        "Bölgeyi bölge sınırlarını değerlendirir."
       ]
     },
     {
@@ -591,6 +696,12 @@
         "mekân",
         "zaman",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Örnek olay, olgu ve/veya mekânın harita üzerindeki konumunu algılar.",
+        "Örnek olay, olgu ve/veya mekânın temel coğrafi koşullarını tanımlar.",
+        "Örnek olay, olgu ve/veya mekânın yakın ve uzak çevresiyle olan ilişkilerini çözümler.",
+        "Örnek olay, olgu ve/veya mekânın aynı çevrede bulunan diğer olay, olgu veya mekânlar üzerindeki etkisini sorgular."
       ]
     },
     {
@@ -610,6 +721,11 @@
         "uzaktan algılama",
         "veri",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını çözümler.",
+        "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını sınıflandırır.",
+        "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını yorumlar."
       ]
     },
     {
@@ -629,6 +745,15 @@
         "uzaktan algılama",
         "veri",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Oluşturacağı haritanın amacını belirler.",
+        "Oluşturacağı harita için gerekli olan yöntemler ve araç gereci kullanır.",
+        "Oluşturacağı haritaya ekleyeceği verileri toplar.",
+        "Oluşturacağı haritanın türünü belirler.",
+        "Verileri haritaya işler ve haritanın bileşenlerini oluşturur.",
+        "Oluşturduğu haritayı amacına uygun biçimde kullanır.",
+        "Oluşturduğu haritayı ihtiyaç duyduğunda tekrar kullanır."
       ]
     },
     {
@@ -661,6 +786,10 @@
         "topoğrafya",
         "volkanizma",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Levha tektoniğine neden olan süreçleri belirler.",
+        "Yeryüzü şekilleri ile levha tektoniği arasındaki ilişkiyi belirler."
       ]
     },
     {
@@ -693,6 +822,10 @@
         "topoğrafya",
         "volkanizma",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Aşınma ve çözünme süreçleri ile iklim ve kayaç yapısı arasındaki ilişkileri neden-sonuç bağlamında ortaya koyar.",
+        "Aşınma ve çözünme süreçlerine ilişkin edindiği bilgilerle kendi bilgilerini anlamlı bir bütün hâline getirir."
       ]
     },
     {
@@ -725,6 +858,10 @@
         "topoğrafya",
         "volkanizma",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Aşınım ve birikim süreçlerinde ortaya çıkan yeryüzü şekillerini belirler.",
+        "Aşınım ve birikim süreçleriyle yeryüzü şekilleri arasındaki ilişkiyi belirler."
       ]
     },
     {
@@ -757,6 +894,14 @@
         "topoğrafya",
         "volkanizma",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Yeryüzü şekillerinin oluşum ve değişimini incelemek için hazırlık yapar.",
+        "Yeryüzü şekillerinin oluşum ve değişiminde etkili olan faktörleri belirleyebilmek için çalışma sahasında uygulama yapar.",
+        "Yeryüzü şekillerinin oluşum ve değişimiyle ilgili çalışma sahasından bilgi toplar.",
+        "Yeryüzü şekillerinin oluşum ve değişimiyle ilgili çalışma sahasından elde ettiği bilgileri çözümler.",
+        "Yeryüzü şekillerinin oluşum ve değişimiyle ilgili çözümlediği bilgilere dayalı tahminde bulunur.",
+        "Yeryüzü şekillerinin oluşum ve değişimiyle ilgili tahminlerini raporlar."
       ]
     },
     {
@@ -789,6 +934,13 @@
         "topoğrafya",
         "volkanizma",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Yakın çevresindeki yeryüzü şekilleri ve beşerî faaliyetler arasındaki etkileşimle ilgili merak ettiği soruları sorar.",
+        "Yakın çevresindeki yeryüzü şekilleri ve beşerî faaliyetler arasındaki etkileşimle ilgili bilgi toplar.",
+        "Yakın çevresindeki yeryüzü şekilleri ve beşerî faaliyetler arasındaki etkileşimle ilgili topladığı bilgileri düzenler.",
+        "Yakın çevresindeki yeryüzü şekilleri ve beşerî faaliyetler arasındaki etkileşimle ilgili düzenlediği bilgileri çözümler.",
+        "Yakın çevresindeki yeryüzü şekilleri ve beşerî faaliyetler arasındaki etkileşimle ilgili çözümlediği bilgilerden çıkardığı sonuçları paylaşır."
       ]
     },
     {
@@ -810,6 +962,13 @@
         "yerleşme",
         "yerleşme fonksiyonu",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörlere yönelik sorular sorar.",
+        "Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörlere yönelik bilgi toplar.",
+        "Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörlere yönelik topladığı bilgileri düzenler.",
+        "Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörlere yönelik düzenlediği bilgileri çözümler.",
+        "Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörlere yönelik çözümlediği bilgilerden çıkardığı sonuçları paylaşır."
       ]
     },
     {
@@ -831,6 +990,12 @@
         "yerleşme",
         "yerleşme fonksiyonu",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türkiye ve dünyadaki yerleşmelerin fonksiyonları üzerinde etkili olan değişkenleri belirler.",
+        "Türkiye ve dünyadaki yerleşmelerin fonksiyonları üzerinde etkili olan değişkenleri ayrıştırır.",
+        "Türkiye ve dünyadaki yerleşmelerin fonksiyonları üzerinde etkili olan değişkenleri tasnif eder.",
+        "Türkiye ve dünyadaki yerleşmeleri fonksiyonlarına göre etiketler."
       ]
     },
     {
@@ -852,6 +1017,12 @@
         "gelişmişlik",
         "istihdam",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Ekonomik faaliyetlerin sınıflandırılmasındaki ölçütleri belirler.",
+        "Ekonomik faaliyetleri sektörlere göre ayırır.",
+        "Ekonomik faaliyetleri sektörlere göre tasnif eder.",
+        "Ekonomik faaliyetleri sektörlere göre etiketler."
       ]
     },
     {
@@ -873,6 +1044,12 @@
         "gelişmişlik",
         "istihdam",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Farklı gelişmişlik seviyesine sahip ülkelerde ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramları bileşenleriyle tanır ve anlamlandırır.",
+        "Farklı gelişmişlik seviyesine sahip ülkelerde ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramları çözümler.",
+        "Farklı gelişmişlik seviyesine sahip ülkelerde ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramlardan sonuç çıkarır.",
+        "Farklı gelişmişlik seviyesine sahip ülkelerde ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramlardan elde ettiği sonuçları karşılaştırır."
       ]
     },
     {
@@ -894,6 +1071,14 @@
         "gelişmişlik",
         "istihdam",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemine ilişkin oluşturacağı tablo, grafik, şekil ve/veya diyagramın amacını belirler.",
+        "Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemine ilişkin oluşturacağı tablo, grafik, şekil ve/veya diyagramın türünü ve kullanacağı araç gereci belirler.",
+        "Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemine ilişkin oluşturacağı tablo, grafik, şekil ve/veya diyagramla ilgili veri toplar.",
+        "Topladığı verileri ekonomik sektörlere göre sınıflandırır.",
+        "Ekonomik sektörlere göre sınıflandırdığı verileri görselleştirir.",
+        "Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik, şekil ve/veya diyagramı amaca uygun şekilde kullanır."
       ]
     },
     {
@@ -913,6 +1098,13 @@
         "afete dirençli yaşam alanı",
         "Yeşil Vatan",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Afetlerle mücadelede iyi uygulama örneklerine yönelik merak ettiği soruları sorar.",
+        "Afetlerle mücadelede iyi uygulama örnekleri ile ilgili bilgi toplar.",
+        "Afetlerle mücadelede iyi uygulama örnekleri hakkında elde ettiği bilgileri düzenler.",
+        "Afetlerle mücadelede iyi uygulama örnekleri hakkında düzenlediği bilgileri çözümler.",
+        "Afetle mücadelede iyi uygulama örneklerine ilişkin çözümlediği bilgilerden çıkardığı sonuçları paylaşır."
       ]
     },
     {
@@ -932,6 +1124,10 @@
         "afete dirençli yaşam alanı",
         "Yeşil Vatan",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Afete dirençli yaşam alanlarının coğrafi koşullarını tanımlar.",
+        "Afete dirençli yaşam alanlarında yer alan mekânsal unsurların kendi aralarındaki ilişkileri çözümler."
       ]
     },
     {
@@ -951,6 +1147,14 @@
         "afete dirençli yaşam alanı",
         "Yeşil Vatan",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Mekânın özelliklerine göre afetlerden korunma uygulamalarına karar vermeyi amaç olarak belirler.",
+        "Mekânın özelliklerine göre afetlerden korunma uygulamalarına ilişkin bilgi toplar.",
+        "Mekânın özelliklerine göre afetlerden korunma uygulamalarına alternatif seçenekler oluşturur.",
+        "Mekânın özelliklerine göre afetlerden korunma uygulamalarına alternatif oluşturduğu seçenekler üzerinden çıkarım yapar.",
+        "Mekânın özelliklerine göre afetlerden korunma uygulamaları arasından seçim yapar.",
+        "Mekânın özelliklerine göre seçtiği afetlerden korunma uygulamalarının sonuçları üzerinde yansıtma yapar."
       ]
     },
     {
@@ -970,6 +1174,11 @@
         "afete dirençli yaşam alanı",
         "Yeşil Vatan",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarına ilişkin deneyimlerini gözden geçirir.",
+        "Afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarına ilişkin deneyimlerinden çıkarım yapar.",
+        "Afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarına ilişkin çıkarımlarını değerlendirir."
       ]
     },
     {
@@ -990,6 +1199,11 @@
         "Türk dünyası",
         "Türk kültürü",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türk kültürünün yayıldığı alanları gözlemler.",
+        "Türk kültürünün yayıldığı alanlardaki kültürel özellikleri tespit eder.",
+        "Türk kültürünün yayıldığı alanlardaki ortak kültürel özellikler hakkında çıkarımda bulunur."
       ]
     },
     {
@@ -1009,6 +1223,10 @@
         "dağılış",
         "mekânsal sorunlar",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Coğrafya biliminin mekânsal sorunların çözümüne sunduğu katkıları inceleyerek nedensel veya mantıksal ilişkiler ortaya koyar.",
+        "Coğrafya biliminin mekânsal sorunların çözümüne sunduğu katkılarla ilgili elde ettiği bilgileri uyumlu bir bütün hâline getirir."
       ]
     },
     {
@@ -1035,6 +1253,12 @@
         "yaşayan atlas",
         "web CBS",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Web tabanlı CBS uygulamasını kullanarak harita okur.",
+        "Web tabanlı CBS uygulamasını kullanarak harita çözümler.",
+        "Web tabanlı CBS uygulamasını kullanarak haritadan çıkarım yapar.",
+        "Web tabanlı CBS uygulamasını kullanarak basit harita oluşturur."
       ]
     },
     {
@@ -1064,6 +1288,12 @@
         "sürdürülebilirlik",
         "tasarruf",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Yeryüzündeki su kaynaklarını sınıflandırabilmek için gerekli olan ölçütleri belirler.",
+        "Yeryüzündeki su kaynaklarını belirlediği ölçütlere göre ayrıştırır.",
+        "Yeryüzündeki su kaynaklarını tasnif eder.",
+        "Yeryüzündeki su kaynaklarını etiketler."
       ]
     },
     {
@@ -1093,6 +1323,13 @@
         "sürdürülebilirlik",
         "tasarruf",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türkiye'deki su kaynaklarının çevresel, ekonomik, politik ve sosyokültürel etkilerine yönelik merak ettiği soruları sorar.",
+        "Türkiye'deki su kaynaklarının çevresel, ekonomik, politik ve sosyokültürel etkileri hakkında bilgi toplar.",
+        "Türkiye'deki su kaynaklarının çevresel, ekonomik, politik ve sosyokültürel etkileri hakkında elde ettiği bilgileri düzenler.",
+        "Türkiye'deki su kaynaklarının çevresel, ekonomik, politik ve sosyokültürel etkileriyle ilgili düzenlediği bilgileri çözümler.",
+        "Türkiye'deki su kaynaklarının çevresel, ekonomik, politik ve sosyokültürel etkileri hakkında çözümlediği bilgilerden çıkardığı sonuçları paylaşır."
       ]
     },
     {
@@ -1114,6 +1351,15 @@
         "mekânsal organizasyon",
         "yerleşme",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Yerleşmeleri oluşturan unsurların mekânsal desenini Türkiye ve dünya örnekleri üzerinden algılar.",
+        "Yerleşmelerin mekânsal organizasyonu üzerinde etkili olan coğrafi koşulları Türkiye ve dünya örnekleri üzerinden tanımlar.",
+        "Yerleşmelerde benzer özelliklere sahip bölgeleri Türkiye ve dünya örnekleri üzerinden belirler.",
+        "Yerleşmelerde bölgeler arasındaki geçişle ilgili Türkiye ve dünya örnekleri üzerinden çıkarımda bulunur.",
+        "Yerleşmeleri oluşturan unsurların mekânsal bağlantılarını Türkiye ve dünya örnekleri üzerinden çözümler.",
+        "Yerleşmelerde görülen mekânsal hiyerarşiyi Türkiye ve dünya örnekleri üzerinden çözümler.",
+        "Yerleşmeleri Türkiye ve dünya örnekleri üzerinden benzerlik ve farklılıklarına göre karşılaştırır."
       ]
     },
     {
@@ -1135,6 +1381,13 @@
         "mekânsal organizasyon",
         "yerleşme",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türkiye ve dünyadaki yerleşmelerin diğer mekânlara etkisiyle ilgili sorular sorar.",
+        "Türkiye ve dünyadaki yerleşmelerin diğer mekânlara etkisiyle ilgili bilgi toplar.",
+        "Türkiye ve dünyadaki yerleşmelerin diğer mekânlara etkisiyle ilgili topladığı bilgileri düzenler.",
+        "Türkiye ve dünyadaki yerleşmelerin diğer mekânlara etkisiyle ilgili düzenlediği bilgileri çözümler.",
+        "Türkiye ve dünyadaki yerleşmelerin diğer mekânlara etkisiyle ilgili çözümlediği bilgilerden çıkarım yapar."
       ]
     },
     {
@@ -1167,6 +1420,13 @@
         "yenilenebilir enerji",
         "yenilenemeyen enerji",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Tarımsal faaliyetler ve gıda güvencesi ile ilgili merak ettiği soruları sorar.",
+        "Tarımsal faaliyetler ve gıda güvencesi ile ilgili bilgi toplar.",
+        "Tarımsal faaliyetler ve gıda güvencesi ile ilgili elde ettiği bilgileri düzenler.",
+        "Tarımsal faaliyetler ve gıda güvencesi ile ilgili düzenlediği bilgileri çözümler.",
+        "Tarımsal faaliyetler ve gıda güvencesi ile ilgili çözümlediği bilgilerden çıkardığı sonuçları paylaşır."
       ]
     },
     {
@@ -1199,6 +1459,12 @@
         "yenilenebilir enerji",
         "yenilenemeyen enerji",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Dünya ve Türkiye'deki tarım uygulamalarına ait sürdürülebilirlik ölçütlerine ulaşır.",
+        "Dünya ve Türkiye'deki farklı tarım uygulamalarına ait özellikleri tespit eder.",
+        "Dünya ve Türkiye'deki farklı tarım uygulamalarına ait özellikleri sürdürülebilirlik ölçütleri ile karşılaştırır.",
+        "Dünya ve Türkiye'deki tarım uygulamalarının sürdürülebilirliğiyle ilgili yargıda bulunur."
       ]
     },
     {
@@ -1231,6 +1497,13 @@
         "yenilenebilir enerji",
         "yenilenemeyen enerji",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Dünya ve Türkiye'de bulunan stratejik-kritik madenlerin ülke ekonomileri ve ülkeler arası ilişkilerdeki yerine yönelik varsayımda bulunur.",
+        "Dünya ve Türkiye'de bulunan stratejik-kritik madenlerin ülke ekonomileri ve ülkeler arası ilişkilerdeki yerini gösteren coğrafi temsillere ait eğilimleri inceler.",
+        "Dünya ve Türkiye'de bulunan stratejik-kritik madenlerin ülke ekonomileri ve ülkeler arası ilişkilerdeki yerini coğrafi temsiller aracılığıyla karşılaştırır.",
+        "Dünya ve Türkiye'de bulunan stratejik-kritik madenlerin ülke ekonomileri ve ülkeler arası ilişkilerdeki etkisine yönelik önerme sunar.",
+        "Dünya ve Türkiye'de bulunan stratejik-kritik madenlerin ülke ekonomileri ve ülkeler arası ilişkilerdeki etkisini değerlendirir."
       ]
     },
     {
@@ -1263,6 +1536,13 @@
         "yenilenebilir enerji",
         "yenilenemeyen enerji",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Dünya ve Türkiye'deki enerji kaynaklarının kullanımında meydana gelen değişiklikleri coğrafi temsil ve veriler aracılığıyla karşılaştırır.",
+        "Dünya ve Türkiye'deki enerji kaynaklarında meydana gelen değişiklikleri sıralar.",
+        "Dünya ve Türkiye'deki enerji kullanımının gelişim sürecine ilişkin neden ve sonuçları yorumlar.",
+        "Dünya ve Türkiye'deki enerji kaynaklarının kullanımının gelişim sürecini sentezler.",
+        "Dünya ve Türkiye'deki enerji kaynaklarının kullanımında meydana gelebilecek değişime ilişkin eldeki verilerden yararlanarak öngörüde bulunur."
       ]
     },
     {
@@ -1295,6 +1575,13 @@
         "yenilenebilir enerji",
         "yenilenemeyen enerji",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Sanayi faaliyetlerinin mekânsal etkileriyle ilgili sorular sorar.",
+        "Sanayi faaliyetlerinin mekânsal etkileriyle ilgili bilgi toplar.",
+        "Sanayi faaliyetlerinin mekânsal etkileriyle ilgili topladığı bilgileri düzenler.",
+        "Sanayi faaliyetlerinin mekânsal etkileriyle ilgili düzenlediği bilgileri çözümler.",
+        "Sanayi faaliyetlerinin mekânsal etkileriyle ilgili çıkarımda bulunur."
       ]
     },
     {
@@ -1323,6 +1610,11 @@
         "sürdürülebilirlik",
         "yeşil beceriler",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Yaşadığı gezegenin sınırını oluşturan bileşenleri ve bu bileşenler üzerindeki beşerî etkileri belirler.",
+        "Yaşadığı gezegenin sınırını oluşturan bileşenlerle beşerî etkiler arasında ilişki kurar.",
+        "Elde ettiği bilgilerden hareketle gezegen sınırının zorlanması sonucu oluşan çevre sorunlarına yönelik özgün bir içerik oluşturur."
       ]
     },
     {
@@ -1351,6 +1643,11 @@
         "sürdürülebilirlik",
         "yeşil beceriler",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Küresel iklim değişikliğinin etkilerini azaltma ve iklim değişikliğine uyum sağlamaya yönelik stratejilere mantıksal temellendirme yapar.",
+        "Küresel iklim değişikliğinin etkilerini azaltma ve iklim değişikliğine uyum sağlamaya yönelik stratejilerdeki çelişki ve/veya geçersizlikleri tespit eder.",
+        "Küresel iklim değişikliğinin etkilerini azaltma ve iklim değişikliğine uyum sağlamaya yönelik stratejileri çürütür veya kabul eder."
       ]
     },
     {
@@ -1379,6 +1676,13 @@
         "sürdürülebilirlik",
         "yeşil beceriler",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türkiye'de bulunan su kaynaklarının sürdürülebilir kullanımına ilişkin merak ettiği soruları sorar.",
+        "Türkiye'de bulunan su kaynaklarının sürdürülebilir kullanımına ilişkin bilgi toplar.",
+        "Türkiye'de bulunan su kaynaklarının sürdürülebilir kullanımına ilişkin topladığı bilgileri düzenler.",
+        "Türkiye'de bulunan su kaynaklarının sürdürülebilir kullanımına ilişkin düzenlediği bilgileri çözümler.",
+        "Türkiye'de bulunan su kaynaklarının sürdürülebilir kullanımına ilişkin çözümlediği bilgilerden sonuçlar çıkararak paylaşımda bulunur."
       ]
     },
     {
@@ -1399,6 +1703,13 @@
         "sanayi",
         "tarım",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türkiye ile Türkiye'nin kültürel açıdan güçlü ve köklü bağlara sahip olduğu yerler arasındaki etkileşime ilişkin sorular sorar.",
+        "Türkiye ile Türkiye'nin kültürel açıdan güçlü ve köklü bağlara sahip olduğu yerler arasındaki etkileşime ilişkin bilgi toplar.",
+        "Türkiye ile Türkiye'nin kültürel açıdan güçlü ve köklü bağlara sahip olduğu yerler arasındaki etkileşime ilişkin topladığı bilgileri düzenler.",
+        "Türkiye ile Türkiye'nin kültürel açıdan güçlü ve köklü bağlara sahip olduğu yerler arasındaki etkileşime ilişkin düzenlediği bilgileri çözümler.",
+        "Türkiye ile Türkiye'nin kültürel açıdan güçlü ve köklü bağlara sahip olduğu yerler arasındaki etkileşime ilişkin çıkarımda bulunur."
       ]
     },
     {
@@ -1419,6 +1730,11 @@
         "sanayi",
         "tarım",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Örnek bir ülkenin tarımsal üretim özelliklerini coğrafi açıdan çözümler.",
+        "Örnek bir ülkenin tarımsal üretim özelliklerini coğrafi açıdan sınıflandırır.",
+        "Örnek bir ülkenin tarımsal üretim özelliklerini coğrafi açıdan yorumlar."
       ]
     },
     {
@@ -1439,6 +1755,11 @@
         "sanayi",
         "tarım",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Örnek ülkelerin sanayileşme süreçlerindeki coğrafi özelliklerini tanımlar.",
+        "Örnek ülkelerin sanayileşme süreçlerindeki benzerliklerini coğrafi açıdan listeler.",
+        "Örnek ülkelerin sanayileşme süreçlerindeki farklılıklarını coğrafi açıdan listeler."
       ]
     },
     {
@@ -1459,6 +1780,14 @@
         "sanayi",
         "tarım",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Örnek bir ülkede yürütülen madencilik faaliyetleriyle ilgili oluşturacağı tablo, grafik, şekil ve/veya diyagramların amacını belirler.",
+        "Örnek bir ülkede yürütülen madencilik faaliyetleriyle ilgili oluşturacağı tablo, grafik, şekil ve/veya diyagramların türünü ve kullanacağı araç gereci belirler.",
+        "Örnek bir ülkede yürütülen madencilik faaliyetleriyle ilgili oluşturacağı tablo, grafik, şekil ve/veya diyagramları hazırlamak için gerekli verileri toplar.",
+        "Örnek bir ülkede yürütülen madencilik faaliyetleriyle ilgili topladığı verileri sınıflandırır.",
+        "Örnek bir ülkede yürütülen madencilik faaliyetleriyle ilgili topladığı verileri amaca uygun olarak görselleştirir.",
+        "Örnek bir ülkede yürütülen madencilik faaliyetleriyle ilgili oluşturduğu tablo, grafik, şekil ve/veya diyagramları uygun yerde kullanır."
       ]
     },
     {
@@ -1479,6 +1808,11 @@
         "sanayi",
         "tarım",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Örnek ülkelerin enerji kaynaklarıyla ilgili özellikleri coğrafi açıdan tanımlar.",
+        "Örnek ülkelerin enerji kaynaklarındaki benzerlikleri coğrafi açıdan listeler.",
+        "Örnek ülkelerin enerji kaynaklarındaki farklılıkları coğrafi açıdan listeler."
       ]
     },
     {
@@ -1501,6 +1835,10 @@
         "yapay zekâ",
         "yeşil dönüşüm ve meslekler",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Coğrafya bilimiyle ilgili kanıtları ve kendi deneyimlerini bu bilimin gelecekteki etkileriyle ilişkilendirir.",
+        "Coğrafya bilimiyle ilgili kanıtları ve kendi deneyimlerini bu bilimin gelecekteki etkileriyle ilişkilendirerek çıkarımda bulunur."
       ]
     },
     {
@@ -1528,6 +1866,12 @@
         "veri girişi",
         "veri görüntüleme",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Web tabanlı CBS ile oluşturulan tematik haritaları okur.",
+        "Web tabanlı CBS ile oluşturulan tematik haritaları çözümler.",
+        "Web tabanlı CBS ile oluşturulan tematik haritalardan çıkarım yapar.",
+        "Web tabanlı CBS ile tematik haritalar oluşturur."
       ]
     },
     {
@@ -1554,6 +1898,10 @@
         "toprak",
         "zaman",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Toprak oluşumunu etkileyen faktörlerle toprak grupları arasındaki ilişkiyi ortaya koyar.",
+        "Toprak oluşumunu etkileyen faktörler ve toprak gruplarıyla ilgili edindiği bilgilerden uyumlu bir bütün oluşturur."
       ]
     },
     {
@@ -1580,6 +1928,13 @@
         "toprak",
         "zaman",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türkiye'de toprak kullanımının ekonomik, çevresel ve sosyokültürel etkilerine yönelik sorular sorar.",
+        "Türkiye'de toprak kullanımının ekonomik, çevresel ve sosyokültürel etkilerine yönelik bilgi toplar.",
+        "Türkiye'de toprak kullanımının ekonomik, çevresel ve sosyokültürel etkilerine yönelik topladığı bilgileri düzenler.",
+        "Türkiye'de toprak kullanımının ekonomik, çevresel ve sosyokültürel etkilerine yönelik düzenlediği bilgileri çözümler.",
+        "Türkiye'de toprak kullanımının ekonomik, çevresel ve sosyokültürel etkilerine yönelik çözümlediği bilgilerden çıkardığı sonuçları paylaşır."
       ]
     },
     {
@@ -1606,6 +1961,9 @@
         "toprak",
         "zaman",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Dünya ve Türkiye'deki bitki örtüsünün dağılışını etkileyen coğrafi faktörlerin gösterildiği haritalarla bitki örtüsü dağılış haritalarını karşılaştırarak çıkarımlar yapar."
       ]
     },
     {
@@ -1627,6 +1985,13 @@
         "mekân",
         "sürdürülebilirlik",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Kültür-mekân etkileşimiyle ilgili sorular sorar.",
+        "Kültür-mekân etkileşimiyle ilgili bilgi toplar.",
+        "Kültür-mekân etkileşimiyle ilgili topladığı bilgileri düzenler.",
+        "Kültür-mekân etkileşimiyle ilgili düzenlediği bilgileri çözümler.",
+        "Kültür-mekân etkileşimiyle ilgili çözümlediği bilgilerden sonuçlar çıkarır ve bu sonuçları paylaşır."
       ]
     },
     {
@@ -1648,6 +2013,11 @@
         "mekân",
         "sürdürülebilirlik",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Farklı kültürel peyzajlara sahip yerleşmelerin mekânsal koşulları ve sürdürülebilirlik ölçütlerini tanımlar.",
+        "Farklı kültürel peyzajlara sahip yerleşmelerin sürdürülebilirlik ölçütleriyle ilgili benzerliklerini listeler.",
+        "Farklı kültürel peyzajlara sahip yerleşmelerin sürdürülebilirlik ölçütleriyle ilgili farklılıklarını listeler."
       ]
     },
     {
@@ -1674,6 +2044,13 @@
         "ulaşım sistemleri",
         "ulusötesi şirketler",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Dünya ve Türkiye'deki ulaşım sistemlerinin gelişim sürecinde meydana gelen değişim ve sürekliliği coğrafi temsil ve veriler aracılığıyla karşılaştırır.",
+        "Dünya ve Türkiye'deki ulaşım sistemlerinin gelişim sürecinde meydana gelen değişim ve sürekliliği sıralar.",
+        "Dünya ve Türkiye'deki ulaşım sistemlerinin gelişim sürecinin neden ve sonuçlarını yorumlar.",
+        "Dünya ve Türkiye'deki ulaşım sistemlerinin gelişim sürecini sentezler.",
+        "Dünya ve Türkiye'deki ulaşım sistemlerinin gelişim süreciyle ilgili kanıt ve gözlemlere dayalı öngörüde bulunur."
       ]
     },
     {
@@ -1700,6 +2077,10 @@
         "ulaşım sistemleri",
         "ulusötesi şirketler",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Küresel ticaret merkezlerini belirler.",
+        "Küresel ticaret merkezleri arasındaki bağlantıları belirler."
       ]
     },
     {
@@ -1726,6 +2107,13 @@
         "ulaşım sistemleri",
         "ulusötesi şirketler",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Turizm faaliyetlerinin dünya ve Türkiye'deki sosyal, kültürel, ekonomik, politik ve çevresel etkilerine yönelik merak ettiği soruları sorar.",
+        "Turizm faaliyetlerinin dünya ve Türkiye'deki sosyal, kültürel, ekonomik, politik ve çevresel etkilerine yönelik bilgi toplar.",
+        "Turizm faaliyetlerinin dünya ve Türkiye'deki sosyal, kültürel, ekonomik, politik ve çevresel etkilerine yönelik topladığı bilgileri düzenler.",
+        "Turizm faaliyetlerinin dünya ve Türkiye'deki sosyal, kültürel, ekonomik, politik ve çevresel etkilerine yönelik düzenlediği bilgileri çözümler.",
+        "Turizm faaliyetlerinin dünya ve Türkiye'deki sosyal, kültürel, ekonomik, politik ve çevresel etkilerine yönelik çözümlediği bilgilerden çıkardığı sonuçları paylaşır."
       ]
     },
     {
@@ -1754,6 +2142,13 @@
         "sürdürülebilirlik",
         "Yeşil Vatan",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türkiye'de toprağın sürdürülebilir kullanımıyla ilgili merak ettiği soruları sorar.",
+        "Türkiye'de toprağın sürdürülebilir kullanımıyla ilgili bilgi toplar.",
+        "Türkiye'de toprağın sürdürülebilir kullanımıyla ilgili topladığı bilgileri düzenler.",
+        "Türkiye'de toprağın sürdürülebilir kullanımıyla ilgili düzenlediği bilgileri çözümler.",
+        "Türkiye'de toprağın sürdürülebilir kullanımıyla ilgili çözümlediği bilgilerden sonuçlar çıkararak bu sonuçları paylaşır."
       ]
     },
     {
@@ -1782,6 +2177,13 @@
         "sürdürülebilirlik",
         "Yeşil Vatan",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türkiye'de görülen bitki topluluklarını çeşitlilik ve mekânsal dağılış açısından karşılaştırır.",
+        "Türkiye'de görülen bitki topluluklarını çeşitlilik ve mekânsal dağılış açısından sıralar.",
+        "Türkiye'de görülen bitki topluluklarının zamansal değişimini neden ve sonuçlarıyla yorumlar.",
+        "Türkiye'de görülen bitki topluluklarını çeşitlilik ve mekânsal dağılış açısından sentezler.",
+        "Türkiye'de görülen bitki topluluklarının geçmişteki ve bugünkü yapısına ilişkin bilgilere ve kendi gözlemlerine dayanarak öngörülerde bulunur."
       ]
     },
     {
@@ -1810,6 +2212,11 @@
         "sürdürülebilirlik",
         "Yeşil Vatan",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Türkiye ve farklı gelişmişlik düzeyine sahip ülkelerdeki çevre sorunlarının önlenmesi amacıyla hazırlanan politika ve uygulamaları belirler.",
+        "Türkiye ve farklı gelişmişlik düzeyine sahip ülkelerdeki çevre sorunlarının önlenmesi amacıyla hazırlanan politika ve uygulamaların benzerliklerini listeler.",
+        "Türkiye ve farklı gelişmişlik düzeyine sahip ülkelerdeki çevre sorunlarının önlenmesi amacıyla hazırlanan politika ve uygulamaların farklılıklarını listeler."
       ]
     },
     {
@@ -1838,6 +2245,12 @@
         "sürdürülebilirlik",
         "Yeşil Vatan",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Doğal çevrenin korunması ve yönetilmesi amacıyla yapılan organizasyon ve anlaşmaların etkilerine ilişkin bilgi toplamada kullanacağı araçları belirler.",
+        "Doğal çevrenin korunması ve yönetilmesi amacıyla yapılan organizasyon ve anlaşmaların etkilerine ilişkin bilgi toplar.",
+        "Doğal çevrenin korunması ve yönetilmesi amacıyla yapılan organizasyon ve anlaşmaların etkilerine ilişkin topladığı bilgileri doğrular.",
+        "Doğal çevrenin korunması ve yönetilmesi amacıyla yapılan organizasyon ve anlaşmaların etkilerine ilişkin doğruladığı bilgileri kaydeder."
       ]
     },
     {
@@ -1866,6 +2279,13 @@
         "sürdürülebilirlik",
         "Yeşil Vatan",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Dünya veya Türkiye'den örnek bir çevre probleminin nedenlerini yapılandırır.",
+        "Dünya veya Türkiye'den örnek bir çevre probleminin nedenlerini özetler.",
+        "Dünya veya Türkiye'den örnek bir çevre probleminin çözümüne ilişkin gözlem, bilgi veya verilere dayalı tahminde bulunur.",
+        "Dünya veya Türkiye'den örnek bir çevre probleminin çözümüne yönelik önermeler üzerinden akıl yürütür.",
+        "Dünya veya Türkiye'den örnek bir çevre probleminin çözümüne ilişkin değerlendirmelerde bulunur."
       ]
     },
     {
@@ -1894,6 +2314,14 @@
         "sürdürülebilirlik",
         "Yeşil Vatan",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Doğal ve kültürel mirasa yönelik tehditleri ortadan kaldırma sürecinde amacını belirler.",
+        "Doğal ve kültürel mirasa yönelik tehditleri ortadan kaldırmak için neler yapılması gerektiği konusunda bilgi toplar.",
+        "Doğal ve kültürel mirasa yönelik tehditleri ortadan kaldırmak için neler yapılması gerektiği konusunda alternatif önermeler oluşturur.",
+        "Doğal ve kültürel mirasa yönelik tehditleri ortadan kaldırmak için oluşturduğu alternatif önermeler üzerinde mantıksal denetleme yapar.",
+        "Doğal ve kültürel mirasa yönelik tehditleri ortadan kaldırmak için ihtiyaç duyduğu uygulamalarla ilgili seçim yapar.",
+        "Doğal ve kültürel mirasa yönelik tehditleri ortadan kaldırmak için seçtiği uygulamalar üzerinde yansıtma yapar."
       ]
     },
     {
@@ -1917,6 +2345,11 @@
         "uluslararası birliktelik",
         "uluslararası organizasyon",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Uluslararası birlikteliklerin anlaşmazlıklara sunduğu çözümlerle ilgili mantıksal temellendirme yapar.",
+        "Uluslararası birlikteliklerin anlaşmazlıklara sunduğu çözümlerle ilgili mantıksal tutarsızlık ve geçersizlikleri tespit eder.",
+        "Uluslararası birlikteliklerin anlaşmazlıklara sunduğu çözümleri kabul eder veya çürütür."
       ]
     },
     {
@@ -1940,6 +2373,11 @@
         "uluslararası birliktelik",
         "uluslararası organizasyon",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Örnek ülkelerin ulaşım sistemlerinin genel özelliklerini tanımlar.",
+        "Örnek ülkelerin ulaşım sistemlerinin benzerliklerini listeler.",
+        "Örnek ülkelerin ulaşım sistemlerinin farklılıklarını listeler."
       ]
     },
     {
@@ -1963,6 +2401,11 @@
         "uluslararası birliktelik",
         "uluslararası organizasyon",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Örnek verilen ülkenin ticari faaliyetlerini belirler.",
+        "Örnek verilen ülke ile diğer ülkeler arasındaki ticari faaliyetler yönünden ilişki kurar.",
+        "Örnek verilen ülkenin ticari faaliyetlerine yönelik özgün bir ürün oluşturur."
       ]
     },
     {
@@ -1986,6 +2429,11 @@
         "uluslararası birliktelik",
         "uluslararası organizasyon",
         "GENEL_KARMA"
+      ],
+      "surec_bilesenleri": [
+        "Örnek ülkelerin turizm faaliyetlerinin genel özelliklerini tanımlar.",
+        "Örnek ülkelerin turizm faaliyetlerinin benzerliklerini listeler.",
+        "Örnek ülkelerin turizm faaliyetlerinin farklılıklarını listeler."
       ]
     }
   ]

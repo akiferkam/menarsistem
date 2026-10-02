@@ -26,6 +26,24 @@ const esc = (s: unknown): string =>
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
 
+/**
+ * PNG IHDR'den piksel genişlik/yükseklik okur (imza 8 bayt + uzunluk/"IHDR"
+ * 8 bayt sonrası 16. bayttan itibaren 4+4 bayt big-endian uint32) — onizleme.png
+ * `.page{overflow:hidden}` ile İÇERİK kadar büyüyor (bkz. page-preview.ts),
+ * yani A4'ten UZUN görüntüler olağan. Sabit A4 sayfa boyutuyla birleştirince
+ * (page-break-inside:avoid bir sayfaya SIĞMAYAN bloğu bir sonrakine iter ama
+ * orada da sığmaz) ilk sayfa boş kalıp görüntü ikinci sayfaya taşarak kesiliyordu
+ * (canlı modda görüldü: FEL.10.1.1 BEN — 2 paragraf + 5 uzun şık). Düzeltme:
+ * sayfa yüksekliğini sabit A4 yerine en uzun görüntüye göre hesapla.
+ */
+function pngHeightMm(base64: string, widthMm: number): number {
+  const buf = Buffer.from(base64, "base64");
+  const widthPx = buf.readUInt32BE(16);
+  const heightPx = buf.readUInt32BE(20);
+  if (!widthPx || !heightPx) return 0;
+  return (heightPx / widthPx) * widthMm;
+}
+
 const TOPLU_PDF_CSS = `
   *{box-sizing:border-box}
   body{margin:0;font-family:"Swis721 BT",Arial,sans-serif;color:#111111}
@@ -80,8 +98,15 @@ ${cevapSatirlari}
     const page = await browser.newPage();
     await page.setContent(html, { waitUntil: "load" });
     await page.waitForFunction(() => Array.from(document.images).every((img) => img.complete));
+    // .q-page'in kendi dikey padding'i (6mm×2) + print margin'leri (6mm+12mm) +
+    // küçük bir tampon — en uzun görüntü bile "page-break-inside:avoid" ile tek
+    // sayfaya sığsın diye A4'ün (297mm) üzerine çıkabilen bir sayfa yüksekliği.
+    const enUzunGorselMm = Math.max(0, ...sayfalar.map((s) => pngHeightMm(s.pngBase64, 185)));
+    const sayfaYuksekligiMm = Math.max(297, enUzunGorselMm + 12 + 18 + 5);
+
     const pdf = await page.pdf({
-      format: "a4",
+      width: "210mm",
+      height: `${sayfaYuksekligiMm}mm`,
       printBackground: true,
       displayHeaderFooter: true,
       headerTemplate: "<span></span>",

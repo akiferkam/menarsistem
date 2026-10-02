@@ -36,21 +36,30 @@ export function registerTopluUretimRoutes(app: FastifyInstance, repo: Repository
       }
     }
 
+    // BTBS ("Bir Ben Bir Sen") kalemleri yalnız BEN'i şimdi açar — eşleştirilmiş
+    // SEN, BEN bittiğinde queue/btbs.ts tarafından OTOMATİK olarak bu AYNI
+    // batch'e eklenir. Bu yüzden (a) toplamSatir her BTBS kalemi için bir
+    // FAZLA sayılır, (b) sira numaralandırması her BTBS kaleminden sonra bir
+    // BOŞLUK bırakır — aksi halde sonradan eklenen SEN'in sira'sı (=BEN+1)
+    // listedeki BİR SONRAKİ kalemin sira'sıyla çakışırdı.
+    const btbsSayisi = kalemler.filter((k) => (k as JobInput).mode === "BTBS").length;
     const batch = repo.topluUretim.create({
       yayineviId: ogretmen.yayineviId,
       ogretmenId: ogretmen.id,
       baslik: body?.baslik,
-      toplamSatir: kalemler.length,
+      toplamSatir: kalemler.length + btbsSayisi,
     });
 
-    const jobIds = kalemler.map((kalem, i) => {
+    let sira = 0;
+    const jobIds = kalemler.map((kalem) => {
       const job = repo.is.create({
         yayineviId: ogretmen.yayineviId,
         ogretmenId: ogretmen.id,
         inputJson: JSON.stringify(kalem),
         topluUretimId: batch.id,
-        topluUretimSira: i,
+        topluUretimSira: sira,
       });
+      sira += (kalem as JobInput).mode === "BTBS" ? 2 : 1;
       return job.id;
     });
 

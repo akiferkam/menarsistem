@@ -130,7 +130,17 @@ export function buildDizgi(
     ogrenci.push([STIL.kunye, "Cevap: " + sorular.map((q) => q.dogru_secenek).join(" ")]);
   }
 
-  const ogretmen: [string, string][] = [[STIL.kunye, `${input.kod} — ${resolved.micro} — ${input.iq}`]];
+  // Kullanıcı isteği (2026-10-01): "Bir Ben Bir Sen" çiftinde hangi sayfanın
+  // BEN (örnek, öğretmen çözer) hangisinin SEN (öğrenci çözer) olduğunu
+  // üretim/takip tarafında ayırt etmek zor oluyordu — ama bu ETİKET yalnız
+  // ÖĞRETMEN künye satırına eklenir (bkz. yukarıdaki `ogrenci` dizisi — orada
+  // hiç kod/mikro/iq/rol satırı YOK), öğrenciye hiçbir zaman görünmez ve
+  // sorunun İÇERİĞİNE (senaryo/metin) karışmaz — kullanıcının daha önce
+  // reddettiği "soru içinde BEN/SEN yazması" ile KARIŞTIRILMAMALI.
+  const btbsRolEtiketi = input.mode === "BTBS" ? ` — BİR ${input.btbsRol === "SEN" ? "SEN" : "BEN"}` : "";
+  const ogretmen: [string, string][] = [
+    [STIL.kunye, `${input.kod} — ${resolved.micro} — ${input.iq}${btbsRolEtiketi}`],
+  ];
   (st.paragraphs ?? []).forEach((p) => ogretmen.push([STIL.lead, P(p)]));
   sorular.forEach((q, n) => {
     ogretmen.push([STIL.kok, `${n + 1}. ${P(q.kok)}`]);

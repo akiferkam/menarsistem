@@ -249,21 +249,33 @@ function niceTicks(min: number, max: number, targetCount = 4): number[] {
   return ticks;
 }
 
+// Kullanıcı geri bildirimi (2026-09-29): tek seri sabitti — "A deposu vs B
+// deposu" gibi karşılaştırma sahneleri desteklenemiyordu. `seri.seriler`
+// doluysa (bkz. 03-generator-schema.ts) burada N renkli çizgi/çubuk grubu +
+// bir gösterge (lejant) çizilir; boşsa TEK seri eski (pixel-aynı) davranışa
+// düşer — mevcut tek-seri grafiklerin görünümü DEĞİŞMEDİ.
+const SERI_PALETI = [LINE, ACC, "#2F6B3A", "#6B3FA0"];
+
 function buildGrafikSvg(seri: NonNullable<GeneratorOutput["gorsel_veri_manifesti"]["grafik_serisi"]>, W: number): SvgAsset {
   const PAD_L = 48;
   const PAD_R = 16;
+  const cokSerili = Array.isArray(seri.seriler) && seri.seriler.length >= 2;
+  const serilerListesi: { ad?: string | null; noktalar: { x?: number | null; y?: number | null; etiket?: string | null }[] }[] =
+    cokSerili ? seri.seriler! : [{ ad: null, noktalar: seri.noktalar ?? [] }];
+  const ilkSeriNoktalari = serilerListesi[0]?.noktalar ?? [];
   // TABLO'nun caption'ında olduğu gibi (bkz. yukarıdaki wrapText fix) uzun
   // bir başlık ("Denemelerde Birikimli Net Görüntü Sayısı" gibi) tek satırlık
   // `<text>` olarak SVG viewBox genişliğini aşıp kelimenin ortasından
   // kesiliyordu (canlı modda görüldü, dar 85mm sayfa genişliğinde) — sarma
   // eklendi.
   const titleLines = seri.baslik ? wrapText(String(seri.baslik).toLocaleUpperCase("tr-TR"), W - PAD_L - 9 - 4, 10) : [];
-  const capH = titleLines.length ? 9 + titleLines.length * 12 : 6;
+  const legendH = cokSerili ? 14 : 0;
+  const capH = (titleLines.length ? 9 + titleLines.length * 12 : 6) + legendH;
   const H = 254 + capH;
   const pad = { l: PAD_L, r: PAD_R, t: capH + 10, b: 38 };
-  const noktalar = seri.noktalar ?? [];
-  const xs = noktalar.map((p) => Number(p.x));
-  const ys = noktalar.map((p) => Number(p.y));
+  const tumNoktalar = serilerListesi.flatMap((sr) => sr.noktalar);
+  const xs = tumNoktalar.map((p) => Number(p.x));
+  const ys = tumNoktalar.map((p) => Number(p.y));
   const xmin = Math.min(...xs);
   const xmax = Math.max(...xs);
   const ticks = niceTicks(Math.min(0, ...ys), Math.max(...ys), 4);
@@ -277,7 +289,7 @@ function buildGrafikSvg(seri: NonNullable<GeneratorOutput["gorsel_veri_manifesti
   // fışkırıyormuş gibi göründü) — gerçek bir çubuk grafikte her zaman eksen
   // ve kenarlarda boşluk (band padding) olur. SUTUN artık kendi bant
   // ölçeğini kullanıyor; CIZGI'nin sürekli px()'i dokunulmadan kalıyor.
-  const band = (W - pad.l - pad.r) / noktalar.length;
+  const band = (W - pad.l - pad.r) / ilkSeriNoktalari.length;
   const bandX = (i: number) => pad.l + band * (i + 0.5);
   const px = (v: number) => pad.l + (W - pad.l - pad.r) * ((v - xmin) / (xmax - xmin || 1));
 
@@ -293,6 +305,17 @@ function buildGrafikSvg(seri: NonNullable<GeneratorOutput["gorsel_veri_manifesti
       s += `<text x="${pad.l + 9}" y="${14 + i * 12}" style="font-family:${FONT};font-size:10px;font-weight:bold;fill:${LINE};letter-spacing:.05em">${esc(line)}</text>`;
     });
   }
+  if (cokSerili) {
+    const legendY = titleLines.length ? 9 + titleLines.length * 12 + 9 : 15;
+    let lx = pad.l;
+    serilerListesi.forEach((sr, i) => {
+      const renk = SERI_PALETI[i % SERI_PALETI.length]!;
+      const ad = sr.ad ?? `Seri ${i + 1}`;
+      s += `<rect x="${lx}" y="${legendY - 7}" width="8" height="8" rx="1.5" fill="${renk}"/>`;
+      s += `<text x="${lx + 11}" y="${legendY}" style="font-family:${FONT};font-size:7.5px;fill:${INK}">${esc(ad)}</text>`;
+      lx += 11 + ad.length * 4.3 + 16;
+    });
+  }
   // Yuvarlak eksen değerleri + kesikli, çok soft ızgara çizgileri (düz
   // "0.5px solid" yerine) — basılı bir referans çizelgesi hissi.
   ticks.forEach((v) => {
@@ -303,21 +326,34 @@ function buildGrafikSvg(seri: NonNullable<GeneratorOutput["gorsel_veri_manifesti
   s += `<line x1="${pad.l}" y1="${H - pad.b}" x2="${W - pad.r}" y2="${H - pad.b}" style="stroke:${INK};stroke-width:1.1"/>`;
   s += `<line x1="${pad.l}" y1="${pad.t - 4}" x2="${pad.l}" y2="${H - pad.b}" style="stroke:${INK};stroke-width:1.1"/>`;
   if (eksenTuru === "SUTUN") {
-    const bw = band * 0.56;
-    noktalar.forEach((p, i) => {
-      const y = Number(p.y);
-      const cx = bandX(i);
-      const barH = py(ymin) - py(y);
-      const rTop = Math.min(3, barH);
-      s += `<path d="M ${cx - bw / 2} ${py(ymin)} V ${py(y) + rTop} Q ${cx - bw / 2} ${py(y)} ${cx - bw / 2 + rTop} ${py(y)} H ${cx + bw / 2 - rTop} Q ${cx + bw / 2} ${py(y)} ${cx + bw / 2} ${py(y) + rTop} V ${py(ymin)} Z" fill="${LINE}"/>`;
+    const grupSayisi = serilerListesi.length;
+    const grupGenisligi = band * 0.72;
+    const bw = grupGenisligi / grupSayisi;
+    serilerListesi.forEach((sr, si) => {
+      const renk = SERI_PALETI[si % SERI_PALETI.length]!;
+      sr.noktalar.forEach((p, i) => {
+        const y = Number(p.y);
+        const cx = bandX(i) - grupGenisligi / 2 + bw * (si + 0.5);
+        const barH = py(ymin) - py(y);
+        const rTop = Math.min(3, barH);
+        s += `<path d="M ${cx - bw / 2} ${py(ymin)} V ${py(y) + rTop} Q ${cx - bw / 2} ${py(y)} ${cx - bw / 2 + rTop} ${py(y)} H ${cx + bw / 2 - rTop} Q ${cx + bw / 2} ${py(y)} ${cx + bw / 2} ${py(y) + rTop} V ${py(ymin)} Z" fill="${renk}"/>`;
+      });
     });
   } else {
-    s += `<polyline points="${noktalar.map((p) => `${px(Number(p.x))},${py(Number(p.y))}`).join(" ")}" fill="none" style="stroke:${LINE};stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/>`;
-    // Dolu nokta yerine beyaz-dolgulu, renkli çerçeveli "halka" işaretçi —
-    // basılı çizelgelerde (ör. TÜİK/MEB kaynak grafikleri) yaygın, düz dolu
-    // dairelerden daha az "varsayılan kütüphane grafiği" hissi verir.
-    noktalar.forEach((p) => {
-      s += `<circle cx="${px(Number(p.x))}" cy="${py(Number(p.y))}" r="3" fill="#FFFFFF" style="stroke:${ACC};stroke-width:1.8"/>`;
+    serilerListesi.forEach((sr, si) => {
+      const renk = SERI_PALETI[si % SERI_PALETI.length]!;
+      // Tek-serili (eski) davranış birebir korunuyor: çizgi LINE, halka ACC
+      // (kasıtlı iki-renkli eşleşme). Çok-serili modda her serinin halkası
+      // KENDİ rengiyle çizilir — aksi halde tüm seriler aynı (ACC) halka
+      // rengini paylaşıp yalnızca çizgi renginden ayırt edilebilir kalırdı.
+      const halkaRengi = cokSerili ? renk : ACC;
+      s += `<polyline points="${sr.noktalar.map((p) => `${px(Number(p.x))},${py(Number(p.y))}`).join(" ")}" fill="none" style="stroke:${renk};stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/>`;
+      // Dolu nokta yerine beyaz-dolgulu, renkli çerçeveli "halka" işaretçi —
+      // basılı çizelgelerde (ör. TÜİK/MEB kaynak grafikleri) yaygın, düz dolu
+      // dairelerden daha az "varsayılan kütüphane grafiği" hissi verir.
+      sr.noktalar.forEach((p) => {
+        s += `<circle cx="${px(Number(p.x))}" cy="${py(Number(p.y))}" r="3" fill="#FFFFFF" style="stroke:${halkaRengi};stroke-width:1.8"/>`;
+      });
     });
   }
   // CIZGI (çizgi grafik) x ekseni her zaman GERÇEK SAYISAL konumdur (x-t,
@@ -326,8 +362,10 @@ function buildGrafikSvg(seri: NonNullable<GeneratorOutput["gorsel_veri_manifesti
   // 50, 100..." olması gerekirken "0,35, 0,44, 0,46..." — yani Y değerleri —
   // gösterdi). CIZGI'de etiket'e hiç güvenilmez, x DOĞRUDAN gösterilir.
   // SUTUN (sütun grafik) kategorik olabilir (ör. ay adları) — orada etiket
-  // meşru bir kullanım, x yalnız konum/sıra olabilir.
-  noktalar.forEach((p, i) => {
+  // meşru bir kullanım, x yalnız konum/sıra olabilir. Çok-serili grafikte
+  // TÜM seriler AYNI x eksenini paylaşır (bkz. şema notu) — etiketler yalnız
+  // ilk seriden okunur.
+  ilkSeriNoktalari.forEach((p, i) => {
     const x = eksenTuru === "SUTUN" ? bandX(i) : px(Number(p.x));
     const eksenMetni = eksenTuru === "SUTUN" ? (p.etiket ?? p.x) : p.x;
     s += `<text x="${x}" y="${H - pad.b + 14}" text-anchor="middle" style="font-family:${FONT};font-size:7.5px;fill:#5B6B7D">${esc(tr(eksenMetni))}</text>`;
@@ -669,7 +707,15 @@ function buildGeometriSvg(
   acilar?: GeoAci[] | null,
   baglamElemanlari?: BaglamSahnesiElemani[] | null
 ): SvgAsset {
-  const pad = 30;
+  // Kullanıcı geri bildirimi (2026-09-29, düzensiz beşgen örneği): sabit
+  // 30px kenar boşluğu, kenar etiketleri (bkz. altta "mesafe" — 20px'e kadar
+  // dışa itilebiliyor) + metnin kendi genişliği ile birleşince kanvas
+  // sınırının DIŞINA taşıyordu ("EA = 70 cm" sol kenardan kırpıldı). Boşluk
+  // artık en uzun kenar etiketinin yarısı + azami itme mesafesi kadar
+  // BÜYÜTÜLÜYOR — etiketsiz/kısa etiketli şekillerde eski 30px'te kalır.
+  const etiketYariGenislikleri = (kenarlar ?? [])
+    .map((k) => (k.etiket ? (tr(k.etiket).length * 4.6) / 2 : 0));
+  const pad = Math.max(30, Math.ceil(Math.max(0, ...etiketYariGenislikleri) + 20 + 6));
   const xs = geo.map((p) => Number(p.x));
   const ys = geo.map((p) => Number(p.y));
   const yRange = Math.max(...ys) - Math.min(...ys);
@@ -689,6 +735,17 @@ function buildGeometriSvg(
   geo.forEach((p) => {
     if (p.ad) byAd.set(p.ad, { x: PX(Number(p.x)), y: PY(Number(p.y)) });
   });
+  // Kenar etiketini hangi yöne (iki dik adaydan biri) itmenin "dışarı" sayıldığını
+  // belirlemek için kaba bir merkez — köşelerin ortalaması. Düzensiz/dışbükey
+  // olmayan şekillerde piksel-kesin olmasa da, "hangi taraf şeklin İÇİ" sorusunu
+  // güvenilir biçimde ayırt etmeye yeter (bkz. altta kullanımı).
+  const merkezNoktalar = [...byAd.values()];
+  const sekilMerkezi = merkezNoktalar.length
+    ? {
+        x: merkezNoktalar.reduce((t, p) => t + p.x, 0) / merkezNoktalar.length,
+        y: merkezNoktalar.reduce((t, p) => t + p.y, 0) / merkezNoktalar.length,
+      }
+    : { x: W / 2, y: H / 2 };
 
   const kenarListesi: GeoKenar[] =
     kenarlar && kenarlar.length
@@ -712,6 +769,16 @@ function buildGeometriSvg(
     kenarSkinleri.set(kenarAnahtari(el.kenar.nokta1, el.kenar.nokta2), cizici(p1, p2));
   });
 
+  // Kullanıcı geri bildirimi (2026-09-29, bileşke vektör örneği): ok uçları
+  // burada HEMEN çizilince, en altta AYRICA çizilen nokta işaretleri (bkz.
+  // altta `geo.forEach` — kasıtlı olarak EN SONA bırakıldı ki sahne derisi
+  // süslemelerinin üstünde nokta adı okunur kalsın) SVG'de DAHA SONRA geldiği
+  // için ok ucunun ÜZERİNE biniyor, oku bir noktaya gömülmüş gibi gösteriyordu
+  // ("önce ok, sonra nokta" görünümü). Ok uçları bu yüzden HEMEN eklenmez,
+  // ayrı bir kuyrukta tutulup TÜM noktalar (ve sahne derisi/açı katmanları)
+  // çizildikten SONRA, en üstte eklenir — hem nokta adları sahne derisinin
+  // üstünde kalır hem de ok uçları hiçbir noktanın altında kalmaz.
+  const okKuyruklari: string[] = [];
   kenarListesi.forEach((k) => {
     const p1 = byAd.get(k.uclar.nokta1);
     const p2 = byAd.get(k.uclar.nokta2);
@@ -723,14 +790,37 @@ function buildGeometriSvg(
     }
     const dash = k.stil === "KESIKLI" ? ' stroke-dasharray="4,3"' : "";
     s += `<line x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" style="stroke:${LINE};stroke-width:1.6"${dash}/>`;
-    if (k.ok === "NOKTA2" || k.ok === "IKI_UC") s += okUcuUcgeni(p2, birimVektor(p1, p2));
-    if (k.ok === "NOKTA1" || k.ok === "IKI_UC") s += okUcuUcgeni(p1, birimVektor(p2, p1));
+    if (k.ok === "NOKTA2" || k.ok === "IKI_UC") okKuyruklari.push(okUcuUcgeni(p2, birimVektor(p1, p2)));
+    if (k.ok === "NOKTA1" || k.ok === "IKI_UC") okKuyruklari.push(okUcuUcgeni(p1, birimVektor(p2, p1)));
     if (k.etiket) {
       const orta = { x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2 };
       const yon = birimVektor(p1, p2);
-      const perp = { x: -yon.y, y: yon.x };
-      const lx = orta.x + perp.x * 11;
-      const ly = orta.y + perp.y * 11;
+      // Kullanıcı geri bildirimi (2026-09-29, düzensiz beşgen örneği): dik
+      // yön HER ZAMAN aynı 90°lik döndürmeyle seçiliyordu — bu, çokgenin
+      // dışbükey olmayan/farklı yönlü kenarlarında bazen İÇERİ (çizginin
+      // ÜZERİNE biner gibi) bazen DIŞARI işaret ediyordu ("DE = 76 cm"
+      // etiketi kenarın üzerine bindi). İki dik adaydan hangisi şekil
+      // MERKEZİNDEN daha UZAKSA o "dışarı" sayılır — basit ama şeklin
+      // dışbükeylik durumundan bağımsız çalışan bir sezgi.
+      const perpAday1 = { x: -yon.y, y: yon.x };
+      const perpAday2 = { x: yon.y, y: -yon.x };
+      const uzaklik1 = Math.hypot(orta.x + perpAday1.x - sekilMerkezi.x, orta.y + perpAday1.y - sekilMerkezi.y);
+      const uzaklik2 = Math.hypot(orta.x + perpAday2.x - sekilMerkezi.x, orta.y + perpAday2.y - sekilMerkezi.y);
+      const perp = uzaklik1 >= uzaklik2 ? perpAday1 : perpAday2;
+      // Nokta adları HER ZAMAN kendi noktasının sağ-üstünde durur (bkz. altta
+      // "+5,-5" sabiti) — kısa bir kenarda (ör. bir vektör zincirinde diğer
+      // kenarlardan belirgin kısa olan biri) orta-nokta bazlı bu MİKTAR
+      // etiketi, ucundaki nokta adıyla aynı bölgeye düşüp üst üste binebiliyor
+      // (canlı modda görüldü, job MENAR-FIZ924-20260928101224: "d_MN = 40 m"
+      // etiketi bitişik "N" nokta adının ÜZERİNE bindi, ikisi de okunaksız
+      // hâle geldi). Etiket metni kenarın piksel uzunluğundan GENİŞSE
+      // (kısa kenar + uzun metin), çizgiden olan mesafeyi artırarak nokta
+      // adlarının bulunduğu dar bölgeden çıkar.
+      const kenarUzunlugu = Math.hypot(p2.x - p1.x, p2.y - p1.y);
+      const tahminiEtiketGenisligi = tr(k.etiket).length * 4.6;
+      const mesafe = tahminiEtiketGenisligi > kenarUzunlugu ? 20 : 11;
+      const lx = orta.x + perp.x * mesafe;
+      const ly = orta.y + perp.y * mesafe;
       s += `<text x="${lx}" y="${ly}" text-anchor="middle" style="font-family:${FONT};font-size:8px;fill:${INK}">${esc(tr(k.etiket))}</text>`;
     }
   });
@@ -784,10 +874,18 @@ function buildGeometriSvg(
     const siraNo = aciSayaci.get(ac.kose) ?? 0;
     aciSayaci.set(ac.kose, siraNo + 1);
     const r = 16 + siraNo * 10;
-    // Etiket mesafesi yay yarıçapından çok daha agresif artar — nested açı
-    // açıklıkları birbirine yakınsa (bkz. yukarıdaki not) yalnız yayı büyütmek
-    // yetmiyor, uzun metinli etiketler (ör. "tan α = 3/4") hâlâ çakışıyordu.
-    const labelOffset = 13 + siraNo * 30;
+    // Kullanıcı geri bildirimi (2026-09-29, üçgen iç açı örneği): aynı
+    // köşede İKİNCİ bir açı olduğunda (ör. A köşesinde hem 30° hem "x")
+    // sabit +30px/seviye artış, KISA bir etiketi (tek harf "x" gibi) kendi
+    // küçük yayından onlarca piksel uzağa, şeklin İÇİNE fırlatıp etiketi
+    // hangi açıya ait olduğu belirsiz/"öylesine oraya düşmüş" gösteriyordu
+    // — bu artış aslında UZUN metinli (ör. "tan α = 3/4") çakışan açılar
+    // için gerekliydi, kısa etiketlere (çoğu durum) uygulanması gereksizdi.
+    // Artık mesafe etiketin KENDİ metin genişliğine göre ölçekleniyor —
+    // "x" gibi kısa bir etiket yayına yakın kalır, uzun bir etiket hâlâ
+    // yeterince uzağa itilir.
+    const aciEtiketGenisligi = ac.deger ? tr(ac.deger).length * 4.6 : 0;
+    const labelOffset = 10 + siraNo * 8 + Math.max(0, aciEtiketGenisligi - 12);
     const yay = aciYayi(V, P1, P2, r, labelOffset);
     s += `<path d="M ${yay.sx} ${yay.sy} A ${r} ${r} 0 ${yay.largeArc} ${yay.sweep} ${yay.ex} ${yay.ey}" fill="none" style="stroke:${ACC};stroke-width:1"/>`;
     if (ac.deger) {
@@ -799,8 +897,24 @@ function buildGeometriSvg(
     const px = PX(Number(p.x));
     const py = PY(Number(p.y));
     s += `<circle cx="${px}" cy="${py}" r="2.2" fill="${INK}"/>`;
-    s += `<text x="${px + 5}" y="${py - 5}" style="font-family:${FONT};font-size:8.5px;fill:${INK}">${esc(p.ad ?? "")}</text>`;
+    // Kullanıcı geri bildirimi (2026-09-29, üçgen iç açı örneği): nokta adı
+    // HER ZAMAN sabit sağ-üst (+5,-5) yönüne yazılıyordu — köşede bir açı
+    // yayı varsa (açı her zaman şeklin İÇİNE, merkeze doğru çizilir) bu
+    // sabit yön bazen tam yayın/kenarın üzerine denk gelip harfi çizgiyle
+    // çakıştırıyordu (ör. "B" harfi 50°'lik yayın içine gömülmüştü). Nokta
+    // adı artık her zaman şekil MERKEZİNİN TERSİ yönde (dışa doğru) yazılır
+    // — açı yayı her koşulda içeride kaldığı için bu, çakışmayı yapısal
+    // olarak önler (kenar etiketlerinde kullanılan aynı merkez-tabanlı
+    // "dışarı" sezgisi, bkz. `sekilMerkezi`).
+    const disaX = px - sekilMerkezi.x;
+    const disaY = py - sekilMerkezi.y;
+    const disaUzunluk = Math.hypot(disaX, disaY) || 1;
+    const etiketX = px + (disaX / disaUzunluk) * 9 + 2;
+    const etiketY = py + (disaY / disaUzunluk) * 9;
+    s += `<text x="${etiketX}" y="${etiketY}" text-anchor="middle" style="font-family:${FONT};font-size:8.5px;fill:${INK}">${esc(p.ad ?? "")}</text>`;
   });
+  // Ok uçları EN ÜSTTE — bkz. `okKuyruklari` tanımındaki not.
+  s += okKuyruklari.join("");
 
   if (!olcekliCizim) {
     s += `<text x="${W - 4}" y="${H - 4}" text-anchor="end" style="font-family:${FONT};font-size:6.5px;fill:#4B5563">Şekil temsili olup ölçekli çizilmemiştir.</text>`;
@@ -937,7 +1051,9 @@ export function buildVeriKatmani(input: JobInput, aday: GeneratorOutput): VeriKa
   }
 
   const seri = man.grafik_serisi;
-  if (vk.gerekli && seri && Array.isArray(seri.noktalar) && seri.noktalar.length) {
+  const tekSeriliVeri = Array.isArray(seri?.noktalar) && seri!.noktalar!.length > 0;
+  const cokSeriliVeri = Array.isArray(seri?.seriler) && seri!.seriler!.length >= 2;
+  if (vk.gerekli && seri && (tekSeriliVeri || cokSeriliVeri)) {
     assets.push(buildGrafikSvg(seri, W));
   }
 

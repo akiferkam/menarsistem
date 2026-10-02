@@ -18,6 +18,76 @@ const DERS_ETIKET: Record<Ders, string> = {
   DKAB: "Din Kültürü ve Ahlak Bilgisi",
 };
 
+// Kullanıcı isteği (2026-09-28): "senaryo çeşitliliğini nasıl artırabiliriz"
+// — 19b'deki NEGATİF uyarı (bkz. `asiriKullanilanTemaKelimeleri`) tek başına
+// yeterli değil, model bir kurumsal kalıptan kaçınca BAŞKA bir dar kalıba
+// (ör. hep "atölye") sıçrayabilir. Bu, resmî MEB bağlam-temelli kılavuzunda
+// (kılavuz/baglamtemelli-maarif-coktan-secmeli-soru-yazim-kilavuzu.pdf,
+// örnek soru bölümleri) GERÇEKTEN kullanılan/uygun alanlardan derlenmiş,
+// ders başına POZİTİF bir öneri havuzu — her üretimde küçük, rotasyona
+// dayalı bir alt küme öneri olarak sunulur (zorunlu değil). DKAB kasıtlı
+// olarak burada YOK: kendi resmî örnekleri zaten toplumsal dayanışma/
+// mahalle temalı — bu ders için o tema kaçınılacak bir kalıp değil,
+// konunun doğal parçası (çeşitlilik somut VAKA düzeyinde aranmalı).
+// FELSEFE listesi resmî kılavuzda örneksiz kaldığı için daha kısa/genel.
+const BAGLAM_ALAN_HAVUZU: Partial<Record<Ders, string[]>> = {
+  MATEMATIK: [
+    "ev enerji tüketimi/tasarrufu hesaplama", "3D yazıcı üretim/kaynak planlaması",
+    "spor performans istatistikleri", "tarım ürünü karışım/verim oranları",
+    "ulaşım-lojistik rota optimizasyonu", "gıda tarifi ölçek dönüşümü",
+    "telekom veri/tarife paketleri karşılaştırması", "kredi-taksit finans hesaplama",
+    "oyun/şans simülasyonları (zar, kart, çekiliş)", "inşaat malzeme miktarı hesaplama",
+  ],
+  GEOMETRI: [
+    "ambalaj/kutu hacim optimizasyonu", "güneş paneli açı-verim hesabı",
+    "mimari çatı/köprü yapı tasarımı", "harita ölçekleme", "optik yansıma düzenekleri",
+    "kumaş/dokuma desen simetrisi", "spor sahası ölçü düzeni",
+  ],
+  FIZIK: [
+    "ısı/erime deneyi (madde-kütle-süre tablosu)", "spor biyomekaniği (atlama/fırlatma açısı)",
+    "yenilenebilir enerji sistemleri", "araç/motor performans testi",
+    "ses-akustik yalıtım deneyi", "elektrik devresi arıza teşhisi", "uydu yörünge hesabı",
+  ],
+  KIMYA: [
+    "atom modeli tarihi (Dalton/Thomson/Rutherford/Bohr deney anlatımı)",
+    "gıda/ilaç üretim süreci", "su arıtma kimyası", "kozmetik/temizlik formülasyonu",
+    "endüstriyel tepkime verimi", "tarımsal gübre-toprak kimyası (ötrofikasyon)",
+  ],
+  BIYOLOJI: [
+    "kuş popülasyonu/biyoçeşitlilik izleme", "deniz müsilajı/ekosistem krizi",
+    "prion/hastalık yayılım araştırması", "tarımsal zararlı mücadelesi",
+    "genetik ıslah/tohum çeşitliliği", "epidemiyoloji/aşı verisi",
+  ],
+  TDE: [
+    "divan edebiyatı nazım şekli istatistiği (gazel/beyit grafiği)",
+    "modern şiir–düzyazı karşılaştırması", "roman türü/okuma tercihi senaryosu",
+    "sözlü-yazılı kültür geçişi", "medya dili analizi",
+  ],
+  COGRAFYA: [
+    "jeolojik zaman içinde kıyı/kara değişimi haritası", "iklim senaryosu haritaları (IPCC tarzı)",
+    "göl yüzeyi uydu görüntüsü değişimi", "göç-nüfus hareketleri",
+    "liman/deniz taşımacılığı", "kentleşme-arazi kullanımı uydu verisi",
+  ],
+  TARIH: [
+    "arkeolojik yerleşim analizi (kazı katmanları)", "tarih yazımı/kaynak eleştirisi seminer senaryosu",
+    "ticaret yolları/kervan güzergâhları", "teknoloji-icat tarihçesi",
+    "diplomatik belge/antlaşma analizi",
+  ],
+  FELSEFE: [
+    "argüman/çıkarım senaryosu", "etik ikilem vakası",
+    "bilim felsefesi/deney yorumu tartışması", "dil-anlam analizi",
+  ],
+};
+
+/** Ders havuzundan, ledger uzunluğuna göre KAYAN küçük bir alt küme — aynı
+ * öneriler ardışık üretimlerde tekrar etmesin diye kaba bir rotasyon. */
+function alanOnerileri(ders: Ders | undefined, ledgerUzunluk: number): string[] {
+  const havuz = BAGLAM_ALAN_HAVUZU[ders ?? "MATEMATIK"];
+  if (!havuz || havuz.length <= 4) return havuz ?? [];
+  const baslangic = ledgerUzunluk % havuz.length;
+  return Array.from({ length: 4 }, (_, i) => havuz[(baslangic + i) % havuz.length]!);
+}
+
 /**
  * 2026-09-16: 13 kademeli sistem (IQ50..IQ350) 5 kademeye İNDİRGENDİ —
  * kullanıcı geri bildirimi: "Hedef IQ için çok fazla hata gördüğümüz için"
@@ -254,6 +324,55 @@ function modeBlock(resolved: ResolvedJob): string {
       ].join("\n");
     case "BTP":
       return "MOD: BAĞLAM TEMELLİ PROBLEM (BTP)\nSENARYO UZUNLUĞU: " + input.metinUzunlugu + "\nPROBLEM SAYISI: " + input.soruSayisi;
+    case "BTBS": {
+      // "Bir Ben Bir Sen" v2 (kullanıcı düzeltmesi, 2026-09-27): BEN ve SEN
+      // AYRI, BAĞIMSIZ job'lardır (her biri kendi baglam_katmani/görselini
+      // üretir) — bu case İKİ FARKLI metin üretir, hangisi input.btbsRol'e
+      // bağlıdır. İkisi de normal bir BT sorusu gibi üretilir/render edilir;
+      // sayfada "BEN"/"SEN" gibi HİÇBİR görünür işaret YOKTUR.
+      const ortak = [
+        "MOD: BAĞLAM TEMELLİ BİR BEN BİR SEN (BTBS) — bu, standart BT ile AYNI şekilde ÜRETİLİR/RENDER EDİLİR; " +
+          "çıktı JSON'unda veya sayfa görünümünde 'BEN'/'SEN' gibi hiçbir özel işaret, başlık veya farklı biçim " +
+          "OLMAMALI — yalnızca normal bir soru + 5 şık üret.",
+        "BAĞLAM UZUNLUĞU: " + input.metinUzunlugu,
+        "SORU SAYISI: 1",
+      ];
+      if (input.btbsRol === "SEN" && input.btbsReferans) {
+        const ref = input.btbsReferans;
+        return [
+          ...ortak,
+          "",
+          "BU SORU, AŞAĞIDAKİ (ÖĞRETMENİN SINIFTA ÇÖZECEĞİ) ÖRNEK SORUYA EŞLEŞTİRİLMİŞ 'SEN' SORUSUDUR:",
+          "--- BEN (örnek, referans — bu soruyu ÜRETME, yalnız yaklaşımını anla) ---",
+          "Soru kökü: " + ref.kok,
+          "Seçenekler: " + ref.secenekler.map((s, i) => `${["A", "B", "C", "D", "E"][i]}) ${s}`).join(" | "),
+          "Doğru seçenek: " + ref.dogruSecenek,
+          "Çözüm yaklaşımı: " + ref.cozumAdimlari.join(" "),
+          "--- BEN SONU ---",
+          "",
+          "GÖREVİN: yukarıdaki BEN ile AYNI temel kazanımı/beceriyi/çözüm yaklaşımını yoklayan, ama TAMAMEN " +
+            "FARKLI bir bağlam/senaryo/veri yapısı içeren, YENİ ve BAĞIMSIZ bir SEN sorusu üret.",
+          "- YASAK: BEN'deki sayıları/isimleri değiştirip aynı şablonu tekrarlamak. Akademik görev ve öğrenilen " +
+            "temel fikir korunur, ama öğrenci BEN'i ezberleyip mekanik olarak uygulayamamalı — BEN'de gördüğü " +
+            "YAKLAŞIMI yeni duruma kendisi taşımak zorunda kalmalı (örnek: BEN bir hız-zaman grafiğini yorumlama " +
+            "BİÇİMİNİ gösteriyorsa, SEN aynı beceriyi FARKLI verili/FARKLI durumlu yeni bir grafik üzerinden ister).",
+          "- BEN'in görseli/bağlamı varsa SEN KENDİ bağımsız görselini/bağlamını kurar — BEN'in sahnesini, " +
+            "nesnesini veya verisini TEKRARLAMA, tamamen yeni ve kendi başına tutarlı bir sahne kur.",
+          "- SEN, BEN ile AYNI hedef IQ/bağımsız karar sayısı seviyesini taşımalı — BEN'den kolay veya zor OLMAMALI.",
+          "- BEN'in çözümü sınıfta öğretmen tarafından anlatılacaktır; SEN'in cevabı/çözümü normal görünürlük " +
+            "kurallarına tabidir (öğrenci nüshasında yalnız cevapGorunurlugu=ACIK ise görünür).",
+        ].join("\n");
+      }
+      return [
+        ...ortak,
+        "",
+        "Bu soru bir 'Bir Ben Bir Sen' eşleştirmesinin BEN (örnek) sorusudur — konuyu/yöntemi net bir şekilde " +
+          "gösteren, normal bir BT sorusu üret. Öğretmen bu soruyu sınıfta çözüp yöntemi gösterecek; bu yüzden " +
+          "yaklaşım/çözüm YOLU (cozum_adimlari) açık ve öğretici olmalı — ama bu, sorunun GÖRÜNÜMÜNÜ/YAPISINI " +
+          "hiçbir şekilde değiştirmez, normal bir sorudan farksız kalır. Eşleştirilmiş 'SEN' sorusu ayrı bir " +
+          "üretimde, bu soru tamamlandıktan sonra otomatik olarak kurulacaktır.",
+      ].join("\n");
+    }
     case "ACIK_UCLU":
       return (
         "MOD: AÇIK UÇLU\nSORU SAYISI: " +
@@ -331,14 +450,57 @@ function btgWordLock(resolved: ResolvedJob): string {
   );
 }
 
+// Kullanıcı isteği (2026-09-28, ölçüm sonrası): madde 17 ("son bağlam
+// ailelerinden kaçın") yalnız TAM METİN eşleşmesine bakıyor — 117 geçmiş
+// sorunun ölçümünde neredeyse HER aile kodu teknik olarak benzersizdi, AMA
+// kelime düzeyinde ölçülünce model sürekli aynı birkaç kurumsal/sivil ortamı
+// (KENT/MERKEZİ 23x, ATÖLYESİ 11x, MAHALLE 10x, OKUL/BELEDİYE/BİLİM MÜZESİ
+// 5-6x) farklı isimlerle tekrar ettiği ortaya çıktı — "çeşitlilik yanılsaması".
+// Bu fonksiyon aynı ledger'dan (son100BaglamAilesi, zaten var/persist ediliyor
+// — YENİ bir alan/şema değişikliği GEREKMEDİ) kelime frekansını çıkarır;
+// eşiği aşan kelimeler modele AÇIKÇA isimlendirilerek yasaklanır — "kaçın"
+// gibi genel bir listeden çok daha güçlü bir sinyal, çünkü tam olarak HANGİ
+// kurumsal kalıbın aşırı kullanıldığını gösteriyor.
+const TEMA_DURAK_KELIMELERI = new Set([
+  "VE", "ILE", "IÇIN", "BIR", "DENEMESI", "PLANI", "GOZLEMI", "TESTI", "SISTEMI", "UYGULAMASI",
+  "KAYDI", "INCELEMESI", "STANDART", "KONTROL", "SECIMI", "HAZIRLIGI",
+]);
+
+function asiriKullanilanTemaKelimeleri(aileler: string[]): string[] {
+  if (aileler.length < 8) return [];
+  const sayac = new Map<string, number>();
+  for (const aile of aileler) {
+    const kelimeler = new Set(
+      aile
+        .toLocaleUpperCase("tr-TR")
+        .split(/[_\s]+/)
+        .filter((w) => w.length > 3 && !TEMA_DURAK_KELIMELERI.has(w))
+    );
+    for (const k of kelimeler) sayac.set(k, (sayac.get(k) ?? 0) + 1);
+  }
+  const esikSayi = Math.max(4, Math.ceil(aileler.length * 0.12));
+  return [...sayac.entries()]
+    .filter(([, n]) => n >= esikSayi)
+    .sort((a, b) => b[1] - a[1])
+    .map(([k]) => k);
+}
+
 /** node 04'ün gerçekte gönderdiği kompakt çekirdek (20 satırlık kural listesi). */
 function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): string {
   const { input, outcome } = resolved;
   const ogrenimBecerisi = makeSkill(outcome.outcome);
-  const surecBilesenleri = processComponents(outcome.outcome);
+  // Tarih/Coğrafya/DKAB/Felsefe kaynağı kazanımın kendi resmî a)/b)/c)...
+  // süreç bileşenlerini taşıyor (bkz. curriculum/schema.ts) — doluysa bu,
+  // processComponents()'ın genel anahtar-kelime tahmininden HER ZAMAN
+  // önceliklidir; boşsa (ör. Matematik) eski heuristiğe düşülür.
+  const surecBilesenleri = outcome.surec_bilesenleri?.length
+    ? outcome.surec_bilesenleri
+    : processComponents(outcome.outcome);
   const hedefBant = HEDEF_BANT[input.iq] ?? "hedef forma göre";
   const compactMode = modeBlock(resolved);
   const btgLock = input.mode === "BTG" ? btgWordLock(resolved) : "";
+  const asiriTemalar = asiriKullanilanTemaKelimeleri(ledger.son100BaglamAilesi);
+  const alanOnerisi = alanOnerileri(input.ders, ledger.son100BaglamAilesi.length);
 
   return [
     "MENAR YAYINCILIK / MAYS " + DERS_ETIKET[input.ders ?? "MATEMATIK"].toLocaleUpperCase("tr-TR") + " V22.3 — KONTROLLÜ ÜRETİM",
@@ -364,6 +526,7 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
     "TYMM eğilim / okuryazarlık: " + input.tymmEgilim,
     "Öğrenim becerisi: " + ogrenimBecerisi,
     "Süreç bileşenleri: " + surecBilesenleri.join(" | "),
+    ...(outcome.dop_notu ? ["Resmi müfredat notu (DÖP): " + outcome.dop_notu] : []),
     "Ek istek: " + (input.ekIstek || "YOK"),
     "",
     "MOD KURALLARI",
@@ -381,7 +544,10 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
     "7. IQ300 ve IQ350 için ikinci konu/kazanım bütünleştirmesi zorunludur; yapay veya süs amaçlı olmamalıdır.",
     "8. Dar çıktıda (85_MM/90_MM) soru kökü en fazla 120 kelime, seçenek başına en fazla 6 kelime; geniş çıktıda (185_MM/180_MM) kök en fazla 220 kelime.",
     "9. Türkçe ondalık ayırıcı virgüldür. Birimler tutarlı olmalı. Ali/Ayşe/Ahmet/Mehmet ve havuz-musluk gibi klişeleri kullanma.",
-    "10. Bağlam çıkarıldığında karar veya bilgi kaybı oluşmalı; dekoratif bağlam kurma.",
+    "10. Bağlam görseli İŞLEVSEL olmalı: görsel çıkarıldığında çözüm için gerekli bir bilgi/görev kaybolmalı " +
+      "(bir cihaz okuması, ölçüm çizgisi, kuvvet oku veya güvenilir bir sayım görevi). Bu sağlanamıyorsa " +
+      "baglam_katmani.gerekli=false yap — salt dekoratif/atmosferik bir görsel ASLA üretme (preflight sert " +
+      "kapıyla RED verir).",
     "11. VERİ GÖSTERİM HİYERARŞİSİ (ÖNCELİK SIRASI — TÜM DERSLER İÇİN GEÇERLİ, yalnız Geometri'ye özel " +
       "değil, kullanıcı talebiyle 2026-08-18'de YENİDEN düzenlendi): baglam_katmani (fotogerçekçi AI görseli) " +
       "HER ZAMAN riskli/güvenilmez bir kanaldır — 3 denemelik pahalı bir üretim+denetim döngüsünden geçer ve " +
@@ -401,25 +567,33 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "geçişi kasıtlı hedefleniyor, ör. bir FONKSİYON grafiğinin artan/azalan aralığını okuma) VE bu beceri " +
       "metne çevrilirse kaybolur — bu durumda CIZGI/SUTUN/FONKSIYON/TABLO bilinçli bir seçim olarak kalabilir, " +
       "ama bu bir İSTİSNA olarak GEREKÇELENDİRİLMELİ, 'veri 2'den fazla sayı içeriyor' gibi otomatik bir " +
-      "varsayılan OLMAMALI. (3) baglam_katmani (fotoğraf) yalnız gerçek bir fiziksel nesnenin/cihazın KENDİ " +
+      "varsayılan OLMAMALI. ÇOK SERİLİ KARŞILAŞTIRMA (kullanıcı isteği, 2026-09-29): senaryo GERÇEKTEN iki " +
+      "veya daha fazla veri serisini AYNI eksende karşılaştırmayı gerektiriyorsa (ör. 'A ve B deposunun " +
+      "haftalık stok değişimini karşılaştır', 'X ve Y ürününün aylık satışları') tek bir noktalar dizisine " +
+      "SIKIŞTIRMAYA veya iki ayrı grafiğe BÖLMEYE çalışma — `grafik_serisi.seriler` (2-4 adet, her biri kendi " +
+      "`ad` ve `noktalar`ıyla, HEPSİ AYNI x eksenini paylaşarak) kullan; bu, tek çağrıda birden fazla renkli " +
+      "çizgi/çubuk grubu + göstergeyle (lejant) render edilir. `seriler` doluyken düz `noktalar` alanını BOŞ " +
+      "bırak. Karşılaştırma yoksa (tek seri yeterliyse) eski `noktalar` alanını kullanmaya devam et.\n" +
+      "(3) baglam_katmani (fotoğraf) yalnız gerçek bir fiziksel nesnenin/cihazın KENDİ " +
       "EKRANINDAN okunan TEK bir basit değer varsa veri taşıyabilir (bkz. SAYI SINIRI altta, en fazla 1) — " +
       "bu da bir istisna, varsayılan değil.\n" +
       "CIHAZ_EKRANI/TEKNIK_ETIKET/NESNE_INDEKSI'nin aşağıdaki güvenlik ağı mekanizması YALNIZ gerçekten " +
       "fiziksel/fotoğrafik bir okuma metne/deterministik katmana taşınamadığında vardır — çoğu durumda hiç " +
       "gerekmez, çünkü veri artık doğrudan metinde.\n" +
-      "ÇOK ÖNEMLİ YANLIŞ ANLAMA UYARISI (kullanıcı geri bildirimi, 2026-08-17): 'veri veri_katmani'ne gider, " +
-      "baglam_katmani.gorsel_veri_gosterimi=YOK kalır' cümlesi 'baglam_katmani.gerekli=false yap' ANLAMINA " +
-      "GELMEZ — bu sistem ZATEN bağlam temelli soru üretmek için var, bağlam görseli (fotogerçekçi sahne) " +
-      "sorunun BÜTÜNSEL kalitesinin önemli bir parçasıdır ve VARSAYILAN olarak İSTENİR. Bu hiyerarşi kuralı " +
-      "yalnız SAYININ/DEĞERİN NEREDE gösterileceğini belirler (fotoğrafta mı, deterministik katmanda mı) — " +
-      "sahnenin KENDİSİNİN olup olmayacağını değil. Somut kural: senaryonun gerçek bir fiziksel bağlamı/ " +
-      "nesnesi/mekânı VARSA (bağlam temelli sorularda neredeyse HER ZAMAN vardır), baglam_katmani.gerekli=true " +
-      "kalmalı ve sahne SAF ATMOSFER olarak (gorsel_veri_gosterimi=YOK, hiç sayı/etiket yazdırmadan) " +
-      "canlandırılmalı — veri ise (yukarıdaki YENİ öncelik sırasına göre) genellikle SORU METNİNDE, ayrı bir " +
-      "görsel katman OLMADAN durur; yalnız gerçekten geometrik/uzamsal ya da grafik-okuma-becerisi hedeflenen " +
-      "istisnai durumlarda veri_katmani GÖRSEL bir asset olarak fotoğrafın YANINA eklenir. " +
-      "baglam_katmani.gerekli=false YALNIZ senaryonun gerçekten hiç fiziksel/görsel bir sahnesi yoksa (ör. " +
-      "tamamen soyut cebirsel/fonksiyonel bir ifade, somutlaştırılacak bir nesne/mekân YOK) kullanılır.\n" +
+      "POLİTİKA GÜNCELLEMESİ (kullanıcı kararı, 2026-09-27 — 2026-08-17'deki 'SAF ATMOSFER varsayılandır' " +
+      "kuralını GEÇERSİZ KILAR): 'veri veri_katmani'ne/metne gider' cümlesi ARTIK 'baglam_katmani.gerekli=" +
+      "true kalıp sahne salt atmosfer/dekor olarak canlandırılsın' ANLAMINA GELMEZ. Bağlam fotoğrafı bir " +
+      "SÜS değildir — yalnız GERÇEKTEN bir işlev taşıdığında (öğrencinin çözüm için görselden okuması/ " +
+      "sayması gereken bir şey varsa: gorsel_veri_gosterimi=CIHAZ_EKRANI/TEKNIK_ETIKET/OLCUM_CIZGISI/ " +
+      "KUVVET_OKU İÇİN gorselde_gosterilecek_degerler veya overlay_cizgileri dolu, YA DA güvenilir tek-grup " +
+      "bir sayım görevi için renk_miktar_sayimlari dolu) üretilmeli. Somut kural: (1) sorunun ÇÖZÜMÜ için " +
+      "görselden okunacak/sayılacak GERÇEK bir şey varsa VE bu güvenilir biçimde taşınabiliyorsa (yukarıdaki " +
+      "mekanizmalardan biriyle), baglam_katmani.gerekli=true yap ve o işlevi gerçekten kur; (2) veri zaten " +
+      "SORU METNİNDE veriliyorsa VE görselin BAŞKA hiçbir çözüm-işlevi yoksa (yalnız 'sahneyi somutlaştırma' " +
+      "amaçlı olacaksa), baglam_katmani.gerekli=false yap — bu artık İSTİSNA değil, veri metne/deterministik " +
+      "katmana taşındığında ve görselin başka bir işlevi kalmadığında VARSAYILAN sonuçtur. Preflight bunu " +
+      "sert bir kapıyla da denetler: gerekli=true iken hiçbir işlev kurulmamışsa (SAF ATMOSFER) kritik RED " +
+      "verir, salt dekoratif bir fotoğraf hiçbir koşulda üretilmez.\n" +
       "AMA resmî MEB örneklerinde (bkz. kılavuz) bağlam görseli GERÇEKTEN birinci durumu (fiziksel okuma) " +
       "temsil ettiğinde çoğu zaman bir ölçüm cihazının ekranındaki okumayı (gorsel_veri_gosterimi=CIHAZ_EKRANI) " +
       "veya boyutlandırılmış bir teknik çizimi (gorsel_veri_gosterimi=TEKNIK_ETIKET) gösterir — bu durumda " +
@@ -434,9 +608,16 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       // ekran, boş etiket yüzeyi) bırakır, gerçek metin (kök işareti, kesir,
       // çok satırlı ifade dahil — GERÇEK bir tarayıcı font motoruyla, sınırsız
       // karmaşıklıkta) üretim SONRASI deterministik bindirilir (bkz.
-      // render/gorsel-overlay.ts, 20-baglam-gorseli.ts). Bu yüzden ne uzunluk/ ` +
-      "sembol kısıtı ne de '2 değer' sayı sınırı artık geçerli — istediğin kadar değeri, istediğin " +
-      "karmaşıklıkta (√, kesir, ℝ gibi semboller dahil) güvenle kullanabilirsin.\n" +
+      // render/gorsel-overlay.ts, 20-baglam-gorseli.ts). Bu yüzden SEMBOL/
+      // KARMAŞIKLIK sınırı (√, kesir, ℝ gibi işaretler) yok — AMA bu, değerin
+      // UZUNLUĞUNUN sınırsız olduğu anlamına GELMEZ (canlı modda görüldü,
+      // 2026-09-26: bir Tarih sorusunda bütün bir "belge özeti" paragrafı
+      // CIHAZ_EKRANI'na yazdırılmaya çalışıldı, fotoğrafın kenarından taşıp
+      // okunaksız bir görsel üretti — preflight artık bunu sert RED'ler). ` +
+      "CIHAZ_EKRANI/TEKNIK_ETIKET bir cihaz okuması/etiketidir, ASLA cümle veya paragraf değildir — her değer " +
+      "kısa kalmalı (CIHAZ_EKRANI ≤40, TEKNIK_ETIKET ≤60 karakter; ör. '36,6°C', 'İsabetli atış: 3', " +
+      "'Kenar uzunluğu = 24 cm'). Anlatısal/özet nitelikli bir bilgi varsa bunu asla overlay'e değil, soru " +
+      "metnine veya stimulus'a yaz.\n" +
       "ZORUNLU — overlay_konumlari: gorsel_veri_gosterimi CIHAZ_EKRANI veya TEKNIK_ETIKET olduğunda, " +
       "gorselde_gosterilecek_degerler'deki HER değere BİREBİR karşılık gelen (aynı sırada, aynı uzunlukta) " +
       "bir overlay_konumlari girdisi {x_yuzde, y_yuzde} doldurulmalı — bu, o değerin görselde YÜZDE " +
@@ -481,8 +662,9 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "göre görsel modelde çok daha sık üst üste biniyor VE yanlış sayılıyor, sayı 6-7 eşiğinin altında " +
       "olsa bile. Bağlam doğası gereği kart/fiş/sayfa gerektiriyorsa (ör. çekiliş, kart oyunu), o nesneyi " +
       "RENK/MİKTAR kodlamasının SAYILAN öznesi yapma — bunun yerine gerçek adedi SORU METNİNDE doğrudan " +
-      "belirt (ör. 'torbada 6 yeşil, 4 turuncu kart bulunuyor') ve sahneyi yalnız SAF ATMOSFER olarak " +
-      "(kartların kesin sayısı görselde belirleyici olmadan) canlandır.\n" +
+      "belirt (ör. 'torbada 6 yeşil, 4 turuncu kart bulunuyor'). Sahnede BAŞKA hiçbir çözüm-işlevi (bir " +
+      "cihaz okuması, ölçüm çizgisi, farklı bir güvenilir sayım grubu) kalmıyorsa baglam_katmani.gerekli=" +
+      "false yap (SAF ATMOSFER artık yasak — bkz. madde 10); başka bir işlev varsa yalnız o işlevi taşı.\n" +
       "ÇOK GRUPLU RENK/MİKTAR YASAĞI (canlı modda görüldü, KRİTİK — job MENAR-MAT972-20260825200252, DÜZ/ " +
       "İSTİFLENEBİLİR düzeltmesinden SONRA bile: doğal 3 boyutlu nesne — antrenman konisi — seçilmesine " +
       "rağmen 3 renk grubu (3 mavi + 2 sarı + 1 yeşil) aynı sahnede 3 denemenin 3'ünde de yanlış sayıldı, " +
@@ -491,9 +673,9 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "kategoriden nesnenin HER BİRİNİN kesin adedinin ayrı ayrı doğru olması gerekiyorsa (ör. '3 mavi + 2 " +
       "sarı + 1 yeşil koni') bunu ASLA görsele bırakma — görsel modeli birden fazla grubu eş zamanlı doğru " +
       "sayamıyor, tek grup sayarken güvenilir olsa bile. Çok gruplu durumda: TÜM grupların gerçek adetlerini " +
-      "doğrudan SORU METNİNDE ver (ör. 'sahada 3 mavi, 2 sarı ve 1 yeşil antrenman konisi bulunuyor') ve " +
-      "baglam_katmani'nı yalnız SAF ATMOSFER olarak kur (gorsel_veri_gosterimi=YOK, renk_miktar_sayimlari " +
-      "boş/gereksiz) — nesneler var olabilir ama kesin adetleri görselden OKUNMASI gereken veri OLMASIN.\n" +
+      "doğrudan SORU METNİNDE ver (ör. 'sahada 3 mavi, 2 sarı ve 1 yeşil antrenman konisi bulunuyor'). " +
+      "Sahnede BAŞKA hiçbir çözüm-işlevi kalmıyorsa baglam_katmani.gerekli=false yap (SAF ATMOSFER artık " +
+      "yasak — bkz. madde 10); başka bir işlev varsa (bir cihaz okuması, ölçüm çizgisi vb.) yalnız onu taşı.\n" +
       "ZORUNLU KAYIT (canlı modda görüldü, KRİTİK — bu olmadan görsel denetimi sayıyı KENDİ KENDİNE " +
       "doğrulamış gibi yapıp, gerçekte yanlış sayıda nesne olsa bile yanlışlıkla PASS verebiliyor): RENK/ " +
       "MİKTAR kodlamasıyla ayırt ettiğin HER nesne grubu için `gorsel_veri_manifesti.renk_miktar_" +
@@ -531,8 +713,9 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "DOĞRU konuma güvenilir yerleştiremiyor — 3 denemede de yanlış dala/sıraya yerleştirdi. HANGİ " +
       "NESNENİN HANGİ DALDA/KOLDA olduğu çözüm için gerekliyse bu bilgiyi SADECE görselin konumsal " +
       "düzenine bırakma: veri_katmani.tur=TABLO'ya bir 'Konum/Dal' sütunu ekleyip (ör. '1: ana hat', " +
-      "'2: yan kol'...) bu bilgiyi AÇIKÇA yaz — görsel yalnız genel/atmosferik sahneyi göstersin, " +
-      "dal/konum bilgisi görselden OKUNMASI gereken kritik veri OLMASIN.\n" +
+      "'2: yan kol'...) bu bilgiyi AÇIKÇA yaz. Bağlam fotoğrafının (baglam_katmani) BAŞKA hiçbir çözüm-" +
+      "işlevi kalmıyorsa baglam_katmani.gerekli=false yap (TABLO tek başına yeterli, SAF ATMOSFER fotoğraf " +
+      "artık yasak — bkz. madde 10); başka bir işlevi varsa yalnız onu taşı.\n" +
       "EK GRAFİK YASAĞI (canlı modda görüldü): 'akış hattı'/'bağlantı'/'yönlendirme' gibi bir bağlamda " +
       "görsel modeli izin verilmeyen ok/yön işareti gibi EK GRAFİK SEMBOLLER ekleme eğilimindedir (3 " +
       "denemede de görüldü, hepsi bu yüzden RED aldı) — bu tür bağlamları özellikle seçtiysen, prompt " +
@@ -549,13 +732,16 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "nesneler/marka logoları çizdi) — bu, metin/rakam okunaksızlığından FARKLI ve DAHA AĞIR bir " +
       "başarısızlık modu: modelin karmaşık/çok-nesneli kompozisyonu yorumlayamayıp konudan tamamen " +
       "sapması. Bu nedenle: (a) baglam_katmani.islev, veri_katmani'nin ZATEN taşıdığı bir yapısal " +
-      "bilgiyi 'görsel kaldırılırsa kaybolur' diye GEREKÇE GÖSTEREMEZ — islev yalnız ATMOSFER/BAĞLAMSAL " +
-      "İNANDIRICILIK işlevi tanımlamalı (ör. 'gerçekçi ortam olmadan öğrenci senaryoyu somutlaştıramaz'); " +
-      "(b) nesneler/on_plan/orta_plan/arka_plan GENEL nesne isimleri kullanmalı (ör. 'üçgen cam paneller', " +
-      "'saçak çerçevesi') — kaç tane olduğunu, hangi sırada olduğunu, hangi açı/damga/etiket taşıdığını " +
-      "SAYARAK veya SIRALAYARAK betimleme, bu tam liste zaten geometrik_noktalar/geometrik_kenarlar/ " +
-      "geometrik_acilar'da var; (c) yasaklar listesine bu tür sorularda 'nesne sayısını/sırasını/açı " +
-      "veya damga değerlerini gösterme' eklenmeli.\n" +
+      "bilgiyi 'görsel kaldırılırsa kaybolur' diye GEREKÇE GÖSTEREMEZ; (b) madde 10 (SAF ATMOSFER yasağı) " +
+      "gereği bu durumda fotoğrafın KENDİSİ artık BAŞKA bağımsız bir işlev taşımıyorsa (kendi " +
+      "gorsel_veri_gosterimi'i veya kendi renk_miktar_sayimlari'ı yoksa) baglam_katmani.gerekli=false " +
+      "yap — yapısal veri zaten veri_katmani'nde (GEOMETRI/TABLO) tam olarak var, aynı veriyi ikinci kez " +
+      "bir fotoğrafta 'atmosfer' gerekçesiyle tekrar üretme, bu artık izinsiz; (c) nesneler/on_plan/" +
+      "orta_plan/arka_plan GENEL nesne isimleri kullanmalı (ör. 'üçgen cam paneller', 'saçak çerçevesi') " +
+      "— kaç tane olduğunu, hangi sırada olduğunu, hangi açı/damga/etiket taşıdığını SAYARAK veya " +
+      "SIRALAYARAK betimleme, bu tam liste zaten geometrik_noktalar/geometrik_kenarlar/geometrik_" +
+      "acilar'da var; (d) yasaklar listesine bu tür sorularda 'nesne sayısını/sırasını/açı veya damga " +
+      "değerlerini gösterme' eklenmeli.\n" +
       "AÇI VERİSİ ASLA FOTOĞRAFA VEYA TABLOYA YAZILMAZ, HER ZAMAN ŞEKLİN ÜZERİNDE (canlı modda ÜÇ KEZ " +
       "görüldü, KRİTİK — preflight bunu sert kapıyla da engelliyor, kapı hem ∠ işaretini HEM salt derece " +
       "değerini ('35°') HEM tabloya gizlenmiş açı verisini yakalar, kaçış yok): '∠BAD=38°' gibi açı " +
@@ -583,8 +769,8 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "bırakma — geometrik_kenarlar'daki o girdiye `ok` alanını doldur ('NOKTA1'/'NOKTA2'/'IKI_UC', hangi " +
       "ucun ok başı taşıyacağını belirler) VE `etiket` alanına kısa bir isim+değer yaz (ör. 'F₁ = 4 N', " +
       "'v = 12 m/s') — bu, SVG'ye kod seviyesinde çizilir (AI çizmez), hiç görsel-model riski taşımaz, " +
-      "istediğin kadar sembol/birim kullanabilirsin. GÖRSEL VERİ STRATEJİSİ=FOTOGRAF_UZERINDE veya " +
-      "FOTOGRAF_UZERINDE_HIBRIT İSE (kullanıcı isteği, 2026-09-14 — 'üstte grafik şeklinde kuvvet gösterimi " +
+      "istediğin kadar sembol/birim kullanabilirsin. GÖRSEL VERİ STRATEJİSİ=FOTOGRAF_UZERINDE, " +
+      "FOTOGRAF_UZERINDE_HIBRIT veya TAM_AI İSE (kullanıcı isteği, 2026-09-14 — 'üstte grafik şeklinde kuvvet gösterimi " +
       "istemiyorum, seçime bırak'): vektörü AYRI bir GEOMETRI şeması olarak KURMA — bunun yerine " +
       "baglam_katmani.gorsel_veri_gosterimi=KUVVET_OKU seç, her vektörü baglam_katmani.overlay_cizgileri'ne " +
       "bir kayıt olarak ekle (x1_yuzde/y1_yuzde/x2_yuzde/y2_yuzde ile fotoğrafta YAKLAŞIK nereye düşeceğini, " +
@@ -605,8 +791,10 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "HİÇBİR AÇIKLAMA/NOT EKLEME (ör. 'görsel üretim talimatı', 'henüz üretilmemiş', 'kontrol edilmiştir' " +
       "gibi) — bunlar öğrenciye ASLA görünmemeli, yalnız JSON alanlarını (overlay_cizgileri vb.) doldur. " +
       "FOTOGRAF_UZERINDE'de üretim SONRASI koddan bindirilir (AI çizmez), FOTOGRAF_UZERINDE_HIBRIT'te ÖNCE " +
-      "AI'nın kendisi çizmesi denenir, başarısız olursa OTOMATİK olarak aynı deterministik yola döner — " +
-      "ikisinde de senin dolduracağın alanlar AYNIDIR, veri_katmani.gerekli=false KALIR. Her iki stratejide " +
+      "AI'nın kendisi çizmesi denenir, başarısız olursa OTOMATİK olarak aynı deterministik yola döner. " +
+      "TAM_AI'da da AI kendisi çizer AMA başarısız olursa deterministik yola DÖNMEZ — 3 denemede de RED " +
+      "ise iş FAILED olur (kullanıcının bilinçli tercihi, güvenlik ağı yok). Üçünde de senin dolduracağın " +
+      "alanlar AYNIDIR, veri_katmani.gerekli=false KALIR. Her iki/üç stratejide " +
       "de: kuvvet/hız/ivme büyüklüğünü YALNIZ paragraf metninde bırakıp diyagramı sayısız/yönsüz bir çizgi " +
       "olarak bırakma — öğrenci diyagrama baktığında yön VE büyüklüğü ORADA görmeli, metne geri dönüp " +
       "aramak zorunda kalmamalı.\n" +
@@ -654,7 +842,7 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "NESNE_SEMASI} (gerçek bir çizim/grafik/şema) ZORUNLUDUR. veri_katmani.tur=TABLO TEK BAŞINA bu kararı " +
       "KARŞILAMAZ — tablo salt sayısal veri listesidir, bir resim/diyagram değildir; baglam_katmani.gerekli=" +
       "false yapıp yalnız TABLO kurmak 'görsel zorunlu' seçimini boşa çıkarır.",
-    "13a. GÖRSEL VERİ STRATEJİSİ=FOTOGRAF_UZERINDE VEYA FOTOGRAF_UZERINDE_HIBRIT İSE (kullanıcı isteği, " +
+    "13a. GÖRSEL VERİ STRATEJİSİ=FOTOGRAF_UZERINDE, FOTOGRAF_UZERINDE_HIBRIT VEYA TAM_AI İSE (kullanıcı isteği, " +
       "2026-09-14 — 'sorunun üstünde ayrı " +
       "bir grafik görmek istemiyorum, çizgi/rakam/yazı görselin İÇİNDE olsun'): görsel gerekiyorsa (görsel " +
       "kararı ISLEVSEL_GORSEL_ZORUNLU veya AI_OTOMATIK'in kendi kararıyla evet) sayısal veriyi veri_katmani " +
@@ -671,10 +859,11 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
       "gerekiyorsa yine tur=GEOMETRI kurulabilir — ama salt bir VEKTÖR/KUVVET OKU gösterimi ASLA GEOMETRI'ye " +
       "kurulmaz, yukarıdaki KUVVET_OKU yoluna gider. Görsel gerekmiyorsa (GORSEL_YOK " +
       "veya AI_OTOMATIK'in kendi kararı) bu madde hiç uygulanmaz, madde 13'teki normal kural geçerlidir. " +
-      "FOTOGRAF_UZERINDE ile FOTOGRAF_UZERINDE_HIBRIT arasındaki fark senin (üreticinin) ürettiğin JSON'da " +
-      "DEĞİL, görsel üretim/denetim aşamasında (kod tarafında) yönetilir — HIBRIT'te AI önce gerçek değeri " +
-      "kendisi çizmeyi dener, başarısız olursa otomatik olarak aynı overlay_konumlari/overlay_cizgileri ile " +
-      "deterministik bindirmeye döner; senin dolduracağın alanlar ikisinde de AYNIDIR.",
+      "FOTOGRAF_UZERINDE, FOTOGRAF_UZERINDE_HIBRIT ve TAM_AI arasındaki fark senin (üreticinin) ürettiğin " +
+      "JSON'da DEĞİL, görsel üretim/denetim aşamasında (kod tarafında) yönetilir — HIBRIT'te AI önce gerçek " +
+      "değeri kendisi çizmeyi dener, başarısız olursa otomatik olarak aynı overlay_konumlari/overlay_cizgileri " +
+      "ile deterministik bindirmeye döner; TAM_AI'da AI kendisi çizer ve BAŞARISIZ olursa iş FAILED olur " +
+      "(deterministik yola dönmez); senin dolduracağın alanlar üçünde de AYNIDIR.",
     "14. Görsel gerekiyorsa bağlam görseli ile veri görselini ayır. Veri katmanı SVG/tablo/grafik için açık veri tanımı taşımalı. " +
       "veri_katmani.tur=GEOMETRI SEÇME (gorsel_veri_manifesti.geometrik_noktalar boşsa hiçbir şey çizilmez, " +
       "veri tamamen kaybolur) — gerçek x/y koordinat noktalarıyla çizilen bir şekil değilse. Kart/etiket " +
@@ -721,6 +910,32 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
     "17. Son kullanılan bağlam ailelerinden kaçın: " + (ledger.son100BaglamAilesi.join(" | ") || "kayıt yok"),
     "18. Son aile::DNA eşleşmelerinden kaçın: " + (ledger.son200AileDna.slice(-40).join(" | ") || "kayıt yok"),
     "19. Son görsel ailelerinden kaçın: " + (ledger.son15GorselAilesi.join(" | ") || "kayıt yok"),
+    ...(asiriTemalar.length
+      ? [
+          "19b. AŞIRI KULLANILAN TEMA UYARISI (ölçümle tespit edildi — kullanıcı geri bildirimi, 2026-09-28): " +
+            "son bağlam ailesi kodlarında şu kelimeler/kurum türleri ÇOK SIK tekrarlandı: " +
+            asiriTemalar.join(", ") +
+            ". Her aile kodu TEKNİK olarak benzersiz olsa bile, hepsinin AYNI birkaç kurumsal/sivil ortama " +
+            "(belediye, mahalle atölyesi, okul, kütüphane/arşiv, bilim müzesi, afet merkezi gibi) farklı " +
+            "isimler takarak döndüğü tespit edildi — bu 'çeşitlilik yanılsaması' sayılır ve YASAKTIR. Bu " +
+            "kazanım için bu tür bir kurumsal/sivil ortam GERÇEKTEN ZORUNLU değilse (çoğu zaman değildir), " +
+            "yukarıdaki kelimelerden HİÇBİRİNİ baglam_ailesi_kodu/ad, sahne veya nesneler alanlarında ASLA " +
+            "kullanma — tamamen FARKLI bir sektör/ortam seç (ör. tarım/sulama, lojistik/depo/liman, spor " +
+            "performansı, gıda üretim hattı, meteoroloji/çevre istasyonu, üretim/imalat atölyesi DIŞINDA " +
+            "endüstriyel bir tesis, ulaşım/taşımacılık, sağlık/veteriner sahası, medya/yayıncılık — kazanıma " +
+            "gerçekten uyan, ZORLAMA olmayan bir tanesini seç).",
+        ]
+      : []),
+    ...(alanOnerisi.length
+      ? [
+          "19c. İLHAM ALINABİLECEK ALANLAR (öneri, ZORUNLU DEĞİL — resmî MEB bağlam-temelli kılavuzundan " +
+            "derlendi): " +
+            alanOnerisi.join(" | ") +
+            ". Bunlardan biri kazanıma gerçekten uyuyorsa kullan; hiçbiri uymuyorsa BAŞKA gerçekçi bir alan " +
+            "seç — amaç bu listeye BAĞLI kalmak değil, madde 19b'deki dar kurumsal kalıptan (belediye/okul/" +
+            "atölye/kütüphane/müze) çıkmak.",
+        ]
+      : []),
     "20. Aynı bilgiyi farklı alanlarda gereksiz biçimde tekrar etme; JSON alanlarını kısa ve işlevsel doldur.",
     "21. YAPAY/UYDURMA TEKNİK ÇATI YASAĞI: matematiği/bilimi gizlemek veya 'ilginç' göstermek amacıyla " +
       "gerçek karşılığı olmayan bir sensör türü, yazılım/algoritma adı, ölçüm cihazı, laboratuvar tekniği, " +
@@ -810,15 +1025,17 @@ function buildCompactPrompt(resolved: ResolvedJob, ledger: RotationLedger): stri
     "MAARİF MODELİ BAĞLAM TEMELLİ SORU İLKELERİ (MEB resmi kılavuz, Mart 2026)",
     "- İşlevsellik testi: 'Öğrenci bu bağlamı hiç okumadan, yalnız ön bilgisiyle veya seçeneklerden " +
       "giderek cevaba ulaşabilir mi?' Cevap evetse bağlam işlevsizdir, yeniden kurgula.",
-    "- GÖRSEL İŞLEVSELLİK TESTİ (bağlam görseli varsa zorunlu): 'Bu görsel hiç görülmese/kaldırılsa " +
-      "soru yine de metin ve tablo/grafikle eksiksiz çözülebilir mi?' Cevap evetse görsel dekoratiftir " +
-      "— YENİDEN KURGULA. Görsel ya (a) çözüm için gerekli, metinde/tabloda TEKRARLANMAYAN bir bilgiyi " +
-      "taşımalı (ör. nesnelerin sayısı/düzeni/konumu görselden okunmalı, ya da gorsel_veri_gosterimi ile " +
-      "bir cihaz okuması/teknik etiket göstermeli), ya da (b) bağlamı somutlaştırarak öğrencinin metni " +
-      "doğru zihinsel modele oturtmasını gerçekten kolaylaştırmalı — yalnız 'güzel görünsün' diye " +
-      "eklenmemeli. baglam_katmani.islev alanına görsel kaldırılırsa TAM OLARAK hangi bilginin veya " +
-      "anlaşılırlığın kaybolacağını yaz; belirsiz/genel bir açıklama ('bağlamı somutlaştırır' gibi) yeterli " +
-      "değildir. EKRAN/GÖSTERGE TUZAĞI (canlı modda görüldü, KRİTİK): gorsel_veri_gosterimi=YOK iken islev'i " +
+    "- GÖRSEL İŞLEVSELLİK TESTİ (bağlam görseli varsa zorunlu, 2026-09-27'de SIKILAŞTIRILDI): 'Bu görsel " +
+      "hiç görülmese/kaldırılsa soru yine de metin ve tablo/grafikle eksiksiz çözülebilir mi?' Cevap evetse " +
+      "görsel dekoratiftir — baglam_katmani.gerekli=false YAP (görseli 'daha iyi kurgulayıp' kurtarmaya " +
+      "ÇALIŞMA, sadece üretme). Görsel YALNIZ çözüm için gerekli, metinde/tabloda TEKRARLANMAYAN bir " +
+      "bilgiyi taşıyorsa (nesnelerin sayısı/düzeni/konumu görselden okunmalı/sayılmalı, ya da " +
+      "gorsel_veri_gosterimi ile bir cihaz okuması/teknik etiket/ölçüm çizgisi/kuvvet oku göstermeli) " +
+      "üretilir — 'öğrencinin zihinsel modelini kolaylaştırır' gerekçesi TEK BAŞINA ARTIK YETERLİ DEĞİL " +
+      "(bu, veri taşımayan SAF ATMOSFER'in başka bir adıdır ve madde 10 gereği yasaktır). " +
+      "baglam_katmani.islev alanına görsel kaldırılırsa TAM OLARAK hangi bilginin kaybolacağını yaz; " +
+      "belirsiz/genel bir açıklama ('bağlamı somutlaştırır' gibi) yeterli değildir. " +
+      "EKRAN/GÖSTERGE TUZAĞI (canlı modda görüldü, KRİTİK): gorsel_veri_gosterimi=YOK iken islev'i " +
       "'bu ölçüm/puanlanmış bir değer, ham bir okuma değil' türünden bir ayrımı GÖRSEL OLARAK göstermeye " +
       "dayandırma — bu seni bir cihaza ekran/gösterge ışığı/panel eklemeye iter, 'etiketsiz' olsa bile görsel " +
       "model bunu gerçek bir ekran/TV sahnesi olarak yorumlayıp konudan tamamen sapıyor (canlı testte " +

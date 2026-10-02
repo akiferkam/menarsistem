@@ -340,6 +340,7 @@ button.action.danger:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba
 <button class="mode-btn" data-mode="BTV1" type="button">BTV1</button>
 <button class="mode-btn" data-mode="BTP" type="button">BTP</button>
 <button class="mode-btn" data-mode="BTG" type="button">BTG</button>
+<button class="mode-btn" data-mode="BTBS" type="button">Bir Ben Bir Sen</button>
 <button class="mode-btn" data-mode="STANDART" type="button">Standart Test</button>
 </div>
 <input type="hidden" id="uretimModu" value="BT">
@@ -403,7 +404,7 @@ button.action.danger:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba
 <div><label>Görsel Kalitesi</label><select id="gorselKalitesi"><option>STANDART</option><option>YÜKSEK</option></select></div>
 <div><label>Görsel Modeli (Standart)</label><select id="gorselModeli"><option value="gpt-image-1">gpt-image-1</option><option value="gpt-image-2.5-sunburst">gpt-image-2.5-sunburst</option></select></div>
 <div><label>Görsel Boyutu</label><select id="gorselBoyutu"><option>OTOMATİK</option><option>2D</option><option>3D</option></select></div>
-<div><label>Görsel Veri Stratejisi</label><select id="gorselVeriStratejisi"><option value="DETERMINISTIK_SVG">Deterministik (Tablo/Grafik SVG)</option><option value="FOTOGRAF_UZERINDE">Fotoğraf Üzerinde — kod bindirir (çizgi/rakam/yazı görselin içinde)</option><option value="FOTOGRAF_UZERINDE_HIBRIT">Fotoğraf Üzerinde — önce AI dener, olmazsa koda düşer</option></select></div>
+<div><label>Görsel Veri Stratejisi</label><select id="gorselVeriStratejisi"><option value="DETERMINISTIK_SVG">Deterministik (Tablo/Grafik SVG)</option><option value="FOTOGRAF_UZERINDE">Fotoğraf Üzerinde — kod bindirir (çizgi/rakam/yazı görselin içinde)</option><option value="FOTOGRAF_UZERINDE_HIBRIT">Fotoğraf Üzerinde — önce AI dener, olmazsa koda düşer</option><option value="TAM_AI">Tam AI — görseli tamamen AI çizer, başarısız olursa soru üretimi durur</option></select></div>
 </div>
 
 <div class="mode-panel" id="panel-ACIK_UCLU"><div class="grid">
@@ -518,6 +519,11 @@ button.action.danger:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba
 </div>
 <div class="notice" style="margin:9px 0 0"><b>BTG bilimsel kaynak kilidi:</b> Kaynak adı, kurum, tarih, DOI, rapor numarası veya sayısal veri uydurulamaz. Kaynak doğrulanamazsa kesin künye yazılmaz; içerik ya güvenilir başka kaynağa dayandırılır ya da açıkça eğitim amaçlı kurgu olarak sınıflandırılır.</div>
 </div>
+
+<div class="mode-panel" id="panel-BTBS"><div class="grid">
+<div><label>Bağlam Uzunluğu</label><select id="btbsUzunluk"><option>80–120 kelime</option><option selected>120–180 kelime</option></select></div>
+<div class="full"><div class="menar-tymm-source"><b>Bir Ben Bir Sen nedir:</b> Burada üretilen soru BEN'dir — öğretmenin sınıfta çözeceği, tamamen normal görünümlü bir örnek soru (görünümde hiçbir farklılık yoktur). Eşleştirilmiş SEN sorusu (aynı kazanımı yoklayan, farklı bağlam/veriyle öğrencinin kendisinin çözeceği, kendi ayrı görseliyle bağımsız bir soru) BEN tamamlanınca otomatik olarak kuyruğa eklenir ve "Soru Bankası" bölümündeki ilerleme tablosunda ikinci bir satır olarak belirir — ikisini birlikte görmek/indirmek için Soru Bankası akışını kullanın.</div></div>
+</div></div>
 
 <div class="mode-panel" id="panel-STANDART"><div class="grid"><div><label>Standart Soru Sayısı</label><select id="standartSayi"><option selected>1</option><option>2</option><option>3</option><option>5</option></select></div></div></div>
 
@@ -689,6 +695,7 @@ function modeCount(){
     BTV1:$("btv1Sayi").value,
     BTP:$("btpSayi").value,
     BTG:$("btgSayi").value,
+    BTBS:"1",
     STANDART:$("standartSayi").value
   };
   return map[mode]||"1";
@@ -856,7 +863,7 @@ function trEnumToAscii(s){
   return String(s||"").replace(/İ/g,"I").replace(/Ö/g,"O").replace(/Ü/g,"U").replace(/Ğ/g,"G").replace(/Ş/g,"S").replace(/Ç/g,"C");
 }
 function modeUzunluk(){
-  const map={BT:$("btUzunluk").value,BTV1:$("btv1Uzunluk").value,BTP:$("btpUzunluk").value,BTG:$("btgUzunluk").value,ACIK_UCLU:$("acikCevapUzunluk").value};
+  const map={BT:$("btUzunluk").value,BTV1:$("btv1Uzunluk").value,BTP:$("btpUzunluk").value,BTG:$("btgUzunluk").value,BTBS:$("btbsUzunluk").value,ACIK_UCLU:$("acikCevapUzunluk").value};
   return map[mode]||"";
 }
 function buildJobInput(){
@@ -1018,7 +1025,17 @@ async function canliUret(){
     return;
   }
   setCanliStatus(CANLI_DURUM_METNI.QUEUED,"busy");
-  pollCanliJob(data.jobId,token);
+  // BTBS ("Bir Ben Bir Sen"): POST /jobs bu modda topluUretimId da döner (bkz.
+  // routes/jobs.ts) — kullanıcı isteği (2026-09-27, "beklemeye gerek yok
+  // ikisini de üretsin"): teacher TEK tıkla BEN+SEN'in İKİSİNİ birden, tek
+  // sonuç panelinde bekleyip görmeli, ayrıca Soru Bankası'na bakmasına gerek
+  // olmamalı. SEN arka planda BEN bitince otomatik kuyruğa girer; bu panel
+  // ikisi de bitene kadar sessizce tek bir "üretiliyor" durumunda bekler.
+  if(data.topluUretimId){
+    pollBtbsPair(data.topluUretimId,token);
+  } else {
+    pollCanliJob(data.jobId,token);
+  }
 }
 
 async function pollCanliJob(jobId,token){
@@ -1033,6 +1050,64 @@ async function pollCanliJob(jobId,token){
     return;
   }
   renderCanliSonuc(jobId,token,data);
+}
+
+/** BTBS: BEN + SEN'in ikisi de terminal duruma ulaşana kadar batch'i izler, sonra ikisini birlikte gösterir. */
+async function pollBtbsPair(topluUretimId,token){
+  let res,data;
+  try{
+    res=await fetch("/toplu-uretim/"+topluUretimId,{headers:{"Authorization":"Bearer "+token}});
+    data=await res.json();
+  }catch(e){ setCanliStatus("Bağlantı hatası: "+e.message,"err"); return; }
+
+  const satirlar=data.satirlar||[];
+  const ben=satirlar[0], sen=satirlar[1];
+
+  if(!ben||ben.status==="QUEUED"||ben.status==="RUNNING"){
+    setCanliStatus("BEN "+(CANLI_DURUM_METNI[ben?.status]||"hazırlanıyor").toLowerCase()+"...","busy");
+    setTimeout(()=>pollBtbsPair(topluUretimId,token),4000);
+    return;
+  }
+  if(ben.status==="FAILED"){
+    setCanliStatus("BEN üretilemedi: "+(ben.hataMesaji||"bilinmeyen hata")+" — SEN üretilmedi.","err");
+    return;
+  }
+  if(!sen){
+    if(ben.status==="NEEDS_REVIEW"){
+      // BEN'i şimdi göster (onay/düzelt gerekiyor) — onaylanınca backend SEN'i
+      // otomatik kuyruğa alır, bu kart kendi onay callback'iyle izlemeyi devam ettirir.
+      $("canliSonuc").innerHTML="";
+      setCanliStatus("BEN gözden geçirme bekliyor — onaylayınca SEN otomatik üretilecek.","busy");
+      const benData=await fetch("/jobs/"+ben.jobId,{headers:{"Authorization":"Bearer "+token}}).then(r=>r.json());
+      renderJobDetayi(ben.jobId,token,benData,$("canliSonuc"),()=>setTimeout(()=>pollBtbsPair(topluUretimId,token),1000));
+      return;
+    }
+    setCanliStatus("BEN hazır, SEN kuyruğa alınıyor...","busy");
+    setTimeout(()=>pollBtbsPair(topluUretimId,token),4000);
+    return;
+  }
+  if(sen.status==="QUEUED"||sen.status==="RUNNING"){
+    setCanliStatus("BEN hazır, SEN "+(CANLI_DURUM_METNI[sen.status]).toLowerCase()+"...","busy");
+    setTimeout(()=>pollBtbsPair(topluUretimId,token),4000);
+    return;
+  }
+
+  setCanliStatus("Tamamlandı.","ok");
+  $("canliSonuc").innerHTML="";
+  const baslikli=(metin,jobId,durum)=>{
+    const b=csEl("div","cs-card",metin+"  ·  "+(CANLI_DURUM_METNI[durum]||durum));
+    b.style.cssText="font-weight:800;color:var(--navy-deep);background:var(--soft);margin-top:10px";
+    return b;
+  };
+  $("canliSonuc").appendChild(baslikli("1. Soru — BEN (öğretmen sınıfta çözecek)",ben.jobId,ben.status));
+  const benEl=document.createElement("div"); $("canliSonuc").appendChild(benEl);
+  const benData=await fetch("/jobs/"+ben.jobId,{headers:{"Authorization":"Bearer "+token}}).then(r=>r.json());
+  renderJobDetayi(ben.jobId,token,benData,benEl);
+
+  $("canliSonuc").appendChild(baslikli("2. Soru — SEN (öğrenci bağımsız çözecek)",sen.jobId,sen.status));
+  const senEl=document.createElement("div"); $("canliSonuc").appendChild(senEl);
+  const senData=await fetch("/jobs/"+sen.jobId,{headers:{"Authorization":"Bearer "+token}}).then(r=>r.json());
+  renderJobDetayi(sen.jobId,token,senData,senEl);
 }
 
 /**
@@ -1200,7 +1275,8 @@ async function topluIncele(jobId,token){
 }
 
 /** `renderCanliSonuc`'un aynısı, yalnız hedef konteyner parametre — hem tekil "Soruyu Üret" hem toplu "İncele" akışı bunu kullanır. */
-function renderJobDetayi(jobId,token,data,container){
+function renderJobDetayi(jobId,token,data,container,onStatusChange){
+  onStatusChange=onStatusChange||function(){};
   container.innerHTML="";
   const durumMetni=CANLI_DURUM_METNI[data.status]||data.status;
   const durumEl=csEl("p","small",durumMetni+(data.status==="FAILED"&&data.hataMesaji?(" — "+data.hataMesaji):""));
@@ -1229,8 +1305,9 @@ function renderJobDetayi(jobId,token,data,container){
       onayBtn.disabled=true;
       await fetch("/jobs/"+jobId+"/approve",{method:"POST",headers:{"Authorization":"Bearer "+token}});
       const fresh=await fetch("/jobs/"+jobId,{headers:{"Authorization":"Bearer "+token}}).then(r=>r.json());
-      renderJobDetayi(jobId,token,fresh,container);
+      renderJobDetayi(jobId,token,fresh,container,onStatusChange);
       refreshTopluTablosu();
+      onStatusChange();
     });
     container.appendChild(onayBtn);
 

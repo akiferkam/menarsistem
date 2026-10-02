@@ -31,6 +31,12 @@
         "tarihsel zaman",
         "yapay zekâ",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Öğrencilere tarih öğrenmenin faydalarına ilişkin farklı kaynaklar (alıntı, kısa metin) verilip bunların bağlamından kopmadan özetlenmesi ve vatanseverlik ile geçmişe sahip çıkma-geleceğe birlikte yaşama bilinci arasında bağ kurulması istenir. Ölçmede, kaynaklardan elde edilen bilgiyle tarih öğrenmenin bireysel/toplumsal faydalarını açıklayan kısa bir afiş/metin üretimi kanıt sayılır.",
+      "surec_bilesenleri": [
+        "Tarih öğrenmenin bireye ve topluma faydalarını kaynaklardan inceler.",
+        "Tarih öğrenmenin bireye ve topluma faydalarıyla ilgili incelediği kaynakları bağlamından kopmadan özetler.",
+        "Tarih öğrenmenin bireye ve topluma faydalarını kendi cümleleriyle açıklar."
       ]
     },
     {
@@ -57,6 +63,11 @@
         "tarihsel zaman",
         "yapay zekâ",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Farklı kaynaklar üzerinden tarih, tarihsel bilgi, olay-olgu, kanıt, neden-sonuç, değişim-süreklilik, zaman ve kronoloji gibi temel kavramların somut örneklerle ayırt edilip açıklanması beklenir. Ölçmede bu kavramların doğru kullanıldığı bir çalışma yaprağı/kavram açıklaması yeterli kanıttır.",
+      "surec_bilesenleri": [
+        "Farklı kaynaklardan tarihin doğasına ilişkin temel bilgileri tespit eder.",
+        "Farklı kaynakları inceleyerek tarihin doğasına ilişkin temel bilgileri açıklar."
       ]
     },
     {
@@ -83,6 +94,11 @@
         "tarihsel zaman",
         "yapay zekâ",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Örnek tarih çalışmaları üzerinden 'konu belirleme, kaynaktan bilgi toplama, kaynağı inceleme-sorgulama-yorumlama, kanıta dayalı ürün oluşturma' aşamaları ile çarpıtma/manipülasyon gibi kötüye kullanım riskleri somutlaştırılır. Ölçmede grupların bu üretim aşamalarını gösteren bir bilgi görseli/çalışma hazırlaması kanıttır.",
+      "surec_bilesenleri": [
+        "Örnek çalışmalar üzerinden tarihsel bilginin üretim sürecindeki aşamaları belirler.",
+        "Örnek çalışmalar üzerinden tarihsel bilginin üretim sürecindeki aşamalar arasında var olan ilişkileri belirler."
       ]
     },
     {
@@ -109,6 +125,11 @@
         "tarihsel zaman",
         "yapay zekâ",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Dijital öncesi ile dijital dönem tarih araştırma/yazım süreçleri ('analog veri–doğuştan dijital veri', 'arşiv tarama–çevrimiçi arama', 'yakın okuma–uzak okuma' karşıtlıklarıyla) karşılaştırılır; yapay zekâ gibi güncel araçların etkisi somut örneklerle tartışılır. Ölçmede dijitalleşmenin olumlu/olumsuz etkilerine dair fikir üreten bir çalışma (ör. ağ günlüğü sayfası) kanıttır.",
+      "surec_bilesenleri": [
+        "Dijitalleşme öncesindeki ve dijital dönemdeki tarih araştırma ve yazım süreçlerini karşılaştırır.",
+        "Tarih araştırma ve yazımında dijitalleşmeyle meydana gelen dönüşüme dair yargıda bulunur."
       ]
     },
     {
@@ -136,6 +157,11 @@
         "yazıt",
         "ziggurat",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Tarım Devrimi'nin farklı mekânlarda (Mezopotamya, Güneydoğu Asya, Orta Amerika) farklı tarım ürünleriyle (pirinç, buğday, mısır) nasıl gerçekleştiği ve avcı-toplayıcı toplumdan üretici topluma geçişte ortaya çıkan yerleşme/ekonomik değişimler karşılaştırmalı olarak işlenir. Ölçmede mekânları coğrafi faktörlerle karşılaştıran bir tablo veya bu geçişteki bir bireyin zorluklarına dair özgün çözüm önerisi kanıttır.",
+      "surec_bilesenleri": [
+        "Tarım Devrimi'nin Eski Çağ medeniyetlerindeki yerleşmeye ve ekonomik faaliyetlere etkisini zaman ve mekân açısından karşılaştırır.",
+        "Tarım Devrimi'nin Eski Çağ medeniyetlerindeki yerleşmeye ve ekonomik faaliyetlere etkileriyle ilgili yargıda bulunur."
       ]
     },
     {
@@ -163,6 +189,12 @@
         "yazıt",
         "ziggurat",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Sümer, Akad, Asurlular, Babilliler, Mısırlılar, Hititler, Urartular, Frigyalılar, Lidyalılar, Yunan şehir devletleri, Makedonlar, İskitler ve Asya Hunlarının yönetim/ordu sistemleri harita ve bilgi görselleri üzerinden karşılaştırılır; yönetim şekli/egemenlik anlayışı/meşruiyet kaynağı ile ordunun teşkilat/teçhizatı ayrı başlıklarla sınıflandırılır. Ölçmede bu sınıflandırmayı gösteren bir tablo ve devletlerin güçlü/zayıf yönlerini yorumlayan kısa (150-250 kelime) bir metin kanıttır.",
+      "surec_bilesenleri": [
+        "Eski Çağ'daki farklı medeniyetlerin yönetim ve ordu özellikleri ile ilgili çözümleme yapar.",
+        "Eski Çağ'daki farklı medeniyetlerin yönetim ve ordu özellikleri ile ilgili sınıflandırma yapar.",
+        "Eski Çağ'daki farklı medeniyetlerin yönetim ve ordu özelliklerini yorumlar."
       ]
     },
     {
@@ -190,6 +222,14 @@
         "yazıt",
         "ziggurat",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Mezopotamya, Mısır, Anadolu, Avrupa ve Türkistan medeniyet havzalarındaki hukuk sistemleri (Urkagina, Hammurabi, Hitit, 12 Levha kanunları) aile/kadın/toplumsal düzen bağlamında incelenir; yazılı-yazısız hukuk kuralları birbiriyle karşılaştırılır. Ölçmede kaynaklardan çıkarım-kanıt tablosu dolduran ve hukukun toplumsal düzendeki rolüne dair sonuç çıkaran bir sunum kanıttır.",
+      "surec_bilesenleri": [
+        "Eski Çağ medeniyetlerinde hukukun toplumsal düzeni sağlamadaki rolü hakkında merak ettiği konuları belirler.",
+        "İlgili konular hakkında sorular sorar.",
+        "Farklı kaynaklar üzerinden konuya ilişkin bilgi toplar.",
+        "Topladığı bilgilerin doğruluğunu değerlendirir.",
+        "Topladığı bilgiler üzerinden Eski Çağ medeniyetlerinde hukukun toplumsal düzeni sağlamadaki rolüne ilişkin çıkarım yapar."
       ]
     },
     {
@@ -217,6 +257,12 @@
         "yazıt",
         "ziggurat",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Mezopotamya, Mısır, Anadolu, Avrupa ve Türkistan medeniyetlerinin inanç, bilim ve sanat anlayışları arasındaki ilişki, verilen kaynaklardan olgu ile görüş ayırt edilerek incelenir. Ölçmede inanç ile bilim/sanat anlayışları arasındaki ilişkiyi ortaya koyan bir sanal pano/bülten panosu performans görevi kanıttır.",
+      "surec_bilesenleri": [
+        "Eski Çağ toplumlarındaki inançlar ile bilim ve sanat anlayışlarına ilişkin kaynakları inceler.",
+        "Eski Çağ toplumlarındaki inançlar ile bilim ve sanat anlayışlarına ilişkin kaynaklarda verilen bilgileri bağlamından kopmadan sözlü, yazılı veya görsel biçimlere dönüştürür.",
+        "Eski Çağ toplumlarındaki inançlar ile bilim ve sanat anlayışları arasındaki ilişkiyi açıklar."
       ]
     },
     {
@@ -244,6 +290,16 @@
         "yazıt",
         "ziggurat",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Türklerde konargöçer yaşamın özellikleri birinci ve ikinci elden kaynaklarla (harita, görsel, yazılı metin) incelenir; günümüz konargöçerleriyle ekonomik faaliyet, yaşam tarzı ve kültür unsurları açısından kıyaslanır. Ölçmede konargöçer yaşamın Türk kültürünün oluşumuna etkisine dair bir çıkış kartı veya tarihsel empati formu kanıttır.",
+      "surec_bilesenleri": [
+        "Türklerde konargöçer yaşamın özelliklerini birinci ve ikinci elden kaynaklardan inceler.",
+        "Türklerde konargöçer yaşamın özelliklerini kendi cümleleriyle ifade eder.",
+        "Türklerde konargöçer yaşamın özelliklerini kaynaklara dayanarak çözümler.",
+        "Türklerde konargöçer yaşamın temel özelliklerini dönemin koşullarını göz önünde bulundurarak açıklar.",
+        "Geçmiş ve günümüzden hareketle Türklerde konargöçer yaşam koşullarını karşılaştırır.",
+        "Konargöçer yaşamın Türk kültüründeki yeri ve önemine yönelik çıkarımlarda bulunur.",
+        "Türklerde konargöçer yaşamla ilgili kendi bakış açısını ifade eder."
       ]
     },
     {
@@ -268,6 +324,13 @@
         "mevali",
         "skolastik düşünce",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Kavimler Göçü öncesi Avrupa ve Asya'nın siyasi durumu ile XI. yüzyıla kadar Türk topluluklarının yaptığı göçler zaman/mekân açısından incelenir; göçlerin kavimlere ve devletlere etkileri siyasi/sosyal/ekonomik/kültürel başlıklarla sınıflandırılır. Ölçmede değişim-süreklilik formu üzerinden göçün olumlu/olumsuz etkilerine dair düşünce üreten bir çalışma kanıttır.",
+      "surec_bilesenleri": [
+        "Orta Çağ'da yaşanan kitlesel göçlere neden olan unsurları inceler.",
+        "Orta Çağ'da yaşanan kitlesel göçlerin etkilediği unsurları inceler.",
+        "Orta Çağ'da yaşanan kitlesel göçlerin Avrupa ve Asya'da oluşturduğu değişimin etkilerini sorgular.",
+        "Orta Çağ'da yaşanan kitlesel göçlerin Avrupa ve Asya'da oluşturduğu değişimin neden ve sonuçlarını bağlamından kopmadan ifade eder."
       ]
     },
     {
@@ -292,6 +355,12 @@
         "mevali",
         "skolastik düşünce",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Sâsânîler, Göktürkler, Uygurlar, Çin, Doğu Roma İmparatorluğu, İslamiyet'in doğuşu ve Hz. Muhammed dönemi, Dört Halife, Emeviler ve Abbasilerin siyasi/askerî gelişmeleri kronolojik sıralanıp yönetim-ordu yapıları karşılaştırılır; edebî metinlerle dönemin adalet anlayışı örneklendirilir. Ölçmede bu devletlerin yönetim/ordu yapıları arasındaki benzerlik-farklılıkları ortaya koyan bir bilgi görseli kanıttır.",
+      "surec_bilesenleri": [
+        "Orta Çağ'daki başlıca devletlerin yönetim ve ordu yapılarının özelliklerini belirler.",
+        "Orta Çağ'daki başlıca devletlerin yönetim ve ordu yapıları arasındaki benzerlikleri listeler.",
+        "Orta Çağ'daki başlıca devletlerin yönetim ve ordu yapıları arasındaki farklılıkları listeler."
       ]
     },
     {
@@ -316,6 +385,12 @@
         "mevali",
         "skolastik düşünce",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "İpek, Baharat ve Kürk yollarının güzergâhı ile ticareti yapılan mallar dilsiz harita üzerinde çizilip günümüzde hangi ülkelerden geçtiği incelenir; seçilen bir ticaret yolunun devlet/toplumlar üzerindeki siyasi-ekonomik-kültürel etkisi sorgulanır. Ölçmede seçilen yolun etkilerini gösteren bir zihin haritası performans görevi kanıttır.",
+      "surec_bilesenleri": [
+        "Orta Çağ'daki ticaret yolları üzerinde yer alan devlet ve toplumların etkileşimleriyle ilgili sorular sorar.",
+        "Orta Çağ'daki ticaret yolları üzerinde yer alan devlet ve toplumların ilişkilerini siyasi, ekonomik ve kültürel boyutlarıyla çözümler.",
+        "Orta Çağ'daki ticaret yollarının devlet ve toplumların siyasi, ekonomik ve kültürel ilişkilerine etkisiyle ilgili çıkarımlarda bulunur."
       ]
     },
     {
@@ -340,6 +415,14 @@
         "mevali",
         "skolastik düşünce",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Orta Çağ'daki İslam, Batı ve Asya medeniyet havzalarından biri seçilip bilim/kültür/sanat alanındaki katkılarına dair öğretmen rehberliğinde bir araştırma yürütülür (kaynak tarama, sorgulama, kanıt analiz formu, rapor). Ölçmede araştırma raporunun kendisi (kaynak çeşitliliği, atıf, görsel kullanım ölçütleriyle) ve panel/seminer gibi bir paylaşım performansı kanıttır.",
+      "surec_bilesenleri": [
+        "Araştırmasında belirlediği kaynaklardan Orta Çağ'daki başlıca medeniyet havzalarının bilim, kültür ve sanata etkilerine ilişkin bilgi toplar.",
+        "Orta Çağ'daki başlıca medeniyet havzalarının bilim, kültür ve sanata etkilerine ilişkin belirlediği kaynakları inceleyerek araştırmasına dair bilgileri tespit eder.",
+        "Orta Çağ'daki başlıca medeniyet havzalarının bilim, kültür ve sanata etkilerine ilişkin kullanacağı kaynakların sınırlılığını sorgular.",
+        "Orta Çağ'daki başlıca medeniyet havzalarının bilim, kültür ve sanata etkilerine ilişkin kaynaklardan araştırmasına uygun olarak belirlediği bilgileri yorumlar.",
+        "Orta Çağ'daki başlıca medeniyet havzalarının bilim, kültür ve sanata etkilerine ilişkin kanıtlara dayanarak oluşturduğu araştırmasını paylaşır."
       ]
     },
     {
@@ -366,6 +449,12 @@
         "tekke",
         "Türkiye",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Dandanakan, Pasinler, Malazgirt, Haçlı saldırıları, Hıttin Muharebesi, Kudüs'ün fethi, Miryokefalon ve Kösedağ gibi 1040-1299 arası mücadeleler dilsiz harita üzerinde tarih şeridine yerleştirilir; askerî mücadeleler sırasında sivil halka/esirlere gösterilen merhametli davranışlar da örneklendirilir. Ölçmede bu mücadelelerin Türk tarihinin seyrine etkilerini benzerlik-farklılık açısından karşılaştıran bir tablo ve bildiklerim/merak ettiklerim/öğrendiklerim formu kanıttır.",
+      "surec_bilesenleri": [
+        "Türk tarihinin seyrini değiştiren önemli askerî mücadeleleri tarih şeridi üzerinde sıralar.",
+        "Türk tarihinin seyrini değiştiren önemli askerî mücadelelerin özelliklerini belirler.",
+        "Türk tarihinin seyrini değiştiren önemli askerî mücadelelerin etkilerini benzerlik ve farklılıkları açısından listeler."
       ]
     },
     {
@@ -392,6 +481,13 @@
         "tekke",
         "Türkiye",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Karahanlı, Gazneli, Büyük Selçuklu ve Türkiye Selçuklu devletlerinin veraset sistemi, hâkimiyet anlayışı, hükümdarlık alametleri, merkez ve ordu teşkilatındaki değişim/süreklilik unsurları sınıflandırılıp kurumlara etkileri sorgulanır. Ölçmede devlet yapısı ve ordu teşkilatının zaman içindeki gelişimini konu eden bir değişim-süreklilik formu kanıttır.",
+      "surec_bilesenleri": [
+        "Türkistan'dan Türkiye'ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliği sağlayan unsurları inceler.",
+        "Türkistan'dan Türkiye'ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliğin etkilediği unsurları inceler.",
+        "Türkistan'dan Türkiye'ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliğin kurumlara etkilerini sorgular.",
+        "Türkistan'dan Türkiye'ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliğin neden ve sonuçlarını açıklar."
       ]
     },
     {
@@ -418,6 +514,14 @@
         "tekke",
         "Türkiye",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "1040-1299 arası Türklerin sosyoekonomik faaliyetleri ile yerleşme/şehirleşme anlayışları arasındaki ilişki sorgulanır; fütüvvet ve Ahilik teşkilatının azimli, dürüst, güvenilir, yardımsever olma ve topluma karşı görev bilinci gibi öğretileri örneklendirilir. Ölçmede bu ilişkiyi ortaya koyan bir broşür hazırlama performans görevi kanıttır.",
+      "surec_bilesenleri": [
+        "Türkistan'dan Türkiye'ye uzanan süreçte Türklerin sosyoekonomik faaliyetleri ile yerleşme ve şehirleşme anlayışları arasındaki ilişki hakkında merak ettiği konuları belirler.",
+        "İlgili konular hakkında sorular sorar.",
+        "Farklı kaynaklar üzerinden konuya ilişkin bilgi toplar.",
+        "Topladığı bilgilerin doğruluğunu değerlendirir.",
+        "Topladığı bilgiler üzerinden Türkistan'dan Türkiye'ye uzanan süreçte Türklerin sosyoekonomik faaliyetleri ile yerleşme ve şehirleşme anlayışları arasındaki ilişki hakkında çıkarım yapar."
       ]
     },
     {
@@ -444,6 +548,12 @@
         "tekke",
         "Türkiye",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Türk-İslam medeniyetindeki bilim, kültür, eğitim ve sanat alanlarındaki gelişmeler (Hoca Ahmed Yesevi, Kaşgarlı Mahmud, Ömer Hayyam, Cezerî, İbnülarabî, Mevlana, Hacı Bektaş Veli, Yunus Emre, İbni Bibi) Batı medeniyetiyle karşılaştırılarak Anadolu'nun Türkleşme/İslamlaşma sürecine etkisi değerlendirilir. Ölçmede bu kişilerin şefkatli/barışçıl yönlerini ve sürece katkısını açıklayan bir sunum performansı kanıttır.",
+      "surec_bilesenleri": [
+        "Türk-İslam medeniyeti ile Batı medeniyetinin bilim, kültür, eğitim ve sanat anlayışını karşılaştırır.",
+        "Türkistan'dan Türkiye'ye uzanan süreçte Türk-İslam medeniyetinde bilim, kültür, eğitim ve sanat alanlarında meydana gelen gelişmelerin Anadolu'nun Türkleşme ve İslamlaşma sürecine etkisine ilişkin kanıtları kullanarak yargıda bulunur.",
+        "Hoca Ahmed Yesevi, Kaşgarlı Mahmud, Ömer Hayyam, Cezeri, İbnülarabi, Mevlana Celaleddin Rumi, Hacı Bektaş Veli, Yunus Emre ve İbni Bibi'nin düşünceleri veya eserleri hakkında insanlığın ortak mirasına katkıları bakımından yargıda bulunur."
       ]
     },
     {
@@ -467,6 +577,12 @@
         "tımar",
         "vakıf",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Herbert Adams Gibbons, Paul Wittek, Mehmet Fuat Köprülü ve Halil İnalcık'ın Osmanlı Devleti'nin kuruluş şekli/tarihine dair ileri sürdükleri farklı görüşler (kaynak temelli tarih yazımı tartışması) karşılaştırılıp güçlü/zayıf yönleri tespit edilir. Ölçmede bu görüşlerin kabul edilebilirliğine dair bir sınıf tartışması ve öz değerlendirme formu kanıttır.",
+      "surec_bilesenleri": [
+        "Tarihçilerin Osmanlı Devleti'nin kuruluşuna dair öne sürdüğü farklı görüşlerin benzer ve farklı yönlerini belirler.",
+        "Tarihçilerin Osmanlı Devleti'nin kuruluşuna dair öne sürdüğü görüşlerin güçlü ve zayıf yönleri ile tutarsızlıklarını tespit eder.",
+        "Tarihçilerin Osmanlı Devleti'nin kuruluşuna dair öne sürdüğü görüşleri gerekçeleriyle çürütür veya kabul eder."
       ]
     },
     {
@@ -490,6 +606,12 @@
         "tımar",
         "vakıf",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Koyunhisar, İznik'in Fethi, Bursa'nın Fethi, Rumeli'ye geçiş, Edirne'nin Fethi, I. Kosova, Ankara Savaşı ve II. Kosova gibi 1299-1453 arası olaylar farklı kaynaklarla karşılaştırılıp tarihsel bakış açısı formu doldurulur. Ölçmede Anadolu ve Rumeli'deki mücadeleleri gösteren açıklamalı bir tarih şeridi kanıttır.",
+      "surec_bilesenleri": [
+        "Osmanlı Devleti'nin Anadolu ve Rumeli'de gerçekleştirdiği siyasi ve askerî mücadeleleri farklı kaynakları karşılaştırarak inceler.",
+        "Osmanlı Devleti'nin Anadolu ve Rumeli'de gerçekleştirdiği siyasi ve askerî mücadelelere ilişkin farklı kaynaklardaki bilgi ve bakış açılarını görsel bir forma dönüştürür.",
+        "Osmanlı Devleti'nin Anadolu ve Rumeli'de gerçekleştirdiği siyasi ve askerî mücadeleleri verilen kaynaklara dayanarak kendi cümleleriyle ifade eder."
       ]
     },
     {
@@ -513,6 +635,11 @@
         "tımar",
         "vakıf",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Beylikten devlete geçiş sürecinde Osmanlı'nın ordu, hukuk ve toprak sisteminin temel özellikleri ve bu sistemlerin devletleşme sürecine etkileri incelenir. Ölçmede ordu/hukuk/toprak sistemleri ile devletleşme arasındaki ilişkiyi ortaya koyan bir bilgi görseli kanıttır.",
+      "surec_bilesenleri": [
+        "Osmanlı Beyliği'nin devletleşmesini sağlayan sistemlerin özelliklerini belirler.",
+        "Osmanlı Beyliği'nin devletleşmesini sağlayan sistemler arasındaki ilişkiyi belirler."
       ]
     },
     {
@@ -536,6 +663,12 @@
         "tımar",
         "vakıf",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Vakıf, dervişler, aşiretler, akıncı uç beyleri, Gaziyân-ı Rum, Ahiyân-ı Rum, Abdalân-ı Rum ve Baciyân-ı Rum gibi sosyal yapıların fethedilen topraklarda kalıcılığı sağlamadaki rolü T cetveliyle (avantaj/dezavantaj) analiz edilir; farklı kaynaklardaki bakış açılarının sınırlılığı sorgulanır. Ölçmede bu politikaların başarısında adaletli davranışın rolünü açıklayan bir müzakere/tarihsel kanıt analiz formu kanıttır.",
+      "surec_bilesenleri": [
+        "Osmanlı Devleti'nin fethettiği topraklarda uyguladığı iskân ve istimalet politikalarına yönelik kaynaklardaki farklı bakış açılarının nedenlerine dair sorular sorar.",
+        "Osmanlı Devleti'nin fethettiği topraklarda uyguladığı iskân ve istimalet politikalarına ilişkin kaynaklardaki bilgilerin sınırlılıkları hakkında çıkarım yapar.",
+        "Osmanlı Devleti'nin fethettiği topraklarda uyguladığı iskân ve istimalet politikalarına yönelik kaynaklara dayalı çıkarım yapar."
       ]
     },
     {
@@ -559,6 +692,12 @@
         "tımar",
         "vakıf",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Bursa, Edirne, Kütahya, Amasya gibi şehirlerdeki medrese/cami/dârüşşifa/imaret gibi kurumların Osmanlı ilim-irfan geleneğinin oluşumuna katkısı; Şeyh Edebali, Davud-i Kayseri, Dursun Fakih, Emir Sultan, Hacı Bayram Veli gibi âlimlerin kararlılık ve sebat örnekleriyle işlenir. Ölçmede şehir/kurum/şahsiyetlerin rolüne dair bir çözümleme veya dijital öykü performansı kanıttır.",
+      "surec_bilesenleri": [
+        "Osmanlı Devleti'nin ilim ve irfan geleneğinin oluşmasında şehir, kurum ve şahsiyetlerin etkilerini fark eder.",
+        "Osmanlı Devleti'nin ilim ve irfan geleneğinin oluşmasında ilk Türk-İslam devletlerindeki benzer deneyimleri inceler.",
+        "Osmanlı Devleti'nin ilim ve irfan geleneğinin oluşmasında şehir, kurum ve şahsiyetlerin rolüne ilişkin fikir üretir."
       ]
     },
     {
@@ -582,6 +721,12 @@
         "sömürgecilik",
         "vezir",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Çaldıran, Mısır Seferi, Preveze Deniz Savaşı, Kıbrıs'ın Fethi gibi 1453-1683 mücadeleleri farklı kaynaklarla incelenir; fethedilen topraklardaki halkın kültür/din/inanç haklarına saygı gösterildiği metinlerle örneklendirilir. Ölçmede bu mücadelelerin cihan devleti olma sürecindeki rolüne dair resim/slogan/afiş performansı kanıttır.",
+      "surec_bilesenleri": [
+        "1453-1683 yılları arasındaki siyasi ve askerî mücadeleleri belirler.",
+        "1453-1683 yılları arasındaki siyasi ve askerî mücadeleler ile Osmanlı Devleti'nin cihan devleti hâline gelmesini ilişkilendirir.",
+        "1453-1683 yılları arasındaki siyasi ve askerî mücadelelerin sonucunda bir cihan devleti hâline gelen Osmanlı Devleti'nin politikaları hakkında özgün bir içerik oluşturur."
       ]
     },
     {
@@ -605,6 +750,12 @@
         "sömürgecilik",
         "vezir",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "1453-1683 ile 1299-1453 dönemleri arası yönetim ve ordu yapısındaki değişim, kanıtlardan yola çıkarak grafik düzenleyici/tablo ile karşılaştırılır. Ölçmede bu değişimi 250-300 kelimeyi aşmayan bir tarihsel anlatı ile sunma kanıttır.",
+      "surec_bilesenleri": [
+        "1453-1683 yılları arasında Osmanlı Devleti'nin yönetim ve ordu yapısında meydana gelen değişim ve sürekliliği kaynaklar üzerinden inceler.",
+        "1453-1683 yılları arasında Osmanlı Devleti'nin yönetim ve ordu yapısında meydana gelen değişimle ilgili farklı kaynaklardaki bilgileri tablo yaparak gösterir.",
+        "1453-1683 yılları arasında Osmanlı Devleti'nin yönetim ve ordu yapısında meydana gelen değişimleri birden çok kaynaktaki kanıtlara dayanarak ifade eder."
       ]
     },
     {
@@ -628,6 +779,13 @@
         "sömürgecilik",
         "vezir",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Avrupa'nın sömürgeci politikalarının nedenleri Rönesans ve Reform hareketleriyle ilişkilendirilerek dönem koşulları çerçevesinde, insan hak ve özgürlükleri açısından değerlendirilir. Ölçmede sömürgeciliğin günümüze etkilerini dönem koşulları içinde açıklayan bir tarihsel akış şeması kanıttır.",
+      "surec_bilesenleri": [
+        "Avrupalıların sömürgeci politikalarını kaynaklara dayanarak çözümler.",
+        "Avrupalıların sömürgeci politikalarıyla ilgili olarak dönemin koşullarını fark eder.",
+        "Avrupalıların sömürgeci politikalarının günümüze etkilerini açıklar.",
+        "Avrupalıların sömürgeci politikalarının etkilerini dönemin koşulları içinde açıklar."
       ]
     },
     {
@@ -651,6 +809,14 @@
         "sömürgecilik",
         "vezir",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "1453-1683 arası İstanbul ve Celâli isyanlarının neden-sonuçları farklı kaynaklardan (farklı görüşler ayırt edilerek) incelenip alınabilecek önlemlere dair alternatif çözümler müzakere edilir. Ölçmede isyanlar ve önlemlere ilişkin görüşleri içeren bir müzakere/kontrol listesi ve öz değerlendirme formu kanıttır.",
+      "surec_bilesenleri": [
+        "1453-1683 yılları arasında Osmanlı Devleti'nde gerçekleşen önemli isyanların neden ve sonuçları konusunda bireylerin farklı görüşlerde olabileceğini fark eder.",
+        "1453-1683 yılları arasında Osmanlı Devleti'nde gerçekleşen önemli isyanların neden ve sonuçları konusunda kendi görüşüyle diğer bireylerin görüşlerini karşılaştırır.",
+        "1453-1683 yılları arasında Osmanlı Devleti'nde gerçekleşen önemli isyanların nedenlerine ilişkin mevcut görüşlerden hareketle dönemin şartlarını göz önünde bulundurarak isyanların önlenmesine yönelik olası çözümler önerir.",
+        "1453-1683 yılları arasında Osmanlı Devleti'nde gerçekleşen önemli isyanların neden ve sonuçlarına ilişkin farklı görüş ve düşünceleri değerlendirerek kendi görüşünü gözden geçirir.",
+        "1453-1683 yılları arasında Osmanlı Devleti'nde gerçekleşen önemli isyanları ve bunlara karşı alınan önlemlere ilişkin farklı görüş ve düşünceleri değerlendirerek grubun görüşünü ifade eder."
       ]
     },
     {
@@ -674,6 +840,14 @@
         "sömürgecilik",
         "vezir",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Bursanlı, Edirneli veya Kütahyalı Şeyh Edebali, Davud-i Kayseri, Emir Sultan, Hacı Bayram Veli gibi âlimler örneğinde Osmanlı'nın bilim/kültür/eğitim/sanat alanındaki gelişmelerine dair bir araştırma yürütülür; Akşemseddin, Ali Kuşçu, Mimar Sinan, Piri Reis, Sabuncuoğlu Şerefeddin, Kâtip Çelebi, Evliya Çelebi gibi isimlerin katkıları ele alınır. Ölçmede kaynak çeşitliliği/atıf/özgünlük ölçütleriyle değerlendirilen bir araştırma raporu ve sunum performansı kanıttır.",
+      "surec_bilesenleri": [
+        "Araştırmasında belirlediği kaynaklardan 1453-1683 yılları arasında bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin bilgi toplar.",
+        "1453-1683 yılları arasında bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin belirlediği kaynakları inceleyerek araştırmasına dair bilgileri tespit eder.",
+        "1453-1683 yılları arasında bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin kullanacağı kaynakların sınırlılığını sorgular.",
+        "1453-1683 yılları arasında bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin kaynaklardan araştırmasına uygun olarak belirlediği bilgileri yorumlar.",
+        "1453-1683 yılları arasında bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin kanıtlara dayanarak oluşturduğu araştırmasını paylaşır."
       ]
     },
     {
@@ -696,6 +870,11 @@
         "sanayileşme",
         "seferet",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "II. Viyana Kuşatması ile Karlofça, Prut, Pasarofça, Belgrad ve Küçük Kaynarca antlaşmalarının neden-sonuçları siyasi/askerî açıdan karşılaştırmalı bir tabloyla incelenir. Ölçmede bu gelişmelerden hangisinin Osmanlı'ya en çok güç kaybettirdiğini değerlendiren bir tarihsel bakış açısı formu kanıttır.",
+      "surec_bilesenleri": [
+        "Osmanlı Devleti'nin 1683-1789 yılları arasındaki siyasi ve askerî mücadelelerinin sonuçlarını karşılaştırır.",
+        "Osmanlı Devleti'nin 1683-1789 yılları arasındaki siyasi ve askerî mücadelelerinin sonuçlarına ilişkin yargıda bulunur."
       ]
     },
     {
@@ -718,6 +897,12 @@
         "sanayileşme",
         "seferet",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Lale Devri'ndeki toplumsal/kültürel/sanatsal gelişmeler (mimari, diplomasi) ile bu gelişmelerin sağladığı faydalar ve dönemin israf örnekleri estetik unsurlar açısından tablo üzerinde işlenir. Ölçmede Lale Devri gelişmelerinin devlet/toplum hayatındaki etkilerini inceleyen bir sunum kanıttır.",
+      "surec_bilesenleri": [
+        "Lale Devri'nde Osmanlı devlet ve toplum hayatında meydana gelen değişimle ilgili dönemin kaynaklarını inceler.",
+        "Lale Devri'nde Osmanlı devlet ve toplum hayatında meydana gelen değişimi bağlamından kopmadan tablolaştırır.",
+        "Lale Devri'nin Osmanlı devlet ve toplum hayatında meydana getirdiği değişimi kendi ifadeleriyle açıklar."
       ]
     },
     {
@@ -740,6 +925,12 @@
         "sanayileşme",
         "seferet",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "1755 Lizbon ve 1766 İstanbul depremlerinin idari, sosyal ve ekonomik etkileri Venn şemasıyla benzerlik-farklılık açısından karşılaştırılır; afet bilincinin önemi vurgulanır. Ölçmede bu karşılaştırmayı içeren Venn şeması ve duygu/düşünceleri paylaşan bir akvaryum tekniği etkinliği kanıttır.",
+      "surec_bilesenleri": [
+        "Lizbon ve İstanbul depremlerinin etkilerini belirler.",
+        "Lizbon ve İstanbul depremlerinin etkilerinin benzerliklerini listeler.",
+        "Lizbon ve İstanbul depremlerinin etkilerinin farklılıklarını listeler."
       ]
     },
     {
@@ -762,6 +953,13 @@
         "sanayileşme",
         "seferet",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Sanayi Devrimi'nin siyasi, sosyal ve ekonomik nedenleri ile çevre kirliliği dâhil olumlu/olumsuz sonuçları kaynaklardan tartışılır. Ölçmede nedenler ve sonuçları ortaya koyan bir balık kılçığı diyagramı kanıttır.",
+      "surec_bilesenleri": [
+        "Sanayi Devrimi'nin siyasi, sosyal ve ekonomik alanlarda meydana getirdiği değişimin nedenlerini belirler.",
+        "Sanayi Devrimi'nin siyasi, sosyal ve ekonomik alanlarda meydana getirdiği değişimin sonuçlarını belirler.",
+        "Sanayi Devrimi'nin meydana getirdiği siyasi, sosyal ve ekonomik değişimin olumlu ve olumsuz sonuçlarını sorgular.",
+        "Sanayi Devrimi'nin nedenlerini ve meydana getirdiği değişimin sonuçlarını kendi ifadeleriyle açıklar."
       ]
     },
     {
@@ -787,6 +985,13 @@
         "panslavizm",
         "sosyalizm",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Fransız İhtilali'ne neden olan bilim devrimi, aydınlanma düşüncesi ve Amerika'nın bağımsızlık mücadelesi; insan hakları, eşitlik, adalet, milliyetçilik ve özgürlük kavramları çerçevesinde toplumların dönüşümündeki yerel/bölgesel/küresel etkileriyle incelenir. Ölçmede bu değişimin nedenlerini/sonuçlarını bağlamından kopmadan sözlü ifade eden bir görüş geliştirme etkinliği kanıttır.",
+      "surec_bilesenleri": [
+        "Fransız İhtilali'nin devlet ve toplum hayatında meydana getirdiği değişime neden olan unsurları inceler.",
+        "Fransız İhtilali'nin devlet ve toplum hayatında meydana getirdiği değişimin etkilediği unsurları inceler.",
+        "Fransız İhtilali'nin devlet ve toplum hayatında meydana getirdiği değişimin etkilerinin niteliğini sorgular.",
+        "Fransız İhtilali'nin devlet ve toplum hayatında meydana getirdiği değişimin nedenlerini ve sonuçlarını bağlamından kopmadan ifade eder."
       ]
     },
     {
@@ -812,6 +1017,14 @@
         "panslavizm",
         "sosyalizm",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Şark Meselesi, Sırp ve Yunan isyanları, Mısır ve Boğazlar Meselesi, Tanzimat/Islahat Fermanları, Kanun-ı Esasi, 93 Harbi ve Anadolu'ya yapılan göçler ile Düyûn-ı Umûmiyye gibi 1789-1908 gelişmelerinin Osmanlı yönetim/toplum yapısına etkisi analiz edilir. Ölçmede bu gelişmeleri yansıtan açıklamalı bir tarih şeridi kanıttır.",
+      "surec_bilesenleri": [
+        "1789-1908 yılları arasında meydana gelen siyasi, askerî ve idari gelişmelerin Osmanlı Devleti'nin yönetim ve toplum yapısına etkileri hakkında merak ettiği konuları belirler.",
+        "İlgili konular hakkında sorular sorar.",
+        "Farklı kaynaklar üzerinden konuya ilişkin bilgi toplar.",
+        "Topladığı bilgilerin doğruluğunu değerlendirir.",
+        "Topladığı bilgiler üzerinden 1789-1908 yılları arasında meydana gelen siyasi, askerî ve idari gelişmelerin Osmanlı Devleti'nin yönetim ve toplum yapısına etkileri hakkında çıkarım yapar."
       ]
     },
     {
@@ -837,6 +1050,12 @@
         "panslavizm",
         "sosyalizm",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Demir yolu, fotoğraf makinesi ve telgrafın Osmanlı'da kullanımı sürecinde yaşanan zorluklar ile bilim/sanat/teknoloji alanındaki uygulamalar eş zamanlı bir tarih şeridinde işlenir; bu uygulamaların işlevselliği kendi ifadeleriyle açıklanır. Ölçmede uygulamaların işlevselliğini değerlendiren bir çalışma yaprağı kanıttır.",
+      "surec_bilesenleri": [
+        "1789-1908 yılları arasında Osmanlı Devleti'nde bilim, sanat ve teknoloji alanlarında yapılan uygulamalara ilişkin kaynakları inceler.",
+        "1789-1908 yılları arasında Osmanlı Devleti'nde bilim, sanat ve teknoloji alanlarında yapılan uygulamalara ilişkin incelediği kaynaklardaki bilgileri bağlamından kopmadan dönüştürür.",
+        "1789-1908 yılları arasında Osmanlı Devleti'nde bilim, sanat ve teknoloji alanlarında yapılan uygulamalara ilişkin incelediği kaynaklardaki bilgileri kendi ifadeleriyle açıklar."
       ]
     },
     {
@@ -862,6 +1081,15 @@
         "panslavizm",
         "sosyalizm",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Osmanlı'nın sanayileşmede geri kalma sorunu Rusya ve Japonya'nın cesaretli/girişimci sanayileşme hamleleriyle karşılaştırılarak taraflı bakış açıları analiz edilir. Ölçmede sorunu çözmeye yönelik alternatif öneriler üreten ve bu önerilerin olası sonuçlarını değerlendiren bir kısa rapor performansı kanıttır.",
+      "surec_bilesenleri": [
+        "Osmanlı Devleti'nin sanayileşmede geri kalması sorununu tanımlar.",
+        "Osmanlı Devleti'nin sanayileşmede geri kalması sorununa ilişkin tarafların bakış açılarını çözümler.",
+        "Sanayileşme sürecine Osmanlı Devleti ile benzer dönemlerde giren devletlerin sorunun çözümü için yaptıkları uygulamaları ve aldıkları kararları değerlendirir.",
+        "Osmanlı Devleti'nin sanayileşmede geri kalması sorununun çözümü için yaptığı uygulamalar ve bu uygulamalar sonucunda aldığı kararların güncel sorunların meydana gelmesine etkilerini belirler.",
+        "Osmanlı Devleti'nin sanayileşmede geri kalması sorununu çözmeye yönelik alternatif öneriler geliştirir.",
+        "Osmanlı Devleti'nin sanayileşmede geri kalması sorununu çözmeye yönelik geliştirdiği alternatif önerilerin olası sonuçlarını Osmanlı devlet yetkililerinin yaptıkları uygulamalar ve aldıkları kararların sonuçlarıyla karşılaştırarak değerlendirir."
       ]
     },
     {
@@ -886,6 +1114,13 @@
         "müttefik",
         "salgın",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "II. Meşrutiyet'in ilanı, 31 Mart Olayı, Bâbıâli Baskını, Trablusgarp, Balkan Savaşları, I. Dünya Savaşı süreci (Sarıkamış, Çanakkale, Kûtülamâre, Kafkas İslam Ordusu'nun Bakü'yü kurtarması) kişilerin yaşantılarından hareketle incelenir; fedakârlığın ülkenin bağımsızlığı için önemi vurgulanır. Ölçmede bu gelişmelerin günümüze etkileriyle (asılsız Ermeni iddiaları, Ege/Batı Trakya sorunları dâhil) ilişkilendirildiği bir karşılaştırma tablosu ve tarihsel akış şeması kanıttır.",
+      "surec_bilesenleri": [
+        "1908-1918 yılları arasında Osmanlı Devleti'nde meydana gelen siyasi ve askerî gelişmeleri kaynaklara dayanarak çözümler.",
+        "1908-1918 yılları arasında Osmanlı Devleti'nde meydana gelen siyasi ve askerî gelişmelerle ilgili olarak dönemin koşullarını fark eder.",
+        "1908-1918 yılları arasında Osmanlı Devleti'nde meydana gelen siyasi ve askerî gelişmelerin sonuçlarının günümüze etkilerini açıklar.",
+        "1908-1918 yılları arasında Osmanlı Devleti'nde meydana gelen siyasi ve askerî gelişmelerin sonuçlarını dönemin koşulları içinde açıklar."
       ]
     },
     {
@@ -910,6 +1145,17 @@
         "müttefik",
         "salgın",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Balkan Savaşları ve I. Dünya Savaşı sürecinde Anadolu'ya yapılan kitlesel göçler ile kolera/sıtma/tifüs salgınlarının devlet ve toplum hayatına etkisi, göç eden insanların yaşam öyküleri üzerinden birinci/ikinci elden kaynaklarla incelenir. Ölçmede bir muhabir rolüyle yazılan haber-yorum köşesi (kaynak kullanımı, tarihsel bağlamsallaştırma ölçütleriyle) kanıttır.",
+      "surec_bilesenleri": [
+        "1908-1918 yılları arasında yaşanan kitlesel göç ve salgınların Osmanlı devlet ve toplum hayatına etkilerini birinci ve ikinci elden kaynaklardan inceler.",
+        "1908-1918 yılları arasında yaşanan kitlesel göç ve salgınlarla ilgili birinci ve ikinci elden kaynakları yorumlar.",
+        "1908-1918 yılları arasında yaşanan kitlesel göç ve salgınların etkilerini kaynaklara dayanarak çözümler.",
+        "1908-1918 yılları arasında yaşanan kitlesel göç ve salgınların meydana geldiği dönemin koşullarını belirler.",
+        "1908-1918 yılları arasında yaşanan kitlesel göç ve salgınların etkileriyle günümüzde yaşanan kitlesel göç ve salgınların etkilerini karşılaştırır.",
+        "1908-1918 yılları arasında yaşanan kitlesel göç ve salgınların etkileriyle ilgili olarak dönemin koşulları çerçevesinde çıkarımda bulunur.",
+        "1908-1918 yılları arasında gerçekleşen kitlesel göç ve salgınların etkileriyle ilgili bakış açısını kendi ifadeleriyle yansıtır.",
+        "Konuyla ilgili mevcut bilgilerini kullanarak kitlesel göç ve salgınların Osmanlı devlet ve toplum hayatına etkileri hakkında özgün bir ürün hazırlar."
       ]
     },
     {
@@ -934,6 +1180,14 @@
         "müttefik",
         "salgın",
         "GENEL_KARMA"
+      ],
+      "dop_notu": "Osmanlı'nın askerî, siyasi, sosyal, ekonomik ve kültürel alanlardan biri seçilip insanlığa katkılarına dair öğretmen rehberliğinde bir araştırma yürütülür (kaynak sorgulama, kanıt analiz formu, kültürel miras koruma vurgusu). Ölçmede araştırma raporunun kendisi ve bu alanların dünya medeniyetine katkısını karşılaştıran bir sunum/panel performansı kanıttır.",
+      "surec_bilesenleri": [
+        "Osmanlı Devleti'nin insanlık tarihine katkılarına ilişkin araştırmasında belirlediği kaynaklardan bilgi toplar.",
+        "Osmanlı Devleti'nin insanlık tarihine katkılarına ilişkin araştırmasında belirlediği kaynakları inceleyerek araştırmasına dair bilgileri tespit eder.",
+        "Osmanlı Devleti'nin insanlık tarihine katkılarına ilişkin araştırmasında kullanacağı kaynakların sınırlılığını sorgular.",
+        "Osmanlı Devleti'nin insanlık tarihine katkılarına ilişkin araştırmasında kaynaklardan belirlediği uygun bilgileri yorumlar.",
+        "Osmanlı Devleti'nin insanlık tarihine katkılarına ilişkin kanıta dayalı oluşturduğu araştırmasını paylaşır."
       ]
     }
   ]
